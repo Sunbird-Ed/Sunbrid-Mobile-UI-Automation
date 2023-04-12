@@ -279,7 +279,10 @@ public MobileElement clkEditLocation;
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Name')]")
     public MobileElement assertNameField;
 
-    @AndroidFindBy(xpath = "(//android.widget.EditText)[1]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.EditText[@resource-id='signup-form-name']"),
+            @AndroidBy(xpath = "(//android.widget.EditText)[1]"),
+    })
     public MobileElement firstEditField;
 
 
@@ -950,6 +953,22 @@ public MobileElement clkEditLocation;
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'SUBMIT')][@enabled='true']")
     public MobileElement assertEnabledSubmitBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'OTP is sent to alash')]")
+    public MobileElement assertOTPSentToEmailText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'One Time Password')]")
+    public MobileElement assertOTPHeader;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'it is valid for 30 minutes')]")
+    public MobileElement assertOTPValidFor30Min;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[contains(@text,'1234')]")
+    public MobileElement assertEnteredOTP;
 
 
 

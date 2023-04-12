@@ -838,6 +838,7 @@ public class LoginPageActions {
 
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertNameField),"Name field is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.firstEditField);
         QXClient.get().gestures().BlindWait(3000);
         profilePageObjects.firstEditField.sendKeys("Test");
@@ -1163,7 +1164,7 @@ public class LoginPageActions {
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtn);
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(6000);
 
     }
 

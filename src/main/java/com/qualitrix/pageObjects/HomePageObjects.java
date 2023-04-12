@@ -779,6 +779,7 @@ public MobileElement clkRemovePopupActivity;
     public MobileElement clkSubmit;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Create and Continue']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Create and continue']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='CREATE AND CONTINUE']"),
     })
@@ -798,6 +799,7 @@ public MobileElement clkRemovePopupActivity;
     public MobileElement clkViewProject;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='View Project']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='View project']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='VIEW PROJECT']"),
     })
@@ -1953,6 +1955,7 @@ public MobileElement tagsField;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
     })
@@ -2152,15 +2155,24 @@ public MobileElement tagsField;
     public MobileElement assertEnglishMediumInProfile;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Class 4']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Class 5']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Class 4']"),
+    })
     public MobileElement assertClassInProfile;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Hindi Medium']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Assamese Medium']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Hindi Medium']"),
+    })
     public MobileElement clkHindiMediumInLibraryPage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Class 5']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Class 6']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Class 5']"),
+    })
     public MobileElement clkClass5InLibraryPage;
 
 

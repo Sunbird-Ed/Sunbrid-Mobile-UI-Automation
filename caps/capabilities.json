@@ -11,7 +11,7 @@
     "android": {
       "appPackage": "staging.diksha.app",
       "appActivity": "org.sunbird.app.MainActivity",
-      "app": ".\\caps\\diksha-5.0.264staging.apk",
+      "app": ".\\caps\\diksha-5.0.274staging.apk",
       "platformName": "Android",
       "newCommandTimeout": 600,
       "launchTimeout": 90000

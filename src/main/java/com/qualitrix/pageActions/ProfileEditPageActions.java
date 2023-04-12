@@ -600,13 +600,15 @@ public class ProfileEditPageActions  {
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkEditForLocation);
         QXClient.get().report().info("Tap on clkEditForLocation Option");
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().BlindWait(4000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkRoleDropdown);
         QXClient.get().report().info("Tap on clkRoleDropdown Option");
+        QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.sltHeadTeachersAndOfficials);
         QXClient.get().report().info("Select Head Teacher role");
+        QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubmit);
         QXClient.get().gestures().BlindWait(2000);

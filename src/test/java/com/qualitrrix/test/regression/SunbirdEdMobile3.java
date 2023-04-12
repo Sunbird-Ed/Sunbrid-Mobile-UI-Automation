@@ -281,6 +281,7 @@ public class SunbirdEdMobile3 {
     public void verifyHamburgerMenuOptionWorksInAllPages() throws Exception {
         QXClient.get().driver();
         getDikshaMainPageActions().performUserOnBoarding();
+        DikshaMainPageActions d = new DikshaMainPageActions();
 
         getHomePageActions().tapOnProfileTab();
 
@@ -310,6 +311,8 @@ public class SunbirdEdMobile3 {
         getHomePageActions().verifyHamburgerMenuWorksInLibraryTrainingDownloadAndProfilePage();
 
         QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
@@ -1495,7 +1498,7 @@ public class SunbirdEdMobile3 {
 
         getHomePageActions().tapOnSearchIcon();
         getHomePageActions().enterTextInSearchBar(BookName);
-        //  QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+
 
         getTrainingPageActions().tapOnSearchedBook();
 
@@ -1504,6 +1507,7 @@ public class SunbirdEdMobile3 {
 
         QXClient.get().gestures().clkBackButton();
         getLibraryPageActions().tapOnOKbtn();
+        getLibraryPageActions().verifyRatingPopup();
         getLibraryPageActions().tapOnStarIcon();
         getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
     }

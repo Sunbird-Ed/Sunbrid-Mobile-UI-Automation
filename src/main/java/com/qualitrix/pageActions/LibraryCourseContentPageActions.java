@@ -266,6 +266,8 @@ public LibraryCourseContentPageActions() {
             QXClient.get().report().info("Allow button is not displayed");
         }
         QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.shareToSlackApp);
         QXClient.get().report().info("Tap on share to slack app");
 
@@ -781,8 +783,8 @@ public LibraryCourseContentPageActions() {
 	 QXClient.get().report().info("Clicked on Notification Bell Icon");
 	 QXClient.get().gestures().BlindWait(3000);
 
-	// Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.notificationDetails),"Notificaitons page is not displayed");
-	 Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.noNotificationsText),"New Notifications are visible");
+	 Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.notificationDetails),"Notificaitons page is not displayed");
+	// Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.noNotificationsText),"New Notifications are visible");
 
 	 QXClient.get().gestures().BlindWait(5000);
 	 QXClient.get().gestures().clkBackButton();
@@ -1316,7 +1318,7 @@ public LibraryCourseContentPageActions() {
        QXClient.get().report().info("Clicked on Select Medium in filters");
        QXClient.get().gestures().BlindWait(2000);
 
-       QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
+       QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.filterMediaType2);
        QXClient.get().report().info("First checkbox selected");
        QXClient.get().gestures().BlindWait(3000);
 

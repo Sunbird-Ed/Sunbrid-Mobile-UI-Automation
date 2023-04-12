@@ -496,6 +496,7 @@ public MobileElement clkSeeMoreBooksAndContent;
     public MobileElement clkApplyFilter;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'results for')]//following-sibling::android.view.View[1]"),
             @AndroidBy(xpath ="//android.widget.Image[@index='0'][1]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'results for')]//following::android.view.View[1]"),
@@ -964,6 +965,7 @@ public MobileElement clkMeantFor;
     public MobileElement clkOnSelectMediaType;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'CLASSROOMTEACHINGVIDEO')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'MP4')]"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Explanation Content']//following::android.view.View[3]"),

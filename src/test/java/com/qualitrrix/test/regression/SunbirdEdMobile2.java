@@ -1987,6 +1987,8 @@ d.LaunchAppHomeScreen();
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().swipeUp();
         getLoginPageActions().loginToTheUser(Username, Password);
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
 
         getHomePageActions().tapOnTrainingTab();
 
@@ -2007,12 +2009,11 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnSearchIcon();
 
         getHomePageActions().enterTextInSearchBar("Umesh trackable collection");
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("Umesh trackable collection");
+
         getTrainingPageActions().tapOnSearchedCourse7();
         getTrainingPageActions().verifyConsentPopupForCollection();
 
     }
-
 
 
     @Test()

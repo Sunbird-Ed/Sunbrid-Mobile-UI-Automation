@@ -799,7 +799,10 @@ public MobileElement courseUnderOthers;
     public MobileElement assertMediumInContentDetails;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Board : CBSE')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Board : State')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Board : CBSE')]"),
+    })
     public MobileElement assertBoardInContentDetails;
 
 
@@ -1140,6 +1143,7 @@ public MobileElement courseUnderOthers;
     public MobileElement courseContent;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Umesh trackable collection')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'Umesh trackable collection')]"),
     })
     public MobileElement trackableCollection;
@@ -1208,6 +1212,14 @@ public MobileElement courseUnderOthers;
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'Limited questionset course')]"),
     })
     public MobileElement questionSetCourse;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 1 attempt Question Set Course')]"),
+    })
+    public MobileElement singleAttemptCourse;
+
+
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE AutoPDFCourse')]")
     public MobileElement pdfCourse;
@@ -1641,6 +1653,38 @@ public MobileElement courseUnderOthers;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='The enrollment date has passed for this batch']")
     public MobileElement assertEnrollmentEndedMsg;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='next slide'][@enabled='true']")
+    public MobileElement assertHighlightedNextBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no 1/3')]")
+    public MobileElement assertFirstAttempt;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no 2/3')]")
+    public MobileElement assertSecondAttempt;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no 3/3')]")
+    public MobileElement assertThirdAttempt;
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='This is the last remaining attempt']")
+    public MobileElement lastAttemptPopup;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Continue')]")
+    public MobileElement clkContinueBtn2;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Attempt no 1/1']")
+    public MobileElement assertSingleAttemptText;
+
+
+
 
 
 

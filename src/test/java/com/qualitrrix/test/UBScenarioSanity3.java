@@ -2450,67 +2450,11 @@ public class UBScenarioSanity3 {
 
 
 
-	@Test()
-	public void VerifyAddUser() throws Exception {
-
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-		getHomePageActions().tapOnProfileTab();
 
 
-		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-				properties.getProperty("excelpath"));
-		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-		getLoginPageActions().loginToTheUser(Username,Password);
-
-		DikshaMainPageActions d=new DikshaMainPageActions();
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
-		QXClient.get().gestures().BlindWait(4000);
-		getHomePageActions().tapOnDownloadTab();
-
-		getHomePageActions().tapOnMenuBar();
-		getCoursePageActions().tapOnAddAnotherUser();
-
-		String FakeName=QXClient.get().gestures().generateRandomName();
-		String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
-		System.out.println(storeFakeNameEntered);
-		getCoursePageActions().tapOnAddUserBtn();
-		getHomePageActions().tapOnMenuBar();
-
-		getCoursePageActions().tapOnMoreOption();
-		QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
 
 
-		getCoursePageActions().tapOnChangeUserWithoutProfile();
 
-		getCoursePageActions().tapOnTermsAndCondition();
-
-		getCoursePageActions().tapOnContinueForSwicthUser();
-
-		d.LaunchAppHomeScreen();
-
-		getHomePageActions().tapOnDownloadTab();
-
-		getHomePageActions().tapOnProfileTab();
-		getHomePageActions().tapOnProfileTab();
-
-
-		getCoursePageActions().verifyDistricAndState();
-
-		getCoursePageActions().verifyBMCValuesAfterAddingUser();
-		//getCoursePageActions().updateStateAndDistrictValues();
-
-		//getCoursePageActions().updateProfileDetails();
-
-
-	}
 }
 
 

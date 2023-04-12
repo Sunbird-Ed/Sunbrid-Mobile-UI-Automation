@@ -270,12 +270,7 @@ public class UserOnBoardingSanity {
 			  
 			  }
 
-	 
-	  
-	  
 
-
-	  
 	
 	// WithOut login Scenrio
 	@Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "verifyDataSync")
@@ -773,7 +768,7 @@ public void CreateGroup() throws Exception {
 	  
 
 	  @Test()
-	    public void validateErrorMsgWhileMerging() throws Exception {
+	    public void VerifyErrorMsgWhileMerging() throws Exception {
 	    	  
 	    		  QXClient.get().driver();
 	    		  getDikshaMainPageActions().performUserOnBoarding();

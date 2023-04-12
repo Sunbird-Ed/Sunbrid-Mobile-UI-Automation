@@ -256,7 +256,7 @@ public class SunbirdEdMobile1 {
         getHomePageActions().tapOnSearchIcon();
         getHomePageActions().enterTextInSearchBar("Small AutomationCourseContent");
         //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("Small AutomationCourseContent");
-        getTrainingPageActions().tapOnSearchedCourse1();
+        getTrainingPageActions().tapOnSearchedSmallCourse();
 
         getTrainingPageActions().enrollToTheSmallCourse();
         QXClient.get().gestures().closeApp();
@@ -1711,6 +1711,7 @@ public class SunbirdEdMobile1 {
 
         QXClient.get().driver();
         getDikshaMainPageActions().performUserOnBoarding();
+        DikshaMainPageActions d = new DikshaMainPageActions();
 
         getHomePageActions().tapOnTrainingTab();
 
@@ -1722,6 +1723,8 @@ public class SunbirdEdMobile1 {
 
         getHomePageActions().tapOnProfileTab();
         QXClient.get().gestures().BlindWait(1000);
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
 
         getHomePageActions().tapOnTrainingTab();
 
@@ -1755,9 +1758,9 @@ public class SunbirdEdMobile1 {
         getTrainingPageActions().verifyLoginBeforeCourseFetch();
 
         getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(coursefetch);
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(coursefetch);
-        getTrainingPageActions().tapOnSearchedCourse1();
+        getHomePageActions().enterTextInSearchBar("CourseContent");
+        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("CourseContent");
+        getTrainingPageActions().tapOnSearchedCourse6();
         getTrainingPageActions().verifyLoginPopUpWhileJoinCourse();
 
         getLoginPageActions().loginToTheUser(Username,Password);
