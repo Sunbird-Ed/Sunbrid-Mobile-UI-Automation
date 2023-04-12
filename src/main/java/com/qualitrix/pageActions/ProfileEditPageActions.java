@@ -285,7 +285,7 @@ public class ProfileEditPageActions  {
        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubmitEditProfile);
        QXClient.get().report().info("Tap on clkSubmitEditProfile Option");
         
-       QXClient.get().gestures().BlindWait(3000);
+       QXClient.get().gestures().BlindWait(6000);
 
     }
     
@@ -1076,7 +1076,8 @@ public class ProfileEditPageActions  {
 
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(2000);
-
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertCourseInMyLearningSection),"Course is not displayed under My learning section");
         QXClient.get().report().info("Course is displayed in My learning section of Profile page");
 
@@ -1185,5 +1186,354 @@ public class ProfileEditPageActions  {
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilepageobj.assertBlockInProfilePage),"Block is displayed in profile page");
         QXClient.get().report().info("Block in profile page is not displayed");
         QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyFirstEditButtonInProfilePageIsInCamelCasing() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.firstEditBtn),"Edit Role button is not displayed in profile section");
+        QXClient.get().report().info("Edit Role button is displayed in profile section");
+        QXClient.get().gestures().BlindWait(2000);
+
+        String editBtn1 = profileEditPageObjectsPageObjects.firstEditBtn.getText();
+        System.out.println("First edit button in profile page : "+ editBtn1);
+        QXClient.get().report().info("First edit button full text : "+ editBtn1);
+
+        char ch[] = editBtn1.toCharArray();
+        System.out.println("Array length: "+ ch.length);
+        QXClient.get().report().info("Array length : " + ch.length);
+        QXClient.get().gestures().BlindWait(2000);
+
+        char let1 = ch[0];
+        System.out.println(let1);
+        Assert.assertEquals(let1,'E');
+
+        char let2 = ch[1];
+        System.out.println(let2);
+        Assert.assertEquals(let2,'d');
+
+        char let3 = ch[2];
+        System.out.println(let3);
+        Assert.assertEquals(let3,'i');
+
+        char let4 = ch[3];
+        System.out.println(let4);
+        Assert.assertEquals(let4,'t');
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void verifySecondEditButtonInProfilePageIsInCamelCasing() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.secondEditBtn),"Edit Board button is not displayed in profile section");
+        QXClient.get().report().info("Edit Board button is displayed in profile section");
+        QXClient.get().gestures().BlindWait(2000);
+
+        String editBtn2 = profileEditPageObjectsPageObjects.firstEditBtn.getText();
+        System.out.println("second edit button in profile page : "+ editBtn2);
+        QXClient.get().report().info("second edit button full text : "+ editBtn2);
+
+        char ch[] = editBtn2.toCharArray();
+        System.out.println("Array length: "+ ch.length);
+        QXClient.get().report().info("Array length : " + ch.length);
+
+        char let1 = ch[0];
+        System.out.println(let1);
+        Assert.assertEquals(let1,'E');
+
+        char let2 = ch[1];
+        System.out.println(let2);
+        Assert.assertEquals(let2,'d');
+
+        char let3 = ch[2];
+        System.out.println(let3);
+        Assert.assertEquals(let3,'i');
+
+        char let4 = ch[3];
+        System.out.println(let4);
+        Assert.assertEquals(let4,'t');
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void verifyBlockDisplayedInCamelCasing() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.firstEditBtn),"Edit Role button is not displayed in profile section");
+        QXClient.get().report().info("Edit Role button is displayed in profile section");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.firstEditBtn);
+        QXClient.get().report().info("Clicked on first edit button in profile page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertChooseContentPreferenceLabelLocationEdit),"Choose content preferences label is not displayed");
+        QXClient.get().report().info("Choose content preferences label is displayed post clicking Edit Role button in profile page");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertBlockLabel),"Block label is not displayed ");
+        QXClient.get().report().info("Block label is displayed in choose content preferences page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        String block = profilepageobj.assertBlockLabel.getText();
+        System.out.println("Block text : " + block);
+        QXClient.get().report().info("Block text : "+ block);
+
+        char blk[] = block.toCharArray();
+        System.out.println("Array length of Block is : " + blk.length);
+        QXClient.get().report().info("Array length of Block is : " + blk.length);
+
+        char letr1 = blk[0];
+        System.out.println(letr1);
+        Assert.assertEquals(letr1,'B');
+
+        char letr2 = blk[1];
+        System.out.println(letr2);
+        Assert.assertEquals(letr2,'l');
+
+        char letr3 = blk[2];
+        System.out.println(letr3);
+        Assert.assertEquals(letr3,'o');
+
+        char letr4 = blk[3];
+        System.out.println(letr4);
+        Assert.assertEquals(letr4,'c');
+
+        char letr5 = blk[4];
+        System.out.println(letr5);
+        Assert.assertEquals(letr5,'k');
+        QXClient.get().gestures().BlindWait(2000);
+
+    }
+
+    public void verifyClusterIsDisplayedInCamelCasing() throws Exception {
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertChooseContentPreferenceLabelLocationEdit),"Choose content preferences label is not displayed");
+        QXClient.get().report().info("Choose content preferences label is displayed post clicking Edit Role button in profile page");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertClusterLabel),"Cluster label is not displayed ");
+        QXClient.get().report().info("Cluster label is displayed in choose content preferences page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        String cluster = profilepageobj.assertClusterLabel.getText();
+        System.out.println("Block text : " + cluster);
+        QXClient.get().report().info("Block text : "+ cluster);
+
+        char clt[] = cluster.toCharArray();
+        System.out.println("Array length of Cluster is : " + clt.length);
+        QXClient.get().report().info("Array length of Cluster is : " + clt.length);
+
+        char letr1 = clt[0];
+        System.out.println(letr1);
+        Assert.assertEquals(letr1,'C');
+
+        char letr2 = clt[1];
+        System.out.println(letr2);
+        Assert.assertEquals(letr2,'l');
+
+        char letr3 = clt[2];
+        System.out.println(letr3);
+        Assert.assertEquals(letr3,'u');
+
+        char letr4 = clt[3];
+        System.out.println(letr4);
+        Assert.assertEquals(letr4,'s');
+
+        char letr5 = clt[4];
+        System.out.println(letr5);
+        Assert.assertEquals(letr5,'t');
+
+        char letr6 = clt[5];
+        System.out.println(letr6);
+        Assert.assertEquals(letr6,'e');
+
+        char letr7 = clt[6];
+        System.out.println(letr7);
+        Assert.assertEquals(letr7,'r');
+        QXClient.get().gestures().BlindWait(2000);
+    }
+
+    public void verifySchoolIsDisplayedInCamelCasing() throws Exception {
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertChooseContentPreferenceLabelLocationEdit),"Choose content preferences label is not displayed");
+        QXClient.get().report().info("Choose content preferences label is displayed post clicking Edit Role button in profile page");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertSchoolLabel),"School label is not displayed ");
+        QXClient.get().report().info("School label is displayed in choose content preferences page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        String school = profilepageobj.assertSchoolLabel.getText();
+        System.out.println("Block text : " + school);
+        QXClient.get().report().info("Block text : "+ school);
+
+        char shl[] = school.toCharArray();
+        System.out.println("Array length of School is : " + shl.length);
+        QXClient.get().report().info("Array length of School is : " + shl.length);
+
+        char letr1 = shl[0];
+        System.out.println(letr1);
+        Assert.assertEquals(letr1,'S');
+
+        char letr2 = shl[1];
+        System.out.println(letr2);
+        Assert.assertEquals(letr2,'c');
+
+        char letr3 = shl[2];
+        System.out.println(letr3);
+        Assert.assertEquals(letr3,'h');
+
+        char letr4 = shl[3];
+        System.out.println(letr4);
+        Assert.assertEquals(letr4,'o');
+
+        char letr5 = shl[4];
+        System.out.println(letr5);
+        Assert.assertEquals(letr5,'o');
+
+        char letr6 = shl[5];
+        System.out.println(letr6);
+        Assert.assertEquals(letr6,'l');
+        QXClient.get().gestures().BlindWait(2000);
+    }
+
+    public void updateSwitchedUserRole() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.firstEditBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkOnHTandOfficialsRole);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.sltTeacherRole);
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubmit);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubmitEditProfile);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.clkPrograms),"Programs section is displayed post updating the role");
+        QXClient.get().report().info("Programs section is not displayed in home page post updating role");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyUserAbleToScrollTillEndInViewMoreOptionInMyLearningSection() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().swipeUp();
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.myLearningtext));
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.moreBtnInProfile),"More button is not displayed");
+        QXClient.get().report().info("More button is displayed in My learning section of Profile page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.moreBtnInProfile);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().report().info("User able to scroll till the end of any section in course page");
+        QXClient.get().gestures().BlindWait(2000);
+
+    }
+
+    public void verifyUserIDReplacedWithDikshaIDBelowUserNameInProfilePage() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertUserNameInProfile),"Username is not displayed in profile page");
+        QXClient.get().report().info("Username is displayed in profile page");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertUserIDTextBelowUsername),"User ID text is displayed below the username in profile page");
+        QXClient.get().report().info("user ID text is not displayed below the username in profile page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertDikshaIDBelowUsername),"UserID is not replaced by Diksha ID below username in profile page");
+        QXClient.get().report().info("UserID is replaced with DikshaID below the username in profile page");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertDikshaID),"Diksha ID is not displayed");
+        QXClient.get().report().info("Diksha ID is displayed below the username");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyChooseContentPreferencesLabelIsNotOverlapping() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkEditLocation);
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertChooseContentPreferencesLabel),"Choose Content preferences label is not displayed ");
+        QXClient.get().report().info("Choose content preferences label is displayed to the user");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertStateLabelWithoutOverlapping),"State Label is not displayed properly");
+        QXClient.get().report().info("State label is displayed properly without overlapping");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertDistrictLabelWithoutOverlapping),"District label is not displayed properly");
+        QXClient.get().report().info("District label is displayed properly without overlapping");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertStateIsClearlyDisplayed),"State value is not displayed properly");
+        QXClient.get().report().info("State value is displayed properly without overlapping");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertDistrictIsClearlyDisplayed),"District value is not displayed properly");
+        QXClient.get().report().info("District value is displayed properly without overlappping");
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void verifyBlockTaggedToDistrictClusterTaggedToBlockAndSchoolTaggedToCluster() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertHeadTeacherRoleInProfile),"Head Teacher role is not displayed ");
+        QXClient.get().report().info("Head teacher role is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertSubRoleInProfile),"Sub role is not displayed in profile");
+        QXClient.get().report().info("Subrole is displayed in profile");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertAndhraState),"Andhra state is not displayed");
+        QXClient.get().report().info("Andhra pradesh state is displayed in profile under head teacher role");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertAnantapurDistrict),"Anantapur district is not tagged to Andhra State");
+        QXClient.get().report().info("Anantapur district is tagged to Andhra pradesh state");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertAgaliBlock),"Agali block is not tagged to Anantapur district");
+        QXClient.get().report().info("Agali block is tagged to Anantapur district");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertHanumannahalliSchool),"Hanumannahalli school is not tagged to Agali block");
+        QXClient.get().report().info("Hanumannahalli school is tagged to Agali block");
+        QXClient.get().report().info("In Head teacher role the block is tagged to district, cluster is tagged to block and School is tagged to cluster");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void veriyNoLocationPopupWhenLoggedInWithSSOUser() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilepageobj.locationPopUpHeader),"Choose content preferences text is displayed for SSO User");
+        QXClient.get().report().info("Choose content preferences text is not displayed to logged in SSO User");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilepageobj.assertStateLabelWithoutOverlapping),"State in location popup is displayed for SSO User");
+        QXClient.get().report().info("State Location details is not displayed to logged in SSO User");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilepageobj.assertDistrictLabelWithoutOverlapping),"District location popup is displayed for SSO User");
+        QXClient.get().report().info("District Location details is not displayed to logged in SSO User");
+        QXClient.get().report().info("Location popup is not displayed for SSO User");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyLIUAShouldBeAbleToAccessAllMUAAccounts() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertCourseInProfile),"Course is not displayed under MUA user in all the devices");
+        QXClient.get().report().info("Joined couse is displayed to MUA User in profile in all devices");
+        QXClient.get().gestures().BlindWait(2000);
     }
 }

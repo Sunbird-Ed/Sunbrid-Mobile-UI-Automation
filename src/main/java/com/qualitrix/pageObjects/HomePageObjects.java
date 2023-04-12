@@ -305,6 +305,7 @@ public MobileElement clkCourseInActivity;
 
     
     @AndroidFindAll({
+            @AndroidBy(xpath = "(//android.view.View[contains(@text,'COURSE')])[1]"),
             @AndroidBy(xpath = "//android.view.View[@text='Recommendations based on your profile details']//following-sibling::android.view.View[1]"),
         @AndroidBy(xpath = "//android.view.View[@text='Recommendations based on your profile details']//following::android.view.View[1]"),
         @AndroidBy(xpath = "//android.widget.Image[@index='0']"),
@@ -770,24 +771,36 @@ public MobileElement clkRemovePopupActivity;
     
     @AndroidFindBy(xpath = "//android.widget.CheckBox[@text='Teachers']")
     public MobileElement sltTeachersInCategry;
-    
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SUBMIT']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
+    })
     public MobileElement clkSubmit;
-    
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='CREATE AND CONTINUE']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Create and continue']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='CREATE AND CONTINUE']"),
+    })
     public MobileElement clkCreateAndContinue;
     
     @AndroidFindBy(xpath = "//android.view.View[@text='Your Project has been created successfully']")
     public MobileElement assertProjectCreationMsg;
-    
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Continue']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE']"),
+    })
     public MobileElement clkContinueBtn;
     
    
     @AndroidFindBy(xpath = "//android.view.View[@text='View Project']")
     public MobileElement clkViewProject;
-    
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='VIEW PROJECT']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='View project']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='VIEW PROJECT']"),
+    })
     public MobileElement clkProjectView;
 
     @AndroidFindAll({
@@ -832,13 +845,18 @@ public MobileElement clkRemovePopupActivity;
             @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Description')]//following::android.widget.EditText"),
     })
     public MobileElement clkEditProjectDesc;
-    
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SAVE EDITS']")
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Save edits']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='SAVE EDITS']"),
+    })
     public MobileElement clkEditProjectSave;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[@text='Project title : AutomationProjectUpdatedAutomationProject']"),
             @AndroidBy(xpath = "//android.view.View[@text='Project title : UpdatedAutomationProject']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Project title : AutomationProject']"),
     })
 
     public MobileElement assertUpdatedProjectName;
@@ -846,6 +864,7 @@ public MobileElement clkRemovePopupActivity;
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[@text='Objective : DescriptionProjectUpdatedDescriptionProject']"),
             @AndroidBy(xpath = "//android.view.View[@text='Objective : UpdatedDescriptionProject']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Objective : DescriptionProject']"),
     })
 
     public MobileElement assertUpdatedObjectiveDesc;
@@ -975,8 +994,11 @@ public MobileElement clkRemovePopupActivity;
             @AndroidBy(xpath = "//android.view.View[@text='Assigned to me']")
     })
     public MobileElement assertAssignedToMe;
-    
-    @AndroidFindBy(xpath = "//android.view.View[@text='Skip']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='skip']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Skip']"),
+    })
     public MobileElement clkSkipBtn;
     
     @AndroidFindBy(xpath = "//android.view.View[@text='Select category(s)']")
@@ -1144,14 +1166,20 @@ public MobileElement tagsField;
     	
     	@AndroidFindBy(xpath = "//android.view.View[@text='End date']")
     	public MobileElement clkondatecalender;
-    	
-    	@AndroidFindBy(xpath = "//android.widget.Button[@text='DONE']")
+
+    	@AndroidFindAll({
+                @AndroidBy(xpath = "//android.widget.Button[@text='Done']"),
+                @AndroidBy(xpath = "//android.widget.Button[@text='DONE']"),
+        })
     	public MobileElement clkoncurrentdate;
     	
     	@AndroidFindBy(xpath = "//android.view.View[@text='Assigned to']//following::android.widget.EditText[2]")
     	public MobileElement clktaskdescriptionobj;
-    	
-    	@AndroidFindBy(xpath = "//android.widget.Button[@text='Add Task']")
+
+    	@AndroidFindAll({
+                @AndroidBy(xpath = "//android.widget.Button[@text='Add task']"),
+                @AndroidBy(xpath = "//android.widget.Button[@text='Add Task']")
+        })
     	public MobileElement clkaddtask;
     	
     	@AndroidFindBy(xpath = "//android.widget.Image[@text='ellipsis vertical outline']")
@@ -1185,8 +1213,12 @@ public MobileElement tagsField;
     })
 
     public MobileElement editassignname;
-    	
-    	@AndroidFindBy(xpath = "//android.widget.Button[@text='SAVE']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Save']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='SAVE']"),
+    })
+
     	public MobileElement clksavebutton;
     	
     	@AndroidFindBy(xpath = "//android.widget.Image[@text='subdirectory_arrow']//following::android.widget.EditText")
@@ -1920,7 +1952,10 @@ public MobileElement tagsField;
     public MobileElement clkOnContent;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SUBMIT']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
+    })
     public MobileElement clkSubmitButton;
 
     @AndroidFindAll({
@@ -2137,6 +2172,13 @@ public MobileElement tagsField;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='JOIN COURSE']")
     public MobileElement assertJoinCourseBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE CourseContent')]")
+    public MobileElement clkcourseContent;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE CourseContent1')]")
+    public MobileElement clkcourseContent1;
 
 
 
@@ -2758,7 +2800,10 @@ public MobileElement assertSubjectFilter;
     public MobileElement groupedBasedOnEconomicsSubject;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Image[@text='Avatar']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Avatar')]"),
+            @AndroidBy(xpath = "//android.widget.Image[@text='Avatar']"),
+    })
     public List<WebElement> visualCue;
 
 
@@ -2775,6 +2820,7 @@ public MobileElement assertSubjectFilter;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "(//android.view.View[contains(@text,'Avatar')])[1]"),
             @AndroidBy(xpath = "(//android.widget.Image[@text='Avatar'])[1]"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Featured']//following::android.view.View[7]"),
     })
@@ -2833,6 +2879,7 @@ public MobileElement assertSubjectFilter;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE ExpiredCourse')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationExpiredCourse')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'AutomationExpiredCourse')]"),
     })
@@ -2903,6 +2950,10 @@ public MobileElement assertSubjectFilter;
     public MobileElement assertMemberProgressInPercentageInDownloadedCSVExcelFormat;
 
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='NA']")
+    public MobileElement assertNATextInDownloadedCSVFile;
+
+
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.CheckBox"),
@@ -2961,7 +3012,10 @@ public MobileElement assertSubjectFilter;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Task details']")
     public MobileElement clkTaskDetails;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]//following::android.view.View[contains(@text,'Small AutomationCourseContent')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Small AutomationCourseContent')]"),
+            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]//following::android.view.View[contains(@text,'Small AutomationCourseContent')]")
+    })
     public MobileElement assertCourseInMyLearningSection;
 
 
@@ -3011,6 +3065,7 @@ public MobileElement assertSubjectFilter;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Avatar')]"),
             @AndroidBy(xpath = "//android.widget.Image[@text='Avatar']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Featured']//following::android.widget.Image[1]"),
     })
@@ -3090,6 +3145,7 @@ public MobileElement assertSubjectFilter;
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'you have been removed from the')]")
     public MobileElement assertMemberRemovedNotificationMsg;
 
+
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Make group admin']")
     public MobileElement clkOnMakeGroupAdmin;
 
@@ -3156,6 +3212,45 @@ public MobileElement assertSubjectFilter;
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'ManjunathAutomationCourse')]")
     public MobileElement assertExpiredCourseInMyLearningSectionOfHomePage;
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'You have joined the batch of a course that is completed')]")
+    public MobileElement assertCourseBatchCompletedForExpiredCourse;
+
+
+    @AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='Add User']"),
+
+    })
+    public MobileElement addUserBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Views')]")
+    public MobileElement assertViewsInCreatedTopic;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'This group is temporarily inactive. The group admin can re-activate the group if required. Group members can continue their discussions')]")
+    public MobileElement assertSuspendedGroupBanner;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'T Test')]")
+    public MobileElement sltOldUser;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='sandy']")
+    public MobileElement assertUserName;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'AutoSmallCourseWithCertificate')]")
+    public MobileElement openCertificateCourse;
+
+
+
+
+
+
+
+
+
 
 
 

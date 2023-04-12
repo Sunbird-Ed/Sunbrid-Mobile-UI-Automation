@@ -235,6 +235,7 @@ public class CoursePageActions  {
           //QXClient.get().gestures().swipeUp();
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.clkSubmitDetails),"clkSubmitDetails is not available");
+        QXClient.get().gestures().BlindWait(1000);
         QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubmitDetails);
         QXClient.get().report().info("Clicked on Submit Details in Profile Tab");
         QXClient.get().gestures().BlindWait(4000);
@@ -648,6 +649,17 @@ public class CoursePageActions  {
         QXClient.get().gestures().BlindWait(2000);
 
 
+    }
+
+    public void verifyEmailIdPrefilledInUserDeclarationForm() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertPrefilledEmailAddressInDeclarationForm),"Prefilled email id is not displayed in user declaration form");
+        QXClient.get().report().info("Email Id prefilled in the user declaration form");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertEmailVerifiedImage),"Email verified image is not displayed");
+        QXClient.get().report().info("Email id verified image displayed in user declaration form");
+        QXClient.get().gestures().BlindWait(3000);
     }
 
 

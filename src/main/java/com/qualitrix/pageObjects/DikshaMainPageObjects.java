@@ -116,9 +116,10 @@ public MobileElement selectBoard;
     public MobileElement cancelBtn;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT' and @index='1']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT ' and @index='1']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']")
+            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
     })
     public MobileElement submitBtn;
 

@@ -103,6 +103,7 @@ public MobileElement sltStudent;
 public MobileElement sltParent;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'SUBMIT')]"),
         @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
 })
 public MobileElement clkSubmit;
@@ -155,7 +156,10 @@ public MobileElement SignWithGoogle;
     @AndroidFindBy(xpath = "//android.view.View[@text='CLASS']")
     public MobileElement assertClassContentPreferenceLabelProfile;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='SUBJECTS']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='SUBJECTS']"),
+            @AndroidBy(xpath = "//android.view.View[@text='SUBJECT']"),
+    })
     public MobileElement assertSubjectContentPreferenceLabelProfile;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='DISTRICT']")
@@ -171,7 +175,11 @@ public MobileElement SignWithGoogle;
 })
 public MobileElement clkEditLocation;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Choose content preferences']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Choose content preferences')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Choose content preferences']"),
+    })
     public MobileElement assertChooseContentPreferenceLabelLocationEdit;
 
 
@@ -207,12 +215,16 @@ public MobileElement clkEditLocation;
 
 
    @AndroidFindAll({
+           @AndroidBy(xpath = "//android.view.View[contains(@text,'Select year of birth')]//following-sibling::android.view.View"),
            @AndroidBy(xpath = "//android.widget.TextView[@text='Select year of birth']"),
            @AndroidBy(xpath = "//android.view.View[@text='Select year of birth']"),
    })
    public MobileElement selectYearOfBirth;
 
-  @AndroidFindBy(xpath = "//android.view.View[@text='2022']")
+   @AndroidFindAll({
+           @AndroidBy(xpath = "//android.view.View[@resource-id='mat-option-0']"),
+           @AndroidBy(xpath = "//android.view.View[@text='2022']"),
+   })
    public MobileElement selectYear;
 
   @AndroidFindAll({
@@ -267,6 +279,9 @@ public MobileElement clkEditLocation;
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Name')]")
     public MobileElement assertNameField;
 
+    @AndroidFindBy(xpath = "(//android.widget.EditText)[1]")
+    public MobileElement firstEditField;
+
 
 @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.TextView[@text='Mobile Number']"),
@@ -283,7 +298,10 @@ public MobileElement clkEditLocation;
     public MobileElement assertEmailAddress;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='You will receive an OTP to verify your mobile number or email address']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='(An OTP will be sent to verify mobile number or email address)']"),
+            @AndroidBy(xpath = "//android.view.View[@text='You will receive an OTP to verify your mobile number or email address']"),
+    })
     public MobileElement assertOtpMessage;
 
 
@@ -393,7 +411,11 @@ public MobileElement clkEditLocation;
     public MobileElement selCBSEBoard;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SUBMIT']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
+    })
+
     public MobileElement clkOnSubmitBtn;
 
 
@@ -417,7 +439,10 @@ public MobileElement clkEditLocation;
     public MobileElement clkOnSubject;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SAVE']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Save']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='SAVE']"),
+    })
     public MobileElement clkOnSaveBtn;
 
 
@@ -679,6 +704,260 @@ public MobileElement clkEditLocation;
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Block')]")
     public MobileElement assertBlockInProfilePage;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+    public MobileElement clkContinueBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Block']")
+    public MobileElement assertBlockLabel;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Cluster']")
+    public MobileElement assertClusterLabel;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='School']")
+    public MobileElement assertSchoolLabel;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='signup-form-name']")
+    public MobileElement nameEditField1;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Enter mobile number or email address of your')]")
+    public MobileElement assertMobileOrEmailAddressFieldsOfRegistereHerePage;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Your password must contain a minimum of 8 characters.')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'.')]"),
+    })
+    public MobileElement assertFullStopIsPresentBelowPasswordField;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='sunbird']")
+    public MobileElement assertSunbirdText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Welcome to SUNBIRD')]")
+    public MobileElement assertWelcomeToSunbirdText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Register on SUNBIRD')]")
+    public MobileElement assertRegisterOnSunbirdText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Already have an account? Login here']")
+    public MobileElement assertAlreadyHaveAnAccountTextAndLoginBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'To discover relevant content update the following')]")
+    public MobileElement assertToDiscoverRelevantContentText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Teacher, selected')]")
+    public MobileElement assertTeacherRoleAlreadySelected;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Spinner[contains(@text,'Karnataka, selected')]"),
+            @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Karnataka, selected')]"),
+    })
+    public MobileElement assertStateValueAutoPopulated;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Spinner[contains(@text,'MYSURU, selected')]"),
+            @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'BENGALURU URBAN SOUTH, selected')]"),
+    })
+    public MobileElement assertDistrictValueAutoPopulated;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='mat-input-0']")
+    public MobileElement selectYearManually;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='1998']")
+    public MobileElement selectMajorUser;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Enter mobile number or email address *']")
+    public MobileElement assertEnterMobileNumberOrEmailAddressText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Enter mobile number or email address of your parent or guardian*')]")
+    public MobileElement assertEmailOrMobileNoOfParentOrGuardian;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Spinner[@text='Select State']")
+    public MobileElement clkOnSelectStateOption;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@resource-id='mat-option-0']")
+    public MobileElement selectFirstOption;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Diksha UAT SSO Login')]")
+    public MobileElement assertDikshaSSOLoginText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='mat-input-0']")
+    public MobileElement userNameEditField;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='mat-input-1']")
+    public MobileElement userNameExternalID;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='mat-input-2']")
+    public MobileElement schoolExternalID;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State')]")
+    public MobileElement assertStateLabelWithoutOverlapping;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District')]")
+    public MobileElement assertDistrictLabelWithoutOverlapping;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@resource-id='state']")
+    public MobileElement assertStateIsClearlyDisplayed;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@resource-id='district']")
+    public MobileElement assertDistrictIsClearlyDisplayed;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Role: HT & Officials')]")
+    public MobileElement assertHeadTeacherRoleInProfile;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Sub-role: CRP')]")
+    public MobileElement assertSubRoleInProfile;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State: Andhra Pradesh')]")
+    public MobileElement assertAndhraState;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District: ANANTAPUR')]")
+    public MobileElement assertAnantapurDistrict;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Block: AGALI')]")
+    public MobileElement assertAgaliBlock;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'School: MPPS HANUMANNAHALLI')]")
+    public MobileElement assertHanumannahalliSchool;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Choose content preferences')]")
+    public MobileElement locationPopUpHeader;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationCourseForDF')]")
+    public MobileElement assertCourseInProfile;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Choose an account')]")
+    public MobileElement assertChooseAnAccountInGmailPage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'to continue to DIKSHA')]")
+    public MobileElement assertToContinueToDikshaInGmailPage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Add another account')]")
+    public MobileElement assertAddAnotherAccountInGmailPage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'dikshatest15@gmail.com')]")
+    public MobileElement assertAddedGmailAccount;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Welcome to DIKSHA!']")
+    public MobileElement assertWelcomeTextInRegistrationPage;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Register on DIKSHA']")
+    public MobileElement assertRegisterOnDiksha;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='manjunathsn3941@gmail.com']")
+    public MobileElement newGmailUserID;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Select Year Of Birth')]")
+    public MobileElement assertYOBField;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE arrow forward'][@enabled='false']")
+    public MobileElement assertDisabledContinueBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='dikshatest20@gmail.com']")
+    public MobileElement newGmailUserID1;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Spinner[contains(@text,'Select Year Of Birth')]")
+    public MobileElement yobDropdown;
+
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='2022']")
+    public MobileElement selectYOB2022;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'CONTINUE')]")
+    public MobileElement clkContinueButton;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'To discover relevant content update the following details:')]")
+    public MobileElement assertDiscoverRelevantContentUpdateTheFollowingText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'selected ,Select State')]")
+    public MobileElement assertMandatoryAndPrefilledState;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'selected ,Select District')]")
+    public MobileElement assertMandatoryAndPrefilledDistrict;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Select Block')]")
+    public MobileElement assertBlockEditField;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Select School')]")
+    public MobileElement assertSchoolEditField;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Clear']")
+    public MobileElement assertClearBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Enter mobile number or email address of your parent or guardian')]")
+    public MobileElement assertEmailOrMobileNumberOfGuardianText;
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Mobile Number']")
+    public MobileElement assertMobileNumberText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'SUBMIT')][@enabled='false']")
+    public MobileElement assertDisabledSubmitBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'SUBMIT')][@enabled='true']")
+    public MobileElement assertEnabledSubmitBtn;
+
+
+
+
+
+
+
+
 
 
 

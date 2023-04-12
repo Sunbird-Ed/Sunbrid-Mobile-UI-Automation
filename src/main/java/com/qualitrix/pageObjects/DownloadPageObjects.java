@@ -5,6 +5,8 @@ import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+
 /**
  * This Class has all the Objects related to Download Page.
  *
@@ -111,6 +113,104 @@ public MobileElement resourceName;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Storage Settings']")
     public MobileElement assertStorageSettingsTextInDownloadsPage;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'LargeSizeAutoBook')]")
+    public MobileElement assertDownloadedBookInDownlaodSection;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='AutomationCourseContent']")
+    public MobileElement assertLastViewedContent;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='AutomationBookContent']")
+    public MobileElement assertContentSizeContent;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Sort By Last viewed']")
+    public MobileElement assertLastViewedDownArrow;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+    public MobileElement assertPlayBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='About']")
+    public MobileElement assertAboutSection;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='DOWNLOAD_TRANSCRIPT']")
+    public MobileElement assertDownloadTranscriptText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='download']")
+    public MobileElement clkTranscriptDownloadImage;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='DOWNLOAD_TRANSCRIPT']")
+    public MobileElement assertDOWNLOAD_TRANSCRIPTText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Spinner[@text='Select language']")
+    public MobileElement clkSltLanguage;
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='English']")
+    public  MobileElement sltEnglishLanguage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Download']")
+    public MobileElement clkTranscriptDownloadBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Jan13 Large mp4')]")
+    public MobileElement assertLargeContentTitle;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='download content Download']")
+    public MobileElement assertDisableDownloadBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'This content cannot be downloaded')]")
+    public MobileElement assertContentCanNotBeDownloadedMsg;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Select where to save the data']")
+    public MobileElement assertSelectWhereToSaveTheDataText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Storage']")
+    public MobileElement assertStorageText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[contains(@text,'phone-storage')]")
+    public MobileElement phoneStorageRadioBtn;
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[contains(@text,'sc-card-storage')]")
+    public MobileElement sdCardStorageRadioBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains@text,'Move Content to SD Card')]")
+    public MobileElement assertMoveToSDCardText;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Move']")
+    public MobileElement moveBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Content successfully moved to SD')]")
+    public MobileElement assertContentSuccessfullyMovedToSDCardMsg;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='OK']")
+    public MobileElement okBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains@text,'Move Content to Phone')]")
+    public MobileElement assertMoveToPhoneText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Content successfully moved to ')]")
+    public MobileElement assertContentMovedSuccessfullyToPhoneMsg;
+
     
 }
 

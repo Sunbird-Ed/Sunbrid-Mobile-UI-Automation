@@ -2962,9 +2962,9 @@ public void verifyMyGroupsPage() throws Exception {
 		getHomePageActions().tapOnSearchIcon();
 		getHomePageActions().enterTextInSearchBar("AutomationExpiredCourse");
 		//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("limited course");
-		getTrainingPageActions().tapOnSearchedExpiredCourse();
+		getTrainingPageActions().tapOnUpcomingBatchCourse();
 
-		getTrainingPageActions().verifyCourseWithEnrollmentEndDateIsOver();
+		getTrainingPageActions().verifyUserAbleToJoinCoursePostClickingJoinCourseBtnInUpcomingBatchCourse();
 
 	}
 

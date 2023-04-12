@@ -347,6 +347,7 @@ public class CourseScenarioSanity {
 
 		  QXClient.get().driver();
 		  getDikshaMainPageActions().performUserOnBoarding();
+		  DikshaMainPageActions d = new DikshaMainPageActions();
 		  getHomePageActions().tapOnProfileTab();
 		  QXClient.get().gestures().swipeUp();
 		  QXClient.get().gestures().swipeUp();
@@ -362,7 +363,7 @@ public class CourseScenarioSanity {
 
 		  getLoginPageActions().loginToTheUser(Username, Password);
 
-		  getHomePageActions().tapOnDownloadTab();
+		 // getHomePageActions().tapOnDownloadTab();
 
 		  getHomePageActions().tapOnMenuBar();
 
@@ -378,11 +379,12 @@ public class CourseScenarioSanity {
 		  QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
 
 
-		  getCoursePageActions().tapOnChangeUser();
+		  getCoursePageActions().tapOnChangeUserWithoutProfile();
 
 		  getCoursePageActions().tapOnTermsAndCondition();
 
 		  getCoursePageActions().tapOnContinueForSwicthUser();
+		  d.LaunchAppHomeScreen();
 
 		  getHomePageActions().tapOnTrainingTab();
 

@@ -1,6 +1,6 @@
 package com.qualitrix.pageObjects;
 
-import cucumber.api.java.sk.A;
+import cucumber.api.java.cs.A;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
@@ -166,6 +166,7 @@ public MobileElement qnWithImage;
     public MobileElement licenseBtn;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='CC BY 4.0']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by/4.0/legalcode']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by-sa/4.0/legalcode']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by/4.0/legalcode']")
@@ -256,14 +257,35 @@ public MobileElement offlineplayCont;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Share']")
     public MobileElement shareBtn1;
 
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='SEND']")
+    public MobileElement sendBtn;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Share with']")
     public MobileElement shareAlertPopUp;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='WhatsApp']")
     public MobileElement shareToWhatsApp;
 
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Slack']")
+    public MobileElement shareToSlackApp;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
+    public MobileElement clkAllowBtn;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.whatsapp:id/contactpicker_row_name']")
     public MobileElement whatsAppHomePage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Share in Slack']")
+    public MobileElement slackSharePage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'AutomationBookContent-v1.ecar')]")
+    public MobileElement assertMalformedEcarFile;
+
 
     @AndroidFindAll({
             @AndroidBy(className = "android.widget.GridView"),

@@ -236,7 +236,8 @@ public MobileElement refreshCircle;
 public MobileElement completeCourse;
 
 @AndroidFindAll({
-    @AndroidBy(xpath = "//android.widget.TextView[@text='My learning (1)']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='My learning (1)']"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]") ,
 })
 public MobileElement myLearningtext;
 
@@ -320,8 +321,10 @@ public MobileElement myLearningtext;
     @AndroidFindBy(xpath = "//android.view.View[@text='Select District']")
     public MobileElement assertSelectDistrictText;
 
-
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]//following::android.view.View[contains(@text,'Small AutomationCourseContent')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Small AutomationCourseContent')]"),
+            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]//following::android.view.View[contains(@text,'Small AutomationCourseContent')]")
+    })
     public MobileElement assertCourseInMyLearningSection;
 
     @AndroidFindAll({
@@ -340,6 +343,52 @@ public MobileElement myLearningtext;
     })
     public MobileElement clkBackBtn;
 
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Edit Role')]")
+    public MobileElement firstEditBtn;
+
+
+    @AndroidFindBy(xpath ="//android.widget.Button[contains(@text,'Edit Board')]")
+    public MobileElement secondEditBtn;
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'HT & Officials')]")
+    public MobileElement clkOnHTandOfficialsRole;
+
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Teacher']")
+    public MobileElement sltTeacherRole;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Programs']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Programs']"),
+    })
+    public MobileElement clkPrograms;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'More')]")
+    public MobileElement moreBtnInProfile;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Test']")
+    public MobileElement assertUserNameInProfile;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'User ID')]")
+    public MobileElement assertUserIDTextBelowUsername;
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Diksha')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'ID:')]"),
+      })
+    public MobileElement assertDikshaIDBelowUsername;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'test')]")
+    public MobileElement assertDikshaID;
 
 
 

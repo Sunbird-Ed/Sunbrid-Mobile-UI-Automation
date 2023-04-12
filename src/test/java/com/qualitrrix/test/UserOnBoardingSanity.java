@@ -100,7 +100,8 @@ public class UserOnBoardingSanity {
 
 		  @Author(name="Raju")
 		  
-		  @Test() public void VerifyAddUser() throws Exception {
+		  @Test()
+		  public void VerifyAddUser() throws Exception {
 	  	
 			  QXClient.get().driver();
 			  getDikshaMainPageActions().performUserOnBoarding();

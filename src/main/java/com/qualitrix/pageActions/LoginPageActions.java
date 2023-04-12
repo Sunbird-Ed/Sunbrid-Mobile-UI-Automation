@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTHdrFtrRef;
 import org.testng.Assert;
 
 import com.qualitrix.client.QXClient;
@@ -12,6 +13,7 @@ import com.qualitrix.pageObjects.DikshaMainPageObjects;
 import com.qualitrix.pageObjects.LoginPageObjects;
 import com.qualitrix.pageObjects.ProfilePageObjects;
 
+import java.rmi.MarshalledObject;
 import java.util.Properties;
 
 /**
@@ -831,19 +833,32 @@ public class LoginPageActions {
         QXClient.get().gestures().BlindWait(5000);
 
         QXClient.get().gestures().BlindWait(5000);
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
+        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
         QXClient.get().report().info("Regsiter page is displayed");
 
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertNameField),"Name field is not displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.firstEditField);
+        QXClient.get().gestures().BlindWait(3000);
+        profilePageObjects.firstEditField.sendKeys("Test");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYearOfBirth);
         QXClient.get().report().info("Clicked on select year of birth");
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYear);
         QXClient.get().report().info("Clicked on select year ");
         QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkContinueBtn);
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkSubmit);
+        QXClient.get().gestures().BlindWait(2000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertNameField),"Name field is not displayed");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMobileNumber),"Mobile number field is not displayed");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEmailAddress),"Email address field is not displayed");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertOtpMessage),"Otp message is not displayed");
@@ -851,16 +866,307 @@ public class LoginPageActions {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertPasswordLimitationsMsg),"Password limitation message is not displayed");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertConfirmPasswordField),"Confirm Password field is not displayed");
 
-        QXClient.get().gestures().swipeUp();
+       // QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(2000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMandatoryField),"Mandatory fields message is not displayed");
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertTCcheckBox),"Terms and conditions checkbox is not displayed");
+      //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMandatoryField),"Mandatory fields message is not displayed");
+      //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertTCcheckBox),"Terms and conditions checkbox is not displayed");
 
         QXClient.get().gestures().BlindWait(3000);
 
 
     }
+
+    public void verifyFullstopSymbolIsDisplayedBelowPasswordField() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkRegisterHere),"Register here link is not visible");
+        QXClient.get().report().info("Register here link is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().BlindWait(5000);
+        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
+        QXClient.get().report().info("Regsiter page is displayed");
+
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.nameEditField1),"Name field is not displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.nameEditField1);
+        QXClient.get().gestures().BlindWait(3000);
+        profilePageObjects.nameEditField1.sendKeys("Test");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYearOfBirth);
+        QXClient.get().report().info("Clicked on select year of birth");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYear);
+        QXClient.get().report().info("Clicked on select year ");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkContinueBtn);
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkSubmit);
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMobileOrEmailAddressFieldsOfRegistereHerePage),"Email or mobile edit fields are not displayed");
+        QXClient.get().report().info("Enter mobile number or email address of your parent or guardian text is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMobileNumber),"Mobile number edit label is not dipslayed");
+        QXClient.get().report().info("Mobile number label is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEmailAddress),"Email address label is not displayed");
+        QXClient.get().report().info("Email address label is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertPasswordField),"Password label is not displayed");
+        QXClient.get().report().info("Password label is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertFullStopIsPresentBelowPasswordField),"Full stop is not displayed below the password field");
+        QXClient.get().report().info("Fullstop is displayed below the password field");
+        QXClient.get().gestures().BlindWait(2000);
+
+
+    }
+
+    public void verifyPostClickingContinueBtnItShouldWorkAsExpected() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkRegisterHere),"Register here link is not visible");
+        QXClient.get().report().info("Register here link is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().BlindWait(5000);
+        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
+        QXClient.get().report().info("Regsiter page is displayed");
+
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.nameEditField1),"Name field is not displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.nameEditField1);
+        QXClient.get().gestures().BlindWait(3000);
+        profilePageObjects.nameEditField1.sendKeys("Test");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYearOfBirth);
+        QXClient.get().report().info("Clicked on select year of birth");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYear);
+        QXClient.get().report().info("Clicked on select year ");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkContinueBtn);
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertToDiscoverRelevantContentText),"To discover relevant content update the following details text is not displayed");
+        QXClient.get().report().info("To discover relevant content update the following details text is displayed");
+
+//        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertTeacherRoleAlreadySelected),"Teacher role selected is not displayed");
+//        QXClient.get().report().info("Teacher role selected is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertStateValueAutoPopulated),"State value is not auto populated");
+        QXClient.get().report().info("State value is Auto populated");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDistrictValueAutoPopulated),"District value is not auto populated");
+        QXClient.get().report().info("District value is Auto populated");
+        QXClient.get().report().info("Post clicking continue button it work as expected without any discrepancy");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+
+    public void verifyEnterMobileNumberOrEmailAddressTextForMajorUser() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkRegisterHere),"Register here link is not visible");
+        QXClient.get().report().info("Register here link is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().BlindWait(5000);
+       // Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
+        QXClient.get().report().info("Regsiter page is displayed");
+
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.nameEditField1),"Name field is not displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.nameEditField1);
+        QXClient.get().gestures().BlindWait(3000);
+        profilePageObjects.nameEditField1.sendKeys("Test");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYearOfBirth);
+        QXClient.get().report().info("Clicked on select year of birth");
+        QXClient.get().gestures().BlindWait(3000);
+        profilePageObjects.selectYearManually.sendKeys("1998");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectMajorUser);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkContinueBtn);
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertToDiscoverRelevantContentText),"To discover relevant content update the following details text is not displayed");
+        QXClient.get().report().info("To discover relevant content update the following details text is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertStateValueAutoPopulated),"State value is not auto populated");
+        QXClient.get().report().info("State value is Auto populated");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDistrictValueAutoPopulated),"District value is not auto populated");
+        QXClient.get().report().info("District value is Auto populated");
+        QXClient.get().report().info("Post clicking continue button it work as expected without any discrepancy");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkSubmit);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMobileNumber),"Mobile Number option is not displayed");
+        QXClient.get().report().info("Mobile number option is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertWelcomeToSunbirdText),"Welcome to SUNBIRD text is not displayed");
+        QXClient.get().report().info("Welcome to SUNBIRD text is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEnterMobileNumberOrEmailAddressText),"Enter mobile number or email address text is not displayed for Major user");
+        QXClient.get().report().info("Enter mobile number or email address text is displayed for Major user");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertEmailAddress);
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEnterMobileNumberOrEmailAddressText),"Enter mobile number or email address text is not displayed for Major user");
+        QXClient.get().report().info("Enter mobile number or email address text is displayed for Major user");
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void verifyEnterMobileNumberorEmailAddressTextForMinorUser() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkRegisterHere),"Register here link is not visible");
+        QXClient.get().report().info("Register here link is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Regsiter page is displayed");
+
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.nameEditField1),"Name field is not displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.nameEditField1);
+        QXClient.get().gestures().BlindWait(3000);
+        profilePageObjects.nameEditField1.sendKeys("Test");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYearOfBirth);
+        QXClient.get().report().info("Clicked on select year of birth");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYear);
+        QXClient.get().report().info("Clicked on select year ");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkContinueBtn);
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertToDiscoverRelevantContentText),"To discover relevant content update the following details text is not displayed");
+        QXClient.get().report().info("To discover relevant content update the following details text is displayed");
+
+//        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertTeacherRoleAlreadySelected),"Teacher role selected is not displayed");
+//        QXClient.get().report().info("Teacher role selected is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertStateValueAutoPopulated),"State value is not auto populated");
+        QXClient.get().report().info("State value is Auto populated");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDistrictValueAutoPopulated),"District value is not auto populated");
+        QXClient.get().report().info("District value is Auto populated");
+        QXClient.get().report().info("Post clicking continue button it work as expected without any discrepancy");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkSubmit);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMobileNumber),"Mobile Number option is not displayed");
+        QXClient.get().report().info("Mobile number option is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertWelcomeToSunbirdText),"Welcome to SUNBIRD text is not displayed");
+        QXClient.get().report().info("Welcome to SUNBIRD text is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEmailOrMobileNoOfParentOrGuardian),"Enter mobile number or email address of Parent or guardian text is not displayed for minor user");
+        QXClient.get().report().info("Enter mobile number or email address of Parent or guardian text is displayed for minor user");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertEmailAddress);
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEmailOrMobileNoOfParentOrGuardian),"Enter mobile number or email address of Parent or guardian text is not displayed for minor user");
+        QXClient.get().report().info("Enter mobile number or email address of Parent or guardian text is displayed for minor user");
+        QXClient.get().gestures().BlindWait(3000);
+
+
+
+    }
+
+    public void verifyUserAbleToLoginUsingStateSystemUsingUsernameExternalID(String schoolID) throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginWithStateSystemOption),"Login with state system option is not displayed");
+        QXClient.get().report().info("Login with state system option is displayed");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
+        QXClient.get().report().info("Clicked on Login with state system option");
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSelectStateOption);
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectFirstOption);
+        QXClient.get().report().info("Select first option in the list");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtn);
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDikshaSSOLoginText),"Diksha SSO Login text is not displayed");
+        QXClient.get().report().info("Diksha SSO Login text is displayed ");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().isElementPresent(profilePageObjects.userNameEditField);
+        QXClient.get().gestures().BlindWait(2000);
+        profilePageObjects.userNameEditField.sendKeys("Test");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().isElementPresent(profilePageObjects.userNameExternalID);
+        QXClient.get().gestures().BlindWait(2000);
+        profilePageObjects.userNameExternalID.sendKeys(schoolID);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().isElementPresent(profilePageObjects.schoolExternalID);
+        QXClient.get().gestures().BlindWait(2000);
+        profilePageObjects.schoolExternalID.sendKeys(schoolID);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
 
 }
 

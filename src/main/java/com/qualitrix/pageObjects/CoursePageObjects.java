@@ -134,7 +134,8 @@ public MobileElement assertStartLearning;
 	public MobileElement clkPersonaDropDown;
 
 	@AndroidFindAll({
-
+			@AndroidBy(xpath = "(//android.widget.TextView)[1]"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Andaman & Nicobar']"),
 			@AndroidBy(xpath = "//android.widget.TextView[@text='Andra Pradesh']"),
 			@AndroidBy(xpath = "//android.widget.TextView[@text='Andhra Pradesh']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Andhra Pradesh']"),
@@ -177,11 +178,19 @@ public MobileElement assertStartLearning;
 	   
 	   @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District')]")
 	    public MobileElement verifyDistrictLabel;
-	   
-	   @AndroidFindBy(xpath = "//android.view.View[@text='Mobile number for State or Org']")
+
+
+	   @AndroidFindAll({
+			   @AndroidBy(xpath = "//android.view.View[contains(@text,'FRMELEMNTS_LBL_MOBILE_NUMBER_PLACEHOLDER')]"),
+			   @AndroidBy(xpath = "//android.view.View[@text='Mobile number for State or Org']"),
+	   })
 	    public MobileElement verifyMobielNumberLabel;
-	   
-	   @AndroidFindBy(xpath = "//android.view.View[@text='Email address of State or Org']")
+
+
+	   @AndroidFindAll({
+			   @AndroidBy(xpath = "//android.view.View[contains(@text,'FRMELEMNTS_LBL_EMAIL_ID_PLACEHOLDER')]"),
+			   @AndroidBy(xpath = "//android.view.View[@text='Email address of State or Org']"),
+	   })
 	    public MobileElement verifyAddressLabel;
 	   
 	   @AndroidFindBy(xpath = "//android.view.View[contains(@text,'School/Organization name')]")
@@ -332,6 +341,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+			@AndroidBy(xpath = "//android.view.View[@text='Board: CBSE/NCERT \u200E']"),
 			@AndroidBy(xpath = "//android.view.View[@text='CBSE/NCERT ‎']"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'State (Andhra Pradesh)')]"),
 	})
@@ -340,6 +350,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+			@AndroidBy(xpath = "//android.view.View[@text='Medium: English']"),
 			@AndroidBy(xpath = "//android.view.View[@text='English']"),
 
 		})
@@ -347,6 +358,7 @@ public MobileElement assertStartLearning;
 	   
 	   
 	   @AndroidFindAll({
+			   @AndroidBy(xpath = "//android.view.View[contains(@text,'Classes: Class')]"),
 			   @AndroidBy(xpath = "//android.view.View[contains(@text,'Class')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='Class 1']"),
 
@@ -542,6 +554,14 @@ public MobileElement assertStartLearning;
 
 	@AndroidFindBy(xpath = "//android.view.View[@text='Course modules']")
 	public MobileElement assertCourseModules;
+
+
+	@AndroidFindBy(xpath = "//android.widget.EditText[@text='st****@yopmail.com']")
+	public MobileElement assertPrefilledEmailAddressInDeclarationForm;
+
+
+	@AndroidFindBy(xpath = "//android.widget.Image[@text='verified']")
+	public MobileElement assertEmailVerifiedImage;
 
 
 

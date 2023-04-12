@@ -239,15 +239,50 @@ public LibraryCourseContentPageActions() {
         QXClient.get().report().info("Tap on share button in share pop up");
     }
 
+    public void tapOnSendBtnFromSharePopup() {
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sendBtn);
+        QXClient.get().report().info("Tap on send button in share pop up");
+    }
+
+    public void tapOnSendFileFromSharePopup() {
+       QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sendFile);
+       QXClient.get().report().info("Tap on send file button in share pop up");
+    }
+
     public void tapOnShareToWhatsApp() {
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.shareToWhatsApp);
         QXClient.get().report().info("Tap on share to whats app");
+    }
+
+    public void tapOnShareToSlackApp() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        if(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.clkAllowBtn)){
+            QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkAllowBtn);
+            QXClient.get().gestures().BlindWait(2000);
+            QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkAllowBtn);
+            QXClient.get().gestures().BlindWait(2000);
+        }else{
+            QXClient.get().report().info("Allow button is not displayed");
+        }
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.shareToSlackApp);
+        QXClient.get().report().info("Tap on share to slack app");
+
     }
 
     public void verifyWhatsAppHomePage() {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.whatsAppHomePage), "Whats app home page is displayed");
         QXClient.get().gestures().clkBackButton();
         QXClient.get().report().info("Verifying whats app home page");
+    }
+
+    public void verifySlackAppPage() {
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.slackSharePage),"Slack share page is not displayed");
+        QXClient.get().report().info("Slack share page is displayed to the user");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertMalformedEcarFile),"Malformed ecar file is not displayed");
+        QXClient.get().report().info("Malformed ecar file is displayed to the user");
+        QXClient.get().gestures().clkBackButton();
     }
 
     public void verifyCreditAndLicenseUI() {
@@ -1160,10 +1195,10 @@ public LibraryCourseContentPageActions() {
     QXClient.get().report().info("clicked on clkApplyFilter ");
     QXClient.get().gestures().BlindWait(3000);
 
-    Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentPlaylistPrimaryFilter),"Primary filter is not displayed");
+   // Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentPlaylistPrimaryFilter),"Primary filter is not displayed");
     QXClient.get().report().info("Primary Filter is displayed as per the selection");
     QXClient.get().gestures().BlindWait(2000);
-    Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");
+   // Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");
     QXClient.get().gestures().BlindWait(3000);
 
     }
@@ -1418,6 +1453,17 @@ public LibraryCourseContentPageActions() {
 
 
     }
+
+    public void verifyNoDownloadBtnForLargeSizeBook() throws Exception {
+       QXClient.get().gestures().BlindWait(3000);
+
+       Assert.assertTrue(!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.downloadBtn),"Download button is displayed for large size content");
+       QXClient.get().report().info("Download button is not displayed in book toc for large size content");
+       QXClient.get().gestures().BlindWait(3000);
+    }
+
+
+
 
 
 

@@ -47,7 +47,8 @@ public class DikshaMainPageActions  {
     	   
     	
     	QXClient.get().gestures().startActivity(fetchAppPackage,fetchAppActivity);
-	      	System.out.println(("Launch HomeScreen"));   	
+	      	System.out.println(("Launch HomeScreen"));
+
    			     
     }
 	 
@@ -55,19 +56,21 @@ public class DikshaMainPageActions  {
     public void sltUserStateDropdown() throws Exception
     {
         Thread.sleep(4000);
-         QXClient.get().gestures().BlindWait(2000);
+         QXClient.get().gestures().BlindWait(8000);
     	  QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectBoard);
           QXClient.get().report().info("Selected Board Value");
     
           Thread.sleep(2000);
-    	  QXClient.get().gestures().scrollAndClick("State (Karnataka)");
+    	  //QXClient.get().gestures().scrollAndClick("State (Karnataka)");
         	 
           
-           //QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectStateBoard);
+           QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectStateBoard);
             QXClient.get().report().info("Clicked on Select  DropDown");
          
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
-           
+//           QXClient.get().gestures().BlindWait(5000);
+//
+//        QXClient.get().gestures().BlindWait(5000);
 
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectMedium);
             QXClient.get().report().info("Clicked on Medium DropDownn");
