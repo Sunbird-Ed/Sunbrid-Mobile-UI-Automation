@@ -2420,71 +2420,42 @@ public class UBScenarioSanity3 {
 
 	}
 
-*/     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-		description = "switchingToManageLearnFromDifferentRole ")
-public void switchingToManageLearnFromDifferentRole() throws Exception {
-	QXClient.get().driver();
-	getDikshaMainPageActions().performUserOnBoarding();
-	DikshaMainPageActions d=new DikshaMainPageActions();
-	getHomePageActions().tapOnProfileTab();
-	Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-			properties.getProperty("excelpath"));
-
-	String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-	String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-	String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-
-	QXClient.get().gestures().swipeUp();
-	QXClient.get().gestures().swipeUp();
-
-	getLoginPageActions().loginToTheUser(Username,Password);
+*/
 
 
 
-	getHomePageActions().tapOnProfileTab();
-
-	getProfileEditPageActions().changeRoleAndValidateHeadTeachersAndOfficials();
-	//getHomePageActions().tapOnHomeTab();
-	getHomePageActions().verifySectionsInHomePage();
-
-	QXClient.get().gestures().closeApp();
-	d.LaunchAppHomeScreen();
-
-	getHomePageActions().tapOnProfileTab();
-	getProfileEditPageActions().changeStudentRole();
-
-	QXClient.get().gestures().closeApp();
-	d.LaunchAppHomeScreen();
-
-	getHomePageActions().tapOnProfileTab();
-	getProfileEditPageActions().changeRoleAndValidateHeadTeachersAndOfficials();
-	//getHomePageActions().tapOnHomeTab();
-	getHomePageActions().verifySectionsInHomePage();
-
-	QXClient.get().gestures().closeApp();
-	d.LaunchAppHomeScreen();
 
 
-	getHomePageActions().tapOnProfileTab();
-	getProfileEditPageActions().changeParentRole();
-
-	QXClient.get().gestures().closeApp();
-	d.LaunchAppHomeScreen();
-
-	getHomePageActions().tapOnProfileTab();
-	getProfileEditPageActions().changeRoleAndValidateHeadTeachersAndOfficials();
-	//getHomePageActions().tapOnHomeTab();
-	getHomePageActions().verifySectionsInHomePage();
-
-	QXClient.get().gestures().closeApp();
-	d.LaunchAppHomeScreen();
-
-	getHomePageActions().tapOnProfileTab();
-	getProfileEditPageActions().changeTeacherRole();
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

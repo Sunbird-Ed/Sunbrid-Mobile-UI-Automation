@@ -751,7 +751,10 @@ public MobileElement clkMeantFor;
     public MobileElement assertResetFilterBtn;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Medium']//following::android.widget.Image[1]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Select Medium')]"),
+             @AndroidBy(xpath = "//android.view.View[@text='Medium']//following::android.widget.Image[1]"),
+     })
     public MobileElement clkMediumFilter;
 
 
@@ -763,11 +766,17 @@ public MobileElement clkMeantFor;
     public  MobileElement clkSubmitBtn;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Class']//following::android.widget.Image[1]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Select Class')]"),
+             @AndroidBy(xpath = "//android.view.View[@text='Class']//following::android.widget.Image[1]"),
+     })
     public MobileElement clkClassFilter;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Publisher']//following::android.widget.Image[1]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Select Publisher')]"),
+             @AndroidBy(xpath = "//android.view.View[@text='Publisher']//following::android.widget.Image[1]"),
+     })
     public MobileElement clkPublisherFilter;
 
 
@@ -775,7 +784,10 @@ public MobileElement clkMeantFor;
     public MobileElement clkApplyFilterBtn;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Assamese')]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
+             @AndroidBy(xpath = "//android.view.View[contains(@text,'Assamese')]"),
+     })
     public MobileElement assertInteractiveContentAfterFiltering;
 
 
@@ -929,7 +941,11 @@ public MobileElement clkMeantFor;
     @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Select Media Type')]")
     public MobileElement clkOnSelectMediaType;
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Explanation Content']//following::android.view.View[3]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'CLASSROOMTEACHINGVIDEO')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'MP4')]"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Explanation Content']//following::android.view.View[3]"),
+    })
     public MobileElement assertContentForTVClasses;
 
     @AndroidFindAll({
@@ -938,6 +954,22 @@ public MobileElement clkMeantFor;
             @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
     })
     public MobileElement clkBackBtn;
+
+
+    @AndroidFindBy(xpath = "(//android.widget.CheckBox)[2]")
+    public MobileElement filterMediaType2;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ToggleButton")
+    public MobileElement videoToggleBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Page')]")
+    public MobileElement assertPageText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Location')]")
+    public MobileElement assertLocationText;
 }
 
 

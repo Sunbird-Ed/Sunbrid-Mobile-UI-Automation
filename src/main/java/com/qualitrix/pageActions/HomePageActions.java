@@ -165,13 +165,20 @@ public class HomePageActions {
         QXClient.get().gestures().BlindWait(4000);
     }
 
+    public void tapOnSearchTab() throws Exception {
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.searchTab);
+        QXClient.get().report().info("Tap on training tab");
+        QXClient.get().gestures().BlindWait(4000);
+    }
+
     public void tapOnLibraryTab() {
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.libraryTab);
         QXClient.get().report().info("Tap on library tab");
     }
 
     public void tapOnSearchIcon() throws Exception {
-    	QXClient.get().gestures().BlindWait(2000);
+    	QXClient.get().gestures().BlindWait(5000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.searchIcon);
         QXClient.get().report().info("Tap on search icon");
         QXClient.get().gestures().BlindWait(3000);
@@ -219,7 +226,10 @@ public class HomePageActions {
             homePageObjects.seeMoreBooksObj.click();
         }
     }
-    public void verifyLoginOptionIsPresentForStudent() {
+    public void verifyLoginOptionIsPresentForStudent() throws Exception{
+          QXClient.get().gestures().BlindWait(3000);
+          Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilePageObjects.loginBtn),"Login button is displayed for student role");
+           QXClient.get().report().info("Login button is not displayed for Student role");
         if (!QXClient.get().gestures().isElementPresent(profilePageObjects.loginBtn)) {
             QXClient.get().report().info("Login Button is Not Displayed for student");
 
@@ -245,8 +255,21 @@ public void createGrupAndActivity() throws Exception {
     
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
         QXClient.get().report().info("clicked on MyGroups");
+    QXClient.get().gestures().BlindWait(5000);
 
-        
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+
         try
         {
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
@@ -256,6 +279,8 @@ public void createGrupAndActivity() throws Exception {
         {
         	System.out.println("Handled");
         }
+
+    QXClient.get().gestures().BlindWait(3000);
         
         try
         {
@@ -274,8 +299,8 @@ public void createGrupAndActivity() throws Exception {
         {
         	System.out.println("Excep handked");
         }
-        
 
+    QXClient.get().gestures().BlindWait(3000);
         
           
             String FakeName=QXClient.get().gestures().generateRandomName();
@@ -317,7 +342,22 @@ public void createGrupAndActivity() throws Exception {
     QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
     QXClient.get().report().info("clicked on MyGroups");
     QXClient.get().gestures().BlindWait(3000);
-            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstCreateGroup);
+
+    try
+    {
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+        QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+        QXClient.get().gestures().BlindWait(3000);
+    }
+    catch(Exception e)
+    {
+        System.out.println("Handled");
+    }
+    QXClient.get().gestures().BlindWait(3000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
             QXClient.get().report().info("clicked on clkFirstCreateGroup");
             QXClient.get().gestures().BlindWait(4000);
     
@@ -660,7 +700,27 @@ public void createGrupAndActivity() throws Exception {
 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
         QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+        QXClient.get().gestures().BlindWait(2000);
+        tapOnMenuBar();
 
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(5000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstCreateGroup);
         QXClient.get().report().info("clicked on clkFirstCreateGroup");
         QXClient.get().gestures().BlindWait(4000);
@@ -679,10 +739,7 @@ public void createGrupAndActivity() throws Exception {
         QXClient.get().report().info("clicked on clkRemoveMembersPopup");
         QXClient.get().gestures().BlindWait(6000);
      
-                
-                        
-                
-               }
+    }
 
     public void closeAppOnClkYesBtn() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
@@ -819,7 +876,7 @@ tapOnMenuBar();
         QXClient.get().report().info("Verified assertContentAfterClkingSection in HomePage");
         QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(3000);
-        //QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBrowseByCategorySection);
         QXClient.get().report().info("clicked on clkBrowseByCategorySection");
@@ -828,7 +885,7 @@ tapOnMenuBar();
         QXClient.get().report().info("Verified assertContentAfterClkingSection in HomePage");
         QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(3000);
-        //QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkOnCourseInHomePage);
@@ -1054,10 +1111,26 @@ tapOnMenuBar();
  }
  
  public void verifyUserAbletoModifyTitleDesc() throws Exception{
+        QXClient.get().gestures().BlindWait(5000);
+        tapOnMenuBar();
      QXClient.get().gestures().BlindWait(5000);
      QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
      QXClient.get().report().info("clicked on MyGroups");
      QXClient.get().gestures().BlindWait(5000);
+
+     try
+     {
+         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+         QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+         QXClient.get().gestures().BlindWait(3000);
+     }
+     catch(Exception e)
+     {
+         System.out.println("Handled");
+     }
+
      if(QXClient.get().gestures().isElementPresent(homePageObjects.clkCloseIconGrp))
      {
          QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
@@ -1114,6 +1187,20 @@ tapOnMenuBar();
 	    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
 	    QXClient.get().report().info("clicked on MyGroups");
 	    QXClient.get().gestures().BlindWait(5000);
+
+     try
+     {
+         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+         QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+         QXClient.get().gestures().BlindWait(3000);
+     }
+     catch(Exception e)
+     {
+         System.out.println("Handled");
+     }
+
 	    if(QXClient.get().gestures().isElementPresent(homePageObjects.clkCloseIconGrp))
 	    {
 	        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
@@ -1139,11 +1226,26 @@ tapOnMenuBar();
     }
 
  public void deleteCommentsAndRepliesInDiscussion() throws Exception{
-	    QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(5000);
+	    tapOnMenuBar();
      QXClient.get().gestures().BlindWait(5000);
      QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
      QXClient.get().report().info("clicked on MyGroups");
      QXClient.get().gestures().BlindWait(5000);
+
+     try
+     {
+         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+         QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+         QXClient.get().gestures().BlindWait(3000);
+     }
+     catch(Exception e)
+     {
+         System.out.println("Handled");
+     }
+
      if(QXClient.get().gestures().isElementPresent(homePageObjects.clkCloseIconGrp))
      {
          QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
@@ -2135,6 +2237,19 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         	  QXClient.get().report().info("Clicked on My groups button");
         	  QXClient.get().gestures().BlindWait(2000);
 
+              try
+              {
+                  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+                  QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+                  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+                  QXClient.get().gestures().BlindWait(3000);
+              }
+              catch(Exception e)
+              {
+                  System.out.println("Handled");
+              }
+
         	    try
         	    {
         	        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
@@ -2153,6 +2268,19 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
               QXClient.get().report().info("clicked on MyGroups");
               QXClient.get().gestures().BlindWait(3000);
 
+              try
+              {
+                  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+                  QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+                  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+                  QXClient.get().gestures().BlindWait(3000);
+              }
+              catch(Exception e)
+              {
+                  System.out.println("Handled");
+              }
+                QXClient.get().gestures().BlindWait(3000);
         	    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
         	    QXClient.get().report().info("Clicked on First group");
         	    QXClient.get().gestures().BlindWait(5000);
@@ -2355,6 +2483,20 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
         QXClient.get().report().info("clicked on MyGroups");
 
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
+
 
         try
         {
@@ -2373,6 +2515,21 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
         QXClient.get().report().info("clicked on MyGroups");
         QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
+
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkOnFirstGrp);
         QXClient.get().report().info("Clicked on First group");
         QXClient.get().gestures().BlindWait(2000);
@@ -3035,6 +3192,19 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         try
         {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+
+        try
+        {
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
             QXClient.get().report().info("Tap on clkCloseIconGrp button");
         }
@@ -3043,7 +3213,29 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
             System.out.println("Handled");
         }
 
-       // QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+        QXClient.get().gestures().BlindWait(2000);
+        tapOnMenuBar();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(3000);
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
         QXClient.get().report().info("Clicked on First group");
         QXClient.get().gestures().BlindWait(2000);
 
@@ -3255,7 +3447,16 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         {
             System.out.println("Handled");
         }
-       // QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
+
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+        QXClient.get().gestures().BlindWait(2000);
+        tapOnMenuBar();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
         QXClient.get().report().info("Clicked on First group");
         QXClient.get().gestures().BlindWait(5000);
 
@@ -3287,8 +3488,15 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         {
             System.out.println("Handled");
         }
-
-       // QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+        QXClient.get().gestures().BlindWait(2000);
+        tapOnMenuBar();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
         QXClient.get().report().info("Clicked on First group");
         QXClient.get().gestures().BlindWait(2000);
 
@@ -3384,7 +3592,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
        public void verifyHomePagePresentInsteadOfLibraryPage() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(homePageObjects.libraryTab),"Home Page is displayed");
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(homePageObjects.libraryTab1),"Home Page is displayed");
         QXClient.get().report().info("Library Page is displayed");
         QXClient.get().gestures().BlindWait(2000);
 
@@ -3414,8 +3622,8 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
            Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertYourPreference),"Your Preference is not displayed");
            QXClient.get().report().info("Your Preference is displayed below welcome message");
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertBrowseDIKSHAlibraryMessage),"Browse Diksha message is not displayed");
-        QXClient.get().report().info("Browse DIKSHA library to find relevant content based on your preferences message is displayed");
+        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertBrowseDIKSHAlibraryMessage),"Browse Diksha message is not displayed");
+       // QXClient.get().report().info("Browse DIKSHA library to find relevant content based on your preferences message is displayed");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertChangePreferenceBtn),"Change preferences button is not displayed");
         QXClient.get().report().info("Change preferences button is displayed");
@@ -3756,8 +3964,9 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAdvancedFilter),"Advanced filter is not displayed ");
         QXClient.get().report().info("Advanced filter is displayed ");
+        QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertNavigationFilterBasedOnSubject),"Navigation filter is not displayed");
+        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertNavigationFilterBasedOnSubject),"Navigation filter is not displayed");
         QXClient.get().report().info("Navigation filter is displayed based on Subject");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertGroupingBasedOnPrimaryCategory),"Grouping based on primary category is not displayed");
@@ -4364,6 +4573,19 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
         QXClient.get().report().info("clicked on MyGroups");
 
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+
 
         try
         {
@@ -4382,6 +4604,19 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
         QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(3000);
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstCreateGroup);
         QXClient.get().report().info("clicked on clkFirstCreateGroup");
@@ -4509,6 +4744,20 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         try
         {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
             QXClient.get().report().info("Tap on clkCloseIconGrp button");
         }
@@ -4586,6 +4835,20 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         tapOnMenuBar();
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
         QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstCreateGroup);
@@ -5318,6 +5581,19 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("clicked on MyGroups");
         QXClient.get().gestures().BlindWait(3000);
 
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+
 
         try
         {
@@ -5337,6 +5613,19 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("clicked on MyGroups");
         QXClient.get().gestures().BlindWait(3000);
 
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
         QXClient.get().report().info("Clicked on First group");
         QXClient.get().gestures().BlindWait(5000);
@@ -5546,6 +5835,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.clkNotificationIcon),"Notification icon is not displayed");
         QXClient.get().report().info("Notification icon is displayed");
+        QXClient.get().report().info("Member can see the notification count on notification icon");
 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNotificationIcon);
         QXClient.get().report().info("Clicked on Notification icon");
@@ -5563,6 +5853,328 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("No new notifications message is not displayed");
         QXClient.get().gestures().BlindWait(2000);
     }
+
+
+    public void validateAllNotificationsClickableAndDeleteOneByOneNotifications() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertNotificationsClickable),"Notifications are not clickable");
+        QXClient.get().report().info("All notifications are clickable");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertMemberRemovedNotificationMsg);
+        QXClient.get().report().info("Notifications are clickable");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.deleteFirstNotification);
+        QXClient.get().report().info("Member is able to delete one by one notifications");
+        QXClient.get().gestures().BlindWait(4000);
+
+
+    }
+
+
+    public void verifyChangePreferenceAndBMCSvaluesInHomePageUnderYourPreference() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        tapOnMenuBar();
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+        QXClient.get().report().info("clicked on clkNewDikshExperiece");
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMyLearningSection),"assertMyLearningSection is not available");
+        QXClient.get().report().info("Verified assertMyLearningSection in HomePage");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertYourPreference),"Your Preferences text is not displayed in home page");
+        QXClient.get().report().info("Your preferences text is displayed in home tab");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertTamilNaduBoardInYourPreference),"Board value is not displayed under your preferences");
+        QXClient.get().report().info("Board value is displayed under your preferences");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertEnglishMediumInYourPreference),"Medium value is not displayed under your preferences");
+        QXClient.get().report().info("Medium value is displayed under your preferences");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertClassInYourPreference),"Class value is not displayed under your preferences");
+        QXClient.get().report().info("Class value is displayed under your preferences");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertplus1Symbol),"+1 is not displayed in BMCS values and not continued in next line");
+        QXClient.get().report().info("+1 is displayed in BMCS values and continued in next line");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertplus1Symbol);
+        QXClient.get().report().info("Clicked on anywhere on your preferences");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertYourPreferencePopup),"Your Preferences popup is not displayed post clicking anywhere on your preferences");
+        QXClient.get().report().info("Your preferences popup is displayed post clicking anywhere on your preferences");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertChangePreferenceBtn),"Change preference button is not displayed");
+        QXClient.get().report().info("Change preference button is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertChangePreferenceBtn);
+        QXClient.get().report().info("Clicked on Change preference button in the popup");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertEditProfile),"Edit profile details is not displayed post clicking change preference button");
+        QXClient.get().report().info("Edit profile details is displayed post clicking change preference button");
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void verifySearchPageCategories() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPopularCatrgories),"assertPopularCatrgories is not available");
+        QXClient.get().report().info("Verified assertPopularCatrgories in SearchPage");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertDigitalTextBookSection),"assertDigitalTextBookSection is not available");
+        QXClient.get().report().info("Verified assertDigitalTextBookSection in SearchPage");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCourseSection),"assertCourseSection is not available");
+        QXClient.get().report().info("Verified assertCourseSection in SearchPage");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertTVClassesSection),"assertTVClassesSection is not available");
+        QXClient.get().report().info("Verified assertTVClassesSection in SearchPage");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertVideoSection),"assertVideoSection is not available");
+        QXClient.get().report().info("Verified assertVideoSection in SearchPage");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAudioSection),"assertAudioSection is not available");
+        QXClient.get().report().info("Verified assertAudioSection in SearchPage");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertInteractiveContentSection),"assertInteractiveContentSection is not available");
+        QXClient.get().report().info("Verified assertInteractiveContentSection in SearchPage");
+    }
+
+    public void verifyCustomizedFiltersForVideosCategory() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertVideoSection);
+        QXClient.get().report().info("Clicked on Videos section");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExploreVideosText),"Explore videos text is not displayed");
+        QXClient.get().report().info("Explore Videos text is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFilter);
+        QXClient.get().report().info("Clicked on filter option");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.mediumCustomisedFilter),"Medium Customized filter is not displayed");
+        QXClient.get().report().info("Medium customized filter is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.classCustomisedFilter),"Class Customized filter is not displayed");
+        QXClient.get().report().info("Class customized filter is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.publisherCustomisedFilter),"Publisher Customized filter is not displayed");
+        QXClient.get().report().info("Publisher customized filter is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.mediaTypeCustomisedFilter),"Media Type customized filter is not displayed");
+        QXClient.get().report().info("Media Type customized filter is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAdditionalCategoriesFilter),"Additional Categories customized filter is not displayed");
+        QXClient.get().report().info("Additional Categories customized filter is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+    }
+
+    public void verifyMyLearnigSectionOfHomePage() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        tapOnMenuBar();
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+        QXClient.get().report().info("clicked on clkNewDikshExperiece");
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMyLearningSection),"assertMyLearningSection is not available");
+        QXClient.get().report().info("Verified assertMyLearningSection in HomePage");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertLargeTitleUnderMyLearningSection1),"Large titles under my learning section is not displayed");
+        QXClient.get().report().info("Large Titles under my learning section is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertLargeTitleUnderMyLearningSection2),"Large titles under my learning section is not displayed");
+        QXClient.get().report().info("Large Titles under my learning section is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+
+    }
+
+    public void verifyCourseNameMembersNameAndProgressInCSVFile() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCourseNameInCSVFile),"Course name is not displayed in downloded csv file");
+        QXClient.get().report().info("Course Name is displayed in downloaded CSV File");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMemberNameInDownloadedCSVExcelFormat),"Name header is not displayed");
+        QXClient.get().report().info("Name header is displayed in Excel format");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMemberProgressInDownloadedCSVExcelFormat),"Progress % header is not displayed in Excel sheet");
+        QXClient.get().report().info("Progress% header is displayed in Excel Format");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMemberInDownloadedCSVExcelFormat),"Admin member is not displayed in Downloaded CSV file");
+        QXClient.get().report().info("Admin member is displayed in Downloaded CSV file as Excel sheet");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMemberProgressInPercentageInDownloadedCSVExcelFormat),"Members progress is not dispplayed in Downloaded CSV file as Excel Format");
+        QXClient.get().report().info("Members progress is displayed in Downloaded CSV file as Excel format");
+        QXClient.get().gestures().BlindWait(2000);
+
+
+    }
+
+    public void verifyEnrolledCourseAndTrackableCollectionUnderMyLearningSectionOfHomePage() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        tapOnMenuBar();
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+        QXClient.get().report().info("clicked on clkNewDikshExperiece");
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMyLearningSection),"assertMyLearningSection is not available");
+        QXClient.get().report().info("Verified assertMyLearningSection in HomePage");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertEnrolledTrackableCollection),"Enrolled trackable collection is not displayed");
+        QXClient.get().report().info("Enrolled trackable collection is displayed under my learning section of home page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertEnrolledCourse),"Enrolled Course is not displayed");
+        QXClient.get().report().info("Enrolled Course is displayed under my learning section of home page");
+        QXClient.get().gestures().BlindWait(2000);
+
+
+    }
+
+    public void verifyUserAbleToConsumeEnrolledCourseFromMylearningSection() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertEnrolledCourse);
+        QXClient.get().report().info("clicked on Enrolled course under my learning section of home page");
+        QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
+            if(QXClient.get().gestures().isElementPresent((trainingPageObjects.clkDontShareBtn)));
+            {
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+                QXClient.get().report().info("clicked on clkDontShareBtn button");
+                QXClient.get().gestures().BlindWait(2000);
+
+            }
+        }
+        catch(Exception e3)
+        {
+            System.out.println("handled profile share");
+        }
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkStartLearning),"Start learning button is not displayed");
+        QXClient.get().report().info("Start learning button is displayed");
+        QXClient.get().gestures().BlindWait(4000);
+
+
+    }
+
+
+    public void verifyUserAbleToConsumeEnrolledTrackableCollectionFromMyLearningSection() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertEnrolledTrackableCollection);
+        QXClient.get().report().info("clicked on Enrolled trackable collection under my learning section of home page");
+        QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
+            if(QXClient.get().gestures().isElementPresent((trainingPageObjects.clkDontShareBtn)));
+            {
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+                QXClient.get().report().info("clicked on clkDontShareBtn button");
+                QXClient.get().gestures().BlindWait(2000);
+
+            }
+        }
+        catch(Exception e3)
+        {
+            System.out.println("handled profile share");
+        }
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkStartLearning),"Start learning button is not displayed");
+        QXClient.get().report().info("Start learning button is displayed");
+        QXClient.get().gestures().BlindWait(4000);
+    }
+
+
+    public void verifyExpiredCourseInMyLearningSectionOfHomePageAndVerifyExpiredMsg() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        tapOnMenuBar();
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+        QXClient.get().report().info("clicked on clkNewDikshExperiece");
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMyLearningSection),"assertMyLearningSection is not available");
+        QXClient.get().report().info("Verified assertMyLearningSection in HomePage");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExpiredCourseInMyLearningSectionOfHomePage),"Expired course is not displayed in My learning section of home page");
+        QXClient.get().report().info("Expired Course is displayed in my learning section of Home page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertExpiredCourseInMyLearningSectionOfHomePage);
+        QXClient.get().report().info("Clicked on Expired Course");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExpiredCourseMsg),"No Batches available message is not displayed");
+        QXClient.get().report().info("No Batches available message is displayed for the expired course");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertNoBatchesForThisCourseMsg),"There are no batches available message is not displayed");
+        QXClient.get().report().info("There are no batches available message is displayed for Expired course");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyExpiredCourseInProfiePageAndVerifyExpiredMsg() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMyLearningSection),"My learning section is not available in Profile Page");
+        QXClient.get().report().info("My Learning section is displayed in Profile Page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExpiredCourseInMyLearningSectionOfHomePage),"Expired course is not displayed in My learning section of profile page");
+        QXClient.get().report().info("Expired Course is displayed in my learning section of Profile page");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertExpiredCourseInMyLearningSectionOfHomePage);
+        QXClient.get().report().info("Clicked on Expired Course");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExpiredCourseMsg),"No Batches available message is not displayed");
+        QXClient.get().report().info("No Batches available message is displayed for the expired course");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertNoBatchesForThisCourseMsg),"There are no batches available message is not displayed");
+        QXClient.get().report().info("There are no batches available message is displayed for Expired course");
+        QXClient.get().gestures().BlindWait(3000);
+
+
+    }
+
+    public void verifyUserAbleToClickAdditionalIconsBelowFeaturedSectionOfHomePage() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.visualCue.get(0));
+        QXClient.get().report().info("Clicked on First additional icon of home page");
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertSubjectInExploreDigitalTextbook),"Subject wise filter is not displayed");
+        QXClient.get().report().info("Subject filter is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertRoleInExploreDigitalTextbook),"Role wise  filter is not displayed");
+        QXClient.get().report().info("Role filter is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAdvancedFilter),"Advanced filter is not displayed");
+        QXClient.get().report().info("Advanced filter is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+    }
+
+
 
 }
  

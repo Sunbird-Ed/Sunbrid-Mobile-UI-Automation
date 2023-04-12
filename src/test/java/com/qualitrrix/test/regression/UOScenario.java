@@ -185,8 +185,6 @@ public class UOScenario {
 			  QXClient.get().gestures().swipeUp();
 			  QXClient.get().gestures().swipeUp();
 
- 		  
-  	  
   		getCoursePageActions().updateProfileDetails();
   	
   	  
@@ -307,7 +305,7 @@ public class UOScenario {
 		  QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
 		  
 		  
-		  getCoursePageActions().tapOnChangeUser(); 
+		  getCoursePageActions().tapOnChangeUserWithoutProfile();
 		  
 		  getCoursePageActions().tapOnTermsAndCondition();
 		  
@@ -365,9 +363,11 @@ public class UOScenario {
 				  getHomePageActions().tapOnMenuBar();
 				  getCoursePageActions().tapOnMoreOption();
 				  getCoursePageActions().clickFirstUser();
-				  getCoursePageActions().tapOnChangeUser();
-				  getCoursePageActions().CheckTermsCheckBoxORClickProfile();
-				  getCoursePageActions().verifyDistricAndState();
+			 getCoursePageActions().tapOnChangeUserWithoutProfile();
+			 getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+			 d.LaunchAppHomeScreen();
+			 getHomePageActions().tapOnProfileTab();
+			 getCoursePageActions().verifyDistricAndState();
 				  
 				  }
 		    
@@ -412,7 +412,7 @@ public class UOScenario {
 			  QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
 			  
 			  
-			  getCoursePageActions().tapOnChangeUser(); 
+			  getCoursePageActions().tapOnChangeUserWithoutProfile();
 			  
 			  getCoursePageActions().tapOnTermsAndCondition();
 			  
@@ -1153,7 +1153,7 @@ public class UOScenario {
 		getHomePageActions().tapOnMenuBar();
 		getCoursePageActions().tapOnMoreOption();
 		getCoursePageActions().clickFirstUser();
-		getCoursePageActions().tapOnChangeUser();
+		getCoursePageActions().tapOnChangeUserWithoutProfile();
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
 
 		getProfileEditPageActions().verifyNoYOBpopupForAnyUser();
@@ -1311,7 +1311,7 @@ public class UOScenario {
 
 		getLoginPageActions().loginToTheUser(Username,Password);
 
-		getHomePageActions().tapOnTrainingTab();
+		//getHomePageActions().tapOnTrainingTab();
 		getHomePageActions().tapOnProfileTab();
 		QXClient.get().gestures().swipeUp();
 
@@ -1320,13 +1320,14 @@ public class UOScenario {
 		DikshaMainPageActions d=new DikshaMainPageActions();
 		QXClient.get().gestures().closeApp();
 		d.LaunchAppHomeScreen();
-		getHomePageActions().tapOnTrainingTab();
+		//getHomePageActions().tapOnTrainingTab();
 
 		getHomePageActions().tapOnMenuBar();
 		getCoursePageActions().tapOnMoreOption();
 		getCoursePageActions().clickFirstUser();
-		getCoursePageActions().tapOnChangeUser();
+		getCoursePageActions().tapOnChangeUserWithoutProfile();
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		d.LaunchAppHomeScreen();
 		getCoursePageActions().verifyDistricAndState();
 
 		getHomePageActions().tapOnProfileTab();
@@ -1508,6 +1509,7 @@ public class UOScenario {
 
 		QXClient.get().driver();
 		getDikshaMainPageActions().performUserOnBoarding();
+		DikshaMainPageActions d = new DikshaMainPageActions();
 		getHomePageActions().tapOnProfileTab();
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();
@@ -1530,8 +1532,10 @@ public class UOScenario {
 		getHomePageActions().tapOnMenuBar();
 		getCoursePageActions().tapOnMoreOption();
 		getCoursePageActions().clickFirstUser();
-		getCoursePageActions().tapOnChangeUser();
+		getCoursePageActions().tapOnChangeUserWithoutProfile();
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		d.LaunchAppHomeScreen();
+		getHomePageActions().tapOnProfileTab();
 		getCoursePageActions().verifyDistricAndState();
 		getProfileEditPageActions().verifyNoYOBpopupForAnyUser();
 

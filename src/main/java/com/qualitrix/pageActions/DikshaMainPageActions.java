@@ -63,7 +63,7 @@ public class DikshaMainPageActions  {
     	  QXClient.get().gestures().scrollAndClick("State (Karnataka)");
         	 
           
-          // QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectStateBoard);
+           //QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectStateBoard);
             QXClient.get().report().info("Clicked on Select  DropDown");
          
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
@@ -96,7 +96,7 @@ public class DikshaMainPageActions  {
     }
     public void performUserOnBoarding() throws Exception {
             //try {
-        QXClient.get().report().info("slt language");
+                QXClient.get().report().info("slt language");
                 QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
  
                 ProfileEditPageActions pageaction=new ProfileEditPageActions();

@@ -124,7 +124,36 @@ public class CoursePageActions  {
         QXClient.get().report().info("Tap on change User");
         QXClient.get().gestures().BlindWait(3000);
         if(QXClient.get().gestures().isElementPresent(coursePageObjects.clkGoToProfile)){
+            //QXClient.get().gestures().BlindWait(3000);
             QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkGoToProfile);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void tapOnChangeUserWithoutProfile() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.changeUser);
+        QXClient.get().report().info("Tap on change User");
+        QXClient.get().gestures().BlindWait(3000);
+        if(QXClient.get().gestures().isElementPresent(coursePageObjects.clkGoToProfile)){
+            QXClient.get().gestures().BlindWait(3000);
+           // QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkGoToProfile);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void tapOnChangeUser1() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.changeUser);
+        QXClient.get().report().info("Tap on change User");
+        QXClient.get().gestures().BlindWait(3000);
+        if(QXClient.get().gestures().isElementPresent(coursePageObjects.clkGoToProfile)){
+            QXClient.get().gestures().BlindWait(2000);
+             QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkGoToProfile);
             QXClient.get().gestures().BlindWait(3000);
         }
         QXClient.get().gestures().BlindWait(3000);

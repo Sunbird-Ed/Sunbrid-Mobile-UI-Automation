@@ -137,12 +137,13 @@ public class UserOnBoardingSanity {
 		  QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
 		  
 		  
-		  getCoursePageActions().tapOnChangeUser(); 
+		  getCoursePageActions().tapOnChangeUserWithoutProfile();
 		  
 		  getCoursePageActions().tapOnTermsAndCondition();
 		  
 		  getCoursePageActions().tapOnContinueForSwicthUser();
-		  
+
+		  d.LaunchAppHomeScreen();
 
 			  getHomePageActions().tapOnDownloadTab();
 

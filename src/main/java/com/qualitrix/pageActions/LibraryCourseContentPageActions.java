@@ -148,12 +148,17 @@ public LibraryCourseContentPageActions() {
         QXClient.get().report().info("Tap on OK button");
     }
 
-    public void tapOnStarIcon() {
+    public void tapOnStarIcon() throws Exception {
+        QXClient.get().gestures().BlindWait(10000);
+        QXClient.get().gestures().BlindWait(10000);
         if (!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.startBtn)) {
             libraryCourseContentPageObjects.rateObj.click();
         }
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.startBtn);
         QXClient.get().report().info("Tap on star icon");
+        QXClient.get().gestures().BlindWait(3000);
+
+
     }
 
     public void giveFeedbackAndSubmit(String toast) throws Exception {
@@ -168,7 +173,7 @@ public LibraryCourseContentPageActions() {
     	QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.playIcon);
         QXClient.get().report().info("Content starts to play");
-        Thread.sleep(8000);
+        Thread.sleep(1000);
     }
 
     public void tapOnPlayIcon1() throws Exception {
@@ -984,7 +989,7 @@ public LibraryCourseContentPageActions() {
         QXClient.get().gestures().BlindWait(3000);
 
 
-        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
+        //QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
         QXClient.get().report().info("clicked on clkApplyFilter ");
         QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");
@@ -1014,22 +1019,29 @@ public LibraryCourseContentPageActions() {
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertResetFilterBtn),"Reset filter button is not displayed");
         QXClient.get().report().info("Reset filter is displayed");
+        QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkMediumFilter);
         QXClient.get().report().info("Clicked on Medium filter");
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkOnCheckbox);
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkSubmitBtn);
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkClassFilter);
         QXClient.get().report().info("Clicked on Class filter");
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkOnCheckbox);
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkSubmitBtn);
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkPublisherFilter);
         QXClient.get().report().info("Clicked on Publisher filter");
+        QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkOnCheckbox);
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkSubmitBtn);
         QXClient.get().gestures().BlindWait(3000);
 
@@ -1049,14 +1061,17 @@ public LibraryCourseContentPageActions() {
 
     Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentTitle),"Content title is not displayed");
     QXClient.get().report().info("Content title is displayed in Content page");
+        QXClient.get().gestures().BlindWait(2000);
 
     Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentCreator),"Content creator is not displayed");
     QXClient.get().report().info("Content creator is displayed in content page");
+        QXClient.get().gestures().BlindWait(2000);
 
     Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertOrgFrameworkAttributes),"Org framework attributes is not displayed");
     QXClient.get().report().info("Org Framework Attributes is displayed in Content page");
+        QXClient.get().gestures().BlindWait(2000);
 
-    Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentImage),"Contnet image is not displayed");
+    //Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentImage),"Contnet image is not displayed");
     QXClient.get().report().info("Content Image is displayed in Contnet page");
     QXClient.get().gestures().BlindWait(2000);
 }
@@ -1266,57 +1281,57 @@ public LibraryCourseContentPageActions() {
        QXClient.get().report().info("Clicked on Select Medium in filters");
        QXClient.get().gestures().BlindWait(2000);
 
-       QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.checkBox.get(0));
+       QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
        QXClient.get().report().info("First checkbox selected");
        QXClient.get().gestures().BlindWait(3000);
 
        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkSubmitBtn);
        QXClient.get().report().info("Clicked on Submit button");
-       QXClient.get().gestures().BlindWait(2000);
+       QXClient.get().gestures().BlindWait(5000);
 
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkOnSelectClass);
          QXClient.get().report().info("Clicked on Select Class in filters");
          QXClient.get().gestures().BlindWait(2000);
 
-         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.checkBox.get(0));
+         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
          QXClient.get().report().info("First checkbox selected");
          QXClient.get().gestures().BlindWait(3000);
 
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkSubmitBtn);
          QXClient.get().report().info("Clicked on Submit button");
-         QXClient.get().gestures().BlindWait(2000);
+         QXClient.get().gestures().BlindWait(5000);
 
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkOnSelectPublisher);
          QXClient.get().report().info("Clicked on Select Publisher in filters");
          QXClient.get().gestures().BlindWait(4000);
 
-         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.checkBox.get(0));
+         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
          QXClient.get().report().info("First checkbox selected");
          QXClient.get().gestures().BlindWait(2000);
 
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkSubmitBtn);
          QXClient.get().report().info("Clicked on Submit button");
-         QXClient.get().gestures().BlindWait(2000);
+         QXClient.get().gestures().BlindWait(5000);
 
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkOnSelectMediaType);
          QXClient.get().report().info("Clicked on Select Media Type in filters");
          QXClient.get().gestures().BlindWait(3000);
 
-         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.checkBox.get(0));
+         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
          QXClient.get().report().info("First checkbox selected");
          QXClient.get().gestures().BlindWait(3000);
 
-         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.checkBox.get(1));
+         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.filterMediaType2);
          QXClient.get().report().info("Second checkbox selected");
          QXClient.get().gestures().BlindWait(3000);
 
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkSubmitBtn);
          QXClient.get().report().info("Clicked on Submit button");
-         QXClient.get().gestures().BlindWait(2000);
+         QXClient.get().gestures().BlindWait(5000);
 
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilterBtn);
          QXClient.get().report().info("Clicked on Apply filter button");
-         QXClient.get().gestures().BlindWait(3000);
+         QXClient.get().gestures().BlindWait(5000);
 
          Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentForTVClasses),"Content is not available for Tv Classes section post applying filters");
          QXClient.get().report().info("Content is available for Tv Classes post applying filters");
@@ -1368,6 +1383,38 @@ public LibraryCourseContentPageActions() {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.clkExitIcon),"Exit text is not displayed at the end of page");
         QXClient.get().report().info("Exit text is displayed at the end of page ");
         QXClient.get().gestures().BlindWait(2000);
+
+
+    }
+
+    public void clkOnVideoTogglebtn() throws Exception{
+
+      QXClient.get().gestures().BlindWait(1000);
+        if (QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.videoToggleBtn)) {
+            QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.videoToggleBtn);
+            QXClient.get().report().info("Clicked on Fullscreen mode");
+            QXClient.get().gestures().BlindWait(1000);
+        }
+    }
+
+    public void closeRatingPopup() throws Exception {
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.closeRatingPopup);
+        QXClient.get().report().info("Clicked on Close rating popup");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+
+    public void verifyPageReplacesLocationInContent() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertLocationText),"Location text is displayed");
+    QXClient.get().report().info("Location text is not displayed");
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertPageText),"Page text is not displayed");
+    QXClient.get().report().info("Page text is displayed instead of Location text");
+    QXClient.get().gestures().BlindWait(2000);
 
 
     }

@@ -116,10 +116,12 @@ public class ETBScenario {
 	        getLibraryPageActions().tapOnPlayIcon();
 	        getLibraryPageActions().tapOnPlayIcon1();
 
-		       QXClient.get().gestures().clkBackButton();
-	      getLibraryPageActions().tapOnOKbtn();
-	        getLibraryPageActions().tapOnStarIcon();
-	        getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
+		 QXClient.get().gestures().clkBackButton();
+		 getLibraryPageActions().tapOnOKbtn();
+		 getLibraryPageActions().clkOnVideoTogglebtn();
+		 getLibraryPageActions().closeRatingPopup();
+		 getLibraryPageActions().tapOnStarIcon();
+		 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 	    }
 	 
 	 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
@@ -146,10 +148,12 @@ public class ETBScenario {
 	        getLibraryPageActions().tapOnPlayIcon();
 	        getLibraryPageActions().tapOnPlayIcon1();
 
-		       QXClient.get().gestures().clkBackButton();
-	        getLibraryPageActions().tapOnOKbtn();
-	        getLibraryPageActions().tapOnStarIcon();
-	        getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
+		 QXClient.get().gestures().clkBackButton();
+		 getLibraryPageActions().tapOnOKbtn();
+		 getLibraryPageActions().clkOnVideoTogglebtn();
+		 getLibraryPageActions().closeRatingPopup();
+		 getLibraryPageActions().tapOnStarIcon();
+		 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 	    }
 	
 	 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
@@ -363,11 +367,12 @@ public class ETBScenario {
 		     
 	        getLibraryPageActions().tapOnPlayIcon();
 	        getLibraryPageActions().tapOnPlayIcon1();
-	        QXClient.get().gestures().BlindWait(5000);
-		       QXClient.get().gestures().clkBackButton();
-	       getLibraryPageActions().tapOnOKbtn();
-	        getLibraryPageActions().tapOnStarIcon();
-	        getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
+	        QXClient.get().gestures().clkBackButton();
+		 getLibraryPageActions().tapOnOKbtn();
+		 getLibraryPageActions().clkOnVideoTogglebtn();
+		 getLibraryPageActions().closeRatingPopup();
+		 getLibraryPageActions().tapOnStarIcon();
+		 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 	    }
 	
 	 
@@ -397,10 +402,12 @@ public class ETBScenario {
 	        getLibraryPageActions().tapOnPlayIcon();
 	        getLibraryPageActions().tapOnPlayIcon1();
 
-		       QXClient.get().gestures().clkBackButton();
-	        getLibraryPageActions().tapOnOKbtn();
-	        getLibraryPageActions().tapOnStarIcon();
-	        getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
+		 QXClient.get().gestures().clkBackButton();
+		 getLibraryPageActions().tapOnOKbtn();
+		 getLibraryPageActions().clkOnVideoTogglebtn();
+		 getLibraryPageActions().closeRatingPopup();
+		 getLibraryPageActions().tapOnStarIcon();
+		 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 	    }
 	 
 	 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
@@ -426,11 +433,12 @@ public class ETBScenario {
 	  	      
 		       getLibraryPageActions().tapOnPlayIcon();
 		        getLibraryPageActions().tapOnPlayIcon1();
-			       QXClient.get().gestures().clkBackButton();
-
-			     getLibraryPageActions().tapOnOKbtn();
-		        getLibraryPageActions().tapOnStarIcon();
-		        getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
+		 QXClient.get().gestures().clkBackButton();
+		 getLibraryPageActions().tapOnOKbtn();
+		 getLibraryPageActions().clkOnVideoTogglebtn();
+		 getLibraryPageActions().closeRatingPopup();
+		 getLibraryPageActions().tapOnStarIcon();
+		 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 		    }
 
 
@@ -538,9 +546,9 @@ public class ETBScenario {
 				  
 	        getHomePageActions().tapOnSearchIcon();
 	        getHomePageActions().enterTextInSearchBar(BookName);
-		       QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+		       //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
 
-	      //  getTrainingPageActions().tapOnSearchedBook();
+	        getTrainingPageActions().tapOnSearchedBook();
 	    }
  
 //  
@@ -990,6 +998,105 @@ public class ETBScenario {
 		getTrainingPageActions().verifyH5PCollectionContentPage();
 
 		getTrainingPageActions().verifyPostSingleClickBackbtnUserShouldComeBackFromH5pContent();
+
+	}
+
+
+	@Test()
+	public void verifyChangePreferenceBtnAndEditProfileDetailsInHomePage() throws Exception {
+
+		QXClient.get().driver();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+
+
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 49, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 50, 2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username, Password);
+
+		d.LaunchAppHomeScreen();
+
+		getHomePageActions().verifyChangePreferenceAndBMCSvaluesInHomePageUnderYourPreference();
+
+	}
+
+	@Test()
+	public void verifyCustomizedFiltersDisplayedForAnyCategoryInSearchTab() throws Exception {
+
+		QXClient.get().driver();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnMenuBar();
+		getHomePageActions().changeToJoyfulTheme();
+		d.LaunchAppHomeScreen();
+		getHomePageActions().tapOnSearchTab();
+
+		getHomePageActions().verifySearchPageCategories();
+
+		getHomePageActions().verifyCustomizedFiltersForVideosCategory();
+
+
+	}
+
+	@Test()
+	public void verifyBoardMediumClassValuesDisplayedProperlyInContentPlayCards() throws Exception {
+
+		QXClient.get().driver();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+
+
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+		String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username, Password);
+
+		getHomePageActions().tapOnSearchIcon();
+		getHomePageActions().enterTextInSearchBar(BookName);
+		getTrainingPageActions().verifyBoardMediumClassDisplayedInContentPlayCardProperly();
+		getTrainingPageActions().tapOnSearchedBook();
+		getTrainingPageActions().verifyBoardMediumClassDisplayedInContentPlayCardProperly();
+
+	}
+
+	@Test()
+	public void validateAdditionalIconsUnderFeaturedSectionOfHomePage() throws Exception {
+
+		QXClient.get().driver();
+
+		getDikshaMainPageActions().performUserOnBoardingWithCBSEBoard();
+
+		getHomePageActions().tapOnDownloadTab();
+
+		getHomePageActions().tapOnMenuBar();
+
+		getHomePageActions().verifyBannersAsPerBMCvalues();
+
+		getHomePageActions().verifyFeaturedSectionInHomePageAndVisualCueInHomePage();
+
+		getHomePageActions().verifyUserAbleToClickAdditionalIconsBelowFeaturedSectionOfHomePage();
 
 	}
 

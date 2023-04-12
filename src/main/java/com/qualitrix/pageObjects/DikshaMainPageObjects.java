@@ -93,7 +93,10 @@ public MobileElement selectBoard;
     @AndroidFindBy(xpath = "//android.view.View[@text='Select district']")
     public MobileElement selectDistrict;
 
-    @AndroidFindBy(xpath = "//android.widget.CheckBox[@index='0']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.CheckBox[@text='English']"),
+            @AndroidBy(xpath = "//android.widget.CheckBox[@index='0']"),
+    })
     public MobileElement selectEnglishMedium;
 
     @AndroidFindBy(xpath = "//android.widget.RadioButton[@index='0']")

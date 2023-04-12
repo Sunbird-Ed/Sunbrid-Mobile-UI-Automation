@@ -9,9 +9,9 @@
   },
   "capabilities": {
     "android": {
-      "appPackage": "preprod.diksha.app",
+      "appPackage": "in.gov.diksha.app",
       "appActivity": "org.sunbird.app.MainActivity",
-      "app": ".\\caps\\diksha-4.7.980preproduction.apk",
+      "app": ".\\caps\\diksha-4.6.968.apk",
       "platformName": "Android",
       "newCommandTimeout": 600,
       "launchTimeout": 90000

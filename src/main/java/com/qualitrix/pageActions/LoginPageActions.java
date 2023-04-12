@@ -261,6 +261,7 @@ public class LoginPageActions {
         QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
         QXClient.get().report().info("Regsiter page is displayed");
+        QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYearOfBirth);
         QXClient.get().report().info("Clicked on select year of birth");
@@ -533,10 +534,14 @@ public class LoginPageActions {
         profilePageObjects.clkOnNameEditField.sendKeys("Anoshu");
         QXClient.get().gestures().BlindWait(3000);
 
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnEmailEditField);
+        QXClient.get().report().info("Clicked on Email edit field");
+        QXClient.get().gestures().BlindWait(2000);
+
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
         QXClient.get().report().info("Clicked on Next button");
         QXClient.get().gestures().BlindWait(3000);
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().BlindWait(9000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEmailNotRegisteredMessage),"Email not registered message is not displayed");
         QXClient.get().report().info("Email is not registered with sunbird message is displayed");

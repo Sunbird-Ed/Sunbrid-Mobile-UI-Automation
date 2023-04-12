@@ -14,9 +14,9 @@
  -->                       
 <!--   <class name="com.qualitrrix.test.DikshaScenario" />
  --> 
-      <class name="com.qualitrrix.test.BookScenarioSanity" />
-    <class name="com.qualitrrix.test.UserOnBoardingSanity" />
-     <class name="com.qualitrrix.test.CourseScenarioSanity" />
+<!--      <class name="com.qualitrrix.test.BookScenarioSanity" />-->
+<!--    <class name="com.qualitrrix.test.UserOnBoardingSanity" />-->
+<!--     <class name="com.qualitrrix.test.CourseScenarioSanity" />-->
   
   <!--  <class name="com.qualitrrix.test.UBScenarioSanity3"/>-->
 <!--    <class name="com.qualitrrix.test.regr ession.TPDScenario" />
@@ -28,19 +28,21 @@
  --> 
 <!--  <class name="com.qualitrrix.test.CourseScenarioSanity" />
  -->
-<!--    <class name="com.qualitrrix.test.regression.ETBScenario" />-->
+    <!--<class name="com.qualitrrix.test.regression.ETBScenario" />-->
    <!--   <class name="com.qualitrrix.test.regression.UOScenario" />-->
           <!--    <class name="com.qualitrrix.test.regression.TPDScenario" />-->
-     <!--<class name="com.qualitrrix.test.regression.UBScenarioSanity3" />-->
+         <!--   <class name="com.qualitrrix.test.regression.CollaborationInteractionsScenario" />-->
+            <!--   <class name="com.qualitrrix.test.regression.TPDScenario1" />-->
+   <!--  <class name="com.qualitrrix.test.regression.UBScenarioSanity3" />-->
    <!--<class name="com.qualitrrix.test.UBScenarioSanity3" />-->
-     <!-- <class name="com.qualitrrix.test.UBScenarioSanity3" />-->
+   <!--   <class name="com.qualitrrix.test.UBScenarioSanity3" />-->
 
      <!-- <class name="com.qualitrrix.test.BookScenarioSanity" />-->
      <!-- <class name="com.qualitrrix.test.UserOnBoardingSanity" />-->
      <!--<class name="com.qualitrrix.test.BookScenarioSanity" />
      <class name="com.qualitrrix.test.CourseScenarioSanity" /> -->
 
-          <!--  <class name="com.qualitrrix.test.UserOnBoardingSanity" />-->
+            <class name="com.qualitrrix.test.UserOnBoardingSanity" />
  
 </classes>
     </test> <!-- Test -->

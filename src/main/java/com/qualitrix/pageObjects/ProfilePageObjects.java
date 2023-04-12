@@ -205,7 +205,11 @@ public MobileElement clkEditLocation;
    })
    public MobileElement assertRegisterPage;
 
-  @AndroidFindBy(xpath = "//android.view.View[@text='Select year of birth']")
+
+   @AndroidFindAll({
+           @AndroidBy(xpath = "//android.widget.TextView[@text='Select year of birth']"),
+           @AndroidBy(xpath = "//android.view.View[@text='Select year of birth']"),
+   })
    public MobileElement selectYearOfBirth;
 
   @AndroidFindBy(xpath = "//android.view.View[@text='2022']")
@@ -440,7 +444,10 @@ public MobileElement clkEditLocation;
     public MobileElement clkOnUpdate;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='I wish to share my data with:']//following::android.view.View[1]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "(//android.widget.ListView)[1]"),
+            @AndroidBy(xpath = "//android.view.View[@text='I wish to share my data with:']//following::android.view.View[1]"),
+    })
     public MobileElement clkOnOrganizationField;
 
 
@@ -499,7 +506,10 @@ public MobileElement clkEditLocation;
     public MobileElement assertToastMessageOfIncorrectOTP;
 
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Forget password?']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Forgot password?']"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Forget password?']"),
+    })
     public MobileElement clkOnForgetPassword;
 
 
@@ -518,6 +528,7 @@ public MobileElement clkEditLocation;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Next']"),
             @AndroidBy(xpath = "//android.view.View[@text='Name']//following::android.widget.Button"),
             @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Next')]"),
     })

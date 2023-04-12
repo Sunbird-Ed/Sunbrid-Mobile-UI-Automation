@@ -139,6 +139,11 @@ public MobileElement ReportMenu;
     public MobileElement trainingTab;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@resource-id='tab-button-search']"),
+    })
+    public MobileElement searchTab;
+
+    @AndroidFindAll({
             @AndroidBy(xpath = "(//*[@resource-id='tab-button-resources'])[1]"),
             @AndroidBy(xpath = "//android.view.View[@text='resources Library']"),
             @AndroidBy(xpath = "//android.view.View[@text='resources Library ']"),
@@ -146,6 +151,15 @@ public MobileElement ReportMenu;
             @AndroidBy(xpath = "//android.view.View[@text='resources']")
     })
     public MobileElement libraryTab;
+
+    @AndroidFindAll({
+            //@AndroidBy(xpath = "(//*[@resource-id='tab-button-resources'])[1]"),
+            @AndroidBy(xpath = "//android.view.View[@text='resources Library']"),
+            @AndroidBy(xpath = "//android.view.View[@text='resources Library ']"),
+            @AndroidBy(xpath = "//*[contains(@text,'resources Library')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='resources']")
+    })
+    public MobileElement libraryTab1;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[@text='MathematicsClass 10']"),
@@ -615,9 +629,15 @@ public MobileElement verifyAddedMemberToGrp;
     public MobileElement clkAddToGrp;
     
     @AndroidFindAll({
+            @AndroidBy(xpath = "(//android.view.View[@text='⠇'])[1]"),
         @AndroidBy(xpath = "//android.view.View[@text='⠇']"),
     })
     public MobileElement menuMember;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "(//android.view.View[@text='⠇'])[2]"),
+    })
+    public MobileElement menuMember1;
     
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='Remove from group']"),
@@ -849,7 +869,10 @@ public MobileElement clkRemovePopupActivity;
     public MobileElement assertCloudDoneBtn;
     
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='My learning']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='My learning']"),
+    })
     public MobileElement assertMyLearningSection;
     
     
@@ -2331,7 +2354,10 @@ public MobileElement tagsField;
     public MobileElement assertBrowseDIKSHAlibraryMessage;
 
 
-     @AndroidFindBy(xpath = "//android.widget.Button[@text='Change Preference']")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.Button[@text='Change']"),
+             @AndroidBy(xpath = "//android.widget.Button[@text='Change Preference']"),
+     })
     public  MobileElement assertChangePreferenceBtn;
 
 
@@ -2351,8 +2377,10 @@ public MobileElement tagsField;
      })
     public MobileElement assertSavePostIcon;
 
-
-     @AndroidFindBy(xpath ="//android.widget.Image[@text='up arrow icon for like the post']")
+     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Image[@text='up image']"),
+             @AndroidBy(xpath ="//android.widget.Image[@text='up arrow icon for like the post']"),
+     })
     public MobileElement assertUpvoteIcon;
 
 
@@ -3062,7 +3090,72 @@ public MobileElement assertSubjectFilter;
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'you have been removed from the')]")
     public MobileElement assertMemberRemovedNotificationMsg;
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Make group admin']")
+    public MobileElement clkOnMakeGroupAdmin;
 
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Make Admin']")
+    public MobileElement clkOnMakeAdminBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'you have been added to')]")
+    public MobileElement assertMemberAddedNotificationMsg;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@clickable='true']")
+    public MobileElement assertNotificationsClickable;
+
+
+    @AndroidFindBy(xpath = "(//android.widget.Image[@text='delete'])[1]")
+    public MobileElement deleteFirstNotification;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State (Tamil Nadu)')]")
+    public MobileElement assertTamilNaduBoardInYourPreference;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,' English')]")
+    public MobileElement assertEnglishMediumInYourPreference;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Class 1')]")
+    public MobileElement assertClassInYourPreference;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'+1')]")
+    public MobileElement assertplus1Symbol;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Browse DIKSHA library to find relevant content based on your preferences')]")
+    public MobileElement assertYourPreferencePopup;
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Edit profile']")
+    public MobileElement assertEditProfile;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Additional Categories']")
+    public MobileElement assertAdditionalCategoriesFilter;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationCourseForDF')]")
+    public MobileElement assertLargeTitleUnderMyLearningSection1;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutoCourse')]")
+    public MobileElement assertLargeTitleUnderMyLearningSection2;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Copy of vk-3.1Textbook')]")
+    public MobileElement assertCourseNameInCSVFile;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Umesh trackable collection')]")
+    public MobileElement assertEnrolledTrackableCollection;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationCourseContent')]")
+    public MobileElement assertEnrolledCourse;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'ManjunathAutomationCourse')]")
+    public MobileElement assertExpiredCourseInMyLearningSectionOfHomePage;
 
 
 

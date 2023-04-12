@@ -881,17 +881,19 @@ public class ProfileEditPageActions  {
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnUpdate);
         QXClient.get().report().info("Clicked on Update Button");
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(5000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnOrganizationField);
         QXClient.get().report().info("clicked on Org edit field");
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkStatePunjabOrg);
         QXClient.get().report().info("Clicked on State punjab org in consent ");
+        QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnSubmitBtn);
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnUpdate);
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().BlindWait(5000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertConsentWithPunjabOrg),"Consent is not updated with new Organization");
         QXClient.get().report().info("Consent is updated with New Organization");
@@ -907,7 +909,7 @@ public class ProfileEditPageActions  {
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnUpdate);
         QXClient.get().report().info("Clicked on Update Button");
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(5000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnOrganizationField);
         QXClient.get().report().info("clicked on Org edit field");
