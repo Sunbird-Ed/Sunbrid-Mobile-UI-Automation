@@ -231,6 +231,7 @@ public class CoursePageActions  {
     	
           QXClient.get().gestures().swipeUp();
           QXClient.get().gestures().BlindWait(4000);
+          QXClient.get().gestures().BlindWait(4000);
           QXClient.get().gestures().swipeUp();
           //QXClient.get().gestures().swipeUp();
 
@@ -660,6 +661,80 @@ public class CoursePageActions  {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertEmailVerifiedImage),"Email verified image is not displayed");
         QXClient.get().report().info("Email id verified image displayed in user declaration form");
         QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyNewPricacyPolicyInSubmitDetailsForm() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.termsCheckBoxTeacherForm),"termsCheckBoxTeacherForm is not available");
+        QXClient.get().report().info("TermsAndCondition CheckBox Label is displayed in submit forms");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifyAgreePrivacyPolicyText),"verifyAgreePrivacyPolicyText is not available");
+        QXClient.get().report().info("AgreePrivacyPolicy Label is displayed in submit forms");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertNewPrivacyPolicy),"New Privacy policy is not displayed");
+        QXClient.get().report().info("New Privacy policy is displayed in submit details form");
+
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.assertNewPrivacyPolicy);
+        QXClient.get().report().info("Clicked on new privacy policy ");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertTermsOfUse),"Terms of use is not displayed");
+        QXClient.get().report().info("Terms of use is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertPrivacyPolicy),"Privacy policy is not displayed");
+        QXClient.get().report().info("Privacy policy is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertContentPolicy),"Contnet policy is not displayed");
+        QXClient.get().report().info("Content policy is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.assertPrivacyPolicy);
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.assertPrivacyPolicy);
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertPrivacyPolicyOfDiksha),"New Privacy policy of diksha is not displayed");
+        QXClient.get().report().info("New Privacy policy of Diksha is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.disabledSubmitBtn),"Disabled submit button is not displayed");
+        QXClient.get().report().info("Disbaled submit button is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.termsCheckBoxTeacherForm);
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.enabledSubmitBtn),"Enabled submit button is not displayed");
+        QXClient.get().report().info("Enabled submit btn is dispalyed");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void userAbleToSubmitDetailsWithoutAddingPhoneNumber() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.termsCheckBox);
+        QXClient.get().report().info("Clicked on Checkbox");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkOnSubmitBtn);
+        QXClient.get().report().info("Clicked on submit button");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertThankyouForSubmittingDetails),"Thank you for submitting your details message is not displayed");
+        QXClient.get().report().info("Thank you for submitting your details message is displayed post clicking submit button");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().swipeUp();
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.clkSubmitDetails),"Submit details button is displayed to the user ");
+        QXClient.get().report().info("Submit details button is not displayed to the user post submitting the details");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertUpdateBtn),"Update button is not displayed");
+        QXClient.get().report().info("Update button is displayed to the user in profile page");
+        QXClient.get().gestures().BlindWait(2000);
     }
 
 

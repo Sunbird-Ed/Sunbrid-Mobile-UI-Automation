@@ -76,7 +76,9 @@ public class BookScenarioSanity {
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
 			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-			  
+			  DikshaMainPageActions d = new DikshaMainPageActions();
+			  QXClient.get().gestures().closeApp();
+			  d.LaunchAppHomeScreen();
         getHomePageActions().tapOnSearchIcon();
         getHomePageActions().enterTextInSearchBar(BookName);
 	      // QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
@@ -95,8 +97,10 @@ public class BookScenarioSanity {
 					  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 					  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 					  
-					  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-					  
+					  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+		 DikshaMainPageActions d = new DikshaMainPageActions();
+		 QXClient.get().gestures().closeApp();
+		 d.LaunchAppHomeScreen();
 	        getHomePageActions().tapOnSearchIcon();
 	        getHomePageActions().enterTextInSearchBar(BookName);
 		      // QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
@@ -127,6 +131,9 @@ public class BookScenarioSanity {
 	    
 	  	  QXClient.get().driver();
 	  		 getDikshaMainPageActions().performUserOnBoarding();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			QXClient.get().gestures().closeApp();
+			d.LaunchAppHomeScreen();
 	  	      	getHomePageActions().tapOnSearchIcon();
 	  	  	      getHomePageActions().enterTextInSearchBar("resource");
 	  	          getLibraryPageActions().librarySearchFilter();
@@ -151,9 +158,11 @@ public class BookScenarioSanity {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-			  
-	 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
       	getHomePageActions().tapOnSearchIcon();
   	      getHomePageActions().enterTextInSearchBar(BookName);
 	      // QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
@@ -186,7 +195,9 @@ public class BookScenarioSanity {
 
 		String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
 		String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","TestData",8,2);
-
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
 		getHomePageActions().tapOnSearchIcon();
 		getHomePageActions().enterTextInSearchBar(BookName);
 		//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
@@ -221,8 +232,10 @@ public class BookScenarioSanity {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-	 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
       	getHomePageActions().tapOnSearchIcon();
   	      getHomePageActions().enterTextInSearchBar(BookName);
 	       //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
@@ -249,8 +262,10 @@ public class BookScenarioSanity {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-	 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
       	getHomePageActions().tapOnSearchIcon();
   	      getHomePageActions().enterTextInSearchBar(BookName);
   	    getTrainingPageActions().tapOnSearchedBook();
@@ -353,7 +368,9 @@ public class BookScenarioSanity {
 
 		String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
 		String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","TestData",8,2);
-
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
 		getHomePageActions().tapOnSearchIcon();
 		getHomePageActions().enterTextInSearchBar(BookName);
 		//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);

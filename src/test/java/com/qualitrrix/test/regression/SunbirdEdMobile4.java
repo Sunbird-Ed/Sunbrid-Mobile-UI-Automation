@@ -79,6 +79,7 @@ public class SunbirdEdMobile4 {
         // getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().verifyAddAnotherUserIsDisplayed();
         getCoursePageActions().tapOnAddAnotherUser();
 
@@ -593,6 +594,7 @@ public class SunbirdEdMobile4 {
         getHomePageActions().tapOnProfileTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().verifyHelpSection();
 
     }
@@ -796,6 +798,7 @@ public class SunbirdEdMobile4 {
         getHomePageActions().tapOnProfileTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().verifyHelpSection();
 
         getHomePageActions().verifyCoursesAndCertificatesSection();
@@ -1050,6 +1053,7 @@ public class SunbirdEdMobile4 {
 
 
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnMoreOption();
         getCoursePageActions().clickFirstUser();
         getCoursePageActions().tapOnChangeUserWithoutProfile();
@@ -1204,6 +1208,7 @@ public class SunbirdEdMobile4 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().EnableDiscussion();
         getHomePageActions().startQuestionFill();
@@ -1466,6 +1471,7 @@ public class SunbirdEdMobile4 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnAddAnotherUser();
 
         String FakeName=QXClient.get().gestures().generateRandomName();
@@ -1539,6 +1545,7 @@ public class SunbirdEdMobile4 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().verifyCamelCasingForDiscussionAndPostsTextInDiscussionForum();
 
@@ -1571,6 +1578,7 @@ public class SunbirdEdMobile4 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().EnableDiscussion();
         getHomePageActions().startQuestionFill();
@@ -1604,6 +1612,7 @@ public class SunbirdEdMobile4 {
         QXClient.get().gestures().closeApp();
         d.LaunchAppHomeScreen();
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         d.LaunchAppHomeScreen();
         getHomePageActions().tapOnMenuBar();
@@ -1961,6 +1970,7 @@ public class SunbirdEdMobile4 {
 
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnAddAnotherUser();
 
         String FakeName=QXClient.get().gestures().generateRandomName();
@@ -2101,6 +2111,42 @@ public class SunbirdEdMobile4 {
         getCoursePageActions().VerifySubmitDetailsForm();
 
         getCoursePageActions().verifyEmailIdPrefilledInUserDeclarationForm();
+    }
+
+    @Test()
+    public void verifyCorrectIncorrectFeedbackPopupIsNotDisplayedWhenItIsDisabledByCreatorInQuestionSet() throws Exception {
+
+        QXClient.get().driver();
+        DikshaMainPageActions d = new DikshaMainPageActions();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
+
+
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+        System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+        String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",116,2);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        getLoginPageActions().loginToTheUser(Username, Password);
+
+        d.LaunchAppHomeScreen();
+
+        getHomePageActions().tapOnSearchIcon();
+
+        getHomePageActions().enterTextInSearchBar(questionSet);
+
+        getTrainingPageActions().tapOnQuestionSet3();
+
+        getTrainingPageActions().verifyConfigurationsDisplayedInEachSection();
+
     }
 
 

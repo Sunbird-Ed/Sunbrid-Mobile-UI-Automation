@@ -14,7 +14,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
  */
 public class LoginPageObjects {
 
-    @AndroidFindBy(xpath = "//*[@resource-id='username']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//*[@resource-id='Email']"),
+            @AndroidBy(xpath = "//*[@resource-id='username']"),
+    })
     public MobileElement usernameObj;
 
     @AndroidFindBy(xpath = "//*[@resource-id='password']")
@@ -39,6 +42,7 @@ public class LoginPageObjects {
     public MobileElement mblNum;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//*[@resource-id='Password']"),
             @AndroidBy(xpath = "//*[@text='Enter password']"),
             @AndroidBy(xpath = "//*[@resource-id='password']")
     })

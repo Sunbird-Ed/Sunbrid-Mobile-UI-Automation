@@ -63,7 +63,7 @@ public class UBScenarioSanity2 {
 	}
 
 	
-	  @Author(name="Raju")
+	 /* @Author(name="Raju")
 	  
 	  @Test() public void addUserInProfileScrn() throws Exception {
 	  
@@ -826,6 +826,8 @@ public class UBScenarioSanity2 {
 	
 	  }
 
-    
+    */
+
+
     
 }

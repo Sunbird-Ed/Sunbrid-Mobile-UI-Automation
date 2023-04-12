@@ -232,7 +232,6 @@ public class SunbirdEdMobile1 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
-
         getCoursePageActions().tapOnAddAnotherUser();
 
         String FakeName=QXClient.get().gestures().generateRandomName();
@@ -593,6 +592,7 @@ public class SunbirdEdMobile1 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().deleteGroup();
     }
@@ -673,6 +673,7 @@ public class SunbirdEdMobile1 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
 
         getHomePageActions().verifyActiveGroupsAndSuspendedGroups();
 

@@ -30,25 +30,25 @@
  -->
     <!--<class name="com.qualitrrix.test.regression.ETBScenario" />-->
    <!--   <class name="com.qualitrrix.test.regression.UOScenario" />-->
-             <!-- <class name="com.qualitrrix.test.regression.SunbirdEdMobile1" />-->
-           <!--    <class name="com.qualitrrix.test.regression.SunbirdEdMobile2" />-->
-            <!--   <class name="com.qualitrrix.test.regression.SunbirdEdMobile3" />-->
-               <!--<class name="com.qualitrrix.test.regression.SunbirdEdMobile4" />-->
-            <!--   <class name="com.qualitrrix.test.regression.SunbirdEdMobile5" />-->
+           <!--   <class name="com.qualitrrix.test.regression.SunbirdEdMobile1" />-->
+              <!-- <class name="com.qualitrrix.test.regression.SunbirdEdMobile2" />-->
+               <!--<class name="com.qualitrrix.test.regression.SunbirdEdMobile3" />-->
+             <!--  <class name="com.qualitrrix.test.regression.SunbirdEdMobile4" />-->
+              <!-- <class name="com.qualitrrix.test.regression.SunbirdEdMobile5" />-->
              <!--  <class name="com.qualitrrix.test.regression.SunbirdKnowledge" />-->
              <!--  <class name="com.qualitrrix.test.regression.SunbirdInquiry" />-->
          <!--   <class name="com.qualitrrix.test.regression.CollaborationInteractionsScenario" />-->
               <!-- <class name="com.qualitrrix.test.regression.TPDScenario1" />-->
    <!--  <class name="com.qualitrrix.test.regression.UBScenarioSanity3" />-->
            <class name="com.qualitrrix.test.UBScenarioSanity3" />
-        <!-- <class name="com.qualitrrix.test.UBScenarioSanity3" />-->
+
 
      <!-- <class name="com.qualitrrix.test.BookScenarioSanity" />-->
      <!-- <class name="com.qualitrrix.test.UserOnBoardingSanity" />-->
      <!--<class name="com.qualitrrix.test.BookScenarioSanity" />
      <class name="com.qualitrrix.test.CourseScenarioSanity" /> -->
 
-        <!--    <class name="com.qualitrrix.test.UserOnBoardingSanity" />-->
+           <!-- <class name="com.qualitrrix.test.UserOnBoardingSanity" />-->
  
 </classes>
     </test> <!-- Test -->

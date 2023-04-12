@@ -73,7 +73,41 @@ public class LoginPageActions {
     	
     }
 
-   
+    public void loginToTheUser1(String username, String password) throws Exception {
+        //QXClient.get().gestures().wait(5);
+
+
+        // 	QXClient.get().gestures().wait(3);
+
+
+        Thread.sleep(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+
+
+
+        Thread.sleep(2000);
+        // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
+        Thread.sleep(2000);
+
+        QXClient.get().gestures().waitForElementToAppear(loginPageObjects.usernameObj);
+        loginPageObjects.usernameObj.sendKeys(username);
+        QXClient.get().report().info("Enter the username");
+
+        QXClient.get().gestures().waitForElementToAppear(loginPageObjects.pwdEditbx);
+        loginPageObjects.pwdEditbx.sendKeys(password);
+        QXClient.get().report().info("Enter the password");
+        Thread.sleep(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+        QXClient.get().report().info("Tap on login button");
+
+
+
+        //QXClient.get().gestures().wait(15);
+
+    }
+
+
+
 
     public void tapOnLoginBtn() {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
@@ -190,7 +224,7 @@ public class LoginPageActions {
     	DikshaMainPageActions cl=new DikshaMainPageActions();
     	Thread.sleep(2000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
+        //QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
 
             
             QXClient.get().gestures().waitForElementToAppear(loginPageObjects.usernameObj);
@@ -1166,6 +1200,13 @@ public class LoginPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtn);
         QXClient.get().gestures().BlindWait(6000);
 
+    }
+
+    public void verifyUserNavigatedToNativePage() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().report().info("User is navigated to native page post clicking login button in profile page");
+        QXClient.get().gestures().BlindWait(3000);
     }
 
 

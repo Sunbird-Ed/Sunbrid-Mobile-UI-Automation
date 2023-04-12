@@ -2448,7 +2448,77 @@ public class UBScenarioSanity3 {
 
 */
 
+	/*@Test(enabled = true, groups = {"RegressionTest", "FunctionalTest"}, alwaysRun = true,
+			description = "Verify user is able to change the app language")
+	public void userIsAbleToChangeTheAppLang() throws Exception {
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
 
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String KannadaText =QXClient.get().excelUtils().getCellValue("Excel1","TestData",6,2);
+		getHomePageActions().tapOnMenuBar();
+		//getHomePageActions().methodToHandleMenuBar();
+		getHomePageActions().tapOnLanguage();
+		getHomePageActions().tapOnKannadaLanguage();
+
+		getHomePageActions().tapOnContinueBtnKannada();
+
+		DikshaMainPageActions d2=new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d2.LaunchAppHomeScreen();
+		getHomePageActions().tapOnDownloadTab();
+
+
+		getHomePageActions().tapOnMenuBar();
+
+		getHomePageActions().verifyKanndaTextChanged(KannadaText);
+	}
+*/
+/*
+
+	@Test()
+	public void AddUserLimitMsg() throws Exception {
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",36,2);
+		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",37,2);
+
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username,Password);
+//	  DikshaMainPageActions d=new DikshaMainPageActions();
+//
+//	  QXClient.get().gestures().closeApp();
+//	    d.LaunchAppHomeScreen();
+		// getHomePageActions().tapOnDownloadTab();
+
+		getHomePageActions().tapOnMenuBar();
+		//getHomePageActions().methodToHandleMenuBar();
+		getCoursePageActions().verifyAddAnotherUserIsDisplayed();
+		getCoursePageActions().tapOnAddAnotherUser();
+
+
+		String FakeName=QXClient.get().gestures().generateRandomName();
+		String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
+		System.out.println(storeFakeNameEntered);
+		getCoursePageActions().tapOnAddUserBtn();
+		getCoursePageActions().verifyMsgAddingUser();
+
+	}
+*/
 
 
 

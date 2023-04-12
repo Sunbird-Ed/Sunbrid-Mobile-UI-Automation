@@ -391,6 +391,93 @@ public MobileElement myLearningtext;
     public MobileElement assertDikshaID;
 
 
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Board')]")
+    public MobileElement assertBoard;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Medium')]")
+    public MobileElement assertMedium;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Classes')]")
+    public MobileElement assertClass;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Add Mobile Number')]"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Add Mobile Number']"),
+    })
+    public MobileElement addMobileNoField;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Otp To Update Contact']")
+    public MobileElement assertUpdateContactPopup;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Enter OTP to edit your contact information']")
+    public MobileElement assertEnterOTPtoEditInformationText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Enter OTP']")
+    public MobileElement assertEnterOTPText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText")
+    public MobileElement editTextField;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Incorrect OTP. Number of attempts remaining : 1']")
+    public MobileElement assertIncorrectOTPMessage;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Failed to validate OTP')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Failed to validate OTP. Try again later']")
+    })
+    public MobileElement assertFailedToValidateOTPMsg;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='declared-phone']")
+    public MobileElement mobileNumberEditField;
+
+
+   @AndroidFindAll({
+           @AndroidBy(xpath = "//android.widget.Button[@text='validate']"),
+           @AndroidBy(xpath = "//android.widget.Button[contains(@text,'validate')]"),
+   })
+    public MobileElement validateBtn;
+
+
+   @AndroidFindBy(xpath = "//android.view.View[@text='Verify Mobile Number']")
+    public MobileElement assertVerifyMobileNumberText;
+
+
+   @AndroidFindBy(xpath = "//android.view.View[@text='You will receive an SMS with the OTP for mobile number verification']")
+    public MobileElement assertReceiveSMSText;
+
+
+   @AndroidFindBy(xpath = "//android.widget.TextView[@text='Enter OTP']")
+    public MobileElement assertEnterOTPTextInMobileNumber;
+
+
+   @AndroidFindBy(xpath = "//android.widget.Button[@text='RESEND OTP']")
+    public MobileElement assertResendOTPlink;
+
+
+   @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
+    public MobileElement assertCancelBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='declared-email']")
+    public MobileElement EmailEditField;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Verify Email Address']")
+    public MobileElement assertVerifyEmailAddressText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='You will receive an email with the OTP for email address verification']")
+    public MobileElement assertReceiveEmailWithOTPText;
 
 }
   

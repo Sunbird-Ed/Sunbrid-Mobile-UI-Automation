@@ -9,9 +9,9 @@
   },
   "capabilities": {
     "android": {
-      "appPackage": "staging.diksha.app",
+      "appPackage": "org.sunbird.app.staging",
       "appActivity": "org.sunbird.app.MainActivity",
-      "app": ".\\caps\\diksha-5.0.274staging.apk",
+      "app": ".\\caps\\SUNBIRD_5_1_328staging.apk",
       "platformName": "Android",
       "newCommandTimeout": 600,
       "launchTimeout": 90000
@@ -20,7 +20,7 @@
   },
   "devices":[
     {
-      "name":"RZ8R41EQ4YK",
+      "name":"RZ8T20LW7DX",
       "version":"11.0.0",
       "platform":"Android"
     }

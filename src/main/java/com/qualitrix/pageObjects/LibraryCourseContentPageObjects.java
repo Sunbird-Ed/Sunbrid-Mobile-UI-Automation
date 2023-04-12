@@ -652,8 +652,9 @@ public MobileElement assertPDFPrintPageScreen;
  })
 public MobileElement clkShareIcon;
 
-@AndroidFindAll({    
-    @AndroidBy(xpath = "//android.view.View[@text='Download']")
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Download']"),
+    @AndroidBy(xpath = "//android.view.View[@text='Download']"),
  })
 public MobileElement clkDownloadIcon;
 

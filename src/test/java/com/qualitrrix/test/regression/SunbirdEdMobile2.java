@@ -75,6 +75,7 @@ public class SunbirdEdMobile2 {
         d.LaunchAppHomeScreen();
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().EnableDiscussion();
         getHomePageActions().startQuestionFill();
@@ -227,6 +228,7 @@ public class SunbirdEdMobile2 {
         getLoginPageActions().loginToTheUser(Username,Password);
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().verifyUpdatedCardsForActivities();
 
 
@@ -343,6 +345,7 @@ public class SunbirdEdMobile2 {
         getLoginPageActions().loginToTheUser(Username,Password);
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().verifyGeneralDiscussionTopics();
 
         getHomePageActions().verifyDiscussionList();
@@ -378,6 +381,7 @@ public class SunbirdEdMobile2 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().verifyDiscussionForum();
     }
@@ -409,6 +413,7 @@ public class SunbirdEdMobile2 {
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().EnableDiscussion();
 
@@ -440,11 +445,12 @@ public class SunbirdEdMobile2 {
 
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnMoreOption();
         getCoursePageActions().clickFirstUser();
         getCoursePageActions().tapOnChangeUser1();
         getCoursePageActions().CheckTermsCheckBoxORClickProfile();
-d.LaunchAppHomeScreen();
+        d.LaunchAppHomeScreen();
         //getHomePageActions().tapOnTrainingTab();
         getHomePageActions().tapOnMenuBar();
         getHomePageActions().verifyAdminLinkedGroupInMember();
@@ -480,6 +486,7 @@ d.LaunchAppHomeScreen();
 
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnMoreOption();
         getCoursePageActions().clickFirstUser();
         getCoursePageActions().tapOnChangeUser();
@@ -519,6 +526,7 @@ d.LaunchAppHomeScreen();
 
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnMoreOption();
         getCoursePageActions().clickFirstUser();
         getCoursePageActions().tapOnChangeUser();
@@ -561,6 +569,7 @@ d.LaunchAppHomeScreen();
         getLoginPageActions().loginToTheUser(Username,Password);
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().verifyUpdatedCardsForActivities();
 
         getHomePageActions().verifyLoadingAnimationForTagCardsInTagOption();
@@ -599,6 +608,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().EnableDiscussion();
         getHomePageActions().verifyTagsSection();
@@ -631,6 +641,7 @@ d.LaunchAppHomeScreen();
 
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnMoreOption();
         getCoursePageActions().clickFirstUser();
         getCoursePageActions().tapOnChangeUser();
@@ -672,6 +683,7 @@ d.LaunchAppHomeScreen();
 
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnMoreOption();
         getCoursePageActions().clickFirstUser();
         getCoursePageActions().tapOnChangeUser();
@@ -747,6 +759,7 @@ d.LaunchAppHomeScreen();
         getLoginPageActions().loginToTheUser(Username,Password);
 
         getHomePageActions().tapOnMenuBar();
+
 
         getHomePageActions().verifyUpdatedCardsForActivities();
 
@@ -978,6 +991,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
 
     }
@@ -1013,6 +1027,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().addMemberAndRemovemember(MemberIDValue);
         getHomePageActions().deleteGroup();
@@ -1047,6 +1062,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
 
     }
@@ -1253,6 +1269,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getCoursePageActions().tapOnAddAnotherUser();
 
         String FakeName=QXClient.get().gestures().generateRandomName();
@@ -1438,6 +1455,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
 
     }
@@ -1995,7 +2013,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnSearchIcon();
 
         getHomePageActions().enterTextInSearchBar("CourseContent");
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("CourseContent");
+
         getTrainingPageActions().tapOnSearchedCourse6();
         getTrainingPageActions().verifyConsentPopUpForCourse();
 
@@ -2395,6 +2413,7 @@ d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
+
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().addMemberAndRemovemember(MemberIDValue);
         getHomePageActions().deleteGroup();

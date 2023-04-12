@@ -24,9 +24,8 @@ public class HomePageObjects {
 
     @AndroidFindAll({
     	
-    	
-        @AndroidBy(xpath = "//android.widget.Button[@text='burger menu']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='menu']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='burger menu']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='ic_burger_menu']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='burger menu']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='burger menu ']")
@@ -679,8 +678,11 @@ public MobileElement clkRemovePopupActivity;
     
     @AndroidFindBy(xpath = "//android.widget.Button[@text='No']")
     public MobileElement clkNo;
-    
-    @AndroidFindBy(xpath = "//android.view.View[@text='Course']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Course']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Course']"),
+    })
     public MobileElement recentlySearchedKeyword;
 
     @AndroidFindAll({
@@ -2910,7 +2912,10 @@ public MobileElement assertSubjectFilter;
     public MobileElement assertIAgreeToDikshaGuidelinesText;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Group guidelines']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Group guidelines']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Group guidelines']"),
+    })
     public MobileElement assertGroupGuidelinesLink;
 
 
@@ -3255,6 +3260,53 @@ public MobileElement assertSubjectFilter;
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'AutoSmallCourseWithCertificate')]")
     public MobileElement openCertificateCourse;
 
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Import Content']")
+    public MobileElement assertImportContent;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='My Files']")
+    public MobileElement myFilesSection;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Downloads']")
+    public MobileElement deviceDownloadsSection;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='diksha_Book2book-v3.ecar']")
+    public MobileElement ecarFile1;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='diksha_AutomationBookContent-v1.ecar']")
+    public MobileElement ecarFile2;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Done']")
+    public MobileElement doneBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'AutomationNestedCourse')]")
+    public MobileElement nestedCourseInGrp;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Account merge has been successfully initiated. You will be notified once it is complete.']")
+    public MobileElement assertAccountMergeHasBeenInitiatedMsg;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='E Ena Yost\u200E']")
+    public MobileElement firstUser;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'This group is temporarily inactive')]")
+    public MobileElement assertGroupInactiveMsg;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'AutoCourse')]")
+    public MobileElement clkCourseInDeactivatedGrp;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Switch to classic')]")
+    public MobileElement switchToDefault;
 
 
 

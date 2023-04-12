@@ -51,7 +51,10 @@ public MobileElement resourceName;
 
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Select All']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Select All']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Select All']"),
+    })
     public MobileElement assertSelectAll;
 
 
@@ -68,18 +71,25 @@ public MobileElement resourceName;
 
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Delete Content?']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Delete Content?']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Delete Content?']"),
+    })
     public MobileElement assertDeleteContentPopup;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutomationBookContent')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]"),
             @AndroidBy(xpath = "//android.view.View[@text='Select All']//following::android.view.View[3]"),
     })
     public MobileElement assertContentInDownloadSection;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='No downloads yet']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='No downloads yet']"),
+            @AndroidBy(xpath = "//android.view.View[@text='No downloads yet']"),
+    })
     public MobileElement noDownloadsYetMessage;
 
 
@@ -97,7 +107,10 @@ public MobileElement resourceName;
     public MobileElement assertDownloadedQuestionSetCourse;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='PDF_13.pdf']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='PDF_13.pdf']"),
+            @AndroidBy(xpath = "//android.view.View[@text='PDF_13.pdf']"),
+    })
     public MobileElement assertDownloadedPDFContent;
 
     @AndroidFindAll({

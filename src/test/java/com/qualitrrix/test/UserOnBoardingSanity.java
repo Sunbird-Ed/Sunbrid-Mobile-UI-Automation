@@ -126,6 +126,7 @@ public class UserOnBoardingSanity {
 			  getHomePageActions().tapOnDownloadTab();
 		  
 		  getHomePageActions().tapOnMenuBar();
+
 		 	  	  getCoursePageActions().tapOnAddAnotherUser();
 		  
 		  String FakeName=QXClient.get().gestures().generateRandomName();
@@ -192,6 +193,7 @@ public class UserOnBoardingSanity {
 
 
 			 getHomePageActions().tapOnMenuBar();
+
 			 getCoursePageActions().tapOnMoreOption();
 			 getCoursePageActions().clickFirstUser();
 			 getCoursePageActions().tapOnChangeUser();
@@ -318,6 +320,7 @@ public class UserOnBoardingSanity {
 				  
 				  String KannadaText =QXClient.get().excelUtils().getCellValue("Excel1","TestData",6,2); 
 	        getHomePageActions().tapOnMenuBar();
+
 	        getHomePageActions().tapOnLanguage();
 	        getHomePageActions().tapOnKannadaLanguage();
 
@@ -367,6 +370,7 @@ public void CreateGroup() throws Exception {
 		  getHomePageActions().tapOnDownloadTab();
 
 	  getHomePageActions().tapOnMenuBar();
+
 	  getHomePageActions().createGrupAndActivity();
 	  
 }
@@ -436,6 +440,7 @@ public void CreateGroup() throws Exception {
 		 // getHomePageActions().tapOnDownloadTab();
 
 	  getHomePageActions().tapOnMenuBar();
+
 	  getCoursePageActions().verifyAddAnotherUserIsDisplayed();
 	  getCoursePageActions().tapOnAddAnotherUser();
 	  
@@ -479,6 +484,7 @@ public void CreateGroup() throws Exception {
     	  getHomePageActions().tapOnDownloadTab();
 
     	  getHomePageActions().tapOnMenuBar();
+
     	  getHomePageActions().createGrupAndActivity();
     	  getHomePageActions().EnableDiscussion();
     	  getHomePageActions().startQuestionFill();
@@ -551,6 +557,7 @@ public void CreateGroup() throws Exception {
 	  getHomePageActions().tapOnDownloadTab();
 
 	  getHomePageActions().tapOnMenuBar();
+
 	  getHomePageActions().createGrupAndActivity();
 	
 	  getHomePageActions().deleteGroup();
@@ -686,6 +693,7 @@ public void CreateGroup() throws Exception {
     	  getHomePageActions().tapOnDownloadTab();
 
     	  getHomePageActions().tapOnMenuBar();
+
     	  getHomePageActions().createGrupAndActivity();
     	  getHomePageActions().EnableDiscussion();
     	  getHomePageActions().startQuestionFill();
@@ -870,6 +878,7 @@ public void CreateGroup() throws Exception {
 		 		  getHomePageActions().tapOnDownloadTab();
 
 		 	  getHomePageActions().tapOnMenuBar();
+
 		 	  getHomePageActions().createGrupAndActivity();
 		 	  getHomePageActions().addMemberAndRemovemember(MemberIDValue);
 		 	  getHomePageActions().deleteGroup();
@@ -967,6 +976,8 @@ public void CreateGroup() throws Exception {
 			   QXClient.get().gestures().swipeUp();
 
 			   getLoginPageActions().loginToTheUser(Username,Password);
+
+			   getHomePageActions().tapOnMenuBar();
 
 			   getHomePageActions().verifySearchPageForDikshaNewExpreiecne();
 			   QXClient.get().gestures().swipeDown();

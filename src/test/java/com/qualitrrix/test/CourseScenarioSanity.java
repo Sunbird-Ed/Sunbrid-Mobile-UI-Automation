@@ -264,6 +264,7 @@ public class CourseScenarioSanity {
 		  getHomePageActions().tapOnDownloadTab();
 
 	  getHomePageActions().tapOnMenuBar();
+
 	 	  	  getCoursePageActions().tapOnAddAnotherUser();
 	  
 	  String FakeName=QXClient.get().gestures().generateRandomName();
@@ -535,7 +536,7 @@ public void CourseShare() throws Exception {
 
 		getHomePageActions().tapOnSearchIcon();
 		getHomePageActions().enterTextInSearchBar(CourseName);
-		//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(CourseName);
+
 		getTrainingPageActions().tapOnSearchedCourse2();
 
 		getTrainingPageActions().verifyCourseDetails();

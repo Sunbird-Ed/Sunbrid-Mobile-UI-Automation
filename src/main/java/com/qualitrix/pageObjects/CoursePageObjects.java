@@ -7,6 +7,7 @@ import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+
 /**
  * This Class has all the Objects related to Course Page.
  *
@@ -40,8 +41,9 @@ public MobileElement assertStartLearning;
 	})
 	public MobileElement viewMore;
 
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.view.View[contains(@text,'Completed ')]"),
-
+	@AndroidFindAll({
+			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Small AutomationCourseContent')]"),
+			@AndroidBy(xpath = "//android.view.View[contains(@text,'Completed ')]"),
 	})
 	public MobileElement completedCourse;
 
@@ -93,6 +95,8 @@ public MobileElement assertStartLearning;
 	public MobileElement continueChangeUser;
 	
 	@AndroidFindAll({
+			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'+ Add another user')]"),
+			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Add')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Add another user')]"),
 		@AndroidBy(xpath = "//android.view.View[contains(@text,'More ')]//following::android.view.View"),
 
@@ -452,11 +456,15 @@ public MobileElement assertStartLearning;
 		public MobileElement clkNewDikshExperiece;
 
 
-	@AndroidFindBy(xpath = "//android.view.View[@text='You have successfully completed this course']")
+	   @AndroidFindAll({
+			   @AndroidBy(xpath = "//android.widget.TextView[@text='You have successfully completed this course']"),
+			   @AndroidBy(xpath = "//android.view.View[@text='You have successfully completed this course']"),
+	   })
 	public MobileElement assertCourseCompletedMessageInCompletedCourse;
 
 
 	@AndroidFindAll({
+			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Small AutomationCourseContent')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Small')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Completed')]//preceding::android.view.View[2]"),
 	})
@@ -562,6 +570,39 @@ public MobileElement assertStartLearning;
 
 	@AndroidFindBy(xpath = "//android.widget.Image[@text='verified']")
 	public MobileElement assertEmailVerifiedImage;
+
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Privacy Policy']")
+	public MobileElement assertNewPrivacyPolicy;
+
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Terms of Use']")
+	public MobileElement assertTermsOfUse;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Privacy Policy']")
+	public MobileElement assertPrivacyPolicy;
+
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Content Policy']")
+	public MobileElement assertContentPolicy;
+
+
+	@AndroidFindBy(xpath = "//android.view.View[@text='Privacy Policy of DIKSHA']")
+	public MobileElement assertPrivacyPolicyOfDiksha;
+
+
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='Submit'][@enabled='false']")
+	public MobileElement disabledSubmitBtn;
+
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='Submit'][@enabled='true']")
+	public MobileElement enabledSubmitBtn;
+
+
+	@AndroidFindBy(xpath = "//android.view.View[@text='Thank you for submitting your details']")
+	public MobileElement assertThankyouForSubmittingDetails;
+
+
+
 
 
 

@@ -21,7 +21,8 @@ public class ProfilePageObjects {
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='LOGIN']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='LOGIN ']")
+            @AndroidBy(xpath = "//android.widget.Button[@text='LOGIN ']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='log in outline Login']"),
     })
     public MobileElement loginBtn;
 
@@ -125,7 +126,10 @@ public MobileElement sltSubRoleDropdown;
 public MobileElement clkSubmitEditProfile;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='app-logo Login with SUNBIRD']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']"),
+    })
     public MobileElement clkLoginWithDikshaBtn;
 
 
@@ -466,6 +470,7 @@ public MobileElement clkEditLocation;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'yopmail.com')]//following-sibling::android.view.View[1]"),
             @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Update')]"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Update']"),
     })
@@ -969,6 +974,18 @@ public MobileElement clkEditLocation;
 
     @AndroidFindBy(xpath = "//android.widget.EditText[contains(@text,'1234')]")
     public MobileElement assertEnteredOTP;
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'We have picked your BMG and role as teacher')]")
+    public MobileElement assertToastMessageForBMGSPicked;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Teacher']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Teacher']"),
+    })
+    public WebElement clickTeacher;
 
 
 

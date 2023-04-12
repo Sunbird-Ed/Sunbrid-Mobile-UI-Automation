@@ -877,13 +877,17 @@ public class ProfileEditPageActions  {
     }
 
     public void verifyUpdateConsentWithDifferentOrganization() throws Exception {
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(7000);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnUpdate);
         QXClient.get().report().info("Clicked on Update Button");
         QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilepageobj.assertTCcheckBox),"Terms and conditions check box is displayed");
+        QXClient.get().report().info("Terms and conditions checkbox is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnOrganizationField);
         QXClient.get().report().info("clicked on Org edit field");
@@ -1537,5 +1541,204 @@ public class ProfileEditPageActions  {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertCourseInProfile),"Course is not displayed under MUA user in all the devices");
         QXClient.get().report().info("Joined couse is displayed to MUA User in profile in all devices");
         QXClient.get().gestures().BlindWait(2000);
+    }
+
+    public void verifyNoTermsAndConditionsCheckboxInUpdateSelfInfoSection() throws Exception {
+        QXClient.get().gestures().BlindWait(7000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnUpdate);
+        QXClient.get().report().info("Clicked on Update Button");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilepageobj.assertTCcheckBox),"Terms and conditions check box is displayed");
+        QXClient.get().report().info("Terms and conditions checkbox is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+    }
+
+    public void verifySubroleScreenForNewCred() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.firstEditBtn);
+        QXClient.get().report().info("Clicked on edit role button");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubRoleDropdown);
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.sltSubRoleDropdown),"Subrole screen is not displayed");
+        QXClient.get().report().info("Subrole screen is displayed for new credentials");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyBMGSValuesPickedAutomaticallyInProfilePage() throws Exception {
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertBoard),"Board value is not displayed");
+        QXClient.get().report().info("Board value is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertMedium),"Medium value is not displayed");
+        QXClient.get().report().info("Medium value is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertClass),"Class value is not displayed");
+        QXClient.get().report().info("Class value is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyTwoSectionsOfProfilePage() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertContentPreferenceLabelProfile), "assertContentPreferenceLabelProfile is not displayed");
+        QXClient.get().report().info("Tap on assertContentPreferenceLabelProfile");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertRoleInProfile),"Role is not displayed in Profile after editing");
+        QXClient.get().report().info("Role is displayed in one line and in bold letters");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertDistrictInProfile),"District is not displayed in Profile after editing");
+        QXClient.get().report().info("District is displayed in one line and in bold letters");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertStateInProfile),"State is not displayed in Profile after editing");
+        QXClient.get().report().info("State is displayed in one line and in bold letters");
+
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertBoard),"Board value is not displayed");
+        QXClient.get().report().info("Board value is displayed in bold letters and in single line");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertMedium),"Medium value is not displayed");
+        QXClient.get().report().info("Medium value is displayed in bold letters and in single line");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertClass),"Class value is not displayed");
+        QXClient.get().report().info("Class value is displayed in bold letters and in single line");
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+    public void verifyIncorrectOTPMessageWhileUpdatingContactInformation() throws Exception {
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.addMobileNoField);
+        QXClient.get().report().info("Clicked on Add Mobile Number field");
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertUpdateContactPopup),"OTP to update contact popup is not displayed");
+        QXClient.get().report().info("OTP to updated contact popup is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertEnterOTPtoEditInformationText),"Enter OTP to edit your contact information text is not displayed");
+        QXClient.get().report().info("Enter OTP to edit your contact information text is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertEnterOTPText),"Enter OTP text is not displayed");
+        QXClient.get().report().info("Enter OTP text is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.editTextField);
+        QXClient.get().gestures().BlindWait(2000);
+        profileEditPageObjectsPageObjects.editTextField.sendKeys("1234");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.submitBtn);
+        QXClient.get().report().info("Clicked on Submit button post entering incorrect OTP");
+        QXClient.get().gestures().BlindWait(6000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertIncorrectOTPMessage),"Incorrect OTP. Number of attempts remaining : 1 message is not displayed");
+        QXClient.get().report().info("Incorrect OTP. Number of attempts remaining : 1 message is displayed post clicking submit btn");
+        QXClient.get().gestures().BlindWait(2000);
+    }
+
+    public void verifyFailedToValidateOTPMessageWhileUpdatingContactInformation() throws Exception {
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.editTextField);
+        QXClient.get().gestures().BlindWait(2000);
+        profileEditPageObjectsPageObjects.editTextField.sendKeys("1234");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.submitBtn);
+        QXClient.get().report().info("Clicked on Submit button post entering second time incorrect OTP");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertFailedToValidateOTPMsg),"Failed to validate OTP. Try again later message is not displayed");
+        QXClient.get().report().info("Failed to validate OTP. Try again later message is displayed post entering incorrect OTP second time");
+        QXClient.get().gestures().BlindWait(2000);
+    }
+
+
+    public void verifyValidateMobileNumberPopupFields() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.mobileNumberEditField);
+        QXClient.get().gestures().BlindWait(1000);
+        profileEditPageObjectsPageObjects.mobileNumberEditField.sendKeys("9148574673");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.validateBtn),"Validate btn is not displayed");
+        QXClient.get().report().info("Validate btn is displayed ");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.validateBtn);
+        QXClient.get().report().info("Clicked on Validate button");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertVerifyMobileNumberText),"Verify Mobile Number text is not displayed");
+        QXClient.get().report().info("Verify Mobile Number text is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertReceiveSMSText),"You will receive an SMS with the OTP for mobile number verification text is not displayed");
+        QXClient.get().report().info("You will receive an SMS with the OTP for mobile number verification text is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertEnterOTPTextInMobileNumber),"Enter OTP text is not displayed");
+        QXClient.get().report().info("Enter OTP text is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.editTextField),"OTP Edit Field is not displayed");
+        QXClient.get().report().info("Enter OTP edit field is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertResendOTPlink),"Resend OTP link is not displayed");
+        QXClient.get().report().info("Resend OTP link is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertCancelBtn),"Canel button is not displayed");
+        QXClient.get().report().info("Cancel button is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.clkSubmit),"Submit button is not displayed");
+        QXClient.get().report().info("Submit button is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
+
+    public void verifyValidateEmailIDPopupFields() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.EmailEditField);
+        QXClient.get().gestures().BlindWait(1000);
+        profileEditPageObjectsPageObjects.EmailEditField.clear();
+        QXClient.get().gestures().BlindWait(1000);
+        profileEditPageObjectsPageObjects.EmailEditField.sendKeys("stag60@yopmail.com");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(1000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.validateBtn),"Validate btn is not displayed");
+        QXClient.get().report().info("Validate btn is displayed ");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.validateBtn);
+        QXClient.get().report().info("Clicked on Validate button");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertVerifyEmailAddressText),"Verify Email ID text is not displayed");
+        QXClient.get().report().info("Verify Email ID text is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertReceiveEmailWithOTPText),"You will receive an email with the OTP for email address verification text is not displayed");
+        QXClient.get().report().info("You will receive an email with the OTP for email address verification text is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertEnterOTPText),"Enter OTP text is not displayed");
+        QXClient.get().report().info("Enter OTP text is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.editTextField),"OTP Edit Field is not displayed");
+        QXClient.get().report().info("Enter OTP edit field is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertResendOTPlink),"Resend OTP link is not displayed");
+        QXClient.get().report().info("Resend OTP link is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertCancelBtn),"Canel button is not displayed");
+        QXClient.get().report().info("Cancel button is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.clkSubmit),"Submit button is not displayed");
+        QXClient.get().report().info("Submit button is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+
     }
 }
