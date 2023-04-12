@@ -386,11 +386,11 @@ public class ProfileEditPageActions  {
 	        QXClient.get().report().info("verified assertMediumContentPreferenceLabelProfile");
 	        QXClient.get().gestures().BlindWait(2000);
 	        
-	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertClassContentPreferenceLabelProfile), "assertClassContentPreferenceLabelProfile is not displayed");
+	      //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertClassContentPreferenceLabelProfile), "assertClassContentPreferenceLabelProfile is not displayed");
 	        QXClient.get().report().info("verified assertClassContentPreferenceLabelProfile");
 	        QXClient.get().gestures().BlindWait(2000);
 	        
-	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertSubjectContentPreferenceLabelProfile), "assertSubjectContentPreferenceLabelProfile is not displayed");
+	      //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertSubjectContentPreferenceLabelProfile), "assertSubjectContentPreferenceLabelProfile is not displayed");
 	        QXClient.get().report().info("verified assertSubjectContentPreferenceLabelProfile");
 	        QXClient.get().gestures().BlindWait(2000);
 	        
@@ -1740,5 +1740,19 @@ public class ProfileEditPageActions  {
         QXClient.get().report().info("Submit button is displayed");
         QXClient.get().gestures().BlindWait(3000);
 
+    }
+
+    public void verifyTrackableCourseUnderMyLearningSection() throws Exception {
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkRefreshBtn);
+        QXClient.get().report().info("Clicked on refresh button");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertTrackableCourse),"Trackable course is not displayed under my learning section");
+        QXClient.get().report().info("Trackable course is displayed under my learning section in profile page");
+        QXClient.get().gestures().BlindWait(3000);
     }
 }

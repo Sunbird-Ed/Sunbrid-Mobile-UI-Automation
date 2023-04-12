@@ -270,7 +270,10 @@ public MobileElement clkEditLocation;
   @AndroidFindBy(xpath = "//android.view.View[@text='Your email address is already registered']")
    public MobileElement alreadyRegisteredEmailMessage;
 
-  @AndroidFindBy(xpath = "//android.widget.TextView[@text='Login to DIKSHA']")
+  @AndroidFindAll({
+          @AndroidBy(xpath = "//android.widget.TextView[@text='Login']"),
+          @AndroidBy(xpath = "//android.widget.TextView[@text='Login to DIKSHA']"),
+  })
   public MobileElement assertLoginPageText;
  @AndroidFindBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']")
   public MobileElement assertLoginWithDikshaOption;
@@ -540,6 +543,7 @@ public MobileElement clkEditLocation;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Forgot Password ?']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Forgot password?']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Forget password?']"),
     })
@@ -885,11 +889,17 @@ public MobileElement clkEditLocation;
     public MobileElement assertAddedGmailAccount;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Welcome to DIKSHA!']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Welcome to SUNBIRD!']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Welcome to DIKSHA!']"),
+    })
     public MobileElement assertWelcomeTextInRegistrationPage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Register on DIKSHA']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Register on SUNBIRD']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Register on DIKSHA']"),
+    })
     public MobileElement assertRegisterOnDiksha;
 
 
@@ -986,6 +996,11 @@ public MobileElement clkEditLocation;
             @AndroidBy(xpath = "//android.view.View[@text='Teacher']"),
     })
     public WebElement clickTeacher;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='4.7 ribbon trackable book']")
+    public MobileElement assertTrackableCourse;
+
 
 
 

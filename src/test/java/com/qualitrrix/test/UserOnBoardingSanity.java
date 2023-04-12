@@ -69,7 +69,7 @@ public class UserOnBoardingSanity {
 
 	   @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
 	            description = "verifyLoginOptionIsPresentForStudent")
-	    public void studentNoLoginOption() throws Exception {
+	    public void studentLoginOption() throws Exception {
 	    	 QXClient.get().driver();
 			  getDikshaMainPageActions().performUserOnBoardingWithStudent();
 			  

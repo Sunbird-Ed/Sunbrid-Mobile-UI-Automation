@@ -11,7 +11,7 @@
     "android": {
       "appPackage": "org.sunbird.app.staging",
       "appActivity": "org.sunbird.app.MainActivity",
-      "app": ".\\caps\\SUNBIRD_5_1_328staging.apk",
+      "app": ".\\caps\\SUNBIRD_5_1_362staging.apk",
       "platformName": "Android",
       "newCommandTimeout": 600,
       "launchTimeout": 90000

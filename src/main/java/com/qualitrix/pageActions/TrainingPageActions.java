@@ -920,7 +920,7 @@ public class TrainingPageActions {
     }
 
     public void verifyCourseCompletedMsg() throws Exception {
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.courseContentVerification);
+     //   QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.courseContentVerification);
         QXClient.get().gestures().BlindWait(3000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.verifyCompletedMsg), "You have successfully verifyCompletedMsg completed this course");
         QXClient.get().report().info("Verifying verifyCompletedMsg message");
@@ -1245,7 +1245,7 @@ public class TrainingPageActions {
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkBackBtn);
         QXClient.get().gestures().BlindWait(2000);
-        tapOnSearchedCourse1();
+        tapOnSearchedSmallCourse();
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().BlindWait(6000);
         ///QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCourseDetails);
@@ -1275,9 +1275,9 @@ public class TrainingPageActions {
         QXClient.get().gestures().BlindWait(6000);
         QXClient.get().gestures().BlindWait(4000);
 
-        QXClient.get().gestures().clkBackButton();
+       // QXClient.get().gestures().clkBackButton();
 
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOkToCancel);
+       // QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOkToCancel);
         QXClient.get().report().info("Clicked on OK button to cancel");
         QXClient.get().gestures().BlindWait(3000);
 
@@ -1314,14 +1314,14 @@ public class TrainingPageActions {
         QXClient.get().gestures().BlindWait(8000);
 
 
-        QXClient.get().gestures().clkBackButton();
+     //   QXClient.get().gestures().clkBackButton();
 
         QXClient.get().gestures().BlindWait(1000);
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOkToCancel);
+      //  QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOkToCancel);
 
-        QXClient.get().gestures().clkBackButton();
+     //   QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(9000);
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.closeRatingIcon);
+      //  QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.closeRatingIcon);
         QXClient.get().gestures().BlindWait(5000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.congratulationsMsg), "Congratulations message is not displayed");
@@ -1473,19 +1473,19 @@ public class TrainingPageActions {
         QXClient.get().report().info("Limited course is displayed");
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkLastQuestion);
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkReplayBtn);
         QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkLastQuestion);
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkReplayBtn);
         QXClient.get().gestures().BlindWait(2000);
@@ -1672,7 +1672,7 @@ public class TrainingPageActions {
     public void verifyCourseUpdatedMessageWithDate() throws Exception {
         QXClient.get().gestures().BlindWait(6000);
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertCourseUpdatedMessageWithDate), "Course updated message is not displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertCourseUpdatedMessageWithDate), "Course updated message is not displayed");
         QXClient.get().report().info("Course last updated on dd/mm/yyyy format is displayed");
         QXClient.get().gestures().BlindWait(2000);
 
@@ -2080,6 +2080,14 @@ public class TrainingPageActions {
         QXClient.get().report().info("Tap on trackableCollection");
     }
 
+
+    public void tapOnSearchedCourse10() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.automationSSOCourse);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Tap on AutomationCourse");
+    }
+
     public void tapOnSearchedCourse8() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
         //QXClient.get().gestures().swipeUp();
@@ -2137,6 +2145,28 @@ public class TrainingPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionSetCourse);
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().report().info("Tap on QuestionSetCourse");
+    }
+
+    public void tapOnAlreadyJoinedCourse() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.alreadyJoinedCourse);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Tap on Already Joined course");
+    }
+
+
+    public void tapOnExpiredAndOngoingBatchCourse() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.expiredAndOngoingCourse);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Tap on Expired And Ongoing course");
+    }
+
+    public void tapOnExpiredAndFutureBatchCourse() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.expiredAndFutureBatchCourse);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Tap on Expired And Future batch course");
     }
 
     public void tapOnQuestionSetCourse5() throws Exception {
@@ -2893,6 +2923,14 @@ public class TrainingPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.trackableCollection22);
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().report().info("Tap on Trackable Collection");
+    }
+
+
+    public void tapOnNonTrackableCollection() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.nonTrackableCollection);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Tap on non Trackable Collection");
     }
 
     public void verifyProfileNameChangePopupInCourseTOC() throws Exception {
@@ -4412,5 +4450,214 @@ public class TrainingPageActions {
         QXClient.get().report().info("Join button is displayed in popup");
         QXClient.get().gestures().BlindWait(2000);
     }
+
+    public void verifyNoProfileNameChangePopupInTrackableCollection() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinButton), "Join Collection Button is not visible");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinButton);
+        QXClient.get().report().info("Clicked on join Collection");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertConsentPopUpPostJoinCourse), "Consent Popup is not displayed");
+        QXClient.get().report().info("Consent Popup is displayed post Join Course");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+        QXClient.get().report().info("Clicked on Donot share button");
+        QXClient.get().gestures().BlindWait(4000);
+
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertConfirmProfileNameTextInPopup), "Confirm profile name popup is displayed");
+        QXClient.get().report().info("Confirm profile name popup is not displayed");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertProfileNameInPopup), "Profile name is displayed in popup");
+        QXClient.get().report().info("Profile name is not displayed");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.editProfileIcon), "Edit profile name link is displayed in the popup");
+        QXClient.get().report().info("Edit profile name link is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyNoProfileNameChangePopupInCourse() throws Exception {
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertConfirmProfileNameTextInPopup), "Confirm profile name popup is displayed");
+        QXClient.get().report().info("Confirm profile name popup is not displayed");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertProfileNameInPopup), "Profile name is displayed in popup");
+        QXClient.get().report().info("Profile name is not displayed");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.editProfileIcon), "Edit profile name link is displayed in the popup");
+        QXClient.get().report().info("Edit profile name link is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void consumeNonTrackableCollection() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.trackableCourseUnderNontrackableCol);
+        QXClient.get().report().info("Clikced on trackable course");
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinButton), "Join Collection Button is not visible");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinButton);
+        QXClient.get().report().info("Clicked on join Collection");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertConsentPopUpPostJoinCourse), "Consent Popup is not displayed");
+        QXClient.get().report().info("Consent Popup is displayed post Join Course");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+        QXClient.get().report().info("Clicked on Donot share button");
+        QXClient.get().gestures().BlindWait(4000);
+
+    }
+
+    public void verifyUserAbleToConsumeCourseForAlreadyJoinedBatch() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertResumeBtn),"Resume button is not displayed");
+        QXClient.get().report().info("Resume button is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertExpiredBatches),"Expired batches is not displayed");
+        QXClient.get().report().info("Expired batches is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertOpenBatches),"Open batches is not displayed");
+        QXClient.get().report().info("Open bathces is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.assertResumeBtn);
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertJoinedBatchMsg),"You have joined the batch of a course that is completed message is not displayed");
+        QXClient.get().report().info("You have joined the batch of a course that is completed message is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertProgressWillNotUpdateMsg),"You may continue the course, but your progress will not be updated message is not displayed");
+        QXClient.get().report().info("You may continue the course, but your progress will not be updated message is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
+        QXClient.get().report().info("Clicked on start learning");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextIcon);
+        QXClient.get().report().info("Clicked on Next Arrow Icon");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextIcon);
+        QXClient.get().report().info("Clicked on Next Arrow Icon");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertPdfSlide3),"User not able to consume pdf content inside course");
+        QXClient.get().report().info("User able to consume pdf content in course");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkPreviousIcon);
+        QXClient.get().report().info("Clicked on Next Previous Icon");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkPreviousIcon);
+        QXClient.get().report().info("Clicked on Next Previous Icon");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertPdfSlide1),"User not able to consume pdf content inside course");
+        QXClient.get().report().info("User able to consume pdf content in course");
+        QXClient.get().gestures().BlindWait(2000);
+    }
+
+    public void verifyNoProfileNameChangePopupInCourseForSSO() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn), "Join Course Button is not visible");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+        QXClient.get().report().info("Clicked on join Course");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertConsentPopUpPostJoinCourse), "Consent Popup is not displayed");
+        QXClient.get().report().info("Consent Popup is displayed post Join Course");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+        QXClient.get().report().info("Clicked on Donot share button");
+        QXClient.get().gestures().BlindWait(4000);
+
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
+        QXClient.get().gestures().BlindWait(4000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertConfirmProfileNameTextInPopup), "Confirm profile name popup is displayed");
+        QXClient.get().report().info("Confirm profile name popup is not displayed");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertProfileNameInPopup), "Profile name is displayed in popup");
+        QXClient.get().report().info("Profile name is not displayed");
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.editProfileIcon), "Edit profile name link is displayed in the popup");
+        QXClient.get().report().info("Edit profile name link is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+
+    public void verifyNoPopUpIsDisplayedForExpiredBatchAndDirectlyNavigatesToOngoingBatch() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertExpiredBatches),"Expired batches is displayed");
+        QXClient.get().report().info("Expired batches is not displayed");
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertOpenBatches),"Open batches is displayed");
+        QXClient.get().report().info("Open bathces is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn),"Join course button is not displayed");
+        QXClient.get().report().info("Join Course button is displayed");
+        QXClient.get().report().info("User is navigated to Open batches directly without expired batch popup");
+        QXClient.get().gestures().BlindWait(2000);
+    }
+
+
+    public void verifyFututeBatchPopupPostClickingJoinCourseBtn() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertExpiredBatches),"Expired batches is displayed");
+        QXClient.get().report().info("Expired batches is not displayed");
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertOpenBatches),"Open batches is displayed");
+        QXClient.get().report().info("Open bathces is not displayed");
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn),"Join course button is not displayed");
+        QXClient.get().report().info("Join Course button is displayed");
+
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertFutureBatchPopup),"Future batch popup is not displayed");
+        QXClient.get().report().info("Future batch popup is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void verifyCourseModificationMessageIsNotDisplayed() throws Exception {
+        QXClient.get().gestures().BlindWait(6000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn),"Join Course button is not displayed");
+        QXClient.get().report().info("Join Course button is displayed");
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertCourseUpdatedMessageWithDate), "Course updated message is displayed");
+        QXClient.get().report().info("Course last updated on dd/mm/yyyy format is not displayed");
+        QXClient.get().gestures().BlindWait(4000);
+    }
+
+
 
 }

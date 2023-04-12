@@ -917,6 +917,9 @@ public LibraryCourseContentPageActions() {
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
         QXClient.get().report().info("clicked on sltFilter1 ");
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter2);
+        QXClient.get().report().info("clicked on sltFilter2 ");
+        QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkConfirmBton);
         QXClient.get().report().info("clicked on clkConfirmBton ");
@@ -1026,7 +1029,7 @@ public LibraryCourseContentPageActions() {
         QXClient.get().gestures().BlindWait(3000);
 
 
-        //QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
+       // QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
         QXClient.get().report().info("clicked on clkApplyFilter ");
         QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");

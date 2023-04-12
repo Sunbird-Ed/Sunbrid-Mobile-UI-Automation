@@ -69,6 +69,7 @@ public class DikshaMainPageObjects {
 
 
     @AndroidFindAll({
+       @AndroidBy(xpath = "//android.view.View[@text='Board']"),
         @AndroidBy(xpath = "//android.view.View[@text='Select Board']"),
         @AndroidBy(xpath = "//android.widget.Button[@text='Select Board']"),
         
@@ -79,12 +80,14 @@ public MobileElement selectBoard;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Medium, Medium']"),
             @AndroidBy(xpath = "//android.view.View[@text='Select Medium, Medium']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Medium, Medium']"),
     })
     public MobileElement selectMedium;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Class, Class']"),
             @AndroidBy(xpath = "//android.view.View[@text='Select Class, Class']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Class, Class']"),
     })
@@ -257,7 +260,10 @@ public MobileElement switchNewExperienceBtn;
 public MobileElement assertScanQRCode;
 
 
-@AndroidFindBy(xpath = "//android.widget.Button[@text='Select Board']")
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Board']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Select Board']"),
+})
 public MobileElement assertSelectBoard;
 
 

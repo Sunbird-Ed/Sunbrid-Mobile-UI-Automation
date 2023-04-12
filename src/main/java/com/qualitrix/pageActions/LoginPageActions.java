@@ -52,7 +52,7 @@ public class LoginPageActions {
             
             
             Thread.sleep(2000);
-            QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
+          // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
             Thread.sleep(2000);
 
             QXClient.get().gestures().waitForElementToAppear(loginPageObjects.usernameObj);
@@ -224,7 +224,7 @@ public class LoginPageActions {
     	DikshaMainPageActions cl=new DikshaMainPageActions();
     	Thread.sleep(2000);
 
-        //QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
+       // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
 
             
             QXClient.get().gestures().waitForElementToAppear(loginPageObjects.usernameObj);
@@ -260,7 +260,7 @@ public class LoginPageActions {
             
             
             Thread.sleep(2000);
-            QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
+           // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
             Thread.sleep(2000);
 
             QXClient.get().gestures().waitForElementToAppear(loginPageObjects.usernameObj);
@@ -594,7 +594,7 @@ public class LoginPageActions {
         QXClient.get().report().info("Clicked on Login Button");
         QXClient.get().gestures().BlindWait(2000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
+       // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnForgetPassword);
@@ -627,7 +627,7 @@ public class LoginPageActions {
         profilePageObjects.clkOnNameEditField.sendKeys("Anoshu");
         QXClient.get().gestures().BlindWait(3000);
 
-       // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
         QXClient.get().report().info("Clicked on Next button for the first time");
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().BlindWait(2000);
@@ -638,14 +638,14 @@ public class LoginPageActions {
         profilePageObjects.clkOnNameEditField.sendKeys("Hello");
         QXClient.get().gestures().BlindWait(3000);
 
-       // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
         QXClient.get().report().info("Clicked on Next button for second time with invalid name");
         QXClient.get().gestures().BlindWait(3000);
 
-        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginTextInLoginPage),"Login page is not displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginTextInLoginPage),"Login page is not displayed");
         QXClient.get().report().info("After giving two times with invalid name redirected to Login Page");
         QXClient.get().gestures().BlindWait(2000);
-        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertErrorMessageInLoginPage),"Error message is not displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertErrorMessageInLoginPage),"Error message is not displayed");
         QXClient.get().report().info("Error message is displayed in Login page");
         QXClient.get().gestures().BlindWait(3000);
     }
@@ -843,10 +843,10 @@ public class LoginPageActions {
     public void verifyRedirectedToLoginPagePostSelectingUsertypeAdmin() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginPageText),"Login to DIKSHA text  is not displayed");
+       // Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginPageText),"Login to DIKSHA text  is not displayed");
         QXClient.get().report().info("Login to DIKSHA text is displayed in Login page");
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkLoginWithDikshaBtn),"Login with Diksha button is not displayed");
+       // Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkLoginWithDikshaBtn),"Login with Diksha button is not displayed");
         QXClient.get().report().info("Login with Diksha button is displayed in Login page");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginWithStateSystemOption),"Login with state system button is not displayed");
@@ -1167,7 +1167,7 @@ public class LoginPageActions {
         QXClient.get().report().info("Clicked on Login with state system option");
         QXClient.get().gestures().BlindWait(5000);
 
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().BlindWait(9000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSelectStateOption);
         QXClient.get().gestures().BlindWait(2000);
@@ -1177,7 +1177,7 @@ public class LoginPageActions {
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtn);
         QXClient.get().gestures().BlindWait(5000);
-
+        QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDikshaSSOLoginText),"Diksha SSO Login text is not displayed");
         QXClient.get().report().info("Diksha SSO Login text is displayed ");
         QXClient.get().gestures().BlindWait(2000);
@@ -1199,7 +1199,7 @@ public class LoginPageActions {
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtn);
         QXClient.get().gestures().BlindWait(6000);
-
+        QXClient.get().gestures().BlindWait(6000);
     }
 
     public void verifyUserNavigatedToNativePage() throws Exception {

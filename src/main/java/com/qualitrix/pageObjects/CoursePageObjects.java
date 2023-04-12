@@ -208,8 +208,11 @@ public MobileElement assertStartLearning;
 	   
 	   @AndroidFindBy(className = "android.widget.CheckBox")
 	    public MobileElement termsCheckBoxTeacherForm;
-		
-	   @AndroidFindBy(xpath = "//android.view.View[contains(@text,'I agree to share these details with the Administrators of DIKSHA as per the')]")
+
+	   @AndroidFindAll({
+			   @AndroidBy(xpath = "//android.view.View[contains(@text,'I agree to share these details with the Administrators of SUNBIRD as per the')]"),
+			   @AndroidBy(xpath = "//android.view.View[contains(@text,'I agree to share these details with the Administrators of DIKSHA as per the')]")
+	   })
 	    public MobileElement verifyAgreePrivacyPolicyText;
 	   
 	   
@@ -242,9 +245,8 @@ public MobileElement assertStartLearning;
 
 	})
 	public MobileElement clkBoardDropDown;
-	   
-	
-	   
+
+
 	   @AndroidFindAll({
 			@AndroidBy(className ="android.widget.RadioButton")
 
@@ -261,6 +263,13 @@ public MobileElement assertStartLearning;
 
 	})
 	public List<MobileElement> clkMediumDropDown;
+
+	@AndroidFindAll({
+			@AndroidBy(xpath = "//*[@resource-id='ion-sel-6']"),
+
+	})
+	public MobileElement clkMediumDropDownSSO;
+
 	   
 	   @AndroidFindAll({
 			@AndroidBy(xpath ="//android.widget.CheckBox[@text='English']")
@@ -278,6 +287,13 @@ public MobileElement assertStartLearning;
 
 	})
 	public List<MobileElement>  clkClassDropDown;
+
+	@AndroidFindAll({
+			@AndroidBy(xpath = "//*[@resource-id='ion-sel-7']"),
+
+	})
+	public MobileElement clkClassDropDownSSO;
+
 
 	   
 	   @AndroidFindAll({
@@ -297,6 +313,13 @@ public MobileElement assertStartLearning;
 
 	})
 	public List<MobileElement> clkSubjectDropDown;
+
+	@AndroidFindAll({
+			@AndroidBy(xpath = "//*[@resource-id='ion-sel-5']"),
+	})
+	public MobileElement clkSubjectDropDownSSO;
+
+
 	   
 	   
 	   @AndroidFindAll({
@@ -309,7 +332,7 @@ public MobileElement assertStartLearning;
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'State (Andhra Pradesh) \u200E')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='Board:']//following::android.view.View[@text='State (Andhra Pradesh) ‎']"),
-
+           @AndroidBy(xpath = "//android.view.View[@text='Board: State (Tamil Nadu) \u200E']"),
 	})
 	public MobileElement verifyBaord;
 
@@ -317,7 +340,7 @@ public MobileElement assertStartLearning;
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//android.view.View[@text='English']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Medium:']//following::android.view.View[@text='English'][1]"),
-
+            @AndroidBy(xpath = "//android.view.View[@text='Medium: English']"),
 	})
 	public MobileElement verifyMedium;
 
@@ -325,7 +348,7 @@ public MobileElement assertStartLearning;
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//android.view.View[@text='Class 1']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Classes:']//following::android.view.View[1]"),
-
+           @AndroidBy(xpath = "//android.view.View[@text='Classes: Class 1']"),
 	})
 	public MobileElement verifyClasses;
 
@@ -333,7 +356,7 @@ public MobileElement assertStartLearning;
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//android.view.View[@text='English']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Subjects:']//following::android.view.View[@text='English']"),
-
+            @AndroidBy(xpath = "//android.view.View[@text='Subjects: English']"),
 	})
 	public MobileElement verifySubjects;
 	   
@@ -354,6 +377,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+			@AndroidBy(xpath = "//android.view.View[contains(@text,'Medium: English')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='Medium: English']"),
 			@AndroidBy(xpath = "//android.view.View[@text='English']"),
 

@@ -219,6 +219,75 @@ public class SunbirdEdMobile4 {
 
     }
 
+    @Test()
+    public void verifyConsumedTrackableCollectionUnderNonTrackableCollectionIsDisplayedUnderContinueLearningSection() throws Exception {
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        DikshaMainPageActions d = new DikshaMainPageActions();
+        getHomePageActions().tapOnProfileTab();
+
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+        System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+        String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",120,2);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        getLoginPageActions().loginToTheUser(Username, Password);
+        getHomePageActions().tapOnMenuBar();
+
+        getCoursePageActions().tapOnAddAnotherUser();
+
+        String FakeName=QXClient.get().gestures().generateRandomName();
+        String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
+        System.out.println(storeFakeNameEntered);
+        getCoursePageActions().tapOnAddUserBtn();
+        getHomePageActions().tapOnMenuBar();
+
+        getCoursePageActions().tapOnMoreOption();
+        QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+
+
+        getCoursePageActions().tapOnChangeUserWithoutProfile();
+
+        getCoursePageActions().tapOnTermsAndCondition();
+
+        getCoursePageActions().tapOnContinueForSwicthUser();
+
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
+
+        getHomePageActions().tapOnTrainingTab();
+
+        getHomePageActions().tapOnSearchIcon();
+
+        getHomePageActions().enterTextInSearchBar(coursefetch);
+
+        getTrainingPageActions().tapOnNonTrackableCollection();
+
+        getTrainingPageActions().consumeNonTrackableCollection();
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
+        getHomePageActions().tapOnDownloadTab();
+        getHomePageActions().tapOnProfileTab();
+        getProfileEditPageActions().verifyTrackableCourseUnderMyLearningSection();
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
+        getHomePageActions().tapOnMenuBar();
+
+        getHomePageActions().verifyTrackableCourseUnderMyLearningInHomePage();
+
+        getHomePageActions().tapOnMenuBar();
+
+        getHomePageActions().verifyTrackableCourseUnderContinueLearningSectionInLibraryPage();
+
+    }
+
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "Login with Gamil verification")
@@ -1335,7 +1404,7 @@ public class SunbirdEdMobile4 {
 
         String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
         String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-
+        String limitedCourse = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 121,2);
         getLoginPageActions().loginToTheUser(Username, Password);
 
         //getHomePageActions().tapOnDownloadTab();
@@ -1366,7 +1435,7 @@ public class SunbirdEdMobile4 {
         d.LaunchAppHomeScreen();
 
         getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("limited course");
+        getHomePageActions().enterTextInSearchBar(limitedCourse);
         getTrainingPageActions().tapOnQuestionSetCourse();
 
         getTrainingPageActions().tapOnJoinTraining2();

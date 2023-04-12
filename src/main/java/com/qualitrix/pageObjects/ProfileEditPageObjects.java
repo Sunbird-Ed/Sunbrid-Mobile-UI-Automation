@@ -399,7 +399,10 @@ public MobileElement myLearningtext;
     public MobileElement assertMedium;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Classes')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Class')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Classes')]"),
+    })
     public MobileElement assertClass;
 
 

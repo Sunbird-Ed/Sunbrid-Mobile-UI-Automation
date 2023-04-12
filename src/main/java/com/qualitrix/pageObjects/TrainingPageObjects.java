@@ -1163,6 +1163,12 @@ public MobileElement courseUnderOthers;
     })
     public MobileElement trackableCollection;
 
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationSSOCourse')]"),
+    })
+    public MobileElement automationSSOCourse;
+
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Cert Course 4.5')]"),
@@ -1216,7 +1222,8 @@ public MobileElement courseUnderOthers;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE UpdatedCourseContent')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE UpdatedMsgCourseContent')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE UpdatedCourseWithLastUpdatedMsg')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'UpdatedCourseContent')]"),
     })
     public MobileElement updatedCourseContent;
@@ -1227,6 +1234,24 @@ public MobileElement courseUnderOthers;
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'Limited questionset course')]"),
     })
     public MobileElement questionSetCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoAlreadyJoinedCourse')]"),
+
+    })
+    public MobileElement alreadyJoinedCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoExpiredBatchWithOngoingBatchCourse')]"),
+
+    })
+    public MobileElement expiredAndOngoingCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoExpiredAndFutureBatchCourse')]"),
+
+    })
+    public MobileElement expiredAndFutureBatchCourse;
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Course with ak question set')]")
@@ -1506,6 +1531,13 @@ public MobileElement courseUnderOthers;
 
     })
     public MobileElement trackableCollection22;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK 4.7 Non trackable')]"),
+
+    })
+    public MobileElement nonTrackableCollection;
 
 
 
@@ -1905,6 +1937,33 @@ public MobileElement courseUnderOthers;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
     public MobileElement assertJoinBtnForOngoingBathc;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ToggleButton[contains(@text,'4.7 ribbon trackable')]")
+    public MobileElement trackableCourseUnderNontrackableCol;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'You have joined the batch of a course that is completed on')]")
+    public MobileElement assertJoinedBatchMsg;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'You may continue the course, but your progress will not be updated')]")
+    public MobileElement assertProgressWillNotUpdateMsg;
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Expired Batches']")
+    public MobileElement assertExpiredBatches;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Open Batches']")
+    public MobileElement assertOpenBatches;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'The course's batch is available from')]")
+    public MobileElement assertFutureBatchPopup;
+
+
 
 
 

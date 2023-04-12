@@ -1185,7 +1185,7 @@ public class SunbirdEdMobile1 {
         getHomePageActions().enterTextInSearchBar(coursefetch);
 
         //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(coursefetch);
-        getTrainingPageActions().tapOnSearchedCourse1();
+        getTrainingPageActions().tapOnSearchedSmallCourse();
         getTrainingPageActions().verifyCertificateDetailsBeforeJoinCourse();
 
         getTrainingPageActions().verifyCertificateDetailsAfterJoinCourse();
@@ -1739,9 +1739,7 @@ public class SunbirdEdMobile1 {
 
         QXClient.get().driver();
         getDikshaMainPageActions().performUserOnBoarding();
-
-
-        getHomePageActions().tapOnProfileTab();
+        DikshaMainPageActions d = new DikshaMainPageActions();
         Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
                 properties.getProperty("excelpath"));
 
@@ -1753,15 +1751,16 @@ public class SunbirdEdMobile1 {
         String coursefetch=QXClient.get().excelUtils().getCellValue("Excel1","TestData",25,2);
 
 
-        //getHomePageActions().tapOnDownloadTab();
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
         getHomePageActions().tapOnTrainingTab();
 
         getTrainingPageActions().verifyLoginBeforeCourseFetch();
 
         getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("CourseContent");
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("CourseContent");
-        getTrainingPageActions().tapOnSearchedCourse6();
+        getHomePageActions().enterTextInSearchBar(coursefetch);
+
+        getTrainingPageActions().tapOnSearchedCourse1();
         getTrainingPageActions().verifyLoginPopUpWhileJoinCourse();
 
         getLoginPageActions().loginToTheUser(Username,Password);
@@ -2030,20 +2029,39 @@ public class SunbirdEdMobile1 {
     }
 
 
+
+
     @Test()
-    public void verifyStateAndDistrictValuesAreAutopopulatedInRegisterHerePage() throws Exception {
+    public void verifyResumeButtonInAlreadyJoinedBatchOfACourseAndProgressBarIsNotDisplayed() throws Exception {
 
         QXClient.get().driver();
-
         getDikshaMainPageActions().performUserOnBoarding();
-
+        DikshaMainPageActions d = new DikshaMainPageActions();
         getHomePageActions().tapOnProfileTab();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+        System.out.println("@name:" +
+                properties.getProperty("excelpath"));
 
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        getLoginPageActions().verifyPostClickingContinueBtnItShouldWorkAsExpected();
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 122, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+        String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",123,2);
+        getLoginPageActions().loginToTheUser(Username, Password);
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
+
+        getHomePageActions().tapOnTrainingTab();
+
+        getHomePageActions().tapOnSearchIcon();
+        getHomePageActions().enterTextInSearchBar(coursefetch);
+
+        getTrainingPageActions().tapOnAlreadyJoinedCourse();
+
+        getTrainingPageActions().verifyUserAbleToConsumeCourseForAlreadyJoinedBatch();
 
     }
 

@@ -529,7 +529,7 @@ public class DikshaMainPageActions  {
 
         ProfileEditPageActions pageaction=new ProfileEditPageActions();
 
-       // QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
         QXClient.get().report().info("Clicked on Continue Button");
 
         // pageaction.verifyLabelOnBoarding();

@@ -351,6 +351,8 @@ public MobileElement clkSeeMoreBooksAndContent;
     public MobileElement ClkSyncNow;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Share the SUNBIRD app']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Share the SUNBIRD app']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Share the DIKSHA app']"),
             @AndroidBy(xpath = "//android.view.View[@text='Share the DIKSHA app']"),
     })
@@ -491,11 +493,16 @@ public MobileElement clkSeeMoreBooksAndContent;
             @AndroidBy(xpath ="//android.view.View[@text='Subject']"),
     })
     public MobileElement clkLibSubject;
-    
-    @AndroidFindBy(xpath ="//android.widget.Button[@text='APPLY FILTER']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath ="//android.widget.Button[contains(@text,'APPLY')]"),
+            @AndroidBy(xpath ="//android.widget.Button[contains(@text,'APPLY FILTER')]"),
+            @AndroidBy(xpath ="//android.widget.Button[@text='APPLY FILTER']")
+    })
     public MobileElement clkApplyFilter;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'results for')]//following-sibling::android.view.View[1]"),
             @AndroidBy(xpath ="//android.widget.Image[@index='0'][1]"),
