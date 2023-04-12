@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "environment": "local",
+    "reportName": "Qualitrix Automation Report"
+  },
+  "server": {
+    "host": "localhost",
+    "port": 1234
+  },
+  "capabilities": {
+    "android": {
+      "appPackage": "staging.diksha.app",
+      "appActivity": "org.sunbird.app.MainActivity",
+      "app": ".\\caps\\diksha-4.1.26staging.apk",
+      "platformName": "Android",
+      "newCommandTimeout": 600,
+      "launchTimeout": 90000
+    },
+   
+  },
+  "devices":[
+    {
+      "name":"RZ8M91JDKEZ",
+      "version":"9.0.0",
+      "platform":"Android"
+    },
+    
+  ]
+}
