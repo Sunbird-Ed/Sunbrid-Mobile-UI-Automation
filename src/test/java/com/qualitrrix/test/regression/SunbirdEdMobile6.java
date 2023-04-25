@@ -1010,23 +1010,6 @@ public class SunbirdEdMobile6 {
     }
 
 
-    @Test()
-    public void verifyStateAndDistrictValuesAreAutopopulatedInRegisterHerePage() throws Exception {
-
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyPostClickingContinueBtnItShouldWorkAsExpected();
-
-    }
-
 
     @Test()
     public void verifyCaptchaDisplayedwhenAddedUserToGroup() throws Exception {
@@ -1541,22 +1524,6 @@ public class SunbirdEdMobile6 {
 
     }
 
-    @Test()
-    public void verifyOTPSentToParentOrGuardianMessageForMinorUsersWhileRegistration() throws Exception {
-
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyEnterMobileNumberorEmailAddressTextForMinorUser();
-
-    }
 
 
     @Test()

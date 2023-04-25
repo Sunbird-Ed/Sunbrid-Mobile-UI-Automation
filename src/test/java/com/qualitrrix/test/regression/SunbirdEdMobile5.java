@@ -53,28 +53,6 @@ public class SunbirdEdMobile5 {
 
     }
 
-    @Test()
-    public void verifyThisContentCannotBeDownloadedMsgForLargeContent() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String largeVideoContent =QXClient.get().excelUtils().getCellValue("Excel1","TestData",91,2);
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(largeVideoContent);
-
-        getTrainingPageActions().tapOnLargeVideoContent();
-
-        getDownloadPageActions().verifyDisabledDownloadBtnAndValidateMessagePostClickingDownloadBtn();
-
-    }
-
 
     @Test()
     public void verifyUserAbleToLoginToTheSystemUsingUsernameExternalIDAndSchoolExternalID() throws Exception {
@@ -101,6 +79,47 @@ public class SunbirdEdMobile5 {
         getHomePageActions().verifyUserLoggedInSuccessfullyUsingStateSystem();
 
     }
+
+    
+    @Test()
+    public void verifyUsageHistoryInLoggedInGmailAccount() throws Exception {
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+
+        getHomePageActions().tapOnProfileTab();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        getHomePageActions().signInWithGoogle();
+
+        getHomePageActions().verifyNavigatedToGmailLoginPagePostClickingSignWithGoogle();
+
+        getHomePageActions().enterGmailDetailsAndVerfiyUsrnameInProfileSec();
+
+    }
+
+    @Test()
+    public void verifyThisContentCannotBeDownloadedMsgForLargeContent() throws Exception {
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String largeVideoContent =QXClient.get().excelUtils().getCellValue("Excel1","TestData",91,2);
+
+        getHomePageActions().tapOnSearchIcon();
+        getHomePageActions().enterTextInSearchBar(largeVideoContent);
+
+        getTrainingPageActions().tapOnLargeVideoContent();
+
+        getDownloadPageActions().verifyDisabledDownloadBtnAndValidateMessagePostClickingDownloadBtn();
+
+    }
+
 
     @Test()
     public void verifyUserNotAbleToSeeNumberOfAttemptsLeftForPracticeModeWhileConsuming() throws Exception {
@@ -424,67 +443,9 @@ public class SunbirdEdMobile5 {
     }
 
 
-    @Test()
-    public void verifyNoYOBPopupForSSOUser() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
+    
 
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String externalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 92, 2);
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyUserAbleToLoginUsingStateSystemUsingUsernameExternalID(externalID);
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().verifyUserLoggedInSuccessfullyUsingStateSystem();
-
-        getProfileEditPageActions().verifyNoYOBpopupForAnyUser();
-    }
-
-
-    @Test()
-    public void verifyGlobalConsentPopupDetailsWhileConsumingACourseForNonCustodianUser () throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getHomePageActions().tapOnProfileTab();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 93, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 94, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-
-        getHomePageActions().enterTextInSearchBar("CourseContent");
-
-        getTrainingPageActions().tapOnSearchedCourse6();
-        getTrainingPageActions().verifyConsentPopUpForCourse();
-
-        getTrainingPageActions().leaveCourse();
-    }
-
+  
     @Test()
     public void verifyUpNextContentAtTheEndPageOfTheQuestionSet() throws Exception {
 
@@ -908,34 +869,6 @@ public class SunbirdEdMobile5 {
 
 
     @Test()
-    public void verifyLocationPopupIsNotDisplayedToLoggedSSOUser() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String externalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 92, 2);
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyUserAbleToLoginUsingStateSystemUsingUsernameExternalID(externalID);
-
-        d.LaunchAppHomeScreen();
-
-        getProfileEditPageActions().veriyNoLocationPopupWhenLoggedInWithSSOUser();
-    }
-
-
-
-    @Test()
     public void verifyLIUAAbleToAccessAllMUAAccountsInUsersList() throws Exception {
 
         QXClient.get().driver();
@@ -967,23 +900,7 @@ public class SunbirdEdMobile5 {
 
     }
 
-    @Test()
-    public void verifyUsageHistoryInLoggedInGmailAccount() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getHomePageActions().signInWithGoogle();
-
-        getHomePageActions().verifyNavigatedToGmailLoginPagePostClickingSignWithGoogle();
-
-        getHomePageActions().enterGmailDetailsAndVerfiyUsrnameInProfileSec();
-
-    }
-
+  
 
     @Test()
     public void verifyNoBatchesAvailableMessageInAlreadyJoinedCourseAndBatchExpired() throws Exception {
@@ -1125,75 +1042,10 @@ public class SunbirdEdMobile5 {
 
 
 
-    @Test()
-    public void verifyUserShouldNotNavigatedToRegistrationPageWhenSignInWithGoogleOldAccount() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getHomePageActions().signInWithGoogle();
-
-        getHomePageActions().verifyGmailUserShouldNotNavigatedToRegistrationPage();
-
-    }
 
 
 
-    @Test()
-    public void verifyUserShouldNavigatedToRegistrationPageWhenSignInWithGoogleNewAccount() throws Exception {
 
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getHomePageActions().signInWithGoogle();
-
-        getHomePageActions().verifyUserNavigatedToRegistrationPageForGmailUser();
-
-    }
-
-
-    @Test()
-    public void verifyMandatoryStateAndDistrictPrefilledAndVerifyBackBtnDisplayed() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getHomePageActions().signInWithGoogle();
-
-        getHomePageActions().verifyPrefilledStateAndDistrictPostUpdatingNameAndDOBInRegistrationPage();
-
-    }
-
-
-    @Test()
-    public void verifyUserAbleToNavigateBackFromOTPPageSuccessfully() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getHomePageActions().signInWithGoogle();
-
-        getHomePageActions().verifyPrefilledStateAndDistrictPostUpdatingNameAndDOBInRegistrationPage();
-
-        getHomePageActions().verifyUserAbleToNavigateBackPostClickingDeviceBackBtn();
-
-    }
 
     @Test()
     public void verifyLoadingScreenIsDisplayedToUserPostClickingNextButton() throws Exception {
@@ -1688,42 +1540,6 @@ public class SunbirdEdMobile5 {
 
 
 
-    @Test()
-    public void userNavigatedToNativePagePostClickingLoginBtnInProfileAndInHamburgerMenu() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getLoginPageActions().verifyUserNavigatedToNativePage();
-
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().userLogout();
-
-        getHomePageActions().tapOnMenuBar();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getLoginPageActions().verifyUserNavigatedToNativePage();
-
-    }
-
 
     @Test()
     public void verifySubroleScreenForHeadTeacherRoleIsDisplayedForNewCredentials() throws Exception {
@@ -1751,34 +1567,7 @@ public class SunbirdEdMobile5 {
     }
 
 
-    @Test()
-    public void verifyBMGSPickValuesInProfileToastMessagePostLogin() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",103,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",104,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser1(Username, Password);
-
-        getHomePageActions().verifyToastMessageBMGSValuesPickedByDefault();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyBMGSValuesPickedAutomaticallyInProfilePage();
-
-    }
-
+  
     @Test()
     public void userAbleToImportOnlySingleContentAtATimeFromDeviceStorage () throws Exception {
         QXClient.get().driver();
@@ -1831,69 +1620,9 @@ public class SunbirdEdMobile5 {
 
     }
 
-    @Test()
-    public void userAbleToReloginUsingExternalIDAndSchoolIDAccountMergedViaSSO() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String externalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 92, 2);
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyUserAbleToLoginUsingStateSystemUsingUsernameExternalID(externalID);
-
-        d.LaunchAppHomeScreen();
-
-        getProfileEditPageActions().veriyNoLocationPopupWhenLoggedInWithSSOUser();
-    }
 
 
-    @Test()
-    public void userAbleToSeeMergeOptionAndAbleToMergeCustodianUserSuccessfully() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String SatetUsername =QXClient.get().excelUtils().getCellValue("Excel1","TestData",38,2);
-        String StatePassword =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",39,2);
-        String custodianUser =QXClient.get().excelUtils().getCellValue("Excel1","TestData",107,2);
-        String custodianPWD =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",108,2);
-
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(SatetUsername,StatePassword);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        QXClient.get().gestures().BlindWait(4000);
-        getHomePageActions().tapOnDownloadTab();
-
-
-        getHomePageActions().validateCustodianUserMergedSuccessfully(custodianUser,custodianPWD);
-
-    }
-
+   
     @Test()
     public void verifyContentPreferenceLabelAndOtherSectionInProfileAreDisplayedSameWay() throws Exception {
 
@@ -2053,20 +1782,7 @@ public class SunbirdEdMobile5 {
     }
 
 
-    @Test()
-    public void verifyMobileNumberEmailAddressAndAsterikSymbolInRegisterHerePage() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyRegisteredEmailMessageWhileRegistering();
-
-
-    }
+   
 
 
     @Test()

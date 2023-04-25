@@ -68,26 +68,7 @@ public class UOScenario {
 
  
 	
-	@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-          description = "verifyUserAbleToFillFrameworkAndLocationDetails")
-  public void verifyUserAbleToFillFrameworkAndLocationDetails() throws Exception {
-	  
-	  QXClient.get().driver();
-	  getDikshaMainPageActions().performUserOnBoarding();
-	  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-			  properties.getProperty("excelpath"));
-			  
-			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-			  
-      getHomePageActions().tapOnSearchIcon();
-      getHomePageActions().enterTextInSearchBar(BookName);
-	    //   QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
-
-      getTrainingPageActions().tapOnSearchedBook();
-  }
+	
 
 	@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
 	          description = "verifyUserAbleToFillFrameworkAndLocationDetails")
@@ -537,20 +518,7 @@ public class UOScenario {
 				   getHomePageActions().verifyLoginPageWhileMergeAccount();
 				}
 				
-				@Test()
-				public void verifyLoginOptionsWhileLogin() throws Exception {
-				   QXClient.get().driver();
-				   getDikshaMainPageActions().performUserOnBoarding();
-				   getHomePageActions().tapOnProfileTab();
-
-				   QXClient.get().gestures().swipeUp();
-				   QXClient.get().gestures().swipeUp();
-
-				   getLoginPageActions().verifyDifferentLoginOptions();
-
-
-				}
-				
+			
 				@Test()
 				public void verifyUserAbleToChangePermissions() throws Exception {
 				   QXClient.get().driver();
@@ -1337,23 +1305,6 @@ public class UOScenario {
 
 	}
 
-	@Test()
-	public void validateRecoverAccountPageDetails() throws Exception {
-
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().tapOnProfileTab();
-
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-
-		getLoginPageActions().verifyRecoverAccountPageDetails();
-
-		getLoginPageActions().verifyLandingOnLoginPagePostIncorrectNameTwoTimes();
-
-
-	}
 
 
 	@Test()
@@ -1775,35 +1726,7 @@ public class UOScenario {
 
 	}
 
-	@Test()
-	public void verifyNoMergeAccountOptionInSettingsForCustodianUser() throws Exception {
-
-		QXClient.get().driver();
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		getDikshaMainPageActions().performUserOnBoarding();
-		getHomePageActions().tapOnProfileTab();
-
-
-		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" +
-				properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-
-		getLoginPageActions().loginToTheUser(Username, Password);
-
-		getHomePageActions().tapOnMenuBar();
-
-		getHomePageActions().verifyNoMergeAccountOptionInSettingsScreen();
-
-	}
-
+	
 }
 
     

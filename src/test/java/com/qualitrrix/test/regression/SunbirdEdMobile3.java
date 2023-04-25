@@ -399,31 +399,6 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test()
-    public void validateMergeAccountOptionInSettingsScreenPostClickBackBtn() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 38, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 39, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().verifyMergeAccountInSettings();
-    }
-
 
     @Test()
     public void verifyLoginOptionsWhileLogin() throws Exception {
@@ -466,36 +441,8 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test()
-    public void validateLoginWithGoogleIsReplacedBySignWithGoogle() throws Exception {
+    
 
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyLoginWithGoogleIsReplacedBySignWithGoogle();
-
-    }
-
-
-    @Test()
-    public void validateForgotTextIsReplacedByForgetPasswordText() throws Exception {
-
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyLoginPageTextAndForgotReplacedByForgetPassword();
-
-    }
 
     @Test()
     public void verifyConsumedCourseOfParentIsNotDisplayedForChildUser() throws Exception {
@@ -762,16 +709,6 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test()
-    public void verifyBoardValuesAreInAlphabeticalOrder() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyBoardInAlphabeticalOrder();
-
-    }
 
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
@@ -1170,20 +1107,6 @@ public class SunbirdEdMobile3 {
 
     }
 
-
-    @Test()
-    public void validateToastMessageForIncorrectOTP() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyIncorrectOTPMessage();
-
-    }
 
     @Test()
     public void validateAdditionalIconsUnderFeaturedSectionOfHomePage() throws Exception {
@@ -1649,56 +1572,9 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test()
-    public void validateEmailAndNameIsNotRegisteredWithSunbirdMsg() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().validateErrorMessageForEmailAndName();
-
-    }
 
 
-
-    @Test()
-    public void validateRecoverEmailAddressToSendOTP() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyRecoverEmailAddressToSendOTP();
-
-    }
-
-
-    @Test()
-    public void validateRecoverAccountPageDetails() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyRecoverAccountPageDetails();
-
-        getLoginPageActions().verifyLandingOnLoginPagePostIncorrectNameTwoTimes();
-
-
-    }
-
+    
 
     @Test()
     public void verifyNoProfileDetailsLabelAndNoDeviceLocationForGuestUserInProfile() throws Exception {

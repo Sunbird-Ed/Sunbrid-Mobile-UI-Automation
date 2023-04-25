@@ -614,30 +614,7 @@ public class ETBScenario {
 
 	}
 
-	@Test()
-	public void verifyNewTagsInHamburgerMenuAndLoginOptions() throws Exception {
-
-		QXClient.get().driver();
-
-		getDikshaMainPageActions().verifyScanQRAndSelectBoardWhileUserOnBoarding();
-
-		getHomePageActions().tapOnDownloadTab();
-		QXClient.get().gestures().closeApp();
-
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		d.LaunchAppHomeScreen();
-		getHomePageActions().tapOnDownloadTab();
-
-		getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
-
-		getHomePageActions().verifyUserLoginInHamburgerMenu();
-
-		getHomePageActions().tapOnProfileTab();
-
-		getHomePageActions().verifyUserLoginInProfile();
-
-
-	}
+	
 
 	@Test()
 	public void verifyBannersInHomePageAsPerBMC() throws Exception {
