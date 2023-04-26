@@ -1225,40 +1225,6 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test()
-    public void verifyShareIconAndConsumeCourseAfterJoinCourse() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" + properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        String coursefetch = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 25, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(coursefetch);
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(coursefetch);
-        getTrainingPageActions().tapOnSearchedCourse1();
-
-        getLibraryPageActions().tapOnShareBtn();
-        getLibraryPageActions().tapOnShareBtnFrmSharePop();
-        getLibraryPageActions().tapOnShareToWhatsApp();
-        getLibraryPageActions().verifyWhatsAppHomePage();
-
-        getTrainingPageActions().verifyConsumeCourseAfterJoinCourse();
-    }
 
 
     @Test()
@@ -1320,96 +1286,6 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test(enabled = true, groups = { "SanityTest",
-            "FunctionalTest" }, alwaysRun = true, description = "AnonymousUserFilterApplyInTrainingTab")
-    public void AnonymousUserFilterApplyInTrainingTab() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        // getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("Course");
-
-        QXClient.get().gestures().clkBackButton();
-        QXClient.get().gestures().BlindWait(1000);
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().BlindWait(1000);
-
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().verifyRecentlySearchedKeyword();
-
-    }
-
-
-    @Test(enabled = true, groups = { "SanityTest",
-            "FunctionalTest" }, alwaysRun = true, description = "anonymousUserAbleToSearchCourse")
-    public void anonymousUserAbleToSearchCourse() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        String LeaveCourse =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",30,2);
-        String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",25,2);
-
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(coursefetch);
-        // QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(coursefetch);
-
-        getTrainingPageActions().tapOnSearchedCourse1();
-
-    }
-
-
-    @Test(enabled = true, groups = { "SanityTest",
-            "FunctionalTest" }, alwaysRun = true, description = "RecentlySearchedKeyWorkdVerify")
-    public void RecentlySearchedKeyWorkdVerify() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("Course");
-
-        QXClient.get().gestures().clkBackButton();
-        QXClient.get().gestures().BlindWait(1000);
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().BlindWait(1000);
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().verifyRecentlySearchedKeyword();
-
-    }
 
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,

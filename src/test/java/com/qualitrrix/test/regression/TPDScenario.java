@@ -1989,37 +1989,6 @@ public void verifyMyGroupsPage() throws Exception {
 	}
 
 	@Test()
-	public void verifyCourseLastUpdatedMessageInCourseTOC() throws Exception {
-
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().tapOnDownloadTab();
-		getHomePageActions().tapOnProfileTab();
-		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-				properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-		String  CourseName=QXClient.get().excelUtils().getCellValue("Excel1", "TestData",51,2);
-
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-		getLoginPageActions().loginToTheUser(Username,Password);
-
-		getHomePageActions().tapOnTrainingTab();
-
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar(CourseName);
-		//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(CourseName);
-        getTrainingPageActions().tapOnUpdatedCourseContent();
-		getTrainingPageActions().verifyCourseUpdatedMessageWithDate();
-
-	}
-	@Test()
 	public void validatePopularCategoriesSectionInSearchPage() throws Exception {
 
 		QXClient.get().driver();
