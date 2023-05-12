@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Properties;
 
-public class SunbirdEdMobile1 {
+public class SunbirdEd7 {
     public DikshaMainPageActions getDikshaMainPageActions() {
         return new DikshaMainPageActions();
     }
@@ -749,6 +749,39 @@ public class SunbirdEdMobile1 {
         getHomePageActions().ReActivateGroup();
 
     }
+
+    @Test()
+    public void verifyCategoriesInAddActivityOfAlreadyCreatedGroup() throws Exception {
+
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
+
+
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+        System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        getLoginPageActions().loginToTheUser(Username, Password);
+
+        //getHomePageActions().tapOnDownloadTab();
+
+        getHomePageActions().tapOnMenuBar();
+
+        getHomePageActions().verifyAdditionalCategoriesInAddActivity();
+
+        getHomePageActions().verifyContentsInDifferentCategories();
+
+    }
+
 
   
     @Test()

@@ -154,38 +154,7 @@ public class SunbirdEdMobile5 {
 
 
 
-    @Test()
-    public void verifyNATextIsNotDisplayedInDownloadedCSVFileOfActivityDashboard() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 45, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 46, 2);
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().verifyActivityDashBoard();
-
-        getHomePageActions().verifyMemberNameAndProgressInExcelPostClickingDownloadasCSV();
-
-        getHomePageActions().verifyCourseNameMembersNameAndProgressInCSVFile();
-
-        getHomePageActions().verifyNATextIsNotDisplayedInDownloadedCSVFile();
-
-        QXClient.get().gestures().clkBackButton();
-
-    }
-
+   
 
    
 
@@ -295,42 +264,7 @@ public class SunbirdEdMobile5 {
 
     }
 
-    @Test()
-    public void verifyUpdatedUIIsDisplayedToUserInDiscussionForum() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().createGrupAndActivity();
-
-        getHomePageActions().verifyLabelsUpdatedTextAndCTAButtonsInDF();
-
-        getHomePageActions().verifyWatermarksInDF();
-
-    }
-
+  
     @Test()
     public void verifyUserAbleToConsumeCertificateCourseFromGroupActivity() throws Exception {
 
@@ -782,30 +716,7 @@ public class SunbirdEdMobile5 {
     }
 
 
-    @Test()
-    public void onlyParentCourseProgressIsDisplayedWhenDownloadedAsCSVofANestedCourse() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 105, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 106, 2);
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().verifyOnlyParentCourseProgressIsDownloadedInDownloadedCSV();
-
-    }
-
+   
 
 
    

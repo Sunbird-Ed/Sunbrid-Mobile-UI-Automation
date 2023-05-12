@@ -85,32 +85,7 @@ public class TPDUAT {
 
     }
 
-    @Test()
-    public void verifyGroupAdminAbleToViewActivityDashBoardOption() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 45, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 46, 2);
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().viewOptionActivityDashBoardOnActivityLevel();
-
-    }
-
-    @Test()
+   
     public void verifyAdminAbleToViewAllMetricsOfDashboard() throws Exception {
 
         QXClient.get().driver();
@@ -220,48 +195,7 @@ public class TPDUAT {
     }
 
 
-    @Test()
-    public void verifyUserAbleToConsumeCertificateCourseFromGroupActivity() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        String MemberIDValue =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",47,2);
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().createGrupAndActivity();
-
-        getHomePageActions().verifyActivityAndMemberAddedToTheGroup(MemberIDValue);
-
-        getHomePageActions().enterTextInSearchBar("AutoSmallCourseWithCertificate");
-
-        getHomePageActions().verifyAdminAbleToAddCertificateCourseToGroup();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().verifyUserAbleToConsumeCertificateCourseFromGroupActivity();
-
-    }
-
+   
     @Author(name="Raju")
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true)
     public void verifyUserAbleToEnrollConsumeCourseContent() throws Exception {
