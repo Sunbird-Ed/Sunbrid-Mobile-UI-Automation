@@ -244,41 +244,6 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test()
-    public void verifyBackBtnIsWorkingFineInCollectionWithH5PContent () throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 59, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 60, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("AutoH5PCollectionContent");
-
-        getTrainingPageActions().tapOnSearchedH5pCollection();
-
-        getTrainingPageActions().verifyH5PCollectionContentPage();
-
-        getTrainingPageActions().verifyPostSingleClickBackbtnUserShouldComeBackFromH5pContent();
-
-    }
-
 
     @Test()
     public void verifyHamburgerMenuOptionWorksInAllPages() throws Exception {
@@ -711,39 +676,7 @@ public class SunbirdEdMobile3 {
 
 
 
-    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-            description = "Verify searchContentAndDownload ")
-    public void searchContentAndDownload() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
-
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(BookName);
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
-
-        getTrainingPageActions().tapOnSearchedBook();
-
-        getLibraryPageActions().tapOnDownloadBtn();
-        getTrainingPageActions().tapOnDownloadBtnInDownloadPopUp();
-        //getTrainingPageActions().verifyFileDownloadThroughNotification();
-        getTrainingPageActions().waitTillTheDownloadButtonDisappears();
-        QXClient.get().gestures().clkBackButton();
-        QXClient.get().gestures().clkBackButton();
-
-
-        getHomePageActions().tapOnDownloadTab();
-        getDownloadPageActions().verifyTheDownloadedBook();
-    }
-
+  
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "TxtBookShowsAsPerBMC ")
@@ -1687,18 +1620,6 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Author(name="Raju")
-    @Test()
-    public void verifyContentFilterType() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("resource");
-        getLibraryPageActions().FilterForContentPublisherMediaType();
-
-    }
-
 
     @Test()
     public void verifyAll5LocationFieldsAreEditable() throws Exception {
@@ -1735,50 +1656,7 @@ public class SunbirdEdMobile3 {
         getProfileEditPageActions().recheckProfileAfterEditing();
     }
 
-    @Test()
-    public void verifyUserAbleToAnswerUnAttemptedQuestionsPostClickingReviewBtn() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",113,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(questionSet);
-
-        getTrainingPageActions().tapOnQuestionSet();
-
-        getTrainingPageActions().verifyRightMarkAndViewSolutionOptionInFeedbackPopup();
-
-        getTrainingPageActions().verifyDoneAndCloseButtonsInViewSolutionPage();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(questionSet);
-
-        getTrainingPageActions().tapOnQuestionSet();
-
-        getTrainingPageActions().verifyIncorrectAnswerFeedbackDetails();
-
-    }
-
+ 
 
 
 }

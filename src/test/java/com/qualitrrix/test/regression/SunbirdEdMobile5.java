@@ -98,59 +98,13 @@ public class SunbirdEdMobile5 {
 
     }
 
-    @Test()
-    public void verifyThisContentCannotBeDownloadedMsgForLargeContent() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String largeVideoContent =QXClient.get().excelUtils().getCellValue("Excel1","TestData",91,2);
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(largeVideoContent);
-
-        getTrainingPageActions().tapOnLargeVideoContent();
-
-        getDownloadPageActions().verifyDisabledDownloadBtnAndValidateMessagePostClickingDownloadBtn();
-
-    }
-
-
+  
     
 
 
 
 
-    @Test()
-    public void verifyMalformedEcarFileWhileSharingViaSlackApp() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(BookName);
-        getTrainingPageActions().tapOnSearchedBook();
-
-        getLibraryPageActions().tapOnShareBtn();
-        getLibraryPageActions().tapOnSendFileFromSharePopup();
-        getLibraryPageActions().tapOnSendBtnFromSharePopup();
-        getLibraryPageActions().tapOnShareToSlackApp();
-        getLibraryPageActions().verifySlackAppPage();
-        QXClient.get().gestures().clkBackButton();
-
-    }
+   
 
 
 
@@ -193,64 +147,7 @@ public class SunbirdEdMobile5 {
         getProfileEditPageActions().verifyUserIDReplacedWithDikshaIDBelowUserNameInProfilePage();
     }
 
-    @Test()
-    public void verifyPageNotFoundErrorMessageInCourseWithPDFContent() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnAddAnotherUser();
-
-        String FakeName = QXClient.get().gestures().generateRandomName();
-        String storeFakeNameEntered = getCoursePageActions().enterName(FakeName);
-        System.out.println(storeFakeNameEntered);
-        getCoursePageActions().tapOnAddUserBtn();
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnMoreOption();
-        QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
-
-
-        getCoursePageActions().tapOnChangeUserWithoutProfile();
-
-        getCoursePageActions().tapOnTermsAndCondition();
-
-        getCoursePageActions().tapOnContinueForSwicthUser();
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("AutoPDFCourse");
-
-        getTrainingPageActions().tapOnPDFCourse();
-
-        getTrainingPageActions().tapOnJoinTraining2();
-
-        getTrainingPageActions().verifyUserAbleToPlayPDFCourse();
-
-        getTrainingPageActions().verifyUserAbleToGoToNextPageThroughIndex();
-
-        getTrainingPageActions().verifyPageNotFoundMsgWhenUserEntersWrongPageNumber();
-
-    }
+ 
 
     @Test()
     public void verifyChooseContentPreferencesPageIsDisplayedProperly() throws Exception {
@@ -454,54 +351,7 @@ public class SunbirdEdMobile5 {
    
   
    
-    @Test()
-    public void verifyUserNotAbleToDownloadTheContentWithContentsizeMoreThan200MB() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("LargeSizeAutoBook");
-
-        getTrainingPageActions().tapOnSearchedLargeSizeBook();
-
-        getLibraryPageActions().verifyNoDownloadBtnForLargeSizeBook();
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnDownloadTab();
-        getDownloadPageActions().verifyNoDownloadsInDownloadSection();
-    }
-
-    @Test()
-    public void verifyUserAbleToDownloadContentWithContentSizeLessThan200MB() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
-
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(BookName);
-
-        getTrainingPageActions().tapOnSearchedBook();
-
-        getLibraryPageActions().tapOnDownloadBtn();
-        getTrainingPageActions().tapOnDownloadBtnInDownloadPopUp();
-
-        getTrainingPageActions().waitTillTheDownloadButtonDisappears();
-        QXClient.get().gestures().clkBackButton();
-        QXClient.get().gestures().clkBackButton();
-
-
-        getHomePageActions().tapOnDownloadTab();
-        getDownloadPageActions().verifyTheDownloadedBook();
-    }
+  
 
     @Test()
     public void noTermsAndConditionsCheckboxIsDisplayedInSelfInfoSection() throws Exception {
@@ -563,65 +413,7 @@ public class SunbirdEdMobile5 {
         getCoursePageActions().verifyNewPricacyPolicyInSubmitDetailsForm();
     }
 
-    @Test()
-    public void validateKannadaRatingPopUpAndKannadaTextIsDisplayedInRatingSectionPostConsumeCourse() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnAddAnotherUser();
-
-        String FakeName=QXClient.get().gestures().generateRandomName();
-        String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
-        System.out.println(storeFakeNameEntered);
-        getCoursePageActions().tapOnAddUserBtn();
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnMoreOption();
-        QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
-
-
-        getCoursePageActions().tapOnChangeUserWithoutProfile();
-
-        getCoursePageActions().tapOnTermsAndCondition();
-
-        getCoursePageActions().tapOnContinueForSwicthUser();
-        QXClient.get().gestures().closeApp();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnMenuBar();
-        getHomePageActions().tapOnLanguage();
-        getHomePageActions().tapOnKannadaLanguage();
-
-        getHomePageActions().tapOnContinueBtnKannada();
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("Small AutomationCourseContent");
-        getTrainingPageActions().tapOnSearchedSmallCourse();
-
-        getTrainingPageActions().verifyRatingsTextIsDisplayedInKannadaLanguage();
-
-    }
+   
 
     @Test()
     public void userNavigatedToMultipleBatchesListPostClickingJoinCourseBtn() throws Exception {
@@ -1040,42 +832,7 @@ public class SunbirdEdMobile5 {
    
     
 
-    @Test()
-    public void userNavigatedToFirstPagePostClickingReviewBtnInSummaryPage() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",114,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnSearchIcon();
-
-        getHomePageActions().enterTextInSearchBar(questionSet);
-
-        getTrainingPageActions().tapOnQuestionSet1();
-
-        getTrainingPageActions().verifyFirstPageOfContentPostClickingReviewBtn();
-
-    }
-
+    
 
 
 

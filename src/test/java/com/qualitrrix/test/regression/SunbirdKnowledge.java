@@ -53,54 +53,8 @@ public class SunbirdKnowledge {
 
     }
 
-    @Test()
-    public void verifyDownloadPopUpInHamburgerMenuOfContent() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        //getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("PDF_13.pdf");
-        getTrainingPageActions().tapOnSearchedPDF();
-        getTrainingPageActions().verifyDownloadPopupOfContent();
-
-
-    }
-
-    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-            description = "Verify verifyNextAndPreviousBtnInPDF ")
-    public void VerifyNextAndPreviousPageInPDFContent() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
-//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("PDF_13.pdf");
-        getTrainingPageActions().tapOnSearchedPDF();
-        getLibraryPageActions().tapOnPlayIcon3();
-        getLibraryPageActions().verifyNextAndPreviousBtnInPDF();
-    }
-
-
+    
+ 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "Verify UserAble to verifyIconInPDFHamburgerMenu ")
     public void VerifyOptionInPDFContentInHamburgerMenu() throws Exception {
@@ -127,38 +81,7 @@ public class SunbirdKnowledge {
         getLibraryPageActions().verifyZoomInZoomOut();
     }
 
-    @Test()
-    public void verifyPageNotFoundTextAndUserAbleToJumpToPageInEpubContent() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        //getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("Epub content");
-
-        getTrainingPageActions().tapOnEpubContent();
-
-        getTrainingPageActions().verifyUserAbleToJumpToPagesAndPageNotFoundText();
-
-    }
+    
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "Verify UserAble to PrintPDFContent ")

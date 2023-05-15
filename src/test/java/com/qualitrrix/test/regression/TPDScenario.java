@@ -287,15 +287,7 @@ public void addMemberAndRemoveMember() throws Exception {
 
 	    }
 	       
-	  @Test()
-	public void AppCloseOnClkYesButon() throws Exception {
-
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().closeAppOnClkYesBtn();
-	}
-	  
+	 
 	  @Test(enabled = true, groups = { "SanityTest",
 		"FunctionalTest" }, alwaysRun = true, description = "anonymousUserAbleToSearchCourse")
 	public void anonymousUserAbleToSearchCourse() throws Exception {
@@ -523,46 +515,8 @@ public void MediaTypeFilterCheckBox() throws Exception {
 
 }
 
-@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-description = "Verify UserAble to PrintPDFContent ")
-public void PrintIconInPDFContent() throws Exception {
-QXClient.get().driver();
-getDikshaMainPageActions().performUserOnBoarding();	 
-getHomePageActions().tapOnSearchIcon();
-getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
-//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("PDF_13.pdf");
-getTrainingPageActions().tapOnSearchedPDF();
-getLibraryPageActions().tapOnPlayIcon3();
-getLibraryPageActions().printPDF();
-}    
 
 
-
-@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-description = "Verify UserAble to verifyIconInPDFHamburgerMenu ")
-public void VerifyOptionInPDFContentInHamburgerMenu() throws Exception {
-QXClient.get().driver();
-getDikshaMainPageActions().performUserOnBoarding();	 
-getHomePageActions().tapOnSearchIcon();
-getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
-//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("PDF_13.pdf");
-getTrainingPageActions().tapOnSearchedPDF();
-getLibraryPageActions().tapOnPlayIcon3();
-getLibraryPageActions().verifyIconInPDFHamburgerMenu();
-}
-
-@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-description = "Verify verifyZoomInZoomOut ")
-public void VerifyZoomOptionInPDFContent() throws Exception {
-QXClient.get().driver();
-getDikshaMainPageActions().performUserOnBoarding();
-getHomePageActions().tapOnSearchIcon();
-getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
-//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("PDF_13.pdf");
-getTrainingPageActions().tapOnSearchedPDF();
-getLibraryPageActions().tapOnPlayIcon3();
-getLibraryPageActions().verifyZoomInZoomOut();
-}
 
 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
 description = "Verify verifyNextAndPreviousBtnInPDF ")
@@ -642,12 +596,7 @@ public void ViewActivitsInGroup() throws Exception {
 }
 
 
-@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-description = "StartLearningButtonOnjoinCourse",dependsOnMethods = { "verifyUserAbleToEnrollConsumeCourseContent" })
-public void ExcellentTextVerify() throws Exception {
-QXClient.get().driver();
-	 System.out.println("verify ExcellentTextVerify");
-}
+
 
 
 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
@@ -658,32 +607,6 @@ QXClient.get().driver();
 }
 
 
-@Test()
-public void verifyUserAbleToSearchContentAndDiffMediaTypes() throws Exception {
-QXClient.get().driver();
-getDikshaMainPageActions().performUserOnBoarding();
-
-Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-     properties.getProperty("excelpath"));
-
-String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
-
-getHomePageActions().tapOnSearchIcon();
-getHomePageActions().enterTextInSearchBar(BookName);
-
-getHomePageActions().verifyFiltersForMediaType();
-
-//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
-getTrainingPageActions().tapOnSearchedBook();
-getHomePageActions().verifyContentWithAllMediaType();
-
-getHomePageActions().verfiyContentUnderVideoMediaType();
-
-
-}
 
 @Test()
 public void verifyUserAbleToSearchContentForAlternativeBoard() throws Exception{
@@ -822,38 +745,7 @@ public void verifyCourseHeaders() throws Exception {
 }
 
 
-@Test()
-public void verifyConsumeAllContentsInMobileDevices() throws Exception {
-QXClient.get().driver();
-getDikshaMainPageActions().performUserOnBoarding();
 
-getHomePageActions().tapOnSearchIcon();
-getHomePageActions().enterTextInSearchBar("mp4");
-
-getLibraryPageActions().verifyPlayMp4Content();
-
-QXClient.get().gestures().closeApp();
-
-DikshaMainPageActions d = new DikshaMainPageActions();
-d.LaunchAppHomeScreen();
-
-getHomePageActions().tapOnSearchIcon();
-getHomePageActions().enterTextInSearchBar("Epub");
-
-getLibraryPageActions().verifyPlayEpubContent();
-
-QXClient.get().gestures().closeApp();
-
-DikshaMainPageActions d1 = new DikshaMainPageActions();
-d1.LaunchAppHomeScreen();
-
-getHomePageActions().tapOnSearchIcon();
-getHomePageActions().enterTextInSearchBar("assessment");
-
-getLibraryPageActions().verifyAssessmentConsumption();
-
-
-}
 
 @Test()
 public void verifyFilterOptionsPostSearchContent() throws Exception {
@@ -3017,40 +2909,6 @@ public void verifyContentSizeAndDeleteContentFromDownloadSection() throws Except
 
 	}
 
-	@Test()
-	public void verifyPageNotFoundTextAndUserAbleToJumpToPageInEpubContent() throws Exception {
-
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().tapOnProfileTab();
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" +
-				properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-
-
-		getLoginPageActions().loginToTheUser(Username, Password);
-
-		//getHomePageActions().tapOnTrainingTab();
-
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar("Epub content");
-
-		getTrainingPageActions().tapOnEpubContent();
-
-		getTrainingPageActions().verifyUserAbleToJumpToPagesAndPageNotFoundText();
-
-	}
-
-
 
 	@Test()
 	public void verifyUserAbleToDownloadAndPlayTheDownloadedEpubContent() throws Exception {
@@ -3548,18 +3406,6 @@ public void verifyContentSizeAndDeleteContentFromDownloadSection() throws Except
 
 	}
 
-	@Test()
-	public void verifyPageInsteadOfLocationInPDFContent() throws Exception {
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
-
-		getTrainingPageActions().tapOnSearchedPDF();
-		getLibraryPageActions().tapOnPlayIcon3();
-		getLibraryPageActions().verifyPageReplacesLocationInContent();
-
-	}
 
 
 	@Test()

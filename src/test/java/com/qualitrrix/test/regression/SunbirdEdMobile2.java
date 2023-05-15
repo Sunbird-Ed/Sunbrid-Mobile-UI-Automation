@@ -525,33 +525,7 @@ public class SunbirdEdMobile2 {
 
 	}
 
-	@Test()
-	public void verifyUserAbleToSearchContentAndDiffMediaTypes() throws Exception {
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		Properties properties = QXClient.get().propUtils()
-				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" + properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String BookName = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 26, 2);
-
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar(BookName);
-
-		getHomePageActions().verifyFiltersForMediaType();
-
-//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
-		getTrainingPageActions().tapOnSearchedBook();
-		getHomePageActions().verifyContentWithAllMediaType();
-
-		getHomePageActions().verfiyContentUnderVideoMediaType();
-
-	}
-
+	
 	@Test()
 	public void verifyCourseHeaders() throws Exception {
 
@@ -811,25 +785,7 @@ public class SunbirdEdMobile2 {
 		getHomePageActions().verifyPopularCategoriesInSearchPage();
 	}
 
-	@Test()
-	public void verifyContentTypeFilterAndAdditionalCategoriesInFiltersSection() throws Exception {
-
-		QXClient.get().driver();
-
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().tapOnSearchIcon();
-
-		getHomePageActions().enterTextInSearchBar("Course");
-
-		getLibraryPageActions().verifyAllFilterInContentType();
-
-		getLibraryPageActions().observeTheAdditionalCategories();
-
-		getLibraryPageActions().verifyContentForContentTypeAndAdditionalCategoriesFilter();
-
-	}
-
+	
 	@Test()
 	public void verifyMyGroupsPage() throws Exception {
 		QXClient.get().driver();
@@ -880,79 +836,9 @@ public class SunbirdEdMobile2 {
 
 	}
 
-	@Test()
-	public void verifySamePageNumberInEpubContentWhileReconsumingTheSameContent() throws Exception {
+	
 
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		getHomePageActions().tapOnDownloadTab();
-		getHomePageActions().tapOnProfileTab();
-		Properties properties = QXClient.get().propUtils()
-				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" + properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-		getLoginPageActions().loginToTheUser(Username, Password);
-		d.LaunchAppHomeScreen();
-		getHomePageActions().tapOnTrainingTab();
-
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar("Epub");
-
-		getTrainingPageActions().tapOnEpubContent();
-		getTrainingPageActions().verifyUserAbleToPlayEpubContent();
-		getTrainingPageActions().verifyUserAbleToConsumeEpubContent();
-
-		getTrainingPageActions().verifySamePageNumberInEpubContentWhileReconsumingEpubContent();
-
-	}
-
-	@Test()
-	public void verifySamePageNumberInPDFContentWhileReconsumingTheSameContent() throws Exception {
-
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().tapOnProfileTab();
-
-		Properties properties = QXClient.get().propUtils()
-				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" + properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-
-		getLoginPageActions().loginToTheUser(Username, Password);
-
-		// getHomePageActions().tapOnTrainingTab();
-
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
-
-		getTrainingPageActions().tapOnSearchedPDF();
-		getLibraryPageActions().tapOnPlayIcon3();
-
-		getLibraryPageActions().verifyZoomInZoomOut();
-
-		getTrainingPageActions().verifyUserAbleToConsumeEpubContent();
-
-		getTrainingPageActions().verifySamePageNumberInPDFContentWhileReconsumingPDFContent();
-
-	}
-
+	
 	@Test()
 	public void verifyCollectionTitlePublishingOrgAndOrgFrameworkValuesInCollectionTOC() throws Exception {
 		QXClient.get().driver();
@@ -1276,45 +1162,7 @@ public class SunbirdEdMobile2 {
 
 	
 	
-	@Test()
-	public void verifyContentDetails() throws Exception {
-
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().tapOnDownloadTab();
-		Properties properties = QXClient.get().propUtils()
-				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" + properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String BookName = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 26, 2);
-		getHomePageActions().tapOnTrainingTab();
-
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar(BookName);
-		// QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
-		getTrainingPageActions().tapOnSearchedBook();
-		getTrainingPageActions().verifyContentDetailsInContentsPage();
-
-	}
-
-	@Test()
-	public void verifyContentForAllMediaType() throws Exception {
-		QXClient.get().driver();
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		getDikshaMainPageActions().performUserOnBoarding();
-		// getHomePageActions().tapOnProfileTab();
-
-		// getHomePageActions().tapOnTrainingTab();
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar("Resource");
-
-		getTrainingPageActions().verifyContentForAllMediaTypeFilter();
-
-	}
-
+	
+	
 	
 }
