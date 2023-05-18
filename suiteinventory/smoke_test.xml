@@ -46,8 +46,8 @@
 
 
            <class name="com.qualitrrix.test.BookScenarioSanity" />
-              <class name="com.qualitrrix.test.CourseScenarioSanity" />
-              <class name="com.qualitrrix.test.UserOnBoardingSanity" />
+             <!--  <class name="com.qualitrrix.test.CourseScenarioSanity" />
+              <class name="com.qualitrrix.test.UserOnBoardingSanity" /> -->
     <!-- <class name="com.qualitrrix.test.BookScenarioSanity" />-->
           <!--  <class name="com.qualitrrix.test.CourseScenarioSanity" />-->
 

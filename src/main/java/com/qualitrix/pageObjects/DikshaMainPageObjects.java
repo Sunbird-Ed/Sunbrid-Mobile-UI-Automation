@@ -48,6 +48,8 @@ public class DikshaMainPageObjects {
    
 
     @AndroidFindAll({
+    	
+    	@AndroidBy(xpath = "//android.widget.RadioButton[@text='CBSE/NCERT‎']"),
             @AndroidBy(xpath = "//android.widget.RadioButton[@text='CBSE\u200E']"),
             @AndroidBy(xpath = "//android.widget.RadioButton[@text='State (Assam) \u200E']"),
             @AndroidBy(xpath = "//android.widget.RadioButton[@text='State (Assam)\u200E']")
@@ -69,6 +71,9 @@ public class DikshaMainPageObjects {
 
 
     @AndroidFindAll({
+    	
+    	
+    	 @AndroidBy(xpath = "//android.widget.Button[@text='Selected Board']"),
        @AndroidBy(xpath = "//android.view.View[@text='Board']"),
         @AndroidBy(xpath = "//android.view.View[@text='Select Board']"),
         @AndroidBy(xpath = "//android.widget.Button[@text='Select Board']"),
@@ -80,6 +85,8 @@ public MobileElement selectBoard;
 
 
     @AndroidFindAll({
+    	
+    	@AndroidBy(xpath = "//android.view.View[@text='multiple select']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Medium, Medium']"),
             @AndroidBy(xpath = "//android.view.View[@text='Select Medium, Medium']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Medium, Medium']"),
@@ -87,6 +94,7 @@ public MobileElement selectBoard;
     public MobileElement selectMedium;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Selected Class, Class']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Class, Class']"),
             @AndroidBy(xpath = "//android.view.View[@text='Select Class, Class']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Class, Class']"),
@@ -127,11 +135,11 @@ public MobileElement selectBoard;
     public MobileElement submitBtn;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT arrow round forward']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT arrow round forward ']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE arrow round forward']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE arrow round forward ']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE']")
 
     })
     public MobileElement submitWithArrowBtn;

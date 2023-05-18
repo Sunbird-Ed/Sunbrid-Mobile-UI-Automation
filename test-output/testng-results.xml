@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Qualitrix Suite" duration-ms="0" started-at="2023-05-18T17:15:18 IST" finished-at="2023-05-18T17:15:18 IST">
+    <groups>
+      <group name="FunctionalTest">
+        <method signature="BookScenarioSanity.ShareTheBook()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="ShareTheBook" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.creditLicenseInfoSecInBookTOCpage()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="creditLicenseInfoSecInBookTOCpage" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.giveRatingAfterBookConsumption()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="giveRatingAfterBookConsumption" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.resourceSearchAndVerify()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="resourceSearchAndVerify" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.userAbleToSltLangAndUserOnBoardingDetails()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="userAbleToSltLangAndUserOnBoardingDetails" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifyBookDownload()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifyBookDownload" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifyLibrarySection()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifyLibrarySection" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifySeeMoreBooksContent()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifySeeMoreBooksContent" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifyUserAbleToStreamBookContentsOnline()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifyUserAbleToStreamBookContentsOnline" class="com.qualitrrix.test.BookScenarioSanity"/>
+      </group> <!-- FunctionalTest -->
+      <group name="SanityTest">
+        <method signature="BookScenarioSanity.ShareTheBook()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="ShareTheBook" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.creditLicenseInfoSecInBookTOCpage()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="creditLicenseInfoSecInBookTOCpage" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.giveRatingAfterBookConsumption()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="giveRatingAfterBookConsumption" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.resourceSearchAndVerify()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="resourceSearchAndVerify" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.userAbleToSltLangAndUserOnBoardingDetails()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="userAbleToSltLangAndUserOnBoardingDetails" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifyBookDownload()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifyBookDownload" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifyLibrarySection()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifyLibrarySection" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifySeeMoreBooksContent()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifySeeMoreBooksContent" class="com.qualitrrix.test.BookScenarioSanity"/>
+        <method signature="BookScenarioSanity.verifyUserAbleToStreamBookContentsOnline()[pri:0, instance:com.qualitrrix.test.BookScenarioSanity@56620197]" name="verifyUserAbleToStreamBookContentsOnline" class="com.qualitrrix.test.BookScenarioSanity"/>
+      </group> <!-- SanityTest -->
+    </groups>
+  </suite> <!-- Qualitrix Suite -->
+</testng-results>
