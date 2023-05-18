@@ -85,7 +85,7 @@ public MobileElement selectBoard;
 
 
     @AndroidFindAll({
-    	
+    	@AndroidBy(xpath = "//android.view.View[@text='Selected Medium, Medium']"),    	
     	@AndroidBy(xpath = "//android.view.View[@text='multiple select']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Medium, Medium']"),
             @AndroidBy(xpath = "//android.view.View[@text='Select Medium, Medium']"),
