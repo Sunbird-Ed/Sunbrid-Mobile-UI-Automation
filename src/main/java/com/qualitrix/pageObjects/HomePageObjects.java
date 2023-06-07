@@ -23,7 +23,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class HomePageObjects {
 
     @AndroidFindAll({
-    	
+    	@AndroidBy(xpath = "//android.widget.Button[@text='Collapsed']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='menu']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='burger menu']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='ic_burger_menu']"),
