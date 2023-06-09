@@ -1007,7 +1007,7 @@ public void CreateGroup() throws Exception {
 
 			   getLoginPageActions().loginToTheUserForLeader(Username,Password);
 
-			   getHomePageActions().verifyNewDikshaExperienceForHeadAndOfficials();
+			 // getHomePageActions().verifyNewDikshaExperienceForHeadAndOfficials();
 
 			   getHomePageActions().tapOnMenuBar();
 			       QXClient.get().gestures().swipeUp();

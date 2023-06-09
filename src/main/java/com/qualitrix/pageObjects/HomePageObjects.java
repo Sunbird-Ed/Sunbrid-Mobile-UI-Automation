@@ -1281,6 +1281,8 @@ public MobileElement tagsField;
     		
     		
     		@AndroidFindAll({
+    			
+                @AndroidBy(xpath = "//android.widget.TextView[@text='Merge Account']"),
                     @AndroidBy(xpath = "//android.view.View[@text='Merge Account']"),
                     @AndroidBy(xpath = "//android.widget.Button[@text='Merge Account']"),
             })

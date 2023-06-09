@@ -368,6 +368,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[@text='State: Andhra Pradesh']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Board: CBSE/NCERT \u200E']"),
 			@AndroidBy(xpath = "//android.view.View[@text='CBSE/NCERT ‎']"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'State (Andhra Pradesh)')]"),
