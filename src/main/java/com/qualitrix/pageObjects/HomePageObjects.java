@@ -33,11 +33,11 @@ public class HomePageObjects {
     public MobileElement menuBar;
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='select app langugae Language English']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Language']"),
+           @AndroidBy(xpath = "//android.view.View[@text='select app langugae Language English']"),
             @AndroidBy(xpath = "//android.view.View[@text='Language']"),
             @AndroidBy(xpath = "//android.widget.Image[@text='Language']"),
             @AndroidBy(xpath = "//android.widget.Image[@text='select app langugae']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='Language']"),
     })
     public MobileElement langSelection;
 
@@ -241,6 +241,7 @@ public MobileElement clkMyGroups;
     
     
     @AndroidFindAll({
+    	
             @AndroidBy(xpath = "//android.widget.Button[@text='Create Group Create group']"),
         @AndroidBy(xpath = "//android.widget.Image[@text='my-group']//following::android.widget.Button"),
         @AndroidBy(xpath = "//android.view.View[@text='You are just a step away from creating a group']//following::android.widget.Button")

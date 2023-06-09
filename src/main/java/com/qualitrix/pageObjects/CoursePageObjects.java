@@ -118,7 +118,7 @@ public MobileElement assertStartLearning;
 	
 	
 	@AndroidFindAll({
-			@AndroidBy(xpath = "(//android.widget.TextView)[1]"),
+			@AndroidBy(xpath = "(//android.widget.TextView)[17]"),
 		@AndroidBy(xpath = "//android.widget.Button[@text='+ Add User']//following::android.view.View[1]"),
 
 	})

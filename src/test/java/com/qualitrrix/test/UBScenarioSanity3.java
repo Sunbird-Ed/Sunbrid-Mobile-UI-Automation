@@ -2519,41 +2519,42 @@ public class UBScenarioSanity3 {
 
 	}
 */
+	 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
+			  true, description = "Switch User In Menu")
+			  public void SwicthUser() throws Exception {
+
+		 QXClient.get().driver();
+		 getDikshaMainPageActions().performUserOnBoarding();
+		 getHomePageActions().tapOnProfileTab();
+		 QXClient.get().gestures().swipeUp();
+		 QXClient.get().gestures().swipeUp();
 
 
-	@Test()
-	public void verifyUserAbleToSeeFutureBatchPopupPostClickingJoinCourseBtn() throws Exception {
+		 Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+				 properties.getProperty("excelpath"));
 
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		getHomePageActions().tapOnProfileTab();
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" +
-				properties.getProperty("excelpath"));
+		 String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		 QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		 String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
+		 String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-		String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",126,2);
-		getLoginPageActions().loginToTheUser(Username, Password);
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
+		 getLoginPageActions().loginToTheUser(Username,Password);
 
-		getHomePageActions().tapOnTrainingTab();
+		 //getHomePageActions().tapOnDownloadTab();
 
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar(coursefetch);
 
-		getTrainingPageActions().tapOnExpiredAndFutureBatchCourse();
+		 getHomePageActions().tapOnMenuBar();
 
-		getTrainingPageActions().verifyFututeBatchPopupPostClickingJoinCourseBtn();
+		 getCoursePageActions().tapOnMoreOption();
+		 getCoursePageActions().clickFirstUser();
+		 getCoursePageActions().tapOnChangeUser();
+		 getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		 getCoursePageActions().verifyDistricAndState();
+			  
+			  }
 
-	}
+	 
 }
 
 

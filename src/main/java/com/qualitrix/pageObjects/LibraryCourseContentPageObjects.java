@@ -329,6 +329,8 @@ public MobileElement clkSeeMoreBooksAndContent;
 
 
     @AndroidFindAll({
+    	
+        @AndroidBy(xpath = "//android.widget.Button[@text='Settings']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Settings']"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Settings')]"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Settings']"),
@@ -337,8 +339,8 @@ public MobileElement clkSeeMoreBooksAndContent;
     public MobileElement Clksettings;
 
     @AndroidFindAll({
-        // @AndroidBy(xpath = "//android.view.View[@text='Marigold']"),
-         //@AndroidBy(xpath = "//android.view.View[@text='Assam text book']"),
+       
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Data Sync']"),
          @AndroidBy(xpath = "//android.view.View[@text='Data Sync']"),
          @AndroidBy(xpath = "//android.view.View[@text='Data Sync Backup Data, Transfer Telemetry']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Data Sync Backup Data, Transfer Telemetry']"),
@@ -351,6 +353,7 @@ public MobileElement clkSeeMoreBooksAndContent;
     public MobileElement ClkSyncNow;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Share the SUNBIRD app']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Share the SUNBIRD app']"),
             @AndroidBy(xpath = "//android.view.View[@text='Share the SUNBIRD app']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Share the DIKSHA app']"),
@@ -391,6 +394,8 @@ public MobileElement clkSeeMoreBooksAndContent;
   
 
     @AndroidFindAll({
+    	
+        @AndroidBy(xpath ="//android.widget.TextView[@text='About Us']"),
             @AndroidBy(xpath ="//android.view.View[@text='About Us']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='About Us']"),
     })
@@ -401,6 +406,7 @@ public MobileElement clkSeeMoreBooksAndContent;
     @AndroidFindAll({
         // @AndroidBy(xpath = "//android.view.View[@text='Marigold']"),
          //@AndroidBy(xpath = "//android.view.View[@text='Assam text book']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Device ID']"),
          @AndroidBy(xpath = "//android.view.View[@text='Device ID']"),
          @AndroidBy(xpath = "//android.view.View[@text='About Us']//following::android.view.View[8]")
 
@@ -412,8 +418,8 @@ public MobileElement clkSeeMoreBooksAndContent;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='share information']"),
             @AndroidBy(xpath ="//android.widget.Button[@text='share']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='share information']"),
     })
     public MobileElement ClkshareDeviceID;
 

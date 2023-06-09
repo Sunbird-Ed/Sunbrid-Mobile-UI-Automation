@@ -283,24 +283,25 @@ public void createGrupAndActivity() throws Exception {
 
     QXClient.get().gestures().BlindWait(3000);
         
-        try
-        {
-        if(QXClient.get().gestures().isElementPresent(homePageObjects.clkCreateGroup)) {
-                      QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCreateGroup);
-            QXClient.get().report().info("clicked on clkCreateGroup");
-            QXClient.get().gestures().BlindWait(3000);
-        }
-        else
-        {
-        	 QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkAddImgGrp);
-             QXClient.get().report().info("clicked on clkAddImgGrp");
-        }
-        }
-        catch(Exception e)
-        {
-        	System.out.println("Excep handked");
-        }
-
+//        try
+//        {
+//        if(QXClient.get().gestures().isElementPresent(homePageObjects.clkCreateGroup)) {
+//                      QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCreateGroup);
+//            QXClient.get().report().info("clicked on clkCreateGroup");
+//            QXClient.get().gestures().BlindWait(3000);
+//        }
+//        else
+//        {
+//        	 QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkAddImgGrp);
+//             QXClient.get().report().info("clicked on clkAddImgGrp");
+//        }
+//        }
+//        catch(Exception e)
+//        {
+//        	System.out.println("Excep handked");
+//        }
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkAddImgGrp);
+        QXClient.get().report().info("clicked on clkAddImgGrp");
     QXClient.get().gestures().BlindWait(3000);
         
           
