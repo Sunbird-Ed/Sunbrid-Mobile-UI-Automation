@@ -2519,6 +2519,15 @@ public class UBScenarioSanity3 {
 
 	}
 */
+//	@Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "verifyDataSync")
+//	public void verifyDataSync() throws Exception {
+//		QXClient.get().driver();
+//		getDikshaMainPageActions().performUserOnBoarding();
+//
+//		getLibraryPageActions().verifyDataSyncs();
+//
+//	}
+
 	 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
 			  true, description = "Switch User In Menu")
 			  public void SwicthUser() throws Exception {
@@ -2554,7 +2563,7 @@ public class UBScenarioSanity3 {
 			  
 			  }
 
-	 
+
 }
 
 

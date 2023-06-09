@@ -104,14 +104,14 @@ public MobileElement assertStartLearning;
 	public MobileElement addAnotherUser;
 	
 	@AndroidFindAll({
-		@AndroidBy(xpath = "//android.view.View[contains(@text,'District')]"),
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'District')]"),
 
 	})
 	public MobileElement verifyDistrict;
 
 	
 	@AndroidFindAll({
-		@AndroidBy(xpath = "//android.view.View[contains(@text,'State')]"),
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'State')]"),
 
 	})
 	public MobileElement verifyState;

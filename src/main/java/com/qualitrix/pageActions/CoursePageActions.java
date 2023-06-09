@@ -222,7 +222,7 @@ public class CoursePageActions  {
         	}
         else
         	{
-        	homePageActions.tapOnProfileTab();
+        	homePageActions.tapOnProfileTab2();
         }
     }
     catch(Exception e)

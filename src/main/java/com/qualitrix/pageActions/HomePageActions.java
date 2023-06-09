@@ -62,6 +62,13 @@ public class HomePageActions {
          QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
          QXClient.get().report().info("Tap on menu bar");
         QXClient.get().gestures().BlindWait(2000);
+        
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
+        QXClient.get().report().info("clicked on Menu Icon");
        
     }
 
@@ -1495,6 +1502,13 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 		QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
         QXClient.get().report().info("clicked on Menu Icon");
         QXClient.get().gestures().BlindWait(3000);
+        
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
+        QXClient.get().report().info("clicked on Menu Icon");
+        
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.Clksettings);
         QXClient.get().report().info("clicked on Settings in Menu");
         QXClient.get().gestures().BlindWait(3000);
@@ -7175,6 +7189,13 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
         QXClient.get().report().info("clicked on Menu Icon");
         QXClient.get().gestures().BlindWait(3000);
+        
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
+        QXClient.get().report().info("clicked on Menu Icon");
+        
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.Clksettings);
         QXClient.get().report().info("clicked on Settings in Menu");
         QXClient.get().gestures().BlindWait(3000);
@@ -7502,7 +7523,11 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().BlindWait(3000);
 
     }
-
+    public void tapOnProfileTab2() throws Exception {
+    	QXClient.get().gestures().BlindWait(2000);
+    	QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.profilePageTab2);
+        QXClient.get().report().info("Tap on profile tab");
+    }
 
 
 }

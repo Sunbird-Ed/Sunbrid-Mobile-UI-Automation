@@ -343,9 +343,16 @@ public LibraryCourseContentPageActions() {
         
     }
         
-    public void verifyDataSyncs() {
+    public void verifyDataSyncs() throws Exception {
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
         QXClient.get().report().info("clicked on Menu Icon");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
+        QXClient.get().report().info("clicked on Menu Icon");
+        
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.Clksettings);
         QXClient.get().report().info("clicked on Settings in Menu");
        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.ClkDataSync), "DataSync Option is Displayed");
@@ -356,9 +363,17 @@ public LibraryCourseContentPageActions() {
        QXClient.get().report().info("clicked on ClkSyncNow in DataSync Option");
                      
     }
-    public void verifyDeviceIDAndShareDeviceID() {
+    public void verifyDeviceIDAndShareDeviceID() throws Exception {
    	 QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
         QXClient.get().report().info("clicked on Menu Icon");
+        
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
+        QXClient.get().report().info("clicked on Menu Icon");
+        
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.Clksettings);
         QXClient.get().report().info("clicked on Settings in Menu");
         
@@ -375,9 +390,16 @@ public LibraryCourseContentPageActions() {
 
         
    }
-    public void shareDikshaApp() {
+    public void shareDikshaApp() throws Exception {
     	 QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
          QXClient.get().report().info("clicked on Menu Icon");
+         QXClient.get().gestures().BlindWait(3000);
+         QXClient.get().gestures().clkBackButton();
+         QXClient.get().gestures().BlindWait(3000);
+
+         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
+         QXClient.get().report().info("clicked on Menu Icon");
+         
          QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.Clksettings);
          QXClient.get().report().info("clicked on Settings in Menu");
          Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.ShareDikshaApp), "ShareDikshaApp Option is Displayed");

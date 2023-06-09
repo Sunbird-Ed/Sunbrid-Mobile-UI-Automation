@@ -3348,7 +3348,11 @@ public MobileElement assertSubjectFilter;
     public MobileElement assertContinueLearning;
 
 
-
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//*[@resource-id='tab-button-profile'][2]"),
+      
+})
+public MobileElement profilePageTab2;
 
 
 
