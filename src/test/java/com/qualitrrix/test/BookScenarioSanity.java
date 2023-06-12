@@ -116,7 +116,11 @@ public class BookScenarioSanity {
 	    	 QXClient.get().driver();
 			  getDikshaMainPageActions().performUserOnBoarding();
 			  QXClient.get().gestures().swipeUp();
-		  QXClient.get().gestures().swipeUp();
+			  QXClient.get().gestures().swipeUp();
+			  QXClient.get().gestures().swipeUp();
+			  QXClient.get().gestures().swipeUp();
+
+			  QXClient.get().gestures().swipeUp();
 
 		  getLibraryPageActions().verifyClassAndSeeMoreBooks();
 
@@ -390,5 +394,34 @@ public class BookScenarioSanity {
        
 			 
     }
- 
+    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+            description = "Verify Class And SeeMoreBooksContent in LibrarySection")
+    public void verifyDifferentClassSection() throws Exception {
+    	 QXClient.get().driver();
+		  getDikshaMainPageActions().performUserOnBoarding();
+		  QXClient.get().gestures().swipeUp();
+		  QXClient.get().gestures().swipeUp();
+		  QXClient.get().gestures().swipeUp();
+		  QXClient.get().gestures().swipeUp();
+
+		  QXClient.get().gestures().swipeUp();
+
+	  getLibraryPageActions().verifyClassAndSeeMoreBooks();
+
+    }
+    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+            description = "Verify Class And SeeMoreBooksContent in LibrarySection")
+    public void BookWithMultipleTag() throws Exception {
+    	 QXClient.get().driver();
+		  getDikshaMainPageActions().performUserOnBoarding();
+		  QXClient.get().gestures().swipeUp();
+		  QXClient.get().gestures().swipeUp();
+		  QXClient.get().gestures().swipeUp();
+		  QXClient.get().gestures().swipeUp();
+
+		  QXClient.get().gestures().swipeUp();
+
+	  getLibraryPageActions().verifyClassAndSeeMoreBooks();
+
+    }
 }

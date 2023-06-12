@@ -343,28 +343,28 @@ public void createGrupAndActivity() throws Exception {
 
 
 
-    QXClient.get().gestures().BlindWait(3000);
-    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
-    QXClient.get().gestures().BlindWait(2000);
-    tapOnMenuBar();
-    QXClient.get().gestures().BlindWait(2000);
-    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
-    QXClient.get().report().info("clicked on MyGroups");
-    QXClient.get().gestures().BlindWait(3000);
+   // QXClient.get().gestures().BlindWait(3000);
+   // QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+  //  QXClient.get().gestures().BlindWait(2000);
+  //  tapOnMenuBar();
+//    QXClient.get().gestures().BlindWait(2000);
+//    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+//    QXClient.get().report().info("clicked on MyGroups");
+//    QXClient.get().gestures().BlindWait(3000);
 
-    try
-    {
-        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
-        QXClient.get().report().info("Clicked on Group guidelines checkbox");
-
-        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
-        QXClient.get().gestures().BlindWait(3000);
-    }
-    catch(Exception e)
-    {
-        System.out.println("Handled");
-    }
-    QXClient.get().gestures().BlindWait(3000);
+//    try
+//    {
+//        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+//        QXClient.get().report().info("Clicked on Group guidelines checkbox");
+//
+//        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+//        QXClient.get().gestures().BlindWait(3000);
+//    }
+//    catch(Exception e)
+//    {
+//        System.out.println("Handled");
+//    }
+//    QXClient.get().gestures().BlindWait(3000);
 
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
             QXClient.get().report().info("clicked on clkFirstCreateGroup");
@@ -381,16 +381,16 @@ public void createGrupAndActivity() throws Exception {
             QXClient.get().gestures().BlindWait(10000);
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clksearchIcon);
             QXClient.get().report().info("clicked on searchActivity");
-            QXClient.get().gestures().BlindWait(10000);
+            QXClient.get().gestures().BlindWait(5000);
             
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstCourseForActivity);
             QXClient.get().report().info("clicked on clkFirstCourseForActivity");
-           QXClient.get().gestures().BlindWait(4000);
+           QXClient.get().gestures().BlindWait(5000);
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkAddForGroupBtn);
             QXClient.get().report().info("clicked on clkAddForGroupBtn");
-            QXClient.get().gestures().BlindWait(5000);
+            QXClient.get().gestures().BlindWait(6000);
             
-           // Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.verifyAddedMemberToGrp),"Member added  is not available");
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.verifyAddedMemberToGrp),"Member added  is not available");
             QXClient.get().gestures().BlindWait(2000);
 /*
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMenuActivity);
@@ -548,7 +548,7 @@ public void createGrupAndActivity() throws Exception {
             QXClient.get().gestures().BlindWait(4000);
 
             QXClient.get().gestures().clkBackButton();
-            QXClient.get().gestures().clkBackButton();
+          //  QXClient.get().gestures().clkBackButton();
 
             QXClient.get().gestures().BlindWait(4000);
 
@@ -566,7 +566,7 @@ public void createGrupAndActivity() throws Exception {
     public void startQuestionFill() throws Exception {
         QXClient.get().gestures().BlindWait(5000);
 
-       //QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkEyeIcon);
+       QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkEyeIcon);
         QXClient.get().gestures().BlindWait(3000);
 
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkStartDiscussion);

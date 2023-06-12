@@ -98,7 +98,7 @@ public class UserOnBoardingSanity {
 
 		
 
-		  @Author(name="Raju")
+		 @Author(name="Raju")
 		  
 		  @Test()
 		  public void VerifyAddUser() throws Exception {
@@ -133,6 +133,11 @@ public class UserOnBoardingSanity {
 		  String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
 		  System.out.println(storeFakeNameEntered);
 		  getCoursePageActions().tapOnAddUserBtn();
+		    QXClient.get().gestures().BlindWait(4000);
+
+		  QXClient.get().gestures().closeApp();  
+		    d.LaunchAppHomeScreen();
+		  
 		  getHomePageActions().tapOnMenuBar();
 		  
 		  getCoursePageActions().tapOnMoreOption();
@@ -150,7 +155,7 @@ public class UserOnBoardingSanity {
 			  getHomePageActions().tapOnDownloadTab();
 
 		  getHomePageActions().tapOnProfileTab();
-		  getHomePageActions().tapOnProfileTab();
+		  getHomePageActions().tapOnProfileTab2();
 
 		  
 		  getCoursePageActions().verifyDistricAndState();
@@ -163,10 +168,8 @@ public class UserOnBoardingSanity {
 		  
 		  }
 
-
 	  
 	 
-	   
 		 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
 				  true, description = "Switch User In Menu")
 				  public void SwicthUser() throws Exception {
@@ -189,9 +192,14 @@ public class UserOnBoardingSanity {
 
 			 getLoginPageActions().loginToTheUser(Username,Password);
 
-			 //getHomePageActions().tapOnDownloadTab();
 
-
+			  DikshaMainPageActions d=new DikshaMainPageActions();
+			  QXClient.get().gestures().closeApp();  
+			    d.LaunchAppHomeScreen();
+			    QXClient.get().gestures().BlindWait(4000);
+				  getHomePageActions().tapOnDownloadTab();
+			  
+			  
 			 getHomePageActions().tapOnMenuBar();
 
 			 getCoursePageActions().tapOnMoreOption();
@@ -201,7 +209,6 @@ public class UserOnBoardingSanity {
 			 getCoursePageActions().verifyDistricAndState();
 				  
 				  }
-	 
 
 
 		  @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
@@ -285,7 +292,7 @@ public class UserOnBoardingSanity {
 	}
 
 	@Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "ShareDikshaApp")
-	public void ShareDikshaApp() throws Exception {
+	public void ShareSunbirdApp() throws Exception {
 
 		QXClient.get().driver();
 		getDikshaMainPageActions().performUserOnBoarding();
@@ -1043,9 +1050,19 @@ public void CreateGroup() throws Exception {
 		   }
 
 
+		 @Test (dependsOnMethods = { "VerifyAddUser" })
+		 public void AddedUserMsg() throws Exception {
+		      QXClient.get().driver();
+		     
+		   }
 
+		 @Test (dependsOnMethods = { "VerifyAddUser" })
+		 public void NoRecoveryOptionForMUA() throws Exception {
+		      QXClient.get().driver();
+		     
+		   }
 
-
+		
 }
 
     

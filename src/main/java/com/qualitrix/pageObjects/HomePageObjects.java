@@ -283,7 +283,11 @@ public MobileElement clkGroupForCreation;
 public MobileElement clkFirstCreateGroup;
   
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='add activity button']"),
         @AndroidBy(xpath = "//android.widget.Button[@text='+ Add activity']"),
+
+      
+
 })
 public MobileElement clkAddActivity;
   
@@ -319,14 +323,19 @@ public MobileElement clkFirstCourseForActivity;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Add for group']")
     public MobileElement clkAddForGroupBtn;
     
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'member')]"),
-        @AndroidBy(xpath = "//android.view.View[@text='Course']//following::android.view.View[@text='⠇']"),
-        @AndroidBy(xpath = "//android.view.View[@text='Course']"),
 
+  
+    @AndroidFindAll({
+    	
+ 	   @AndroidBy(xpath = "//android.widget.TextView[@text='Course']"),
+    	   	   @AndroidBy(xpath = "//android.view.View[contains(@text,'member')]"),
+           @AndroidBy(xpath = "//android.view.View[@text='Course']//following::android.view.View[@text='⠇']"),
+           @AndroidBy(xpath = "//android.view.View[@text='Course']"),
 })
 public MobileElement verifyAddedMemberToGrp;
-  
+
+    
+    
     @AndroidFindBy(xpath = "//android.widget.Button[@text='close-icon']")
     public MobileElement clkCloseIconGrp;
 
@@ -433,6 +442,7 @@ public MobileElement verifyAddedMemberToGrp;
     public MobileElement clkenableDisIcon;
     
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='0 Discussions']"),
         @AndroidBy(xpath = "//android.view.View[@text='0 Discussions']"),
         @AndroidBy(xpath = "//android.view.View[@text='0 discussions']"),
 
@@ -497,6 +507,7 @@ public MobileElement verifyAddedMemberToGrp;
     
     
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='0 Posts']"),
         @AndroidBy(xpath = "//android.view.View[@text='0 Posts']"),
         @AndroidBy(xpath = "//android.view.View[@text='0 posts']"),
 
@@ -703,6 +714,9 @@ public MobileElement clkRemovePopupActivity;
     
 
     @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='×']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Close close icon']"),
             @AndroidBy(xpath = "//android.widget.Button[@resource-id='close-discussion-forum']"),
     })

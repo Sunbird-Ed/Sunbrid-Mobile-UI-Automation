@@ -138,7 +138,7 @@ public MobileElement assertStartLearning;
 	public MobileElement clkPersonaDropDown;
 
 	@AndroidFindAll({
-			@AndroidBy(xpath = "(//android.widget.TextView)[1]"),
+			@AndroidBy(xpath = "(//android.widget.TextView)[6]"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Andaman & Nicobar']"),
 			@AndroidBy(xpath = "//android.widget.TextView[@text='Andra Pradesh']"),
 			@AndroidBy(xpath = "//android.widget.TextView[@text='Andhra Pradesh']"),
@@ -185,8 +185,9 @@ public MobileElement assertStartLearning;
 
 
 	   @AndroidFindAll({
+		   @AndroidBy(xpath = "//android.view.View[@text='Mobile number for State or Org']"),
 			   @AndroidBy(xpath = "//android.view.View[contains(@text,'FRMELEMNTS_LBL_MOBILE_NUMBER_PLACEHOLDER')]"),
-			   @AndroidBy(xpath = "//android.view.View[@text='Mobile number for State or Org']"),
+			   
 	   })
 	    public MobileElement verifyMobielNumberLabel;
 
