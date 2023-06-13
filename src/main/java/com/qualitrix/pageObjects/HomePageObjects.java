@@ -954,14 +954,27 @@ public MobileElement clkRemovePopupActivity;
     })
     public MobileElement clkSearchIcon;
     
-    @AndroidFindBy(xpath = "//android.view.View[@text='Popular categories']")
-    public MobileElement assertPopularCatrgories;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Popular categories']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Popular categories']"),
+})
+public MobileElement assertPopularCatrgories;
     
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore content from other boards']")
-    public MobileElement assertExploreContentFromOtherBoards;
     
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore content for a variety of audience']")
-    public MobileElement assertExploreContentForVarietyOfAudience;
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Explore content from other boards']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Explore content from other boards']"),
+})
+public MobileElement assertExploreContentFromOtherBoards;
+    
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Explore content for a variety of audience']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Explore content for a variety of audience']"),
+})
+public MobileElement assertExploreContentForVarietyOfAudience;
+  
 
 
     @AndroidFindAll({
@@ -1736,9 +1749,12 @@ public MobileElement tagsField;
          public MobileElement assertNewTagInImportContent;
 
 
-         @AndroidFindBy(xpath = "//android.widget.Button[@text='log in outline Login']")
-          public MobileElement assertUserLoginText;
-
+            
+         @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.Button[@text='Login']"),
+             @AndroidBy(xpath = "//android.widget.Button[@text='log in outline Login']"),
+     })
+     public MobileElement assertUserLoginText;
 
          @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Guest')]")
          public MobileElement assertGuestUserInProfile;
@@ -1749,6 +1765,8 @@ public MobileElement tagsField;
 
 
          @AndroidFindAll({
+        	
+             @AndroidBy(xpath = "//android.widget.TextView[@text='LOGIN']"),
                  @AndroidBy(xpath = "//android.view.View[@text='LOGIN']"),
                  @AndroidBy(xpath = "//android.widget.TextView[@text='Login to DIKSHA']"),
          })
@@ -1829,10 +1847,14 @@ public MobileElement tagsField;
          @AndroidFindBy(xpath = "//android.view.View[@text='NA']")
          public MobileElement assertNAinDashboard;
 
+         @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.TextView[@text='Browse by Digital Textbook']"),
+             @AndroidBy(xpath = "//android.view.View[@text='Explore Digital Textbook']"),
+     })
+     public MobileElement assertDigitalTextBookSec;
 
-         @AndroidFindBy(xpath = "//android.view.View[@text='Explore Digital Textbook']")
-         public MobileElement assertDigitalTextBookSec;
 
+      
 
          @AndroidFindBy(xpath = "//android.widget.Button[@text='filter']")
          public MobileElement clkFilter;
@@ -2120,6 +2142,9 @@ public MobileElement tagsField;
 
 
     @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Browse by Course']"),
             @AndroidBy(xpath = "//android.view.View[@text='Browse by Course']"),
             @AndroidBy(xpath = "//android.view.View[@text='Explore Course']"),
     })

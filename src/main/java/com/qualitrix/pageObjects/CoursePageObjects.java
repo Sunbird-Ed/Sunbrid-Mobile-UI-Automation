@@ -230,14 +230,17 @@ public MobileElement assertStartLearning;
 	   
 	   
 	   @AndroidFindAll({
+           @AndroidBy(xpath = "//android.widget.Button[@text='Edit Board, Medium, Classes, subjects']"),
 		   @AndroidBy(xpath = "//android.widget.Button[@text='EDIT']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Subjects:']//following::android.widget.Button[@text='EDIT']"),
-           @AndroidBy(xpath = "//android.widget.Button[@text='Edit Board, Medium, Classes, subjects']"),
 		})
 		public MobileElement clikEditProfile;
 
 
 	@AndroidFindAll({
+		
+		
+		@AndroidBy(xpath = "//*[@resource-id='ion-sel-0']"),
 			@AndroidBy(xpath = "//*[@resource-id='ion-sel-4']"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'State ')][2]"),
 			@AndroidBy(xpath = "//android.widget.Spinner[@index='2']"),
@@ -257,6 +260,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//*[@resource-id='ion-sel-1']"),
 			@AndroidBy(xpath = "//*[@resource-id='ion-sel-6']"),
 			@AndroidBy(xpath = "//android.widget.Spinner[@index='2']"),
 			@AndroidBy(xpath = "//android.widget.Button[@index='2'][1]//following::android.widget.Button[1]"),
@@ -280,6 +284,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//*[@resource-id='ion-sel-2']"),
 			@AndroidBy(xpath = "//*[@resource-id='ion-sel-7']"),
 			@AndroidBy(xpath = "//android.widget.Spinner[@index='2']"),
 
@@ -287,7 +292,7 @@ public MobileElement assertStartLearning;
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Class')]"),
 
 	})
-	public List<MobileElement>  clkClassDropDown;
+	public MobileElement  clkClassDropDown;
 
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//*[@resource-id='ion-sel-7']"),
@@ -305,6 +310,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.view.View[@text='Select Subject, Subject']"),
 			@AndroidBy(xpath = "//*[@resource-id='ion-sel-5']"),
 			@AndroidBy(xpath = "//android.widget.Spinner[@index='2']"),
 
@@ -313,7 +319,7 @@ public MobileElement assertStartLearning;
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Subjects')]"),
 
 	})
-	public List<MobileElement> clkSubjectDropDown;
+	public MobileElement clkSubjectDropDown;
 
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//*[@resource-id='ion-sel-5']"),
@@ -331,6 +337,8 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board: State (Andhra Pradesh) ‎')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'State (Andhra Pradesh) \u200E')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='Board:']//following::android.view.View[@text='State (Andhra Pradesh) ‎']"),
            @AndroidBy(xpath = "//android.view.View[@text='Board: State (Tamil Nadu) \u200E']"),
@@ -339,6 +347,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Medium: English ‎')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='English']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Medium:']//following::android.view.View[@text='English'][1]"),
             @AndroidBy(xpath = "//android.view.View[@text='Medium: English']"),
@@ -347,6 +356,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Class: Class ')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='Class 1']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Classes:']//following::android.view.View[1]"),
            @AndroidBy(xpath = "//android.view.View[@text='Classes: Class 1']"),
@@ -355,6 +365,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Subject: English ‎')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='English']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Subjects:']//following::android.view.View[@text='English']"),
             @AndroidBy(xpath = "//android.view.View[@text='Subjects: English']"),
@@ -476,6 +487,8 @@ public MobileElement assertStartLearning;
 		public MobileElement clkonlogintojoincourse;
 	   
 	   @AndroidFindAll({
+		      @AndroidBy(xpath = "//android.widget.TextView[@text='Try new SUNBIRD experience']"),
+
 		      @AndroidBy(xpath = "//android.widget.TextView[@text='Try new DIKSHA experience']"),
 		      @AndroidBy(xpath = "//android.view.View[@text='help Try new DIKSHA experienceBeta']")
 		})

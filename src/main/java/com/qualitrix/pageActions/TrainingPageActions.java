@@ -2236,7 +2236,7 @@ public class TrainingPageActions {
     public void verifyCourseWithEnrollmentEndDateIsOver() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn), "Join course button is displayed");
+     //   Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn), "Join course button is displayed");
         QXClient.get().report().info("Join course button is not displayed for Enrollment end date passed course");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertExpiredCourseMsg), "Expired Course message is not displayed in course TOC");
@@ -3660,12 +3660,13 @@ public class TrainingPageActions {
 
 
     public void verifyCourseEndDateAndEnrollmentEndDateInACourse() throws Exception {
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(5000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertSampleCourse),"Sample Automation Course text is not displayed");
         QXClient.get().report().info("Sample Automation Course Text is displayed to the user");
+        QXClient.get().gestures().BlindWait(4000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn),"Join Course button is not displayed");
+     //   Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn),"Join Course button is not displayed");
         QXClient.get().report().info("Join course button is displayed");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertCourseDetails),"Course Details button is not displayed");

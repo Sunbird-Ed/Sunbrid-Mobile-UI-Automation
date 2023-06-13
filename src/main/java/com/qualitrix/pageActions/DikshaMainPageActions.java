@@ -529,7 +529,7 @@ public class DikshaMainPageActions  {
 
         ProfileEditPageActions pageaction=new ProfileEditPageActions();
 
-        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+       QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
         QXClient.get().report().info("Clicked on Continue Button");
 
         // pageaction.verifyLabelOnBoarding();
@@ -545,9 +545,13 @@ public class DikshaMainPageActions  {
 
         sltUserStateDropdown();
         checkLocationPopup();
-        if (QXClient.get().gestures().isElementPresent(dikshaMainObjects.clkClosePoup)) {
-            clkCloseIcon();
-        }
+        clkCloseIcon();
+
+        
+        
+//        if (QXClient.get().gestures().isElementPresent(dikshaMainObjects.clkClosePoup)) {
+//            clkCloseIcon();
+//        }
 //                QXClient.get().gestures().closeApp();
 //                LaunchAppHomeScreen();
     }

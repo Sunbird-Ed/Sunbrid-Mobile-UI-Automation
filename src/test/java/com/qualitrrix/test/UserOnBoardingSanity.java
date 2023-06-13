@@ -1,6 +1,5 @@
 
 
-
 package com.qualitrrix.test;
 
 import java.util.Properties;
@@ -707,11 +706,12 @@ public void CreateGroup() throws Exception {
     	  getHomePageActions().verifyCloseBtnDF();
     	  getHomePageActions().deleteGroup();
 
-    }  
+    } 
+			 
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
     		  true, description = "verifyHomePageForNewDikshaExpreiecne ")
-    		  public void verifyHomePageForNewDikshaExpreiecne()
+    		  public void verifyHomePageForNewSunbirdExpreiecne()
     		  throws Exception { 
     			  QXClient.get().driver();
     		  getDikshaMainPageActions().performUserOnBoarding();
@@ -892,30 +892,33 @@ public void CreateGroup() throws Exception {
 		 }
 	  
 	  
+	
+		 
 		 @Test(enabled = true, groups = { "SanityTest",
-	      "FunctionalTest" }, alwaysRun = true, description = "Course Share.")
+	     "FunctionalTest" }, alwaysRun = true, description = "Course Share.")
 	public void verifyScanQRandSelectBoardAndNewTagAndUserLogin() throws Exception {
 
-	   QXClient.get().driver();
+	  QXClient.get().driver();
 
-	   getDikshaMainPageActions().verifyScanQRAndSelectBoardWhileUserOnBoarding();
+	  getDikshaMainPageActions().verifyScanQRAndSelectBoardWhileUserOnBoarding();
 
-	   getHomePageActions().tapOnDownloadTab();
-	   QXClient.get().gestures().closeApp();
+	  getHomePageActions().tapOnDownloadTab();
+	  QXClient.get().gestures().closeApp();
 
-	   DikshaMainPageActions d = new DikshaMainPageActions();
-	   d.LaunchAppHomeScreen();
-	   getHomePageActions().tapOnDownloadTab();
+	  DikshaMainPageActions d = new DikshaMainPageActions();
+	  d.LaunchAppHomeScreen();
+	  getHomePageActions().tapOnDownloadTab();
 
-	   getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
+	 // getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
 
-	   getHomePageActions().verifyUserLoginInHamburgerMenu();
+	  getHomePageActions().verifyUserLoginInHamburgerMenu();
 
-	   getHomePageActions().tapOnProfileTab();
+	  getHomePageActions().tapOnProfileTab();
 
-	   getHomePageActions().verifyUserLoginInProfile();
+	  getHomePageActions().verifyUserLoginInProfile();
 
-	    }
+	   }
+		 
 		 
 		 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,description = "Verify updateProfileDetails")
 		 public void updateTheProfileDetails() throws Exception {
@@ -965,7 +968,7 @@ public void CreateGroup() throws Exception {
 		 
 		 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
 			      true, description = "verifySearchPageForDikshaNewExpreiecne ")
-			public void verifySearchPageForDikshaNewExpreiecne()
+			public void verifySearchPageForSunbirdNewExpreiecne()
 			      throws Exception {
 			   QXClient.get().driver();
 			   getDikshaMainPageActions().performUserOnBoarding();

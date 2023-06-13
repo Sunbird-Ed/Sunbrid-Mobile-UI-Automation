@@ -269,8 +269,8 @@ public MobileElement assertScanQRCode;
 
 
 @AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.Button[@text='Select Board']"),
         @AndroidBy(xpath = "//android.view.View[@text='Board']"),
-        @AndroidBy(xpath = "//android.widget.Button[@text='Select Board']"),
 })
 public MobileElement assertSelectBoard;
 

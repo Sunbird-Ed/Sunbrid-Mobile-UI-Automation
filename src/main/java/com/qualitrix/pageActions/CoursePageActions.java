@@ -335,7 +335,7 @@ public class CoursePageActions  {
         QXClient.get().gestures().BlindWait(3000);
 
 
-        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkClassDropDown.get(2));
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkClassDropDown);
         QXClient.get().report().info("Tap on clkClassDropDown Option");
 
         QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltClassVal.get(0));
@@ -346,7 +346,7 @@ public class CoursePageActions  {
         QXClient.get().gestures().BlindWait(3000);
 
 
-        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubjectDropDown.get(0));
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubjectDropDown);
         QXClient.get().report().info("Tap on clkSubjectDropDown Option");
 
         QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltsubjectVal);

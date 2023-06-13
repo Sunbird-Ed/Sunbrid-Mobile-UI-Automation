@@ -145,32 +145,61 @@ public MobileElement SignWithGoogle;
     })
     public MobileElement assertDiscoverContentLabel;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Content preference']")
-    public MobileElement assertContentPreferenceLabelProfile;
+    
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Content preference']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Content preference']"),
+})
+public MobileElement assertContentPreferenceLabelProfile;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='ROLE']")
-    public MobileElement assertRoleContentPreferenceLabelProfile;
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='ROLE']"),
+        @AndroidBy(xpath = "//android.view.View[@text='ROLE']"),
+})
+public MobileElement assertRoleContentPreferenceLabelProfile;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='BOARD']")
-    public MobileElement assertBoardContentPreferenceLabelProfile;
-
-    @AndroidFindBy(xpath = "//android.view.View[@text='MEDIUM']")
-    public MobileElement assertMediumContentPreferenceLabelProfile;
-
-    @AndroidFindBy(xpath = "//android.view.View[@text='CLASS']")
-    public MobileElement assertClassContentPreferenceLabelProfile;
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='BOARD']"),
+        @AndroidBy(xpath = "//android.view.View[@text='BOARD']"),
+})
+public MobileElement assertBoardContentPreferenceLabelProfile;
+    
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='SUBJECTS']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='MEDIUM']"),
+        @AndroidBy(xpath = "//android.view.View[@text='MEDIUM']"),
+})
+public MobileElement assertMediumContentPreferenceLabelProfile;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='CLASS']"),
+        @AndroidBy(xpath = "//android.view.View[@text='CLASS']"),
+})
+public MobileElement assertClassContentPreferenceLabelProfile;
+
+ 
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='SUBJECT']"),
             @AndroidBy(xpath = "//android.view.View[@text='SUBJECT']"),
     })
     public MobileElement assertSubjectContentPreferenceLabelProfile;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='DISTRICT']")
-    public MobileElement assertDistrictContentPreferenceLabelProfile;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='DISTRICT']"),
+        @AndroidBy(xpath = "//android.view.View[@text='DISTRICT']"),
+})
+public MobileElement assertDistrictContentPreferenceLabelProfile;
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='STATE']"),
+        @AndroidBy(xpath = "//android.view.View[@text='STATE']"),
+})
+public MobileElement assertStateContentPreferenceLabelProfile;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='STATE']")
-    public MobileElement assertStateContentPreferenceLabelProfile;
+
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='edit District']"),
@@ -181,6 +210,10 @@ public MobileElement clkEditLocation;
 
 
     @AndroidFindAll({
+    	
+    	
+    	
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Choose content preferences')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Choose content preferences')]"),
             @AndroidBy(xpath = "//android.view.View[@text='Choose content preferences']"),
     })

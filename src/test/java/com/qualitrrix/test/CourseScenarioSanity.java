@@ -583,6 +583,7 @@ public void CourseShare() throws Exception {
 
 	}
 
+	
 	@Test()
 	public void verifyEnrollmentEndDateCourseEndDateInCourseDetailsPage() throws Exception {
 
@@ -590,8 +591,7 @@ public void CourseShare() throws Exception {
 		DikshaMainPageActions d=new DikshaMainPageActions();
 		getDikshaMainPageActions().performUserOnBoarding();
 		getHomePageActions().tapOnProfileTab();
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
+		
 		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
 		System.out.println("@name:" +
 				properties.getProperty("excelpath"));
@@ -602,6 +602,8 @@ public void CourseShare() throws Exception {
 		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
 		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
 
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
 		getLoginPageActions().loginToTheUser(Username, Password);
 		QXClient.get().gestures().closeApp();
 		d.LaunchAppHomeScreen();
@@ -616,7 +618,7 @@ public void CourseShare() throws Exception {
 		getTrainingPageActions().verifyCourseEndDateAndEnrollmentEndDateInACourse();
 
 	}
-
+	
 	@Test()
 	public void verifyAlreadyJoinedCourseAndBatchExpiredWithNoBatchesAvailableMessage() throws Exception {
 
@@ -624,8 +626,7 @@ public void CourseShare() throws Exception {
 		DikshaMainPageActions d=new DikshaMainPageActions();
 		getDikshaMainPageActions().performUserOnBoarding();
 		getHomePageActions().tapOnProfileTab();
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
+		
 		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
 		System.out.println("@name:" +
 				properties.getProperty("excelpath"));
@@ -636,6 +637,8 @@ public void CourseShare() throws Exception {
 		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
 		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
 
+		QXClient.get().gestures().swipeUp();
+		  QXClient.get().gestures().swipeUp();
 		getLoginPageActions().loginToTheUser(Username, Password);
 		QXClient.get().gestures().closeApp();
 		d.LaunchAppHomeScreen();
@@ -651,6 +654,9 @@ public void CourseShare() throws Exception {
 
 	}
 
+	
+	
+
 	@Test()
 	public void verifyEnrollmentEndDateOverMsgInCourse() throws Exception {
 
@@ -658,8 +664,7 @@ public void CourseShare() throws Exception {
 		DikshaMainPageActions d=new DikshaMainPageActions();
 		getDikshaMainPageActions().performUserOnBoarding();
 		getHomePageActions().tapOnProfileTab();
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
+		
 		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
 		System.out.println("@name:" +
 				properties.getProperty("excelpath"));
@@ -670,6 +675,9 @@ public void CourseShare() throws Exception {
 		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
 		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
 		String course = QXClient.get().excelUtils().getCellValue("Excel1","TestData",99,2);
+		
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
 		getLoginPageActions().loginToTheUser(Username, Password);
 		QXClient.get().gestures().closeApp();
 		d.LaunchAppHomeScreen();

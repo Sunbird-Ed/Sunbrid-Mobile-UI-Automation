@@ -865,10 +865,15 @@ public MobileElement courseUnderOthers;
     public MobileElement assertEnrollmentEndDate;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Course details']")
-    public MobileElement assertCourseDetails;
+ 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Course details']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Course details']")
+})
+public MobileElement assertCourseDetails;
 
-
+    
+    
     @AndroidFindBy(xpath = "//android.view.View[@text='This course is relevant for:']")
     public MobileElement assertCourseRelevantFor;
 
@@ -1279,12 +1284,23 @@ public MobileElement courseUnderOthers;
     public MobileElement clkOnCancelBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='There are no batches available for this course']")
-    public MobileElement assertNoBatchesForThisCourseMsg;
+ 
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='There are no batches available for this course']"),
+        @AndroidBy(xpath = "//android.view.View[@text='There are no batches available for this course']"),
+})
+public MobileElement assertNoBatchesForThisCourseMsg;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='No batches available']")
-    public MobileElement assertExpiredCourseMsg;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='No batches available']"),
+        @AndroidBy(xpath = "//android.view.View[@text='No batches available']"),
+})
+public MobileElement assertExpiredCourseMsg;
+    
+    
+  //android.widget.TextView[@text='No batches available']
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
@@ -1703,10 +1719,15 @@ public MobileElement courseUnderOthers;
     public MobileElement sampleAutomationCourse;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='SampleAutomationCourse']")
-    public MobileElement assertSampleCourse;
 
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='SampleAutomationCourse']"),
+        @AndroidBy(xpath = "//android.view.View[@text='SampleAutomationCourse']"),
+})
+public MobileElement assertSampleCourse;
 
+    
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'information circle Last date to join')]")
     public MobileElement assertLastDateToJoinDate;
 
@@ -1714,13 +1735,20 @@ public MobileElement courseUnderOthers;
     @AndroidFindBy(xpath = "//android.view.View[@text='Course details']")
     public MobileElement assertCourseDetailsText;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Course end date :')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Course end date :')]"),
+})
+public MobileElement assertCourseEndDateTextWithDate;
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Course end date :')]")
-    public MobileElement assertCourseEndDateTextWithDate;
+   
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Enrollment end date :')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Enrollment end date :')]"),
+})
+public MobileElement assertEnrollmentEndDateTextWithDate;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Enrollment end date :')]")
-    public MobileElement assertEnrollmentEndDateTextWithDate;
 
 
 
@@ -1736,13 +1764,21 @@ public MobileElement courseUnderOthers;
     public MobileElement enrollmentEndedCourse;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='SampleAutoEnrollmentEndedCourse']")
-    public MobileElement assertEnrollmentEndedCourse;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='SampleAutoEnrollmentEndedCourse']"),
+        @AndroidBy(xpath = "//android.view.View[@text='SampleAutoEnrollmentEndedCourse']"),
+})
+public MobileElement assertEnrollmentEndedCourse;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[@text='The enrollment date has passed for this batch']")
-    public MobileElement assertEnrollmentEndedMsg;
-
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='The enrollment date has passed for this batch']"),
+        @AndroidBy(xpath = "//android.view.View[@text='The enrollment date has passed for this batch']"),
+})
+public MobileElement assertEnrollmentEndedMsg;
+ 
+  
 
     @AndroidFindBy(xpath = "//android.view.View[@text='next slide'][@enabled='true']")
     public MobileElement assertHighlightedNextBtn;
