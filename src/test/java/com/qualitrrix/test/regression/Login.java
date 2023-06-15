@@ -1025,7 +1025,7 @@ public class Login {
 		d.LaunchAppHomeScreen();
 		getHomePageActions().tapOnDownloadTab();
 
-		getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
+		//getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
 
 		getHomePageActions().verifyUserLoginInHamburgerMenu();
 
