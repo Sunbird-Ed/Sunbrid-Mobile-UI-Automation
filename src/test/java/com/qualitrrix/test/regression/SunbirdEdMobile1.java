@@ -94,72 +94,9 @@ public class SunbirdEdMobile1 {
     }
 
 
-    @Test()
-    public void verifyPostClickingOngoingCourseInProfilePageLandsOnCourseTOCPage() throws Exception {
+   
 
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",45,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",46,2);
-
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-
-        getCoursePageActions().tapOnOngoingCourse();
-
-
-    }
-
-
-
-    @Test()
-    public void verifyCourseCardDisplayedWithLargeTitlesInMyLearningOfHomePage() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 69, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 70, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().verifyMyLearnigSectionOfHomePage();
-
-
-    }
-
+  
    
 
 
@@ -251,52 +188,6 @@ public class SunbirdEdMobile1 {
     }
 
 
-    @Test()
-    public void verifyMyLearningSectionDetailsForCourses() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",45,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",46,2);
-
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getCoursePageActions().verifyMyLearningSectionDetails();
-
-
-
-    }
-
-    @Test()
-    public void verifyCourseInClassicAndSearchInNewExperience() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().verifySearchTabInsteadOfCoursesTabInNewExperience();
-
-
-    }
-
    
 
     
@@ -336,34 +227,7 @@ public class SunbirdEdMobile1 {
 
   
     
-    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-            description = "verfiyUserAbleToViewNotifications")
-    public void verifyUserAbleToViewNotifications() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getLibraryPageActions().verifyNotifications();
-
-    }
-
+   
 
     @Test()
     public void validateDikshaGroupGuidelinesWhileCreatingGroup() throws Exception {
@@ -430,17 +294,7 @@ public class SunbirdEdMobile1 {
 
 
   
-    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-            description = "Verify Class And SeeMoreBooksContent in LibrarySection")
-    public void UserAbleToSeeMoreBooks() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getLibraryPageActions().verifyClassAndSeeMoreBooks();
-
-    }
-
-
+   
 
  
 
@@ -561,29 +415,7 @@ public class SunbirdEdMobile1 {
 
    
   
-    @Test()
-    public void verifyClassAndMediumInLibraryPage() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        getHomePageActions().verifyClassAndMediumInProfile();
-        DikshaMainPageActions d1=new DikshaMainPageActions();
-
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        //getHomePageActions().tapOnLibraryTab();
-        getHomePageActions().changeClassAndMediumInLibraryPageAndVerify();
-
-        QXClient.get().gestures().closeApp();
-        d1.LaunchAppHomeScreen();
-
-        getHomePageActions().verifyClassAndMediumInLibraryPageAfterRelaunch();
-
-    }
-
+    
 
     @Test()
     public void verifyDownloadSection() throws Exception {

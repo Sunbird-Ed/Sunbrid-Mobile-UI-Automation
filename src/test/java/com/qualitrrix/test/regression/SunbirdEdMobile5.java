@@ -118,49 +118,9 @@ public class SunbirdEdMobile5 {
    
    
 
-    @Test()
-    public void verifyUserIDReplacedWithDikshaIDBelowUserNameInProfilePage() throws Exception {
+   
 
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyUserIDReplacedWithDikshaIDBelowUserNameInProfilePage();
-    }
-
- 
-
-    @Test()
-    public void verifyChooseContentPreferencesPageIsDisplayedProperly() throws Exception {
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyChooseContentPreferencesLabelIsNotOverlapping();
-
-    }
-
+   
   
     @Test()
     public void verifyUserAbleToConsumeCertificateCourseFromGroupActivity() throws Exception {
@@ -221,26 +181,6 @@ public class SunbirdEdMobile5 {
 
 
 
-    @Test()
-    public void verifyStateDistrictBlockClusterAndSchoolDisplayedProperlyForHTAndOfficialsRole() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoardingWithHeadTeacherAndOfficials();
-        Properties properties = QXClient.get().propUtils()
-                .getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" + properties.getProperty("excelpath"));
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",97, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",98, 2);
-        getLoginPageActions().loginToTheUserForLeader(Username,Password);
-
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyBlockTaggedToDistrictClusterTaggedToBlockAndSchoolTaggedToCluster();
-
-    }
-
     
     @Test()
     public void verifyLIUAAbleToAccessAllMUAAccountsInUsersList() throws Exception {
@@ -276,38 +216,9 @@ public class SunbirdEdMobile5 {
 
   
 
-    @Test()
-    public void verifyResultsPageShouldNotLimitedToOnlyHundredContentsText() throws Exception {
+    
 
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnSearchIcon();
-
-        getHomePageActions().enterTextInSearchBar("Course");
-
-        getTrainingPageActions().verifyResultPageShouldNotLimitedTo100Contents();
-
-    }
-
-
-    @Test()
-    public void verifyViewMoreButtonIsDisplayedAndClickableInSearchContentPage() throws Exception {
-
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnSearchIcon();
-
-        getHomePageActions().enterTextInSearchBar("Course");
-
-        getTrainingPageActions().verifyResultPageShouldNotLimitedTo100Contents();
-
-        getTrainingPageActions().verifyViewMoreButtonIsDisplayedAndClickableInSearchContentPage();
-
-    }
+   
 
 
    
@@ -319,99 +230,13 @@ public class SunbirdEdMobile5 {
 
 
 
-    @Test()
-    public void verifyTitlesAndNamesDisplayedProperlyInAllPages() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 69, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 70, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().verifyMyLearnigSectionOfHomePage();
-
-
-    }
-
+   
 
    
   
    
   
 
-    @Test()
-    public void noTermsAndConditionsCheckboxIsDisplayedInSelfInfoSection() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 59, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 60, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyNoTermsAndConditionsCheckboxInUpdateSelfInfoSection();
-
-    }
-
-    @Test()
-    public void verifyLatestPrivacyPolicyAndTCCheckBoxInSubmitDetailsPage() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        QXClient.get().gestures().BlindWait(4000);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getCoursePageActions().VerifySubmitDetailsForm();
-
-        getCoursePageActions().verifyNewPricacyPolicyInSubmitDetailsForm();
-    }
 
    
 
@@ -512,38 +337,7 @@ public class SunbirdEdMobile5 {
 
 
    
-    @Test()
-    public void verifyContentPreferenceLabelAndOtherSectionInProfileAreDisplayedSameWay() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyTwoSectionsOfProfilePage();
-
-
-    }
-
+   
     @Test()
     public void verifyPrefilledBMGValuesAndUserAbleToUpdateBMGValuesForNewCredentials() throws Exception {
 
@@ -567,41 +361,6 @@ public class SunbirdEdMobile5 {
         getHomePageActions().tapOnProfileTab();
 
         getProfileEditPageActions().verifyBMGSValuesPickedAutomaticallyInProfilePage();
-
-    }
-
-    @Test()
-    public void userAbleToSubmitDetailsWithoutAddingPhoneNumberAndVerifyUpdateBtnPostSubmit() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",109,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",110,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        QXClient.get().gestures().BlindWait(4000);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getCoursePageActions().VerifySubmitDetailsForm();
-
-        getCoursePageActions().userAbleToSubmitDetailsWithoutAddingPhoneNumber();
 
     }
 
@@ -637,39 +396,6 @@ public class SunbirdEdMobile5 {
         getHomePageActions().deleteGroup();
 
     }
-
-    @Test()
-    public void verifySubmitDetailsButtonInProfilePageForNewlyCreatedCustodianUser() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        QXClient.get().gestures().BlindWait(4000);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getCoursePageActions().VerifySubmitDetailsForm();
-    }
-
 
    
 

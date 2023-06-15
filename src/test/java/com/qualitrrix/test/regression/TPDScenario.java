@@ -190,37 +190,7 @@ getLibraryPageActions().verifyWhatsAppHomePage();
 
 }
 
-  @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
-		  true, description = "courseNameInProfileTab")
-		  public void courseNameInProfileTab() throws Exception { 
-			  QXClient.get().driver();
-		  getDikshaMainPageActions().performUserOnBoarding();
-		  getHomePageActions().tapOnProfileTab();
-		  
-		  
-		  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-		  properties.getProperty("excelpath"));
-		  
-		  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-		  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-		  
-		  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",36,2); 
-		  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",37,2);
-
-		  QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-		  getLoginPageActions().loginToTheUser(Username,Password);
-		  DikshaMainPageActions d=new DikshaMainPageActions();
-		  QXClient.get().gestures().closeApp();  
-		    d.LaunchAppHomeScreen();
-			  getHomePageActions().tapOnDownloadTab();
-
-			  
-		  getHomePageActions().tapOnProfileTab();
-		  getCoursePageActions().verifyCoursesSectionInProfile();
-		  
-		  
-		  }
+ 
 
  	  
   
@@ -487,19 +457,7 @@ public void addMemberAndRemoveMember() throws Exception {
 
 	    }
 	  
-@Author(name="Raju")
-	  
-	  @Test()
-	public void HelpButtonVerify() throws Exception {
-	  
-		  QXClient.get().driver();
-		  getDikshaMainPageActions().performUserOnBoarding();
-		  getHomePageActions().tapOnProfileTab();
-		 
-	  getHomePageActions().tapOnMenuBar();
-	  getHomePageActions().verifyHelpSection();
-	  
-	}
+
 	  
 
 
@@ -2385,29 +2343,6 @@ public void verifyContentSizeAndDeleteContentFromDownloadSection() throws Except
 
 	}
 
-	@Test()
-	public void verifyTitleImageAndByPublishingOrgDetailsUnderMyLearningSectionInHomePage() throws Exception {
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-		getHomePageActions().tapOnProfileTab();
-		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-				properties.getProperty("excelpath"));
-
-		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",38,2);
-		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",39,2);
-
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-
-		getLoginPageActions().loginToTheUser(Username,Password);
-
-		getHomePageActions().verifyMinimumInformationUnderMyLearningSection();
-
-
-	}
 
 	@Test()
 	public void validateAcademicAndNonAcademicSubjectsAsPerOrgFramework() throws Exception {

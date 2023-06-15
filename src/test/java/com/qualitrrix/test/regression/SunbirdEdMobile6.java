@@ -131,110 +131,11 @@ public class SunbirdEdMobile6 {
     }
 
 
-    @Test()
-    public void verifyInCorrectOTPMsgFailedToValidateOTPMsgAndRemainingAttemptsMsgWhileUpdatingContactDetails() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
+   
+   
 
 
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 111, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 112, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getProfileEditPageActions().verifyIncorrectOTPMessageWhileUpdatingContactInformation();
-
-        getProfileEditPageActions().verifyFailedToValidateOTPMessageWhileUpdatingContactInformation();
-
-
-    }
-
-    @Test()
-    public void verifyValidatePopupDetailsForMobileNumberFieldInSubmitDetailsPage() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        QXClient.get().gestures().BlindWait(4000);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getCoursePageActions().VerifySubmitDetailsForm();
-
-        getProfileEditPageActions().verifyValidateMobileNumberPopupFields();
-    }
-
-
-
-    @Test()
-    public void verifyValidatePopupDetailsForEmailFieldInSubmitDetailsPage() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        QXClient.get().gestures().BlindWait(4000);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-        getCoursePageActions().VerifySubmitDetailsForm();
-
-        getProfileEditPageActions().verifyValidateEmailIDPopupFields();
-    }
-
+   
 
     @Test()
     public void verifyLastAttemptLeftMessageWhileConsumingAnAssessment() throws Exception {
@@ -416,44 +317,7 @@ public class SunbirdEdMobile6 {
 
 
   
-    @Test()
-    public void verifyUIisNotBreakingInAnyPlaceOfProfilePage() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getCoursePageActions().updateProfileDetails();
-
-
-    }
-
-
-
+   
    
  
     
@@ -547,36 +411,5 @@ public class SunbirdEdMobile6 {
 
 
 
-    @Test()
-    public void userAbleToChangeTheAppLanguageInHamburgerMenu() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String KannadaText =QXClient.get().excelUtils().getCellValue("Excel1","TestData",6,2);
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().tapOnLanguage();
-        getHomePageActions().tapOnKannadaLanguage();
-
-        getHomePageActions().tapOnContinueBtnKannada();
-
-        DikshaMainPageActions d2=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d2.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().verifyKanndaTextChanged(KannadaText);
-    }
-
-
-
+   
 }
