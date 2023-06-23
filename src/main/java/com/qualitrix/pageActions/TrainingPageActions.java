@@ -190,7 +190,7 @@ public class TrainingPageActions {
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BookSearch);
         QXClient.get().report().info("Tap on Book searched");
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(9000);
     }
 
     public void tapOnVideoTranscriptContent() throws Exception {
@@ -374,6 +374,7 @@ public class TrainingPageActions {
         QXClient.get().report().info("Tap on download button in download popup");
         QXClient.get().gestures().BlindWait(9000);
 
+        QXClient.get().gestures().BlindWait(4000);
 
     }
 
@@ -3704,6 +3705,10 @@ public class TrainingPageActions {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.viewMoreOption),"View More option is not displayed after 10 contents");
         QXClient.get().report().info("View more option is displayed after 10 contents");
 
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertViewMoreBtnIsDisplayed),"View More button is not displayed");
         QXClient.get().report().info("View more button is displayed");
 

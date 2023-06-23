@@ -166,6 +166,7 @@ public MobileElement qnWithImage;
     public MobileElement licenseBtn;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='CC BY 4.0']"),
             @AndroidBy(xpath = "//android.view.View[@text='CC BY 4.0']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by/4.0/legalcode']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by-sa/4.0/legalcode']"),

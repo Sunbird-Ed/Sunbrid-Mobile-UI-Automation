@@ -23,6 +23,7 @@ public class DownloadPageObjects {
 //            @AndroidBy(xpath = "//android.view.View[@text='Marigold']"),
 //            @AndroidBy(xpath = "//android.view.View[@text='Assam text book']"),
 //            @AndroidBy(xpath = "//android.view.View[@text='Book contains copied contents']"),
+    	 @AndroidBy(xpath = "//android.widget.TextView[@text='AutomationBookContent']"),
             @AndroidBy(xpath = "//android.view.View[@text='AutomationBookContent']"),
 
     })
@@ -128,8 +129,16 @@ public MobileElement resourceName;
     public MobileElement assertStorageSettingsTextInDownloadsPage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'LargeSizeAutoBook')]")
-    public MobileElement assertDownloadedBookInDownlaodSection;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'LargeSizeAutoBook')]"),
+    @AndroidBy(xpath = "//android.widget.TextView[@text='LargeSizeAutoBook']"),
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'LargeSizeAutoBook')]"),
+})
+public MobileElement assertDownloadedBookInDownlaodSection;
+
+
+
+
 
 
     @AndroidFindBy(xpath = "//android.view.View[@text='AutomationCourseContent']")

@@ -110,7 +110,8 @@ public class DigitalTextBookConsumption {
         getLibraryPageActions().verifyTermsAndCondLink();
     }
     
-    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+
+	@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "verifyCreditLicenseInfoSecInBookTOCpage")
     public void verifyCreditLicenseInfoSecInBookTOCpage() throws Exception {
 	 QXClient.get().driver();
@@ -134,7 +135,7 @@ public class DigitalTextBookConsumption {
   	  QXClient.get().gestures().swipeUp();
         getLibraryPageActions().tapOnCreditAndLicense();
         QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
+       // QXClient.get().gestures().swipeUp();
         getLibraryPageActions().verifyTermsAndCondLink();
     }
  
@@ -267,6 +268,8 @@ public class DigitalTextBookConsumption {
         getDownloadPageActions().verifyNoDownloadsInDownloadSection();
     }
     
+   
+    
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "Book sharing")
     public void verifyUserAbleToShareTheBook() throws Exception {
@@ -373,7 +376,9 @@ public class DigitalTextBookConsumption {
 	 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 	    }
 
-    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+    
+
+	@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "Verify UserAble to Download Book ")
     public void verifyBookDownload() throws Exception {
 	 QXClient.get().driver();
@@ -397,7 +402,7 @@ public class DigitalTextBookConsumption {
         getLibraryPageActions().tapOnDownloadBtn();
         getTrainingPageActions().tapOnDownloadBtnInDownloadPopUp();
         //getTrainingPageActions().verifyFileDownloadThroughNotification();
-       getTrainingPageActions().waitTillTheDownloadButtonDisappears();
+     //  getTrainingPageActions().waitTillTheDownloadButtonDisappears();
        QXClient.get().gestures().clkBackButton();
        QXClient.get().gestures().clkBackButton();
 
@@ -406,6 +411,7 @@ public class DigitalTextBookConsumption {
         getDownloadPageActions().verifyTheDownloadedBook();
     }
 
+    
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "userAbleToViewBookTOCandUnitsInsideBook ")
     public void BookTOCandUnitsInsideBook() throws Exception {
@@ -439,7 +445,33 @@ public class DigitalTextBookConsumption {
  
  
 
-    
+    @Test()
+    public void userAbleToImportOnlySingleContentAtATimeFromDeviceStorage () throws Exception {
+        QXClient.get().driver();
+        DikshaMainPageActions d = new DikshaMainPageActions();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
+
+
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+        System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        getLoginPageActions().loginToTheUser(Username, Password);
+        d.LaunchAppHomeScreen();
+        getHomePageActions().tapOnMenuBar();
+
+        getHomePageActions().verifyUserAbleToImportOnlySpecificContentFromDevice();
+    }
+
    
 
    

@@ -150,6 +150,9 @@ public MobileElement assertStartLearning;
 	
 
 	@AndroidFindAll({
+
+		
+		@AndroidBy(xpath = "//android.widget.Button[@text='Submit details']"),
 		@AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
 
 	})

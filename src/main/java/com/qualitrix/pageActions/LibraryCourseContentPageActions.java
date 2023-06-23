@@ -39,7 +39,8 @@ public LibraryCourseContentPageActions() {
 
 
   
-    public void tapOnDownloadBtn() {
+    public void tapOnDownloadBtn() throws Exception {
+    	 QXClient.get().gestures().BlindWait(7000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.downloadBtn);
         QXClient.get().report().info("Tap on download button");
     }
@@ -49,7 +50,8 @@ public LibraryCourseContentPageActions() {
         QXClient.get().report().info("Tap on delete button");
     }
 
-    public void tapOnShareBtn() {
+    public void tapOnShareBtn() throws Exception {
+        QXClient.get().gestures().BlindWait(4000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.shareBtn);
         QXClient.get().report().info("Tap on share button");
     }
@@ -229,7 +231,9 @@ public LibraryCourseContentPageActions() {
         QXClient.get().report().info("Verifying share alert pop up UI");
     }
 
-    public void verifyTermsAndCondLink() {
+    public void verifyTermsAndCondLink() throws Exception {
+    	
+    	QXClient.get().gestures().BlindWait(4000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.termsAndCondLink), "Terms and link is displayed");
         QXClient.get().report().info("Verifying Terms And Condition link");
     }

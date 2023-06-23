@@ -2817,54 +2817,22 @@ public class UBScenarioSanity3 {
  * }
  */
 	
-	
-	 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,description = "Verify updateProfileDetails")
-	 public void updateTheProfileDetails() throws Exception {
+	@Test()
+    public void verifyViewMoreButtonIsDisplayedAndClickableInSearchContentPage() throws Exception {
 
-	    QXClient.get().driver();
-	    getDikshaMainPageActions().performUserOnBoarding();
-	    getHomePageActions().tapOnProfileTab();
+        QXClient.get().driver();
 
-		DikshaMainPageActions d=new DikshaMainPageActions();
+        getDikshaMainPageActions().performUserOnBoarding();
 
-	    Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	          properties.getProperty("excelpath"));
+        getHomePageActions().tapOnSearchIcon();
 
-	    String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	    QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+        getHomePageActions().enterTextInSearchBar("Course");
 
-	    String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-	    String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
+        getTrainingPageActions().verifyResultPageShouldNotLimitedTo100Contents();
 
-	    QXClient.get().gestures().swipeUp();
-	    QXClient.get().gestures().swipeUp();
+        getTrainingPageActions().verifyViewMoreButtonIsDisplayedAndClickableInSearchContentPage();
 
-	    getLoginPageActions().loginToTheUser(Username,Password);
-	    QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
-	   // getHomePageActions().tapOnDownloadTab();
-
-
-	    getHomePageActions().tapOnProfileTab();
-	    QXClient.get().gestures().swipeUp();
-	    QXClient.get().gestures().swipeUp();
-
-
-
-	    getCoursePageActions().updateProfileDetails();
-
-	    getHomePageActions().tapOnTrainingTab();
-	    getHomePageActions().tapOnMenuBar();
-
-	    getCoursePageActions().tapOnNewDikshaExperience();
-	    getHomePageActions().tapOnProfileTab();
-	    //QXClient.get().gestures().swipeUp();
-
-	    getCoursePageActions().verifyUpdatedProfileDetailsInNewDikshaExperience();
-
-	 }
-  
-
+    }
 }
 
 

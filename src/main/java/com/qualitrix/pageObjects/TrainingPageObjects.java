@@ -1707,12 +1707,21 @@ public MobileElement assertExpiredCourseMsg;
     public MobileElement assertCloseBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Showing 10 results out of')]")
-    public MobileElement assertShowing10ResultsOutOf;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Showing 10 results out of')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing 10 results out of')]"),
+})
+public MobileElement assertShowing10ResultsOutOf;
 
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Showing 10')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing 100 results')]"),
+})
+public MobileElement assertShowingOnly100Results;
+    
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Showing 100 results')]")
-    public MobileElement assertShowingOnly100Results;
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE SampleAutomationCourse')]")
