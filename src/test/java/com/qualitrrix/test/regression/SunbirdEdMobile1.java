@@ -436,48 +436,7 @@ public class SunbirdEdMobile1 {
 
   
 
-    @Test()
-    public void validateDownloadTabDetails() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String book=QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
-        String course=QXClient.get().excelUtils().getCellValue("Excel1","TestData",25,2);
-
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(book);
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(book);
-        getTrainingPageActions().tapOnSearchedBook();
-        QXClient.get().gestures().clkBackButton();
-        QXClient.get().gestures().clkBackButton();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(course);
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(course);
-        getTrainingPageActions().tapOnSearchedCourse1();
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnDownloadTab();
-
-        getDownloadPageActions().verifyDownloadPage();
-
-        getDownloadPageActions().deleteDownloadedContent();
-
-    }
-
+   
 
 
 

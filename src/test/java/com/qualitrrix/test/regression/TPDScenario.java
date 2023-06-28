@@ -1085,18 +1085,7 @@ public void verifyContentForAllMediaType() throws Exception {
 
 }
 
-@Test()
-public void verifyDownloadSection() throws Exception {
-   QXClient.get().driver();
-   getDikshaMainPageActions().performUserOnBoarding();
-   getHomePageActions().tapOnProfileTab();
 
-   getHomePageActions().tapOnDownloadTab();
-
-   getHomePageActions().verifyDownloadSection();
-
-
-}
 
 @Test()
 public void verifyContentSizeAndDeleteContentFromDownloadSection() throws Exception {

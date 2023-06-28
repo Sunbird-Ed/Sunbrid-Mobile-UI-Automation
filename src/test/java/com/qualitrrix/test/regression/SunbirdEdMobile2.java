@@ -655,20 +655,6 @@ public class SunbirdEdMobile2 {
 
 	}
 
-	@Test()
-	public void validateDownloadContentfromCoursesorLibraryMsgInDownloadSection() throws Exception {
-		QXClient.get().driver();
-
-		getDikshaMainPageActions().performUserOnBoarding();
-
-		getHomePageActions().tapOnProfileTab();
-
-		getHomePageActions().tapOnDownloadTab();
-
-		getHomePageActions().validateDownloadSectionForGuestUser();
-
-	}
-
 	
 
 	

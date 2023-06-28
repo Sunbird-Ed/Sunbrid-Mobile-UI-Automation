@@ -647,24 +647,7 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Test()
-    public void verifyContentSizeAndDeleteContentFromDownloadSection() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        //getHomePageActions().tapOnProfileTab();
-
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().verifyDownloadSection();
-
-        getHomePageActions().tapOnTrainingTab();
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("resource");
-
-        getHomePageActions().filterContentOnContentSize();
-
-    }
-
+   
 
 
 

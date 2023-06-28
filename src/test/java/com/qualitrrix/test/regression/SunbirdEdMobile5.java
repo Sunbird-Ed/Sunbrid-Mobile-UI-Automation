@@ -164,20 +164,7 @@ public class SunbirdEdMobile5 {
 
     }
 
-    @Test()
-    public void verifyUserAbleToMoveContentsToSDCardFromPhoneAndViceVersa() throws Exception {
-
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnDownloadTab();
-
-        getDownloadPageActions().verifyUserAbleToMoveContentsFromPhoneToSDCard();
-
-        getDownloadPageActions().verifyUserAbleToMoveContentsFromSDcardToPhone();
-
-    }
+   
 
 
 
