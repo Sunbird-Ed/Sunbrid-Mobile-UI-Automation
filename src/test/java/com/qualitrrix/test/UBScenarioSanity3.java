@@ -2817,22 +2817,26 @@ public class UBScenarioSanity3 {
  * }
  */
 	
-	@Test()
-    public void verifyViewMoreButtonIsDisplayedAndClickableInSearchContentPage() throws Exception {
+	
+	 
 
+	  
+    @Test()
+    public void validateNextButtonIsWorkingFineForCollectionWithPDFContent() throws Exception {
         QXClient.get().driver();
-
         getDikshaMainPageActions().performUserOnBoarding();
 
+        getHomePageActions().tapOnTrainingTab();
+
         getHomePageActions().tapOnSearchIcon();
+        getHomePageActions().enterTextInSearchBar("AutoPDFCollection");
+        getTrainingPageActions().tapOnSearchedPDFCollection();
+        getLibraryPageActions().tapOnPlayIcon4();
+        getLibraryPageActions().validateNextButtonIsWorkingFine();
 
-        getHomePageActions().enterTextInSearchBar("Course");
-
-        getTrainingPageActions().verifyResultPageShouldNotLimitedTo100Contents();
-
-        getTrainingPageActions().verifyViewMoreButtonIsDisplayedAndClickableInSearchContentPage();
 
     }
+
 }
 
 

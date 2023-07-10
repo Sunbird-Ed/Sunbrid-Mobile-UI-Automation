@@ -491,6 +491,8 @@ public MobileElement verifyAddedMemberToGrp;
     public MobileElement clkAsaQueSubmitBtn;
 
     @AndroidFindAll({
+    	
+    	   @AndroidBy(xpath = "//android.widget.TextView[@text='1 Discussions']"),    	
         @AndroidBy(xpath = "//android.view.View[@text='1 Discussions']"),
         @AndroidBy(xpath = "//android.view.View[@text='1 discussions']"),
 
@@ -720,7 +722,7 @@ public MobileElement clkRemovePopupActivity;
             @AndroidBy(xpath = "//android.widget.Button[@text='Close close icon']"),
             @AndroidBy(xpath = "//android.widget.Button[@resource-id='close-discussion-forum']"),
     })
-    public MobileElement clkCloseIconDF;
+    public WebElement clkCloseIconDF;
     
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Question']")

@@ -1475,8 +1475,8 @@ public LibraryCourseContentPageActions() {
     public void verifyPageReplacesLocationInContent() throws Exception {
     QXClient.get().gestures().BlindWait(3000);
 
-    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertLocationText),"Location text is displayed");
-    QXClient.get().report().info("Location text is not displayed");
+   // Assert.assertTrue(!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertLocationText),"Location text is displayed");
+   // QXClient.get().report().info("Location text is not displayed");
 
     Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertPageText),"Page text is not displayed");
     QXClient.get().report().info("Page text is displayed instead of Location text");

@@ -771,12 +771,20 @@ public MobileElement courseUnderOthers;
     })
     public MobileElement assertExitBtn;
 
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutomationBookContent')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]"),
+})
+public MobileElement assertContentTitle;
+  
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]")
-    public MobileElement assertContentTitle;
+ 
 
 
     @AndroidFindAll({
+    	
+    	        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Bycontent creator')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Bycontent creator')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]//following::android.view.View[1]"),
     })
@@ -791,11 +799,21 @@ public MobileElement courseUnderOthers;
     public MobileElement assertContentDetails;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='This Textbook is relevant for:']")
-    public MobileElement assertContentRelevantFor;
-
 
     @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='This Textbook is relevant for:']"),
+            @AndroidBy(xpath = "//android.view.View[@text='This Textbook is relevant for:']"),
+    })
+    public MobileElement assertContentRelevantFor;
+    
+    
+
+    @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Class')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Class : Others')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Class : Class')]"),
     })
@@ -803,6 +821,7 @@ public MobileElement courseUnderOthers;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Medium :')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Medium : Urdu')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Medium : English')]"),
     })
@@ -810,15 +829,19 @@ public MobileElement courseUnderOthers;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board : ')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Board : State')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Board : CBSE')]"),
     })
     public MobileElement assertBoardInContentDetails;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'User Type : Student')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'User Type : ')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'User Type : Student')]"),
+    })
     public MobileElement assertUserTypeInContentDetails;
-
+   
 
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Play')]")
@@ -1339,6 +1362,7 @@ public MobileElement assertExpiredCourseMsg;
     public MobileElement sendPageNo;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Page')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Page 1 of')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Location 1 of')]"),
     })
@@ -1386,8 +1410,13 @@ public MobileElement assertExpiredCourseMsg;
     public MobileElement h5pCollectionSearch;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='AutoH5PCollectionContent']")
-    public MobileElement assertH5PCollectionTitle;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='AutoH5PCollectionContent']"),
+        @AndroidBy(xpath = "//android.view.View[@text='AutoH5PCollectionContent']"),
+})
+public MobileElement assertH5PCollectionTitle;
+    
+   
 
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'PLAY')]")
@@ -2009,6 +2038,11 @@ public MobileElement assertEnrollmentEndedMsg;
     public MobileElement assertFutureBatchPopup;
 
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing 100 results')]//following::android.view.View[1]"),
+})
+public MobileElement clkOnEpubContent3;
 
 
 

@@ -215,7 +215,10 @@ public class Gestures {
     }
     public void waitAndClickElementisVisible(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOf(element));
+     //   wait.until(ExpectedConditions.visibilityOf(element));
+        
+        
+        wait.until(ExpectedConditions.elementToBeClickable(element));
              element.click();
     }
     public boolean isElementPresent(WebElement locator) {

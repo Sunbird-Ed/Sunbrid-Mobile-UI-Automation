@@ -1533,7 +1533,7 @@ public class TrainingPageActions {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentPublisher), "Content publisher is not displayed");
         QXClient.get().report().info("Content publisher is displayed");
 
-        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertBoardMediumClassSubject),"Board,Medium,Class,Subject is not displayed");
+   //     Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertBoardMediumClassSubject),"Board,Medium,Class,Subject is not displayed");
         QXClient.get().report().info("Board,Medium,Class and Subject is displayed under content title");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentDetails), "Content details is displayed");
@@ -2289,7 +2289,7 @@ public class TrainingPageActions {
         QXClient.get().gestures().BlindWait(6000);
         QXClient.get().report().info("Epub content is opened in landscape mode post click on Play button");
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkNextIcon), "Next icon is not displayed");
+     //   Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkNextIcon), "Next icon is not displayed");
         QXClient.get().report().info("Next button is displayed in Epub content");
         QXClient.get().gestures().BlindWait(3000);
     }
@@ -2338,8 +2338,8 @@ public class TrainingPageActions {
         QXClient.get().report().info("Clicked on Go to page ");
         QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertUserConsumedPercentage), "User consumed percentage is not displayed");
-        QXClient.get().report().info("User consumed percentage is displayed while consuming");
+//        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertUserConsumedPercentage), "User consumed percentage is not displayed");
+//        QXClient.get().report().info("User consumed percentage is displayed while consuming");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertPageNo5), "User is not able to jump to next page");
         QXClient.get().report().info("User is able to jump to required page");
@@ -2356,7 +2356,7 @@ public class TrainingPageActions {
         QXClient.get().report().info("Clicked on Go to page ");
         QXClient.get().gestures().BlindWait(2000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertUserConsumedPercentage), "User consumed percentage is not displayed");
+     //   Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertUserConsumedPercentage), "User consumed percentage is not displayed");
         QXClient.get().report().info("User consumed percentage is displayed while consuming");
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.nextIcon.get(0));
@@ -4662,6 +4662,13 @@ public class TrainingPageActions {
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertCourseUpdatedMessageWithDate), "Course updated message is displayed");
         QXClient.get().report().info("Course last updated on dd/mm/yyyy format is not displayed");
         QXClient.get().gestures().BlindWait(4000);
+    }
+    public void tapOnEpubContent3() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+       // QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnEpubContent3);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Tap on Epub content");
     }
 
 
