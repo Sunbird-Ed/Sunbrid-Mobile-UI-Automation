@@ -96,10 +96,13 @@ public MobileElement qnWithImage;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='share Share']")
     public MobileElement shareIconInsideContent;
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='star outline Rate']")
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='5out of five stars']")
     public MobileElement rateObj;
 
     @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.Button[contains(@text,'rate content Rate')]"),
             @AndroidBy(xpath = "//android.widget.Button[contains(@text,'star')]"),
             @AndroidBy(xpath = "//android.widget.Button[@text='star']"),
     })
@@ -111,8 +114,14 @@ public MobileElement qnWithImage;
     @AndroidFindBy(className = "android.widget.EditText")
     public MobileElement editText;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Content is inaccurate']")
-    public MobileElement feedbackChkbx;
+    @AndroidFindAll({
+    	
+    @AndroidBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-0']"),
+    @AndroidBy(xpath = "//android.view.View[@text='Content is inaccurate']"),
+})
+public MobileElement feedbackChkbx;
+    
+
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='OK']")
     public MobileElement okBtn;

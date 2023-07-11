@@ -130,6 +130,7 @@ public MobileElement resourceName;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'LargeSizeAutoBook')]"),
     @AndroidBy(xpath = "//android.widget.TextView[@text='LargeSizeAutoBook']"),
     @AndroidBy(xpath = "//android.view.View[contains(@text,'LargeSizeAutoBook')]"),
@@ -157,9 +158,18 @@ public MobileElement assertDownloadedBookInDownlaodSection;
     public MobileElement assertPlayBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='About']")
-    public MobileElement assertAboutSection;
+  
 
+    @AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='About']"),
+    @AndroidBy(xpath = "//android.view.View[@text='About']"),
+})
+public MobileElement assertAboutSection;
+
+
+
+
+    
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='DOWNLOAD_TRANSCRIPT']")
     public MobileElement assertDownloadTranscriptText;
@@ -169,12 +179,20 @@ public MobileElement assertDownloadedBookInDownlaodSection;
     public MobileElement clkTranscriptDownloadImage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='DOWNLOAD_TRANSCRIPT']")
-    public MobileElement assertDOWNLOAD_TRANSCRIPTText;
+    @AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='About']"),
+    @AndroidBy(xpath = "//android.view.View[@text='DOWNLOAD_TRANSCRIPT']"),
+})
+public MobileElement assertDOWNLOAD_TRANSCRIPTText;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Spinner[@text='Select language']")
-    public MobileElement clkSltLanguage;
+    @AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[@text='Select language']"),
+    @AndroidBy(xpath = "//android.widget.Spinner[@text='Select language']"),
+})
+public MobileElement clkSltLanguage;
+    
+
 
     @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='English']")
     public  MobileElement sltEnglishLanguage;

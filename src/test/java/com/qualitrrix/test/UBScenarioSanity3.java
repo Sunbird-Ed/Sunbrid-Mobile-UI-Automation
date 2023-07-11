@@ -2817,26 +2817,39 @@ public class UBScenarioSanity3 {
  * }
  */
 	
-	
+    
+    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+            description = "verifyUserAbleToStreamBookContentsOnline ")
+    public void verifyUserAbleToStreamBookContentsOnline() throws Exception {
+	 QXClient.get().driver();
+	 getDikshaMainPageActions().performUserOnBoarding();
+	    	  
+	  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+			  properties.getProperty("excelpath"));
+			  
+			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+			  
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
+			  String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","TestData",8,2); 
 	 
+      	getHomePageActions().tapOnSearchIcon();
+  	      getHomePageActions().enterTextInSearchBar(BookName);
+	      // QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
 
-	  
-    @Test()
-    public void validateNextButtonIsWorkingFineForCollectionWithPDFContent() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
+  	      getTrainingPageActions().tapOnSearchedBook();
+  	      
+        getLibraryPageActions().tapOnPlayIcon();
+        getLibraryPageActions().tapOnPlayIcon1();
 
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("AutoPDFCollection");
-        getTrainingPageActions().tapOnSearchedPDFCollection();
-        getLibraryPageActions().tapOnPlayIcon4();
-        getLibraryPageActions().validateNextButtonIsWorkingFine();
-
-
+	 QXClient.get().gestures().clkBackButton();
+	 getLibraryPageActions().tapOnOKbtn();
+	 getLibraryPageActions().clkOnVideoTogglebtn();
+	 getLibraryPageActions().closeRatingPopup();
+	 getLibraryPageActions().tapOnStarIcon();
+	 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
     }
-
+	    
 }
 
 

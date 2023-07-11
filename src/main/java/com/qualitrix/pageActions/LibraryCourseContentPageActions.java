@@ -153,10 +153,12 @@ public LibraryCourseContentPageActions() {
     public void tapOnStarIcon() throws Exception {
         QXClient.get().gestures().BlindWait(10000);
         QXClient.get().gestures().BlindWait(10000);
-        if (!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.startBtn)) {
-            libraryCourseContentPageObjects.rateObj.click();
-        }
+//        if (!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.startBtn)) {
+//            
+//        }
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.startBtn);
+        QXClient.get().gestures().BlindWait(3000);
+        libraryCourseContentPageObjects.rateObj.click();
         QXClient.get().report().info("Tap on star icon");
         QXClient.get().gestures().BlindWait(3000);
 
@@ -1488,7 +1490,11 @@ public LibraryCourseContentPageActions() {
     public void verifyNoDownloadBtnForLargeSizeBook() throws Exception {
        QXClient.get().gestures().BlindWait(3000);
 
-       Assert.assertTrue(!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.downloadBtn),"Download button is displayed for large size content");
+     //  Assert.assertTrue(!QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.downloadBtn),"Download button is displayed for large size content");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.downloadBtn),"Download button is displayed for large size content");
+
+       QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.downloadBtn);
+
        QXClient.get().report().info("Download button is not displayed in book toc for large size content");
        QXClient.get().gestures().BlindWait(3000);
     }

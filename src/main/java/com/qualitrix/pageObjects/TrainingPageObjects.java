@@ -345,7 +345,7 @@ public MobileElement BookSearch;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK LargeSizeAutoBook')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
     })
     public MobileElement largeSizeBook;
 
