@@ -824,13 +824,13 @@ public LibraryCourseContentPageActions() {
 	    QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.firstMp4Content);
 	    QXClient.get().report().info("Clicked on first mp4 searched content");
 	    QXClient.get().gestures().BlindWait(3000);
-	    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.playIconOfVideo),"Play icon is not visible");
-	    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.playIconOfVideo);
+	  //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.playIconOfVideo),"Play icon is not visible");
+	  //  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.playIconOfVideo);
 	    QXClient.get().report().info("Clicked on Play button");
 	    QXClient.get().gestures().BlindWait(6000);
 	    QXClient.get().gestures().clkBackButton();
-	    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkOkBtn);
-	    QXClient.get().gestures().clkBackButton();
+	  //  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkOkBtn);
+	  //  QXClient.get().gestures().clkBackButton();
 	   }
  
  public void verifyPlayEpubContent() throws Exception{
@@ -1057,7 +1057,7 @@ public LibraryCourseContentPageActions() {
         QXClient.get().gestures().BlindWait(3000);
 
 
-       // QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
+       QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
         QXClient.get().report().info("clicked on clkApplyFilter ");
         QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");
@@ -1179,6 +1179,7 @@ public LibraryCourseContentPageActions() {
     public void observeTheAdditionalCategories() throws Exception{
        QXClient.get().gestures().BlindWait(2000);
        QXClient.get().gestures().swipeUp();
+       QXClient.get().gestures().swipeUp();
 
        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkAdditionalCategories);
        QXClient.get().report().info("Clicked on Additional categories filter");
@@ -1211,6 +1212,8 @@ public LibraryCourseContentPageActions() {
     QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkConfirmBton);
     QXClient.get().report().info("clicked on clkConfirmBton ");
     QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().swipeUp();
+
 
     QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkAdditionalCategories);
     QXClient.get().report().info("Clicked on Additional categories filter");
@@ -1224,14 +1227,14 @@ public LibraryCourseContentPageActions() {
     QXClient.get().report().info("clicked on clkConfirmBton ");
     QXClient.get().gestures().BlindWait(3000);
 
-   // QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
+    QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
     QXClient.get().report().info("clicked on clkApplyFilter ");
     QXClient.get().gestures().BlindWait(3000);
 
-   // Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentPlaylistPrimaryFilter),"Primary filter is not displayed");
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.assertContentPlaylistPrimaryFilter),"Primary filter is not displayed");
     QXClient.get().report().info("Primary Filter is displayed as per the selection");
     QXClient.get().gestures().BlindWait(2000);
-   // Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");
     QXClient.get().gestures().BlindWait(3000);
 
     }

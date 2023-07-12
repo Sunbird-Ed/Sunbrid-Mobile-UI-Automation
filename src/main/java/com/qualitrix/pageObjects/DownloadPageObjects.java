@@ -115,8 +115,8 @@ public MobileElement resourceName;
     public MobileElement assertDownloadedPDFContent;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Image[@text='back']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
     })
     public MobileElement clkBackBtn;
@@ -125,10 +125,14 @@ public MobileElement resourceName;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='settings']")
     public MobileElement clkSettingsBtn;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Storage Settings']")
-    public MobileElement assertStorageSettingsTextInDownloadsPage;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Storage Settings']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Storage Settings']"),
+})
+public MobileElement assertStorageSettingsTextInDownloadsPage;
 
+    
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'LargeSizeAutoBook')]"),

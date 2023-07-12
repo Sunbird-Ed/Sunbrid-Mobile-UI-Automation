@@ -175,6 +175,7 @@ public MobileElement feedbackChkbx;
     public MobileElement licenseBtn;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='License terms:']"),
         @AndroidBy(xpath = "//android.widget.TextView[@text='CC BY 4.0']"),
             @AndroidBy(xpath = "//android.view.View[@text='CC BY 4.0']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by/4.0/legalcode']"),
@@ -754,10 +755,10 @@ public MobileElement noNotificationsText;
 })
 public MobileElement firstMp4Content;
 
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Epub')]//following::android.view.View")
+@AndroidFindBy(xpath = "(//android.view.View[contains(@text,'epub')])[2]")
 public MobileElement firstEpubContent;
 
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'assessment')]//following::android.view.View")
+@AndroidFindBy(xpath = "(//android.view.View[contains(@text,'Assess')])[2]")
 public MobileElement firstAssessmentContent;
 
 @AndroidFindAll({

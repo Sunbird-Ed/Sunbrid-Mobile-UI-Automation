@@ -127,6 +127,9 @@ public MobileElement clkSubmitEditProfile;
 
 
     @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Welcome To SUNBIRD']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='app-logo Login with SUNBIRD']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']"),
     })

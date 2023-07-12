@@ -337,8 +337,8 @@ public MobileElement myLearningtext;
     public MobileElement clkNewDikshExperiece;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Image[@text='back']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
     })
     public MobileElement clkBackBtn;

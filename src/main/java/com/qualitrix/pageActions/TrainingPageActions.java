@@ -975,11 +975,11 @@ public class TrainingPageActions {
         QXClient.get().report().info("Clicked on Confirm button");
         QXClient.get().gestures().BlindWait(3000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkBackBtn);
+       // QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkBackBtn);
         QXClient.get().gestures().BlindWait(2000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.filterBtn);
-        QXClient.get().report().info("Clicked on filter button");
+      //  QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.filterBtn);
+       // QXClient.get().report().info("Clicked on filter button");
         QXClient.get().gestures().BlindWait(3000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.applyFilterBtn);
@@ -1404,11 +1404,11 @@ public class TrainingPageActions {
         QXClient.get().report().info("Clicked on Confirm button");
         QXClient.get().gestures().BlindWait(3000);
 
-        //QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkApplyFilterBtn);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkApplyFilterBtn);
         QXClient.get().report().info("Clicked on apply filter button");
         QXClient.get().gestures().BlindWait(3000);
 
-        // Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentAfterFiltering),"Content for all media type is not available");
+         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentAfterFiltering),"Content for all media type is not available");
         QXClient.get().report().info("Content for all media type is displayed");
     }
 

@@ -819,4 +819,352 @@ public class ContentConsumption2 {
 						 getLibraryPageActions().tapOnStarIcon();
 						 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 					    }
+					  
+					  @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+					            description = "ratingForBookContent ")
+					    public void ratingForBookContent() throws Exception {
+						 QXClient.get().driver();
+						 getDikshaMainPageActions().performUserOnBoarding();
+						    	  
+						  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+								  properties.getProperty("excelpath"));
+								  
+								  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+								  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+								  
+								  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
+								  String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","TestData",8,2); 
+						 
+					      	getHomePageActions().tapOnSearchIcon();
+					  	      getHomePageActions().enterTextInSearchBar(BookName);
+						      // QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+
+					  	      getTrainingPageActions().tapOnSearchedBook();
+					  	      
+					        getLibraryPageActions().tapOnPlayIcon();
+					        getLibraryPageActions().tapOnPlayIcon1();
+
+						 QXClient.get().gestures().clkBackButton();
+						 getLibraryPageActions().tapOnOKbtn();
+						 getLibraryPageActions().clkOnVideoTogglebtn();
+						 getLibraryPageActions().closeRatingPopup();
+						 getLibraryPageActions().tapOnStarIcon();
+						 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
+					    }
+					  
+					  @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+					            description = "verifyCreditLicenseInfoSecInBookTOCpage")
+					    public void verifyCreditLicenseInfoSecInBookTOCpage() throws Exception {
+						 QXClient.get().driver();
+						 getDikshaMainPageActions().performUserOnBoarding();
+						    	 
+						  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+								  properties.getProperty("excelpath"));
+								  
+								  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+								  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+								  
+								  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
+						 
+					      	getHomePageActions().tapOnSearchIcon();
+					  	      getHomePageActions().enterTextInSearchBar(BookName);
+						    //   QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+
+					  	      getTrainingPageActions().tapOnSearchedBook();
+					  	      
+					  	    QXClient.get().gestures().swipeUp();
+					  	  QXClient.get().gestures().swipeUp();
+					        getLibraryPageActions().tapOnCreditAndLicense();
+					        QXClient.get().gestures().swipeUp();
+					      //  QXClient.get().gestures().swipeUp();
+					        //getLibraryPageActions().verifyTermsAndCondLink();
+					    }
+					  
+					  @Test()
+						public void verifyBackButtonIsWorkingInAllThePages() throws Exception {
+							QXClient.get().driver();
+
+							getDikshaMainPageActions().performUserOnBoarding();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+							QXClient.get().gestures().swipeUp();
+
+
+							getHomePageActions().verifyBackButtonWorkingInLibraryPage();
+
+							getHomePageActions().tapOnTrainingTab();
+
+							getHomePageActions().tapOnSearchIcon();
+
+							getTrainingPageActions().verifyBackButtonWorkingInTrainingPage();
+
+							getHomePageActions().tapOnDownloadTab();
+
+							getDownloadPageActions().verifyBackButtonWorkingInDownloadsPage();
+
+							getHomePageActions().tapOnProfileTab();
+
+							getProfileEditPageActions().verifyBackButtonWorkingInProfilePage();
+
+
+						}
+					  @Test()
+					    public void verifyConsumeAllContentsInMobileDevices() throws Exception {
+					    QXClient.get().driver();
+					    getDikshaMainPageActions().performUserOnBoarding();
+
+					    getHomePageActions().tapOnSearchIcon();
+					    getHomePageActions().enterTextInSearchBar("mp4");
+
+					    getLibraryPageActions().verifyPlayMp4Content();
+
+					    QXClient.get().gestures().closeApp();
+
+					    DikshaMainPageActions d = new DikshaMainPageActions();
+					    d.LaunchAppHomeScreen();
+
+					    getHomePageActions().tapOnSearchIcon();
+					    getHomePageActions().enterTextInSearchBar("Epub");
+
+					    getLibraryPageActions().verifyPlayEpubContent();
+
+					    QXClient.get().gestures().closeApp();
+
+					    DikshaMainPageActions d1 = new DikshaMainPageActions();
+					    d1.LaunchAppHomeScreen();
+
+					    getHomePageActions().tapOnSearchIcon();
+					    getHomePageActions().enterTextInSearchBar("assessment");
+
+					    getLibraryPageActions().verifyAssessmentConsumption();
+
+
+					    }
+
+					  @Test()
+					   	public void AppCloseOnClkYesButon() throws Exception {
+
+					   		QXClient.get().driver();
+					   		getDikshaMainPageActions().performUserOnBoarding();
+
+					   		getHomePageActions().closeAppOnClkYesBtn();
+					   	}
+					 
+					  
+
+					    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+					            description = "Verify UserAble to Download Book ")
+					    public void verifyUserAbleToDownloadTheContent() throws Exception {
+					        QXClient.get().driver();
+					        getDikshaMainPageActions().performUserOnBoarding();
+
+					        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+					                properties.getProperty("excelpath"));
+
+					        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+					        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+					        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+
+
+					        getHomePageActions().tapOnSearchIcon();
+					        getHomePageActions().enterTextInSearchBar(BookName);
+					        //  QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+
+					        getTrainingPageActions().tapOnSearchedBook();
+
+					        getLibraryPageActions().tapOnDownloadBtn();
+					        getTrainingPageActions().tapOnDownloadBtnInDownloadPopUp();
+					        //getTrainingPageActions().verifyFileDownloadThroughNotification();
+					        getTrainingPageActions().waitTillTheDownloadButtonDisappears();
+					        QXClient.get().gestures().clkBackButton();
+					        QXClient.get().gestures().clkBackButton();
+
+
+					        getHomePageActions().tapOnDownloadTab();
+					        getDownloadPageActions().verifyTheDownloadedBook();
+
+					    }
+					    
+					    @Test()
+					    public void verifyPlayContentAndDownloadContent() throws Exception {
+					        QXClient.get().driver();
+					        getDikshaMainPageActions().performUserOnBoarding();
+
+					        getHomePageActions().tapOnSearchIcon();
+					        getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
+
+					        getTrainingPageActions().playContentAndDownloadContent();
+
+					        QXClient.get().gestures().clkBackButton();
+					        QXClient.get().gestures().clkBackButton();
+
+					        getHomePageActions().tapOnDownloadTab();
+
+					        getTrainingPageActions().verifyDownloadedContent();
+
+
+					    }
+					    
+					    @Test()
+					    public void verifyPdfContentConsumedCompletlyAndRateTheContent() throws Exception{
+					        QXClient.get().driver();
+					        getDikshaMainPageActions().performUserOnBoarding();
+
+					        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+					                properties.getProperty("excelpath"));
+
+					        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+					        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+					        String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","TestData",8,2);
+
+					        getHomePageActions().tapOnSearchIcon();
+					        getHomePageActions().enterTextInSearchBar("PDF_13.pdf");
+
+					        getTrainingPageActions().verifyFunctionalityOfNexPrevWhileConsumingPdfContent();
+
+					        getTrainingPageActions().verifyHambergerMenuOptionsWhileContentConsuming();
+
+					        getTrainingPageActions().verifyContentAfterConsumingCompletely();
+
+					        getLibraryPageActions().tapOnStarIcon();
+
+					        getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
+
+					        getTrainingPageActions().updateRating();
+
+					        getLibraryPageActions().updateFeedbackAndSubmit(ToasterMsg);
+
+					    }
+
+					    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+					            description = "User is able to Fill Slt Language And UsernBoarding Values")
+					    public void verifyUserAbleToConsumeDownloadContentsInOffline() throws Exception {
+						  
+						  QXClient.get().driver();
+						  getDikshaMainPageActions().performUserOnBoarding();
+						  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+								  properties.getProperty("excelpath"));
+								  
+								  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+								  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+								  
+								  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
+								  
+					        getHomePageActions().tapOnSearchIcon();
+					        getHomePageActions().enterTextInSearchBar(BookName);
+						       //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+
+					        getTrainingPageActions().tapOnSearchedBook();
+					    }
+					    @Test()
+					    public void verifyUserAbleToSearchContentForAlternativeBoard() throws Exception{
+					        QXClient.get().driver();
+					        getDikshaMainPageActions().performUserOnBoarding();
+
+					        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+					                properties.getProperty("excelpath"));
+
+					        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+					        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+					        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+
+					        getHomePageActions().tapOnSearchIcon();
+					        getHomePageActions().enterTextInSearchBar(BookName);
+
+					        getTrainingPageActions().verifyContentForAlternativeBoard();
+
+					        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+					        getTrainingPageActions().tapOnSearchedBook();
+					        getTrainingPageActions().verifyAlternativeBoardForTheSearchedContent();
+
+					    }
+					    
+					    @Test()
+						public void verifyContentTypeFilterAndAdditionalCategoriesInFiltersSection() throws Exception {
+
+							QXClient.get().driver();
+
+							getDikshaMainPageActions().performUserOnBoarding();
+
+							getHomePageActions().tapOnSearchIcon();
+
+							getHomePageActions().enterTextInSearchBar("Course");
+
+							getLibraryPageActions().verifyAllFilterInContentType();
+
+							getLibraryPageActions().observeTheAdditionalCategories();
+
+							getLibraryPageActions().verifyContentForContentTypeAndAdditionalCategoriesFilter();
+
+						}
+					    
+					    @Test()
+						public void verifyContentForAllMediaType() throws Exception {
+							QXClient.get().driver();
+							DikshaMainPageActions d = new DikshaMainPageActions();
+							getDikshaMainPageActions().performUserOnBoarding();
+							// getHomePageActions().tapOnProfileTab();
+
+							// getHomePageActions().tapOnTrainingTab();
+							getHomePageActions().tapOnSearchIcon();
+							getHomePageActions().enterTextInSearchBar("Resource");
+
+							getTrainingPageActions().verifyContentForAllMediaTypeFilter();
+
+						}
+					    @Test()
+					 	public void verifyUserAbleToSearchContentAndDiffMediaTypes() throws Exception {
+					 		QXClient.get().driver();
+					 		getDikshaMainPageActions().performUserOnBoarding();
+
+					 		Properties properties = QXClient.get().propUtils()
+					 				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+					 		System.out.println("@name:" + properties.getProperty("excelpath"));
+
+					 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+					 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+					 		String BookName = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 26, 2);
+
+					 		getHomePageActions().tapOnSearchIcon();
+					 		getHomePageActions().enterTextInSearchBar(BookName);
+
+					 		getHomePageActions().verifyFiltersForMediaType();
+
+					 //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+					 		getTrainingPageActions().tapOnSearchedBook();
+					 		getHomePageActions().verifyContentWithAllMediaType();
+
+					 		getHomePageActions().verfiyContentUnderVideoMediaType();
+
+					 	}
+					    
+					    @Test()
+					    public void verifyContentForMultipleFilterOptions() throws Exception {
+
+					        QXClient.get().driver();
+					        getDikshaMainPageActions().performUserOnBoarding();
+					        getHomePageActions().tapOnSearchIcon();
+					        getHomePageActions().enterTextInSearchBar("Resource");
+					        getLibraryPageActions().verifyFilterOptions();
+
+					    }
 }
+

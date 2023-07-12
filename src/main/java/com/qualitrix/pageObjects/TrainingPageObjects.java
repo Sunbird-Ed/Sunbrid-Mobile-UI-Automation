@@ -17,8 +17,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class TrainingPageObjects {
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='search filter']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='ic_filter']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='search filter']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='filter ']")
     })
     public MobileElement filterBtn;
@@ -535,10 +535,12 @@ public MobileElement boardFilter;
 public MobileElement cbseBoard;
 @AndroidFindBy(xpath = "//android.widget.Button[@text='APPLY FILTER']")
 public MobileElement applyFilterBtn;
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'CBSE')]")
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'CBSE')]")
 public MobileElement verifyContentForAlternativeBoard;
 
 @AndroidFindAll({
+    @AndroidBy(xpath = "(//android.view.View[contains(@text,'pdf')])[2]"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'SELFASSESS PDF_13.pdf')]"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'PDF_13.pdf')]"),
         @AndroidBy(xpath = "//android.view.View[@text='PDF_13.pdf']"),
@@ -644,8 +646,15 @@ public MobileElement clkCourseDetails;
 })
 public MobileElement viewCertificateMsg;
 
-@AndroidFindBy(xpath = "//android.view.View[@text='FILTER BY']")
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='FILTER BY']"),
+@AndroidBy(xpath = "//android.view.View[@text='FILTER BY']"),
+})
 public MobileElement assertFilterBy;
+
+
 @AndroidFindBy(xpath = "//android.widget.Button[@text='RESET filter by']")
 public MobileElement assertResetBtn;
 @AndroidFindBy(xpath = "//android.widget.TextView[@text='Media Type']")
@@ -1331,13 +1340,19 @@ public MobileElement assertExpiredCourseMsg;
     })
     public MobileElement clkOnEpubContent;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Popular categories']")
-    public MobileElement assertPopularCategoriesInTrainingPage;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Popular categories']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Popular categories']"),
+})
+public MobileElement assertPopularCategoriesInTrainingPage;
+   
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
+
             @AndroidBy(xpath = "//android.widget.Image[@text='back']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
     })
     public MobileElement clkBackBtn;

@@ -896,6 +896,8 @@ getLibraryPageActions().verifyZoomInZoomOut();
    		getHomePageActions().closeAppOnClkYesBtn();
    	}
    	  
+    
+    
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "Verify UserAble to Download Book ")
@@ -958,6 +960,8 @@ getLibraryPageActions().verifyZoomInZoomOut();
     		QXClient.get().driver();
     			 System.out.println("verify ExcellentTextVerify");
     		}
+    
+    
     @Test()
     public void verifyPdfContentConsumedCompletlyAndRateTheContent() throws Exception{
         QXClient.get().driver();
@@ -1013,6 +1017,7 @@ getLibraryPageActions().verifyZoomInZoomOut();
         getTrainingPageActions().tapOnSearchedBook();
     }
 
+	
     @Test()
     public void verifyUserAbleToSearchContentForAlternativeBoard() throws Exception{
         QXClient.get().driver();
@@ -1134,6 +1139,7 @@ getLibraryPageActions().verifyZoomInZoomOut();
         getLibraryPageActions().verifyFilterOptions();
 
     }
+    
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "verifyUserAbleToSearchContentOrBook ")
     public void verifyUserAbleToSearchContentOrBook() throws Exception {

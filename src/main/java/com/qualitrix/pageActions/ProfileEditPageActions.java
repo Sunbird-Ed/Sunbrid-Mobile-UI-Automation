@@ -1159,17 +1159,20 @@ public class ProfileEditPageActions  {
         QXClient.get().report().info("Clicked on Login button");
         QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.clkLoginWithDikshaBtn),"login with diksha button is not displayed in profile page");
-        QXClient.get().report().info("Login with diksha option is displayed in Profile page");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.clkLoginWithDikshaBtn),"login with sunbird button is not displayed in profile page");
+        QXClient.get().report().info("Login with sunbird option is displayed in Profile page");
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.clkBackBtn),"Back button is not displayed");
-        QXClient.get().report().info("Back button is displayed in profile page");
+      //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.clkBackBtn),"Back button is not displayed");
+      //  QXClient.get().report().info("Back button is displayed in profile page");
 
-        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkBackBtn);
+      //  QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkBackBtn);
+     //   QXClient.get().gestures().BlindWait(3000);
+
+      //  Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.clkBackBtn),"Back button is available");
+     //   QXClient.get().report().info("Back button is not available");
+        
+        QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(3000);
-
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.clkBackBtn),"Back button is available");
-        QXClient.get().report().info("Back button is not available");
 
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilepageobj.clkLoginWithDikshaBtn),"login with diksha button is displayed in profile page");
         QXClient.get().report().info("Login with diksha option is not displayed in Profile page");

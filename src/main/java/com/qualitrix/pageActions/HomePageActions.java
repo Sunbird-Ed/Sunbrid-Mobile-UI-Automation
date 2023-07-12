@@ -5541,6 +5541,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(homePageObjects.clkBackBtn),"Back button is available");
         QXClient.get().report().info("Back button is not available");
+		QXClient.get().gestures().swipeUp();
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertLetUsKnowBtn),"Let us know here button is not displayed");
         QXClient.get().report().info("Let us know here button is displayed");

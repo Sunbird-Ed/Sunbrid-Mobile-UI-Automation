@@ -107,8 +107,8 @@ public MobileElement ReportMenu;
     public MobileElement qrCode;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//*[@resource-id='tab-button-guest-profile']"),
             @AndroidBy(xpath = "//*[@resource-id='tab-button-profile']"),
-            @AndroidBy(xpath = "//*[@resource-id='tab-button-guest-profile']"),
         @AndroidBy(xpath = "//android.view.View[@text='profile']"),
             @AndroidBy(xpath = "//android.view.View[@text='profile Profile']"),
             @AndroidBy(xpath = "//android.view.View[@text='profile Profile ']"),
@@ -1451,8 +1451,8 @@ public MobileElement tagsField;
     	    public MobileElement firstContentUnderVideoType;
 
     	     @AndroidFindAll({
+                 @AndroidBy(xpath = "//android.widget.Button[@text='Play video']"),
                      @AndroidBy(xpath = "//android.widget.Button[contains(@text,'PLAY')]"),
-                     @AndroidBy(xpath = "//android.widget.Button[@text='Play video']"),
              })
     	    public MobileElement playIconOfVideo;
     	     
@@ -1905,8 +1905,9 @@ public MobileElement tagsField;
 
 
          @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
+
                  @AndroidBy(xpath = "//android.widget.Image[@text='back']"),
-                 @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
                  @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
          })
          public MobileElement clkBackBtn;
@@ -3182,8 +3183,15 @@ public MobileElement assertSubjectFilter;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='LET US KNOW HERE']")
     public MobileElement assertLetUsKnowBtn;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Request content']")
-    public MobileElement assertRequestContentInLibraryPage;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Request content']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Request content']"),
+
+})
+public MobileElement assertRequestContentInLibraryPage;
+
+
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'asa')]")
