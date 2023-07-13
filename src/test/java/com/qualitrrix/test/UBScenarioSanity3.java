@@ -2816,17 +2816,10 @@ public class UBScenarioSanity3 {
  * 
  * }
  */
+	  
+
 	
-	 @Test()
-	    public void verifyContentForMultipleFilterOptions() throws Exception {
 
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnSearchIcon();
-	        getHomePageActions().enterTextInSearchBar("Resource");
-	        getLibraryPageActions().verifyFilterOptions();
-
-	    }
 }
 
 

@@ -331,8 +331,12 @@ public MobileElement BookSearch;
     public MobileElement transcriptContent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'RESOURCE Jan13 Large')]")
-    public MobileElement largeVideoContent;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE Jan13 Large')]"),
+})
+public MobileElement largeVideoContent;
+
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COLLECTION QS')]")
@@ -1520,6 +1524,8 @@ public MobileElement assertH5PCollectionTitle;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Neelallcheckbox QuestionSet')]"),
+            @AndroidBy(xpath = "android.widget.TextView[contains(@text,'Neelallcheckbox QuestionSet')]"),
+
     })
     public MobileElement questionSetForSubmitRequired;
 
@@ -1917,14 +1923,20 @@ public MobileElement assertEnrollmentEndedMsg;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Done']")
     public MobileElement assertDoneBtnInViewSolutionPage;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Are you ready to submit?')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Are you ready to submit?')]"),
+})
+public MobileElement assertAreYouReadytoSubmitText;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Are you ready to submit?')]")
-    public MobileElement assertAreYouReadytoSubmitText;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Neelallcheckbox QuestionSet']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Neelallcheckbox QuestionSet']"),
+})
+public MobileElement assertTitleOfQuestionSetInSubmitPage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Neelallcheckbox QuestionSet']")
-    public MobileElement assertTitleOfQuestionSetInSubmitPage;
 
 
     @AndroidFindBy(xpath = "//android.widget.Image[@text='Progress Indicators']")
