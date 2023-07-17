@@ -380,8 +380,15 @@ public MobileElement clkEditLocation;
     public MobileElement validateErrorMsgForInvalidEntry;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='add Subjects']")
-    public MobileElement clkAdd;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[contains(@text,'edit Role')]"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='add Subjects']"),
+})
+
+public MobileElement clkAdd;
+
+    
+  
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Subrole')]")

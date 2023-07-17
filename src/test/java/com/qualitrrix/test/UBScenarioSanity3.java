@@ -2791,21 +2791,17 @@ public class UBScenarioSanity3 {
 	
 	
 	
+	 @Test()
+	    public void verifyBoardValuesAreInAlphabeticalOrder() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
 
+	        getHomePageActions().tapOnProfileTab();
 
-    @Test()
-    public void validateEmailAndNameIsNotRegisteredWithSunbirdMsg() throws Exception {
+	        getProfileEditPageActions().verifyBoardInAlphabeticalOrder();
 
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
+	    }
 
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().validateErrorMessageForEmailAndName();
-
-    }
 
 }
 
