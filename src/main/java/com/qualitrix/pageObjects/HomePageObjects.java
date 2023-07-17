@@ -1517,6 +1517,7 @@ public MobileElement tagsField;
 
 
        @AndroidFindAll({
+           @AndroidBy(xpath = "//android.widget.TextView[@text='Merge Account']"),
                @AndroidBy(xpath = "//android.widget.Button[@text='Merge Account']"),
                @AndroidBy(xpath = "//android.view.View[@text='Merge Account']"),
        })
@@ -1698,8 +1699,17 @@ public MobileElement tagsField;
       
          @AndroidFindBy(xpath = "//android.widget.Button[@text='Cancel']")
          public MobileElement clkCancel;
-         @AndroidFindBy(xpath = "//android.widget.TextView[@text='If you have two accounts with DIKSHA, click ']")
-         public MobileElement twoAccountswithDikshaText;
+         
+         
+ 
+         
+         @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'If you have two accounts with SUNBIRD, click')]"),
+             @AndroidBy(xpath = "//android.widget.TextView[@text='If you have two accounts with DIKSHA, click ']"),
+     })
+     public MobileElement twoAccountswithDikshaText;
+         
+         
          @AndroidFindBy(xpath = "//android.widget.TextView[@text='Merge']")
          public MobileElement assertMergeText;
          @AndroidFindBy(xpath = "//android.widget.TextView[@text='Cancel']")
@@ -1708,8 +1718,16 @@ public MobileElement tagsField;
          public MobileElement assertCombineAccountsText;
          @AndroidFindBy(xpath = "//android.widget.TextView[@text='delete the other account']")
          public MobileElement assertDeleteAccountText;
-         @AndroidFindBy(xpath = "//android.view.View[@text='Login']")
-         public MobileElement LoginPageText;
+         
+         
+
+         
+         
+         @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.TextView[@text='Login']"),
+             @AndroidBy(xpath = "//android.view.View[@text='Login']"),
+     })
+     public MobileElement LoginPageText;
 
          @AndroidFindAll({
                  @AndroidBy(xpath = "//android.view.View[@text='Enter Email Address / Mobile Number']"),
@@ -2773,9 +2791,12 @@ public MobileElement assertSubjectFilter;
     public MobileElement assertExplorerPage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Invalid Email Address/Mobile number or password. Please try again with valid credentials to merge']")
-    public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
-
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Invalid Email Address/Mobile number or password. Please try again with valid credentials to merge']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Invalid Email Address/Mobile number or password. Please try again with valid credentials to merge']"),
+})
+public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
+   
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Failed to merge account']")
     public MobileElement assertFailedToMergeAccountMsg;

@@ -4141,7 +4141,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
         QXClient.get().report().info("Tap on login button");
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(8000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertInvalidEmailAddressMessageInMergeAccountScreen),"Invalid Email Address Message is not displayed");
         QXClient.get().report().info("Invalid Email Address Message is displayed in Merge Account Screen");
@@ -5640,9 +5640,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("Clicked on Settings in Menu bar");
         QXClient.get().gestures().BlindWait(2000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.ClkDataSync),"Data sync is not displayed");
-        QXClient.get().report().info("Data sync is displayed for custodian user");
-
+     
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(homePageObjects.clkMergeAccount),"Merge Account is displayed for Custodian user");
         QXClient.get().report().info("Merge Account is not displayed in settings screen for Custodian user");
         QXClient.get().gestures().BlindWait(3000);

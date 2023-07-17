@@ -579,6 +579,9 @@ public MobileElement clkEditLocation;
 
 
     @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Forgot Password link, Double tap to activate']"),
             @AndroidBy(xpath = "//android.view.View[@text='Forgot Password ?']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Forgot password?']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Forget password?']"),
@@ -602,8 +605,7 @@ public MobileElement clkEditLocation;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='Next']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Name']//following::android.widget.Button"),
-            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Next')]"),
+           
     })
     public MobileElement clkOnNextBtn;
 
@@ -615,9 +617,15 @@ public MobileElement clkEditLocation;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='The entry does not match the name registered with SUNBIRD']")
     public MobileElement assertNameNotRegisteredMessage;
 
+    
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Recover Account']")
-    public MobileElement assertRecoverAccountText;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Recover Account']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Recover Account']"),
+})
+public MobileElement assertRecoverAccountText;
+
+
 
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Email address/Mobile Number']")
@@ -636,13 +644,21 @@ public MobileElement clkEditLocation;
     @AndroidFindBy(xpath = "//android.view.View[@text='Login']")
     public MobileElement assertLoginTextInLoginPage;
 
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'You will receive an OTP')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'You will receive an OTP')]"),
+})
+public MobileElement assertMessageRelatedToOTP;
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'You will receive an OTP')]")
-    public MobileElement assertMessageRelatedToOTP;
+   
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'@yopmail.com')]")
-    public MobileElement assertEmailAddressToSendOTP;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'@yopmail.com')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'@yopmail.com')]"),
+})
+public MobileElement assertEmailAddressToSendOTP;
+   
 
 
     @AndroidFindBy(xpath = "//android.view.View[@text='State (Karnataka)\u200E']")
@@ -679,9 +695,11 @@ public MobileElement clkEditLocation;
     public MobileElement clkAllowbtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Invalid Email Address/Mobile number or password. Please try again with valid credentials']")
-    public MobileElement assertInvalidMsgForAlreadyMergedAccount;
-
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Invalid Email Address/Mobile number or password. Please try again with valid credentials']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Invalid Email Address/Mobile number or password. Please try again with valid credentials']"),
+})
+public MobileElement assertInvalidMsgForAlreadyMergedAccount;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Select State']")
     public MobileElement selectState;

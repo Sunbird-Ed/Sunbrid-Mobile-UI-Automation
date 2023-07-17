@@ -2790,35 +2790,22 @@ public class UBScenarioSanity3 {
  */
 	
 	
-
-/*
- * @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun
- * = true, description = "Course Share.") public void
- * verifyScanQRandSelectBoardAndNewTagAndUserLogin() throws Exception {
- * 
- * QXClient.get().driver();
- * 
- * getDikshaMainPageActions().verifyScanQRAndSelectBoardWhileUserOnBoarding();
- * 
- * getHomePageActions().tapOnDownloadTab();
- * QXClient.get().gestures().closeApp();
- * 
- * DikshaMainPageActions d = new DikshaMainPageActions();
- * d.LaunchAppHomeScreen(); getHomePageActions().tapOnDownloadTab();
- * 
- * // getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
- * 
- * getHomePageActions().verifyUserLoginInHamburgerMenu();
- * 
- * getHomePageActions().tapOnProfileTab();
- * 
- * getHomePageActions().verifyUserLoginInProfile();
- * 
- * }
- */
-	  
-
 	
+
+
+    @Test()
+    public void validateEmailAndNameIsNotRegisteredWithSunbirdMsg() throws Exception {
+
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
+
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        getLoginPageActions().validateErrorMessageForEmailAndName();
+
+    }
 
 }
 
