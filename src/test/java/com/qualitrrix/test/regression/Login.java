@@ -528,22 +528,23 @@ public class Login {
         getProfileEditPageActions().verifyBoardInAlphabeticalOrder();
 
     }
-    @Test()
-    public void NoLocationPopUpWhenUserIsInSignInPageSignUpPageAndForgotPasswordPage() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
 
-        getLoginPageActions().verifyNoLocationPopupInSignInPage();
+	 @Test()
+	    public void NoLocationPopUpWhenUserIsInSignInPageSignUpPageAndForgotPasswordPage() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
 
-        getLoginPageActions().verifyNoLocationPopupInSignUpPage();
-        QXClient.get().gestures().clkBackButton();
-        getLoginPageActions().verifyNoLocationPopupInForgotPasswordPage();
+	        getLoginPageActions().verifyNoLocationPopupInSignInPage();
+
+	        getLoginPageActions().verifyNoLocationPopupInSignUpPage();
+	        QXClient.get().gestures().clkBackButton();
+	        getLoginPageActions().verifyNoLocationPopupInForgotPasswordPage();
 
 
-    }
+	    }
 	 @Test()
 	    public void validateBoardMediumClassSubjectValuesAreHiddenInRegisterHerePage() throws Exception {
 

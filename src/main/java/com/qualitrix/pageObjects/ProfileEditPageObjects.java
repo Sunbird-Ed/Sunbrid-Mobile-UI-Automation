@@ -391,15 +391,22 @@ public MobileElement myLearningtext;
     public MobileElement assertDikshaID;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Board')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Board')]"),
+      })
     public MobileElement assertBoard;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Medium')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Medium')]"),
+      })
     public MobileElement assertMedium;
+  
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Class')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Class')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Classes')]"),
     })

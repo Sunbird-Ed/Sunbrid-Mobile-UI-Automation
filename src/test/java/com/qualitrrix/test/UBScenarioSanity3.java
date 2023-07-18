@@ -2790,19 +2790,21 @@ public class UBScenarioSanity3 {
  */
 	
 	
-	
+
 	 @Test()
-	    public void verifyBoardValuesAreInAlphabeticalOrder() throws Exception {
+	    public void verifyMobileNumberEmailAddressAndAsterikSymbolInRegisterHerePage() throws Exception {
+
 	        QXClient.get().driver();
 	        getDikshaMainPageActions().performUserOnBoarding();
-
 	        getHomePageActions().tapOnProfileTab();
 
-	        getProfileEditPageActions().verifyBoardInAlphabeticalOrder();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().verifyRegisteredEmailMessageWhileRegistering();
+
 
 	    }
-
-
 }
 
 

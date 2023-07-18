@@ -55,7 +55,7 @@ public class DikshaMainPageActions  {
     
     public void sltUserStateDropdown() throws Exception
     {
-        Thread.sleep(4000);
+    
          QXClient.get().gestures().BlindWait(8000);
     	  QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectBoard);
           QXClient.get().report().info("Selected Board Value");
@@ -91,7 +91,7 @@ public class DikshaMainPageActions  {
             QXClient.get().report().info("Clicked on Submit Button");
             QXClient.get().gestures().BlindWait(5000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitWithArrowBtn);
+       QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitWithArrowBtn);
 
             Thread.sleep(6000);
 
@@ -105,6 +105,7 @@ public class DikshaMainPageActions  {
                 ProfileEditPageActions pageaction=new ProfileEditPageActions();
 
                 QXClient.get().gestures().BlindWait(1000);
+                
 
               QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
                 QXClient.get().report().info("Clicked on Continue Button");

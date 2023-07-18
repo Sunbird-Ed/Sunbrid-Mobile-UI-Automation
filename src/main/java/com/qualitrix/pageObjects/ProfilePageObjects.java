@@ -244,12 +244,19 @@ public MobileElement clkEditLocation;
    @AndroidFindBy(xpath = "//android.view.View[@text='Your ID from State/Board/Org:']//following::android.view.View[1]")
    public MobileElement resulttextofyourid;
 
-   @AndroidFindBy(xpath = "//android.view.View[@text='Register here']")
-   public MobileElement clkRegisterHere;
+   @AndroidFindAll({
+       @AndroidBy(xpath = "//android.widget.TextView[@text='Register here link']"),
+       @AndroidBy(xpath = "//android.view.View[@text='Register here']")
+})
+public MobileElement clkRegisterHere;
+
+   
 
    @AndroidFindAll({
+       @AndroidBy(xpath = "//android.widget.TextView[@text='Register on SUNBIRD']"),
+           @AndroidBy(xpath = "//android.view.View[@text='Register on SUNBIRD']"),
            @AndroidBy(xpath = "//android.view.View[@text='Register on DIKSHA']"),
-           @AndroidBy(xpath = "//android.view.View[@text='Register on SUNBIRD']")
+
    })
    public MobileElement assertRegisterPage;
 
@@ -262,6 +269,8 @@ public MobileElement clkEditLocation;
    public MobileElement selectYearOfBirth;
 
    @AndroidFindAll({
+	 
+       @AndroidBy(xpath = "//android.widget.TextView[@text='2022']"),
            @AndroidBy(xpath = "//android.view.View[@resource-id='mat-option-0']"),
            @AndroidBy(xpath = "//android.view.View[@text='2022']"),
    })
@@ -281,7 +290,7 @@ public MobileElement clkEditLocation;
    public MobileElement clkOnEmailAddress;
 
   @AndroidFindAll({
-          @AndroidBy(xpath = "(//android.widget.EditText)[3]"),
+          @AndroidBy(xpath = "(//android.widget.EditText)[2]"),
           @AndroidBy(xpath = "//android.view.View[contains(@text,'Name')]//following::android.widget.EditText[2]"),
   })
    public MobileElement emailEditTextField;
@@ -1064,13 +1073,23 @@ public MobileElement assertInvalidMsgForAlreadyMergedAccount;
 
 
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+    public MobileElement clickContinueRegister;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+    public MobileElement clickSubmiteRegister;
 
 
+    @AndroidFindBy(xpath = "//android.view.View[@text='Enter mobile number or email address of your parent or guardian*']")
+    public MobileElement assertEmailAndMobileAsterisk;
 
 
+    @AndroidFindBy(xpath = "//android.view.View[@text='Password*']")
+    public MobileElement assertPasswordAsterisk;
 
 
-
+    @AndroidFindBy(xpath = "//android.view.View[@text='Confirm Password*']")
+    public MobileElement assertConfirmPasswordAsterisk;
 
 
 
