@@ -729,9 +729,9 @@ public MobileElement clkRemovePopupActivity;
     public MobileElement clkCreaedQues;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Switch to dark mode']"),
             @AndroidBy(xpath = "//android.view.View[@text='darkmode Switch to dark mode']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Switch to dark mode']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='Switch to dark mode']"),
     })
     public MobileElement clkSwitchDarkMode;
 

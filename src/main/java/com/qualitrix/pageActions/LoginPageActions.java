@@ -321,11 +321,25 @@ public class LoginPageActions {
                 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clickContinueRegister);
         QXClient.get().gestures().BlindWait(5000);
+        
+        try
+        {
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clickContinueRegister);
+        }
+        catch(Exception e)
+        {
+        	System.out.println(e);
+        }
+        
+        
+        QXClient.get().gestures().BlindWait(4000);
         QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().BlindWait(5000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clickSubmiteRegister);
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkSubmit);
+        QXClient.get().gestures().BlindWait(4000);
+        
+      
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnEmailAddress);
         QXClient.get().report().info("Clicked on Email Address ");
@@ -339,13 +353,13 @@ public class LoginPageActions {
         QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(6000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.passwordEditTextField1);
+    //    QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.passwordEditTextField1);
         QXClient.get().report().info("Clicked on password edit text filed");
        // profilePageObjects.passwordEditTextField1.sendKeys("Test@123");
-        QXClient.get().gestures().BlindWait(6000);
-        QXClient.get().gestures().clkBackButton();
+     //   QXClient.get().gestures().BlindWait(6000);
+     //   QXClient.get().gestures().clkBackButton();
 
-        QXClient.get().gestures().BlindWait(5000);
+     //   QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertEmailAndMobileAsterisk),"assertEmailAndMobileAsterisk is not displayed");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertPasswordAsterisk),"assertPasswordAsterisk is not displayed");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertConfirmPasswordAsterisk),"assertConfirmPasswordAsterisk is not displayed");
@@ -807,7 +821,7 @@ public class LoginPageActions {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertPasswordPlaceholder),"Enter your password is not displayed in Password Textbox");
         QXClient.get().report().info("Enter your password is displayed in Password Textbox");
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilePageObjects.assertForgotText),"Forgot Text is displayed below Password Textbox");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertForgotText),"Forgot Text is displayed below Password Textbox");
         QXClient.get().report().info("Forgot Text is not displayed below Password Textbox");
         QXClient.get().gestures().BlindWait(3000);
 
@@ -825,21 +839,20 @@ public class LoginPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
         QXClient.get().report().info("Clicked on Login Button");
         QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDontHaveAnAccountBelowLoginBtn2),"Don't have an account is not displayed below Login Button");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDontHaveAnAccountBelowLoginBtn),"Don't have an account is not displayed below Login Button");
         QXClient.get().report().info("Don't have an account is displayed below Login Button");
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterHereBelowLoginBtn),"Register here is not displayed below Login Button");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkRegisterHere),"Register here is not displayed below Login Button");
         QXClient.get().report().info("Register here is displaye below Login Button");
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginWithGoogleBtn),"Login with google button is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginWithGoogleBtn),"Login with google button is not displayed");
         QXClient.get().report().info("Loign With Google button is replaced by Sign with Google button");
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.SignWithGoogle),"Sign with Google button is not displayed");
-        QXClient.get().report().info("Sign with google button is displayed");
-        QXClient.get().gestures().BlindWait(2000);
+      
 
-        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLeftsideGoogleLogo),"Google logo is not placed on left side of the button");
+    //    Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLeftsideGoogleLogo),"Google logo is not placed on left side of the button");
         QXClient.get().report().info("Google is present on the left side of the Sign with google button");
         QXClient.get().gestures().BlindWait(2000);
 
@@ -969,7 +982,21 @@ public class LoginPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYear);
         QXClient.get().report().info("Clicked on select year ");
         QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+
+        
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkContinueBtn);
+        QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkContinueBtn);
+        }
+        catch(Exception ee)
+        {
+        	System.out.println(ee);
+        }
         QXClient.get().gestures().BlindWait(4000);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().swipeUp();

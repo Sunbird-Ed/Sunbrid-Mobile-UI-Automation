@@ -23,6 +23,8 @@ public class ProfilePageObjects {
             @AndroidBy(xpath = "//android.widget.Button[@text='LOGIN']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='LOGIN ']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='log in outline Login']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Login']"),
+
     })
     public MobileElement loginBtn;
 
@@ -339,15 +341,16 @@ public MobileElement clkRegisterHere;
 
 
 @AndroidFindAll({
-        @AndroidBy(xpath = "//android.widget.TextView[@text='Mobile Number']"),
         @AndroidBy(xpath = "//android.view.View[@text='Mobile Number']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Mobile Number']"),
+
 })
     public MobileElement assertMobileNumber;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Email Address']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Email Address']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Email Address']"),
             @AndroidBy(xpath = "//android.view.View[@text='Email address']"),
     })
     public MobileElement assertEmailAddress;
@@ -725,14 +728,14 @@ public MobileElement assertInvalidMsgForAlreadyMergedAccount;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "(//android.widget.EditText)[2]"),
+            @AndroidBy(xpath = "(//android.widget.EditText)[1]"),
             @AndroidBy(xpath = "//android.view.View[@text='Enter Email Address / Mobile number']//following::android.widget.EditText[1]"),
     })
     public MobileElement assertEnterYourEmailPlaceholder;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "(//android.widget.EditText)[3]"),
+            @AndroidBy(xpath = "(//android.widget.EditText)[2]"),
             @AndroidBy(xpath ="//android.view.View[@text='Password']//following::android.widget.EditText[1]"),
     })
     public MobileElement assertPasswordPlaceholder;
@@ -742,12 +745,12 @@ public MobileElement assertInvalidMsgForAlreadyMergedAccount;
     public MobileElement assertLoignBtnInUppercase;
 
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Forgot?']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Forgot Password link, Double tap to activate']")
     public MobileElement assertForgotText;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']//following-sibling::android.widget.TextView[1]"),
+            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'to access relevant learning material and enroll for courses')]"),
             @AndroidBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']//following::android.widget.TextView[1]"),
     })
     public MobileElement assertDontHaveAnAccountBelowLoginBtn;
@@ -760,7 +763,7 @@ public MobileElement assertInvalidMsgForAlreadyMergedAccount;
     public MobileElement assertRegisterHereBelowLoginBtn;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Login With Google']")
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='google-logo Sign in with Google']")
     public MobileElement assertLoginWithGoogleBtn;
 
 
@@ -822,13 +825,23 @@ public MobileElement assertInvalidMsgForAlreadyMergedAccount;
     public MobileElement assertSunbirdText;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Welcome to SUNBIRD')]")
-    public MobileElement assertWelcomeToSunbirdText;
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Welcome to SUNBIRD']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Welcome To SUNBIRD']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Welcome to SUNBIRD')]"),
+})
+public MobileElement assertWelcomeToSunbirdText;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Register on SUNBIRD')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Register on SUNBIRD')]"),
+})
+public MobileElement assertRegisterOnSunbirdText;
+    
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Register on SUNBIRD')]")
-    public MobileElement assertRegisterOnSunbirdText;
-
+    
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Already have an account? Login here']")
     public MobileElement assertAlreadyHaveAnAccountTextAndLoginBtn;
@@ -1091,7 +1104,10 @@ public MobileElement assertInvalidMsgForAlreadyMergedAccount;
     @AndroidFindBy(xpath = "//android.view.View[@text='Confirm Password*']")
     public MobileElement assertConfirmPasswordAsterisk;
 
-
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'have an account')]"),
+})
+public MobileElement assertDontHaveAnAccountBelowLoginBtn2;
 
 
 

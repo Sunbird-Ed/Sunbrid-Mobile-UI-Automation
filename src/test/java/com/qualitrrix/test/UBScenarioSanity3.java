@@ -2789,10 +2789,8 @@ public class UBScenarioSanity3 {
  * }
  */
 	
-	
-
-	 @Test()
-	    public void verifyMobileNumberEmailAddressAndAsterikSymbolInRegisterHerePage() throws Exception {
+	   @Test()
+	    public void verifyAlreadyRegisteredEmailMessage() throws Exception {
 
 	        QXClient.get().driver();
 	        getDikshaMainPageActions().performUserOnBoarding();
@@ -2805,6 +2803,7 @@ public class UBScenarioSanity3 {
 
 
 	    }
+
 }
 
 

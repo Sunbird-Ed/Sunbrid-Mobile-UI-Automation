@@ -661,43 +661,43 @@ public class Login {
 
 
 	    }
-	
-    @Test()
-    public void userNavigatedToNativePagePostClickingLoginBtnInProfileAndInHamburgerMenu() throws Exception {
+	  @Test()
+	    public void userNavigatedToNativePagePostClickingLoginBtnInProfileAndInHamburgerMenu() throws Exception {
 
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
 
 
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
 
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
 
-        getLoginPageActions().loginToTheUser(Username, Password);
+	        getLoginPageActions().loginToTheUser(Username, Password);
 
-        getLoginPageActions().verifyUserNavigatedToNativePage();
+	        getLoginPageActions().verifyUserNavigatedToNativePage();
 
-        getHomePageActions().tapOnMenuBar();
+	        getHomePageActions().tapOnMenuBar();
 
-        getHomePageActions().userLogout();
+	        getHomePageActions().userLogout();
 
-        getHomePageActions().tapOnMenuBar();
+	      
+	        
+	        getHomePageActions().tapOnMenuBar();
 
-        getLoginPageActions().loginToTheUser(Username, Password);
+	        getLoginPageActions().loginToTheUser(Username, Password);
 
-        getLoginPageActions().verifyUserNavigatedToNativePage();
+	        getLoginPageActions().verifyUserNavigatedToNativePage();
 
-    }
-
+	    }
 	
 	@Test()
     public void validateLoginWithGoogleIsReplacedBySignWithGoogle() throws Exception {
@@ -741,6 +741,9 @@ public class Login {
 
     }
 	
+    
+    
+    
 	@Author(name = "Raju")
 	@Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true)
 	public void verifyUserAbleToEnrollConsumeCourseContent() throws Exception {

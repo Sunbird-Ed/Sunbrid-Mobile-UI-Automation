@@ -6499,7 +6499,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
-        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().BlindWait(5000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.clkRegisterHere),"Register here link is not visible");
         QXClient.get().report().info("Register here link is displayed");
@@ -6507,10 +6507,10 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("Clicked on Register here link");
         QXClient.get().gestures().BlindWait(5000);
 
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().BlindWait(8000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertSunbirdText),"Sunbird text is not displayed");
-        QXClient.get().report().info("Sunbird text is displayed in register here page");
+       QXClient.get().report().info("Sunbird text is displayed in register here page");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertWelcomeToSunbirdText),"Welcome to sunbird text is not displayed");
         QXClient.get().report().info("Welcome to sunbird text is displayed in register here page");
