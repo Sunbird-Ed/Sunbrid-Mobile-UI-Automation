@@ -7,7 +7,10 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import jdk.nashorn.internal.runtime.QuotedStringTokenizer;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -91,7 +94,7 @@ public class DikshaMainPageActions  {
             QXClient.get().report().info("Clicked on Submit Button");
             QXClient.get().gestures().BlindWait(5000);
 
-      QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitWithArrowBtn);
+     // QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitWithArrowBtn);
 
             Thread.sleep(6000);
 
@@ -102,12 +105,13 @@ public class DikshaMainPageActions  {
                 QXClient.get().report().info("slt language");
                 QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
  
-                ProfileEditPageActions pageaction=new ProfileEditPageActions();
+           //     ProfileEditPageActions pageaction=new ProfileEditPageActions();
 
-                QXClient.get().gestures().BlindWait(1000);
+              QXClient.get().gestures().BlindWait(3000);
+                
                 
 
-              QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+             // QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
                 QXClient.get().report().info("Clicked on Continue Button");
                 
               //  pageaction.verifyLabelOnBoarding();
@@ -116,7 +120,7 @@ public class DikshaMainPageActions  {
 
                               
                 sltUserStateDropdown();
-                checkLocationPopup();
+              //  checkLocationPopup();
                 clkCloseIcon();
 //                QXClient.get().gestures().closeApp();  
 //                LaunchAppHomeScreen();
@@ -162,7 +166,6 @@ public class DikshaMainPageActions  {
          QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickTeacher);
          QXClient.get().report().info("Clicked on Teacher Button");
 
-                       
 }
     
     

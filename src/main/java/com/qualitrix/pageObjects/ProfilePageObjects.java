@@ -285,8 +285,8 @@ public MobileElement clkRegisterHere;
    public MobileElement nameEditTextField;
 
   @AndroidFindAll({
+      @AndroidBy(xpath = "//android.view.View[@text='Email Address']"),
           @AndroidBy(xpath = "//android.widget.TextView[@text='Email Address']"),
-          @AndroidBy(xpath = "//android.view.View[@text='Email Address']"),
           @AndroidBy(xpath = "//android.view.View[@text='Email address']"),
   })
    public MobileElement clkOnEmailAddress;
@@ -318,12 +318,24 @@ public MobileElement clkRegisterHere;
    public MobileElement alreadyRegisteredEmailMessage;
 
   @AndroidFindAll({
+		  
+      @AndroidBy(xpath = "//android.widget.TextView[@text='LOGIN']"),
           @AndroidBy(xpath = "//android.widget.TextView[@text='Login']"),
           @AndroidBy(xpath = "//android.widget.TextView[@text='Login to DIKSHA']"),
   })
   public MobileElement assertLoginPageText;
- @AndroidFindBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']")
-  public MobileElement assertLoginWithDikshaOption;
+  
+ 
+ 
+ @AndroidFindAll({
+	  
+     @AndroidBy(xpath = "//android.widget.Image[@text='app logo']"),
+         @AndroidBy(xpath = "//android.widget.Button[@text='app-logo Login with DIKSHA']"),
+ })
+ public MobileElement assertLoginWithDikshaOption;
+ 
+ 
+ 
  @AndroidFindBy(xpath = "//android.widget.Button[@text='Login with state system']")
   public MobileElement assertLoginWithStateSystemOption;
  @AndroidFindBy(xpath = "//android.widget.Button[@text='google-logo Sign in with Google']")
@@ -569,10 +581,12 @@ public MobileElement clkAdd;
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='signup-form-password']")
     public MobileElement passwordEditTextFieldOne;
 
-    @AndroidFindBy(xpath = "//android.widget.CheckBox[@resource-id='tncAccepted']")
-    public MobileElement clkOntncAccepted;
 
-
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@resource-id='resetGoogleCaptcha']"),
+        @AndroidBy(xpath = "//android.widget.CheckBox[@resource-id='tncAccepted']"),
+})
+public MobileElement clkOntncAccepted;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Register']")
     public MobileElement clkOnRegisterBtn;
@@ -623,6 +637,8 @@ public MobileElement clkAdd;
 
 
     @AndroidFindAll({
+    	
+        @AndroidBy(xpath = "//android.widget.Button[@index='3']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Next']"),
            
     })
@@ -846,9 +862,13 @@ public MobileElement assertRegisterOnSunbirdText;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Already have an account? Login here']")
     public MobileElement assertAlreadyHaveAnAccountTextAndLoginBtn;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'To discover relevant content update the following')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'To discover relevant content update the following')]"),
+})
+public MobileElement assertToDiscoverRelevantContentText;
+    
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'To discover relevant content update the following')]")
-    public MobileElement assertToDiscoverRelevantContentText;
 
 
     @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Teacher, selected')]")
@@ -856,12 +876,17 @@ public MobileElement assertRegisterOnSunbirdText;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Spinner[contains(@text,'Karnataka, selected')]"),
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.ListView[@resource-id='mat-select-2']"),
+        @AndroidBy(xpath = "//android.widget.Spinner[contains(@text,'Karnataka, selected')]"),
             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Karnataka, selected')]"),
     })
     public MobileElement assertStateValueAutoPopulated;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.ListView[@resource-id='mat-select-4']"),
+        @AndroidBy(xpath = "//android.widget.ListView[@text='Select District']"),
             @AndroidBy(xpath = "//android.widget.Spinner[contains(@text,'MYSURU, selected')]"),
             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'BENGALURU URBAN SOUTH, selected')]"),
     })
@@ -872,8 +897,14 @@ public MobileElement assertRegisterOnSunbirdText;
     public MobileElement selectYearManually;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='1998']")
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='1998']"),
+            @AndroidBy(xpath = "//android.view.View[@text='1998']"),
+    })
     public MobileElement selectMajorUser;
+
+ 
 
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Enter mobile number or email address *']")
@@ -1111,6 +1142,10 @@ public MobileElement assertDontHaveAnAccountBelowLoginBtn2;
 
 
 
+
+
+    @AndroidFindBy(xpath = "//android.widget.CheckBox[@resource-id='tncAccepted']")
+    public MobileElement clickTermsAndCheckBox;
 
 
 

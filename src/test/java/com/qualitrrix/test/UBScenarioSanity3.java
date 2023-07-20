@@ -2787,22 +2787,31 @@ public class UBScenarioSanity3 {
  * getTrainingPageActions().verifyEnrollmentEndedMsgAndNoBatchesAvailableMsg();
  * 
  * }
- */
-	
-	   @Test()
-	    public void verifyAlreadyRegisteredEmailMessage() throws Exception {
+ */ 
+	@Test()
+	public void verifyNewTagsInHamburgerMenuAndLoginOptions() throws Exception {
 
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
+		QXClient.get().driver();
 
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
+		getDikshaMainPageActions().verifyScanQRAndSelectBoardWhileUserOnBoarding();
 
-	        getLoginPageActions().verifyRegisteredEmailMessageWhileRegistering();
+		getHomePageActions().tapOnDownloadTab();
+		QXClient.get().gestures().closeApp();
+
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		d.LaunchAppHomeScreen();
+		getHomePageActions().tapOnDownloadTab();
+
+		//getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
+
+		getHomePageActions().verifyUserLoginInHamburgerMenu();
+
+		getHomePageActions().tapOnProfileTab();
+
+		getHomePageActions().verifyUserLoginInProfile();
 
 
-	    }
+	}
 
 }
 
