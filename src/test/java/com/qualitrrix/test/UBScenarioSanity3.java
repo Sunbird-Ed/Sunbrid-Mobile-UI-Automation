@@ -2788,30 +2788,69 @@ public class UBScenarioSanity3 {
  * 
  * }
  */ 
-	@Test()
-	public void verifyNewTagsInHamburgerMenuAndLoginOptions() throws Exception {
+	 @Test()
+	    public void verifyUserIDReplacedWithDikshaIDBelowUserNameInProfilePage() throws Exception {
 
-		QXClient.get().driver();
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        DikshaMainPageActions d = new DikshaMainPageActions();
+	        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
 
-		getDikshaMainPageActions().verifyScanQRAndSelectBoardWhileUserOnBoarding();
+	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		getHomePageActions().tapOnDownloadTab();
-		QXClient.get().gestures().closeApp();
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
 
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		d.LaunchAppHomeScreen();
-		getHomePageActions().tapOnDownloadTab();
+	        getLoginPageActions().loginToTheUser(Username, Password);
 
-		//getHomePageActions().verifyNewTagForMyGroupsAndImportContent();
+	        QXClient.get().gestures().closeApp();
+	        d.LaunchAppHomeScreen();
 
-		getHomePageActions().verifyUserLoginInHamburgerMenu();
+	        getHomePageActions().tapOnProfileTab();
 
-		getHomePageActions().tapOnProfileTab();
+	        getProfileEditPageActions().verifyUserIDReplacedWithDikshaIDBelowUserNameInProfilePage();
+	    }
 
-		getHomePageActions().verifyUserLoginInProfile();
+	 
+
+	 @Test()
+	    public void verifyDikshaIDRemainsSameAfterRefresh() throws Exception {
+
+	        QXClient.get().driver();
+
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
 
 
-	}
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().loginToTheUser(Username, Password);
+
+	        getHomePageActions().tapOnProfileTab();
+
+	        getProfileEditPageActions().verifyDikshaIDAndUserInProfilePage();
+
+	        getProfileEditPageActions().validateTwoCharactersOfUsernameAndDikshaIDAreSameInProfile();
+
+
+	    }
+
 
 }
 

@@ -233,6 +233,8 @@ public MobileElement clkEditLocation;
 
 
     @AndroidFindAll({
+    	
+    	
        @AndroidBy(xpath = "//android.widget.Button[@text='Update']")})
    public MobileElement clkonprofilepageupdatebutton;
 
@@ -342,8 +344,13 @@ public MobileElement clkRegisterHere;
   public MobileElement assertSignInwithGoogleOption;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Name')]")
-    public MobileElement assertNameField;
+  
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Name')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Name')]"),
+})
+public MobileElement assertNameField;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.EditText[@resource-id='signup-form-name']"),
@@ -1003,7 +1010,9 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement assertAddedGmailAccount;
 
 
+    
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Welcome to SUNBIRD!']"),
             @AndroidBy(xpath = "//android.view.View[@text='Welcome to SUNBIRD!']"),
             @AndroidBy(xpath = "//android.view.View[@text='Welcome to DIKSHA!']"),
     })
@@ -1011,6 +1020,7 @@ public MobileElement assertToDiscoverRelevantContentText;
 
 
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text=\"Register on SUNBIRD\"]"),
             @AndroidBy(xpath = "//android.view.View[@text='Register on SUNBIRD']"),
             @AndroidBy(xpath = "//android.view.View[@text='Register on DIKSHA']"),
     })
@@ -1021,7 +1031,7 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement newGmailUserID;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Select Year Of Birth')]")
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Year Of Birth')]")
     public MobileElement assertYOBField;
 
 
@@ -1029,11 +1039,15 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement assertDisabledContinueBtn;
 
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='dikshatest20@gmail.com']")
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='dikshatest13@gmail.com']"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='dikshatest20@gmail.com']"),
+    })
     public MobileElement newGmailUserID1;
 
-
-    @AndroidFindBy(xpath = "//android.widget.Spinner[contains(@text,'Select Year Of Birth')]")
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Select Year Of Birth')]")
     public MobileElement yobDropdown;
 
 
@@ -1045,18 +1059,24 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement clkContinueButton;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'To discover relevant content update the following details:')]")
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'To discover relevant content update the following details:')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'To discover relevant content update the following details:')]"),
+    })
     public MobileElement assertDiscoverRelevantContentUpdateTheFollowingText;
-
+    
 
     @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'selected ,Select State')]")
     public MobileElement assertMandatoryAndPrefilledState;
 
 
-    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'selected ,Select District')]")
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Select District')]"),
+            @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'selected ,Select District')]"),
+    })
     public MobileElement assertMandatoryAndPrefilledDistrict;
-
-
+    
     @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Select Block')]")
     public MobileElement assertBlockEditField;
 
@@ -1069,8 +1089,13 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement assertClearBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Enter mobile number or email address of your parent or guardian')]")
-    public MobileElement assertEmailOrMobileNumberOfGuardianText;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'As a parent/guardian I understand & Accept the SUNBIRD Terms')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Enter mobile number or email address of your parent or guardian')]"),
+    })
+    public WebElement assertEmailOrMobileNumberOfGuardianText;
+    
 
     @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Mobile Number']")
     public MobileElement assertMobileNumberText;
@@ -1084,13 +1109,20 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement assertEnabledSubmitBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'OTP is sent to alash')]")
-    public MobileElement assertOTPSentToEmailText;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'OTP is sent to ')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'OTP is sent to alash')]"),
+})
+public WebElement assertOTPSentToEmailText;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'One Time Password')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'One Time Password')]"),
+})
+public WebElement assertOTPHeader;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'One Time Password')]")
-    public MobileElement assertOTPHeader;
-
+   
 
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'it is valid for 30 minutes')]")
     public MobileElement assertOTPValidFor30Min;

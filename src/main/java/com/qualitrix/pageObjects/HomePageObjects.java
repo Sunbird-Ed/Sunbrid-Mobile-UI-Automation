@@ -112,7 +112,9 @@ public MobileElement ReportMenu;
         @AndroidBy(xpath = "//android.view.View[@text='profile']"),
             @AndroidBy(xpath = "//android.view.View[@text='profile Profile']"),
             @AndroidBy(xpath = "//android.view.View[@text='profile Profile ']"),
-            @AndroidBy(xpath = "//*[contains(@text,'profile Profile')]")
+            @AndroidBy(xpath = "//*[contains(@text,'profile Profile')]"),
+        @AndroidBy(xpath = "//android.widget.Image[@text='profile']")
+
     })
     public MobileElement profilePageTab;
 

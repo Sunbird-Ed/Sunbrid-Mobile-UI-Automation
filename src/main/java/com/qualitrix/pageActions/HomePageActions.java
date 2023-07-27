@@ -6915,7 +6915,8 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
     public void verifyPrefilledStateAndDistrictPostUpdatingNameAndDOBInRegistrationPage() throws Exception {
         QXClient.get().gestures().BlindWait(4000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.newGmailUserID1);
+        QXClient.get().gestures().scrollToMobileElement(profilePageObjects.newGmailUserID1,"7");
+        profilePageObjects.newGmailUserID1.click();
         QXClient.get().report().info("clicked on new gmailId 1");
         QXClient.get().gestures().BlindWait(9000);
 

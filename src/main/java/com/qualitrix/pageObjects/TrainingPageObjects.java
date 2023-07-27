@@ -337,10 +337,12 @@ public MobileElement BookSearch;
 })
 public MobileElement largeVideoContent;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text=' PLAY']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COLLECTION QS')]"),
+})
+public MobileElement contentPlaylistQS;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COLLECTION QS')]")
-    public MobileElement contentPlaylistQS;
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK digi book-question set')]")
@@ -583,7 +585,12 @@ public MobileElement exitButton;
 @AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
 public MobileElement closeRatingIcon;
 
-@AndroidFindBy(xpath = "//android.view.View[@text='You just completed']")
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='You just completed']"),
+    @AndroidBy(xpath = "//android.view.View[@text='You just completed']"),
+})
 public MobileElement contentCompletedText;
 
 @AndroidFindBy(xpath = "//android.view.View[@text='Replay']")
