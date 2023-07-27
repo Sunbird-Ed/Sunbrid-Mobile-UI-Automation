@@ -951,13 +951,25 @@ public class Profile {
         getHomePageActions().tapOnProfileTab();
 
         getProfileEditPageActions().verifyEditAll5LocationFields();
+        QXClient.get().gestures().BlindWait(4000);
+        DikshaMainPageActions d=new DikshaMainPageActions();
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
+        QXClient.get().gestures().BlindWait(4000);
 
         getHomePageActions().tapOnProfileTab();
-
+        QXClient.get().gestures().BlindWait(4000);
         getProfileEditPageActions().verifyProfileAfterEditing();
 
         getProfileEditPageActions().recheckLocationDetailsEditableInProfile();
+        QXClient.get().gestures().BlindWait(4000);
 
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
+        QXClient.get().gestures().BlindWait(4000);
+
+        
+        
         getHomePageActions().tapOnProfileTab();
 
         getProfileEditPageActions().recheckProfileAfterEditing();

@@ -707,13 +707,20 @@ public MobileElement assertEmailAddressToSendOTP;
     public MobileElement assertStateKarnatakBoard;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Test']")
-    public MobileElement assertUserNameInProfile;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Stag67']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Test']"),
+})
+public MobileElement assertUserNameInProfile;
+   
+    
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='stag67_1quf']"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'test')]"),
+})
+public MobileElement assertDikshaIDInProfile;
 
-
-
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'test')]")
-    public MobileElement assertDikshaIDInProfile;
 
 
 

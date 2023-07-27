@@ -514,6 +514,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[@text='Please provide the following details']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Please provide the following details'][@class='android.view.View'][1]"),
 			@AndroidBy(xpath = "//android.view.View[@text='Please provide the following details']//following::android.view.View[1]"),
 	})
@@ -559,20 +560,28 @@ public MobileElement assertStartLearning;
 	})
 	public MobileElement selectMobileNoEditField;
 
+	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[@text='Enter a valid 10 digit mobile number']"),
+		@AndroidBy(xpath = "//android.view.View[@text='Enter a valid mobile number']")
+})
+public MobileElement assertInvalidMobileNoErrorMsg;
 
-	@AndroidFindBy(xpath = "//android.view.View[@text='Enter a valid mobile number']")
-	public MobileElement assertInvalidMobileNoErrorMsg;
 
 
+	
 	@AndroidFindAll({
 			@AndroidBy(xpath = "(//android.widget.EditText)[3]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Email address')]//following::android.widget.EditText"),
 	})
 	public MobileElement selectEmailEditField;
 
-
-	@AndroidFindBy(xpath = "//android.view.View[@text='Enter a valid email address']")
-	public MobileElement assertInvalidEmailErrorMsg;
+	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[@text='Enter a valid email address']"),
+		@AndroidBy(xpath = "//android.view.View[@text='Enter a valid email address']")
+})
+public MobileElement assertInvalidEmailErrorMsg;
+	
+	
 
 
 	@AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")

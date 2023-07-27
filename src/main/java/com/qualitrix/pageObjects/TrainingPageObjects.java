@@ -1644,10 +1644,14 @@ public MobileElement assertH5PCollectionTitle;
     public MobileElement assertCheckBoxInPopup;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no')]")
-    public MobileElement assertNumberOfAttemptsText;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Attempt no 1/3']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no')]"),
+})
+public MobileElement assertNumberOfAttemptsText;
 
+    
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Start')]")
     public MobileElement startLearningBtn;

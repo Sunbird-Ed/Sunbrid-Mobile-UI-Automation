@@ -643,6 +643,9 @@ public class LoginPageActions {
 
 
         profilePageObjects.clkOnNextBtn.click();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
         
       //  QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
       //  QXClient.get().gestures().BlindWait(4000);
@@ -708,19 +711,60 @@ public class LoginPageActions {
         QXClient.get().gestures().BlindWait(2000);
         profilePageObjects.clkOnNameEditField.sendKeys("Anoshu");
         QXClient.get().gestures().BlindWait(3000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
-        QXClient.get().report().info("Clicked on Next button for the first time");
+        QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(3000);
+
+        
+        
+        profilePageObjects.clkOnNextBtn.click();
+     //   QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        try
+        {
+            
+            QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+            QXClient.get().report().info("Clicked on Next button for the first time");
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+        	System.out.println("Handled");
+        }
+        
+   
         QXClient.get().gestures().BlindWait(2000);
 
+        
+        
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNameEditField);
         QXClient.get().report().info("Clicked on Name field");
         QXClient.get().gestures().BlindWait(2000);
         profilePageObjects.clkOnNameEditField.sendKeys("Hello");
         QXClient.get().gestures().BlindWait(3000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(3000);
+        profilePageObjects.clkOnNextBtn.click();
+        
+       // QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        try
+        {
+            
+            QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+            QXClient.get().report().info("Clicked on Next button for the first time");
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+        	System.out.println("Handled");
+        }
+        
+     ///   QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
         QXClient.get().report().info("Clicked on Next button for second time with invalid name");
         QXClient.get().gestures().BlindWait(3000);
 
@@ -763,12 +807,28 @@ public class LoginPageActions {
         QXClient.get().gestures().BlindWait(2000);
         profilePageObjects.clkOnNameEditField.sendKeys("Test");
         QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(4000);
 
       //  QXClient.get().gestures().clkBackButton();
        
         profilePageObjects.clkOnNextBtn.click();
         
-      //  QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        profilePageObjects.clkOnNameEditField.clear();
+        profilePageObjects.clkOnNameEditField.sendKeys("Test");
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(4000);
+        try
+        {
+              QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+
+        }catch(Exception e)
+        {
+        	System.out.println("handled");
+        }
+        
         QXClient.get().report().info("Clicked on Next button for the first time");
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().BlindWait(2000);

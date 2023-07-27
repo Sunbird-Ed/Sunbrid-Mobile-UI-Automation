@@ -143,6 +143,7 @@ public MobileElement clkStateDropdown;
    
    
    @AndroidFindAll({
+	   @AndroidBy(xpath = "//android.widget.RadioButton[@text='Ananthapuram']"),
            @AndroidBy(xpath = "//android.widget.TextView[@text='Chittoor']"),
 		@AndroidBy(xpath = "//android.view.View[@text='Chittoor']"),
 
@@ -250,12 +251,14 @@ public MobileElement myLearningtext;
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.ListView[@text='Andhra Pradesh, selected ,Select State']"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'State')]//following::android.widget.ListView[1]"),
+        @AndroidBy(xpath = "//android.widget.RadioButton[@text='Andhra Pradesh']"),        
+
 })
 public MobileElement sltStateDropdown;
 
 
     @AndroidFindAll({
-        @AndroidBy(xpath = "//android.widget.ListView[@text='Select District']"),
+       @AndroidBy(xpath = "//android.widget.ListView[@text='Select District']"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'District')]//following::android.widget.ListView[1]"),
 })
 public MobileElement sltDistrictDropdown;
@@ -269,6 +272,7 @@ public MobileElement sltBlockDropdown;
 
 
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.RadioButton[@index='0']"),
         @AndroidBy(xpath = "//android.widget.TextView[@text='SRI POTTI SREERAMULU MPL.']"),
         @AndroidBy(xpath = "//android.widget.TextView[1]"),
 })
@@ -287,26 +291,38 @@ public MobileElement sltFirstTextInDropdown;
 public MobileElement sltSchoolDropdown;
 
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Role: Teacher']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Role')]"),
+})
+public MobileElement assertRoleInProfile;
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='School: MPPS(URDU) AMADAGUR']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'School')]"),
+})
+public MobileElement assertSchoolInProfile;
+   
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath ="//android.widget.TextView[@text='Block: AMADAGUR']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Block')]"),
+})
+public MobileElement assertBlockInProfile;
+    
+  
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='District: Ananthapuram']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'District')]"),
+})
+public MobileElement assertDistrictInProfile;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Role')]")
-    public MobileElement assertRoleInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'School')]")
-    public MobileElement assertSchoolInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Block')]")
-    public MobileElement assertBlockInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District')]")
-    public MobileElement assertDistrictInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State')]")
-    public MobileElement assertStateInProfile;
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='State: Andhra Pradesh']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'State')]"),
+})
+public MobileElement assertStateInProfile;
 
 
 
