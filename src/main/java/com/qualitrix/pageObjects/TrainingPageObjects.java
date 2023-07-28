@@ -766,8 +766,12 @@ public MobileElement courseUnderOthers;
     public MobileElement clkReplayBtn;
 
 
-@AndroidFindBy(xpath = "//android.view.View[@text='This is the last remaining attempt']")
-    public MobileElement assertLastAttemptMsg;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='This is the last remaining attempt']"),
+    @AndroidBy(xpath = "//android.view.View[@text='This is the last remaining attempt']"),
+})
+public MobileElement assertLastAttemptMsg;
 
 
 @AndroidFindBy(xpath = "//android.widget.Button[@text='Continue']")
@@ -1546,12 +1550,21 @@ public MobileElement assertH5PCollectionTitle;
     })
     public MobileElement questionSet4;
 
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Instructions']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Instructions']"),
+})
+public MobileElement assertInstructionsHeaderInInstructionPage;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Instructions']")
-    public MobileElement assertInstructionsHeaderInInstructionPage;
+  
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Instruction']")
-    public MobileElement assertInstructionText;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Instruction'][1]"),
+        @AndroidBy(xpath = "//android.view.View[@text='Instruction']"),
+})
+public MobileElement assertInstructionText;
+
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]")
@@ -1915,14 +1928,23 @@ public MobileElement assertEnrollmentEndedMsg;
     public MobileElement selAnswer;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@resource-id='correctButton']")
-    public MobileElement assertRightMarkInFeedbackPopup;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='View Solution']")
-    public MobileElement assertViewSolInFeedbackPopup;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Image[@text='Correct Answer']"),
+        @AndroidBy(xpath = "//android.view.View[@resource-id='correctButton']"),
+})
+public MobileElement assertRightMarkInFeedbackPopup;
 
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='View Solution']"),
+        @AndroidBy(xpath = "//android.view.View[@text='View Solution']"),
+})
+public MobileElement assertViewSolInFeedbackPopup;
+
+
+    
     @AndroidFindBy(xpath = "//android.view.View[@text='I2']")
     public MobileElement selAnswer1;
 
@@ -2004,8 +2026,12 @@ public MobileElement assertTitleOfQuestionSetInSubmitPage;
     public MobileElement assertWrongAnswerImageInFeedbackPopup;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Try again']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Try again']\"),"),
+            @AndroidBy(xpath = "//android.view.View[@text='Try again']"),
+    })
     public MobileElement assertTryAgainTextInFeedbackPopup;
+    
 
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Questions Answered: 1']")

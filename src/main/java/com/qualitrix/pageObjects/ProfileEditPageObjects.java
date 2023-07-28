@@ -333,13 +333,19 @@ public MobileElement assertStateInProfile;
     public MobileElement clkSubpersonaInProfile;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Welcome')]")
-    public MobileElement assertWelcomeTextOnHomePage;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Welcome')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Welcome')]"),
+})
+public MobileElement assertWelcomeTextOnHomePage;
+  
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Learn, Manage')]")
-    public MobileElement assertLearnManageActHeaderInHomePage;
-
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Learn, Manage and Act']"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Learn, Manage')]"),
+})
+public MobileElement assertLearnManageActHeaderInHomePage;
+   
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='APSTATE']")
     public MobileElement sltStateLocForSubOrg;
