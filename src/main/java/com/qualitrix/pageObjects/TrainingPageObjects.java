@@ -744,6 +744,8 @@ public MobileElement courseUnderOthers;
     public MobileElement canNotEnrollMsg;
 
 @AndroidFindAll({
+	
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Questionset limited attempt']"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'Questionset limited attempt')]"),
         @AndroidBy(xpath = "//android.widget.ListView"),
 })
@@ -764,7 +766,6 @@ public MobileElement courseUnderOthers;
 
 @AndroidFindBy(xpath = "//android.view.View[@text='Replay']")
     public MobileElement clkReplayBtn;
-
 
 
 @AndroidFindAll({
@@ -1463,6 +1464,9 @@ public MobileElement assertH5PCollectionTitle;
     })
     public MobileElement assertPageNoWhileReconsumingInEpubContent;
 
+    
+    
+    
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'question number 1')]")
     public MobileElement assertQuestion1InQuestionset;
 
@@ -1664,7 +1668,7 @@ public MobileElement assertInstructionText;
 })
 public MobileElement assertNumberOfAttemptsText;
 
-    
+   
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Start')]")
     public MobileElement startLearningBtn;
@@ -1867,16 +1871,26 @@ public MobileElement assertEnrollmentEndedMsg;
     public MobileElement assertHighlightedNextBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no 1/3')]")
-    public MobileElement assertFirstAttempt;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Attempt no 1/3']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no 1/3')]"),
+})
+public MobileElement assertFirstAttempt;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Attempt no 2/3']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no 2/3')]"),
+})
+public MobileElement assertSecondAttempt;
+    
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no 2/3')]")
-    public MobileElement assertSecondAttempt;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no 3/3')]")
-    public MobileElement assertThirdAttempt;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Attempt no 3/3']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no 3/3')]"),
+})
+public MobileElement assertThirdAttempt;
+    
 
 
 
@@ -1912,8 +1926,12 @@ public MobileElement assertEnrollmentEndedMsg;
     public MobileElement assertಪಠ್ಯಾಂಶವುನಿಖರವಾಗಿಲ್ಲtext;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Attempt no 1/3')]")
-    public MobileElement assertNumberOfAttempts;
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Attempt no')]"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no 1/3')]"),
+})
+public MobileElement assertNumberOfAttempts;
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'30:00')]")
@@ -1927,9 +1945,9 @@ public MobileElement assertEnrollmentEndedMsg;
     @AndroidFindBy(xpath = "//android.view.View[@text='10-10 metre']")
     public MobileElement selAnswer;
 
+    @AndroidFindBy(xpath = "//android.view.View[@text='I2']")
 
-
-
+ 
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.Image[@text='Correct Answer']"),
         @AndroidBy(xpath = "//android.view.View[@resource-id='correctButton']"),
@@ -1979,16 +1997,26 @@ public MobileElement assertTitleOfQuestionSetInSubmitPage;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Review']")
     public MobileElement assertReviewButton;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='question number 1']"),
+        @AndroidBy(xpath = "//android.view.View[@text='question number 1']"),
+})
+public MobileElement questionNumber1;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='question number 1']")
-    public MobileElement questionNumber1;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='question number 2']"),
+        @AndroidBy(xpath = "//android.view.View[@text='question number 2']"),
+})
+public MobileElement questionNumber2;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='question number 2']")
-    public MobileElement questionNumber2;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='1/6']"),
+        @AndroidBy(xpath = "//android.view.View[@text='1/6']"),
+})
+public MobileElement assertQuestion1;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='1/6']")
-    public MobileElement assertQuestion1;
 
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='2:00']")

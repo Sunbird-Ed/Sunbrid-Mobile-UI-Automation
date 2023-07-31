@@ -2788,25 +2788,53 @@ public class UBScenarioSanity3 {
  * 
  * }
  */ 
-	 @Test()
-	    public void verifyOTPSentToParentOrGuardianMessageForMinorUsersWhileRegistration() throws Exception {
+
+
+	   @Test()
+	    public void verifyCorrectAndIncorrectAnswersWhenShowFeedbackEnabledTrueInSubmitPage() throws Exception {
 
 	        QXClient.get().driver();
-
+	        DikshaMainPageActions d = new DikshaMainPageActions();
 	        getDikshaMainPageActions().performUserOnBoarding();
-
 	        getHomePageActions().tapOnProfileTab();
 
-	        QXClient.get().gestures().swipeUp();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",71, 2);
+	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",72, 2);
+	        String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",113,2);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 
-	        getLoginPageActions().verifyEnterMobileNumberorEmailAddressTextForMinorUser();
+	        getLoginPageActions().loginToTheUser(Username, Password);
+	        d.LaunchAppHomeScreen();
+	        getHomePageActions().tapOnSearchIcon();
+	        getHomePageActions().enterTextInSearchBar(questionSet);
+
+	        getTrainingPageActions().tapOnQuestionSet();
+
+	        getTrainingPageActions().verifyRightMarkAndViewSolutionOptionInFeedbackPopup();
+
+	        getTrainingPageActions().verifyDoneAndCloseButtonsInViewSolutionPage();
+	        QXClient.get().gestures().closeApp();
+	        d.LaunchAppHomeScreen();
+
+	        getHomePageActions().tapOnSearchIcon();
+	        getHomePageActions().enterTextInSearchBar(questionSet);
+
+	        getTrainingPageActions().tapOnQuestionSet();
+
+	        getTrainingPageActions().verifyIncorrectAnswerFeedbackDetails();
 
 	    }
-
-
-}
+	
+	 }
 
 
 

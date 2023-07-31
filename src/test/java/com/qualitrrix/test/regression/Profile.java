@@ -255,12 +255,12 @@ public class Profile {
 	    }
 
 	
-	 @Test()
+	  @Test()
 	    public void validateUpdatedDeclarationInSubmitDetails () throws Exception {
 	        QXClient.get().driver();
 	        getDikshaMainPageActions().performUserOnBoarding();
 	        getHomePageActions().tapOnProfileTab();
-
+	        DikshaMainPageActions d = new DikshaMainPageActions();
 
 	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
 	        System.out.println("@name:" +
@@ -274,8 +274,14 @@ public class Profile {
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 	        getLoginPageActions().loginToTheUser(Username, Password);
+	        QXClient.get().gestures().BlindWait(2000);
 
+	        QXClient.get().gestures().closeApp();
+	        d.LaunchAppHomeScreen();
+	        QXClient.get().gestures().BlindWait(5000);
+	       
 	        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().gestures().BlindWait(4000);
 
 	        getProfileEditPageActions().verifyUpdateConsentWithDifferentOrganization();
 

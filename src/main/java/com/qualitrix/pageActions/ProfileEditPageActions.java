@@ -877,8 +877,10 @@ public class ProfileEditPageActions  {
     }
 
     public void verifyUpdateConsentWithDifferentOrganization() throws Exception {
-        QXClient.get().gestures().BlindWait(7000);
+        QXClient.get().gestures().BlindWait(4000);
         QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
         QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilepageobj.clkOnUpdate);

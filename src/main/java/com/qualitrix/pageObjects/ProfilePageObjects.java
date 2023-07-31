@@ -496,13 +496,13 @@ public MobileElement clkAdd;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+            //@AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
     })
 
     public MobileElement clkOnSubmitBtn;
 
-
+    
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Select Medium')]")
     public MobileElement clkOnMedium;
 
@@ -547,9 +547,11 @@ public MobileElement clkAdd;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'yopmail.com')]//following-sibling::android.view.View[1]"),
-            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Update')]"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Update']"),
+            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Update')]"),
+
+          //  @AndroidBy(xpath = "//android.view.View[contains(@text,'yopmail.com')]//following-sibling::android.view.View[1]"),
+
     })
     public MobileElement clkOnUpdate;
 
@@ -567,18 +569,28 @@ public MobileElement clkAdd;
     })
     public MobileElement clkStatePunjabOrg;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='I wish to share my data with State (Punjab)']"),
+        @AndroidBy(xpath = "//android.view.View[@text='I wish to share my data with State (Punjab)']"),
+})
+public MobileElement assertConsentWithPunjabOrg;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='I wish to share my data with State (Punjab)']")
-    public MobileElement assertConsentWithPunjabOrg;
+  
 
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.RadioButton[@text='Mizoram']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Andra']"),
          @AndroidBy(xpath = "//android.widget.TextView[@text='Andra Pradesh']"),
          @AndroidBy(xpath = "//android.view.View[@text='Andra Pradesh']")
     })
     public MobileElement clkOnAndraOrg;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[@text='I wish to share my data with Andra Pradesh']")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='I wish to share my data with mizoram']"),
+        @AndroidBy(xpath = "//android.view.View[@text='I wish to share my data with mizoram']"),
+        @AndroidBy(xpath = "//android.view.View[@text='I wish to share my data with Andra Pradesh']"),
+                })
+    
     public MobileElement assertConsentWithAndraOrg;
 
 
