@@ -1553,16 +1553,41 @@ public MobileElement tagsField;
     	     
       @AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
       public MobileElement certificateIcon;
-      @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
-      public MobileElement clkAllowIcon;
+      
+      
+  
+      
+      @AndroidFindAll({
+    	  @AndroidBy(xpath = "//android.widget.Button[@text='ALLOW']"),
+    	  @AndroidBy(xpath = "//android.widget.Button[@text='Allow']"),
+  })
+  public MobileElement clkAllowIcon;
+
+      
       @AndroidFindBy(xpath = "//android.widget.Button[@text='Download Download']")
       public MobileElement clkDownloadBtn;
-      @AndroidFindBy(xpath = "//android.view.View[@text='PDF']")
-      public MobileElement assertPdfCertificate;
+      
+      
+ 
+      @AndroidFindAll({
+    	  @AndroidBy(xpath = "//android.widget.TextView[@text='PDF']"),
+    	  @AndroidBy(xpath = "//android.view.View[@text='PDF']"),
+  })
+  public MobileElement assertPdfCertificate;
+
+      
+      
       @AndroidFindBy(xpath = "//android.view.View[@text='PNG']")
       public MobileElement assertPngCertificate;
-      @AndroidFindBy(xpath = "//android.view.View[@text='Certificate is getting downloaded']")
-      public MobileElement assertToastMessage;
+      
+      @AndroidFindAll({
+    	  @AndroidBy(xpath = "//android.widget.TextView[@text='Certificate is getting downloaded']"),
+    	  @AndroidBy(xpath = "//android.view.View[@text='Certificate is getting downloaded']"),
+  })
+  public MobileElement assertToastMessage;
+
+      
+      
       @AndroidFindBy(xpath = "//android.widget.Button[@text='menu']")
       public MobileElement assertHamburgerMenu;
       @AndroidFindBy(xpath = "//android.widget.Button[@text='settings']")

@@ -221,6 +221,7 @@ public MobileElement assertStartLearning;
 	   
 	   
 	   @AndroidFindAll({
+		   @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Ongoing')]"),
 			   @AndroidBy(xpath = "//android.view.View[contains(@text,'Ongoing')]"),
 			   @AndroidBy(xpath = "//android.widget.Button[@text='Refresh']//following::android.view.View"),
 			   @AndroidBy(xpath= "//android.widget.Image[@text='refresh circle']//following::android.view.View"),
@@ -634,9 +635,13 @@ public MobileElement assertInvalidEmailErrorMsg;
 	public MobileElement assertPrivacyPolicy;
 
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Content Policy']")
-	public MobileElement assertContentPolicy;
 
+
+	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.view.View[@content-desc='Content Policy']"),
+		@AndroidBy(xpath = "//android.widget.TextView[@text='Content Policy']")
+})
+public MobileElement assertContentPolicy;
 
 	@AndroidFindBy(xpath = "//android.view.View[@text='Privacy Policy of DIKSHA']")
 	public MobileElement assertPrivacyPolicyOfDiksha;

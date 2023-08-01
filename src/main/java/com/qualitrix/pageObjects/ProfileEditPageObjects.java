@@ -412,6 +412,7 @@ public MobileElement assertLearnManageActHeaderInHomePage;
   
 
     @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Stag')]"),
         @AndroidBy(xpath = "//android.widget.TextView[@text='Stag67']"),
         @AndroidBy(xpath = "//android.view.View[@text='Test']"),
       })
@@ -419,17 +420,16 @@ public MobileElement assertLearnManageActHeaderInHomePage;
     
 
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Sunbird')]"),
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'User ID')]"),
+     })
+   public MobileElement assertUserIDTextBelowUsername;
 
-
-
-
-
-
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'User ID')]")
-    public MobileElement assertUserIDTextBelowUsername;
 
 
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Stag')]"),
         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Diksha')]"),
         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'ID:')]"),
       })
@@ -439,6 +439,7 @@ public MobileElement assertLearnManageActHeaderInHomePage;
 
 
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'stag')]"),
         @AndroidBy(xpath = "//android.widget.TextView[@text='stag67_1quf']"),
         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'test')]"),
       })
@@ -510,13 +511,21 @@ public MobileElement assertLearnManageActHeaderInHomePage;
    })
     public MobileElement validateBtn;
 
+   
+   @AndroidFindAll({
+	   @AndroidBy(xpath = "//android.widget.TextView[@text='Verify Mobile Number']"),
+	   @AndroidBy(xpath = "//android.view.View[@text='Verify Mobile Number']"),
+})
+public MobileElement assertVerifyMobileNumberText;
 
-   @AndroidFindBy(xpath = "//android.view.View[@text='Verify Mobile Number']")
-    public MobileElement assertVerifyMobileNumberText;
+ 
+   @AndroidFindAll({
+	   @AndroidBy(xpath = "//android.widget.TextView[@text='You will receive an SMS with the OTP for mobile number verification']"),
+	   @AndroidBy(xpath = "//android.view.View[@text='You will receive an SMS with the OTP for mobile number verification']"),
+})
+public MobileElement assertReceiveSMSText;
 
 
-   @AndroidFindBy(xpath = "//android.view.View[@text='You will receive an SMS with the OTP for mobile number verification']")
-    public MobileElement assertReceiveSMSText;
 
 
    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Enter OTP']")
@@ -534,13 +543,19 @@ public MobileElement assertLearnManageActHeaderInHomePage;
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='declared-email']")
     public MobileElement EmailEditField;
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Validate your email address']'"),
+    	@AndroidBy(xpath = "//android.view.View[@text='Verify Email Address']"),
+ })
+ public MobileElement assertVerifyEmailAddressText;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Verify Email Address']")
-    public MobileElement assertVerifyEmailAddressText;
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='You will receive an email with the OTP for email address verification']"),
+    	@AndroidBy(xpath = "//android.view.View[@text='You will receive an email with the OTP for email address verification']"),
+ })
+ public MobileElement assertReceiveEmailWithOTPText;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='You will receive an email with the OTP for email address verification']")
-    public MobileElement assertReceiveEmailWithOTPText;
 
 }
   

@@ -83,7 +83,7 @@ public class CourseConsumption {
 		getLoginPageActions().loginToTheUser(Username, Password);
 		QXClient.get().gestures().closeApp();
 		d.LaunchAppHomeScreen();
-		getHomePageActions().tapOnDownloadTab();
+	//	getHomePageActions().tapOnDownloadTab();
 		getHomePageActions().tapOnProfileTab();
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();

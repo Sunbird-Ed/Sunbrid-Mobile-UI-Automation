@@ -430,10 +430,13 @@ public MobileElement clkAdd;
     public MobileElement clkOnLocationEditImage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Choose content preferences']")
-    public MobileElement assertChooseContentPreferencesLabel;
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Choose content preferences']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Choose content preferences']"),
+})
 
+public MobileElement assertChooseContentPreferencesLabel;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Profile details']")
     public MobileElement assertProfileDetailsLabel;
@@ -720,6 +723,7 @@ public MobileElement assertEmailAddressToSendOTP;
 
 
     @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Stag')]"),
         @AndroidBy(xpath = "//android.widget.TextView[@text='Stag67']"),
         @AndroidBy(xpath = "//android.view.View[@text='Test']"),
 })
@@ -728,6 +732,7 @@ public MobileElement assertUserNameInProfile;
     
   
     @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'stag')]"),
         @AndroidBy(xpath = "//android.widget.TextView[@text='stag67_1quf']"),
         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'test')]"),
 })
@@ -740,21 +745,30 @@ public MobileElement assertDikshaIDInProfile;
     public MobileElement clkRefreshBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Learner passbook')]")
-    public MobileElement assertLearnerPassbooksectionInProfile;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Learner passbook')]//following::android.widget.Button[@text='eye Certificate'][1]")
-    public MobileElement assertCertificateUnderLearnerPassbooksection;
-
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,\"Learner passbook\")]"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Learner passbook')]"),
+})
+public MobileElement assertLearnerPassbooksectionInProfile;
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.Button[@text=\"eye Certificate\"][2]"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Learner passbook')]//following::android.widget.Button[@text='eye Certificate'][1]"),
+})
+public MobileElement assertCertificateUnderLearnerPassbooksection;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Download Download']")
     public MobileElement assertDownloadBtnPostClickingCertificate;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
-    public MobileElement clkAllowbtn;
 
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.Button[@text='Allow']"),
+    	@AndroidBy(xpath = "//android.widget.Button[@text=\"ALLOW\"]"),
+})
+public MobileElement clkAllowbtn;
 
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.TextView[@text='Invalid Email Address/Mobile number or password. Please try again with valid credentials']"),

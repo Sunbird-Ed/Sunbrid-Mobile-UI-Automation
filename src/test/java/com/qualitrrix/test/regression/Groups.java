@@ -80,8 +80,8 @@ public class Groups {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 
@@ -113,11 +113,12 @@ public class Groups {
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 67, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 68, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 
 		getLoginPageActions().loginToTheUser(Username, Password);
 
+		QXClient.get().gestures().closeappandrelaunchapp();
 		// getHomePageActions().tapOnDownloadTab();
 		getHomePageActions().tapOnMenuBar();
 
@@ -125,6 +126,7 @@ public class Groups {
 		getCoursePageActions().clickFirstUser();
 		getCoursePageActions().tapOnChangeUser();
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		// getHomePageActions().tapOnTrainingTab();
 		getHomePageActions().tapOnMenuBar();
@@ -154,10 +156,11 @@ public class Groups {
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 67, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 68, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 
 		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		// getHomePageActions().tapOnDownloadTab();
 		getHomePageActions().tapOnMenuBar();
@@ -166,6 +169,7 @@ public class Groups {
 		getCoursePageActions().clickFirstUser();
 		getCoursePageActions().tapOnChangeUser();
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		// getHomePageActions().tapOnTrainingTab();
 		getHomePageActions().tapOnMenuBar();
@@ -191,15 +195,15 @@ public class Groups {
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();
 
 		getLoginPageActions().loginToTheUser(Username, Password);
 
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
 		getHomePageActions().tapOnDownloadTab();
 
 		getHomePageActions().tapOnMenuBar();
@@ -226,12 +230,13 @@ public class Groups {
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 55, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 56, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();
 
 		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		getHomePageActions().tapOnMenuBar();
 
@@ -258,10 +263,11 @@ public class Groups {
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 67, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 68, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 
 		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		// getHomePageActions().tapOnDownloadTab();
 		getHomePageActions().tapOnMenuBar();
@@ -270,6 +276,7 @@ public class Groups {
 		getCoursePageActions().clickFirstUser();
 		getCoursePageActions().tapOnChangeUser();
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		// getHomePageActions().tapOnTrainingTab();
 		getHomePageActions().tapOnMenuBar();
@@ -299,10 +306,11 @@ public class Groups {
 	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 67, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 68, 2);
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 
 	        getLoginPageActions().loginToTheUser(Username, Password);
+			QXClient.get().gestures().closeappandrelaunchapp();
 
 	        //getHomePageActions().tapOnDownloadTab();
 	        getHomePageActions().tapOnMenuBar();
@@ -310,6 +318,7 @@ public class Groups {
 	        getCoursePageActions().clickFirstUser();
 	        getCoursePageActions().tapOnChangeUser();
 	        getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+			QXClient.get().gestures().closeappandrelaunchapp();
 
 	        //getHomePageActions().tapOnTrainingTab();
 	        getHomePageActions().tapOnMenuBar();
@@ -336,15 +345,15 @@ public class Groups {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 
 	        getLoginPageActions().loginToTheUser(Username,Password);
 
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 	        getHomePageActions().tapOnDownloadTab();
 
 	        getHomePageActions().tapOnMenuBar();
@@ -373,10 +382,11 @@ public class Groups {
         String fetchExcelPathFromConfig = properties.getProperty("excelpath");
         QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 67, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 68, 2);
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 
         getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
         //getHomePageActions().tapOnDownloadTab();
         getHomePageActions().tapOnMenuBar();
@@ -384,6 +394,7 @@ public class Groups {
         getCoursePageActions().clickFirstUser();
         getCoursePageActions().tapOnChangeUserWithoutProfile();
         getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		QXClient.get().gestures().closeappandrelaunchapp();
 
         //getHomePageActions().tapOnTrainingTab();
         getHomePageActions().tapOnMenuBar();
@@ -413,15 +424,15 @@ public class Groups {
         String fetchExcelPathFromConfig=properties.getProperty("excelpath");
         QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
+        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2);
+        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().swipeUp();
 
         getLoginPageActions().loginToTheUser(Username,Password);
 
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
@@ -448,15 +459,15 @@ public class Groups {
         String fetchExcelPathFromConfig=properties.getProperty("excelpath");
         QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
+        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2);
+        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().swipeUp();
 
         getLoginPageActions().loginToTheUser(Username,Password);
 
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
@@ -482,15 +493,15 @@ public class Groups {
 	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 
 	        getLoginPageActions().loginToTheUser(Username, Password);
 
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 	        getHomePageActions().tapOnDownloadTab();
 
 	        getHomePageActions().tapOnMenuBar();
@@ -513,15 +524,15 @@ public class Groups {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2); 
-			  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);	  
+			  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2); 
+			  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);	  
 			  QXClient.get().gestures().swipeUp();
 			  QXClient.get().gestures().swipeUp();
 
 		  getLoginPageActions().loginToTheUser(Username,Password);
 		
-		  QXClient.get().gestures().closeApp();  
-	      d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 		  getHomePageActions().tapOnDownloadTab();
 
 		  getHomePageActions().tapOnMenuBar();
@@ -554,13 +565,13 @@ public class Groups {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",55,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",56,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 
 	        getLoginPageActions().loginToTheUser(Username,Password);
-	        d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
 	        getHomePageActions().tapOnMenuBar();
 	        getHomePageActions().verifyGeneralDiscussionTopics();
 
@@ -582,17 +593,16 @@ public class Groups {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2); 
-			  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);	  
+			  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2); 
+			  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);	  
 			  String MemberIDValue =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",38,2);	  
 
 			  QXClient.get().gestures().swipeUp();
 			  QXClient.get().gestures().swipeUp();
 
 		  getLoginPageActions().loginToTheUser(Username,Password);
-		  DikshaMainPageActions d=new DikshaMainPageActions();
-		  QXClient.get().gestures().closeApp();  
-		    d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 			  getHomePageActions().tapOnDownloadTab();
 
 		  getHomePageActions().tapOnMenuBar();
@@ -616,13 +626,14 @@ public class Groups {
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 45, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 46, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",128, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129, 2);
 
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();
 
 		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		getHomePageActions().tapOnDownloadTab();
 
@@ -690,10 +701,7 @@ public class Groups {
 		QXClient.get().gestures().swipeUp();
 
 		getLoginPageActions().loginToTheUser(Username, Password);
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
-		//getHomePageActions().tapOnDownloadTab();
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		getHomePageActions().tapOnMenuBar();
 
@@ -725,6 +733,7 @@ public class Groups {
 		QXClient.get().gestures().swipeUp();
 
 		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
 		getHomePageActions().tapOnMenuBar();
 
@@ -753,6 +762,7 @@ public class Groups {
 	        QXClient.get().gestures().swipeUp();
 
 	        getLoginPageActions().loginToTheUser(Username, Password);
+			QXClient.get().gestures().closeappandrelaunchapp();
 
 	        //getHomePageActions().tapOnDownloadTab();
 
@@ -811,9 +821,8 @@ public class Groups {
 		  QXClient.get().gestures().swipeUp();
 
 	  getLoginPageActions().loginToTheUser(Username,Password);
-	  DikshaMainPageActions d=new DikshaMainPageActions();
-	  QXClient.get().gestures().closeApp();  
-	    d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
 		  getHomePageActions().tapOnDownloadTab();
 
 	  getHomePageActions().tapOnMenuBar();
@@ -840,6 +849,8 @@ public class Groups {
 		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 46, 2);
 
 		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
+
 		getHomePageActions().tapOnMenuBar();
 
 		getHomePageActions().viewOptionActivityDashBoardOnActivityLevel();
@@ -954,6 +965,7 @@ public class Groups {
 	        QXClient.get().gestures().swipeUp();
 
 	        getLoginPageActions().loginToTheUser(Username,Password);
+			QXClient.get().gestures().closeappandrelaunchapp();
 
 	        getHomePageActions().tapOnMenuBar();
 
@@ -963,12 +975,14 @@ public class Groups {
 
 	        getHomePageActions().clkBackbuttontoExitFromGroups();
 
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 	        getHomePageActions().tapOnMenuBar();
 
 	        getHomePageActions().userLogout();
 
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 
 	        getHomePageActions().tapOnProfileTab();
 
@@ -1007,7 +1021,7 @@ public class Groups {
 		QXClient.get().gestures().swipeUp();
 
 		getLoginPageActions().loginToTheUser(Username, Password);
-		d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
 		getHomePageActions().tapOnMenuBar();
 
 		getHomePageActions().addActivityInGroupAndRemoveActivityInGroup();
@@ -1015,9 +1029,8 @@ public class Groups {
 		getHomePageActions().tapOnMenuBar();
 
 		getHomePageActions().userLogout();
+		QXClient.get().gestures().closeappandrelaunchapp();
 
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
 
 		getHomePageActions().tapOnProfileTab();
 
@@ -1061,8 +1074,8 @@ public class Groups {
         QXClient.get().gestures().swipeUp();
 
         getLoginPageActions().loginToTheUser(Username, Password);
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
         getHomePageActions().tapOnDownloadTab();
 
         getHomePageActions().tapOnMenuBar();
@@ -1112,6 +1125,7 @@ public class Groups {
 	        QXClient.get().gestures().swipeUp();
 
 	        getLoginPageActions().loginToTheUser(Username,Password);
+			QXClient.get().gestures().closeappandrelaunchapp();
 
 	        getHomePageActions().tapOnMenuBar();
 
@@ -1124,13 +1138,13 @@ public class Groups {
 	        getHomePageActions().clkBackbuttontoExitFromGroups();
 
 	        getHomePageActions().verifyNoNotificationReceivedByGroupCreatorPostMemberRemovedFromGroup();
+			QXClient.get().gestures().closeappandrelaunchapp();
 
 	        getHomePageActions().tapOnMenuBar();
 
 	        getHomePageActions().userLogout();
+			QXClient.get().gestures().closeappandrelaunchapp();
 
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
 
 	        getHomePageActions().tapOnProfileTab();
 
@@ -1172,9 +1186,8 @@ public class Groups {
 	        QXClient.get().gestures().swipeUp();
 
 	        getLoginPageActions().loginToTheUser(Username,Password);
-	        DikshaMainPageActions d=new DikshaMainPageActions();
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 	        getHomePageActions().tapOnDownloadTab();
 
 	        getHomePageActions().tapOnMenuBar();
@@ -1186,8 +1199,8 @@ public class Groups {
 	        getHomePageActions().enterTextInSearchBar("AutoSmallCourseWithCertificate");
 
 	        getHomePageActions().verifyAdminAbleToAddCertificateCourseToGroup();
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
+			QXClient.get().gestures().closeappandrelaunchapp();
+
 	        getHomePageActions().verifyUserAbleToConsumeCertificateCourseFromGroupActivity();
 
 	    }
@@ -1290,9 +1303,8 @@ public void DeleteActivityOfGroup() throws Exception {
 		  QXClient.get().gestures().swipeUp();
 
 	  getLoginPageActions().loginToTheUser(Username,Password);
-	  DikshaMainPageActions d=new DikshaMainPageActions();
-	  QXClient.get().gestures().closeApp();  
-	    d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
 		  getHomePageActions().tapOnDownloadTab();
 
 	  getHomePageActions().tapOnMenuBar();
@@ -1320,9 +1332,8 @@ public void DeleteActivityOfGroup() throws Exception {
 		QXClient.get().gestures().swipeUp();
 
 		getLoginPageActions().loginToTheUser(Username,Password);
-		DikshaMainPageActions d=new DikshaMainPageActions();
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
 		getHomePageActions().tapOnDownloadTab();
 
 		getHomePageActions().tapOnMenuBar();
@@ -1353,9 +1364,8 @@ public void CreateGroup() throws Exception {
 		  QXClient.get().gestures().swipeUp();
 
 	  getLoginPageActions().loginToTheUser(Username,Password);
-	  DikshaMainPageActions d=new DikshaMainPageActions();
-	  QXClient.get().gestures().closeApp();  
-	    d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
 		  getHomePageActions().tapOnDownloadTab();
 
 	  getHomePageActions().tapOnMenuBar();
@@ -1381,8 +1391,8 @@ public void CreateGroup() throws Exception {
 	   QXClient.get().gestures().swipeUp();
 	   QXClient.get().gestures().swipeUp();
 	   getLoginPageActions().loginToTheUser(Username, Password);
-	   QXClient.get().gestures().closeApp();
-	   d.LaunchAppHomeScreen();
+		QXClient.get().gestures().closeappandrelaunchapp();
+
 
 	   getHomePageActions().tapOnMenuBar();
 

@@ -282,4 +282,8 @@ public MobileElement assertSelectBoard;
 @AndroidFindBy(xpath = "//android.widget.Button[@text='SWITCH TO NEW EXPERIENCE']")
     public MobileElement clkOnSwitchToNewExperience;
 
+@AndroidFindBy(xpath ="//android.widget.Button[@text='Allow']")
+public MobileElement clickAllow;
+
+
 }

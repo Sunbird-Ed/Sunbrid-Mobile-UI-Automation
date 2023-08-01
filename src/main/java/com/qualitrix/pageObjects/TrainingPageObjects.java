@@ -1056,9 +1056,12 @@ public MobileElement assertCourseDetails;
     })
     public MobileElement clkOnSubmitBtn;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Course')]")
-    public MobileElement assertCoursesText;
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Course']"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Course')]"),
+})
+public MobileElement assertCoursesText;
+    
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Training')]")
@@ -2034,9 +2037,12 @@ public MobileElement assertQuestion1;
     public List<MobileElement> radioBtns;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='1/2']")
-    public MobileElement assertShowXbarY;
-
+ 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='1/2']"),
+    	@AndroidBy(xpath = "//android.view.View[@text='1/2']"),
+})
+public MobileElement assertShowXbarY;
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'apple')]")
     public MobileElement selAns1;
@@ -2054,9 +2060,12 @@ public MobileElement assertQuestion1;
     public MobileElement assertWrongAnswerImageInFeedbackPopup;
 
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.TextView[@text='Try again']\"),"),
+    @AndroidFindAll({    	 
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Try again']"),
             @AndroidBy(xpath = "//android.view.View[@text='Try again']"),
+         //   @AndroidBy(xpath = "//android.widget.TextView[@text='Try again']\"),"),
+
     })
     public MobileElement assertTryAgainTextInFeedbackPopup;
     

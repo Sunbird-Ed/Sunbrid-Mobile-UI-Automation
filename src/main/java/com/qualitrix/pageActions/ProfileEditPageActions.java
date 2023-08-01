@@ -1024,6 +1024,10 @@ public class ProfileEditPageActions  {
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(2000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertLearnerPassbooksectionInProfile),"Learner passbook section is not displayed in Profile section");
         QXClient.get().report().info("Learner passbook section is displayed in Profile section");

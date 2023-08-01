@@ -26,6 +26,8 @@ import org.testng.Assert;
 
 import com.github.javafaker.Faker;
 import com.qualitrix.client.QXClient;
+import com.qualitrix.pageActions.DikshaMainPageActions;
+import com.qualitrix.pageActions.HomePageActions;
 
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
@@ -392,6 +394,16 @@ public class Gestures {
            BlindWait(5000);
 
       
+    }
+
+    public void closeappandrelaunchapp() throws Exception {
+        QXClient.get().gestures().closeApp();
+        DikshaMainPageActions d = new DikshaMainPageActions();
+        d.LaunchAppHomeScreen();
+        QXClient.get().gestures().BlindWait(5000);
+        HomePageActions home = new HomePageActions();
+        home.tapOnProfileTab();
+        QXClient.get().gestures().BlindWait(2000);
     }
 
 
