@@ -1694,8 +1694,13 @@ public MobileElement assertNumberOfAttemptsText;
     public MobileElement assertQuestionSetTitleInContentPlaylist;
 
 
-    @AndroidFindBy(xpath = "//android.widget.ToggleButton[contains(@text,'Question new Image')]")
-    public MobileElement clkOnQSContent;
+  
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.ToggleButton[@text='Question new Image Question new']"),
+    	@AndroidBy(xpath = "//android.widget.ToggleButton[contains(@text,'Question new Image')]"),
+})
+public MobileElement clkOnQSContent;;
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'question set title Question new')]")

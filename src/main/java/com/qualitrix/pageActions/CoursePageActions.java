@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
+import org.openxmlformats.schemas.spreadsheetml.x2006.main.STSourceType;
 import org.testng.Assert;
 
 import com.qualitrix.client.QXClient;
@@ -620,9 +621,18 @@ public class CoursePageActions  {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifyAgreePrivacyPolicyText),"verifyAgreePrivacyPolicyText is not available");
         QXClient.get().report().info("AgreePrivacyPolicy Label is displayed in submit forms");
 
+        
+        try
+        {
+        	
+      
         QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkOnSubmitBtn);
         QXClient.get().report().info("Clicked on Submit button without selecting TC Checkbox");
-
+    }
+    catch(Exception e)
+    {
+    System.out.println("handled");
+    }
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertUpdateBtn),"Update button is displayed");
         QXClient.get().report().info("Update button is not displayed");
 

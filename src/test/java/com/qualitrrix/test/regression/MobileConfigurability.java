@@ -948,7 +948,18 @@ public class MobileConfigurability {
 	    public void UserAbleToSeeMoreBooks() throws Exception {
 	        QXClient.get().driver();
 	        getDikshaMainPageActions().performUserOnBoarding();
-
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        
 	        getLibraryPageActions().verifyClassAndSeeMoreBooks();
 
 	    }

@@ -111,8 +111,6 @@ public class DikshaMainPageActions  {
               QXClient.get().gestures().BlindWait(3000);
                 
               
-              
-              
              dikshaMainObjects.clickContinue.click();
 
            //   QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);

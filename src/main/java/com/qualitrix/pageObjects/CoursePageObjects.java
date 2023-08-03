@@ -17,7 +17,11 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
  */
 public class CoursePageObjects {
 
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.view.View[@text='Ongoing']"),
+	@AndroidFindAll({ 
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Ongoing')]"),
+
+		@AndroidBy(xpath = "//android.view.View[@text='Ongoing']"),
+		
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Ongoing')]")
 	})
 	public MobileElement ongoingCourse;
@@ -42,10 +46,13 @@ public MobileElement assertStartLearning;
 	public MobileElement viewMore;
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Completed')]"),
 			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Small AutomationCourseContent')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Completed ')]"),
 	})
 	public MobileElement completedCourse;
+	
+	
 
 	@AndroidFindAll({ @AndroidBy(xpath = "//android.view.View[contains(@text,' successfully completed ')]") })
 	public MobileElement completedMessage;
@@ -125,10 +132,14 @@ public MobileElement assertStartLearning;
 	public MobileElement clickFirstUser;
 	
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
 		@AndroidBy(xpath = "//android.widget.Button[@text='Submit details']"),
 
 	})
 	public MobileElement clkSubmitDetails;
+	
+	
+	
 	
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//android.widget.ListView[@text='Select State/Institution']"),
@@ -243,7 +254,8 @@ public MobileElement assertStartLearning;
 
 	@AndroidFindAll({
 		
-		
+		@AndroidBy(xpath = "//android.widget.Button[contains(@text,'State (Andhra Pradesh) ‎, Board ‎')]"),
+
 		@AndroidBy(xpath = "//*[@resource-id='ion-sel-0']"),
 			@AndroidBy(xpath = "//*[@resource-id='ion-sel-4']"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'State ')][2]"),
@@ -515,6 +527,7 @@ public MobileElement assertStartLearning;
 
 
 	@AndroidFindAll({
+		
 		@AndroidBy(xpath = "//android.widget.TextView[@text='Please provide the following details']"),
 			@AndroidBy(xpath = "//android.view.View[@text='Please provide the following details'][@class='android.view.View'][1]"),
 			@AndroidBy(xpath = "//android.view.View[@text='Please provide the following details']//following::android.view.View[1]"),
@@ -600,7 +613,7 @@ public MobileElement assertInvalidEmailErrorMsg;
 	public MobileElement assertIAmATeacherText;
 
 
-	@AndroidFindBy(xpath = "//android.view.View[@text='My Details']")
+	@AndroidBy(xpath ="//android.widget.TextView[@text='My Details']")
 	public MobileElement assertMyDetailsText;
 
 
@@ -654,7 +667,7 @@ public MobileElement assertContentPolicy;
 	public MobileElement enabledSubmitBtn;
 
 
-	@AndroidFindBy(xpath = "//android.view.View[@text='Thank you for submitting your details']")
+	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Thank you for submitting your details')]")
 	public MobileElement assertThankyouForSubmittingDetails;
 
 

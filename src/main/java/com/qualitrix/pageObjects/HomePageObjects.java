@@ -502,13 +502,12 @@ public MobileElement verifyAddedMemberToGrp;
     public MobileElement verify1Discussions;
 
     @AndroidFindAll({
-        @AndroidBy(xpath = "//android.view.View[@text='1 Posts']"),
-        @AndroidBy(xpath = "//android.view.View[@text='1 posts']"),
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='1 Posts']"),
+    	@AndroidBy(xpath = "//android.view.View[@text='1 posts']"),
 
     })
     public MobileElement verify1Posts;
 
-    
     
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.TextView[@text='0 Posts']"),
@@ -2366,17 +2365,18 @@ public MobileElement tagsField;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Explore Digital Textbook']"),
             @AndroidBy(xpath = "//android.view.View[@text='Browse by Digital Textbook']"),
             @AndroidBy(xpath = "//android.view.View[@text='Explore Digital Textbook']"),
     })
     public MobileElement assertExploreDigitalTextBookText;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore CBSE/NCERT']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore CBSE/NCERT']")
     public MobileElement assertExploreCbseNcertText;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore Courses']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore Courses']")
     public MobileElement assertExploreCoursesUnderTeacher;
 
 
@@ -3017,7 +3017,7 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     public MobileElement clkOnAutomationExpireCourse;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='View and participate in educational programs active in your location and designed for the role you selected']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='View and participate in educational programs active in your location and designed for the role you selected']")
     public MobileElement assertTextInProgramsTile;
 
 
@@ -3258,10 +3258,10 @@ public MobileElement assertRequestContentInLibraryPage;
     })
     public MobileElement ClkDataSync;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Notification']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Notification']")
     public MobileElement assertNotificationText;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='No new notification']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='No new notification']")
     public MobileElement assertNoNewNotificationsMsg;
 
 
@@ -3279,9 +3279,8 @@ public MobileElement assertRequestContentInLibraryPage;
     public MobileElement notificationDeleteImage;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'has been deleted by')]")
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'has been deleted by')]")
     public MobileElement assertGroupDeletedNotificationMsg;
-
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'you have been removed from the')]")
     public MobileElement assertMemberRemovedNotificationMsg;

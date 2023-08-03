@@ -974,7 +974,8 @@ public class Groups {
 	        getHomePageActions().deleteGroup();
 
 	        getHomePageActions().clkBackbuttontoExitFromGroups();
-
+        
+	        
 			QXClient.get().gestures().closeappandrelaunchapp();
 
 	        getHomePageActions().tapOnMenuBar();
