@@ -2879,7 +2879,7 @@ public class CourseConsumption {
 
 		getHomePageActions().tapOnTrainingTab();
 		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar("AutomationContentCourse");
+		getHomePageActions().enterTextInSearchBar("do_2134299665410703361794");
 		QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("AutomationContentCourse");
 
 		getTrainingPageActions().enrollToSameCourseAndVerifyCourseProgressRemainsSame();

@@ -350,11 +350,13 @@ public MobileElement contentPlaylistQS;
 
 
 
+  
+    
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
-    })
-    public MobileElement largeSizeBook;
-
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK largesizetextbook')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
+})
+public MobileElement largeSizeBook;
 
 
     @AndroidFindAll({
@@ -400,8 +402,13 @@ public MobileElement clkFeaturedCourse;
 public MobileElement clkLatestCourse;
 
 
-@AndroidFindBy(xpath = "//android.widget.Image[@text='menu-icon']")
+@AndroidFindAll({
+	@AndroidBy(xpath = "//android.widget.TextView[@text='Leave course']"),
+	@AndroidBy(xpath = "//android.widget.Image[@text='menu-icon']"),
+})
 public MobileElement sltCourseMenuIcon;
+
+
 
 @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Leave')]"),
@@ -1093,6 +1100,7 @@ public MobileElement assertCoursesText;
 
 
     @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.view.View[@text=\"Certificate criteria arrow down\"]"),
             @AndroidBy(xpath = "//android.view.View[@text='Certificate criteriaarrow down']"),
             @AndroidBy(xpath = "//android.view.View[@text='Earn a certificatearrow down']"),
     })
@@ -1105,9 +1113,13 @@ public MobileElement assertCoursesText;
     })
     public MobileElement assertRuleInEarnCertificate;
 
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.view.View[@text=\"Course details\"]"),
+    	@AndroidBy(xpath = "//android.widget.Button[@text='Course details']"),
+})
+public MobileElement clkOnCourseDetails;
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Course details']")
-    public MobileElement clkOnCourseDetails;
 
 
     @AndroidFindAll({
@@ -1637,9 +1649,13 @@ public MobileElement assertInstructionText;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Confirm profile name']")
     public MobileElement assertConfirmProfileNameTextInPopup;
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Stag')]"), 
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Test')]"),
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Test')]")
-    public MobileElement assertProfileNameInPopup;
+})
+public MobileElement assertProfileNameInPopup;
+
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Do not show this message again')]")
     public MobileElement assertDoNotShowThisMsgText;
@@ -1648,12 +1664,18 @@ public MobileElement assertInstructionText;
     public MobileElement editProfileIcon;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Choose content preferences']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Choose content preferences']")
     public MobileElement assertContentPreferencesTextInProfile;
 
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "(//android.widget.EditText"),
+    	@AndroidBy(xpath = "(//android.widget.EditText)[1]"),
 
-    @AndroidFindBy(xpath = "(//android.widget.EditText)[1]")
-    public MobileElement firstEditField;
+})
+public MobileElement firstEditField;
+
+
 
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")

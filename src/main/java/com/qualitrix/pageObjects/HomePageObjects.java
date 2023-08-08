@@ -131,8 +131,7 @@ public MobileElement ReportMenu;
     @AndroidFindAll({
             @AndroidBy(xpath = "//*[@resource-id='tab-button-courses']"),
     @AndroidBy(xpath = "(//android.widget.Image)[2]"),
-        @AndroidBy(xpath = "//android.view.View[@text='courses']"),
-            @AndroidBy(xpath = "//android.view.View[@text='courses Trainings']"),
+        @AndroidBy(xpath = "//android.view.View[@text=clkAllowbtnTrainings']"),
             @AndroidBy(xpath = "//android.view.View[@text='courses Trainings ']"),
             @AndroidBy(xpath = "//*[contains(@text,'courses Trainings')]"),
             @AndroidBy(xpath = "//android.view.View[@text='courses Courses']"),
@@ -1460,14 +1459,14 @@ public MobileElement tagsField;
     	     @AndroidFindBy(xpath = "//android.view.View[@text='Course']")
     	    public MobileElement courseSecInTraining;
     	     
-    	     @AndroidFindBy(xpath = "//android.view.View[@text='English']")
-    	    public MobileElement englishSubject;
+    	     @AndroidBy(xpath = "//android.widget.TextView[@text='English']")
+    	     public MobileElement englishSubject;
     	     
-    	     @AndroidFindBy(xpath = "//android.view.View[@text='Accountancy']")
-    	    public MobileElement accountancySubject;
+    	     @AndroidBy(xpath = "//android.widget.TextView[@text='Accountancy']")
+    	     public MobileElement accountancySubject;
     	     
-    	     @AndroidFindBy(xpath = "//android.view.View[@text='Assamese']")
-    	    public MobileElement assameseSubject;
+    	     @AndroidBy(xpath = "//android.widget.TextView[@text='Assamese']")
+    	     public MobileElement assameseSubject;
     	     
     	     @AndroidFindBy(xpath = "//android.widget.Button[@text='VIEW MORE']")
     	    public MobileElement viewMoreBtn;
@@ -1840,9 +1839,12 @@ public MobileElement tagsField;
          public MobileElement clkActivityDashboard;
 
 
-         @AndroidFindBy(xpath = "//android.view.View[@text='Download as CSV']")
-         public MobileElement downLoadCSVfile;
-
+       
+         @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.TextView[@text='Download as CSV']"),
+             @AndroidBy(xpath = "//android.view.View[@text='Download as CSV']")
+     })
+          public MobileElement downLoadCSVfile;
 
          @AndroidFindBy(xpath = "//android.view.View[@text='Name: activate to sort column descending']")
          public MobileElement nameUnderDashboard;
@@ -1853,6 +1855,7 @@ public MobileElement tagsField;
 
 
          @AndroidFindAll({
+        	 @AndroidBy(xpath = "//android.view.View[contains(@text,'grp')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'Adah')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'Emiliano')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'A1')]"),
@@ -1862,6 +1865,7 @@ public MobileElement tagsField;
 
 
          @AndroidFindAll({
+        	 @AndroidBy(xpath = "//android.view.View[contains(@text,'stag')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'Kraig')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'Joelle')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'Test')]"),
@@ -1871,6 +1875,7 @@ public MobileElement tagsField;
 
 
          @AndroidFindAll({
+        	 @AndroidBy(xpath = "//android.view.View[contains(@text,'0')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'33')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'67')]"),
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'25')]"),
@@ -2813,7 +2818,7 @@ public MobileElement assertSubjectFilter;
     public MobileElement close;
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'Explore Digital Textbook')]"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Browse by Digital Textbook']"),
     })
     public MobileElement assertExplorerPage;
 
@@ -3040,9 +3045,12 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     public MobileElement assertDisabledCreateGroupBtn;
 
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath="//android.widget.TextView[contains(@text,'Last updated')]"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Last updated')]")
+    	})
+    	public MobileElement assertLastUpdatedMsg;
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Last updated')]")
-    public MobileElement assertLastUpdatedMsg;
 
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Copy Cell']")

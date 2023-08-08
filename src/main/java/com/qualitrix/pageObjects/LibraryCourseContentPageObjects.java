@@ -275,7 +275,11 @@ public MobileElement offlineplayCont;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Share with']")
     public MobileElement shareAlertPopUp;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='WhatsApp']")
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'WhatsApp')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='WhatsApp']"),
+                })
     public MobileElement shareToWhatsApp;
 
 

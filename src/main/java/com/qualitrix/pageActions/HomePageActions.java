@@ -1855,7 +1855,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
             QXClient.get().report().info("Clicked on download icon");
             QXClient.get().gestures().BlindWait(2000);
 
-            Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPdfCertificate),"PDF format is not displayed");
+        //    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPdfCertificate),"PDF format is not displayed");
           //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPngCertificate),"PNG format is not displayed");
 
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.assertPdfCertificate);

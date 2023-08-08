@@ -119,7 +119,7 @@ public class QUML {
         QXClient.get().gestures().swipeUp();
 
         getLoginPageActions().loginToTheUser(Username,Password);
-
+        QXClient.get().gestures().closeappandrelaunchapp();
         getHomePageActions().tapOnSearchIcon();
         getHomePageActions().enterTextInSearchBar(QSContentPlaylist);
 
@@ -231,6 +231,7 @@ public class QUML {
         String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
         System.out.println(storeFakeNameEntered);
         getCoursePageActions().tapOnAddUserBtn();
+        QXClient.get().gestures().closeappandrelaunchapp();
         getHomePageActions().tapOnMenuBar();
 
         getCoursePageActions().tapOnMoreOption();
@@ -242,8 +243,7 @@ public class QUML {
         getCoursePageActions().tapOnTermsAndCondition();
 
         getCoursePageActions().tapOnContinueForSwicthUser();
-        d.LaunchAppHomeScreen();
-
+        QXClient.get().gestures().closeappandrelaunchapp();
         getHomePageActions().tapOnTrainingTab();
 
         getHomePageActions().tapOnSearchIcon();
@@ -989,6 +989,8 @@ public class QUML {
 	        String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
 	        System.out.println(storeFakeNameEntered);
 	        getCoursePageActions().tapOnAddUserBtn();
+	        
+	        QXClient.get().gestures().closeappandrelaunchapp();
 	        getHomePageActions().tapOnMenuBar();
 
 	        getCoursePageActions().tapOnMoreOption();
@@ -1001,11 +1003,7 @@ public class QUML {
 
 	        getCoursePageActions().tapOnContinueForSwicthUser();
 
-	        DikshaMainPageActions d=new DikshaMainPageActions();
-
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
-
+	        QXClient.get().gestures().closeappandrelaunchapp();
 	        getHomePageActions().tapOnSearchIcon();
 	        getHomePageActions().enterTextInSearchBar(limitedCourse);
 	        getTrainingPageActions().tapOnQuestionSetCourse();

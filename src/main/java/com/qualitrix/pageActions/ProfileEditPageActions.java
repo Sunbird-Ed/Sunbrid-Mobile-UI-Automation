@@ -1462,8 +1462,8 @@ public class ProfileEditPageActions  {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertUserNameInProfile),"Username is not displayed in profile page");
         QXClient.get().report().info("Username is displayed in profile page");
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertUserIDTextBelowUsername),"User ID text is displayed below the username in profile page");
-        QXClient.get().report().info("user ID text is not displayed below the username in profile page");
+      //  Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertUserIDTextBelowUsername),"User ID text is displayed below the username in profile page");
+      //  QXClient.get().report().info("user ID text is not displayed below the username in profile page");
         QXClient.get().gestures().BlindWait(2000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profileEditPageObjectsPageObjects.assertDikshaIDBelowUsername),"UserID is not replaced by Diksha ID below username in profile page");

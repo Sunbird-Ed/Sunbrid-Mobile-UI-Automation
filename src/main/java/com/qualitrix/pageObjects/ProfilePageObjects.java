@@ -995,29 +995,45 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement assertDistrictIsClearlyDisplayed;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Role: HT & Officials')]")
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Role: HT & Officials')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Role: HT & Officials')]"),
+    })
     public MobileElement assertHeadTeacherRoleInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Sub-role: CRP')]")
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Sub-role')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Sub-role: CRP')]"),
+    })
     public MobileElement assertSubRoleInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State: Andhra Pradesh')]")
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'State: Andhra Pradesh')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'State: Andhra Pradesh')]"),
+    })
     public MobileElement assertAndhraState;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District: ANANTAPUR')]")
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'District: Ananthapuram')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'District: ANANTAPUR')]"),
+    })
     public MobileElement assertAnantapurDistrict;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Block: AGALI')]")
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Block: Agali')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Block: AGALI')]"),
+    })
     public MobileElement assertAgaliBlock;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'School: MPPS HANUMANNAHALLI')]")
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'School: MPPS HANUMANNAHALLI')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'School: MPPS HANUMANNAHALLI')]"),
+    })
     public MobileElement assertHanumannahalliSchool;
-
+   
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Choose content preferences')]")
     public MobileElement locationPopUpHeader;

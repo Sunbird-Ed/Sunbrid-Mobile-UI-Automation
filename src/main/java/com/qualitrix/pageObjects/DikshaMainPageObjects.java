@@ -90,6 +90,7 @@ public MobileElement selectBoard;
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Medium, Medium']"),
             @AndroidBy(xpath = "//android.view.View[@text='Select Medium, Medium']"),
             @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Medium, Medium']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='multiple select']"),
     })
     public MobileElement selectMedium;
 

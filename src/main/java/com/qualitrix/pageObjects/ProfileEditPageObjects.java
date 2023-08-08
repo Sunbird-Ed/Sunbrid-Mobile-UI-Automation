@@ -481,9 +481,13 @@ public MobileElement assertLearnManageActHeaderInHomePage;
     @AndroidFindBy(xpath = "//android.view.View[@text='Enter OTP to edit your contact information']")
     public MobileElement assertEnterOTPtoEditInformationText;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[@text='Enter OTP']")
-    public MobileElement assertEnterOTPText;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Enter OTP']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Enter OTP']")
+})
+public MobileElement assertEnterOTPText;
+    
+    
 
 
     @AndroidFindBy(xpath = "//android.widget.EditText")

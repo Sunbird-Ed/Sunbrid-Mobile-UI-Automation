@@ -162,7 +162,6 @@ public class Groups {
 		getLoginPageActions().loginToTheUser(Username, Password);
 		QXClient.get().gestures().closeappandrelaunchapp();
 
-		// getHomePageActions().tapOnDownloadTab();
 		getHomePageActions().tapOnMenuBar();
 
 		getCoursePageActions().tapOnMoreOption();
@@ -171,7 +170,7 @@ public class Groups {
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
 		QXClient.get().gestures().closeappandrelaunchapp();
 
-		// getHomePageActions().tapOnTrainingTab();
+		
 		getHomePageActions().tapOnMenuBar();
 		getHomePageActions().verifyAdminLinkedGroupInMember();
 
@@ -1082,6 +1081,7 @@ public class Groups {
         getHomePageActions().tapOnMenuBar();
         getHomePageActions().createGrupAndActivity();
         getHomePageActions().addMemberToGroup(MemberIDValue);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
         getHomePageActions().tapOnMenuBar();
 

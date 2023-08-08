@@ -701,7 +701,7 @@ public class TrainingPageActions {
 
     public void leaveCourse() throws Exception {
 
-        QXClient.get().gestures().BlindWait(7000);
+        QXClient.get().gestures().BlindWait(9000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.sltCourseMenuIcon);
         QXClient.get().report().info("Click on CourseMenuIcon");
         QXClient.get().gestures().BlindWait(4000);
