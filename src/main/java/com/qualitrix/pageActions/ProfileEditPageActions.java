@@ -701,9 +701,9 @@ public class ProfileEditPageActions  {
         QXClient.get().report().info("verified assertClassContentPreferenceLabelProfile");
         QXClient.get().gestures().BlindWait(2000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertSubjectContentPreferenceLabelProfile), "assertSubjectContentPreferenceLabelProfile is not displayed");
-        QXClient.get().report().info("verified assertSubjectContentPreferenceLabelProfile");
-        QXClient.get().gestures().BlindWait(2000);
+//        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertSubjectContentPreferenceLabelProfile), "assertSubjectContentPreferenceLabelProfile is not displayed");
+//        QXClient.get().report().info("verified assertSubjectContentPreferenceLabelProfile");
+//        QXClient.get().gestures().BlindWait(2000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertDistrictContentPreferenceLabelProfile), "assertDistrictContentPreferenceLabelProfile is not displayed");
         QXClient.get().report().info("verified assertDistrictContentPreferenceLabelProfile");

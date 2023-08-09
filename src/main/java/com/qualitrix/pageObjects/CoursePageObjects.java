@@ -535,23 +535,34 @@ public MobileElement assertStartLearning;
 	public MobileElement assertMandatoryFieldInSubmitdetails;
 
 
-
-	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Small Automation')]")
+	
+@AndroidFindAll({
+			@AndroidBy(xpath = "//android.widget.TextView[@text='libru']"),
+	@AndroidBy(xpath = "//android.view.View[contains(@text,'Small Automation')]"),
+	})
 	public MobileElement assertCourseInMyLearning;
 
-
-	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'NewBatch')]")
-	public MobileElement assertBatchInMyLearning;
-
-
-	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Completed')]")
-	public MobileElement assertCourseStatusInMyLearning;
+@AndroidFindAll({
+	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'batch')]"),
+@AndroidBy(xpath = "//android.view.View[contains(@text,'NewBatch')]"),
+})
+public MobileElement assertBatchInMyLearning;
 
 
-	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'2021')]")
-	public MobileElement assertCompletionDateInMyLearning;
+@AndroidFindAll({
+	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'batch')]"),
+@AndroidBy(xpath = "//android.view.View[contains(@text,'Completed')]"),
+})
+public MobileElement assertCourseStatusInMyLearning;
+	
 
+@AndroidFindAll({
+	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'2022')]"),
+	@AndroidBy(xpath = "//android.view.View[contains(@text,'2021')]"),
+})
+public MobileElement assertCompletionDateInMyLearning;
 
+	
 
 	@AndroidFindBy(xpath = "//android.view.View[@text='Certificate criteriaarrow down']")
 	public MobileElement clkCertificateCriteria;

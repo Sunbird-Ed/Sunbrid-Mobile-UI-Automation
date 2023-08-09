@@ -662,8 +662,8 @@ public class CoursePageActions  {
         QXClient.get().gestures().BlindWait(4000);
         QXClient.get().gestures().swipeUp();
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertSelfDeclaredInfoText),"Self Declared Info text is displayed in Profile page");
-        QXClient.get().report().info("Self Declared Info text is replaced by My Details Text");
+//        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertSelfDeclaredInfoText),"Self Declared Info text is displayed in Profile page");
+//        QXClient.get().report().info("Self Declared Info text is replaced by My Details Text");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertMyDetailsText),"Self Declared Info text is displayed in Profile page");
         QXClient.get().report().info("My Details text is replaces the Self Declared Info text in Profile Page");

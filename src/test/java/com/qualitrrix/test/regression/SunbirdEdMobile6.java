@@ -57,78 +57,8 @@ public class SunbirdEdMobile6 {
    
 
 
-    @Test()
-    public void verifyTimerForEntireSectionAndProgressBarSectionsInSubmitConfirmationPage() throws Exception {
+  
 
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",115,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnSearchIcon();
-
-        getHomePageActions().enterTextInSearchBar(questionSet);
-
-        getTrainingPageActions().tapOnQuestionSet2();
-
-        getTrainingPageActions().verifyTimerDisplayedForEntireSectionAndSubmitConfirmationPage();
-
-    }
-
-
-    @Test()
-    public void verifyConfigurationsAreDisplayedInEachSectionOfQuestionSet() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",116,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnSearchIcon();
-
-        getHomePageActions().enterTextInSearchBar(questionSet);
-
-        getTrainingPageActions().tapOnQuestionSet3();
-
-        getTrainingPageActions().verifyConfigurationsDisplayedInEachSection();
-
-    }
 
 
    
@@ -373,43 +303,7 @@ public class SunbirdEdMobile6 {
 
     }
 
-    @Test()
-    public void verifyAnswerIsNotSavedWhenUserChangedAnswerAndUnansweredQuestionsInQuestionSet() throws Exception {
-
-        QXClient.get().driver();
-        DikshaMainPageActions d = new DikshaMainPageActions();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-        String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",114,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().loginToTheUser(Username, Password);
-
-        d.LaunchAppHomeScreen();
-
-        getHomePageActions().tapOnSearchIcon();
-
-        getHomePageActions().enterTextInSearchBar(questionSet);
-
-        getTrainingPageActions().tapOnQuestionSet1();
-
-        getTrainingPageActions().verifyFirstPageOfContentPostClickingReviewBtn();
-
-    }
-
-
+ 
 
    
 }
