@@ -2098,19 +2098,19 @@ public MobileElement assertShowXbarY;
     
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Questions Answered: 1']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Questions Answered: 1']")
     public MobileElement assertQuestionsAnswered;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Total Questions: 4']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Total Questions: 4']")
     public MobileElement assertTotalQuestions;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Questions Skipped: 3']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Questions Skipped: 3']")
     public MobileElement assertQuestionsSkipped;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Questions not Viewed: 0']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Questions not Viewed: 0']")
     public MobileElement assertQuestionsNotViewed;
 
 

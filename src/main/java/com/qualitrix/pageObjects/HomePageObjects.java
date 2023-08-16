@@ -1845,6 +1845,8 @@ public MobileElement tagsField;
              @AndroidBy(xpath = "//android.view.View[@text='Download as CSV']")
      })
           public MobileElement downLoadCSVfile;
+         
+         
 
          @AndroidFindBy(xpath = "//android.view.View[@text='Name: activate to sort column descending']")
          public MobileElement nameUnderDashboard;
@@ -1862,7 +1864,6 @@ public MobileElement tagsField;
                  @AndroidBy(xpath = "//android.view.View[contains(@text,'Name')]//following::android.view.View[6]"),
          })
          public MobileElement firstMemberUnderDashboard;
-
 
          @AndroidFindAll({
         	 @AndroidBy(xpath = "//android.view.View[contains(@text,'stag')]"),
@@ -3050,7 +3051,6 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     	@AndroidBy(xpath = "//android.view.View[contains(@text,'Last updated')]")
     	})
     	public MobileElement assertLastUpdatedMsg;
-
 
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Copy Cell']")

@@ -1180,8 +1180,8 @@ public class CourseConsumption {
         String fetchExcelPathFromConfig = properties.getProperty("excelpath");
         QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",134, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",135, 2);
         //String course = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 97, 2);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().swipeUp();

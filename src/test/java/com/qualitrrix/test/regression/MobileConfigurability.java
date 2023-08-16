@@ -922,6 +922,17 @@ public class MobileConfigurability {
 
 	        QXClient.get().driver();
 	        getDikshaMainPageActions().performUserOnBoarding();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+	        
 	        getLibraryPageActions().verifyLetUsKnow();
 
 	    }

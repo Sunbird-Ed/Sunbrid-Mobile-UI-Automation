@@ -28,6 +28,7 @@ public class CoursePageObjects {
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Small AutomationCourseContent')]"),
 			@AndroidBy(xpath = "//android.view.View[@text='AutomationCourseContent']"),
 			@AndroidBy(xpath = "//android.view.View[@text='AutomationCourseForDF']"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Ongoing')]//preceding::android.view.View[2]"),
@@ -640,9 +641,12 @@ public MobileElement assertInvalidEmailErrorMsg;
 	public MobileElement assertCourseModules;
 
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text='st****@yopmail.com']")
-	public MobileElement assertPrefilledEmailAddressInDeclarationForm;
 
+	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.EditText[@text='pr***********@yopmail.com']"),
+		@AndroidBy(xpath = "//android.widget.EditText[@text='st****@yopmail.com']")
+})
+public MobileElement assertPrefilledEmailAddressInDeclarationForm;
 
 	@AndroidFindBy(xpath = "//android.widget.Image[@text='verified']")
 	public MobileElement assertEmailVerifiedImage;
@@ -680,7 +684,6 @@ public MobileElement assertContentPolicy;
 
 	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Thank you for submitting your details')]")
 	public MobileElement assertThankyouForSubmittingDetails;
-
 
 
 

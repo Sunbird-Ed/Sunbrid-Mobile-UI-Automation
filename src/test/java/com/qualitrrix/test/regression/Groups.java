@@ -1336,7 +1336,7 @@ public void DeleteActivityOfGroup() throws Exception {
 		QXClient.get().gestures().closeappandrelaunchapp();
 
 		getHomePageActions().tapOnDownloadTab();
-
+		QXClient.get().gestures().closeappandrelaunchapp();
 		getHomePageActions().tapOnMenuBar();
 
 		getHomePageActions().validateDikshaGroupGuidelines();
