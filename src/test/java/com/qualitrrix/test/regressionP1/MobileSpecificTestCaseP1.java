@@ -1,4 +1,4 @@
-package com.qualitrrix.test.regression;
+package com.qualitrrix.test.regressionP1;
 
 import java.util.Properties;
 
@@ -17,8 +17,8 @@ import com.qualitrix.pageActions.LoginPageActions;
 import com.qualitrix.pageActions.ProfileEditPageActions;
 import com.qualitrix.pageActions.TrainingPageActions;
 
-public class CourseConsumptionP2 {
-	
+public class MobileSpecificTestCaseP1 {
+
 	public DikshaMainPageActions getDikshaMainPageActions() {
 		return new DikshaMainPageActions();
 	}
@@ -65,40 +65,13 @@ public class CourseConsumptionP2 {
 	}
 	
 	
-  
+	 @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "verifyDataSync")
+	    public void verifyUserAbleToShareTelemetryFiles() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
 
+	        getLibraryPageActions().verifyDataSyncs();
 
-   
+	    }
 
-
-
-
-
-   
-
-
-
-
-	
-	
-	
-
-   
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

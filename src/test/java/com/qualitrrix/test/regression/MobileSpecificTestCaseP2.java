@@ -17,7 +17,7 @@ import com.qualitrix.pageActions.LoginPageActions;
 import com.qualitrix.pageActions.ProfileEditPageActions;
 import com.qualitrix.pageActions.TrainingPageActions;
 
-public class MobileSpecificTestCase {
+public class MobileSpecificTestCaseP2 {
 
 	public DikshaMainPageActions getDikshaMainPageActions() {
 		return new DikshaMainPageActions();
@@ -63,93 +63,16 @@ public class MobileSpecificTestCase {
 		// QXClient.get().driver();
 
 	}
-	
-	
-	  @Test()
-	    public void verifyUserAbleToChangePermissions() throws Exception {
+	  @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "verifyDeviceID")
+	    public void verifyDeviceID() throws Exception {
 	        QXClient.get().driver();
 	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
-
-	        getHomePageActions().tapOnMenuBar();
-
-	        getHomePageActions().verifyUserCanChangePermissions();
-
-	        QXClient.get().gestures().clkBackButton();
-
-	        QXClient.get().gestures().clkBackButton();
-
-
-	    }
-	
-	 @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "verifyDataSync")
-	    public void verifyUserAbleToShareTelemetryFiles() throws Exception {
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-
-	        getLibraryPageActions().verifyDataSyncs();
-
-	    }
-
-	
-	 @Test()
-	    public void userAbleToChangeTheAppLanguageInHamburgerMenu() throws Exception {
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
-
-	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-	        String KannadaText =QXClient.get().excelUtils().getCellValue("Excel1","TestData",6,2);
-	        getHomePageActions().tapOnMenuBar();
-
-	        getHomePageActions().tapOnLanguage();
-	        getHomePageActions().tapOnKannadaLanguage();
-
-	        getHomePageActions().tapOnContinueBtnKannada();
-
-	        DikshaMainPageActions d2=new DikshaMainPageActions();
-	        QXClient.get().gestures().closeApp();
-	        d2.LaunchAppHomeScreen();
-	        getHomePageActions().tapOnDownloadTab();
-
-
-	        getHomePageActions().tapOnMenuBar();
-
-	        getHomePageActions().verifyKanndaTextChanged(KannadaText);
-	    }
-
-
-
-	
-    @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "verifyDeviceID")
-    public void verifyDeviceID() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getLibraryPageActions().verifyDeviceIDAndShareDeviceID();
-        getLibraryPageActions().tapOnShareToWhatsApp();
-        getLibraryPageActions().verifyWhatsAppHomePage();
-    }
-
-
-    
-	
-	 @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "ShareDikshaApp")
-	    public void ShareDikshaApp() throws Exception {
-
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getLibraryPageActions().shareDikshaApp();
-	        getLibraryPageActions().tapOnShareBtnFrmSharePop();
+	        getLibraryPageActions().verifyDeviceIDAndShareDeviceID();
 	        getLibraryPageActions().tapOnShareToWhatsApp();
 	        getLibraryPageActions().verifyWhatsAppHomePage();
 	    }
 
 
-	
 
     @Test()
     public void verifyCourseInClassicAndSearchInNewExperience() throws Exception {
@@ -161,9 +84,27 @@ public class MobileSpecificTestCase {
 
 
     }
+    @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "ShareDikshaApp")
+    public void ShareDikshaApp() throws Exception {
 
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getLibraryPageActions().shareDikshaApp();
+        getLibraryPageActions().tapOnShareBtnFrmSharePop();
+        getLibraryPageActions().tapOnShareToWhatsApp();
+        getLibraryPageActions().verifyWhatsAppHomePage();
+    }
    
+	 @Test()
+	    public void verifyDebugModeInSettings() throws Exception {
 
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
+
+	        getHomePageActions().verifyEnableDisableDebugMode();
+
+	    }
 	 @Test()
 	    public void verifyUserAbleToChangeAppLanguageInMenu() throws Exception {
 	        QXClient.get().driver();
@@ -176,18 +117,7 @@ public class MobileSpecificTestCase {
 
 	    }
 	
-    @Test()
-    public void verifyDebugModeInSettings() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        getHomePageActions().verifyEnableDisableDebugMode();
-
-    }
-
-	  @Test()
+	 @Test()
 	    public void verfiyUserAbleToSelectMultipleSubjectsWhileReportAnIssue() throws Exception {
 
 	        QXClient.get().driver();
@@ -201,7 +131,7 @@ public class MobileSpecificTestCase {
 
 	    }
 
-	  @Test()
+	 @Test()
 	    public void validateSolutionForIncorrectProgressFAQ() throws Exception {
 
 	        QXClient.get().driver();
@@ -215,23 +145,6 @@ public class MobileSpecificTestCase {
 	        getHomePageActions().verifyCoursesAndCertificatesSection();
 
 	    }
-	
-	@Test()
-    public void verifyUserAbleToViewFAQquestions() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-        getHomePageActions().tapOnMenuBar();
-
-        getHomePageActions().verifyHelpSection();
-
-    }
-
-
-
-	
 	 @Test()
 	    public void verifyFAQSectionsInClassicAndJoyfulTheme() throws Exception {
 
@@ -294,9 +207,7 @@ public class MobileSpecificTestCase {
 	        getHomePageActions().verifyHelpPageForVideoRelatedCategoryInClassicAndJoyfulTheme();
 
 	    }
-
-	
-	  @Test()
+	 @Test()
 	    public void verifyHamburgerMenuOptionWorksInAllPages() throws Exception {
 	        QXClient.get().driver();
 	        getDikshaMainPageActions().performUserOnBoarding();
@@ -346,5 +257,98 @@ public class MobileSpecificTestCase {
 	        getHomePageActions().verifyHamburgerMenuWorksInLibraryTrainingDownloadAndProfilePage();
 
 	    }
+	 
+	 @Test()
+	    public void verifyUserAbleToViewFAQquestions() throws Exception {
+
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
+
+	        getHomePageActions().tapOnMenuBar();
+
+	        getHomePageActions().verifyHelpSection();
+
+	    }
+
+	 
+	 @Test()
+	    public void userAbleToChangeTheAppLanguageInHamburgerMenu() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String KannadaText =QXClient.get().excelUtils().getCellValue("Excel1","TestData",6,2);
+	        getHomePageActions().tapOnMenuBar();
+
+	        getHomePageActions().tapOnLanguage();
+	        getHomePageActions().tapOnKannadaLanguage();
+
+	        getHomePageActions().tapOnContinueBtnKannada();
+
+	        DikshaMainPageActions d2=new DikshaMainPageActions();
+	        QXClient.get().gestures().closeApp();
+	        d2.LaunchAppHomeScreen();
+	        getHomePageActions().tapOnDownloadTab();
+
+
+	        getHomePageActions().tapOnMenuBar();
+
+	        getHomePageActions().verifyKanndaTextChanged(KannadaText);
+	    }
+
+
+	
+		/*
+		 * @Test() public void verifyUserAbleToChangePermissions() throws Exception {
+		 * QXClient.get().driver(); getDikshaMainPageActions().performUserOnBoarding();
+		 * getHomePageActions().tapOnProfileTab();
+		 * 
+		 * getHomePageActions().tapOnMenuBar();
+		 * 
+		 * getHomePageActions().verifyUserCanChangePermissions();
+		 * 
+		 * QXClient.get().gestures().clkBackButton();
+		 * 
+		 * QXClient.get().gestures().clkBackButton();
+		 * 
+		 * 
+		 * }
+		 */
+	
+	
+	
+	 
+
+	
+  
+    
+	
+	
+
+
+	
+
+
+	
+   
+	 
+	 
+	
+	
+
+
+	
+	
+	
+	
+
+	
+	 
 
 }
