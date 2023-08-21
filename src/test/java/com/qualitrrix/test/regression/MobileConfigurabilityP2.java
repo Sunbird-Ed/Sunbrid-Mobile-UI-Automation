@@ -529,6 +529,32 @@ getHomePageActions().verifyHelpSection();
         getHomePageActions().tapOnSearchIcon();
 
     }
+    @Test()
+ 	public void verifyUserAbleToSearchContentAndDiffMediaTypes() throws Exception {
+ 		QXClient.get().driver();
+ 		getDikshaMainPageActions().performUserOnBoarding();
+
+ 		Properties properties = QXClient.get().propUtils()
+ 				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+ 		System.out.println("@name:" + properties.getProperty("excelpath"));
+
+ 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+ 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+ 		String BookName = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 26, 2);
+
+ 		getHomePageActions().tapOnSearchIcon();
+ 		getHomePageActions().enterTextInSearchBar(BookName);
+
+ 		getHomePageActions().verifyFiltersForMediaType();
+
+ //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+ 		getTrainingPageActions().tapOnSearchedBook();
+ 		getHomePageActions().verifyContentWithAllMediaType();
+
+ 		getHomePageActions().verfiyContentUnderVideoMediaType();
+
+ 	}
 
     @Author(name="Raju")
     @Test()

@@ -183,7 +183,37 @@ public class LoginP1 {
 
 
     }
-   
+    @Test()
+    public void verifyUsageHistoryInLoggedInGmailAccount() throws Exception {
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+
+        getHomePageActions().tapOnProfileTab();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        getHomePageActions().signInWithGoogle();
+
+        getHomePageActions().verifyNavigatedToGmailLoginPagePostClickingSignWithGoogle();
+
+        getHomePageActions().enterGmailDetailsAndVerfiyUsrnameInProfileSec();
+
+    }
+
+    @Test()
+    public void verifyAdminUserAskedToForMandatoryTermsAndConditionInRegisterHerePage() throws Exception {
+
+        QXClient.get().driver();
+
+        getDikshaMainPageActions().performUserOnBoardingWithLeader();
+
+        getLoginPageActions().verifyRedirectedToLoginPagePostSelectingUsertypeAdmin();
+
+        getLoginPageActions().verifyMandatoryTermsAndConditionsInRegisterHere();
+
+
+    }
+
 
 	
 	 @Test()

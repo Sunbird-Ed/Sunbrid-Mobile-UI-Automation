@@ -88,6 +88,106 @@ public class LoginP2 {
 
         getHomePageActions().verifyLoginPageWhileMergeAccount();
     }
+	 @Test()
+	    public void verifyAdminUserAskedToForMandatoryTermsAndConditionInRegisterHerePage() throws Exception {
+
+	        QXClient.get().driver();
+
+	        getDikshaMainPageActions().performUserOnBoardingWithLeader();
+
+	        getLoginPageActions().verifyRedirectedToLoginPagePostSelectingUsertypeAdmin();
+
+	        getLoginPageActions().verifyMandatoryTermsAndConditionsInRegisterHere();
+
+
+	    }
+	 @Test()
+	    public void verifyTextInRoleConfirmationAndLabelInEditLocationPage() throws Exception {
+
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
+
+	        getProfileEditPageActions().validateChooseContentPreferenceLabelInLocation();
+
+
+	    }
+	 
+	   @Test()
+	    public void validateHomeAndSearchPagePostSwitchToNewExperienceBtn() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoardingAndClickSwitchToNewExperience();
+	        getHomePageActions().tapOnProfileTab();
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",63,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",64,2);
+
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().loginToTheUser(Username,Password);
+
+	        getHomePageActions().verifyMyLearningBrowseByCategoryInHomePagePostSwitchToNewExperience();
+
+	        //getHomePageActions().verifyPopularCategoriesInSearchPagePostSwitchToNewExperience();
+
+
+
+	    }
+	   @Test()
+	    public void verifyUserAbleToLoginToTheSystemUsingUsernameExternalIDAndSchoolExternalID() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        DikshaMainPageActions d = new DikshaMainPageActions();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String externalID =QXClient.get().excelUtils().getCellValue("Excel1","TestData",92,2);
+
+	        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().verifyUserAbleToLoginUsingStateSystemUsingUsernameExternalID(externalID);
+	        d.LaunchAppHomeScreen();
+	        getHomePageActions().tapOnMenuBar();
+
+	        getHomePageActions().verifyUserLoggedInSuccessfullyUsingStateSystem();
+
+	    }
+	 @Test()
+	    public void verifySubroleScreenForHeadTeacherRoleIsDisplayedForNewCredentials() throws Exception {
+
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoardingWithLeader();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",101,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",102,2);
+
+	        getLoginPageActions().loginToTheUserForLeader(Username,Password);
+
+	        getHomePageActions().verifySectionsInHomePage();
+
+	        getHomePageActions().tapOnProfileTab();
+
+	        getProfileEditPageActions().verifySubroleScreenForNewCred();
+
+	    }
 
 	
 	@Test()

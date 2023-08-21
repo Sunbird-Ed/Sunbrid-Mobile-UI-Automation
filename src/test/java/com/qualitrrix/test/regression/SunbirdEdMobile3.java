@@ -170,108 +170,14 @@ public class SunbirdEdMobile3 {
     
 
 
-    @Test()
-    public void verifyConsumedCourseOfParentIsNotDisplayedForChildUser() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        //getHomePageActions().tapOnTrainingTab();
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-
-        getCoursePageActions().tapOnOngoingCourse();
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        //getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnMoreOption();
-        getCoursePageActions().clickFirstUser();
-        getCoursePageActions().tapOnChangeUserWithoutProfile();
-        getCoursePageActions().CheckTermsCheckBoxORClickProfile();
-        d.LaunchAppHomeScreen();
-        getCoursePageActions().verifyDistricAndState();
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-
-        getCoursePageActions().verifyNoCoursesInMylearnigSection();
-
-    }
-
+   
 
    
 
 
 
     
-    @Test()
-    public void verifyOngoingAndCompletedCourseInProfilesection() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-
-
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",45,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",46,2);
-
-
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-
-        getHomePageActions().tapOnProfileTab();
-
-
-        QXClient.get().gestures().swipeUp();
-
-        getCoursePageActions().tapOnOngoingCourse();
-        Thread.sleep(5000);
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-
-
-
-        getCoursePageActions().tapOnCompletedCourse();
-        Thread.sleep(2000);
-
-    }
-
+ 
 
   
     @Test()
@@ -407,71 +313,7 @@ public class SunbirdEdMobile3 {
     }
 
 
-    @Author(name="Raju")
-
-    @Test() public void SwitchUserLIUAAndMUA() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-
-
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnAddAnotherUser();
-
-        String FakeName=QXClient.get().gestures().generateRandomName();
-        String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
-        System.out.println(storeFakeNameEntered);
-        getCoursePageActions().tapOnAddUserBtn();
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnMoreOption();
-        QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
-
-
-        getCoursePageActions().tapOnChangeUserWithoutProfile();
-
-        getCoursePageActions().tapOnTermsAndCondition();
-
-        getCoursePageActions().tapOnContinueForSwicthUser();
-
-
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-        getHomePageActions().tapOnProfileTab();
-
-
-        getCoursePageActions().verifyDistricAndState();
-
-        getCoursePageActions().verifyBMCValuesAfterAddingUser();
-        //	getCoursePageActions().updateStateAndDistrictValues();
-
-        //	getCoursePageActions().updateProfileDetails();
-
-
-    }
+   
 
 
     @Author(name="Raju")
@@ -652,51 +494,7 @@ public class SunbirdEdMobile3 {
 
 
 
-    @Test(enabled = true, groups = { "SanityTest",
-            "FunctionalTest" }, alwaysRun = true, description = "SngleBatchVerification")
-    public void SngleBatchVerification() throws Exception {
-
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        String LeaveCourse =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",30,2);
-        String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",25,2);
-
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
-
-        DikshaMainPageActions d=new DikshaMainPageActions();
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnTrainingTab();
-
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar(coursefetch);
-        // QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(coursefetch);
-
-        getTrainingPageActions().tapOnSearchedCourse1();
-        getTrainingPageActions().tapOnJoinTraining2();
-
-
-
-
-
-        getLibraryPageActions().tapOnShareBtn();
-
-
-    }
+  
 
 
 

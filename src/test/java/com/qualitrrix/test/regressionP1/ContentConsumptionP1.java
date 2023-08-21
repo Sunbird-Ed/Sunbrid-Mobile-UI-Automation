@@ -76,6 +76,27 @@ public class ContentConsumptionP1 {
 	getLibraryPageActions().tapOnPlayIcon3();
 	getLibraryPageActions().verifyZoomInZoomOut();
 	}
+	 @Test()
+	    public void verifyContentCardDetails() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+
+	        getHomePageActions().tapOnSearchIcon();
+	        getHomePageActions().enterTextInSearchBar(BookName);
+	        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+	        getTrainingPageActions().tapOnSearchedBook();
+
+	        getLibraryPageActions().verfiyContentCardDetailsOfContent();
+
+	    }
+
 
 	@Test()
 	public void verifyPageNotFoundTextAndUserAbleToJumpToPageInEpubContent() throws Exception {
