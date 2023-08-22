@@ -207,7 +207,7 @@ public class CoursePageActions  {
     public void verifyCoursesSectionInProfile() throws Exception {
       	Thread.sleep(4000);
 		  QXClient.get().gestures().swipeUp();
-		  QXClient.get().gestures().swipeUp();
+		
 
   	//QXClient.get().gestures().scrollToMobileElement(coursePageObjects.coursesSection,"2");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.coursesSection),"coursesSection is not available");

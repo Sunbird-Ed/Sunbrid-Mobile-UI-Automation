@@ -4670,7 +4670,35 @@ public class TrainingPageActions {
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().report().info("Tap on Epub content");
     }
+    public void clickQuestionset() throws Exception{
+        QXClient.get().gestures().BlindWait(8000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clickQuestionset);
+        QXClient.get().gestures().BlindWait(8000);
+        QXClient.get().report().info("Click on Questionset questions");
+    }
+    public void clickvideoandnext() throws Exception{
+        QXClient.get().gestures().BlindWait(8000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Click on Questionset questions");
+        int n = 4;
+        for(int i=0; i<=n ; i++)
+        {
+            QXClient.get().gestures().BlindWait(5000);
+            QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+            QXClient.get().gestures().BlindWait(5000);
+        }
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.selAnswer);
+        QXClient.get().report().info("Clicked on correct answer");
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clickprev);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+    }
 
-
-
+    public void feedbackEnabled() throws Exception{
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.assertRightMarkInFeedbackPopup);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Check for Feedback on Questionset questions");
+    }
 }

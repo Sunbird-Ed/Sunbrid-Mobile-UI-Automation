@@ -59,10 +59,12 @@ public MobileElement ReportMenu;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='Kannada']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='ಕನ್ನಡ']"),
-            @AndroidBy(xpath = "//android.widget.TextView[@text='ಕನ್ನಡ']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Choose Your Preferred Language']//following::android.widget.Button[6]"),
+    	  @AndroidBy(xpath = "//android.widget.Button[@text='Kannada, selected']"),
+          @AndroidBy(xpath = "//android.widget.TextView[@text='English']"),
+          @AndroidBy(xpath = "//android.widget.Button[@text='Kannada']"),
+          @AndroidBy(xpath = "//android.widget.Button[@text='ಕನ್ನಡ']"),
+          @AndroidBy(xpath = "//android.widget.TextView[@text='ಕನ್ನಡ']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Choose Your Preferred Language']//following::android.widget.Button[6]"),
     })
     public MobileElement selectKannadaLang;
     
@@ -107,13 +109,13 @@ public MobileElement ReportMenu;
     public MobileElement qrCode;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Image[@text='profile']"),
         @AndroidBy(xpath = "//*[@resource-id='tab-button-guest-profile']"),
             @AndroidBy(xpath = "//*[@resource-id='tab-button-profile']"),
         @AndroidBy(xpath = "//android.view.View[@text='profile']"),
             @AndroidBy(xpath = "//android.view.View[@text='profile Profile']"),
             @AndroidBy(xpath = "//android.view.View[@text='profile Profile ']"),
             @AndroidBy(xpath = "//*[contains(@text,'profile Profile')]"),
-        @AndroidBy(xpath = "//android.widget.Image[@text='profile']")
 
     })
     public MobileElement profilePageTab;
@@ -598,11 +600,12 @@ public MobileElement verifyAddedMemberToGrp;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='select app langugae ಭಾಷೆ ಕನ್ನಡ']"),
-
-            @AndroidBy(xpath = "//android.view.View[@text='ಕನ್ನಡ']"),
-    })
+        @AndroidBy(xpath = "//android.widget.TextView[@text='ಕನ್ನಡ']"),
+        @AndroidBy(xpath = "//android.view.View[@text='select app langugae ಭಾಷೆ ಕನ್ನಡ']"),
+        @AndroidBy(xpath = "//android.view.View[@text='ಕನ್ನಡ']"),    })
     public MobileElement verifyKannadaText;
+    
+    
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.TextView[@text='app settings ಸೆಟ್ಟಿಂಗ್ಸ್']"),
@@ -1143,40 +1146,6 @@ public MobileElement tagsField;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[@text='Projects Created by me']//following::android.view.View[1]"),
             @AndroidBy(xpath = "//android.view.View[@text='Created by me']//following::android.view.View[1]"),
@@ -1640,22 +1609,31 @@ public MobileElement tagsField;
       @AndroidFindBy(xpath = "//android.view.View[@text='You are just a step away from creating a group']")
       public MobileElement assertTextInMyGroupPage;
      
-      @AndroidFindBy(xpath = "//android.widget.Button[@text='Permissions']")
-      public MobileElement clkPermissions;
-
-      @AndroidFindBy(xpath = "//android.view.View[@text='Camera']")
-      public MobileElement assertCamera;
-
-      @AndroidFindBy(xpath = "//android.view.View[@text='File Manager']")
-      public MobileElement assertFileManager;
-
-      @AndroidFindBy(xpath = "//android.view.View[@text='Microphone']")
-      public MobileElement assertMicrophone;
+      @AndroidFindAll({
+          @AndroidBy(xpath = "//android.widget.TextView[@text='Permissions']"),
+          @AndroidBy(xpath = "//android.widget.Button[@text='Permissions']")
+})      public MobileElement clkPermissions;
 
       @AndroidFindAll({
-              @AndroidBy(xpath = "//android.view.View[@text='Camera']//following-sibling::android.view.View[1]"),
-              @AndroidBy(xpath = "//android.view.View[@text='Camera']//following::android.view.View[2]")
-      })
+          @AndroidBy(xpath = "//android.widget.TextView[@text='Camera']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Camera']")
+  })      public MobileElement assertCamera;
+
+      @AndroidFindAll({
+          @AndroidBy(xpath = "//android.widget.TextView[@text='File Manager']"),
+          @AndroidBy(xpath = "//android.view.View[@text='File Manager']")
+  })      public MobileElement assertFileManager;
+
+      @AndroidFindAll({
+          @AndroidBy(xpath = "//android.widget.TextView[@text='Microphone']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Microphone']")
+  })      public MobileElement assertMicrophone;
+
+      @AndroidFindAll({
+          @AndroidBy(xpath = "//android.widget.TextView[@text='SUNBIRD uses camera permissions to scan QR codes']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Camera']//following-sibling::android.view.View[1]"),
+          @AndroidBy(xpath = "//android.view.View[@text='Camera']//following::android.view.View[2]")
+  })
       public MobileElement clkCameraPermission;
 
       @AndroidFindBy(xpath = "//android.widget.TextView[@text='Permissions']")
@@ -1666,8 +1644,12 @@ public MobileElement tagsField;
       public MobileElement assertAllowOnlyUsingApp;
       @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Ask every time']")
       public MobileElement assertAskEveryTime;
-      @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Deny']")
-      public MobileElement assertDenyPermissions;
+      
+      @AndroidFindAll({
+          @AndroidBy (xpath = "//android.widget.RadioButton[contains(@text,'Don’t allow')]"),
+
+         @AndroidBy (xpath = "//android.widget.RadioButton[@text='Deny']")
+  })      public MobileElement assertDenyPermissions;
 
       @AndroidFindAll({
               @AndroidBy(xpath = "//android.widget.Button[@text='Language']"),
@@ -1763,8 +1745,10 @@ public MobileElement tagsField;
          @AndroidFindBy(xpath = "//android.view.View[@text='Password']")
          public MobileElement assertPasswordLabel;
 
-         @AndroidFindBy(xpath = "//android.widget.Button[@text='Debug Mode']")
-         public MobileElement clkDebugMode;
+         @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.ToggleButton[@resource-id='ion-tg-0']"),
+             @AndroidBy(xpath = "//android.widget.Button[@text='Debug Mode']")
+     })         public MobileElement clkDebugMode;
 
 
          @AndroidFindAll({
@@ -2040,8 +2024,10 @@ public MobileElement tagsField;
     public MobileElement clkOnReportOtherIssue;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Report an issue']")
-    public MobileElement assertReportAnIssueText;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Report an issue']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Report an issue']")
+})    public MobileElement assertReportAnIssueText;
 
 
     @AndroidFindAll({
@@ -2462,8 +2448,10 @@ public MobileElement tagsField;
 
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Select category']")
-     public MobileElement assertSelectcategoryText;
+     @AndroidFindAll({
+         @AndroidBy(xpath = "//android.widget.TextView[@text='Select category']"),
+         @AndroidBy(xpath = "//android.view.View[@text='Select category']")
+ })     public MobileElement assertSelectcategoryText;
 
 
      @AndroidFindBy(xpath = "//android.widget.Button[@text='Course & certificates']")
@@ -2471,8 +2459,10 @@ public MobileElement tagsField;
 
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Course & certificates']")
-    public MobileElement assertCourseAndCertificatesPageText;
+     @AndroidFindAll({
+         @AndroidBy(xpath = "//android.widget.TextView[@text='Course & certificates']"),
+         @AndroidBy(xpath = "//android.view.View[@text='Course & certificates']")
+ })    public MobileElement assertCourseAndCertificatesPageText;
 
      @AndroidFindAll({
              @AndroidBy(xpath = "//android.widget.Button[@text='I have completed the training but my progress is not 100%.']"),
@@ -2482,8 +2472,10 @@ public MobileElement tagsField;
 
 
 
-     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'DIKSHA marks training progress as 100%')]")
-    public MobileElement assertSolutionForIncorrectProgress;
+     @AndroidFindAll({
+         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'DIKSHA marks training progress as 100%')]"),
+         @AndroidBy(xpath = "//android.view.View[contains(@text,'DIKSHA marks training progress as 100%')]")
+ })    public MobileElement assertSolutionForIncorrectProgress;
 
 
 
@@ -2559,25 +2551,31 @@ public MobileElement tagsField;
 
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Help']")
-    public MobileElement assertHelpTextInHelpPage;
+     @AndroidFindAll({
+         @AndroidBy(xpath = "//android.widget.TextView[@text='Help']"),
+         @AndroidBy(xpath = "//android.view.View[@text='Help']")
+ })    public MobileElement assertHelpTextInHelpPage;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Frequently asked questions']")
-     public MobileElement assertFAQtext;
+     @AndroidFindAll({
+         @AndroidBy(xpath = "//android.widget.TextView[@text='Frequently asked questions']"),
+         @AndroidBy(xpath = "//android.view.View[@text='Frequently asked questions']")
+ })     public MobileElement assertFAQtext;
 
 
      @AndroidFindBy(xpath = "//android.widget.Button[@text='Content (search)']")
     public MobileElement assertContentSection;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Faq(s)']")
-    public MobileElement assertFaqText;
-
+     @AndroidFindAll({
+         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Faq(s)')]"),
+         @AndroidBy(xpath = "//android.view.View[@text='Faq(s)']")
+ })
 
      @AndroidFindAll({
-             @AndroidBy(xpath = "//android.view.View[@text='Faq(s)']//following-sibling::android.widget.Button[1]"),
-            @AndroidBy(xpath = "//android.view.View[@text='Faq(s)']//following::android.view.View[1]"),
+         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Faq(s)')]"),
+         @AndroidBy(xpath = "//android.view.View[@text='Faq(s)']//following-sibling::android.widget.Button[1]"),
+        @AndroidBy(xpath = "//android.view.View[@text='Faq(s)']//following::android.view.View[1]"),
      })
     public MobileElement assertQuestionUnderFAQ;
 
@@ -2615,8 +2613,10 @@ public MobileElement tagsField;
 
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Content play']")
-    public MobileElement assertCategoryInHelpPage;
+     @AndroidFindAll({
+         @AndroidBy(xpath = "//android.widget.TextView[@text='Content play']"),
+         @AndroidBy(xpath = "//android.view.View[@text='Content play']")
+ })    public MobileElement assertCategoryInHelpPage;
 
 
   @AndroidFindAll({
@@ -2645,30 +2645,31 @@ public MobileElement tagsField;
     public MobileElement assertOrgNameBelowDikshaID;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Content preference']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Content preference']")
     public MobileElement assertContentPreferenceLabel;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Role')]")
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Role')]")
     public MobileElement assertRoleSectionUnderContentPreferenceLabel;
 
 
     @AndroidFindAll({
+    	  @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Sub-role')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Sub-role')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Subrole')]"),
     })
     public MobileElement assertSubRoleSectionUnderContentPreferenceLabel;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District')]")
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'District:')]")
     public MobileElement assertDistrictSectionUnderContentPreferenceLabel;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State')]")
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'State:')]")
     public MobileElement assertStateSectionUnderContentPreferenceLabel;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Board')]")
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board:')]")
     public MobileElement assertBoardSectionUnderContentPreferenceLabel;
 
 
@@ -3461,18 +3462,26 @@ public MobileElement assertRequestContentInLibraryPage;
 public MobileElement profilePageTab2;
 
 
+    @AndroidFindBy(xpath="//android.widget.Button[contains(@text,'BEST SCORE')]")
+    public MobileElement assertBestScore;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@index='2']")
+    public MobileElement assertHamburgerAlignment;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Your preferences']")
+    public MobileElement assertYourPreferences;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='preferences-info']")
+    public MobileElement clkYourPreferencesiIcon;
 
 
 
+    @AndroidFindBy(xpath = "//android.view.View[@bounds='[0,96][1080,250]']")
+    public MobileElement topyellowbar;
 
 
-
-
-
-
-
-
-
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Course']")
+    public MobileElement primarycatcontent;
 
 }
     	

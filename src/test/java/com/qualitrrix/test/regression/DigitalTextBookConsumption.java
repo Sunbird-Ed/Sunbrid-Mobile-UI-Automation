@@ -573,7 +573,27 @@ public class DigitalTextBookConsumption {
    
 
    
+    @Test()
+    public void verifyAnyOpenTextBookTocAndImportSpine() throws Exception {
+            QXClient.get().driver();
+            getDikshaMainPageActions().performUserOnBoarding();
 
+            Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+                            properties.getProperty("excelpath"));
+
+            String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+            QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+            String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+
+            getHomePageActions().tapOnSearchIcon();
+            getHomePageActions().enterTextInSearchBar(BookName);
+            getTrainingPageActions().tapOnSearchedBook();
+
+            QXClient.get().gestures().clkBackButton();
+
+
+    }
 
 
 

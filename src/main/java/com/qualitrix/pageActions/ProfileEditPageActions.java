@@ -4,6 +4,8 @@ package com.qualitrix.pageActions;
 import cucumber.api.java.cs.A;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
@@ -1763,5 +1765,93 @@ public class ProfileEditPageActions  {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertTrackableCourse),"Trackable course is not displayed under my learning section");
         QXClient.get().report().info("Trackable course is displayed under my learning section in profile page");
         QXClient.get().gestures().BlindWait(3000);
+    }
+    
+    public void verifyStateUserShouldBeAbleToEditAllValuesInTheProfilepage() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkEditForLocation);
+        QXClient.get().report().info("Tap on clkEditForLocation Option");
+        QXClient.get().gestures().BlindWait(4000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkRoleDropdown);
+        QXClient.get().report().info("Tap on clkRoleDropdown Option");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.sltTeacher);
+        QXClient.get().report().info("Select Teacher Role");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubmit);
+        QXClient.get().report().info("Click on Submit button");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.sltStateDropdown);
+        QXClient.get().report().info("Tap on State dropdown");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.sltStateLoc);
+        QXClient.get().report().info("Tap on Andhra Pradesh state in Location");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubmit);
+        QXClient.get().report().info("Click on Submit button");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.sltDistrictDropdown);
+        QXClient.get().report().info("Tap on District dropdown");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.sltDistrictLoc);
+        QXClient.get().report().info("Tap on Chittoor district in Location");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(profileEditPageObjectsPageObjects.clkSubmit);
+        QXClient.get().report().info("Click on Submit button");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().closeappandrelaunchapp();
+
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().report().info("Tap on profile tab");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clikEditProfile);
+        QXClient.get().report().info("Tap on clikEditProfile Option");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkBoardDropDown);
+        QXClient.get().report().info("Tap on clkBoardDropDown Option");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltBoard.get(1));
+        QXClient.get().report().info("select Andra");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubmitProfile);
+        QXClient.get().report().info("Tap on Submit Button");
+        QXClient.get().gestures().BlindWait(3000);
+
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkMediumDropDown.get(2));
+        QXClient.get().report().info("Tap on clkMediumDropDown Option");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltMediumVal);
+        QXClient.get().report().info("select English");
+        QXClient.get().gestures().BlindWait(2000);
+
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubmitProfile);
+        QXClient.get().report().info("Tap on Submit Button");
+        QXClient.get().gestures().BlindWait(3000);
+
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkClassDropDown);
+        QXClient.get().report().info("Tap on clkClassDropDown Option");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltClassVal.get(0));
+        QXClient.get().report().info("select Class 4");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubmitProfile);
+        QXClient.get().report().info("Tap on Submit Button");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().driver().findElement(By.xpath("//android.widget.Button[@index='0'and @text='SAVE']")).click();
+       /* QXClient.get().gestures().waitAndClickElementisVisible(ProfileEditPageObjects.saveBtn);
+        QXClient.get().report().info("Tap on save Button");*/
+
     }
 }

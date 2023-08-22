@@ -400,7 +400,7 @@ public class Gestures {
         QXClient.get().gestures().closeApp();
         DikshaMainPageActions d = new DikshaMainPageActions();
         d.LaunchAppHomeScreen();
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().BlindWait(9000);
         HomePageActions home = new HomePageActions();
         home.tapOnProfileTab();
         QXClient.get().gestures().BlindWait(2000);

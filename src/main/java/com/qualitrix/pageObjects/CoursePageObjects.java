@@ -235,8 +235,7 @@ public MobileElement assertStartLearning;
 	   @AndroidFindAll({
 		   @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Ongoing')]"),
 			   @AndroidBy(xpath = "//android.view.View[contains(@text,'Ongoing')]"),
-			   @AndroidBy(xpath = "//android.widget.Button[@text='Refresh']//following::android.view.View"),
-			   @AndroidBy(xpath= "//android.widget.Image[@text='refresh circle']//following::android.view.View"),
+			 
 	   })
 	   public MobileElement coursesSection;
 	   
@@ -643,6 +642,7 @@ public MobileElement assertInvalidEmailErrorMsg;
 
 
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.EditText[@text='sd******@yopmail.com']"),
 		@AndroidBy(xpath = "//android.widget.EditText[@text='pr***********@yopmail.com']"),
 		@AndroidBy(xpath = "//android.widget.EditText[@text='st****@yopmail.com']")
 })
@@ -682,11 +682,13 @@ public MobileElement assertContentPolicy;
 	public MobileElement enabledSubmitBtn;
 
 
-	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Thank you for submitting your details')]")
-	public MobileElement assertThankyouForSubmittingDetails;
 
 
-
+	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.view.View[@index='2']"),
+		@AndroidBy(xpath = "//android.view.View[contains(@text,'Thank you for submitting your details')]")
+})
+public MobileElement assertThankyouForSubmittingDetails;
 
 
 }

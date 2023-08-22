@@ -548,6 +548,7 @@ public MobileElement assertReceiveSMSText;
     public MobileElement EmailEditField;
 
     @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.widget.TextView[@text='Verify Email Address']"),
     	@AndroidBy(xpath = "//android.widget.TextView[@text='Validate your email address']'"),
     	@AndroidBy(xpath = "//android.view.View[@text='Verify Email Address']"),
  })

@@ -340,8 +340,8 @@ public class Profile {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",130,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",131,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",132,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",133,2);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 	        getLoginPageActions().loginToTheUser(Username,Password);
@@ -374,8 +374,8 @@ public class Profile {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",130,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",131,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",134,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",135,2);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 	        getLoginPageActions().loginToTheUser(Username,Password);
@@ -1271,6 +1271,33 @@ public class Profile {
 	        getProfileEditPageActions().verifyOnlyStateAndDistrictValuesPresentInProfilePage();
 
 	    }
+	 @Test()
+     public void StateUserShouldBeAbleToEditAllValuesInTheProfilePage() throws Exception {
+             QXClient.get().driver();
+             getDikshaMainPageActions().performUserOnBoarding();
+             getHomePageActions().tapOnProfileTab();
+             QXClient.get().gestures().swipeUp();
+             QXClient.get().gestures().swipeUp();
+
+
+             Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+             System.out.println("@name:" +
+                             properties.getProperty("excelpath"));
+
+             String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+             QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+             String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 38, 2);
+             String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 39, 2);
+             QXClient.get().gestures().swipeUp();
+             QXClient.get().gestures().swipeUp();
+             getLoginPageActions().loginToTheUser(Username, Password);
+             QXClient.get().gestures().closeappandrelaunchapp();
+
+             getHomePageActions().tapOnProfileTab();
+
+             getProfileEditPageActions().verifyStateUserShouldBeAbleToEditAllValuesInTheProfilepage();
+     }
 
 
 

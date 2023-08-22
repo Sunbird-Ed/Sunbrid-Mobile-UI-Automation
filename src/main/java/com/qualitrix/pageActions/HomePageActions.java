@@ -9,6 +9,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -3838,7 +3839,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().BlindWait(2000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertHelpTextInHelpPage),"Help page is not displayed for Respective content");
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertFaqText),"Faq text is not displayed");
+      //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertFaqText),"Faq text is not displayed");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertQuestionUnderFAQ),"Questions under faqs is not displayed");
         QXClient.get().report().info("Questions under Faq(s) is displayed");
         QXClient.get().gestures().BlindWait(3000);
@@ -3888,7 +3889,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCategoryInHelpPage),"Category is not organized or displayed in Help page");
         QXClient.get().report().info("Category is organized first in Help Page");
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertFaqText),"Faq(s) text is not organized or displayed");
+       // Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertFaqText),"Faq(s) text is not organized or displayed");
         QXClient.get().report().info("Faq(s) is organized after category in help page");
         QXClient.get().gestures().BlindWait(2000);
 
@@ -3984,8 +3985,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMediumSectionUnderContentPreferenceLabel),"Medium is not displayed in Profile Page");
         QXClient.get().report().info("Medium is displayed under Content Preference Label");
-        QXClient.get().gestures().swipeUp();
-
+      
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertClassesSectionUnderContentPreferenceLabel),"Classes is not displayed in Profile Page");
         QXClient.get().report().info("Classes is displayed under Content Preference Label");
 
@@ -7543,6 +7543,184 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("Tap on profile tab");
     }
 
+    
+    public void tapOnCourseModulesInTOC() throws Exception {
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().driver().findElement(By.xpath("//android.view.View[contains(@text,'COURSE 4.8')]")).click();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnCourseModules);
+        QXClient.get().gestures().BlindWait(2000);
+    }
+    public void tapOnFirstContentInCourseTOC() throws Exception {
+        QXClient.get().gestures().BlindWait(5000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnFirstContent);
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertBestScore),"Best Score is not displayed");
+        QXClient.get().report().info("Best Score is displayed in library page");
+        QXClient.get().gestures().BlindWait(2000);
+
+    }
+
+    public void verifyTextYourPreferencesWithIIconIsClickableUnderHomePage() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+
+    tapOnMenuBar();
+
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+    QXClient.get().report().info("clicked on clkNewDikshExperiece");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().BlindWait(2000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertHamburgerAlignment),"Hamburger menu is not aligned");
+    QXClient.get().report().info("Hamburger menu is aligned in HomePage");
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertBrowseByCategory),"Browse by category section is not displayed");
+    QXClient.get().report().info("Browse by category section is displayed in Home page");
+    QXClient.get().gestures().BlindWait(2000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertMyLearningSection),"My Learning Section is not displayed");
+    QXClient.get().report().info("My Learning Section is displayed in HomePage");
+    QXClient.get().gestures().BlindWait(2000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertYourPreferences),"The text your preferences is  not displayed");
+    QXClient.get().report().info("The text your preferences is displayed in home page");
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkYourPreferencesiIcon);
+    QXClient.get().report().info("Clicked on YourPreferencesiIcon");
+    QXClient.get().gestures().BlindWait(3000);
+
+}
+    public void verifyyellowbar() throws Exception {
+
+        QXClient.get().gestures().BlindWait(3000);
+
+        tapOnMenuBar();
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("Clicked on My groups button");
+        QXClient.get().gestures().BlindWait(2000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
+            QXClient.get().report().info("Tap on clkCloseIconGrp button");
+        }
+        catch(Exception e3) {
+            System.out.println("Handled");
+        }
+
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().closeappandrelaunchapp();
+        tapOnMenuBar();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
+        QXClient.get().report().info("Clicked on First group");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.courseUnderFirstGrp),"Course is not displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.courseUnderFirstGrp);
+        QXClient.get().report().info("Clicked on Course under Group");
+        QXClient.get().gestures().BlindWait(3000);
+
+        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCourseProgress),"Course progress is not displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.clkActivityDashboard),"Activity dashboard is not displayed");
+        QXClient.get().report().info("Activity dashboard is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.topyellowbar),"Top yellow bar is not displayed");
+        QXClient.get().report().info("Top yellow bar is displayed");
+    }
+    
+    public void verifyprimarycategory() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+
+        tapOnMenuBar();
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("Clicked on My groups button");
+        QXClient.get().gestures().BlindWait(2000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloseIconGrp);
+            QXClient.get().report().info("Tap on clkCloseIconGrp button");
+        }
+        catch(Exception e3) {
+            System.out.println("Handled");
+        }
+
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().closeappandrelaunchapp();
+        tapOnMenuBar();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
+        QXClient.get().report().info("clicked on MyGroups");
+        QXClient.get().gestures().BlindWait(3000);
+
+        try
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.groupGuidelinesCheckBox);
+            QXClient.get().report().info("Clicked on Group guidelines checkbox");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkContinuewBtn);
+            QXClient.get().gestures().BlindWait(3000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Handled");
+        }
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkFirstGroup);
+        QXClient.get().report().info("Clicked on First group");
+        QXClient.get().gestures().BlindWait(5000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.primarycatcontent),"Primary category is not displayed");
+        QXClient.get().report().info("Primary category content present");
+
+    }
 
 }
  

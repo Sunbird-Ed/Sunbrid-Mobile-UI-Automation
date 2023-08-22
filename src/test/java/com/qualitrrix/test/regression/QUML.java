@@ -1511,6 +1511,30 @@ public class QUML {
     }
 
 	
-	
+	@Test()
+    public void verifyFeedbackenabledandshowninQuestionSet() throws Exception {
+       QXClient.get().driver();
+       getDikshaMainPageActions().performUserOnBoarding();
+       getHomePageActions().tapOnProfileTab();
+       QXClient.get().gestures().swipeUp();
+       QXClient.get().gestures().swipeUp();
+       Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+       System.out.println("@name:" +
+             properties.getProperty("excelpath"));
+       String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+       QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+       String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 71, 2);
+       String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 72, 2);
+       String questionSet = QXClient.get().excelUtils().getCellValue("Excel1","TestData",113,2);
+       getLoginPageActions().loginToTheUser(Username, Password);
+       getHomePageActions().tapOnTrainingTab();
+       getHomePageActions().tapOnSearchIcon();
+       getHomePageActions().enterTextInSearchBar(questionSet);
+       getTrainingPageActions().clickQuestionset();
+       getTrainingPageActions().clickvideoandnext();
+       getTrainingPageActions().feedbackEnabled();
+    }
+
+
 
 }

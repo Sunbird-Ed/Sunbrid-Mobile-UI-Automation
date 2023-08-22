@@ -2174,14 +2174,19 @@ public MobileElement clkOnEpubContent3;
 
 
 
+    @AndroidFindBy(xpath="//android.view.View[@text='Course modules']")
+    public MobileElement clkOnCourseModules;
 
 
+@AndroidFindBy(xpath="//android.view.View[@text='Course Unit 1']")
+    public MobileElement clkOnFirstContent;
+
+@AndroidFindBy (xpath = "//android.view.View[contains(@text,'QuestionSet-test')]")
+public MobileElement clickQuestionset;
 
 
-
-
-
-
+@AndroidFindBy(xpath = "//android.view.View[@text='preview slide']")
+public MobileElement clickprev;
 
 
 
