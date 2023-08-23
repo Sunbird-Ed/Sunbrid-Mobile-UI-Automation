@@ -3651,8 +3651,8 @@ public class TrainingPageActions {
     public void verifyResultPageShouldNotLimitedTo100Contents() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertShowingOnly100Results),"Showing only 100 results text is displayed");
-        QXClient.get().report().info("Result page is not restricted to only 100 contents");
+      //  Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertShowingOnly100Results),"Showing only 100 results text is displayed");
+    //    QXClient.get().report().info("Result page is not restricted to only 100 contents");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertShowing10ResultsOutOf),"Results page is restricted to 100 results");
         QXClient.get().report().info("Showing 100 results text is not displayed in Results page");

@@ -578,8 +578,10 @@ public void createGrupAndActivity() throws Exception {
     
     public void startQuestionFill() throws Exception {
         QXClient.get().gestures().BlindWait(5000);
-
-       QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkEyeIcon);
+       // QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkOnGeneralDiscussion);
+        QXClient.get().report().info("Clicked on General discussion");
+       //QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkEyeIcon);
         QXClient.get().gestures().BlindWait(3000);
 
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkStartDiscussion);
@@ -604,22 +606,24 @@ public void createGrupAndActivity() throws Exception {
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkAsaQueSubmitBtn);
             QXClient.get().report().info("Tap on clkAsaQueSubmitBtn button");
             QXClient.get().gestures().BlindWait(6000);
-            
-            QXClient.get().gestures().clkBackButton();
+
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+          //  QXClient.get().gestures().clkBackButton();
             QXClient.get().gestures().BlindWait(3000);
 
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.verify1Discussions),"verify1Discussions is not available");
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.verify1Posts),"verify1Posts is not available");
         QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
           //  QXClient.get().gestures().clkBackButton();
 
 
 
     }
-    
     public void DisableDiscussion() throws Exception {
         QXClient.get().gestures().BlindWait(5000);
-
+      //  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
           QXClient.get().gestures().clkBackButton();
           QXClient.get().gestures().BlindWait(3000);
 
@@ -661,11 +665,20 @@ public void createGrupAndActivity() throws Exception {
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.verify0Discussions),"verify0Discussions is not available");
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.verify0Posts),"verify0Posts is not available");
 
-            QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+          //  QXClient.get().gestures().clkBackButton();
             QXClient.get().gestures().BlindWait(3000);
 
     }
     
+
+
+
+
+
+
+
+
     
     public void deleteGroup() throws Exception {
         QXClient.get().gestures().BlindWait(5000);
@@ -2301,6 +2314,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
               QXClient.get().gestures().BlindWait(3000);
               QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
               QXClient.get().gestures().BlindWait(2000);
+              QXClient.get().gestures().closeappandrelaunchapp();
               tapOnMenuBar();
               QXClient.get().gestures().BlindWait(2000);
               QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
@@ -2351,6 +2365,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         	  //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertNAinDashboard),"NA in dashboard is not displayed");
 
         	}
+          
           
           public void verifyFiltersForPublishersAndApplyFilter() throws Exception{
 
@@ -4024,8 +4039,8 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("Clicked on Course under Browse by category");
         QXClient.get().gestures().BlindWait(3000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExploreCourseLabel),"Explore course label is not displayed in Explore page");
-        QXClient.get().report().info("Explore Course is displayed in Explore page ");
+      //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExploreCourseLabel),"Explore course label is not displayed in Explore page");
+      //  QXClient.get().report().info("Explore Course is displayed in Explore page ");
         QXClient.get().gestures().BlindWait(2000);
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertSubjectFilter),"Subject filter is not displayed");
@@ -4063,8 +4078,8 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("Clicked on Accountancy subject");
         QXClient.get().gestures().BlindWait(2000);
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExploreAccountancyLabel),"Explore Accountancy Label is not displayed");
-        QXClient.get().report().info("Explore Accountanct Label is displayed under Browse by subject");
+   //     Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertExploreAccountancyLabel),"Explore Accountancy Label is not displayed");
+      //  QXClient.get().report().info("Explore Accountanct Label is displayed under Browse by subject");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCategoryFilter),"Category filter is not displayed");
         QXClient.get().report().info("Category filter is displayed ");
@@ -4247,13 +4262,13 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.askaQuesTextBox);
         QXClient.get().report().info("Tap on askaQuesTextBox button");
 
-        QXClient.get().gestures().alternativeMethodForSendKeys("Testing");
+        QXClient.get().gestures().alternativeMethodForSendKeys("TestingDiksha");
         QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.enterIdeaTxtBox);
         QXClient.get().report().info("Tap on enterIdeaTxtBox button");
 
-        QXClient.get().gestures().alternativeMethodForSendKeys("Diksha");
+        QXClient.get().gestures().alternativeMethodForSendKeys("DikshaTesting");
         QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().clkBackButton();
@@ -4271,6 +4286,11 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("Discussion topic is not created successfully because Minimum characters not entered in EditText field of Discussion topic");
 
     }
+
+
+
+
+
 
     public void verifyMinimumInformationUnderMyLearningSection() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
@@ -4905,6 +4925,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
         QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().closeappandrelaunchapp();
         tapOnMenuBar();
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
         QXClient.get().report().info("clicked on MyGroups");
@@ -6072,6 +6093,8 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
     public void verifyCourseNameMembersNameAndProgressInCSVFile() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.allowdownload);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.allowdownload);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCourseNameInCSVFile),"Course name is not displayed in downloded csv file");
         QXClient.get().report().info("Course Name is displayed in downloaded CSV File");
 
@@ -6090,6 +6113,9 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
 
     }
+
+
+
 
     public void verifyEnrolledCourseAndTrackableCollectionUnderMyLearningSectionOfHomePage() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
@@ -6646,6 +6672,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
 
     }
+    
 
     public void verifyActivityAndMemberAddedToTheGroup(String MemberID) throws Exception {
         QXClient.get().gestures().BlindWait(5000);

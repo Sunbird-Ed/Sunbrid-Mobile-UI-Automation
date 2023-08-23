@@ -1606,9 +1606,13 @@ public MobileElement tagsField;
       @AndroidFindBy(xpath = "//android.widget.Image[@text='My groups']")
       public MobileElement assertPlaceHolderImages;
 
-      @AndroidFindBy(xpath = "//android.view.View[@text='You are just a step away from creating a group']")
-      public MobileElement assertTextInMyGroupPage;
-     
+    
+      @AndroidFindAll({
+          @AndroidBy(xpath = "//android.widget.TextView[@text='You are just a step away from creating a group']"),
+  @AndroidBy(xpath = "//android.view.View[@text='You are just a step away from creating a group']")
+  })
+  public MobileElement assertTextInMyGroupPage;
+      
       @AndroidFindAll({
           @AndroidBy(xpath = "//android.widget.TextView[@text='Permissions']"),
           @AndroidBy(xpath = "//android.widget.Button[@text='Permissions']")
@@ -1651,6 +1655,8 @@ public MobileElement tagsField;
          @AndroidBy (xpath = "//android.widget.RadioButton[@text='Deny']")
   })      public MobileElement assertDenyPermissions;
 
+      
+      
       @AndroidFindAll({
               @AndroidBy(xpath = "//android.widget.Button[@text='Language']"),
               @AndroidBy(xpath = "//android.widget.Image[@text='select app langugae']")
@@ -1807,6 +1813,7 @@ public MobileElement tagsField;
 
 
          @AndroidFindAll({
+        	 @AndroidBy(xpath = "//android.widget.Button[contains(@text,'CourseCJeremy')]"),
                  @AndroidBy(xpath = "//android.widget.Button[contains(@text,'प्रकाश संश्लेषण')]"),
                  @AndroidBy(xpath = "//android.widget.Button[contains(@text,'HS course')]"),
                  @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Copy')]"),
@@ -1969,19 +1976,29 @@ public MobileElement tagsField;
     public MobileElement clkOnFirstGrp;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Edit group details']")
+
+    @AndroidFindAll({
+        @AndroidBy(xpath="//android.view.View[@text='Edit group details']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Edit group details']")
+})
     public MobileElement clkEditGroupDetails;
 
+   
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Deactivate group']")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Deactivate group']"),
+    @AndroidBy(xpath = "//android.widget.Button[@text='Deactivate group']")
+})
     public MobileElement clkDeactivateGroup;
-
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[@text='Deactivate group? close']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Deactivate group?']"),
     })
     public MobileElement assertDeactivateGroupText;
+    
+    
+    
 
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Deactivate']")
@@ -1996,9 +2013,12 @@ public MobileElement tagsField;
     public MobileElement clkActivateBtn;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Activate group']")
-    public MobileElement clkActivateGroup;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Activate group']"),
+    @AndroidBy(xpath = "//android.widget.Button[@text='Activate group']")
+})
+    public MobileElement clkActivateGroup;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Deactivated']")
     public MobileElement assertDeactivatedGroups;
@@ -2208,7 +2228,12 @@ public MobileElement tagsField;
     public MobileElement assertNoTagsAvailable;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Stay tuned ! we will be updating our tags library and add them here']")
+
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Stay tuned ! we will be updating our tags library and add them here']"),
+    @AndroidBy(xpath = "//android.view.View[@text='Stay tuned ! we will be updating our tags library and add them here']")
+})
     public MobileElement assertTextInTagsSection;
 
 @AndroidFindAll({
@@ -2246,13 +2271,14 @@ public MobileElement tagsField;
     public MobileElement assertEnglishMediumLibrary;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='English']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='English']")
     public MobileElement assertEnglishMediumInProfile;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Class 5']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Class 4']"),
+    	
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Class 1']"),
+          
     })
     public MobileElement assertClassInProfile;
 
@@ -2331,7 +2357,7 @@ public MobileElement tagsField;
     public MobileElement assertSearchPageText;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Popular categories']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Popular categories']")
     public MobileElement assertPopularCategories;
 
 
@@ -2719,7 +2745,7 @@ public MobileElement tagsField;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Spinner[contains(@text,'Category')]"),
+            @AndroidBy(xpath = "//android.widget.Button[@text=' Content Playlist , Category ']"),
             @AndroidBy(xpath = "//android.view.View[@text='Category, Category']"),
     })
     public MobileElement assertCategoryFilter;
@@ -3223,7 +3249,7 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     public MobileElement assertSelectClass;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore Videos']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore Videos']")
     public MobileElement assertExploreVideosText;
 
     @AndroidFindAll({
@@ -3251,9 +3277,11 @@ public MobileElement assertRequestContentInLibraryPage;
 
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'asa')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'asa')]"),
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'asa')]")
+})
     public MobileElement assertTagsCard;
-
 
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'General Discussion')]")
     public MobileElement clkOnTagCardUnderTagsSection;
@@ -3284,10 +3312,14 @@ public MobileElement assertRequestContentInLibraryPage;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Clear']")
     public MobileElement clkclearBtn;
 
-    @AndroidFindBy(xpath = "//android.widget.Image[@text='delete']")
-    public MobileElement notificationDeleteImage;
 
 
+    @AndroidFindAll({
+        @AndroidBy(xpath="//android.view.View[@text='delete']"),
+        @AndroidBy(xpath = "//android.widget.Image[@text='delete']")
+})
+public MobileElement notificationDeleteImage;
+    
     @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'has been deleted by')]")
     public MobileElement assertGroupDeletedNotificationMsg;
 
@@ -3315,7 +3347,7 @@ public MobileElement assertRequestContentInLibraryPage;
     public MobileElement deleteFirstNotification;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State (Tamil Nadu)')]")
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'CBSE')]")
     public MobileElement assertTamilNaduBoardInYourPreference;
 
 
@@ -3482,6 +3514,9 @@ public MobileElement profilePageTab2;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Course']")
     public MobileElement primarycatcontent;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
+    public MobileElement allowdownload;
 
 }
     	

@@ -783,7 +783,7 @@ public MobileElement clkMeantFor;
     public MobileElement clkInteractiveContent;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Explore Interactive Content']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore Interactive Content']")
     public MobileElement assertExploreInteractiveContentPageText;
 
 
@@ -973,7 +973,7 @@ public MobileElement clkMeantFor;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Tv Classes']")
     public MobileElement clkOnTvClasses;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore Tv Classes']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore Tv Classes']")
     public MobileElement assertExploreTvClassesText;
 
 

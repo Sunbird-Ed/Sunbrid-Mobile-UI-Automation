@@ -1029,8 +1029,8 @@ public MobileElement assertCourseDetails;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Course']//following-sibling::android.widget.Button[1]"),
-            @AndroidBy(xpath = "//android.view.View[@text='Course']//following::android.widget.Button[1]"),
+    	 @AndroidBy(xpath = "//android.view.View[@text='courses']"),
+          
     })
     public MobileElement assertCourseInCoursesTab;
 
@@ -1189,6 +1189,9 @@ public MobileElement clkOnCourseDetails;
     public MobileElement CourseContent;
 
     @AndroidFindAll({
+                      
+            
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK Automation textbookdontuse')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK CollectionForAutomation')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'CollectionForAutomation')]"),
     })
@@ -1506,18 +1509,28 @@ public MobileElement assertH5PCollectionTitle;
     public MobileElement assertCreditsLicenseInfoTab;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='CollectionForAutomation']")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Automation textbookdontuse']"),
+        @AndroidBy(xpath = "//android.view.View[@text='CollectionForAutomation']")
+})
+  
     public MobileElement assertCollectionTitle;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Bycontent1 creator']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Bycontent creator']"),
+    	
+    	  @AndroidBy(xpath = "//android.widget.TextView[@text='ByGuest new name']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Bycontent1 creator']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Bycontent creator']"),
+          
+          
     })
     public MobileElement assertPublishingOrg;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[@text='CBSEEnglishClass 1English']")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='State (Tamil Nadu)EnglishClass 1English']"),
+        @AndroidBy(xpath = "//android.view.View[@text='CBSEEnglishClass 1English']")
+})
     public MobileElement assertOrgFrameworkValues;
 
 
@@ -2053,10 +2066,10 @@ public MobileElement assertQuestion1;
     public MobileElement assertTimerForEntireSection;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Section A']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Section A']")
     public MobileElement assertSectionA;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Section B']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Section B']")
     public MobileElement assertSectionB;
 
 
