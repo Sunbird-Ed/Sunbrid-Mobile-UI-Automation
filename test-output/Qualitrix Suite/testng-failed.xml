@@ -11,7 +11,7 @@
       <class name="com.qualitrrix.test.UBScenarioSanity3">
         <methods>
           <include name="BeforeClass"/>
-          <include name="validateprimarycategoryasgroupadmin"/>
+          <include name="EditCreatedProject"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- com.qualitrrix.test.UBScenarioSanity3 -->

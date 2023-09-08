@@ -998,7 +998,27 @@ public void CreateGroup() throws Exception {
 
 
 			}
-    
+		 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+		            description = "Verify Class And SeeMoreBooksContent in LibrarySection")
+		    public void verifySeeMoreBooksContent() throws Exception {
+		        QXClient.get().driver();
+		        getDikshaMainPageActions().performUserOnBoarding();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        QXClient.get().gestures().swipeUp();
+		        
+		        getLibraryPageActions().verifyClassAndSeeMoreBooks();
+
+		    }
+
 		 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
 			      description = "switchToDarkMode ")
 			public void switchToDarkMode() throws Exception {

@@ -1099,7 +1099,7 @@ tapOnMenuBar();
                   QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.sltStudentCategory);
                   QXClient.get().report().info("clicked on sltStudentCategory");
                   QXClient.get().gestures().BlindWait(2000);
-                  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmit);
+                  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitEditML);
                   QXClient.get().report().info("clicked on clkSubmit");
                   QXClient.get().gestures().BlindWait(2000);
                   
@@ -1123,7 +1123,7 @@ tapOnMenuBar();
                   QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCloudUploadBtn);
                   QXClient.get().report().info("clicked on clkCloudUploadBtn");
                   QXClient.get().gestures().BlindWait(3000);
-                 //Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCloudDoneBtn),"Sync done is not available");
+                 Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCloudDoneBtn),"Sync done is not available");
                   QXClient.get().report().info("Verified Sync done");
                   QXClient.get().gestures().BlindWait(2000);
 
@@ -2464,7 +2464,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkDoNotShare);
         QXClient.get().report().info("clicked on clkDoNotShare");
-        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().BlindWait(7000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.EnterNameYourProject);
         QXClient.get().report().info("clicked on EnterNameYourProject");
         QXClient.get().gestures().BlindWait(4000);
@@ -2486,7 +2486,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.sltTeachersInCategry);
         QXClient.get().report().info("clicked on sltTeachersInCategry");
         QXClient.get().gestures().BlindWait(2000);
-        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmit);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitML);
         QXClient.get().report().info("clicked on clkSubmit");
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkCreateAndContinue);

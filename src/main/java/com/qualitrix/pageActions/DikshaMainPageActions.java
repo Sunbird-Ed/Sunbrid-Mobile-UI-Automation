@@ -177,7 +177,7 @@ public class DikshaMainPageActions  {
 
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
 
-            QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+           QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
             QXClient.get().report().info("Clicked on Continue Button");
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickStudent);
             QXClient.get().report().info("Clicked on clickStudent Button");
@@ -435,8 +435,9 @@ public class DikshaMainPageActions  {
     QXClient.get().report().info("slt language");
 
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
-
-            QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+            QXClient.get().gestures().BlindWait(3000);
+            dikshaMainObjects.clickContinue.click();
+      
             QXClient.get().report().info("Clicked on Continue Button");
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickLeader);
             QXClient.get().report().info("Clicked on clickLeader Button");
@@ -568,7 +569,7 @@ public class DikshaMainPageActions  {
 
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
 
-            QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+          //  QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
             QXClient.get().report().info("Clicked on Continue Button");
             QXClient.get().gestures().BlindWait(3000);
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clkHeadTeacherAndOfficials);

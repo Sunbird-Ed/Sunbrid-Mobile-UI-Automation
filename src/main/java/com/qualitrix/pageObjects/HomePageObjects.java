@@ -749,8 +749,13 @@ public MobileElement clkRemovePopupActivity;
     @AndroidFindBy(xpath = "//android.view.View[@text='help Switch to classic DIKSHA experience']")
     public MobileElement clkSwitchClassDiksExpr;
     
-    @AndroidFindBy(xpath = "//android.view.View[@text='Create New Project']")
-    public MobileElement clkOnCreateNewProj;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Create New Project']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Create New Project']"),
+})
+public MobileElement clkOnCreateNewProj;
+
     
     
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Do not share']")
@@ -772,23 +777,24 @@ public MobileElement clkRemovePopupActivity;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "(//android.widget.EditText)[1]"),
-            @AndroidBy(xpath = "//android.view.View[@text='Name your project']//following::android.widget.EditText[1]"),
-            @AndroidBy(xpath = "//android.view.View[@text='Name your project']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='Name your project']//following::android.widget.EditText[1]"),
+//            @AndroidBy(xpath = "//android.view.View[@text='Name your project']"),
     })
     public MobileElement EnterNameYourProject;
     
 
     @AndroidFindAll({
             @AndroidBy(xpath = "(//android.widget.EditText)[2]"),
-            @AndroidBy(xpath = "//android.view.View[@text='What is the objective of your Project?']//following::android.widget.EditText[1]"),
-           @AndroidBy(xpath = "//android.view.View[@text='What is the objective of your Project?']"),
-            @AndroidBy(xpath = "//android.view.View[@text='What is the Objective of your Project?']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='What is the objective of your Project?']//following::android.widget.EditText[1]"),
+//           @AndroidBy(xpath = "//android.view.View[@text='What is the objective of your Project?']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='What is the Objective of your Project?']"),
     })
     public MobileElement EnterDesciprtion;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Select category(s)']"),
+
             @AndroidBy(xpath = "//android.view.View[@text='Select category(s)']"),
-            @AndroidBy(xpath = "//android.view.View[@text='pricetag outline Select category(s)']")
     })
     public MobileElement clkCategories;
     
@@ -802,13 +808,13 @@ public MobileElement clkRemovePopupActivity;
     public MobileElement clkSubmit;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Create and continue']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Create and Continue']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='Create and continue']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='CREATE AND CONTINUE']"),
     })
     public MobileElement clkCreateAndContinue;
     
-    @AndroidFindBy(xpath = "//android.view.View[@text='Your Project has been created successfully']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Your Project has been created successfully']")
     public MobileElement assertProjectCreationMsg;
 
     @AndroidFindAll({
@@ -822,20 +828,19 @@ public MobileElement clkRemovePopupActivity;
     public MobileElement clkViewProject;
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='View Project']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='View project']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='VIEW PROJECT']"),
     })
     public MobileElement clkProjectView;
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='AutomationProject']"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Project title : AutomationProject']"),
             @AndroidBy(xpath = "//android.view.View[@text='Project title : AutomationProject']"),
     })
     public MobileElement createdProjectTitle;
 
     @AndroidFindAll({
-            @AndroidBy(xpath="//android.view.View[@text='Objective : DescriptionProject']"),
+            @AndroidBy(xpath="//android.widget.TextView[@text='Objective : DescriptionProject']"),
             @AndroidBy(xpath = "//android.view.View[@text='Objective : DescriptionProject']"),
     })
     public MobileElement createdProjectObjective;
@@ -848,7 +853,7 @@ public MobileElement clkRemovePopupActivity;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='create Edit']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Edit']"),
+          //  @AndroidBy(xpath = "//android.view.View[@text='Edit']"),
     })
     public MobileElement clkEditMenu;
     
@@ -858,47 +863,47 @@ public MobileElement clkRemovePopupActivity;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "(//android.widget.EditText)[1]"),
-            @AndroidBy(xpath = "//android.widget.EditText[@text='AutomationProject']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Name your project']//following::android.widget.EditText[1]"),
-            @AndroidBy(xpath = "//android.widget.EditText[contains(@text,'AutomationProject')]"),
+//            @AndroidBy(xpath = "//android.widget.EditText[@text='AutomationProject']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='Name your project']//following::android.widget.EditText[1]"),
+//            @AndroidBy(xpath = "//android.widget.EditText[contains(@text,'AutomationProject')]"),
     })
     public MobileElement clkEditProject;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "(//android.widget.EditText)[2]"),
-            @AndroidBy(xpath = "//android.widget.EditText[@text='DescriptionProject']"),
-            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Description')]//following::android.widget.EditText"),
+//            @AndroidBy(xpath = "//android.widget.EditText[@text='DescriptionProject']"),
+//            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Description')]//following::android.widget.EditText"),
     })
     public MobileElement clkEditProjectDesc;
 
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='Save edits']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='SAVE EDITS']"),
+         //   @AndroidBy(xpath = "//android.widget.Button[@text='SAVE EDITS']"),
     })
     public MobileElement clkEditProjectSave;
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Project title : AutomationProjectUpdatedAutomationProject']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Project title : UpdatedAutomationProject']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Project title : AutomationProject']"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Project title : UpdatedAutomationProject']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='Project title : UpdatedAutomationProject']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='Project title : AutomationProject']"),
     })
 
     public MobileElement assertUpdatedProjectName;
     
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Objective : DescriptionProjectUpdatedDescriptionProject']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Objective : UpdatedDescriptionProject']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Objective : DescriptionProject']"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Objective : UpdatedDescriptionProject']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='Objective : UpdatedDescriptionProject']"),
+//            @AndroidBy(xpath = "//android.view.View[@text='Objective : DescriptionProject']"),
     })
 
     public MobileElement assertUpdatedObjectiveDesc;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='sync circle Sync']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='sync circle Synced']"),
-            @AndroidBy(xpath = "//android.widget.Image[@text='sync offline']"),
-            @AndroidBy(xpath = "//android.widget.Image[@text='cloud upload']"),
+//            @AndroidBy(xpath = "//android.widget.Button[@text='sync circle Synced']"),
+//            @AndroidBy(xpath = "//android.widget.Image[@text='sync offline']"),
+//            @AndroidBy(xpath = "//android.widget.Image[@text='cloud upload']"),
     })
     public MobileElement clkCloudUploadBtn;
     
@@ -906,9 +911,8 @@ public MobileElement clkRemovePopupActivity;
     public MobileElement assertMsgSync;
     
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='sync circle Sync']"),
-            @AndroidBy(xpath = "//android.widget.Image[@text='sync done']"),
-            @AndroidBy(xpath = "//android.widget.Image[@text='cloud done']"),
+            @AndroidBy(xpath = "//android.widget.TextView[@text='Syncing Project']"),
+          
     })
     public MobileElement assertCloudDoneBtn;
     
@@ -1023,8 +1027,9 @@ public MobileElement assertExploreContentForVarietyOfAudience;
 
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Created by me']"),
             @AndroidBy(xpath = "//android.view.View[@text='Created By Me']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Created by me']")
+
     })
     public MobileElement assertCreatedByMeFilter;
 
@@ -1040,13 +1045,13 @@ public MobileElement assertExploreContentForVarietyOfAudience;
     })
     public MobileElement clkSkipBtn;
     
-    @AndroidFindBy(xpath = "//android.view.View[@text='Select category(s)']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Select category(s)']")
     public MobileElement clkSltCatgories;
     
     @AndroidFindBy(xpath = "//android.widget.CheckBox[@text='Students']")
     public MobileElement sltStudentCategory;
     
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Category : Teachers , Students')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Category : Teachers , Students')]")
     public MobileElement assertUpdatedCategory;
     
     
@@ -1959,12 +1964,12 @@ public MobileElement tagsField;
 
 
          @AndroidFindAll({
-                 @AndroidBy(xpath = "//android.view.View[contains(@text,'Automationproject')]"),
-                 @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationProject')]"),
-                 @AndroidBy(xpath = "//android.view.View[@text='Projects assigned to me'][@class='android.view.View']"),
-                 @AndroidBy(xpath = "//android.view.View[@text='Projects assigned to me']//following::android.view.View[1]"),
-                 @AndroidBy(xpath = "//android.view.View[@text='Projects Created by me']//following::android.view.View[1]"),
-                 @AndroidBy(xpath = "//android.view.View[@text='Created by me']//following::android.view.View"),
+                 @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutomationProject')]"),
+//                 @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationProject')]"),
+//                 @AndroidBy(xpath = "//android.view.View[@text='Projects assigned to me'][@class='android.view.View']"),
+//                 @AndroidBy(xpath = "//android.view.View[@text='Projects assigned to me']//following::android.view.View[1]"),
+//                 @AndroidBy(xpath = "//android.view.View[@text='Projects Created by me']//following::android.view.View[1]"),
+//                 @AndroidBy(xpath = "//android.view.View[@text='Created by me']//following::android.view.View"),
          })
          public MobileElement assertCreatedProjectExploreProject;
 
@@ -3517,7 +3522,16 @@ public MobileElement profilePageTab2;
     
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
     public MobileElement allowdownload;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+})
+public MobileElement clkSubmitML;
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+})
+public MobileElement clkSubmitEditML;
 }
     	
     	

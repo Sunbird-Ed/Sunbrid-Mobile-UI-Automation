@@ -2824,34 +2824,32 @@ public class UBScenarioSanity3 {
 //
 //	    }
 //	  
+
+	@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
+	  		  true, description = "EditCreatedProject ")
+	  		  public void EditCreatedProject() throws Exception {
+	  			  QXClient.get().driver();
+	  		  getDikshaMainPageActions().performUserOnBoardingWithHeadTeacherAndOfficials();
+	  			 Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	  					  properties.getProperty("excelpath"));
+	  					  
+	  					  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	  					  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+	  					  
+	  					  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",17,2);
+	  					  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",18,2);
+	  			
+//	  					  QXClient.get().gestures().swipeUp();
+//	  					  QXClient.get().gestures().swipeUp();
+	  			
+	  				  getLoginPageActions().loginToTheUserForLeader(Username,Password);
+	  				
+	  		  getHomePageActions().createNewProjects();
+	  		getHomePageActions().editCreatedProjects();  		  
+	  		  }
 	  
-	  
-	@Test()
-	public void validateprimarycategoryasgroupadmin() throws Exception {
 
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-	        System.out.println("@name:" +
-	                        properties.getProperty("excelpath"));
-
-	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 137, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 138, 2);
-
-	        getLoginPageActions().loginToTheUser(Username, Password);
-
-	        getHomePageActions().verifyprimarycategory();
-
-	}
-
-
-	 }
+}
 
 
 
