@@ -955,7 +955,7 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement assertEmailOrMobileNoOfParentOrGuardian;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Spinner[@text='Select State']")
+    @AndroidFindBy(xpath = "//android.view.View[@resource-id='mat-form-field-label-1']")
     public MobileElement clkOnSelectStateOption;
 
 
@@ -963,7 +963,7 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement selectFirstOption;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Diksha UAT SSO Login')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Sunbird SSO Login')]")
     public MobileElement assertDikshaSSOLoginText;
 
 
@@ -1229,13 +1229,46 @@ public MobileElement assertDontHaveAnAccountBelowLoginBtn2;
     public MobileElement clickTermsAndCheckBox;
 
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+})
+
+public MobileElement clkOnSubmitBtnSSO;
 
 
 
+    @AndroidFindBy(xpath = "//android.widget.EditText[@index='0']")
+    public MobileElement clkMobileNumberEditBoxSSO;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='SUNBIRD Terms of Use']")
+    public MobileElement clkTermcCheckBoxSSO;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Enter OTP']")
+    public MobileElement assertEnterOTPPageSSo;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Submit OTP']")
+    public MobileElement ClickSubmitOTPSSo;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='Incorrect OTP. Number of attempts remaining : 1']")
+    public MobileElement assertIncorrectOTPAttemp1;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Failed to validate OTP. Try again later.']")
+    public MobileElement assertFailedToValidaOTPMsgttemp2;
+    
+   
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Resend OTP']")
+    public MobileElement clickReSendButton;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='This mobile number is already registered']")
+    public MobileElement assertMobileNoAlreadyRegisteredSSO;
+    
+    
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='Email address']")
+    public MobileElement clkEmailRadioBoxSSO;
 
-
+    @AndroidFindBy(xpath = "//android.view.View[@text='Your email address is already registered']")
+    public MobileElement assertEmailIDAlreadyRegisteredSSO;
 
 }
 

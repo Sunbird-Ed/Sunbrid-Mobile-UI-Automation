@@ -2824,31 +2824,98 @@ public class UBScenarioSanity3 {
 //
 //	    }
 //	  
-
-	@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
-	  		  true, description = "EditCreatedProject ")
-	  		  public void EditCreatedProject() throws Exception {
-	  			  QXClient.get().driver();
-	  		  getDikshaMainPageActions().performUserOnBoardingWithHeadTeacherAndOfficials();
-	  			 Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	  					  properties.getProperty("excelpath"));
-	  					  
-	  					  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	  					  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-	  					  
-	  					  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",17,2);
-	  					  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",18,2);
-	  			
-//	  					  QXClient.get().gestures().swipeUp();
-//	  					  QXClient.get().gestures().swipeUp();
-	  			
-	  				  getLoginPageActions().loginToTheUserForLeader(Username,Password);
-	  				
-	  		  getHomePageActions().createNewProjects();
-	  		getHomePageActions().editCreatedProjects();  		  
-	  		  }
+/*
+ * @Test() public void ValidateOTPVerificationFailedWithAttemptCount() throws
+ * Exception { QXClient.get().driver();
+ * getDikshaMainPageActions().performUserOnBoarding(); DikshaMainPageActions d =
+ * new DikshaMainPageActions();
+ * 
+ * Properties properties =
+ * QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +
+ * "/configs/config.properties"); System.out.println("@name:" +
+ * properties.getProperty("excelpath"));
+ * 
+ * String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+ * QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+ * 
+ * String SchoolexternalID = QXClient.get().excelUtils().getCellValue("Excel1",
+ * "TestData",145, 2); String
+ * FakeName=QXClient.get().gestures().generateRandomName(); String MobileNumnber
+ * = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",147, 2);
+ * 
+ * getHomePageActions().tapOnProfileTab(); QXClient.get().gestures().swipeUp();
+ * QXClient.get().gestures().swipeUp();
+ * 
+ * getLoginPageActions().LoginUsingStateSystemUsingUsernameExternalID(FakeName,
+ * SchoolexternalID);
+ * 
+ * getLoginPageActions().EnterMobileNumberAndValidateFailedOTPAttemptCount(
+ * MobileNumnber);
+ * 
+ * 
+ * }
+ */
 	  
+/*
+ * @Test() public void MobileNoAlreadyRegisteredValidationForSSO() throws
+ * Exception { QXClient.get().driver();
+ * getDikshaMainPageActions().performUserOnBoarding(); DikshaMainPageActions d =
+ * new DikshaMainPageActions();
+ * 
+ * Properties properties =
+ * QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +
+ * "/configs/config.properties"); System.out.println("@name:" +
+ * properties.getProperty("excelpath"));
+ * 
+ * String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+ * QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+ * 
+ * String SchoolexternalID = QXClient.get().excelUtils().getCellValue("Excel1",
+ * "TestData",145, 2); String
+ * FakeName=QXClient.get().gestures().generateRandomName(); String
+ * AlreadyRegistedMobileNo = QXClient.get().excelUtils().getCellValue("Excel1",
+ * "TestData",148, 2);
+ * 
+ * getHomePageActions().tapOnProfileTab(); QXClient.get().gestures().swipeUp();
+ * QXClient.get().gestures().swipeUp();
+ * 
+ * getLoginPageActions().LoginUsingStateSystemUsingUsernameExternalID(FakeName,
+ * SchoolexternalID);
+ * 
+ * getLoginPageActions().ValidateMobileNoAlreadyRegisteredForSSO(
+ * AlreadyRegistedMobileNo);
+ * 
+ * 
+ * }
+ */
+	
+	
+	@Test()
+    public void ValidateOTPVerificationFailedWithAttemptCountForEmail() throws Exception {
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        DikshaMainPageActions d = new DikshaMainPageActions();
 
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+        System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String SchoolexternalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",145, 2);
+             String FakeName=QXClient.get().gestures().generateRandomName();
+             String EmailId = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",150, 2);
+
+        getHomePageActions().tapOnProfileTab();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        getLoginPageActions().LoginUsingStateSystemUsingUsernameExternalID(FakeName,SchoolexternalID);
+        
+        getLoginPageActions().EnterEmailIDAndValidateFailedOTPAttemptCount(EmailId);
+        
+    }
 }
 
 

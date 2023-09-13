@@ -756,6 +756,16 @@ public class CoursePageActions  {
         QXClient.get().report().info("Update button is displayed to the user in profile page");
         QXClient.get().gestures().BlindWait(2000);
     }
+    public void VerifySubmitDetailsFormInProfile() throws Exception {
+    	
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().swipeUp();
+        //QXClient.get().gestures().swipeUp();
 
+      Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.clkSubmitDetails),"clkSubmitDetails is not available");
+      QXClient.get().gestures().BlindWait(1000);
+    }
 
 }

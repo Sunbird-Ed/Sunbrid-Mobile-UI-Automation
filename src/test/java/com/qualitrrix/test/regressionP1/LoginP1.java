@@ -317,6 +317,35 @@ public class LoginP1 {
 	        getLoginPageActions().verifyPostClickingContinueBtnItShouldWorkAsExpected();
 
 	    }
+	 @Test()
+	    public void SubmitDetailsNotDisplayIfCustodianUserMovedToStateTenant() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        DikshaMainPageActions d = new DikshaMainPageActions();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String SchoolexternalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",145, 2);
+	        String UserexternalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",146, 2);
+
+	        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().LoginUsingStateSystemUsingUsernameExternalID(UserexternalID,SchoolexternalID);
+	        QXClient.get().gestures().closeappandrelaunchapp();
+	                getHomePageActions().tapOnProfileTab();
+					  getCoursePageActions().VerifySubmitDetailsFormInProfile();
+
+
+	    }
+
+		  
 
    
 }
