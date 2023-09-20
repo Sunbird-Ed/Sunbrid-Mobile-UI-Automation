@@ -4701,4 +4701,41 @@ public class TrainingPageActions {
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().report().info("Check for Feedback on Questionset questions");
     }
+    
+    public void tapOnSearchedCoursePr() throws Exception {
+    	
+    	
+    	
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnCourseDetails1);
+
+        
+        
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().report().info("Tap on AutomationCourseContent");
+        trainingPageObjects.clkJoinCourseBtn.click();
+       // QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn);
+
+          //  Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn), "Join course button is not displayed");
+          //  QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+            QXClient.get().report().info("Clicked on Join course button");
+    }
+    public void textImagesdisplay() throws Exception {
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnPlayIcon);
+        QXClient.get().report().info("Clicked on play icon ");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.questionsetWithImages), "Question set with text and images is not displayed");
+        QXClient.get().report().info("Question set with text and images is displayed");
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertQuestion1InQuestionset), "Question number 1 is not displayed");
+        QXClient.get().report().info("Question number 1 is displayed in questionset");
+        QXClient.get().gestures().BlindWait(2000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.assertQuestion1InQuestionset);
+        QXClient.get().report().info("Clicked on question number 1");
+        QXClient.get().gestures().BlindWait(3000);
+
+    }
+
 }

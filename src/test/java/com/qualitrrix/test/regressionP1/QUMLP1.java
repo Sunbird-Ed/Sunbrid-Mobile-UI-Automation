@@ -626,7 +626,39 @@ public class QUMLP1 {
     }
 
 	
-	 
+	@Test()
+    public void verifyImagestextsaresameduringcreation() throws Exception {
+
+            QXClient.get().driver();
+
+            getDikshaMainPageActions().performUserOnBoarding();
+            DikshaMainPageActions d = new DikshaMainPageActions();
+            getHomePageActions().tapOnProfileTab();
+
+
+            Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+            System.out.println("@name:" +
+                            properties.getProperty("excelpath"));
+
+            String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+            QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+            String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+            String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+            String QuestionSetDo_Id = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 73, 2);
+            QXClient.get().gestures().swipeUp();
+            QXClient.get().gestures().swipeUp();
+
+            getLoginPageActions().loginToTheUser(Username, Password);
+            d.LaunchAppHomeScreen();
+
+            getHomePageActions().tapOnSearchIcon();
+            getHomePageActions().enterTextInSearchBar(QuestionSetDo_Id);
+
+            getTrainingPageActions().tapOnSearchedQuestionsetWithImages();
+            getTrainingPageActions().textImagesdisplay();
+
+    }
 	
 	
 

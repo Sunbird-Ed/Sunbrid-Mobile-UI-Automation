@@ -2891,31 +2891,74 @@ public class UBScenarioSanity3 {
 	
 	
 	@Test()
-    public void ValidateOTPVerificationFailedWithAttemptCountForEmail() throws Exception {
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        DikshaMainPageActions d = new DikshaMainPageActions();
+	 public void verifysubmitdetailsbuttonandconsentpopupshouldnotdisplayedonProfilepage() throws Exception {
 
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
+	         QXClient.get().driver();
+	         DikshaMainPageActions d = new DikshaMainPageActions();
+	         getDikshaMainPageActions().performUserOnBoarding();
+	         getHomePageActions().tapOnProfileTab();
+	         Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	                                 properties.getProperty("excelpath"));
 
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+	                 String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	                 QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String SchoolexternalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",145, 2);
-             String FakeName=QXClient.get().gestures().generateRandomName();
-             String EmailId = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",150, 2);
+	                 String Username =QXClient.get().excelUtils().getCellValue("Excel1","Profile",2,2);
+	                 String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Profile",3,2);
+	         String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "Profile",4,2);
+	                 QXClient.get().gestures().swipeUp();
+	                 QXClient.get().gestures().swipeUp();
+	                 getLoginPageActions().loginToTheUser(Username,Password);
 
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
+	                 QXClient.get().gestures().BlindWait(4000);
+	    	         QXClient.get().gestures().closeappandrelaunchapp();
 
-        getLoginPageActions().LoginUsingStateSystemUsingUsernameExternalID(FakeName,SchoolexternalID);
-        
-        getLoginPageActions().EnterEmailIDAndValidateFailedOTPAttemptCount(EmailId);
-        
-    }
+	                 getHomePageActions().tapOnDownloadTab();
+
+	                 getHomePageActions().tapOnProfileTab();
+
+	                 getCoursePageActions().verifysubmitdetailsbuttonProfilepage();
+	    	         QXClient.get().gestures().closeappandrelaunchapp();
+
+             getHomePageActions().tapOnDownloadTab();
+
+	         getHomePageActions().tapOnMenuBar();
+
+	         getCoursePageActions().tapOnAddAnotherUser();
+
+	         String FakeName=QXClient.get().gestures().generateRandomName();
+	         String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
+	         System.out.println(storeFakeNameEntered);
+	         getCoursePageActions().tapOnAddUserBtn();
+	         
+	         QXClient.get().gestures().closeappandrelaunchapp();
+	         getHomePageActions().tapOnMenuBar();
+
+	         getCoursePageActions().tapOnMoreOption();
+	         QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+
+
+	         getCoursePageActions().tapOnChangeUserWithoutProfile();
+
+	         getCoursePageActions().tapOnTermsAndCondition();
+
+	         getCoursePageActions().tapOnContinueForSwicthUser();
+	         QXClient.get().gestures().closeappandrelaunchapp();
+
+	         getHomePageActions().tapOnTrainingTab();
+
+	   
+	         
+
+	         getHomePageActions().tapOnSearchIcon();
+	         getHomePageActions().enterTextInSearchBar(coursefetch);
+
+	         //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(coursefetch);
+	         getTrainingPageActions().tapOnSearchedCoursePr();
+
+	         getCoursePageActions().verifysubmitdetailsbuttonandconsentpopupshouldnotdisplayedonProfilepage();
+	         }
+	          
 }
 
 

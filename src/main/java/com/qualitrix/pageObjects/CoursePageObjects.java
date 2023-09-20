@@ -691,4 +691,61 @@ public MobileElement assertContentPolicy;
 public MobileElement assertThankyouForSubmittingDetails;
 
 
+	@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Submit details']"),
+
+})
+public MobileElement assertsubmitdetailsLabel;
+
+        @AndroidFindBy(xpath = "//android.view.View[@text='Consent to share details']")
+public MobileElement assertconsentpoppup;
+        
+        @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.EditText[@text='******2583']"),
+            @AndroidBy(xpath = "//android.widget.EditText[@text='st****@yopmail.com']")
+})
+public MobileElement assertPrefilledMobileidAddressInDeclarationForm;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='verified']")
+public MobileElement assertmobileVerifiedImage;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='English Medium']")
+public MobileElement clkMedium;
+
+
+        @AndroidFindBy(xpath = "//android.view.View[@text='Class 1']")
+        public MobileElement clkClasses;
+
+        @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Learner passbook (2)')]")
+        public MobileElement assertlearnerpassbook;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
+        public MobileElement vieweyecertificate;
+
+        @AndroidFindBy(xpath = "//android.widget.Button[@text='Download Download']")
+        public MobileElement downloadcoursecertificate;
+
+
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text='PDF']")
+        public MobileElement certificatePDF;
+
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text='PNG']")
+        public MobileElement certificatePNG;
+
+        @AndroidFindBy(xpath = "//android.widget.ImageButton[@index='0']")
+        public MobileElement clickback;
+        
+      
+
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text='Course reports']")
+        public MobileElement assertcoursename;
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text='13/07/2023']")
+        public MobileElement assertcoursedate;
+        
+        
+        @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
+        public MobileElement allowbutton;
+        @AndroidFindBy(xpath = "//android.widget.Button[@text='ALLOW']")
+        public MobileElement allowdevice;
 }

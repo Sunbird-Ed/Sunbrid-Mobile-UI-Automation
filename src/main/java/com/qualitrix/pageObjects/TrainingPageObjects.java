@@ -2204,6 +2204,9 @@ public MobileElement clickprev;
 
 
 
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE 4.7 TRACKABLE BOOK ISSUE')]")
+public MobileElement clkOnCourseDetails1;
+
 
 
 

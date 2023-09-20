@@ -1270,6 +1270,8 @@ public MobileElement clkOnSubmitBtnSSO;
     @AndroidFindBy(xpath = "//android.view.View[@text='Your email address is already registered']")
     public MobileElement assertEmailIDAlreadyRegisteredSSO;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='I agree to share these details with the Administrators of SUNBIRD as per the']")
+    public MobileElement assertSSOGlobalPopupFirstTime;
 }
 
 

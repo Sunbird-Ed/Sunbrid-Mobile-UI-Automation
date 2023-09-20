@@ -1653,6 +1653,61 @@ public class LoginPageActions {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertFailedToValidaOTPMsgttemp2),"assertFailedToValidaOTPMsgttemp2  text is not displayed");
         QXClient.get().gestures().BlindWait(3000);
         }
+ public void ssoConsetPoupFirstTime() throws Exception {
+    	     
+        
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertSSOGlobalPopupFirstTime),"assertSSOGlobalPopupFirstTime  text is not displayed");
+        QXClient.get().gestures().BlindWait(9000);
+    }
+ 
+ public void LoginViaSSO(String Name,String UserexternalID,String SchoolexternalID) throws Exception {
+     QXClient.get().gestures().BlindWait(3000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+     QXClient.get().gestures().BlindWait(3000);
+
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginWithStateSystemOption),"Login with state system option is not displayed");
+     QXClient.get().report().info("Login with state system option is displayed");
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
+     QXClient.get().report().info("Clicked on Login with state system option");
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().BlindWait(5000);
+
+     QXClient.get().gestures().BlindWait(9000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSelectStateOption);
+     QXClient.get().gestures().BlindWait(2000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectFirstOption);
+     QXClient.get().report().info("Select first option in the list");
+     QXClient.get().gestures().BlindWait(2000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtnSSO);
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().BlindWait(5000);
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDikshaSSOLoginText),"Diksha SSO Login text is not displayed");
+     QXClient.get().report().info("Diksha SSO Login text is displayed ");
+     QXClient.get().gestures().BlindWait(2000);
+
+     QXClient.get().gestures().isElementPresent(profilePageObjects.userNameEditField);
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.userNameEditField.sendKeys(Name);
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().isElementPresent(profilePageObjects.userNameExternalID);
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.userNameExternalID.sendKeys(UserexternalID);
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().isElementPresent(profilePageObjects.schoolExternalID);
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.schoolExternalID.sendKeys(SchoolexternalID);
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtnSSO);
+     QXClient.get().gestures().BlindWait(6000);
+     QXClient.get().gestures().BlindWait(6000);
+ }
+ 
     
 }
 
