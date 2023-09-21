@@ -345,7 +345,20 @@ public class LoginP1 {
 
 	    }
 
-		  
+	  @Test()
+	    public void ValidateEmailOTPSentMessageForgetPassword() throws Exception {
+
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+
+	        getHomePageActions().tapOnProfileTab();
+
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().verifyRecoverEmailAddressToSendOTP();
+	        getLoginPageActions().validateOtpMsgForForgotPasswordAsWellForReSendOTP();
+	    }
 
    
 }

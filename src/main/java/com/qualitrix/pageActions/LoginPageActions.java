@@ -1708,6 +1708,108 @@ public class LoginPageActions {
      QXClient.get().gestures().BlindWait(6000);
  }
  
+ public void validateOtpMsgForForgotPasswordAsWellForReSendOTP() throws Exception
+ {
+	  profilePageObjects.assertEmailAddressToSendOTP.click();
+	  QXClient.get().report().info("Email Address to send OTP is displayed");
+      QXClient.get().gestures().BlindWait(3000);
+      QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkGetOtpForgotPassword);
+	  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertOtpSentForEmailInForgotPassword),"assertOtpSentForEmailInForgotPassword is not displayed");
+	  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertOtpValidFor30MinsInForgotPassword),"assertOtpValidFor30MinsInForgotPassword is not displayed");
+      QXClient.get().gestures().BlindWait(9000);
+      QXClient.get().gestures().BlindWait(5000);
+
+	  QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clickReSendBtnForgotPassword);
+      QXClient.get().gestures().BlindWait(2000);
+
+	  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertResendOtpToasterMsgForgotPassword),"assertResendOtpToasterMsgForgotPassword is not displayed");
+
+ }
+ 
+ public void verifyRecoverMobileSendOTPForgotPassword() throws Exception {
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+     QXClient.get().report().info("Clicked on Login Button");
+     QXClient.get().gestures().BlindWait(2000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkLoginWithDikshaBtn);
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnForgetPassword);
+     QXClient.get().report().info("Clicked on Forget password link");
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().BlindWait(3000);
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRecoverAccountText),"Recover account text is not displayed");
+     QXClient.get().report().info("Recover Account text is displayed");
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnEmailEditField);
+     QXClient.get().report().info("Clicked on Email edit field");
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.clkOnEmailEditField.sendKeys("9535665495");
+     QXClient.get().gestures().BlindWait(2000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNameEditField);
+     QXClient.get().report().info("Clicked on Name field");
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.clkOnNameEditField.sendKeys("Tejesh");
+     QXClient.get().gestures().BlindWait(4000);
+     QXClient.get().gestures().clkBackButton();
+     QXClient.get().gestures().BlindWait(4000);
+
+   //  QXClient.get().gestures().clkBackButton();
+    
+     profilePageObjects.clkOnNextBtn.click();
+     
+     QXClient.get().gestures().swipeUp();
+     QXClient.get().gestures().swipeUp();
+     profilePageObjects.clkOnNameEditField.clear();
+     profilePageObjects.clkOnNameEditField.sendKeys("Tejesh");
+     QXClient.get().gestures().clkBackButton();
+     QXClient.get().gestures().BlindWait(4000);
+     try
+     {
+           QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnNextBtn);
+
+     }catch(Exception e)
+     {
+     	System.out.println("handled");
+     }
+     
+     QXClient.get().report().info("Clicked on Next button for the first time");
+     QXClient.get().gestures().BlindWait(3000);
+     QXClient.get().gestures().BlindWait(2000);
+
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRecoverAccountText),"Recover Account text is not displayed");
+     QXClient.get().report().info("Recover Account text is displayed");
+
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMessageRelatedToOTP),"Message related to OTP is not displayed");
+     QXClient.get().report().info("Message related OTP is displayed");
+
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertMobileNumberToSendOTP),"assertMobileNumberToSendOTP is not displayed");
+     QXClient.get().report().info("Email Address to send OTP is displayed");
+     QXClient.get().gestures().BlindWait(3000);
+
+ }
+ public void validateMobileOtpMsgForForgotPasswordAsWellForReSendOTP() throws Exception
+ {
+	  profilePageObjects.assertMobileNumberToSendOTP.click();
+	  QXClient.get().report().info("Mobile to send OTP is displayed");
+      QXClient.get().gestures().BlindWait(3000);
+      QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkGetOtpForgotPassword);
+	  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertOtpSentForMobileInForgotPassword),"assertOtpSentForEmailInForgotPassword is not displayed");
+	  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertOtpValidFor30MinsInForgotPassword),"assertOtpValidFor30MinsInForgotPassword is not displayed");
+      QXClient.get().gestures().BlindWait(9000);
+      QXClient.get().gestures().BlindWait(5000);
+
+	  QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clickReSendBtnForgotPassword);
+      QXClient.get().gestures().BlindWait(2000);
+
+	  Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertResendOtpToasterMsgForgotPassword),"assertResendOtpToasterMsgForgotPassword is not displayed");
+
+ }
     
 }
 

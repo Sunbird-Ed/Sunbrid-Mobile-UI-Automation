@@ -1272,6 +1272,29 @@ public MobileElement clkOnSubmitBtnSSO;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='I agree to share these details with the Administrators of SUNBIRD as per the']")
     public MobileElement assertSSOGlobalPopupFirstTime;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Get OTP']")
+    public MobileElement clkGetOtpForgotPassword;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='OTP has been sent to st****@yopmail.com.']")
+    public MobileElement assertOtpSentForEmailInForgotPassword;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='It is valid for 30 min.']")
+    public MobileElement assertOtpValidFor30MinsInForgotPassword;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@index='4']")
+    public MobileElement clickReSendBtnForgotPassword;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='OTP sent successfully.']")
+    public MobileElement assertResendOtpToasterMsgForgotPassword;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.RadioButton[@index='0']"),
+})
+public MobileElement assertMobileNumberToSendOTP;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='OTP has been sent to ******5495.']")
+    public MobileElement assertOtpSentForMobileInForgotPassword;
 }
 
 
