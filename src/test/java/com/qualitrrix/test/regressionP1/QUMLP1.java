@@ -825,10 +825,8 @@ public class QUMLP1 {
             getHomePageActions().enterTextInSearchBar(QuestionSetDo_Id);
 
             getTrainingPageActions().tapOnSearchedQuestionset();
-            getTrainingPageActions().tapOnbackandexit();
-            getTrainingPageActions().tapOnqumlclick();
-            QXClient.get().gestures().clkBackButton();
-
+            getTrainingPageActions().taponreply();
+           
     }
 
 }

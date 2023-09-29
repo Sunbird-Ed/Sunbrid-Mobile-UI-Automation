@@ -2137,7 +2137,37 @@ getHomePageActions().verifySignInGoogleOption();
 	 }
 	
 	
-	
+	 @Test()
+     public void bestscoreandmaxattemptretainedincourse() throws Exception {
+
+             QXClient.get().driver();
+
+             getDikshaMainPageActions().performUserOnBoarding();
+             getHomePageActions().tapOnProfileTab();
+
+             Properties properties = QXClient.get().propUtils()
+                             .getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+             System.out.println("@name:" + properties.getProperty("excelpath"));
+
+             String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+             QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+             String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 138, 2);
+             String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 139, 2);
+             String course_id = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 137, 2);
+             QXClient.get().gestures().swipeUp();
+             QXClient.get().gestures().swipeUp();
+
+             getLoginPageActions().loginToTheUser(Username, Password);
+
+             //getHomePageActions().tapOnTrainingTab();
+             //getHomePageActions().tapOncourseTab();
+             getHomePageActions().tapOnSearchIcon();
+             getHomePageActions().enterTextInSearchBar(course_id);
+             //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("CourseContent");
+             getTrainingPageActions().tapOnSearchedCourseexpired();
+
+     }
 	
 	
 	

@@ -2316,9 +2316,51 @@ public MobileElement Questionsetlimit;
 
 
 
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Sept 22 QuestionSet']")
 
+public MobileElement questionsettitle;
 
+@AndroidFindBy(xpath = "//android.widget.Image[@index='0']")
 
+public MobileElement questionsetdesign;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Replay']")
+
+public MobileElement questionsetreply;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course details']")
+public MobileElement clkOnTextCourseDetails;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Enrollment end date : 26/09/2023']")
+public MobileElement assertPassedEnrollmentEndDate;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course modules']")
+public MobileElement clkCourseModules;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course Unit 1']")
+public MobileElement clkCourseUnit1;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='3.6 AN Self assess BEST SCORE 8/9']")
+public MobileElement assertBestScore;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 26th April with assessment')]"),
+})
+public MobileElement Course26thAprilWithAssessment;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course Unit 2']")
+public MobileElement clkCourseUnit2;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0/1 Completed']")
+public MobileElement assertYourProgressStatus;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Assess_1']")
+public MobileElement assertBestScoreNotDisplayed;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Course with assessments')]"),
+})
+public MobileElement CourseWithAssessments;
 
 
 

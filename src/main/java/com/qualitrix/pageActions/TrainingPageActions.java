@@ -4955,4 +4955,79 @@ public class TrainingPageActions {
      QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.maxAttemptsExceededMsg);
      QXClient.get().gestures().BlindWait(3000);
  }
+ 
+ public void taponreply() throws Exception {
+
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+     QXClient.get().gestures().BlindWait(9000);
+    // QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.feedbackenablecorrect);
+     //QXClient.get().gestures().BlindWait(9000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionsettitle);
+     QXClient.get().gestures().BlindWait(9000);
+
+
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionsetdesign);
+     QXClient.get().gestures().BlindWait(9000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionsetreply);
+     QXClient.get().gestures().BlindWait(9000);
+
+ }
+ 
+ public void tapOnSearched26thAprilWithAssessment() throws Exception {
+     QXClient.get().gestures().BlindWait(3000);
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.Course26thAprilWithAssessment);
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().report().info("Tap on CourseContent");
+ }
+
+public void verifyConsumeCourseAssesment() throws Exception {
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnTextCourseDetails);
+     QXClient.get().report().info("clicked on clkCourseDetails");
+     QXClient.get().gestures().BlindWait(3000);
+
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertPassedEnrollmentEndDate),"Enrollment end date is not displayed");
+     QXClient.get().report().info("Enrollment end date is displayed in Course details");
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCourseModules);
+     QXClient.get().report().info("clicked on clkCourseModules");
+     QXClient.get().gestures().BlindWait(3000);
+
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCourseUnit1);
+     QXClient.get().report().info("clicked on clkCourseUnit1");
+     QXClient.get().gestures().BlindWait(3000);
+
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertBestScore),"3.6 AN Self assess BEST SCORE 8/9 is not displayed");
+     QXClient.get().report().info("3.6 AN Self assess BEST SCORE 8/9 is displayed");
+     QXClient.get().gestures().BlindWait(3000);
+
+ }
+ 
+public void tapOnCourseWithAssessmentsUnderMyCourse() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.CourseWithAssessments);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().report().info("Tap on CourseContent");
+}
+
+public void verifyCourseAssesmentBestScoreNotBeDisplayedForNotAttemptedAssessment() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCourseUnit2);
+    QXClient.get().report().info("clicked on clkCourseUnit2");
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertYourProgressStatus),"The text 0/1 is not displayed under Your Progress");
+    QXClient.get().report().info("The text 0/1 is displayed under Your Progress");
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertBestScoreNotDisplayed),"Assess_1 is displayed with Best score");
+    QXClient.get().report().info("Assess_1 is not displayed with Best score");
+    QXClient.get().gestures().BlindWait(3000);
+
+}
 }
