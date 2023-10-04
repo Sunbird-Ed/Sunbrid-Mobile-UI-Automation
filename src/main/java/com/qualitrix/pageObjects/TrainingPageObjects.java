@@ -2363,5 +2363,103 @@ public MobileElement assertBestScoreNotDisplayed;
 public MobileElement CourseWithAssessments;
 
 
+@AndroidFindBy(xpath = "//android.view.View[contains(@text, 'COURSE Qr code Course Subject')]")
+
+public MobileElement coursetitle2;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='navigation-arrows-nextIcon']")
+public MobileElement clkOnnavigationarrow;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='50% completed']")
+
+public MobileElement ProgressBtn;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text= 'Course Unit']")
+
+public MobileElement Courseunit;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Course multiple units Subject :')]")
+
+public MobileElement coursetitle3;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='You have successfully completed this course']")
+
+public MobileElement coursecomplete;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text, 'COURSE Course single page pdf only')]")
+
+public MobileElement coursetitle4;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Course single page pdf only')]")
+
+public MobileElement clkOncourse;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='menu-icon']")
+public MobileElement clkOn3dots;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Sync Progress now']")
+public MobileElement clkOnsyncprogress;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='profile']")
+public MobileElement clkOnprofile;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
+public MobileElement vieweyecertificate;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
+public MobileElement certificatepermission;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='ALLOW']")
+public MobileElement allowpermission;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Download Download']")
+public MobileElement downloadcoursecertificate;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='PDF']")
+public MobileElement certificatePDF;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'Automation course - PDF')]"),
+
+})
+public MobileElement AutomationPdfCourse;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course Unit 01']")
+public MobileElement clkCourseUnit01;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Single page Content']")
+public MobileElement clkPDFContent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public MobileElement clkPlayVideoBtn;
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Exit']")
+public MobileElement clkPlayerExitBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public MobileElement clkCloseIconOnRateContent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='back']")
+public MobileElement clkOnBackIcon;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='1/3 Completed']")
+public MobileElement assertVerifyProgress;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='33% completed']")
+public MobileElement assertPdfYourProgress;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Automation Course - ePub')]"),
+
+})
+public MobileElement AutomationEpubCourse;
+
+@AndroidFindBy(xpath = " //android.widget.Button[@text='naveen_epub_famouspaintings.epub']")
+public MobileElement clkEpubContent;
+
+
 
 }

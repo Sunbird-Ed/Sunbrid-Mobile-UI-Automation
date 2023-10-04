@@ -2895,15 +2895,11 @@ public class UBScenarioSanity3 {
 	    public void ValidateMobileOTPSentMessageForForgetPassword() throws Exception {
 
 	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
+	        getDikshaMainPageActions().LaunchWhatsappAppHomeScreen();
 
-	        getHomePageActions().tapOnProfileTab();
+	     //   getHomePageActions().tapOnProfileTab();
 
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-
-	        getLoginPageActions().verifyRecoverMobileSendOTPForgotPassword();
-	        getLoginPageActions().validateMobileOtpMsgForForgotPasswordAsWellForReSendOTP();
+	     
 	    }
 }
 

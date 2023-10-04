@@ -621,7 +621,7 @@ public class DikshaMainPageActions  {
         checkLocationPopup();
         clkCloseIcon();
 //                QXClient.get().gestures().closeApp();
-//                LaunchAppHomeScreen();
+            //   LaunchAppHomeScreen();
     }
 
     public void sltUserStateDropdownCBSE() throws Exception
@@ -664,5 +664,21 @@ public class DikshaMainPageActions  {
 
     }
 
+    public void LaunchWhatsappAppHomeScreen() throws InterruptedException
+    {
+    	/*QXClient.get().gestures().startActivity("staging.diksha.app","org.sunbird.app.MainActivity");
+   			      	System.out.println(("Launch HomeScreen"));*/
+   			      	
+    	QXClient.get().gestures().driver.findElement(By.xpath("")).click();
 
+    	QXClient.get().gestures().closeApp();  
+        Thread.sleep(6000);
+    	//QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.HomeActivity");
+
+    	QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.Main");
+	      	System.out.println(("Launch HomeScreen"));
+
+   			     
+    }
+	 
 }
