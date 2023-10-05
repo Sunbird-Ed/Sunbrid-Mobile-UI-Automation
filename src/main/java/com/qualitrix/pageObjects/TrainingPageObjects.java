@@ -2460,6 +2460,44 @@ public MobileElement AutomationEpubCourse;
 @AndroidFindBy(xpath = " //android.widget.Button[@text='naveen_epub_famouspaintings.epub']")
 public MobileElement clkEpubContent;
 
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Copy of Course reports Subject')]")
+public MobileElement coursetitlebatch;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
+public MobileElement assertbatchselection;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Practice Course Subject :')]")
+public MobileElement coursetitleselectionbatch;
 
 
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
+public MobileElement courseselectionnewbatch;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0% completed']")
+public MobileElement courseprogress;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public MobileElement playIcon;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='next slide']")
+public MobileElement ClickOnNextBtn;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Delhi']")
+public MobileElement ClickOnoption;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='View Solution']")
+public MobileElement ClickOnSolutionbtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='play']")
+public MobileElement PlayTheVideo;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Questionsetwithvideo')]")
+public MobileElement questionSetWithVideo;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursewithcert')]")
+public MobileElement ClkOnCourseWithAssess;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Automationcoursewithcert']")
+public MobileElement CourseWithQRCode;
 }

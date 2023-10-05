@@ -3532,6 +3532,69 @@ public MobileElement clkSubmitML;
         @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
 })
 public MobileElement clkSubmitEditML;
+    
+    @AndroidFindBy(xpath="//android.view.View[contains(@text,'COURSE')]")
+    public MobileElement tapOnFirstCoureResult;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='No batches available']")
+    public MobileElement assertInheritCourseUI;
+    
+    @AndroidFindBy(xpath="//android.view.View[contains(@text,'COLLECTION')]")
+    public MobileElement tapOnFirstColelctionResult;
+    
+    @AndroidFindBy(xpath="//android.widget.Button[@text='All']")
+    public MobileElement assertInheritBookUI;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='This content is derived from")
+    public MobileElement assertThisContentDerivedLabel;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='Content:']")
+    public MobileElement assertContentLabelSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='CourseAutomation']")
+    public MobileElement assertContentSourceInfoInSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='Author of source content:']")
+    public MobileElement assertAuthorOfSourceContentInSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='Guest new name'][3]")
+    public MobileElement assertAuthorOfSourceContentNameInSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='License terms:'][2]")
+    public MobileElement assertLicenceTermsLabelInSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='CC BY 4.0'][2]")
+    public MobileElement assertLicenceTermsValuelInSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='Published on SUNBIRD by:'][2]")
+    public MobileElement assertPublisedOnSunbirdLabellInSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='APTWRS ADDATEEGALA']")
+    public MobileElement assertPublisedOnSunbirdNamelInSourceCourse;
+    
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='Copy of CourseAutomation']")
+    public MobileElement assertContentSourceCopiedInfoInSourceCourse;
+    
+    
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'RESOURCE AutomatioEpubcontent')]")
+    public WebElement TapOnEpubContent;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+    public WebElement TapOnPlayBtn;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@resource-id='title-page']")
+    public WebElement PageLabeIsDisPlayed;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='notifications']")
+    public MobileElement NotiBellIconDisplay;
+    @AndroidFindBy(xpath = "//android.view.View[@text='discover']")
+    public MobileElement SearchBtn;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Search SUNBIRD')]")
+    public MobileElement SearchSunbirdDisplay;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='search']")
+    public MobileElement SearchBarClickable;
 }
     	
     	

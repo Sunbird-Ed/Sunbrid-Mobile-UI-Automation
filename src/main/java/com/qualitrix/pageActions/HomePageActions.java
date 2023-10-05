@@ -7748,7 +7748,115 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("Primary category content present");
 
     }
+    
+    public void clkOnCourseFirstResult() throws Exception {
+    	QXClient.get().gestures().BlindWait(2000);
+    	QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.tapOnFirstCoureResult);
+        QXClient.get().report().info("Tap on tapOnFirstCoureResult tab");
+    }
 
+    public void verifyCourseUIInherited() throws Exception {
+    	QXClient.get().gestures().BlindWait(4000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertInheritCourseUI),"assertInheritCourseUI is not displayed");
+
+    	        QXClient.get().report().info("verified assertInheritCourseUI ");
+    }
+
+    
+    public void clkOnCollectionFirstResult() throws Exception {
+    	QXClient.get().gestures().BlindWait(2000);
+    	QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.tapOnFirstColelctionResult);
+        QXClient.get().report().info("Tap on CollectionFirstResult tab");
+    }
+    public void verifyBookUIInherited() throws Exception {
+    	QXClient.get().gestures().BlindWait(4000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertInheritBookUI),"assertInheritBookUI is not displayed");
+    	        QXClient.get().report().info("verified assertInheritBookUI ");
+    }
+    
+    public void validateSourceCourseInformation() throws Exception {
+    	QXClient.get().gestures().BlindWait(4000);
+    	QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.licenseBtn);
+    	QXClient.get().gestures().swipeUp();
+    	QXClient.get().gestures().swipeUp();
+    	QXClient.get().gestures().BlindWait(4000);
+
+    	        
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertThisContentDerivedLabel),"assertThisContentDerivedLabel is not displayed");
+    	        QXClient.get().report().info("verified assertThisContentDerivedLabel ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertContentLabelSourceCourse),"assertContentLabelSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertContentLabelSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertContentSourceInfoInSourceCourse),"assertContentSourceInfoInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertContentSourceInfoInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAuthorOfSourceContentInSourceCourse),"assertAuthorOfSourceContentInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertAuthorOfSourceContentInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAuthorOfSourceContentNameInSourceCourse),"assertAuthorOfSourceContentNameInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertAuthorOfSourceContentNameInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertLicenceTermsLabelInSourceCourse),"assertLicenceTermsLabelInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertLicenceTermsLabelInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertLicenceTermsValuelInSourceCourse),"assertLicenceTermsValuelInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertLicenceTermsValuelInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPublisedOnSunbirdLabellInSourceCourse),"assertPublisedOnSunbirdLabellInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertPublisedOnSunbirdLabellInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPublisedOnSunbirdNamelInSourceCourse),"assertPublisedOnSunbirdNamelInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertPublisedOnSunbirdNamelInSourceCourse ");
+    	      
+    }
+    public void validateSourceCourseInformationCopyOfCopiedCourse() throws Exception {
+    	QXClient.get().gestures().BlindWait(4000);
+    	QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.licenseBtn);
+    	QXClient.get().gestures().swipeUp();
+    	QXClient.get().gestures().swipeUp();
+    	QXClient.get().gestures().BlindWait(4000);
+
+    	        
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertThisContentDerivedLabel),"assertThisContentDerivedLabel is not displayed");
+    	        QXClient.get().report().info("verified assertThisContentDerivedLabel ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertContentLabelSourceCourse),"assertContentLabelSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertContentLabelSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertContentSourceCopiedInfoInSourceCourse),"assertContentSourceCopiedInfoInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertContentSourceCopiedInfoInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAuthorOfSourceContentInSourceCourse),"assertAuthorOfSourceContentInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertAuthorOfSourceContentInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAuthorOfSourceContentNameInSourceCourse),"assertAuthorOfSourceContentNameInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertAuthorOfSourceContentNameInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertLicenceTermsLabelInSourceCourse),"assertLicenceTermsLabelInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertLicenceTermsLabelInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertLicenceTermsValuelInSourceCourse),"assertLicenceTermsValuelInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertLicenceTermsValuelInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPublisedOnSunbirdLabellInSourceCourse),"assertPublisedOnSunbirdLabellInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertPublisedOnSunbirdLabellInSourceCourse ");
+    	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPublisedOnSunbirdNamelInSourceCourse),"assertPublisedOnSunbirdNamelInSourceCourse is not displayed");
+    	        QXClient.get().report().info("verified assertPublisedOnSunbirdNamelInSourceCourse ");
+    	      
+    }
+    
+    public void VerifyLocationIsReplacedWithPageForEpubContent() throws Exception {
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOnEpubContent);
+        QXClient.get().report().info("Tap on epub content");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOnPlayBtn);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.PageLabeIsDisPlayed));
+        QXClient.get().report().info("Location label is changed to Page label is displayed");
+
+    }
+    public void verfiyNotificationIconSearchBarAndSunbirdText() throws Exception {
+        QXClient.get().gestures().BlindWait(4000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.NotiBellIconDisplay));
+        QXClient.get().report().info("Notificationbell Icon is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.SearchBtn);
+        QXClient.get().report().info("Tap on search button");
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.SearchSunbirdDisplay));
+        QXClient.get().report().info("Search Sunbird is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.SearchBarClickable);
+        QXClient.get().report().info("Search bar is clickable");
+
+
+    }
 }
  
  

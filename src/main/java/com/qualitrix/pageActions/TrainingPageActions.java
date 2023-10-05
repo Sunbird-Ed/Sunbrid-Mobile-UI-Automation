@@ -5435,6 +5435,72 @@ public void verifyCourseProgressUpdateForEpubContent() throws Exception {
 
 
 }
+public void taponcoursebatch() throws Exception {
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.coursetitlebatch);
+    QXClient.get().gestures().BlindWait(5000);
+    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertbatchselection), "Batch selection popup is not displayed");
+    QXClient.get().report().info("Batch selection popup  is not displayed in the searched course");
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.donotsharebuton);
+    QXClient.get().gestures().BlindWait(5000);
+}
+
+public void taponcourseselectionbatch() throws Exception {
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.coursetitleselectionbatch);
+    QXClient.get().gestures().BlindWait(5000);
+    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertbatchselection), "Batch selection popup is displayed");
+    QXClient.get().report().info("Batch selection popup  is  displayed in the searched course");
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.coursetitleselectionbatch);
+    QXClient.get().gestures().BlindWait(5000);
+    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.courseprogress), "Course progress is displayed with 0%");
+    QXClient.get().report().info("Course progress is displayed with 0%");
+    QXClient.get().gestures().BlindWait(5000);
+}
 
 
+public void tapOnQuestionSetWithvideo() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionSetWithVideo);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().report().info("Tap on Questionset with video");
+}
+public void verifyQuestionsetPlayvideoinSolution() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playIcon);
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClickOnNextBtn);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClickOnNextBtn);
+    QXClient.get().report().info("Click on Next button");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClickOnoption);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClickOnNextBtn);
+    QXClient.get().report().info("Click on MCQ option");
+    QXClient.get().gestures().BlindWait(2000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClickOnSolutionbtn);
+    QXClient.get().report().info("Click on solution button");
+    QXClient.get().gestures().BlindWait(4000);
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.PlayTheVideo);
+    QXClient.get().report().info("play the video in solution");
+    QXClient.get().gestures().BlindWait(2000);
+}
+public void tapOnQrcode() throws Exception {
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClkOnCourseWithAssess);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().report().info("Tap on Course with QR code");
+}
+public void verifySearchCourseLinkedWithQRCode() throws Exception {
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.CourseWithQRCode), "Course with QRcode not is displayed");
+    QXClient.get().report().info("Course with QRcode is displayed");
+    QXClient.get().gestures().BlindWait(3000);
+}
 }

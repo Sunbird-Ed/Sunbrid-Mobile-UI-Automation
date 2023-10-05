@@ -370,5 +370,31 @@ public class ContentConsumptionP1 {
 	        getLibraryPageActions().verifyFilterOptions();
 
 	    }
+	   @Test()
+		public void VerifyLocationIsReplacedWithPageForEpubContent() throws Exception {
+
+			QXClient.get().driver();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			getDikshaMainPageActions().performUserOnBoarding();
+
+
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String AutomatioEpubcontent = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 157, 2);
+
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(AutomatioEpubcontent);
+			getHomePageActions().VerifyLocationIsReplacedWithPageForEpubContent();
+
+
+		}
+	   
+	   
+	   
 }
 

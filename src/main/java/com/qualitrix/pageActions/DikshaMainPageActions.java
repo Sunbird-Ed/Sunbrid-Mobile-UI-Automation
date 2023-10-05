@@ -93,7 +93,7 @@ public class DikshaMainPageActions  {
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
             QXClient.get().report().info("Clicked on Submit Button");
             QXClient.get().gestures().BlindWait(5000);
-          dikshaMainObjects.submitWithArrowBtn.click();
+       //   dikshaMainObjects.submitWithArrowBtn.click();
 
     //  QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitWithArrowBtn);
 
@@ -111,7 +111,7 @@ public class DikshaMainPageActions  {
               QXClient.get().gestures().BlindWait(3000);
                 
               
-             dikshaMainObjects.clickContinue.click();
+           //  dikshaMainObjects.clickContinue.click();
 
            //   QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
                 QXClient.get().report().info("Clicked on Continue Button");
@@ -669,16 +669,36 @@ public class DikshaMainPageActions  {
     	/*QXClient.get().gestures().startActivity("staging.diksha.app","org.sunbird.app.MainActivity");
    			      	System.out.println(("Launch HomeScreen"));*/
    			      	
-    	QXClient.get().gestures().driver.findElement(By.xpath("")).click();
 
     	QXClient.get().gestures().closeApp();  
-        Thread.sleep(6000);
-    	//QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.HomeActivity");
+        Thread.sleep(3000);
+    	QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.HomeActivity");
 
-    	QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.Main");
+    	//QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.Main");
 	      	System.out.println(("Launch HomeScreen"));
+	        Thread.sleep(6000);
 
-   			     
+	    	QXClient.get().gestures().closeApp();  
+	        Thread.sleep(2000);
+	    	//QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.HomeActivity");
+
+	    
+	        
+	    	QXClient.get().gestures().startActivity("com.whatsapp","com.whatsapp.Main");
+	      	System.out.println(("Launch HomeScreen"));
+	        Thread.sleep(4000);
+
+	        
+	      	QXClient.get().gestures().driver.findElement(By.xpath("//android.widget.TextView[@text='Chandrû new1']")).click();
+	        Thread.sleep(3000);
+	      	QXClient.get().gestures().driver.findElement(By.xpath("//android.widget.EditText[@text='Message']")).click();
+	      	QXClient.get().gestures().driver.findElement(By.xpath("//android.widget.EditText[@text='Message']")).sendKeys("Hi");
+
+
+
+
+
+
     }
 	 
 }
