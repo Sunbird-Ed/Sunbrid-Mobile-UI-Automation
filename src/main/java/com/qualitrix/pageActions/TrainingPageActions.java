@@ -5301,21 +5301,43 @@ public void VerifyCourseProgressShouldGetUpdatedWithSinglePagePdfContentwithProg
     QXClient.get().gestures().BlindWait(5000);
 }
 public void tapOnAutomationPdfCourse() throws Exception {
-    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().BlindWait(5000);
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.AutomationPdfCourse);
     QXClient.get().gestures().BlindWait(5000);
     QXClient.get().report().info("Tap on Already Joined course");
 }
 
 public void verifyCourseProgressUpdateForPDFContent() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+    if (QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn)) {
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+        QXClient.get().gestures().BlindWait(4000);
+    } else {
+        QXClient.get().report().info("Already joined to the course");
+    }
+    QXClient.get().gestures().BlindWait(2000);
+    try {
+        if (QXClient.get().gestures().isElementPresent((trainingPageObjects.clkDontShareBtn))) ;
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+            QXClient.get().report().info("clicked on clkDontShareBtn button");
+            QXClient.get().gestures().BlindWait(2000);
+
+        }
+    } catch (Exception e3) {
+        System.out.println("handled profile share");
+    }
+
+    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn), "Join Course button is displayed");
+    QXClient.get().report().info("Join Course Button is not displayed");
     QXClient.get().gestures().BlindWait(3000);
 
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCourseUnit01);
     QXClient.get().report().info("clicked on clkCourseUnit01");
     QXClient.get().gestures().BlindWait(3000);
 
-    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkPDFContent);
-    QXClient.get().report().info("clicked on clkPDFContent");
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkPDFContent3);
+    QXClient.get().report().info("clicked on clkPDFContent3");
     QXClient.get().gestures().BlindWait(3000);
 
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkPlayVideoBtn);
@@ -5330,15 +5352,19 @@ public void verifyCourseProgressUpdateForPDFContent() throws Exception {
     QXClient.get().report().info("clicked on clkPlayerExitBtn");
     QXClient.get().gestures().BlindWait(3000);
 
-    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCloseIconOnRateContent);
-    QXClient.get().report().info("clicked on clkCloseIconOnRateContent");
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkRateTheContent);
+    QXClient.get().report().info("Clicked on 5 ratings");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkRatingSubmitBtn);
+    QXClient.get().report().info("clicked on RatingSubmitContent");
     QXClient.get().gestures().BlindWait(3000);
 
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnBackIcon);
     QXClient.get().report().info("clicked on clkOnBackIcon");
     QXClient.get().gestures().BlindWait(3000);
 
-    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertVerifyProgress),"The progress 1/3 is not displayed");
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertVerifyProgress), "The progress 1/3 is not displayed");
     QXClient.get().report().info("The progress 1/3 is displayed ");
     QXClient.get().gestures().BlindWait(3000);
 
@@ -5346,7 +5372,7 @@ public void verifyCourseProgressUpdateForPDFContent() throws Exception {
     QXClient.get().report().info("clicked on clkOnBackIcon");
     QXClient.get().gestures().BlindWait(3000);
 
-    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertPdfYourProgress),"The progress 33% is not displayed");
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertPdfYourProgress), "The progress 33% is not displayed");
     QXClient.get().report().info("The progress 33% is displayed ");
     QXClient.get().gestures().BlindWait(3000);
 

@@ -2429,7 +2429,7 @@ public MobileElement AutomationPdfCourse;
 public MobileElement clkCourseUnit01;
 
 @AndroidFindBy(xpath = "//android.widget.Button[@text='Single page Content']")
-public MobileElement clkPDFContent;
+public MobileElement clkPDFContent3;
 
 @AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
 public MobileElement clkPlayVideoBtn;
@@ -2500,4 +2500,25 @@ public MobileElement ClkOnCourseWithAssess;
 
 @AndroidFindBy(xpath = "//android.widget.TextView[@text='Automationcoursewithcert']")
 public MobileElement CourseWithQRCode;
+
+
+
+
+
+
+
+
+
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='5out of five stars']")
+public MobileElement clkRateTheContent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")
+public MobileElement clkRatingSubmitBtn;
+
+
+
+
 }
