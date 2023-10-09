@@ -2518,6 +2518,28 @@ public MobileElement clkRateTheContent;
 @AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")
 public MobileElement clkRatingSubmitBtn;
 
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE')]")
+public MobileElement ClkOnCourse;
+
+//@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Test Course ')]")
+// public MobileElement ClkOnCourse;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='JOIN COURSE']")
+public MobileElement JoinCourseBtn;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Do not share']")
+public MobileElement DoNOTShare;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public MobileElement playvideo;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='navigation-arrows-nextIcon']")
+public MobileElement NextArroicon;
+
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public MobileElement CloseBtn;
+
 
 
 

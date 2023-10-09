@@ -940,38 +940,35 @@ public class UBScenarioSanity2 {
 	
 	
 	@Test()
-	public void CopiedOfCopiedVerifySourceCourseInformationIsSameAsDataGivenByUserDuringCreation() throws Exception {
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-		getHomePageActions().tapOnProfileTab();
-		DikshaMainPageActions d = new DikshaMainPageActions();
+    public void PostMergingAccountValidateSuccessTostrMsg() throws Exception {
 
-		Properties properties = QXClient.get().propUtils()
-				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		System.out.println("@name:" + properties.getProperty("excelpath"));
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
 
-		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-		String copiedCourse = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption",32, 2);
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+                properties.getProperty("excelpath"));
 
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
-		getLoginPageActions().loginToTheUser(Username, Password);
+        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
+        String SatetUsername =QXClient.get().excelUtils().getCellValue("Excel1","TestData",38,2);
+        String StatePassword =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",39,2);
+        String custodianUser =QXClient.get().excelUtils().getCellValue("Excel1","Login",4,5);
+        String custodianPWD =QXClient.get().excelUtils().getCellValue("Excel1", "Login",5,5);
 
-		getHomePageActions().tapOnTrainingTab();
 
-		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar(copiedCourse);
-		getHomePageActions().clkOnCourseFirstResult();
-		getHomePageActions().validateSourceCourseInformationCopyOfCopiedCourse();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
 
-	}
-	 
-}
+        getLoginPageActions().loginToTheUser(SatetUsername,StatePassword);
+
+        QXClient.get().gestures().closeappandrelaunchapp();
+        QXClient.get().gestures().BlindWait(4000);
+        getHomePageActions().tapOnDownloadTab();
+
+
+        getHomePageActions().validateCustodianUserMergedSuccessfully(custodianUser,custodianPWD);
+
+    }}

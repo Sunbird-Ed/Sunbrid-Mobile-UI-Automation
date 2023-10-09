@@ -2736,4 +2736,94 @@ getHomePageActions().verifySignInGoogleOption();
             getTrainingPageActions().verifyCourseProgressUpdateForPDFContent();
         }
 
+        @Test
+    	public void verifyTabsInNewExperience() throws Exception {
+    	QXClient.get().driver();
+    	getDikshaMainPageActions().performUserOnBoarding();
+    	getHomePageActions().tapOnProfileTab();
+    	Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+    	System.out.println("@name:" +
+    			properties.getProperty("excelpath"));
+
+    	String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+    	QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+
+    	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 41, 2);
+    	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 42, 2);
+
+    	        QXClient.get().gestures().swipeUp();
+    	        QXClient.get().gestures().swipeUp();
+
+    	        getLoginPageActions().loginToTheUser(Username, Password);
+
+    	DikshaMainPageActions d=new DikshaMainPageActions();
+    	QXClient.get().gestures().closeApp();
+    	d.LaunchAppHomeScreen();
+
+    			getHomePageActions().tapOnHamburgerMenu();
+    			getHomePageActions().changeToJoyfulTheme();
+    			getHomePageActions().verifyTabsInJoyfulTheme();
+
+
+    	}
+        @Test()
+    	public void VerifyCourseProgressShouldGetUpdatedWithEpubContainsCourse() throws Exception {
+
+    		QXClient.get().driver();
+
+    		getDikshaMainPageActions().performUserOnBoarding();
+    		getHomePageActions().tapOnProfileTab();
+
+    		Properties properties = QXClient.get().propUtils()
+    				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+    		System.out.println("@name:" + properties.getProperty("excelpath"));
+
+    		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+    		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+    		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 141, 2);
+    		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 142, 2);
+
+    		String course_id = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 9, 2);
+    		QXClient.get().gestures().swipeUp();
+    		QXClient.get().gestures().swipeUp();
+
+    		getLoginPageActions().loginToTheUser(Username, Password);
+
+    		getHomePageActions().tapOnMenuBar();
+
+    		getCoursePageActions().tapOnAddAnotherUser();
+
+    		String FakeName = QXClient.get().gestures().generateRandomName();
+    		String storeFakeNameEntered = getCoursePageActions().enterName(FakeName);
+    		System.out.println(storeFakeNameEntered);
+    		getCoursePageActions().tapOnAddUserBtn();
+
+    		QXClient.get().gestures().closeappandrelaunchapp();
+    		getHomePageActions().tapOnMenuBar();
+
+    		getCoursePageActions().tapOnMoreOption();
+    		QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+
+
+    		getCoursePageActions().tapOnChangeUserWithoutProfile();
+
+    		getCoursePageActions().tapOnTermsAndCondition();
+
+    		getCoursePageActions().tapOnContinueForSwicthUser();
+
+    		QXClient.get().gestures().closeappandrelaunchapp();
+
+    		getHomePageActions().tapOnTrainingTab();
+    		getHomePageActions().tapOnSearchIcon();
+    		getHomePageActions().enterTextInSearchBar(course_id);
+    		// QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("CourseContent");
+    		getHomePageActions().VerifyCourseProgressShouldGetUpdatedSuccessfullyWithEpubContainsCourse();
+
+    		getHomePageActions().ValidateCourseProgressForEpubContent();
+
+    	}
+
+
 }

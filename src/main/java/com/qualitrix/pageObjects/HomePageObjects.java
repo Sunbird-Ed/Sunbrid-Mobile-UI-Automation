@@ -1112,7 +1112,6 @@ public MobileElement clkReplyButton;
 public MobileElement clkOnDeleteBtn;
 @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.Button[@text='OK']"),
-        @AndroidBy(xpath = "//android.widget.Button[@resource-id='android:id/button1']"),
 })
 public MobileElement clkOkBtn;
 @AndroidFindAll({
@@ -3461,7 +3460,7 @@ public MobileElement notificationDeleteImage;
     public MobileElement nestedCourseInGrp;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Account merge has been successfully initiated. You will be notified once it is complete.']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Account merge has been successfully initiated. You will be notified once it is complete.']")
     public MobileElement assertAccountMergeHasBeenInitiatedMsg;
 
 
@@ -3595,6 +3594,18 @@ public MobileElement clkSubmitEditML;
     
     @AndroidFindBy(xpath = "//android.widget.Button[@text='search']")
     public MobileElement SearchBarClickable;
+    
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='home']")
+    public MobileElement HomeTab;
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='discover']")
+    public MobileElement SearchTab;
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='courses']")
+    public MobileElement CourseTab;
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='resources']")
+    public MobileElement LibraryTab;
 }
     	
     	

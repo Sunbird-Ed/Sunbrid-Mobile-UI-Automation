@@ -2891,16 +2891,41 @@ public class UBScenarioSanity3 {
 	
 	
 
-	  @Test()
-	    public void ValidateMobileOTPSentMessageForForgetPassword() throws Exception {
+	@Test()
+    public void DeviceLocationPopupShouldNotBeShownAgainTotheUser() throws Exception {
 
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().LaunchWhatsappAppHomeScreen();
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
 
-	     //   getHomePageActions().tapOnProfileTab();
 
-	     
-	    }
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String SatetUsername =QXClient.get().excelUtils().getCellValue("Excel1","TestData",38,2);
+        String StatePassword =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",39,2);
+        String custodianUser =QXClient.get().excelUtils().getCellValue("Excel1","Login",4,5);
+        String custodianPWD =QXClient.get().excelUtils().getCellValue("Excel1", "Login",5,5);
+
+
+//        QXClient.get().gestures().swipeUp();
+//        QXClient.get().gestures().swipeUp();
+//
+//        getLoginPageActions().loginToTheUser(SatetUsername,StatePassword);
+//
+//        QXClient.get().gestures().closeappandrelaunchapp();
+//        QXClient.get().gestures().BlindWait(4000);
+//        getHomePageActions().tapOnDownloadTab();
+//
+//
+//        getHomePageActions().validateCustodianUserMergedSuccessfully(custodianUser,custodianPWD);
+
+    }
+
+   
 }
 
 

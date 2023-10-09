@@ -7857,6 +7857,110 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
 
     }
+    
+    public void tapOnHamburgerMenu() throws Exception {
+
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
+        QXClient.get().report().info("Menu is clicked");
+
+    }
+
+	
+	public void verifyTabsInJoyfulTheme() throws Exception {
+
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.HomeTab));
+        QXClient.get().report().info("Home tab is displayed");
+
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.SearchTab));
+        QXClient.get().report().info("Search tab is displayed");
+
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertFalse(QXClient.get().gestures().isElementPresent(homePageObjects.LibraryTab));
+        QXClient.get().report().info("Library tab is not displayed");
+
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertFalse(QXClient.get().gestures().isElementPresent(homePageObjects.CourseTab));
+        QXClient.get().report().info("Course tab is not displayed");
+
+    }
+	
+	public void VerifyCourseProgressShouldGetUpdatedSuccessfullyWithEpubContainsCourse() throws Exception{
+        QXClient.get().gestures().BlindWait(3000);
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClkOnCourse);
+                QXClient.get().report().info("Clicked On Course");
+                QXClient.get().gestures().BlindWait(3000);
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.JoinCourseBtn);
+                QXClient.get().report().info("Clicked on Join Course button");
+                QXClient.get().gestures().BlindWait(2000);
+
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.DoNOTShare);
+                QXClient.get().report().info("Clicked on DoNOTShare");
+                QXClient.get().gestures().BlindWait(2000);
+
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
+                QXClient.get().report().info("Clicked on start learning");
+                QXClient.get().gestures().BlindWait(3000);
+
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playvideo);
+                QXClient.get().report().info("Clicked on Play video");
+                QXClient.get().gestures().BlindWait(2000);
+
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+                QXClient.get().report().info("Clicked on next arrow icon");
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+                QXClient.get().report().info("Clicked on next arrow icon");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ExitBtn);
+        QXClient.get().report().info("Clicked on Exit btn");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.CloseBtn);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        }
+
+
+    public void ValidateCourseProgressForEpubContent() throws Exception{
+        QXClient.get().gestures().BlindWait(6000);
+        Assert.assertTrue(QXClient.get().driver().findElement(By.xpath("//android.widget.TextView[@text='50% completed']")).isDisplayed(), "Course Progress Updation is displayed");
+        QXClient.get().report().info("Course Progress Updation is displayed");
+        QXClient.get().driver().findElement(By.xpath(" //android.widget.TextView[@text='50% completed']")).click();
+        QXClient.get().gestures().BlindWait(5000);
+
+
 }
  
  
+}
