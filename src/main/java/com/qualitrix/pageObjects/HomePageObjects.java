@@ -3606,6 +3606,38 @@ public MobileElement clkSubmitEditML;
 
     @AndroidFindBy(xpath = "//android.widget.Image[@text='resources']")
     public MobileElement LibraryTab;
+    
+    
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='discover']")
+    public MobileElement ClkFooterSearchTab;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Courses']")
+    public MobileElement ClkCoursesTab;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Subject, Subject' ]")
+    public MobileElement clkSubjectFilter;
+
+@AndroidFindBy(xpath = "//android.widget.CheckBox[@text='Accountancy' ]")
+    public MobileElement selectAccountancy;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Role, Role ']")
+    public MobileElement clkRoleFilter;
+
+
+@AndroidFindBy(xpath = "//android.widget.CheckBox[@text='Teacher' ]")
+    public MobileElement selectTeacherRoleInFilter;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='VIEW MORE' ]")
+    public MobileElement clkViewMorebtn;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'RESOURCE Automationpdfcontent')]")
+public MobileElement TapOnpdfContent;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Automationpdfcontent']")
+public MobileElement ContentNameDisplayAtEnd;
+
 }
     	
     	

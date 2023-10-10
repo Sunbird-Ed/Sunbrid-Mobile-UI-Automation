@@ -1854,4 +1854,50 @@ public class ProfileEditPageActions  {
         QXClient.get().report().info("Tap on save Button");*/
 
     }
+    
+    public void primaryAccountProfileInformationShouldNotChangeAfterMerge() throws Exception {
+        
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertTeacherAfterCustodianMerge), "assertTeacherAfterCustodianMerge is not displayed");
+   	        QXClient.get().report().info("Tap on assertTeacherAfterCustodianMerge");
+   	        
+   	              
+   	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertStateAfterCustodianMerge), "assertStateAfterCustodianMerge is not displayed");
+   	        QXClient.get().report().info("verified assertStateAfterCustodianMerge");
+   	        
+   	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertDistrictAfterCustodianMerge), "assertDistrictAfterCustodianMerge is not displayed");
+   	        QXClient.get().report().info("verified assertDistrictAfterCustodianMerge");
+   	        
+   	        
+   	        
+   	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertBoardAfterCustodianMerge), "assertBoardAfterCustodianMerge is not displayed");
+   	        QXClient.get().report().info("verified assertBoardAfterCustodianMerge");
+   	        
+   	       Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertMediumAfterCustodianMerge), "assertMediumAfterCustodianMerge is not displayed");
+   	        QXClient.get().report().info("verified assertMediumAfterCustodianMerge");
+   	        
+   	      	        
+   	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertClassAfterCustodianMerge), "assertClassAfterCustodianMerge is not displayed");
+   	        QXClient.get().report().info("verified assertClassAfterCustodianMerge");
+   	        
+   	           	        
+    }
+    
+ public void SSOLoginTheUserProfileHasAllVauesOfStateSystem() throws Exception {
+        
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertUserProfileRoleValueOfStateSystem), "assertUserProfileRoleValueOfStateSystem is not displayed");
+   	        QXClient.get().report().info("Tap on assertUserProfileRoleValueOfStateSystem");
+   	        
+   	              
+   	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertUserProfileStateValueOfStateSystem), "assertUserProfileStateValueOfStateSystem is not displayed");
+   	        QXClient.get().report().info("verified assertUserProfileStateValueOfStateSystem");
+   	        
+   	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertUserProfileDistrictValueOfStateSystem), "assertUserProfileDistrictValueOfStateSystem is not displayed");
+   	        QXClient.get().report().info("verified assertUserProfileDistrictValueOfStateSystem");
+   	        
+   	        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilepageobj.assertUserProfileBlockValueOfStateSystem), "assertUserProfileBlockValueOfStateSystem is not displayed");
+   	        QXClient.get().report().info("verified assertUserProfileBlockValueOfStateSystem");
+   	        
+   	      
+   	           	        
+    }
 }

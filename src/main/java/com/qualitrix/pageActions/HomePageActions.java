@@ -7961,6 +7961,73 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
 
 }
- 
+    public void verifyCoursesAfterAppliedCourseFilters() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().closeappandrelaunchapp();
+        tapOnMenuBar();
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+        QXClient.get().report().info("clicked on clkNewDikshExperiece");
+        QXClient.get().gestures().BlindWait(3000);
+
+  
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ClkFooterSearchTab);
+        QXClient.get().report().info("clicked on search tab");
+        QXClient.get().gestures().BlindWait(3000);
+
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ClkCoursesTab);
+        QXClient.get().report().info("clicked on course tab");
+        QXClient.get().gestures().BlindWait(3000);
+         
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubjectFilter);
+        QXClient.get().report().info("clicked on subject filter");
+        QXClient.get().gestures().BlindWait(3000);
+       
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.selectAccountancy);
+        QXClient.get().report().info("Subject is selected from filter drop down");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitButton);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkRoleFilter);
+        QXClient.get().report().info("clicked on role filter");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.selectTeacherRoleInFilter);
+        QXClient.get().report().info("Teacher role is selected from filter drop down");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitButton);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().swipeUp();
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkViewMorebtn);
+        QXClient.get().report().info("clicked on View More");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().swipeUp();
+
+       QXClient.get().gestures().clkBackButton();
+       QXClient.get().gestures().closeApp();
+    }
+    
+    public void verifyUserConsumePDFContentInFullScreen() throws Exception {
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOnpdfContent);
+        QXClient.get().report().info("Tap on pdf content");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOnPlayBtn);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NextArroicon);
+        QXClient.get().report().info("Clicked on next arrow icon");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.ContentNameDisplayAtEnd));
+        QXClient.get().report().info("Automationpdfcontent name is displayed at end of the summary page ");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
  
 }

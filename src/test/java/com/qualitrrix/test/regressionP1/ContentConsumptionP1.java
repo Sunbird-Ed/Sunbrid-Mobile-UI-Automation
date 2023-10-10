@@ -394,7 +394,6 @@ public class ContentConsumptionP1 {
 
 		}
 	   
-	   
-	   
+	  
 }
 

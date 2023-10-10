@@ -2540,7 +2540,66 @@ public MobileElement NextArroicon;
 @AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
 public MobileElement CloseBtn;
 
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.TextView[contains(@text,'You have joined the batch of a course that is completed on')]")
+}) public MobileElement assertBatchended;
 
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.view.View[@text='Course Unit 2']")
+})
+public MobileElement clkonAssessment;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[@text='play Start again']")
+
+}) public MobileElement startAgain;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[contains(@text,'BEST SCORE 3/4')]")
+}) public MobileElement assertbestScoreassess;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[contains(@text,'Continue')]")
+}) public MobileElement clickcontinue;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[@text='OK']")
+}) public MobileElement clkok;
+
+@AndroidFindAll({
+  @AndroidBy(xpath="//android.view.View[@text='Course Unit 1']")
+})public MobileElement clkanothercontent;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[@text='mp4_4.mp4']")
+}) public MobileElement clkcontent;
+
+@AndroidFindAll({
+@AndroidBy(xpath = "//android.view.View[@text='pdf']")
+}) public MobileElement pdfcontent;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Automationpdfcontent']")
+}) public MobileElement clkcontentpdf;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Play video']")
+}) public MobileElement playpdf;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Next content']")
+}) public MobileElement clkNextcontent;
+
+@AndroidFindAll({
+@AndroidBy(xpath="//android.widget.TextView[contains(@text,'1/3 Completed')]")
+}) public MobileElement progressUpdated;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='25% completed']")
+}) public MobileElement progressBarUpdated;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE')]")
+public MobileElement clkonthecourse;
 
 
 }

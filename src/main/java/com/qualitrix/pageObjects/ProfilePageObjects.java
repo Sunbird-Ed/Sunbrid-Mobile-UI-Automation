@@ -1295,8 +1295,44 @@ public MobileElement assertMobileNumberToSendOTP;
     
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='OTP has been sent to ******5495.']")
     public MobileElement assertOtpSentForMobileInForgotPassword;
-}
 
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Role: Teacher']")
+public MobileElement assertTeacherAfterCustodianMerge;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='State: Andhra Pradesh']")
+public MobileElement assertStateAfterCustodianMerge;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='District: Ananthapuram']")
+public MobileElement assertDistrictAfterCustodianMerge;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Board: CBSE')]")
+public MobileElement assertBoardAfterCustodianMerge;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Medium: English ')]")
+public MobileElement assertMediumAfterCustodianMerge;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Class: Class 1')]")
+public MobileElement assertClassAfterCustodianMerge;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Role: Teacher']")
+public MobileElement assertUserProfileRoleValueOfStateSystem;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='State: Tamil Nadu']")
+public MobileElement assertUserProfileStateValueOfStateSystem;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='District: TIRUVANNAMALAI']")
+public MobileElement assertUserProfileDistrictValueOfStateSystem;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Block: Thurinjapuram']")
+public MobileElement assertUserProfileBlockValueOfStateSystem;
+
+}
 
 
 
