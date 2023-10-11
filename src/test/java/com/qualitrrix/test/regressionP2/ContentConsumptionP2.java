@@ -977,7 +977,25 @@ public class ContentConsumptionP2 {
 	        getTrainingPageActions().verifyAlternativeBoardForTheSearchedContent();
 
 	    }
-	   
+	   @Test
+	   public void verifyExcellentInRating() throws Exception {
+	       QXClient.get().driver();
+	       DikshaMainPageActions d = new DikshaMainPageActions();
+	       getDikshaMainPageActions().performUserOnBoarding();
+	       QXClient.get().gestures().BlindWait(2000);
+	       QXClient.get().gestures().closeappandrelaunchapp();
+	       Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	             properties.getProperty("excelpath"));
+	       String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	       QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+	       String Automationpdfcontent =QXClient.get().excelUtils().getCellValue("Excel1","ContentConsumption",1,2);
+	       getHomePageActions().tapOnTrainingTab();
+	       getHomePageActions().tapOnSearchIcon();
+	       getHomePageActions().enterTextInSearchBar(Automationpdfcontent);
+	       getHomePageActions().verifyUserConsumePDFContentInFullScreen();
+	       getHomePageActions().verifyClickOnOkBtn();
+	   }
+
 	  
 					    
 						

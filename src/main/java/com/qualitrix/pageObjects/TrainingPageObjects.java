@@ -485,7 +485,7 @@ public MobileElement clkDontShareBtn;
 public MobileElement verify50PercentProgress;
 
 
-@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='play-icon Continue Learning']"),
+@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='play Continue Learning']"),
 
 })
 public MobileElement clkContinueLearning;

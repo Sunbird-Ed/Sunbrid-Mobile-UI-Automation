@@ -1332,6 +1332,16 @@ public MobileElement assertUserProfileDistrictValueOfStateSystem;
 @AndroidFindBy(xpath = "//android.widget.TextView[@text='Block: Thurinjapuram']")
 public MobileElement assertUserProfileBlockValueOfStateSystem;
 
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Block: Thurinjapuram']")
+public MobileElement assertOnGoingCourseInProfile;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Block: Thurinjapuram']")
+public MobileElement assertCompletedCourseInProfile;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.Button[@text='OK']"),
+})
+public MobileElement Okbtn;
 }
 
 

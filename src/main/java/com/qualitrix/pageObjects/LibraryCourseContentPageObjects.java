@@ -1023,6 +1023,11 @@ public MobileElement clkMeantFor;
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Location')]")
     public MobileElement assertLocationText;
+    
+    @AndroidFindBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-32']")
+    public MobileElement clkCheckBoxFeedback;
+    
+  
 }
 
 

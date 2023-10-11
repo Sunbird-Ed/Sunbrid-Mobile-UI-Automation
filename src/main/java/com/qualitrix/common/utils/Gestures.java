@@ -33,8 +33,10 @@ import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofSeconds;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -407,5 +409,12 @@ public class Gestures {
     }
 
 
-  
+  public String getCurrentDataInDDMMYY()
+  {
+	  Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");
+		String strDate= formatter.format(date);
+		System.out.println(strDate);
+		return strDate;
+  }
 }

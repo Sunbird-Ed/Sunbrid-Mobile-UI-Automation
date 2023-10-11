@@ -11,8 +11,10 @@ import org.testng.Assert;
 
 import com.qualitrix.client.QXClient;
 import com.qualitrix.pageObjects.CoursePageObjects;
+import com.qualitrix.pageObjects.LibraryCourseContentPageObjects;
 import com.qualitrix.pageObjects.ProfileEditPageObjects;
 import com.qualitrix.pageObjects.ProfilePageObjects;
+import com.qualitrix.pageObjects.TrainingPageObjects;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -30,6 +32,8 @@ public class ProfileEditPageActions  {
     LoginPageActions loginPageActions = new LoginPageActions();
     CoursePageObjects coursePageObjects=new CoursePageObjects();
     ProfilePageObjects profilepageobj=new ProfilePageObjects();
+    TrainingPageObjects trainingPageObjects = new TrainingPageObjects();
+    LibraryCourseContentPageObjects libraryCourseContentPageObjects = new LibraryCourseContentPageObjects();
 
     
     public ProfileEditPageActions() {
@@ -39,7 +43,9 @@ public class ProfileEditPageActions  {
             PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), profileEditPageObjectsPageObjects);
             PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), coursePageObjects);
             PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), profilepageobj);
+            PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), trainingPageObjects);
 
+            PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), libraryCourseContentPageObjects);
 
         }
         
@@ -1900,4 +1906,93 @@ public class ProfileEditPageActions  {
    	      
    	           	        
     }
+ 
+ public void validateCoursesInProfileTab() throws Exception {
+     
+	
+	 String currentDate=QXClient.get().gestures().getCurrentDataInDDMMYY();
+	 String classXpath="//android.widget.TextView[@text='";
+	 String customizedData="CoursePartially"+currentDate;
+	 String closeXpath="']";
+	 String FinalXpath=classXpath+customizedData+closeXpath;
+	 
+	 String customizedData2="CourseCompletely"+currentDate;
+	String FinaXpath2=classXpath+customizedData2+closeXpath;
+	
+	boolean courseParticallyDisplayed= QXClient.get().gestures().driver.findElement(By.xpath(FinalXpath)).isDisplayed();
+	 Assert.assertTrue(courseParticallyDisplayed);
+	 
+	 boolean courseCompletlyDisplayed2= QXClient.get().gestures().driver.findElement(By.xpath(FinaXpath2)).isDisplayed();
+	 Assert.assertTrue(courseCompletlyDisplayed2);
+	 
+	           	        
+ }
+ 
+ public void validateCoursesInMyCourseTab() throws Exception {
+     
+		
+	 String currentDate=QXClient.get().gestures().getCurrentDataInDDMMYY();
+	 String classXpath="//android.view.View[@text='";
+	 String customizedData="CoursePartially"+currentDate+" Tamil nadu";
+	 String closeXpath="']";
+	 String FinalXpath=classXpath+customizedData+closeXpath;
+	 
+	 String customizedData2="CourseCompletely"+currentDate+"Tamil nadu";
+	String FinaXpath2=classXpath+customizedData2+closeXpath;
+	
+	 
+	boolean courseParticallyDisplayed= QXClient.get().gestures().driver.findElement(By.xpath(FinalXpath)).isDisplayed();
+	 Assert.assertTrue(courseParticallyDisplayed);
+     QXClient.get().report().info("CourseWith Partially Displayed");
+
+	 
+	 boolean courseCompletlyDisplayed2= QXClient.get().gestures().driver.findElement(By.xpath(FinaXpath2)).isDisplayed();
+	 Assert.assertTrue(courseCompletlyDisplayed2);
+     QXClient.get().report().info("CourseWith Completly Displayed");
+
+	 
+	 QXClient.get().gestures().BlindWait(3000);
+	 QXClient.get().gestures().driver.findElement(By.xpath(FinalXpath)).click();
+	 QXClient.get().gestures().BlindWait(6000);
+     QXClient.get().report().info("Clicked on CoursWithPartically");
+
+	 	 QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+	     QXClient.get().report().info("Clicked on dont share button");
+		 QXClient.get().gestures().BlindWait(8000);
+
+	 String FiftyPerCentXpat="//android.widget.TextView[@text='50% completed']";
+	 	boolean FiftyPerCentXpatDisplayed= QXClient.get().gestures().driver.findElement(By.xpath(FiftyPerCentXpat)).isDisplayed();
+	 Assert.assertTrue(FiftyPerCentXpatDisplayed);
+     QXClient.get().report().info("50% text is displayed ");
+
+ 	 QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkContinueLearning);
+	 QXClient.get().gestures().BlindWait(8000);
+     QXClient.get().report().info("clicked on continue learning");
+     
+
+	 QXClient.get().gestures().BlindWait(8000);
+     QXClient.get().report().info("waiting for content to get over");
+     
+     
+     libraryCourseContentPageObjects.rateObj.click();
+     QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkCheckBoxFeedback);
+            libraryCourseContentPageObjects.submitBtn.click();
+     
+
+	 Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.coursecomplete), "coursecomplete is not displayed");
+        QXClient.get().report().info("verified coursecomplete message");
+	 
+	 
+        QXClient.get().gestures().clkBackButton();
+   	 QXClient.get().gestures().BlindWait(8000);
+   	 
+   	 QXClient.get().gestures().driver.findElement(By.xpath(FinaXpath2)).click();
+	 QXClient.get().gestures().BlindWait(6000);
+     QXClient.get().report().info("Clicked on CoursWith Completly");
+
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.coursecomplete), "coursecomplete is not displayed");
+     QXClient.get().report().info("verified coursecomplete message");
+
+ }
+ 
 }

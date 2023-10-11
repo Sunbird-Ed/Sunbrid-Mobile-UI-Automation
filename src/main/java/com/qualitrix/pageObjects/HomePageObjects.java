@@ -3638,6 +3638,67 @@ public MobileElement TapOnpdfContent;
 @AndroidFindBy(xpath = "//android.widget.TextView[@text='Automationpdfcontent']")
 public MobileElement ContentNameDisplayAtEnd;
 
+@AndroidFindBy(xpath = "//android.widget.Button[@text='OK']")
+public MobileElement Okbtn;
+
+@AndroidFindBy(xpath="//android.widget.TextView[@text='Board: \u200E']")
+public MobileElement Board;
+
+@AndroidFindBy(xpath="//android.widget.TextView[@text='Board: State (Tamil Nadu) \u200E']")
+public MobileElement NewBoard;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'RESOURCE AutomationcontentVdforfullscreen')]")
+public WebElement TapOnContent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Fullscreen']")
+public WebElement ClickOnFullScreenbtn;
+
+@AndroidFindBy(xpath="//android.widget.TextView[@text='Good']")
+    public MobileElement Good;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcourseprgressupdatedforyoutube')]")
+public WebElement TapOnCourse;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public WebElement ClkOnPlayBtn;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Next']")
+public WebElement ClkOnNextbtn;
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursewithvideocontent')]")
+public WebElement TapOnCoursewithvideo;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='JOIN COURSE']")
+public WebElement ClkOnJoinCourse;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Do not share']")
+public WebElement ClkOnDoNotShareBtn;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0% completed']")
+public WebElement assertZeroCourseProgress;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='play Start learning']")
+public WebElement ClkOnStartLearnbtn;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public WebElement ClkOncloseIcon;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='50% completed']")
+public WebElement assertfiftyperCourseProgress;
+
+@AndroidFindBy(xpath="//android.widget.Button[@text='5out of five stars']")
+public MobileElement clkOkStar;
+
+
+@AndroidFindBy(xpath="//android.widget.TextView[@text='Excellent']")
+public MobileElement Excellent;
+
 }
     	
     	
