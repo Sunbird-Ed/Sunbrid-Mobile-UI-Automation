@@ -8165,4 +8165,59 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().gestures().BlindWait(2000);
 
     }
+    
+    public void verifyVideoContentPlayInLandscapeMode() throws Exception {
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOnvideoContent);
+        QXClient.get().report().info("Tap on Videocontent");
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ClickOnFullScreenbtn);
+        QXClient.get().report().info("Click on Full screen button");
+        QXClient.get().gestures().BlindWait(5000);
+    }
+    public void validateDownloadbtn() throws Exception{
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClkOnCourse);
+        QXClient.get().report().info("Clicked On Course");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.ClkOnDownloadBtn),"Clicked On Download button is not displayed ");
+        QXClient.get().report().info("Clicked On Download button is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+
+    public void validateDeletebtn() throws Exception{
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.ClkOnDeleteBtn),"Clicked On Delete button is not displayed ");
+        QXClient.get().report().info("Clicked On Delete button is displayed");
+    }
+
+    public void validateSharebtn() throws Exception{
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.ClkOnShareBtn),"Clicked On Share button is not displayed ");
+        QXClient.get().report().info("Clicked On Share button is displayed");
+
+    }
+    public void validateCourseCompletionMessage() throws Exception {
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.ClkOnCourseCompletionMessage),"Clicked On Course completeion message button is not displayed ");
+        QXClient.get().report().info("Clicked On Course completion message is displayed");
+
+
+    }
+    public void VerifyMoreButtonShouldBeDisplayedWithCountWhenAddingToTheUsers() throws Exception{
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.Morebtn),"More btn is not displayed ");
+        QXClient.get().report().info("More btn  as is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+    }
+    public void ValidateChooseUsersPage() throws Exception {
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.AddUserBtn);
+        QXClient.get().report().info("Tap on profile tab");
+
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.UseSubirdas);
+        QXClient.get().report().info("Tap on profile tab");
+
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ChangeUser);
+        QXClient.get().report().info("Tap on profile tab");
+    }
 }

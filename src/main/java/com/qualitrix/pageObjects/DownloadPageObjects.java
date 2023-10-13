@@ -25,6 +25,7 @@ public class DownloadPageObjects {
 //            @AndroidBy(xpath = "//android.view.View[@text='Book contains copied contents']"),
     	 @AndroidBy(xpath = "//android.widget.TextView[@text='AutomationBookContent']"),
             @AndroidBy(xpath = "//android.view.View[@text='AutomationBookContent']"),
+            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Automation textbookdontuse')]"),
 
     })
     public MobileElement bookObj;

@@ -5670,4 +5670,86 @@ public void verifyProgressupdateforPDF() throws Exception {
     QXClient.get().report().info("Progress bar is Updated");
     QXClient.get().gestures().BlindWait(2000);
 }
+
+public void tapCoursharepopup() throws Exception {
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOncourse);
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertsharemessage),"I consent to share my details with the administrators");
+    QXClient.get().report().info("I consent to share my details with the administrators");
+    QXClient.get().gestures().BlindWait(5000);
+
+}
+
+
+public void tapCoursekebabmenu() throws Exception {
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOncourse);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+       QXClient.get().gestures().BlindWait(3000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.donotsharebuton);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.startlearning1);
+       QXClient.get().report().info("Tap on Start Learning button");
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.startlearning2);
+       QXClient.get().report().info("Tap on Start Learning button");
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnPlayIcon);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnnavigationarrow);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.exitButton);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.RatingBtn);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+       QXClient.get().gestures().BlindWait(12000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOncourse);
+       QXClient.get().gestures().BlindWait(5000);
+
+       QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOn3dots);
+       QXClient.get().gestures().BlindWait(5000);
+
+   }
+public void taponnewcertificate() throws Exception {
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnprofile);
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.vieweyecertificate);
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.certificatepermission);
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.allowpermission);
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.downloadcoursecertificate);
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.certificatePDF);
+    QXClient.get().gestures().BlindWait(15000);
+
+}
 }

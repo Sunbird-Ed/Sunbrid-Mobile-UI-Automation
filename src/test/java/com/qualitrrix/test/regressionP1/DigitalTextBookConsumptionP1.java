@@ -71,15 +71,11 @@ public class DigitalTextBookConsumptionP1 {
         QXClient.get().driver();
         getDikshaMainPageActions().performUserOnBoarding();
         DikshaMainPageActions d = new DikshaMainPageActions();
-
         getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("LargeSizeAutoBook");
-
+        getHomePageActions().enterTextInSearchBar("largesizetextbook");
         getTrainingPageActions().tapOnSearchedLargeSizeBook();
-
         getLibraryPageActions().verifyNoDownloadBtnForLargeSizeBook();
         d.LaunchAppHomeScreen();
-
         getHomePageActions().tapOnDownloadTab();
         getDownloadPageActions().verifyNoDownloadsInDownloadSection();
     }

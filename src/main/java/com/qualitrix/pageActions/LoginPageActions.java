@@ -298,10 +298,14 @@ public class LoginPageActions {
      
     //    Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
         QXClient.get().report().info("Regsiter page is displayed");
+
+        QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
 
-      
-
+        
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.nameEditTextField);
         QXClient.get().report().info("Clicked on Name edit field");
         profilePageObjects.nameEditTextField.sendKeys("Test");
@@ -412,6 +416,12 @@ public class LoginPageActions {
         QXClient.get().report().info("Clicked on Register here link");
         QXClient.get().gestures().BlindWait(5000);
 
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
+        
         QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
         QXClient.get().report().info("Regsiter page is displayed");
@@ -502,9 +512,16 @@ public class LoginPageActions {
         QXClient.get().report().info("Register here link is displayed");
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
         QXClient.get().report().info("Clicked on Register here link");
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().BlindWait(7000);
 
-        QXClient.get().gestures().BlindWait(5000);
+        
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
+        
+        
         QXClient.get().report().info("Regsiter page is displayed");
 
 
@@ -1009,7 +1026,15 @@ public class LoginPageActions {
         QXClient.get().report().info("Register here link is displayed");
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
         QXClient.get().report().info("Clicked on Register here link");
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().BlindWait(9000);
+        
+        
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
+        
 
         QXClient.get().gestures().BlindWait(5000);
         //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
@@ -1068,7 +1093,12 @@ public class LoginPageActions {
         QXClient.get().report().info("Clicked on Register here link");
         QXClient.get().gestures().BlindWait(5000);
 
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
+        
         //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
         QXClient.get().report().info("Regsiter page is displayed");
 
@@ -1138,6 +1168,13 @@ public class LoginPageActions {
         QXClient.get().report().info("Clicked on Register here link");
         QXClient.get().gestures().BlindWait(5000);
 
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
+        
+        
         QXClient.get().gestures().BlindWait(5000);
         //Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
         QXClient.get().report().info("Regsiter page is displayed");
@@ -1203,6 +1240,12 @@ public class LoginPageActions {
         QXClient.get().report().info("Clicked on Register here link");
         QXClient.get().gestures().BlindWait(5000);
 
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
+        
         QXClient.get().gestures().BlindWait(5000);
        // Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterPage),"Register page is not displayed");
         QXClient.get().report().info("Regsiter page is displayed");
@@ -1293,6 +1336,13 @@ public class LoginPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
         QXClient.get().report().info("Clicked on Register here link");
         QXClient.get().gestures().BlindWait(5000);
+        
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkRegisterHere);
+        QXClient.get().report().info("Clicked on Register here link");
+        QXClient.get().gestures().BlindWait(7000);
+        
 
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().report().info("Regsiter page is displayed");
@@ -1376,9 +1426,12 @@ public class LoginPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
         QXClient.get().report().info("Clicked on Login with state system option");
         QXClient.get().gestures().BlindWait(5000);
-        QXClient.get().gestures().BlindWait(5000);
 
-        QXClient.get().gestures().BlindWait(9000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
+        QXClient.get().gestures().BlindWait(7000);
+        
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSelectStateOption);
         QXClient.get().gestures().BlindWait(2000);
@@ -1431,9 +1484,11 @@ public class LoginPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
         QXClient.get().report().info("Clicked on Login with state system option");
         QXClient.get().gestures().BlindWait(5000);
-        QXClient.get().gestures().BlindWait(5000);
 
-        QXClient.get().gestures().BlindWait(9000);
+        QXClient.get().gestures().clkBackButton();
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
+        QXClient.get().gestures().BlindWait(7000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSelectStateOption);
         QXClient.get().gestures().BlindWait(2000);
@@ -1671,9 +1726,12 @@ public class LoginPageActions {
      QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
      QXClient.get().report().info("Clicked on Login with state system option");
      QXClient.get().gestures().BlindWait(5000);
-     QXClient.get().gestures().BlindWait(5000);
 
-     QXClient.get().gestures().BlindWait(9000);
+     QXClient.get().gestures().clkBackButton();
+     QXClient.get().gestures().BlindWait(2000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
+     QXClient.get().gestures().BlindWait(7000);
+     
 
      QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSelectStateOption);
      QXClient.get().gestures().BlindWait(2000);

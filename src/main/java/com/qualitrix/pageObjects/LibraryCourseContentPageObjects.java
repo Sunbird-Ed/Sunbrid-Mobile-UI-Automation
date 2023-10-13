@@ -42,11 +42,8 @@ public MobileElement downloadBtn;
 
    
     @AndroidFindAll({
-    	
-    	
-        @AndroidBy(xpath = "//android.widget.Button[@text='share Share']"),
         @AndroidBy(xpath = "//android.widget.Button[@text='share content Share']"),
-
+    @AndroidBy(xpath = "//android.widget.Button[@text='share Share']"),
 })
 public MobileElement shareBtn;
 
@@ -283,11 +280,17 @@ public MobileElement offlineplayCont;
     public MobileElement shareToWhatsApp;
 
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Slack']")
-    public MobileElement shareToSlackApp;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Slack ')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Slack']")
+})    public MobileElement shareToSlackApp;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='ALLOW']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Allow']"),
+})
     public MobileElement clkAllowBtn;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.whatsapp:id/contactpicker_row_name']")
@@ -363,9 +366,10 @@ public MobileElement clkSeeMoreBooksAndContent;
  })
  public MobileElement ClkDataSync;
 
-    
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SYNC NOW']")
-    public MobileElement ClkSyncNow;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@index='3']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='SYNC NOW']")
+})
 
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.TextView[@text='Share the SUNBIRD app']"),
@@ -1027,7 +1031,14 @@ public MobileElement clkMeantFor;
     @AndroidFindBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-32']")
     public MobileElement clkCheckBoxFeedback;
     
-  
+    
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@index='3']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='SYNC NOW']")
+})
+    public MobileElement ClkSyncNow;
+
 }
 
 

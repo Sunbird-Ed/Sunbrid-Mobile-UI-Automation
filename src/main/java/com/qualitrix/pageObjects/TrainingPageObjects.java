@@ -929,12 +929,16 @@ public MobileElement assertCourseDetails;
 
     
     
-    @AndroidFindBy(xpath = "//android.view.View[@text='This course is relevant for:']")
-    public MobileElement assertCourseRelevantFor;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='This course is relevant for:']"),
+        @AndroidBy(xpath = "//android.view.View[@text='This course is relevant for:']")
+})
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='AutoCourse']")
-    public MobileElement assertCourse;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutoCourse')]"),
+        @AndroidBy(xpath = "//android.view.View[@text='AutoCourse']"),
+})
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'The course's batch is available from')]")
@@ -2601,5 +2605,36 @@ public MobileElement clkonAssessment;
 @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE')]")
 public MobileElement clkonthecourse;
 
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='This course is relevant for:']"),
+    @AndroidBy(xpath = "//android.view.View[@text='This course is relevant for:']")
+})
+public MobileElement assertCourseRelevantFor;
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutoCourse')]"),
+    @AndroidBy(xpath = "//android.view.View[@text='AutoCourse']"),
+    
+})
+public MobileElement assertCourse;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='cloud download Download']")
+public MobileElement ClkOnDownloadBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='trash Delete']")
+public MobileElement ClkOnDeleteBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='share Share']")
+public MobileElement ClkOnShareBtn;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='You have successfully completed this course']")
+public MobileElement ClkOnCourseCompletionMessage;
+
+@AndroidFindBy(xpath ="//android.view.View[contains(@text,'... More')]")
+public MobileElement Morebtn;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'I consent to share my details')]")
+public MobileElement assertsharemessage;
 
 }

@@ -3699,6 +3699,17 @@ public MobileElement clkOkStar;
 @AndroidFindBy(xpath="//android.widget.TextView[@text='Excellent']")
 public MobileElement Excellent;
 
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'RESOURCE AutomationVideocontent')]")
+public WebElement TapOnvideoContent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='+ Add User']")
+public MobileElement AddUserBtn;
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Use SUNBIRD as']")
+public MobileElement UseSubirdas;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Change User']")
+public MobileElement ChangeUser;
+
+
 }
     	
     	

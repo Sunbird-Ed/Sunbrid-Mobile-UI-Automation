@@ -93,7 +93,7 @@ public class DikshaMainPageActions  {
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
             QXClient.get().report().info("Clicked on Submit Button");
             QXClient.get().gestures().BlindWait(5000);
-          dikshaMainObjects.submitWithArrowBtn.click();
+         dikshaMainObjects.submitWithArrowBtn.click();
 
     //  QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitWithArrowBtn);
 
@@ -111,7 +111,7 @@ public class DikshaMainPageActions  {
               QXClient.get().gestures().BlindWait(3000);
                 
               
-             dikshaMainObjects.clickContinue.click();
+            dikshaMainObjects.clickContinue.click();
 
            //   QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
                 QXClient.get().report().info("Clicked on Continue Button");
@@ -436,7 +436,7 @@ public class DikshaMainPageActions  {
 
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
             QXClient.get().gestures().BlindWait(3000);
-            dikshaMainObjects.clickContinue.click();
+           dikshaMainObjects.clickContinue.click();
       
             QXClient.get().report().info("Clicked on Continue Button");
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickLeader);
