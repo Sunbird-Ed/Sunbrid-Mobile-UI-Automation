@@ -847,15 +847,15 @@ public MobileElement clkMeantFor;
     public MobileElement assertInteractiveContentAfterFiltering;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='AutomationBookContent']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='AutomationBookContent']")
     public MobileElement assertContentTitle;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Bycontent creator']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Bycontent creator']")
     public MobileElement assertContentCreator;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='CBSEEnglishClass 12Accountancy']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='CBSEEnglishClass 12Accountancy']")
     public MobileElement assertOrgFrameworkAttributes;
 
 

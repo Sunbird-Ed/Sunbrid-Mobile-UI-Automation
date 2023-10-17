@@ -5752,4 +5752,49 @@ public void taponnewcertificate() throws Exception {
     QXClient.get().gestures().BlindWait(15000);
 
 }
+public void tapOnNewCourseWithCertificate() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.NewCourseWithCertificate);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().report().info("Tap on CourseContent");
+}
+
+public void verifyCertificateInMyLearningAndLearnerPassbookSection() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCourseDetails);
+    QXClient.get().report().info("clicked on course details");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().swipeUp();
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkCertificateCriteria);
+    QXClient.get().report().info("clicked on certificate criteria");
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertCertificateCriteria),"The completion certificate criteria text is not displayed");
+    QXClient.get().report().info("The completion certificate criteria text is displayed");
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.courseCompletedMsg), "Course completed message is not displayed");
+    QXClient.get().report().info("Course completed message is displayed");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnBackIcon);
+    QXClient.get().report().info("clicked on clkOnBackIcon");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkFooterProfileIcon);
+    QXClient.get().report().info("clicked on Home Profile icon");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertEyeCertificate),"Certificate with eye icon is not displayed under My learning and Learner passbook");
+    QXClient.get().report().info("Certificate with eye icon is displayed under My learning and Learner passbook");
+    QXClient.get().gestures().BlindWait(3000);
+
+
+}
 }

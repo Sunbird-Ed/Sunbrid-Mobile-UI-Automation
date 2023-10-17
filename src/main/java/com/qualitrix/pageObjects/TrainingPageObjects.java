@@ -2637,4 +2637,25 @@ public MobileElement Morebtn;
 @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'I consent to share my details')]")
 public MobileElement assertsharemessage;
 
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Certificate criteria arrow down']")
+public MobileElement clkCertificateCriteria;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='> Completion certificate will be issued upon 100% completion']")
+public MobileElement assertCertificateCriteria;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Start Learning']")
+public MobileElement clkProfileStartLearning;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
+public MobileElement assertEyeCertificate;
+
+@AndroidFindBy(xpath = "///android.widget.Image[@text='profile']")
+public MobileElement clkFooterProfileIcon;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE New Couse with certificate ')]"),
+})
+public MobileElement NewCourseWithCertificate;
+
 }

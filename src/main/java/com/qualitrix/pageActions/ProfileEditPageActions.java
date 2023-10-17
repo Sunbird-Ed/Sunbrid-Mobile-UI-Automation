@@ -1908,13 +1908,19 @@ public class ProfileEditPageActions  {
     }
  
  public void validateCoursesInProfileTab() throws Exception {
-     
+    
+
+	 
+	 
 	
 	 String currentDate=QXClient.get().gestures().getCurrentDataInDDMMYY();
 	 String classXpath="//android.widget.TextView[@text='";
 	 String customizedData="CoursePartially"+currentDate;
-	 String closeXpath="']";
+	 String closeXpath="'];";
 	 String FinalXpath=classXpath+customizedData+closeXpath;
+	 
+	 
+	 
 	 
 	 String customizedData2="CourseCompletely"+currentDate;
 	String FinaXpath2=classXpath+customizedData2+closeXpath;

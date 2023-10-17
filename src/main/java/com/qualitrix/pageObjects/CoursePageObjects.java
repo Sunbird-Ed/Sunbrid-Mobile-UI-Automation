@@ -107,6 +107,7 @@ public MobileElement assertStartLearning;
 			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Add')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Add another user')]"),
 		@AndroidBy(xpath = "//android.view.View[contains(@text,'More ')]//following::android.view.View"),
+				@AndroidBy(xpath = "//android.view.View[contains(@text,'+ Add user‎')]"),
 
 	})
 	public MobileElement addAnotherUser;

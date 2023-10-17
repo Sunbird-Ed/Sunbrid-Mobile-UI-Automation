@@ -613,8 +613,8 @@ public class ProfileP1 {
              String fetchExcelPathFromConfig=properties.getProperty("excelpath");
              QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-             String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",140,2);
-             String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",141,2);
+             String Username =QXClient.get().excelUtils().getCellValue("Excel1","Profile",40,2);
+             String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Profile",41,2);
              QXClient.get().gestures().swipeUp();
              QXClient.get().gestures().swipeUp();
              getLoginPageActions().loginToTheUser(Username,Password);
