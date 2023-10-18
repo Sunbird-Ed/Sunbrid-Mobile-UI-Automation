@@ -2658,4 +2658,45 @@ public MobileElement clkFooterProfileIcon;
 })
 public MobileElement NewCourseWithCertificate;
 
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Automation course- HTML ')]"),
+
+})
+public MobileElement AutomationHTMLCourse;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='show more trainings']")
+public MobileElement clkMoreTrainingsBtn;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='> Completion certificate will be issued upon 100% completion > Certificate will be issued if you score above 50% in your assessment']")
+public MobileElement assertMeritCertificateCriteria;
+
+
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE meritcourse11 ')]"),
+})
+public MobileElement NewCourseMeritCertificate;
+
+
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 4.8 RC merit cert course with new cert template ')]"),
+})
+public MobileElement OldCourseMeritCertificate;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Copy of Course 6.0 new Subject : ')]")
+public MobileElement coursetitleselection;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='RESUME']")
+public MobileElement batchselectionresume;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='11% completed']")
+public MobileElement assertcourseprogressresume;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE vk-2.10Course Subject : ')]")
+
+public MobileElement coursetitleoldcert;
+
+
 }
