@@ -1141,5 +1141,65 @@ public class QUMLP2 {
 
 		}
 
+	 @Test()
+		public void verifyUserAbleToConsumeTheQuestionsetSmoothlyWhenitisAddedToCourse() throws Exception {
 
+			QXClient.get().driver();
+			getDikshaMainPageActions().performUserOnBoarding();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			getHomePageActions().tapOnProfileTab();
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Quml",2, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Quml",3, 2);
+			String limitedCourse = QXClient.get().excelUtils().getCellValue("Excel1", "Quml", 4,2);
+			getLoginPageActions().loginToTheUser(Username, Password);
+
+			getHomePageActions().tapOnMenuBar();
+
+			getCoursePageActions().tapOnAddAnotherUser();
+
+			String FakeName=QXClient.get().gestures().generateRandomName();
+			String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
+			System.out.println(storeFakeNameEntered);
+			getCoursePageActions().tapOnAddUserBtn();
+			QXClient.get().gestures().BlindWait(2000);
+			QXClient.get().gestures().closeApp();
+			d.LaunchAppHomeScreen();
+			QXClient.get().gestures().BlindWait(5000);
+			getHomePageActions().tapOnProfileTab();
+			QXClient.get().gestures().BlindWait(2000);
+
+			getHomePageActions().tapOnMenuBar();
+
+			getCoursePageActions().tapOnMoreOption();
+			QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+
+
+			getCoursePageActions().tapOnChangeUserWithoutProfile();
+
+			getCoursePageActions().tapOnTermsAndCondition();
+
+			getCoursePageActions().tapOnContinueForSwicthUser();
+			d.LaunchAppHomeScreen();
+
+			getHomePageActions().tapOnTrainingTab();
+
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(limitedCourse);
+
+			getTrainingPageActions().tapOnQuestionSetCourse();
+
+			getTrainingPageActions().tapOnJoinTraining2();
+
+			getTrainingPageActions().verifyUserAbleToConsumeTheQuestionsetSmoothlyWhenitisAddedToCourse();
+
+		}
 }

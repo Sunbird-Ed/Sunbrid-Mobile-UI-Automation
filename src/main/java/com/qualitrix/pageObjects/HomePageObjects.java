@@ -2323,15 +2323,15 @@ public MobileElement tagsField;
     public MobileElement assertEnrollmentEndDate;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Enrolments for this batch closed on')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'The enrollment date has passed for this batch')]")
     public MobileElement assertEnrollmentClosedMsg;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='There are no batches available for this course']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'There are no batches available for this course')]")
     public MobileElement assertNoBatchesForThisCourseMsg;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='No batches available']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'No batches available')]")
     public MobileElement assertExpiredCourseMsg;
 
 
@@ -2930,7 +2930,7 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     public MobileElement assertCourseNavigationFilter;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore Interactive Content']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore Interactive Content']")
     public MobileElement assertExploreInteractiveContentText;
 
 
@@ -2938,7 +2938,7 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     public MobileElement assertCourseAssessmentNavigationFilter;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Accountancy']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Accountancy']")
     public MobileElement assertAccountancySubjectInDigitalTextbookCategory;
 
 
@@ -2949,7 +2949,7 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     public MobileElement groupedBasedOnAccountancySubject;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Chemistry']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Chemistry']")
     public MobileElement assertChemistrySubjectInDigitalTextbookCategory;
 
 
@@ -2957,7 +2957,7 @@ public MobileElement assertInvalidEmailAddressMessageInMergeAccountScreen;
     public MobileElement groupedBasedOnChemistrySubject;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Economics']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Economics']")
     public MobileElement assertEconomicsSubjectInDigitalTextbookCategory;
 
 

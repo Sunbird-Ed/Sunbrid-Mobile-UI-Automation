@@ -64,77 +64,79 @@ public class CourseConsumptionP1 {
 
 	}
 	 
-    @Test()
-    public void verifyUserAbleToConsumeOngoingBatchInExpiredCourse() throws Exception {
+	@Test()
+	public void verifyUserAbleToConsumeOngoingBatchInExpiredCourse() throws Exception {
 
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
 
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-        System.out.println("@name:" +
-                properties.getProperty("excelpath"));
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
 
-        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
 
-        getHomePageActions().tapOnProfileTab();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
 
-        getLoginPageActions().loginToTheUser(Username, Password);
+		getLoginPageActions().loginToTheUser(Username, Password);
 
-        //getHomePageActions().tapOnTrainingTab();
-        getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("AutomationExpiredCourse");
-        //QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("AutomationExpiredCourse");
-        getTrainingPageActions().tapOnSearchedExpiredCourse();
-        getHomePageActions().verifyOngoingBatchInAlreadyExpiredCourse();
+		getHomePageActions().tapOnTrainingTab();
+		getHomePageActions().tapOnSearchIcon();
+		getHomePageActions().enterTextInSearchBar("do_213708075810832384175");
+		//QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("AutomationExpiredCourse");
+		getTrainingPageActions().tapOnSearchedExpiredCourse();
+		getHomePageActions().verifyOngoingBatchInAlreadyExpiredCourse();
 
-        getTrainingPageActions().leaveCourse();
+		getTrainingPageActions().leaveCourse();
 
-    }
+	}
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun =
-			  true, description = "Switch User In Menu")
-			  public void SwitchUser() throws Exception {
+			true, description = "Switch User In Menu")
+	public void SwitchUser() throws Exception {
 
-		 QXClient.get().driver();
-		 getDikshaMainPageActions().performUserOnBoarding();
-		 getHomePageActions().tapOnProfileTab();
-		 QXClient.get().gestures().swipeUp();
-		 QXClient.get().gestures().swipeUp();
-
-
-		 Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-				 properties.getProperty("excelpath"));
-
-		 String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-		 QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		 String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-		 String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-
-		 getLoginPageActions().loginToTheUser(Username,Password);
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
 
 
-		  DikshaMainPageActions d=new DikshaMainPageActions();
-		  QXClient.get().gestures().closeApp();  
-		    d.LaunchAppHomeScreen();
-		    QXClient.get().gestures().BlindWait(4000);
-			  getHomePageActions().tapOnDownloadTab();
-		  
-		  
-		 getHomePageActions().tapOnMenuBar();
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+				properties.getProperty("excelpath"));
 
-		 getCoursePageActions().tapOnMoreOption();
-		 getCoursePageActions().clickFirstUser();
-		 getCoursePageActions().tapOnChangeUser();
-		 getCoursePageActions().CheckTermsCheckBoxORClickProfile();
-		 getCoursePageActions().verifyDistricAndState();
-			  
-			  }
+		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username =QXClient.get().excelUtils().getCellValue("Excel1","CourseConsumption",45,2);
+		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption",46,2);
+
+		getLoginPageActions().loginToTheUser(Username,Password);
+
+
+		DikshaMainPageActions d=new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+		QXClient.get().gestures().BlindWait(4000);
+		getHomePageActions().tapOnDownloadTab();
+
+
+		getHomePageActions().tapOnMenuBar();
+
+		getCoursePageActions().tapOnMoreOption();
+		getCoursePageActions().clickFirstUser();
+		getCoursePageActions().tapOnChangeUser();
+		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
+		QXClient.get().gestures().BlindWait(3000);
+		getCoursePageActions().verifyDistricAndState();
+
+	}
+
     @Test()
     public void verifyLastAttemptLeftMessageWhileConsumingAnAssessment() throws Exception {
 
@@ -280,80 +282,77 @@ public class CourseConsumptionP1 {
         getCoursePageActions().tapOnChangeUserWithoutProfile();
         getCoursePageActions().CheckTermsCheckBoxORClickProfile();
         d.LaunchAppHomeScreen();
-        getCoursePageActions().verifyDistricAndState();
-
+       
         getHomePageActions().tapOnProfileTab();
         QXClient.get().gestures().swipeUp();
-
+        getCoursePageActions().verifyDistricAndState();
         getCoursePageActions().verifyNoCoursesInMylearnigSection();
 
     }
 
-    @Author(name="Raju")
-
     @Test() public void SwitchUserLIUAAndMUA() throws Exception {
 
-        QXClient.get().driver();
-        getDikshaMainPageActions().performUserOnBoarding();
-        getHomePageActions().tapOnProfileTab();
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
 
 
-        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-                properties.getProperty("excelpath"));
-        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        getLoginPageActions().loginToTheUser(Username,Password);
+		String Username =QXClient.get().excelUtils().getCellValue("Excel1","CourseConsumption",43,2);
+		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption",44,2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		getLoginPageActions().loginToTheUser(Username,Password);
 
-        DikshaMainPageActions d=new DikshaMainPageActions();
+		DikshaMainPageActions d=new DikshaMainPageActions();
 
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnAddAnotherUser();
-
-        String FakeName=QXClient.get().gestures().generateRandomName();
-        String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
-        System.out.println(storeFakeNameEntered);
-        getCoursePageActions().tapOnAddUserBtn();
-        getHomePageActions().tapOnMenuBar();
-
-        getCoursePageActions().tapOnMoreOption();
-        QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+		getHomePageActions().tapOnDownloadTab();
 
 
-        getCoursePageActions().tapOnChangeUserWithoutProfile();
+		getHomePageActions().tapOnMenuBar();
 
-        getCoursePageActions().tapOnTermsAndCondition();
+		getCoursePageActions().tapOnAddAnotherUser();
 
-        getCoursePageActions().tapOnContinueForSwicthUser();
-
-
-        QXClient.get().gestures().closeApp();
-        d.LaunchAppHomeScreen();
-        getHomePageActions().tapOnDownloadTab();
-
-        getHomePageActions().tapOnProfileTab();
-        getHomePageActions().tapOnProfileTab();
-
-
-        getCoursePageActions().verifyDistricAndState();
-
-        getCoursePageActions().verifyBMCValuesAfterAddingUser();
-        //	getCoursePageActions().updateStateAndDistrictValues();
-
-        //	getCoursePageActions().updateProfileDetails();
+		String FakeName=QXClient.get().gestures().generateRandomName();
+		String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
+		System.out.println(storeFakeNameEntered);
+		getCoursePageActions().tapOnAddUserBtn();
+		QXClient.get().gestures().closeappandrelaunchapp();
+		getHomePageActions().tapOnMenuBar();
+		getCoursePageActions().tapOnMoreOption();
+		QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
 
 
-    }
+		getCoursePageActions().tapOnChangeUserWithoutProfile();
+
+		getCoursePageActions().tapOnTermsAndCondition();
+
+		getCoursePageActions().tapOnContinueForSwicthUser();
+
+
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+		getHomePageActions().tapOnDownloadTab();
+
+		getHomePageActions().tapOnProfileTab();
+		getHomePageActions().tapOnProfileTab();
+
+
+		getCoursePageActions().verifyDistricAndState();
+
+		getCoursePageActions().verifyBMCValuesAfterAddingUser();
+		//	getCoursePageActions().updateStateAndDistrictValues();
+
+		//	getCoursePageActions().updateProfileDetails();
+
+
+	}
     @Author(name="Raju")
 
     @Test() public void AddUsers() throws Exception {
@@ -469,72 +468,71 @@ public class CourseConsumptionP1 {
     }
 
 	
-	 @Test()
-	    public void verifyUserShouldRedirectToOngoingCoursePostSearchAndClickCourse() throws Exception {
+    @Test()
+	public void verifyUserShouldRedirectToOngoingCoursePostSearchAndClickCourse() throws Exception {
 
-	        QXClient.get().driver();
-	        DikshaMainPageActions d = new DikshaMainPageActions();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
+    	QXClient.get().driver();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
 
 
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-	        System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
 
-	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 29, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 30, 2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
 
-	        getLoginPageActions().loginToTheUser(Username, Password);
+		getLoginPageActions().loginToTheUser(Username, Password);
 
-	        getHomePageActions().tapOnSearchIcon();
-	        getHomePageActions().enterTextInSearchBar("AutomationCourseForDF");
+		getHomePageActions().tapOnTrainingTab();
+		getHomePageActions().tapOnSearchIcon();
+		getHomePageActions().enterTextInSearchBar("AutomationCourseForDF");
 
-	        getTrainingPageActions().tapOnSearchedCourseForDF();
+		getTrainingPageActions().tapOnSearchedCourseForDF();
 
-	        getTrainingPageActions().verifySearchedCourseNavigatedToOngoingCourse();
+		getTrainingPageActions().verifySearchedCourseNavigatedToOngoingCourse();
 
-	    }
+	}
 
-	 
+    @Test()
+	public void verifyUserAbleToConsumeOngoingCourseFromProfile() throws Exception {
 
-	    @Test()
-	    public void verifyUserAbleToConsumeOngoingCourseFromProfile() throws Exception {
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+				properties.getProperty("excelpath"));
 
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
+		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		String Username =QXClient.get().excelUtils().getCellValue("Excel1","CourseConsumption",4,2);
+		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption",5,2);
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",45,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",46,2);
+		getLoginPageActions().loginToTheUser(Username,Password);
 
-	        getLoginPageActions().loginToTheUser(Username,Password);
+		DikshaMainPageActions d=new DikshaMainPageActions();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+		  //getHomePageActions().tapOnDownloadTab();
 
-	        DikshaMainPageActions d=new DikshaMainPageActions();
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
-	        getHomePageActions().tapOnDownloadTab();
+		getHomePageActions().tapOnProfileTab();
 
-	        getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
 
-	        QXClient.get().gestures().swipeUp();
+		getCoursePageActions().tapOnOngoingCourse();
 
-	        getCoursePageActions().tapOnOngoingCourse();
 
-	        
-	    }
+	}
 		 @Test()
 		    public void verifyPageNotFoundErrorMessageInCourseWithPDFContent() throws Exception {
 
@@ -722,45 +720,45 @@ public class CourseConsumptionP1 {
 	    
 
 	    @Test()
-	    public void verifyUserNotAbleToSeeBatchSelectionPopUpForBatchEqualsOngoing() throws Exception {
+		public void verifyUserNotAbleToSeeBatchSelectionPopUpForBatchEqualsOngoing() throws Exception {
 
-	        QXClient.get().driver();
+			QXClient.get().driver();
 
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+					properties.getProperty("excelpath"));
 
-	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+			String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",2,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",3,2);
+			String Username =QXClient.get().excelUtils().getCellValue("Excel1","CourseConsumption",4,2);
+			String Password =QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption",5,2);
 
-	        String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",25,2);
+			String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",25,2);
 
-	        getLoginPageActions().loginToTheUser(Username,Password);
+			getLoginPageActions().loginToTheUser(Username,Password);
 
-	        DikshaMainPageActions d=new DikshaMainPageActions();
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
-	        getHomePageActions().tapOnDownloadTab();
+			DikshaMainPageActions d=new DikshaMainPageActions();
+			QXClient.get().gestures().closeApp();
+			d.LaunchAppHomeScreen();
+			getHomePageActions().tapOnDownloadTab();
 
-	        getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnTrainingTab();
 
-	        getHomePageActions().tapOnSearchIcon();
-	        getHomePageActions().enterTextInSearchBar(coursefetch);
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(coursefetch);
 
-	        getTrainingPageActions().tapOnSearchedCourse1();
+			getTrainingPageActions().tapOnSearchedCourse1();
 
-	        getTrainingPageActions().tapOnJoinTraining2();
+			getTrainingPageActions().tapOnJoinTraining2();
 
-	        getTrainingPageActions().verifyUserNotAbleToSeeBatchSelectionPopup();
+			getTrainingPageActions().verifyUserNotAbleToSeeBatchSelectionPopup();
 
-	        getTrainingPageActions().leaveCourse();
-	    }
+			getTrainingPageActions().leaveCourse();
+		}
 	    @Test()
 	    public void validateUpcomingBatchMsgInCourse() throws Exception {
 
@@ -926,72 +924,46 @@ public class CourseConsumptionP1 {
 
 	
 	
-	@Author(name = "Raju")
-	@Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true)
 	public void verifyUserAbleToEnrollConsumeCourseContent() throws Exception {
 
 		QXClient.get().driver();
 		getDikshaMainPageActions().performUserOnBoarding();
 		getHomePageActions().tapOnProfileTab();
-
 		Properties properties = QXClient.get().propUtils()
 				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
 		System.out.println("@name:" + properties.getProperty("excelpath"));
-
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-		String coursefetch = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 25, 2);
-
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 2, 5);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 3, 5);
+		String course_id = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 14, 2);
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();
 		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
 
-		DikshaMainPageActions d = new DikshaMainPageActions();
-		QXClient.get().gestures().closeApp();
-		d.LaunchAppHomeScreen();
-		getHomePageActions().tapOnDownloadTab();
 
 		getHomePageActions().tapOnMenuBar();
-
 		getCoursePageActions().tapOnAddAnotherUser();
-
 		String FakeName = QXClient.get().gestures().generateRandomName();
 		String storeFakeNameEntered = getCoursePageActions().enterName(FakeName);
 		System.out.println(storeFakeNameEntered);
 		getCoursePageActions().tapOnAddUserBtn();
 
+		QXClient.get().gestures().closeappandrelaunchapp();
 		getHomePageActions().tapOnMenuBar();
-
 		getCoursePageActions().tapOnMoreOption();
 		QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
-
-		getCoursePageActions().tapOnChangeUser();
-
+		getCoursePageActions().tapOnChangeUserWithoutProfile();
 		getCoursePageActions().tapOnTermsAndCondition();
-
 		getCoursePageActions().tapOnContinueForSwicthUser();
-
-		DikshaMainPageActions d2 = new DikshaMainPageActions();
-		QXClient.get().gestures().closeApp();
-		d2.LaunchAppHomeScreen();
-		getHomePageActions().tapOnDownloadTab();
-
-		getHomePageActions().tapOnProfileTab();
-		// getHomePageActions().tapOnProfileTab();
-
+		QXClient.get().gestures().closeappandrelaunchapp();
 		getHomePageActions().tapOnTrainingTab();
-
 		getHomePageActions().tapOnSearchIcon();
-		getHomePageActions().enterTextInSearchBar(coursefetch);
-
-		QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(coursefetch);
-		getTrainingPageActions().consumCourseContent();
-
+		getHomePageActions().enterTextInSearchBar(course_id);
+		// QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("CourseContent");
+		getTrainingPageActions().taponsinglepagepdfcourse();
 	}
-
 	
 	@Test()
     public void verifyCourseEndDateAndEnrollmentEndDateInCourseDetailsPage() throws Exception {
@@ -1067,39 +1039,38 @@ public class CourseConsumptionP1 {
 
 
 	
-	  @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
-	            description = "Verify UserAble to Download Book ")
-	    public void verifyUserAbleToDownloadTheContent() throws Exception {
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
+	 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+				description = "Verify UserAble to Download Book ")
+		public void verifyUserAbleToDownloadTheContent() throws Exception {
+			QXClient.get().driver();
+			getDikshaMainPageActions().performUserOnBoarding();
 
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+					properties.getProperty("excelpath"));
 
-	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+			String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+			String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+
+			getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(BookName);
+			//  QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
+
+			getTrainingPageActions().tapOnSearchedBook();
+
+			getLibraryPageActions().tapOnDownloadBtn();
+			getTrainingPageActions().tapOnDownloadBtnInDownloadPopUp();
+			//getTrainingPageActions().verifyFileDownloadThroughNotification();
+			getTrainingPageActions().waitTillTheDownloadButtonDisappears();
+			QXClient.get().gestures().clkBackButton();
+			QXClient.get().gestures().clkBackButton();
 
 
-	        getHomePageActions().tapOnSearchIcon();
-	        getHomePageActions().enterTextInSearchBar(BookName);
-	        //  QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement(BookName);
-
-	        getTrainingPageActions().tapOnSearchedBook();
-
-	        getLibraryPageActions().tapOnDownloadBtn();
-	        getTrainingPageActions().tapOnDownloadBtnInDownloadPopUp();
-	        //getTrainingPageActions().verifyFileDownloadThroughNotification();
-	        getTrainingPageActions().waitTillTheDownloadButtonDisappears();
-	        QXClient.get().gestures().clkBackButton();
-	        QXClient.get().gestures().clkBackButton();
-
-
-	        getHomePageActions().tapOnDownloadTab();
-	        getDownloadPageActions().verifyTheDownloadedBook();
-	    }
-
+			getHomePageActions().tapOnDownloadTab();
+			getDownloadPageActions().verifyTheDownloadedBook();
+		}
 
 	  @Test()
 	    public void verifyUserIsNotAllowedToTakeMoreThanMaximumAttemptsSetInACourse() throws Exception {
@@ -1208,60 +1179,62 @@ public class CourseConsumptionP1 {
 	  }
 
 	  @Test()
-	  public void verifyUserAbleConsumePDFCourseTillLastPageAndProgressUpdated() throws Exception {
-	      QXClient.get().driver();
-	      getDikshaMainPageActions().performUserOnBoarding();
-	      getHomePageActions().tapOnProfileTab();
-	      DikshaMainPageActions d=new DikshaMainPageActions();
+		public void verifyUserAbleConsumePDFCourseTillLastPageAndProgressUpdated() throws Exception {
+			QXClient.get().driver();
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
+			DikshaMainPageActions d=new DikshaMainPageActions();
 
 
-	      Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-	      System.out.println("@name:" +
-	              properties.getProperty("excelpath"));
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
 
-	      String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-	      QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	      String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-	      String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-	      QXClient.get().gestures().swipeUp();
-	      QXClient.get().gestures().swipeUp();
-	      getLoginPageActions().loginToTheUser(Username, Password);
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 4, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 5, 2);
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+			getLoginPageActions().loginToTheUser(Username, Password);
+			QXClient.get().gestures().closeappandrelaunchapp();
 
-	      getHomePageActions().tapOnMenuBar();
+			getHomePageActions().tapOnMenuBar();
 
-	      getCoursePageActions().tapOnAddAnotherUser();
+			getCoursePageActions().tapOnAddAnotherUser();
 
-	      String FakeName=QXClient.get().gestures().generateRandomName();
-	      String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
-	      System.out.println(storeFakeNameEntered);
-	      getCoursePageActions().tapOnAddUserBtn();
-	      getHomePageActions().tapOnMenuBar();
+			String FakeName=QXClient.get().gestures().generateRandomName();
+			String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
+			System.out.println(storeFakeNameEntered);
+			getCoursePageActions().tapOnAddUserBtn();
+			QXClient.get().gestures().closeappandrelaunchapp();
+			getHomePageActions().tapOnMenuBar();
 
-	      getCoursePageActions().tapOnMoreOption();
-	      QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+			getCoursePageActions().tapOnMoreOption();
+			QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
 
 
-	      getCoursePageActions().tapOnChangeUserWithoutProfile();
+			getCoursePageActions().tapOnChangeUserWithoutProfile();
 
-	      getCoursePageActions().tapOnTermsAndCondition();
+			getCoursePageActions().tapOnTermsAndCondition();
 
-	      getCoursePageActions().tapOnContinueForSwicthUser();
-	      QXClient.get().gestures().closeApp();
-	      d.LaunchAppHomeScreen();
+			getCoursePageActions().tapOnContinueForSwicthUser();
+			QXClient.get().gestures().closeApp();
+			d.LaunchAppHomeScreen();
 
-	      getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnTrainingTab();
 
-	      getHomePageActions().tapOnSearchIcon();
-	      getHomePageActions().enterTextInSearchBar("AutoPDFCourse");
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar("AutoPDFCourse");
 
-	      getTrainingPageActions().tapOnPDFCourse();
+			getTrainingPageActions().tapOnPDFCourse();
 
-	      getTrainingPageActions().tapOnJoinTraining2();
+			getTrainingPageActions().tapOnJoinTraining2();
 
-	      getTrainingPageActions().verifyUserAbleToPlayPDFCourseTillEnd();
+			getTrainingPageActions().verifyUserAbleToPlayPDFCourseTillEnd();
 
-	  }
+		}
 	  @Test()
 	    public void verifyEnrolledCourseInHomePageAndProfilePageUnderMyLearningSection() throws Exception {
 
@@ -1646,7 +1619,7 @@ public class CourseConsumptionP1 {
 
 			getLoginPageActions().loginToTheUser(Username, Password);
 
-			// getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnTrainingTab();
 			getHomePageActions().tapOnSearchIcon();
 			getHomePageActions().enterTextInSearchBar("Cert Course 4.5");
 			// QXClient.get().gestures().generateXpathUsingClassAndTextAndClickElement("Cert

@@ -1025,7 +1025,40 @@ public class ContentConsumptionP2 {
 
 	   }
 	  
-					    
+	   @Test()
+	   public void verifyUserAbleToConsumeShallowCopyTextbook() throws Exception {
+
+	   	QXClient.get().driver();
+	   	getDikshaMainPageActions().performUserOnBoarding();
+	   	DikshaMainPageActions d = new DikshaMainPageActions();
+	   	getHomePageActions().tapOnProfileTab();
+	   	QXClient.get().gestures().swipeUp();
+	   	QXClient.get().gestures().swipeUp();
+	   	Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	   	System.out.println("@name:" +
+	   			properties.getProperty("excelpath"));
+
+	   	String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	   	QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	   	String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 51, 2);
+	   	String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 52, 2);
+
+	   	getLoginPageActions().loginToTheUser(Username, Password);
+	   	QXClient.get().gestures().closeApp();
+	   	d.LaunchAppHomeScreen();
+
+	   	getHomePageActions().tapOnTrainingTab();
+
+	   	getHomePageActions().tapOnSearchIcon();
+	   	getHomePageActions().enterTextInSearchBar("do_21362090126455603213260");
+
+	   	getTrainingPageActions().tapOnShallowCopyTextbook();
+
+	   	getTrainingPageActions().verifyUserAbleToConsumeShallowCopyTextbook();
+
+	   }
+
 						
 
 }

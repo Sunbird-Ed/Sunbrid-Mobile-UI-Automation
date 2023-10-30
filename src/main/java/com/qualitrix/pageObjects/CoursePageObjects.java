@@ -113,6 +113,7 @@ public MobileElement assertStartLearning;
 	public MobileElement addAnotherUser;
 	
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'DISTRICT')]"),
 		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'District')]"),
 
 	})
@@ -120,6 +121,7 @@ public MobileElement assertStartLearning;
 
 	
 	@AndroidFindAll({
+		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'STATE')]"),
 		@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'State')]"),
 
 	})
@@ -401,10 +403,12 @@ public MobileElement assertStartLearning;
 			@AndroidBy(xpath = "//android.view.View[@text='Board: CBSE/NCERT \u200E']"),
 			@AndroidBy(xpath = "//android.view.View[@text='CBSE/NCERT ‎']"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'State (Andhra Pradesh)')]"),
+			@AndroidBy(xpath = "//android.widget.TextView[@text='Board: CBSE ‎']"),
+
 	})
 	public MobileElement verifyBoardAfterAddUser;
 
-
+	
 
 	@AndroidFindAll({
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Medium: English')]"),
@@ -523,6 +527,9 @@ public MobileElement assertStartLearning;
 			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Small AutomationCourseContent')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Small')]"),
 			@AndroidBy(xpath = "//android.view.View[contains(@text,'Completed')]//preceding::android.view.View[2]"),
+			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutomationCoursewithCompletioncertificate')]"),
+
+			
 	})
 	public MobileElement clkOnCompletedCourse;
 
