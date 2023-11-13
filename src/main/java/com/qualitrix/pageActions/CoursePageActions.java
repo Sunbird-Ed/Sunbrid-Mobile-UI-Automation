@@ -979,8 +979,43 @@ public class CoursePageActions  {
 
             // Assert.assertTrue((QXClient.get().gestures().isElementPresent(profileEditPageObjects.completeCourse)), "Course still in ongoing");
         }
+        public void tapOnAddedUser() throws Exception {
+            QXClient.get().gestures().BlindWait(2000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkOnAddedUser1);
+            QXClient.get().report().info("Click On Added User");
+            QXClient.get().gestures().BlindWait(2000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.changeUser);
+            QXClient.get().report().info("Click On change user button");
+            QXClient.get().gestures().BlindWait(3000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.termsCheckBox);
+            QXClient.get().report().info("Click On checkbox for terms and condition");
+            QXClient.get().gestures().BlindWait(2000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.continueChangeUser);
+            QXClient.get().gestures().BlindWait(2000);
 
+        }
+        
+        public void tapOnAddUserBtn2() throws Exception {
+            QXClient.get().gestures().BlindWait(3000);
+        //    coursePageObjects.EnterNameField.sendKeys("ab");
+            QXClient.get().gestures().BlindWait(3000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.addUserBtn);
+            QXClient.get().gestures().BlindWait(2000);
+        }
+        public void tapOnAddedUser2() throws Exception {
+            QXClient.get().gestures().BlindWait(2000);
+           // QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkOnAddedUser2);
+            QXClient.get().gestures().BlindWait(2000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.changeUser);
+            QXClient.get().report().info("Click On change user button");
+            QXClient.get().gestures().BlindWait(7000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.termsCheckBox);
+            QXClient.get().report().info("Click On checkbox for terms and condition");
+            QXClient.get().gestures().BlindWait(2000);
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.continueChangeUser);
+            QXClient.get().gestures().BlindWait(2000);
 
+        }
     }
 
     

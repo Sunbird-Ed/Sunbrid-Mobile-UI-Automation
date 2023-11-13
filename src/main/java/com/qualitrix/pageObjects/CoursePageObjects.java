@@ -2,6 +2,8 @@ package com.qualitrix.pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.WebElement;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
@@ -756,4 +758,21 @@ public MobileElement clkMedium;
         public MobileElement allowbutton;
         @AndroidFindBy(xpath = "//android.widget.Button[@text='ALLOW']")
         public MobileElement allowdevice;
+        
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text='ಜೈ']")
+    	public WebElement clkOnAddedUser1;
+
+  
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='profile']")
+         public WebElement clkOnProfile;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'jail')]")
+         public WebElement DisplayedInEnglish;
+
+
+
+
+
 }
+

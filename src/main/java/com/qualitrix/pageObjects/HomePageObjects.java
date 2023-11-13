@@ -3695,6 +3695,12 @@ public WebElement assertfiftyperCourseProgress;
 @AndroidFindBy(xpath="//android.widget.Button[@text='5out of five stars']")
 public MobileElement clkOkStar;
 
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'4.9 trackable collection')]")
+public MobileElement assertConsumedLastTrackableCourse;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'TrackableCollection22')]")
+public MobileElement assertConsumedNextTrackableCourse;
+
 
 @AndroidFindBy(xpath="//android.widget.TextView[@text='Excellent']")
 public MobileElement Excellent;
@@ -3708,6 +3714,175 @@ public MobileElement AddUserBtn;
 public MobileElement UseSubirdas;
 @AndroidFindBy(xpath = "//android.widget.Button[@text='Change User']")
 public MobileElement ChangeUser;
+
+
+@AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='name']")
+public WebElement Profilechangename;
+
+@AndroidFindAll({
+   @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'You have successfully completed this course')]"),
+   @AndroidBy(xpath = "//android.view.View[@text='You have successfully completed this course']"),
+
+})
+public MobileElement verifyCompletedMsg;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='menu-icon']")
+public MobileElement menuIcon;
+
+
+
+  @AndroidFindBy(xpath = "//android.widget.Button[@text='Pause']")
+    public WebElement TapOnPauseButton;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play']")
+    public WebElement TapOnPlayButton;
+
+@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'This content is relevant for')]")
+    public WebElement assertreleventTextIsDis;
+
+@AndroidFindBy(xpath = "//android.widget.EditText[@index=0]")
+public MobileElement EnterGpName;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='test1']")
+public WebElement ClkOnCreatedGp;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Your Progress')]")
+public WebElement YourProgress;
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.Button[@text='play Start learning']"),
+    @AndroidBy(xpath = "//android.widget.Button[@text='play ಕಲಿಯಲು ಆರಂಭಿಸಿ']"),
+})
+public MobileElement clkStartLearning;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Page 1 of 911%')]")
+ public WebElement PrgressbarPDF;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='OK']")
+public WebElement ClkOnOkbtn;
+
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public WebElement ClkOnCloseIconpopup;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0% completed']")
+ public MobileElement Prgressbar;
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Published by : Guest name changed')]")
+public WebElement NotTrackContent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Learn')]")
+public WebElement NotTrackContent2;
+
+
+@AndroidFindBy(xpath = "////android.widget.Button[@text='6.0regcourse View more actions menu Bio Chemistry Tamil nadu Course']")
+public MobileElement primarycategorycontent;
+
+
+
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Dismiss as group admin']")
+public MobileElement clkDismissAGrpAdmin;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Dismiss As Group Admin']")
+public MobileElement clkDismissAGrpAdminPopup;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='N namtest11‎ ⠇']")
+public MobileElement adminTagRemovedOnMember;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='J janki02‎ Admin ⠇']")
+public MobileElement firstMemberwithAdminRights;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='R rini02 test‎ Admin ⠇']")
+public MobileElement secondMemberwithAdminRights;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='T Ted02‎ Admin ⠇']")
+public MobileElement thirdMemberwithAdminRights;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='J jeet‎ ⠇']")
+public MobileElement firstMemberwithoutAdminRights;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='N namtest33‎ ⠇']")
+public MobileElement secondMemberwithoutAdminRights;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='R Raj99-test null$$‎ ⠇']")
+public MobileElement thirdMemberwithoutAdminRights;
+
+
+  @AndroidFindBy(xpath="//android.widget.TextView[@text='1x']")
+    public WebElement assertspeed;
+  
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationwithMp4video')]")
+public WebElement TapOnCourseMP4Content;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[@text='namtest11']"),
+})
+public MobileElement removeMemberName;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Group Testing - 7th November']"),
+})
+public MobileElement clkFirstGroupScenario;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.Image[@text='more actions menu']"),
+})
+public MobileElement menuGroup;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[@text='Leave group']"),
+})
+public MobileElement clkLeaveGroup;
+
+@AndroidFindBy(xpath = "///android.widget.Button[@text='Leave Group']")
+     public MobileElement clkLeaveGroupPopup;
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[@text='Name: activate to sort column descending']"),
+})
+public MobileElement clkSortIconDescending;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[@text='Name: activate to sort column ascending']"),
+})
+public MobileElement clkSortIconAscending;
+
+@AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.view.View[contains(@text,'0')]")
+})
+public MobileElement progressPercentageDescending;
+
+    	 
+@AndroidFindAll({
+             @AndroidBy(xpath = "//android.view.View[contains(@text,'100')]")
+})
+public MobileElement progressPercentageAscending;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Make group admin']")
+     public MobileElement clkMakeGrpAdmin;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Make Admin']")
+     public MobileElement clkMakeGrpAdminPopup;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Admin']")
+     public MobileElement adminTagOnMember;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Batch Concluded 04/10/2023')]")
+public MobileElement assertFirstEnrolledDateInMyLearningSection;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Ongoing 25/09/2023')]")
+public MobileElement assertSecondEnrolledDateInMyLearningSection;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Batch Concluded 06/09/2023')]")
+public MobileElement assertThirdEnrolledDateInMyLearningSection;
 
 
 }

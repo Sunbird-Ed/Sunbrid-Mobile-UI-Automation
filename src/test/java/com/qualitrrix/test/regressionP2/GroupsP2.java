@@ -971,4 +971,5 @@ public class GroupsP2 {
 	        getHomePageActions().verifyprimarycategory();
 
 	}
+	
 }

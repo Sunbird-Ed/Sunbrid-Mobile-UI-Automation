@@ -770,4 +770,65 @@ getHomePageActions().verifyHelpSection();
 	     getHomePageActions().verfiyNotificationIconSearchBarAndSunbirdText();
 
 	 }
+	 
+	 @Test()
+		public void verifyContentsAreOrderedByPublishedDates() throws Exception {
+
+			QXClient.get().driver();
+			getDikshaMainPageActions().performUserOnBoarding();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Mobile configurability", 1, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Mobile configurability", 2, 2);
+
+			getHomePageActions().tapOnProfileTab();
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+
+			getLoginPageActions().loginToTheUser(Username, Password);
+			d.LaunchAppHomeScreen();
+			getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().verifyContentsAreOrderedByPublishedDates();
+
+
+		}
+	 
+	 @Test()
+		public void verifyContentsAreOrderedByPublishedDatesUnderBrowseBySubject() throws Exception {
+
+			QXClient.get().driver();
+			getDikshaMainPageActions().performUserOnBoarding();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Mobile configurability", 1, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Mobile configurability", 2, 2);
+
+			getHomePageActions().tapOnProfileTab();
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+
+			getLoginPageActions().loginToTheUser(Username, Password);
+			d.LaunchAppHomeScreen();
+			getHomePageActions().tapOnMenuBar();
+			getHomePageActions().changeToJoyfulTheme();
+			QXClient.get().gestures().swipeUp();
+			getHomePageActions().verifyContentsAreOrderedByPublishedDatesUnderBrowseBySubject();
+
+
+		}
 }

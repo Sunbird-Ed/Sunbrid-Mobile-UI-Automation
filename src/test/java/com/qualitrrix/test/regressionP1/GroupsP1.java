@@ -657,7 +657,176 @@ public class GroupsP1 {
         getHomePageActions().verifyActivityDashboardScreen();
 
     }
+	@Test()
+	public void VerifyProgressIsNotDisplayForNotTrackableContent() throws Exception {
 
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		Properties properties = QXClient.get().propUtils()
+				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" + properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+		QXClient.get().gestures().BlindWait(5000);
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().BlindWait(2000);
+		getHomePageActions().tapOnMenuBar();
+
+		getCoursePageActions().tapOnAddAnotherUser();
+
+		String FakeName=QXClient.get().gestures().generateRandomName();
+		String storeFakeNameEntered= getCoursePageActions().enterName(FakeName);
+		System.out.println(storeFakeNameEntered);
+		getCoursePageActions().tapOnAddUserBtn();
+
+		QXClient.get().gestures().closeappandrelaunchapp();
+		getHomePageActions().tapOnMenuBar();
+
+		getCoursePageActions().tapOnMoreOption();
+		QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+
+
+		getCoursePageActions().tapOnChangeUserWithoutProfile();
+
+		getCoursePageActions().tapOnTermsAndCondition();
+
+		getCoursePageActions().tapOnContinueForSwicthUser();
+
+		d.LaunchAppHomeScreen();
+		getHomePageActions().tapOnMenuBar();
+		getHomePageActions().VerifyUserIsAbleToCreateGroup();
+		getHomePageActions().VerifyProgressIsnotDisplayed();
+		}
+	@Test()
+	public void verifyNonAdminUnableToViewTheProgressOfOtherMembers() throws Exception {
+
+		QXClient.get().driver();
+		DikshaMainPageActions d=new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		Properties properties = QXClient.get().propUtils()
+				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" + properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 5, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 3, 2);
+
+		getLoginPageActions().loginToTheUser(Username, Password);
+
+		getHomePageActions().verifyMemberswithAdminRightsGroupedTogetherInAlphabatecialOrderFollowedByMembersWhoAreNotAdmin();
+
+		QXClient.get().gestures().closeappandrelaunchapp();
+
+		getHomePageActions().tapOnMenuBar();
+
+		getHomePageActions().userLogout();
+
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+
+		getHomePageActions().tapOnProfileTab();
+
+		String Username1 = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 8, 2);
+		String Password1 = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 3, 2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username1, Password1);
+
+		getHomePageActions().verifyRemovingMemberFromAdminPost();
+
+		QXClient.get().gestures().closeappandrelaunchapp();
+
+		getHomePageActions().tapOnMenuBar();
+
+		getHomePageActions().userLogout();
+
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+
+		getHomePageActions().tapOnProfileTab();
+
+
+		String Username2 = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 9, 2);
+		String Password2 = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 3, 2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username2, Password2);
+
+		getHomePageActions().verifyNonAdminUnableToViewTheProgressOfOtherMembers();
+
+
+	}
+	
+	@Test()
+	public void verifyAllActivitiesOfGroupDashboard() throws Exception {
+
+		QXClient.get().driver();
+                DikshaMainPageActions d=new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		Properties properties = QXClient.get().propUtils()
+				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" + properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 2, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 3, 2);
+
+		getLoginPageActions().loginToTheUser(Username, Password);
+
+                getHomePageActions().sortingMembersInGroupByCourseProgress();
+
+                getHomePageActions().verifyMembersProgressInPercentage();
+
+		getHomePageActions().verifyUserAbleToMakeAnyMembersAdminInSelectedGroup();
+
+		getHomePageActions().removeMemberNotBeDisplayedInGroupDetails();
+
+                //QXClient.get().gestures().closeappandrelaunchapp();
+
+               // getHomePageActions().tapOnMenuBar();
+               // QXClient.get().gestures().swipeUp();
+
+               // getHomePageActions().userLogout();
+
+              //  QXClient.get().gestures().closeApp();
+              //  d.LaunchAppHomeScreen();
+
+             //   getHomePageActions().tapOnProfileTab();
+
+             //   String Username1 = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 4, 2);
+             //   String Password1 = QXClient.get().excelUtils().getCellValue("Excel1", "Groups", 3, 2);
+             //   QXClient.get().gestures().swipeUp();
+             //   QXClient.get().gestures().swipeUp();
+
+             //   getLoginPageActions().loginToTheUser(Username1, Password1);
+
+             //   getHomePageActions().leaveGroup();
+
+
+	}
 
 
 }

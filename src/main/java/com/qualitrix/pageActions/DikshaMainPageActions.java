@@ -10,6 +10,7 @@ import jdk.nashorn.internal.runtime.QuotedStringTokenizer;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -109,11 +110,10 @@ public class DikshaMainPageActions  {
            //     ProfileEditPageActions pageaction=new ProfileEditPageActions();
 
               QXClient.get().gestures().BlindWait(3000);
-                
-              
+
        //   dikshaMainObjects.clickContinue.click();
 
-           //   QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+              QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
                 QXClient.get().report().info("Clicked on Continue Button");
                 
               //  pageaction.verifyLabelOnBoarding();
