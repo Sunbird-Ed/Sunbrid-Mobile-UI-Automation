@@ -3884,7 +3884,8 @@ public MobileElement assertSecondEnrolledDateInMyLearningSection;
 @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Batch Concluded 06/09/2023')]")
 public MobileElement assertThirdEnrolledDateInMyLearningSection;
 
-
+@AndroidFindBy(xpath = "//android.widget.Button[@text='add activity button']")
+public WebElement ClkOnAddActivityBtn;
 }
     	
     	

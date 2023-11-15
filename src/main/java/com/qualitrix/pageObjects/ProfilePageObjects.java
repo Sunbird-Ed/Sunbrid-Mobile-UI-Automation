@@ -1342,6 +1342,8 @@ public MobileElement assertCompletedCourseInProfile;
     @AndroidBy(xpath = "//android.widget.Button[@text='OK']"),
 })
 public MobileElement Okbtn;
+
+
 }
 
 

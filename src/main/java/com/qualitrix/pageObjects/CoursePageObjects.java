@@ -770,9 +770,8 @@ public MobileElement clkMedium;
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'jail')]")
          public WebElement DisplayedInEnglish;
 
-
-
-
+    @AndroidFindBy(className = "android.widget.EditText")
+    public MobileElement EnterNameField;
 
 }
 

@@ -6399,4 +6399,19 @@ public void verifyCourseProgressUpdateForH5PContent() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
     }
+public void verifyUserFirstLandOnRootNodeInstructionPageInQuestionSet() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertInstructionsHeaderInInstructionPage), "Instructions header is not displayed");
+    QXClient.get().report().info("Instructions header is displayed");
+    QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertInstructionText), "Instruction text is not displayed");
+    QXClient.get().report().info("Instruction text is displayed");
+    QXClient.get().gestures().BlindWait(2000);
+
+}
 }

@@ -997,7 +997,7 @@ public class CoursePageActions  {
         
         public void tapOnAddUserBtn2() throws Exception {
             QXClient.get().gestures().BlindWait(3000);
-        //    coursePageObjects.EnterNameField.sendKeys("ab");
+           coursePageObjects.EnterNameField.sendKeys("ab");
             QXClient.get().gestures().BlindWait(3000);
             QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.addUserBtn);
             QXClient.get().gestures().BlindWait(2000);

@@ -2891,6 +2891,11 @@ public MobileElement assertEpubPartiallyProgress;
 })
 public MobileElement AutomationH5PCourse;
 
+@AndroidFindBy(xpath = "//android.widget.EditText[@index=0]")
+public MobileElement EnterGpName;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationwithMp4video')]")
+public WebElement TapOnCourseMP4Content;
 
 
 }

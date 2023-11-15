@@ -1174,4 +1174,29 @@ public class LoginP2 {
         getHomePageActions().verifyEnrolledCoursesAndTrackableCollectionBasedOnTheEnrolledDateInMyLearningSection();
 
 }
+ 	
+ 	 @Test()
+	    public void verifyYOBPopUpNotBeDisplayedForNewlyRegisteredCustodianUser() throws Exception {
+
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Login",14,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Login",6,2);
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().loginToTheUser1(Username, Password);
+
+	        getHomePageActions().verifyYOBPopupNotDisplayedForNewRegisteredCustodianUser();
+
+	    }
+
 }

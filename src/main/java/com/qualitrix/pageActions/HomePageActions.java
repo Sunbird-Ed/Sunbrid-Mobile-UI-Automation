@@ -8460,7 +8460,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("clicked on clkAddImgGrp");
         QXClient.get().gestures().BlindWait(3000);
 
-      //  trainingPageObjects.EnterGpName.sendKeys("test1");
+        trainingPageObjects.EnterGpName.sendKeys("test1");
         QXClient.get().report().info("Enter group name");
         QXClient.get().gestures().BlindWait(3000);
 
@@ -8480,7 +8480,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         QXClient.get().report().info("clicked on created group");
         QXClient.get().gestures().BlindWait(3000);
 
-   //     QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ClkOnAddActivityBtn);
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ClkOnAddActivityBtn);
         QXClient.get().report().info("clicked on Add Activity");
         QXClient.get().gestures().BlindWait(2000);
 
@@ -8569,7 +8569,7 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
     
     public void TapOnCoursewithMp4content() throws Exception {
         QXClient.get().gestures().BlindWait(5000);
-     //   QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.TapOnCourseMP4Content);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.TapOnCourseMP4Content);
         QXClient.get().report().info("Tap on Course with Mp");
        
 }
@@ -9158,6 +9158,18 @@ public void verifyMemberswithAdminRightsGroupedTogetherInAlphabatecialOrderFollo
 
     }
     
-   
+    public void verifyYOBPopupNotDisplayedForNewRegisteredCustodianUser() throws Exception{
+        QXClient.get().gestures().BlindWait(2000);
+
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertToastMessageForBMGSPicked),"BMGS picked Message is not displayed");
+        QXClient.get().report().info("We have picked your BMGS values message is displayed");
+        QXClient.get().gestures().BlindWait(3000);
+
+        Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilePageObjects.assertYOBPopup),"Year of birth popup is displayed");
+        QXClient.get().report().info("Year of birth popup is not displayed for Any user");
+        QXClient.get().gestures().BlindWait(3000);
+    
+
+}
 
 }
