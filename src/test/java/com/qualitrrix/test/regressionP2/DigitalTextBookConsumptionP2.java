@@ -298,10 +298,64 @@ public class DigitalTextBookConsumptionP2 {
     }
 
     
+    @Test()
+	public void verifytextbookconsume() throws Exception {
+
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 64, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 65, 2);
+		String textbook_id = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 70, 2);
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
+	getHomePageActions().tapOnTrainingTab();
+	getHomePageActions().tapOnSearchIcon();
+	getHomePageActions().enterTextInSearchBar(textbook_id);
+
+		getHomePageActions().verifytextbookconsume();
+	}
     
     
-    
-    
+    @Test()
+	public void VerifyUserConsumeContentInFullScreen() throws Exception {
+
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 64, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 65, 2);
+
+		String AutomationcontentVdforfullscreen = QXClient.get().excelUtils().getCellValue("Excel1", "ContentConsumption", 2, 2);
+		getLoginPageActions().loginToTheUser(Username, Password);
+		QXClient.get().gestures().closeappandrelaunchapp();
+		getHomePageActions().tapOnTrainingTab();
+		getHomePageActions().tapOnSearchIcon();
+		getHomePageActions().enterTextInSearchBar(AutomationcontentVdforfullscreen);
+		getHomePageActions().VerifyUserConsumeContentInFullScreen();
+
+
+	}
     
     
     

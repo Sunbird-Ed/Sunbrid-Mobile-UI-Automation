@@ -1073,17 +1073,36 @@ public void CreateGroup() throws Exception {
 		   }
 
 
-		 @Test (dependsOnMethods = { "VerifyAddUser" })
-		 public void AddedUserMsg() throws Exception {
-		      QXClient.get().driver();
-		     
-		   }
+		 @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,description = "Verify updateProfileDetails")
+		 public void ValidateLocationfieldsinProfilePAge() throws Exception {
+		 	QXClient.get().driver();
 
-		 @Test (dependsOnMethods = { "VerifyAddUser" })
-		 public void NoRecoveryOptionForMUA() throws Exception {
-		      QXClient.get().driver();
-		     
-		   }
+		 	getDikshaMainPageActions().performUserOnBoardingWithHeadTeacherAndOfficials();
+
+		 	Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+		 			properties.getProperty("excelpath"));
+
+		 	String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		 	QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		 	String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",158,2);
+		 	String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",159,2);
+
+		 	getLoginPageActions().loginToTheUserForLeader(Username,Password);
+
+		 	QXClient.get().gestures().closeappandrelaunchapp();
+
+		 	getHomePageActions().tapOnProfileTab();
+		 	//QXClient.get().gestures().swipeUp();
+
+		 	getCoursePageActions().ValidateLocationfieldsinProfilePAge();
+		 	QXClient.get().gestures().closeappandrelaunchapp();
+
+		 	getHomePageActions().tapOnProfileTab();
+		 	getCoursePageActions().ValidateUpdatedLocationfieldsinProfilePage();
+
+		 }
+		
 
 		
 }

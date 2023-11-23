@@ -1016,6 +1016,86 @@ public class CoursePageActions  {
             QXClient.get().gestures().BlindWait(2000);
 
         }
+        
+        public void  ValidateLocationfieldsinProfilePAge() throws Exception {
+            QXClient.get().gestures().scrollToMobileElement(coursePageObjects.clikEditProfile, "1");
+
+            QXClient.get().gestures().BlindWait(3000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clikLocationEditProfile);
+            QXClient.get().report().info("Tap on clikEditProfile Option");
+            QXClient.get().gestures().BlindWait(3000);
+            QXClient.get().gestures().swipeUp();
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkclearBtninLoc);
+            QXClient.get().report().info("Clicked on Clear button");
+            QXClient.get().gestures().BlindWait(5000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkStateDropDown);
+            QXClient.get().report().info("Tap on clkStateDropDown Option");
+            QXClient.get().gestures().BlindWait(3000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltStateLoc);
+            QXClient.get().report().info("select Andra");
+            QXClient.get().gestures().BlindWait(5000);
+            coursePageObjects.clkSubmitProfile.click();
+//            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubmitProfile);
+//            QXClient.get().report().info("Tap on Submit Button");
+//            QXClient.get().gestures().BlindWait(3000);
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.selectSubrole), "verify Subrole is not available");
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkDistrictDropDown);
+            QXClient.get().report().info("Tap on clkDistrictDropDown Option");
+            QXClient.get().gestures().BlindWait(3000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltDistrict);
+            QXClient.get().report().info("select Ananthapuram");
+            QXClient.get().gestures().BlindWait(2000);
+            coursePageObjects.clkSubmitProfile.click();
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkBlockDropDown);
+            QXClient.get().report().info("Tap on clkBlockDropDown Option");
+            QXClient.get().gestures().BlindWait(3000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltBlock);
+            QXClient.get().report().info("select Block");
+            QXClient.get().gestures().BlindWait(2000);
+            coursePageObjects.clkSubmitProfile.click();
+//            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSubmitProfile);
+//            QXClient.get().report().info("Tap on Submit Button");
+//            QXClient.get().gestures().BlindWait(5000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkClusterDropDown);
+            QXClient.get().report().info("Tap on clkBlockDropDown Option");
+            QXClient.get().gestures().BlindWait(5000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltCluster);
+            QXClient.get().report().info("select Cluster");
+            QXClient.get().gestures().BlindWait(2000);
+            coursePageObjects.clkSubmitProfile.click();
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkSchoolDropDown);
+            QXClient.get().report().info("Tap on clkBlockDropDown Option");
+            QXClient.get().gestures().BlindWait(3000);
+
+            QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.sltSchool);
+            QXClient.get().report().info("select School");
+            QXClient.get().gestures().BlindWait(2000);
+            coursePageObjects.clkSubmitProfile.click();
+            QXClient.get().report().info("submitted");
+            QXClient.get().gestures().BlindWait(5000);
+            coursePageObjects.clkSubmitProfile.click();
+        }
+
+      public void ValidateUpdatedLocationfieldsinProfilePage() throws Exception {
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifyRole),"verifyRole is not available");
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifyState),"verifyStatet is not available");
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifySubrole),"verifySubrole is not available");
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifyDistrict),"verifyDistrict is not available");
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifyBlock),"verifyBlock is not available");
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifyCluster),"verifyCluster is not available");
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifySchool),"verifySchool is not available");
+            QXClient.get().report().info("Verified Profile Update");
+        }
+
     }
 
     

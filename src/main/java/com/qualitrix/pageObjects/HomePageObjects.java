@@ -3886,6 +3886,34 @@ public MobileElement assertThirdEnrolledDateInMyLearningSection;
 
 @AndroidFindBy(xpath = "//android.widget.Button[@text='add activity button']")
 public WebElement ClkOnAddActivityBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Tv Classes']")
+public MobileElement ClkTVClassesTab;
+
+@AndroidFindBy(xpath = "//android.widget.CheckBox[@text='Student' ]")
+public MobileElement selectStudentRoleInFilter;
+
+@AndroidFindBy(xpath="//android.view.View[contains(@text,'CLASSROOMTEACHINGVIDEO')]")
+public MobileElement tapOnFirstClassRoomResult;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Sunbird']")
+public MobileElement NewSunbirdid;
+
+@AndroidFindBy(xpath ="//android.widget.TextView[@text='manjula_ilbf']")
+public MobileElement NewSunbirdvalue;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK Sept 21Textbook Subject')]")
+public MobileElement TapOntextbook;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Select module']")
+public WebElement selectmodule;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Select module']")
+public WebElement assertselectmodule;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='PDF_233.pdf']")
+public WebElement tapOntextplay;
+
 }
     	
     	

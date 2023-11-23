@@ -939,6 +939,78 @@ public class ProfileP2 {
 
 	         getCoursePageActions().verifysubmitdetailsbuttonandconsentpopupshouldnotdisplayedonProfilepage();
 	         }
+    
+    @Test()
+	public void verifyLatestBatchWithCertificateDisplayInMyLearningSection() throws Exception {
+
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoardingAndClickSwitchToNewExperience();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+
+		getHomePageActions().tapOnProfileTab();
+
+
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Profile", 19, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Profile", 20, 2);
+
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username, Password);
+		getHomePageActions().tapOnProfileTab();
+
+		getTrainingPageActions().verifyCertificateForLatestBatchInMyLearning();
+
+		QXClient.get().gestures().closeApp();
+	}
+    
+    @Test()
+    public void VerifyBothTheBatchWithCertificateIsShownInLearnerPassbookSection() throws Exception {
+    	QXClient.get().driver();
+    	getDikshaMainPageActions().performUserOnBoarding();
+    	getHomePageActions().tapOnProfileTab();
+
+    	getHomePageActions().tapOnProfileTab();
+
+
+    	Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+    	System.out.println("@name:" +
+    			properties.getProperty("excelpath"));
+
+    	String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+    	QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+    	String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Profile",2,5);
+    	String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Profile",3,5);
+    	String coursefetch =QXClient.get().excelUtils().getCellValue("Excel1", "Profile",4,5);
+
+    	QXClient.get().gestures().swipeUp();
+    	QXClient.get().gestures().swipeUp();
+
+    	getLoginPageActions().loginToTheUser(Username, Password);
+
+    	getHomePageActions().tapOnTrainingTab();
+    	getHomePageActions().tapOnSearchIcon();
+    	getHomePageActions().enterTextInSearchBar(coursefetch);
+    	QXClient.get().gestures().swipeUp();
+
+    	getTrainingPageActions().tapOnNewCourseWithCertificate();
+    	QXClient.get().gestures().closeappandrelaunchapp();
+    	getHomePageActions().tapOnProfileTab();
+
+    	getTrainingPageActions().VerifyBothTheBatchWithCertificateIsShownInLearnerPassbookSection();
+    	getTrainingPageActions().VerificationonFirstBatchWithCertificate();
+    	getTrainingPageActions().VerificationonSecondBatchWithCertificate();
+
+    }
+    
 }
 
 	

@@ -9171,5 +9171,114 @@ public void verifyMemberswithAdminRightsGroupedTogetherInAlphabatecialOrderFollo
     
 
 }
+    public void clkOnClassRoomTeachingVideoFirstResult() throws Exception {
+    	QXClient.get().gestures().BlindWait(2000);
+    	QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.tapOnFirstClassRoomResult);
+        QXClient.get().report().info("Tap on tapOnFirstCoureResult tab");
+    }
 
+public void verifyTVLessonContentAfterAppliedTVClassFilters() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        //QXClient.get().gestures().closeappandrelaunchapp();
+        tapOnMenuBar();
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+        QXClient.get().report().info("clicked on clkNewDikshExperiece");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().closeappandrelaunchapp();
+  
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ClkFooterSearchTab);
+        QXClient.get().report().info("clicked on search tab");
+        QXClient.get().gestures().BlindWait(3000);
+
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.ClkTVClassesTab);
+        QXClient.get().report().info("clicked on course tab");
+        QXClient.get().gestures().BlindWait(3000);
+         
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubjectFilter);
+        QXClient.get().report().info("clicked on subject filter");
+        QXClient.get().gestures().BlindWait(3000);
+       
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.selectAccountancy);
+        QXClient.get().report().info("Subject is selected from filter drop down");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitButton);
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkRoleFilter);
+        QXClient.get().report().info("clicked on role filter");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.selectStudentRoleInFilter);
+        QXClient.get().report().info("Student role is selected from filter drop down");
+        QXClient.get().gestures().BlindWait(3000);
+
+        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitButton);
+        QXClient.get().gestures().BlindWait(3000);
+    }
+public void verifyUserConsumeTvClassesContent() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.tapOnFirstClassRoomResult);
+    QXClient.get().report().info("Tap on Class Room video content");
+    QXClient.get().gestures().BlindWait(2000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOnPlayBtn);
+    QXClient.get().gestures().BlindWait(2000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextIcon);
+QXClient.get().report().info("clicked on Next Button");
+QXClient.get().gestures().BlindWait(2000);
+
+QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextIcon);
+QXClient.get().report().info("clicked on Next Button");
+QXClient.get().gestures().BlindWait(2000);
+
+QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextIcon);
+QXClient.get().report().info("clicked on Next Button");
+QXClient.get().gestures().BlindWait(2000);
+
+QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextIcon);
+QXClient.get().report().info("clicked on Next Button");
+QXClient.get().gestures().BlindWait(2000);
+
+QXClient.get().gestures().clkBackButton();
+QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOkToCancel);
+QXClient.get().report().info("clicked on Ok to cancel");
+QXClient.get().gestures().BlindWait(2000);
+
+QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.closeRatingIcon);
+    QXClient.get().report().info("Clicked on close rating ");
+    QXClient.get().gestures().BlindWait(3000);
+
+ QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnBackIcon);
+    QXClient.get().report().info("clicked on clkOnBackIcon");
+    QXClient.get().gestures().BlindWait(3000);
+}
+
+public void VerifySunbirdIdShouldgetDisplayedOnProfilePAgeForNewUsers() throws Exception {
+    QXClient.get().gestures().BlindWait(4000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.NewSunbirdid),"NewSunbirdid is not displayed in Profile after editing");
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.NewSunbirdvalue),"NewSunbirdvalue is not displayed in Profile after editing");
+}
+
+public void verifytextbookconsume() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+  QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOntextbook);
+    QXClient.get().report().info("Tap on pdf content");
+   QXClient.get().gestures().BlindWait(3000);
+
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.selectmodule));
+    QXClient.get().report().info("Select module is displayed");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.tapOntextplay);
+    QXClient.get().report().info("Tap on pdf content");
+    QXClient.get().gestures().BlindWait(3000);
+
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.TapOnPlayBtn);
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+
+}
 }

@@ -2449,5 +2449,65 @@ public void anonymousUserAbleToSearchCourse() throws Exception {
 		getTrainingPageActions().verifyCourseProgressShouldNotUpdateForEpubContentForPartiallyConsuming();
 	}
 
+    @Test()
+	    public void verifyUserAbleToSearchAndConsumeTheTVLessonAfterAppliedTVClassFilters() throws Exception {
+
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 57, 2);
+	        String Password ="Test@123";
+
+	        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().loginToTheUser(Username, Password);
+
+	        getHomePageActions().verifyTVLessonContentAfterAppliedTVClassFilters();
+
+            getHomePageActions().verifyUserConsumeTvClassesContent();
+
+
+	    }
+    
+    @Test()
+    public void verifytrackablecollectiononorder() throws Exception {
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+        System.out.println("@name:" +
+              properties.getProperty("excelpath"));
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 75, 2);
+        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 76, 2);
+        String course1_id = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 69, 2);
+        String course2_id = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 71, 2);
+        QXClient.get().gestures().swipeUp();
+        getLoginPageActions().loginToTheUser(Username, Password);
+        //getHomePageActions().tapOnHomeTab();
+        QXClient.get().gestures().closeappandrelaunchapp();
+        getHomePageActions().tapOnMenuBar();
+        getCoursePageActions().tapOnNewDikshaExperience();
+        getHomePageActions().tapOnTrainingTab();
+        getHomePageActions().tapOnSearchIcon();
+        getHomePageActions().enterTextInSearchBar(course1_id);
+        getTrainingPageActions().newcollectionconsumeongoing();
+        getHomePageActions().tapOnSearchIcon();
+        getHomePageActions().enterTextInSearchBar(course2_id);
+        getTrainingPageActions().tapOncontinuelearningcollectionnew();
+        getTrainingPageActions().tapOncontinuelearningorder();
+    }
 
 }

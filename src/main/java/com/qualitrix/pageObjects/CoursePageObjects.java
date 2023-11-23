@@ -772,6 +772,57 @@ public MobileElement clkMedium;
 
     @AndroidFindBy(className = "android.widget.EditText")
     public MobileElement EnterNameField;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Edit Role, Block, District, State']")
+	public MobileElement clikLocationEditProfile;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Clear']")
+	public MobileElement clkclearBtninLoc;
+
+@AndroidFindBy(xpath = "//android.widget.ListView[@text='Select State']")
+	public MobileElement clkStateDropDown;
+	@AndroidFindBy(xpath = "//android.widget.ListView[@text='Select District']")
+	public MobileElement clkDistrictDropDown;
+	@AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Ananthapuram']")
+	public MobileElement sltDistrict;
+	@AndroidFindBy(xpath = "//android.widget.ListView[@text='Select Block']")
+	public MobileElement clkBlockDropDown;
+	@AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Anantapur']")
+	public MobileElement sltBlock;
+	@AndroidFindBy(xpath = "//android.widget.ListView[@text='Select Cluster']")
+	public MobileElement clkClusterDropDown;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Zphs Tapovannagar']")
+	public MobileElement sltCluster;
+
+	@AndroidFindBy(xpath = "//android.widget.ListView[@text='Select School']")
+	public MobileElement clkSchoolDropDown;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='SRI POTTI SREERAMULU MPL.']")
+	public MobileElement sltSchool;
+
+	
+ 
+
+
+
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'District: Ananthapuram\n')]")
+	public MobileElement verifyDistrictt;
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'State: Andhra Pradesh')]")
+	public MobileElement verifyStatee;
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Cluster: Zphs Tapovannagar')]")
+	public MobileElement verifyCluster;
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'School: SRI POTTI SREERAMULU MPL.')]")
+	public MobileElement verifySchool;
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Sub-role: HM, CRP')]")
+	public MobileElement verifySubrole;
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Role: HT & Officials')]")
+	public MobileElement verifyRole;
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Block: Anantapur')]")
+	public MobileElement verifyBlock;
+	
+	@AndroidFindBy(xpath = "//android.widget.ListView[@text='HM, CRP, selected ,Select Subrole']")
+	public MobileElement selectSubrole;
 
 }
 
