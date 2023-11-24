@@ -1103,8 +1103,118 @@ public void CreateGroup() throws Exception {
 
 		 }
 		
+		 @Test()
+			public void verifyProfileNameChangePopupShouldGetForCourse() throws Exception {
 
-		
+				QXClient.get().driver();
+				DikshaMainPageActions d = new DikshaMainPageActions();
+				getDikshaMainPageActions().performUserOnBoarding();
+				getHomePageActions().tapOnProfileTab();
+
+
+				Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+				System.out.println("@name:" +
+						properties.getProperty("excelpath"));
+
+				String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+				QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+				String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 159, 2);
+				String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 160, 2);
+				String Automationcoursewithprofilepopup = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 64, 2);
+				QXClient.get().gestures().swipeUp();
+				QXClient.get().gestures().swipeUp();
+				getLoginPageActions().loginToTheUser(Username, Password);
+				getHomePageActions().tapOnTrainingTab();
+				getHomePageActions().tapOnSearchIcon();
+				getHomePageActions().enterTextInSearchBar(Automationcoursewithprofilepopup);
+				getTrainingPageActions().tapOnSearchedcoursewithprofilepopup();
+				getHomePageActions().VerifyProfileNameChangePopupForCourse();
+			}
+		 @Test()
+			public void verifyProfileNameChangePopupShouldGetForTrackableBook() throws Exception {
+
+				QXClient.get().driver();
+				DikshaMainPageActions d = new DikshaMainPageActions();
+				getDikshaMainPageActions().performUserOnBoarding();
+				getHomePageActions().tapOnProfileTab();
+
+
+				Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+				System.out.println("@name:" +
+						properties.getProperty("excelpath"));
+
+				String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+				QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+				String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 159, 2);
+				String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 160, 2);
+				String Trackblebook = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 162, 2);
+				QXClient.get().gestures().swipeUp();
+				QXClient.get().gestures().swipeUp();
+				getLoginPageActions().loginToTheUser(Username, Password);
+				getHomePageActions().tapOnTrainingTab();
+				getHomePageActions().tapOnSearchIcon();
+		        getHomePageActions().enterTextInSearchBar(Trackblebook);
+		        getTrainingPageActions().tapOnSearchedtrackablebookwithprofilepopup();
+		        getHomePageActions().VerifyProfileNameChangePopupFortrackablebook();
+	}
+		 
+		 @Test()
+			public void verifyUserIsAbleToImportcontentandPresentInDownloadSection() throws Exception {
+
+				QXClient.get().driver();
+				DikshaMainPageActions d = new DikshaMainPageActions();
+				getDikshaMainPageActions().performUserOnBoarding();
+				getHomePageActions().tapOnProfileTab();
+
+
+				Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+				System.out.println("@name:" +
+						properties.getProperty("excelpath"));
+
+				String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+				QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+				String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+				String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+				QXClient.get().gestures().swipeUp();
+				QXClient.get().gestures().swipeUp();
+
+				getLoginPageActions().loginToTheUser(Username, Password);
+				d.LaunchAppHomeScreen();
+				getHomePageActions().tapOnMenuBar();
+				getHomePageActions().verifyUserIsAbleToImportcontentandPresentInDownloadSection();
+			}
+		 
+		 @Test()
+			public void verifyProfileNameChangePopupShouldGetForTrackableCollection() throws Exception {
+
+				QXClient.get().driver();
+				DikshaMainPageActions d = new DikshaMainPageActions();
+				getDikshaMainPageActions().performUserOnBoarding();
+				getHomePageActions().tapOnProfileTab();
+
+
+				Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+				System.out.println("@name:" +
+						properties.getProperty("excelpath"));
+
+				String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+				QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+				String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 159, 2);
+				String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 160, 2);
+				String Trackblecollection = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 161, 2);
+				QXClient.get().gestures().swipeUp();
+				QXClient.get().gestures().swipeUp();
+				getLoginPageActions().loginToTheUser(Username, Password);
+				getHomePageActions().tapOnTrainingTab();
+				getHomePageActions().tapOnSearchIcon();
+				getHomePageActions().enterTextInSearchBar(Trackblecollection);
+				getTrainingPageActions().tapOnSearchedtrackablecollectionwithprofilepopup();
+				getHomePageActions().VerifyProfileNameChangePopupFortrackablecollection();
+			}
 }
 
     

@@ -1276,6 +1276,37 @@ public MobileElement tagsField;
     	@AndroidFindBy(xpath = "//android.widget.Button[@text='search']")
     	public MobileElement clksearchIcon;
     	
+    	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Import Content')]")
+        public WebElement ClkOnImportContent;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'sunbird_Automation NestedCollection')]")
+        public WebElement assertNestedcollection;
+
+    @AndroidFindBy(xpath = "//android.widget.FrameLayout[@content-desc='Preview the file sunbird_Automation NestedCollection-v1.ecar']")
+        public WebElement ClkonNestedcollection;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'SUNBIRD ')]")
+        public WebElement ClkonApp;
+
+     @AndroidFindBy(xpath = "//android.widget.Button[@text='ALWAYS']")
+        public WebElement ClkonAlways;
+
+  
+
+     @AndroidFindBy(xpath = "//android.widget.Button[@text='Load']")
+        public WebElement clkonload;
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Successfully imported']")
+        public WebElement assertimportmessage;
+
+     
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'download')]")
+        public WebElement clkondownloadbtn;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Automation NestedCollection']")
+        public WebElement assertdwnldnestedCollection;
+
     	
     	@AndroidFindBy(xpath = "//android.widget.Image[@text='log in outline']")
     	public MobileElement clkonloginofmenubar;
@@ -3913,6 +3944,108 @@ public WebElement assertselectmodule;
 
 @AndroidFindBy(xpath = "//android.widget.TextView[@text='PDF_233.pdf']")
 public WebElement tapOntextplay;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'QS fortest')]")
+public WebElement clkOnQS;
+
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Published by')]")
+public WebElement ClkOnAnycourse;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Tamil Nadu Course')]")
+public WebElement ClkonAddedcourse;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text=' Activity dashboard']")
+public WebElement ClkOnAd;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'ಕನ್ನಡ')]")
+public WebElement assertNameInAD;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='0']")
+public WebElement assertProgressInAD;
+
+
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[@resource-id='sb-generic-toast']")
+public WebElement assertCSVMessage;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='i']")
+public WebElement assertIicon;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursewithvideocontent')]")
+    public WebElement TapOnCoursewithVideocontent;
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursewithyoutubecontent')]")
+public WebElement TapOnCoursewithyoutube;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'sunbird_Questionsetwithvideo')]")
+public WebElement assertquestionset;
+
+@AndroidFindBy(xpath = "//android.widget.FrameLayout[@content-desc='Preview the file sunbird_Questionsetwithvideo-v1.ecar']")
+public WebElement ClkonQS;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'sunbird_Limited questionset course')]")
+public WebElement assertCoursequestionset;
+
+@AndroidFindBy(xpath = "//android.widget.FrameLayout[@content-desc='Preview the file sunbird_Limited questionset course-v4.ecar']")
+public WebElement ClkonCourseQS;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Limited questionset course')]")
+public WebElement assertdwnldcourseQS;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Questionsetwithvideo')]")
+public WebElement assertdwnldQS;
+
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'sunbird_trackble collection23')]")
+public WebElement asserttrackablecollection;
+
+@AndroidFindBy(xpath = "//android.widget.FrameLayout[@content-desc='Preview the file sunbird_trackble collection23-v1.ecar']")
+public WebElement Clkontrackcollection;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='JOIN']")
+public WebElement assertJoinbtn;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'trackble collection')]")
+public WebElement assertdwnldtrackbleCollection;
+
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'sunbird_Automation NonTrackbleColle')]")
+public WebElement assertnontrackablecollection;
+
+@AndroidFindBy(xpath = "//android.widget.FrameLayout[@content-desc='Preview the file sunbird_Automation NonTrackbleColle...-v1.ecar']")
+public WebElement Clkonnontrackcollection;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Video']")
+public WebElement assertVideobtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Documents']")
+public WebElement assertDocbtn;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Automation NonTrackbleCollection']")
+public WebElement assertdwnldnontrackbleCollection;
 
 }
     	

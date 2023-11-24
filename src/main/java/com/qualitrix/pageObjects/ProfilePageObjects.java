@@ -1344,6 +1344,27 @@ public MobileElement assertCompletedCourseInProfile;
 public MobileElement Okbtn;
 
 
+@AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='withemail']")
+    public MobileElement enteremailnumber;
+
+@AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='signup-form-password']")
+public MobileElement enterpassword;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='signup-form-confirmPassword']")
+public MobileElement enterconfirmpassword;
+
+
+
+
+@AndroidFindBy(className="android.widget.CheckBox")
+public MobileElement clickTNcAndCheckBox;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'As a parent/guardian I understand')]")
+public WebElement assertTnc;
+
+
 }
 
 

@@ -2509,5 +2509,113 @@ public void anonymousUserAbleToSearchCourse() throws Exception {
         getTrainingPageActions().tapOncontinuelearningcollectionnew();
         getTrainingPageActions().tapOncontinuelearningorder();
     }
+    @Test()
+    public void verifyCourseProgressnotUpdatedWhenPlayVideoContentPartially() throws Exception {
+    	QXClient.get().driver();
+    	DikshaMainPageActions d = new DikshaMainPageActions();
+    	getDikshaMainPageActions().performUserOnBoarding();
+    	getHomePageActions().tapOnProfileTab();
 
+
+    	Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+    	System.out.println("@name:" +
+    			properties.getProperty("excelpath"));
+
+    	String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+    	QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+    	String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+    	String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+    	String Automationcoursewithvideocontent = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 68, 2);
+    	QXClient.get().gestures().swipeUp();
+    	QXClient.get().gestures().swipeUp();
+    	getLoginPageActions().loginToTheUser(Username, Password);
+
+    	getHomePageActions().tapOnMenuBar();
+
+    	getCoursePageActions().tapOnAddAnotherUser();
+
+    	String FakeName = QXClient.get().gestures().generateRandomName();
+    	String storeFakeNameEntered = getCoursePageActions().enterName(FakeName);
+    	System.out.println(storeFakeNameEntered);
+    	getCoursePageActions().tapOnAddUserBtn();
+    	QXClient.get().gestures().closeApp();
+    	d.LaunchAppHomeScreen();
+    	QXClient.get().gestures().BlindWait(5000);
+    	getHomePageActions().tapOnProfileTab();
+    	QXClient.get().gestures().BlindWait(2000);
+    	getHomePageActions().tapOnMenuBar();
+
+    	getCoursePageActions().tapOnMoreOption();
+    	QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+
+
+    	getCoursePageActions().tapOnChangeUser();
+
+    	getCoursePageActions().tapOnTermsAndCondition();
+
+    	getCoursePageActions().tapOnContinueForSwicthUser();
+
+    	getHomePageActions().tapOnTrainingTab();
+
+    	getHomePageActions().tapOnSearchIcon();
+    	getHomePageActions().enterTextInSearchBar(Automationcoursewithvideocontent);
+    	getHomePageActions().verifyCourseProgressnotUpdatedWhenPlayVideoContentPartially();
+
+    }
+    
+    @Test()
+	public void verifyCourseProgressnotUpdatedWhenPlayYoutubeVideoPartially() throws Exception {
+		QXClient.get().driver();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+
+
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+		String Automationcoursewithyoutube = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 67, 2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		getLoginPageActions().loginToTheUser(Username, Password);
+
+		getHomePageActions().tapOnMenuBar();
+
+		getCoursePageActions().tapOnAddAnotherUser();
+
+		String FakeName = QXClient.get().gestures().generateRandomName();
+		String storeFakeNameEntered = getCoursePageActions().enterName(FakeName);
+		System.out.println(storeFakeNameEntered);
+		getCoursePageActions().tapOnAddUserBtn();
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+		QXClient.get().gestures().BlindWait(5000);
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().BlindWait(2000);
+		getHomePageActions().tapOnMenuBar();
+
+		getCoursePageActions().tapOnMoreOption();
+		QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+
+
+		getCoursePageActions().tapOnChangeUser();
+
+		getCoursePageActions().tapOnTermsAndCondition();
+
+		getCoursePageActions().tapOnContinueForSwicthUser();
+
+		getHomePageActions().tapOnTrainingTab();
+
+		getHomePageActions().tapOnSearchIcon();
+		getHomePageActions().enterTextInSearchBar(Automationcoursewithyoutube);
+		getHomePageActions().verifyCourseProgressnotUpdatedWhenPlayYoutubeVideoPartially();
+
+	}
 }

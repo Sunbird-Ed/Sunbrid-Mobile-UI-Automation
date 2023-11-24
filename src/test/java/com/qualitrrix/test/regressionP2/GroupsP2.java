@@ -971,5 +971,30 @@ public class GroupsP2 {
 	        getHomePageActions().verifyprimarycategory();
 
 	}
-	
+
+@Test()
+	public void VerifyMembersNameIsDiplayedInRegionalLanguage() throws Exception {
+
+		QXClient.get().driver();
+		getDikshaMainPageActions().performUserOnBoarding();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		Properties properties = QXClient.get().propUtils()
+				.getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" + properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+		getLoginPageActions().loginToTheUser(Username, Password);
+		d.LaunchAppHomeScreen();
+		getHomePageActions().tapOnProfileTab();
+		getHomePageActions().AddProfileName2();
+		getHomePageActions().tapOnMenuBar();
+		getHomePageActions().VerifyMembersNameIsDiplayedInRegionalLanguage();
+		}
 }

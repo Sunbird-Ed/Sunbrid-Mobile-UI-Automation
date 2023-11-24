@@ -354,9 +354,9 @@ public class Gestures {
     }
     public void BlindWait(int wait) throws Exception
     {
-    	 Thread.sleep(wait);
-       
-    }
+    	// Thread.sleep(wait);
+System.out.println("IgnoreWait");   
+}
     
     
     public void scrollUpToMobileElement(MobileElement element, String scrollCount) {

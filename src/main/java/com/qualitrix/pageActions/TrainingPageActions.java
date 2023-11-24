@@ -6563,5 +6563,30 @@ public void tapOncontinuelearningorder() throws Exception {
     //QXClient.get().gestures().driver.findElements(By.xp.get(17).click();
     QXClient.get().gestures().BlindWait(3000);
 }
+public void tapOnSearchedtrackablecollectionwithprofilepopup() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.TapOnTrackCollection);
+    QXClient.get().report().info("Tap on Trackable Collection");
+    QXClient.get().gestures().BlindWait(3000);
+}
+public void tapOnAutomationQSwithfeedbacktrue() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.TapOnQSfeedback);
+    QXClient.get().report().info("Tap on Questionset");
+    QXClient.get().gestures().BlindWait(3000);
+}
+
+public void tapOnSearchedtrackablebookwithprofilepopup() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.TapOnTrackbook);
+    QXClient.get().report().info("Tap on Trackable book");
+    QXClient.get().gestures().BlindWait(3000);
+}
+public void tapOnAutomationQSwithSolution() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.TapOnSolutionQS);
+    QXClient.get().report().info("Tap on Questionset");
+    QXClient.get().gestures().BlindWait(3000);
+}
 
 }

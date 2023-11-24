@@ -1225,5 +1225,17 @@ public class LoginP2 {
 
 		getHomePageActions().VerifySunbirdIdShouldgetDisplayedOnProfilePAgeForNewUsers();
 	}
+ 	
+ 	@Test()
+	public void VerifyParentsTermsAndConditionMessage() throws Exception {
+
+		QXClient.get().driver();
+
+		getDikshaMainPageActions().performUserOnBoardingWithLeader();
+
+		getLoginPageActions().VerifyParentsTermsAndConditionMessage();
+
+
+	}
 }
 

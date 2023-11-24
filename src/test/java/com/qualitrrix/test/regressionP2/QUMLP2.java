@@ -1237,6 +1237,121 @@ public class QUMLP2 {
 
 		}
 	 
+	 @Test()
+		public void verifyCorrectAndIncorrectMarkWhenFeedbackIsTrue() throws Exception {
+
+			QXClient.get().driver();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
+
+
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+			String AutomationQSwithFeedbackTrue = QXClient.get().excelUtils().getCellValue("Excel1", "Quml", 10, 2);
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+			getLoginPageActions().loginToTheUser(Username, Password);
+			getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(AutomationQSwithFeedbackTrue);
+			getTrainingPageActions().tapOnAutomationQSwithfeedbacktrue();
+			getHomePageActions().verifyCorrectAndIncorrectMarkWhenFeedbackIsTrue();
+		}
 	 
+	 @Test()
+		public void verifyInstructionPageProgressBarIsDisplayWithIicon() throws Exception {
+
+			QXClient.get().driver();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
+
+
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 1, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+			String Questionset = QXClient.get().excelUtils().getCellValue("Excel1", "Quml", 7, 2);
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+
+			getLoginPageActions().loginToTheUser(Username, Password);
+			getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(Questionset);
+			getHomePageActions().verifyInstructionPageProgressBarIsDisplayWithIicon();
+		}
+	 
+	 @Test()
+		public void verifySolutionViewPageForMCQOrSubjectiveQuestion() throws Exception {
+
+			QXClient.get().driver();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
+
+
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+			String AutomationQSwithSolution = QXClient.get().excelUtils().getCellValue("Excel1", "Quml", 9, 2);
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+			getLoginPageActions().loginToTheUser(Username, Password);
+			getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(AutomationQSwithSolution);
+			getTrainingPageActions().tapOnAutomationQSwithSolution();
+			getHomePageActions().verifySolutionViewPageForMCQOrSubjectiveQuestion();
+		}
+	 
+	 @Test()
+		public void verifyUserIsAbleToImportQuestionsetAndCourseWithQSAndPresentInDownload() throws Exception {
+
+			QXClient.get().driver();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
+
+
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
+
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 1, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+
+			getLoginPageActions().loginToTheUser(Username, Password);
+			d.LaunchAppHomeScreen();
+			getHomePageActions().tapOnMenuBar();
+			getHomePageActions().verifyUserIsAbleToImportQuestionsetAndPresentInDownloadSection();
+			d.LaunchAppHomeScreen();
+			getHomePageActions().tapOnMenuBar();
+			getHomePageActions().verifyUserIsAbleToImportcoursewithQuestionsetAndPresentInDownloadSection();
+		}
 	}
 

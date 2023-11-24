@@ -2956,4 +2956,69 @@ public List<MobileElement> clkoncoursenew;
     @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'You have successfully completed this course')]"),
 })
 public MobileElement assertcoursecomplete;
+
+
+ @AndroidFindBy(xpath = "//android.view.View[@index='3']")
+    public WebElement clkNextbtn;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Kohli']")
+    public WebElement clkOnCorrectOption;
+
+ @AndroidFindBy(xpath = "//android.widget.Image[@text='Correct Answer']")
+    public WebElement assertCorrectmark;
+
+ @AndroidFindBy(xpath = "//android.widget.TextView[@text='Are you ready to submit?']")
+    public WebElement assertSubmitConfPage;
+
+  @AndroidFindBy(xpath = "//android.widget.TextView[@text='question number 1']")
+    public WebElement assertGreenColour;
+
+  @AndroidFindBy(xpath = "//android.view.View[@text='Watson']")
+  public WebElement clkOnWrongOption;
+  
+  @AndroidFindBy(xpath = "//android.widget.Image[@text='Wrong Answer']")
+  public WebElement assertwrongmark;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='question number 1']")
+    public WebElement assertredColour;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationQSwithFeedbackTrue')]")
+public WebElement TapOnQSfeedback;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE trackble collection23')]")
+public WebElement TapOnTrackCollection;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE tracable book')]")
+public WebElement TapOnTrackbook;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationQSwithsolutiionview')]")
+public WebElement TapOnSolutionQS;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='1']")
+    public WebElement ClickOnOption;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Stop textbook activity']")
+public WebElement clkLeavetrackcoll;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Question']")
+    public WebElement assertQuestionMCQ;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Options']")
+    public WebElement assertOptionsMCQ;
+
+ @AndroidFindBy(xpath = "//android.widget.TextView[@text='Solution']")
+    public WebElement assertSolutionMCQ;
+
+ @AndroidFindBy(xpath = "//android.widget.TextView[@text='Show Answer']")
+    public WebElement ClkOnShowAnswerBtn;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Question')]")
+    public WebElement assertQuestionSubj;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Answer']")
+    public WebElement assertOptionsSubj;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Solution']")
+    public WebElement assertSolutionSubj;
+
 }
