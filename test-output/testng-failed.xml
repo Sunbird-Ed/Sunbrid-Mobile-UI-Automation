@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [Qualitrix Suite]" parallel="tests">
+  <listeners>
+    <listener class-name="com.qualitrix.testng.listener.AlterSuiteListener"/>
+    <listener class-name="com.qualitrix.testng.listener.ListenerTest"/>
+    <listener class-name="com.qualitrix.testng.listener.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="1" name="Test(failed)" parallel="tests">
+    <classes>
+      <class name="com.qualitrrix.test.UBScenarioSanity3">
+        <methods>
+          <include name="BeforeClass"/>
+          <include name="verifyDiscussionForumWorkflowsWorksFine"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.qualitrrix.test.UBScenarioSanity3 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Qualitrix Suite] -->

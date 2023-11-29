@@ -3021,4 +3021,25 @@ public WebElement clkLeavetrackcoll;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Solution']")
     public WebElement assertSolutionSubj;
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='My groups']")
+    public MobileElement clkongroups;
+        @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Have you explored the potential of groups yet?')]")
+        public MobileElement assertgroupmessage;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='New group aug']")
+    public MobileElement clkongroupsnae;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Activate']")
+    public MobileElement clkongroupsactivy;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='close-icon']")
+    public MobileElement groupsclose;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='New group aug']")
+    public MobileElement clkongroupname;
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Practice Course View more actions')]")
+    public MobileElement clkongroupactivity;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='New group aug']")
+    public MobileElement clkongrouporder1;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='group 1']")
+    public MobileElement clkongrouporder2;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Deactivated']")
+    public MobileElement clkongroupsuspended;
+
 }

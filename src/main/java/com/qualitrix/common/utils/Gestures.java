@@ -225,6 +225,9 @@ public class Gestures {
         wait.until(ExpectedConditions.elementToBeClickable(element));
              element.click();
     }
+    
+    
+    
     public boolean isElementPresent(WebElement locator) {
         try {
             waitForElementToAppear(locator);
@@ -354,7 +357,12 @@ public class Gestures {
     }
     public void BlindWait(int wait) throws Exception
     {
-    	// Thread.sleep(wait);
+//    	int s=wait;
+//    s=0;
+//    System.out.println(s);
+    	 Thread.sleep(wait);
+    	 
+    	 
 System.out.println("IgnoreWait");   
 }
     
@@ -417,4 +425,71 @@ System.out.println("IgnoreWait");
 		System.out.println(strDate);
 		return strDate;
   }
-}
+  
+  
+  public static void customWaitAndClick(WebElement element) {
+//	  WebElement ele = null;
+
+	  for(int i=0;i<20;i++)
+	  {
+	              try{
+		  
+        element.isDisplayed();
+	
+	                            break;
+	                 }
+	  
+          	  catch(Exception e)
+	            {
+	                  try 
+	                    {
+	                       Thread.sleep(1000);
+	                      }
+	                  catch (InterruptedException e1) 
+	                          {
+	                  System.out.println("Waiting for element to appear on DOM");
+	                     }
+	            }
+
+
+	  }
+	  
+	    element.click();
+	//  return ele;
+
+	  }
+  
+  public static WebElement customWait2(String  element) {
+	  WebElement ele = null;
+
+	  for(int i=0;i<20;i++)
+	  {
+	              try{
+	            	  
+	            	 ele= QXClient.get().driver().findElement(By.xpath(element));
+		  
+	                            break;
+	                 }
+	  
+          	  catch(Exception e)
+	            {
+	                  try 
+	                    {
+	                       Thread.sleep(1000);
+	                      }
+	                  catch (InterruptedException e1) 
+	                          {
+	                  System.out.println("Waiting for element to appear on DOM");
+	                     }
+	            }
+
+
+	  }
+	  
+	//  ele.click();
+	  return ele;
+
+	  }
+	  
+  }
+

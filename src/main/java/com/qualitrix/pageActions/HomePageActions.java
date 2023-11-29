@@ -62,6 +62,7 @@ public class HomePageActions {
     	QXClient.get().gestures().BlindWait(4000);
     
     	
+    	
          QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.menuBar);
          QXClient.get().report().info("Tap on menu bar");
         QXClient.get().gestures().BlindWait(2000);
@@ -9826,5 +9827,52 @@ public void VerifyUserIsAbleToImportNonTrackableCollectionAndPresentInDownloadSe
     QXClient.get().gestures().BlindWait(2000);
 
 
+}
+
+public void verifyCourseFilters() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().closeappandrelaunchapp();
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkprofiletab);
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertCBSEBoardInHomePage));
+    QXClient.get().report().info("Board is displayed in the profile page");
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertEnglishMediumInHomePage));
+    QXClient.get().report().info("Medium is displayed in the profile page");
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertClassInHomePage));
+    QXClient.get().report().info("Class is displayed in the profile page");
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().closeappandrelaunchapp();
+    HomePageActions a=new HomePageActions();
+    a.tapOnMenuBar();
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
+    QXClient.get().report().info("clicked on clkNewDikshExperiece");
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkoncoursetab);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkonsubject);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkonsubjectdropdown);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitButton);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkonrole);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkonroledropdown);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSubmitButton);
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkoncourse);
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertcourseboard));
+    QXClient.get().report().info("Board is displayed in the profile page");
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertcoursemedium));
+    QXClient.get().report().info("Medium is displayed in the profile page");
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertcourseclass));
+    QXClient.get().report().info("Class is displayed in the profile page");
+    QXClient.get().gestures().BlindWait(3000);
 }
 }

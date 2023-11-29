@@ -1356,7 +1356,22 @@ public MobileElement enterpassword;
 public MobileElement enterconfirmpassword;
 
 
+@AndroidFindBy(xpath = "//android.widget.Image[@text='certified']")
+public MobileElement assertssoprofileverified;
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Certificate is getting downloaded']")
+public MobileElement certificateDownloadMessage;
 
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
+public MobileElement vieweyecertificate;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
+public MobileElement certificatepermission;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='ALLOW']")
+public MobileElement allowpermission;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Download Download']")
+public MobileElement downloadcoursecertificate;
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='PDF']")
+public MobileElement certificatePDF;
 
 @AndroidFindBy(className="android.widget.CheckBox")
 public MobileElement clickTNcAndCheckBox;

@@ -997,4 +997,28 @@ public class GroupsP2 {
 		getHomePageActions().tapOnMenuBar();
 		getHomePageActions().VerifyMembersNameIsDiplayedInRegionalLanguage();
 		}
+
+
+@Test()
+public void verifygroupsdescendingorderonrecentactivity() throws Exception {
+    QXClient.get().driver();
+    getDikshaMainPageActions().performUserOnBoarding();
+    getHomePageActions().tapOnProfileTab();
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+    Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+    System.out.println("@name:" +
+          properties.getProperty("excelpath"));
+    String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+    QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+    String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 58, 2);
+    String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 59, 2);
+    QXClient.get().gestures().swipeUp();
+    getLoginPageActions().loginToTheUser(Username, Password);
+    //getHomePageActions().tapOnHomeTab();
+    QXClient.get().gestures().closeappandrelaunchapp();
+    getHomePageActions().tapOnMenuBar();
+    //getCoursePageActions().tapOnNewDikshaExperience();
+    getTrainingPageActions().tapongroupsondescendingorder();
+}
 }

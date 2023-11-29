@@ -1947,6 +1947,99 @@ public class LoginPageActions {
 
 
  }
+ 
+ public void mergeaccountuserlogin() throws Exception {
+     QXClient.get().gestures().BlindWait(5000);
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertssoprofileverified),"Verified mark should be present in the profile");
+     QXClient.get().report().info("Verified mark should not be present in the profile");
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().swipeUp();
+     QXClient.get().gestures().swipeUp();
+     QXClient.get().gestures().swipeUp();
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.vieweyecertificate);
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.certificatepermission);
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.allowpermission);
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.downloadcoursecertificate);
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.certificatePDF);
+     QXClient.get().gestures().BlindWait(5000);
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.certificateDownloadMessage));
+     QXClient.get().report().info("Certificate downloaded successfully message is displayed");
+     QXClient.get().gestures().BlindWait(5000);
+ }
+ 
+ public void verifySSOUserAbleToLoginUsingStateSystemUsingUsernameExternalID(String schoolID) throws Exception {
+     QXClient.get().gestures().BlindWait(7000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.loginBtn);
+     QXClient.get().gestures().BlindWait(7000);
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertLoginWithStateSystemOption),"Login with state system option is not displayed");
+     QXClient.get().report().info("Login with state system option is displayed");
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
+     QXClient.get().report().info("Clicked on Login with state system option");
+     QXClient.get().gestures().BlindWait(7000);
+     QXClient.get().gestures().clkBackButton();
+     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.assertLoginWithStateSystemOption);
+     QXClient.get().gestures().BlindWait(7000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSelectStateOption);
+     QXClient.get().gestures().BlindWait(2000);
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectFirstOption);
+     QXClient.get().report().info("Select first option in the list");
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.clkOnSubmitBtnSSO.click();
+//     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtnSSO);
+//     QXClient.get().gestures().BlindWait(5000);
+     QXClient.get().gestures().BlindWait(5000);
+     Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.assertDikshaSSOLoginText)," SSO Login text is not displayed");
+     QXClient.get().report().info(" SSO Login text is displayed ");
+     QXClient.get().gestures().BlindWait(2000);
+     QXClient.get().gestures().isElementPresent(profilePageObjects.userNameEditField);
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.userNameEditField.sendKeys("SSO Sunbird");
+     QXClient.get().gestures().BlindWait(3000);
+     QXClient.get().gestures().isElementPresent(profilePageObjects.userNameExternalID);
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.userNameExternalID.sendKeys("SSO Sunbird");
+     QXClient.get().gestures().BlindWait(3000);
+//     QXClient.get().gestures().isElementPresent(profilePageObjects.userNameEditField);
+//     QXClient.get().gestures().BlindWait(2000);
+//     profilePageObjects.userNameEditField.sendKeys("Test");
+//     QXClient.get().gestures().BlindWait(3000);
+//
+//     QXClient.get().gestures().isElementPresent(profilePageObjects.userNameExternalID);
+//     QXClient.get().gestures().BlindWait(2000);
+//     profilePageObjects.userNameExternalID.sendKeys(schoolID);
+//     QXClient.get().gestures().BlindWait(3000);
+     QXClient.get().gestures().isElementPresent(profilePageObjects.schoolExternalID);
+     QXClient.get().gestures().BlindWait(2000);
+     QXClient.get().gestures().BlindWait(2000);
+     profilePageObjects.schoolExternalID.sendKeys(schoolID);
+     //profilePageObjects.clkOnSubmitBtnSSO.click();
+     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtnSSO);
+     QXClient.get().gestures().BlindWait(2000);
+//     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkOnSubmitBtnSSO);
+//     QXClient.get().gestures().BlindWait(6000);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

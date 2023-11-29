@@ -64,7 +64,34 @@ public class CourseConsumptionCertificateConsume {
 
 	}
 	
-	
+	@Test()
+	public void verifymergeaccountforsso() throws Exception {
+
+		QXClient.get().driver();
+            //getDikshaMainPageActions().performUserOnBoardingWithHeadTeacherAndOfficials();
+		getDikshaMainPageActions().performUserOnBoarding();
+		DikshaMainPageActions d = new DikshaMainPageActions();
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		String externalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 92, 2);
+		getHomePageActions().tapOnProfileTab();
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+		getLoginPageActions().verifySSOUserAbleToLoginUsingStateSystemUsingUsernameExternalID(externalID);
+		QXClient.get().gestures().closeappandrelaunchapp();
+
+		
+		String custodianUser = QXClient.get().excelUtils().getCellValue("Excel1", "Login", 14, 5);
+		String custodianPWD = QXClient.get().excelUtils().getCellValue("Excel1", "Login", 15, 5);
+
+		QXClient.get().gestures().closeappandrelaunchapp();
+
+		getHomePageActions().validateCustodianUserMergedSuccessfully(custodianUser, custodianPWD);
+
+	}
 	
 	
 	@Test()

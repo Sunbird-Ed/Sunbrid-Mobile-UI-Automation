@@ -6588,5 +6588,45 @@ public void tapOnAutomationQSwithSolution() throws Exception {
     QXClient.get().report().info("Tap on Questionset");
     QXClient.get().gestures().BlindWait(3000);
 }
+public void tapongroupsondescendingorder() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongroups);
+    QXClient.get().gestures().BlindWait(5000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertgroupmessage),"Have you explored the potential of groups yet is displayed");
+    QXClient.get().report().info("Have you explored the potential of groups yet is not displayed");
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.groupsclose);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongrouporder2);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongroupsactivy);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongroupsactivy);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongrouporder2);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+     QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongrouporder1);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+     QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().closeappandrelaunchapp();
+    HomePageActions a=new HomePageActions();
+    a.tapOnMenuBar();
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongroups);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkongrouporder2);
+    QXClient.get().gestures().BlindWait(5000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertgroupmessage),"Have you explored the potential of groups yet is displayed");
+    QXClient.get().report().info("Have you explored the potential of groups yet is not displayed");
+    QXClient.get().gestures().BlindWait(5000);
+}
+
+
+
+
 
 }

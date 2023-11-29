@@ -1215,6 +1215,24 @@ public void CreateGroup() throws Exception {
 				getTrainingPageActions().tapOnSearchedtrackablecollectionwithprofilepopup();
 				getHomePageActions().VerifyProfileNameChangePopupFortrackablecollection();
 			}
+		 
+		 @Test()
+		 public void verifyCourseFiltersBMCvalues() throws Exception {
+		     QXClient.get().driver();
+		     getDikshaMainPageActions().performUserOnBoarding();
+		     Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+		     System.out.println("@name:" +
+		           properties.getProperty("excelpath"));
+		     String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+		     QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		     String Username = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 64, 2);
+		     String Password = QXClient.get().excelUtils().getCellValue("Excel1", "CourseConsumption", 65, 2);
+		     getHomePageActions().tapOnProfileTab();
+		     QXClient.get().gestures().swipeUp();
+		     QXClient.get().gestures().swipeUp();
+		     getLoginPageActions().loginToTheUser(Username, Password);
+		     getHomePageActions().verifyCourseFilters();
+		 }
 }
 
     

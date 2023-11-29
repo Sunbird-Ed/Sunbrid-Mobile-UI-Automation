@@ -61,7 +61,8 @@ public class DikshaMainPageActions  {
     {
     
          QXClient.get().gestures().BlindWait(8000);
-    	  QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectBoard);
+    	
+    	 QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectBoard);
           QXClient.get().report().info("Selected Board Value");
     
           Thread.sleep(2000);
@@ -74,9 +75,11 @@ public class DikshaMainPageActions  {
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
 //           QXClient.get().gestures().BlindWait(5000);
 //
-//        QXClient.get().gestures().BlindWait(5000);
+       QXClient.get().gestures().BlindWait(5000);
+            
 
-            QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectMedium);
+            
+           QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectMedium);
             QXClient.get().report().info("Clicked on Medium DropDownn");
 
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectEnglishMedium);
@@ -109,11 +112,13 @@ public class DikshaMainPageActions  {
  
            //     ProfileEditPageActions pageaction=new ProfileEditPageActions();
 
-              QXClient.get().gestures().BlindWait(3000);
+           //   QXClient.get().gestures().BlindWait(3000);
 
        //   dikshaMainObjects.clickContinue.click();
 
-              QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
+             
+              
+             // QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
                 QXClient.get().report().info("Clicked on Continue Button");
                 
               //  pageaction.verifyLabelOnBoarding();

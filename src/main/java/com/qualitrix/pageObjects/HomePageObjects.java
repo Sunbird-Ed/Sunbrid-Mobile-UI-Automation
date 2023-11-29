@@ -4047,6 +4047,40 @@ public WebElement assertDocbtn;
 @AndroidFindBy(xpath = "//android.widget.TextView[@text='Automation NonTrackbleCollection']")
 public WebElement assertdwnldnontrackbleCollection;
 
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Board: CBSE \u200E']")
+public MobileElement assertCBSEBoardInHomePage;
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Medium: English \u200E']")
+public MobileElement assertEnglishMediumInHomePage;
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Class: Class 1 \u200E']")
+public MobileElement assertClassInHomePage;
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Board : CBSE']")
+public MobileElement assertcourseboard;
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Medium : English,Hindi,Sanskrit')]")
+public MobileElement assertcoursemedium;
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Class : Class 1,')]")
+public MobileElement assertcourseclass;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Course']")
+public MobileElement clkoncoursetab;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Role, Role']")
+public MobileElement clkonrole;
+
+@AndroidFindBy(xpath = "//android.widget.CheckBox[@text='General Science']")
+public MobileElement clkonsubjectdropdown;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Subject, Subject']")
+public MobileElement clkonsubject;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='profile']")
+public MobileElement clkprofiletab;
+
+@AndroidFindBy(xpath = "//android.widget.CheckBox[@text='Student']")
+public MobileElement clkonroledropdown;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE')]")
+public MobileElement clkoncourse;
+
 }
     	
     	
