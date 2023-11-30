@@ -1095,6 +1095,108 @@ public class CoursePageActions  {
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.verifySchool),"verifySchool is not available");
             QXClient.get().report().info("Verified Profile Update");
         }
+      public void clkonconsentpopup1() throws Exception {
+    	    Thread.sleep(9000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkOnConsentCourse);
+    	    QXClient.get().gestures().BlindWait(9000);
+    	    Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.assertsharemessage),"I consent to share my details with the administrators");
+    	    QXClient.get().report().info("I consent not to share my details with the administrators");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.donotsharebuton);
+    	    QXClient.get().gestures().BlindWait(9000);
+    	}
+
+
+      public void taponcourseselectionbatchnew() throws Exception {
+          QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.coursetitleselectionbatch2);
+          QXClient.get().gestures().BlindWait(5000);
+//          Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertbatchselection), "Batch selection popup is displayed");
+//          QXClient.get().report().info("Batch selection popup  is  displayed in the searched course");
+//          QXClient.get().gestures().BlindWait(5000);
+          QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clkJoinBtn);
+          QXClient.get().gestures().BlindWait(5000);
+          QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.donotsharebuton);
+          QXClient.get().gestures().BlindWait(5000);
+          Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertcourseexpire), "You have joined the batch of a course that is completed");
+          QXClient.get().report().info("You have joined the batch of a course that is completed");
+          QXClient.get().gestures().BlindWait(5000);
+      }
+      
+      public void taponcourseandverifybatch() throws Exception {
+          QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.coursetitleselectionbatch2);
+          QXClient.get().report().info("Clicking on course");
+          QXClient.get().gestures().BlindWait(5000);
+//          Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertExpiredBatches),"Expired batches is displayed");
+//          QXClient.get().report().info("Expired batches is not displayed");
+//          Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertOpenBatches),"Open batches is displayed");
+//          QXClient.get().report().info("Open bathces is not displayed");
+//          QXClient.get().gestures().BlindWait(2000);
+          Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertcourseprogressresume1), "You may continue the course, but your progress will not be updated\n");
+          QXClient.get().report().info("You may not continue the course, but your progress will not be updated\n");
+          QXClient.get().gestures().BlindWait(7000);
+      }
+      
+      public void taponcourseandleavenew() throws Exception {
+    	    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertcoursemsg), "You can rejoin an active or upcoming batch later\n");
+    	    QXClient.get().report().info("You cannot rejoin an active or upcoming batch later\n");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.BackBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.clearmsg);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	}
+      
+      public void taponresumecourseselectionbatchnew() throws Exception {
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.coursetitleselection);
+    	    QXClient.get().gestures().BlindWait(9000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.batchselectionresume);
+    	    QXClient.get().gestures().BlindWait(9000);
+    	    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertcourseprogressresume), "You have joined the batch of a course that is completed on 06/07/2023\n");
+    	    QXClient.get().report().info("You have not joined the batch of a course that is completed on 06/07/2023\n");
+    	    QXClient.get().gestures().BlindWait(7000);
+    	    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertcourseprogressresume1), "You may continue the course, but your progress will not be updated\n");
+    	    QXClient.get().report().info("You may not continue the course, but your progress will not be updated\n");
+    	    QXClient.get().gestures().BlindWait(7000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.courseunit2);
+    	    QXClient.get().report().info("Clicking on course unit");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.courseprogress);
+    	    QXClient.get().report().info("Tracking course progress");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.courseunit2content);
+    	    QXClient.get().report().info("Clicking on course unit content");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.playIcon);
+    	    QXClient.get().report().info("Clicking on play");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.ClickOnNextBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.ClickOnNextBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.ClickOnNextBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.exitButton);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.closeRatingIcon);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.BackBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.courseprogress);
+    	    QXClient.get().report().info("Tracking course progress");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.BackBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.courseunit2);
+    	    QXClient.get().report().info("Clicking on course unit");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.BackBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    QXClient.get().gestures().waitAndClickElementisVisible(coursePageObjects.BackBtn);
+    	    QXClient.get().gestures().BlindWait(5000);
+    	    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(coursePageObjects.assertcourseprogressresume1), "You may continue the course, but your progress will not be updated\n");
+    	    QXClient.get().report().info("You may not continue the course, but your progress will not be updated\n");
+    	    QXClient.get().gestures().BlindWait(5000);
+    	}
 
     }
 

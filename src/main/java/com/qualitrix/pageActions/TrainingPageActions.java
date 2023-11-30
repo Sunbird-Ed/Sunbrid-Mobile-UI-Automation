@@ -6625,7 +6625,63 @@ public void tapongroupsondescendingorder() throws Exception {
     QXClient.get().gestures().BlindWait(5000);
 }
 
+public void validateFirstContentOfTheCourseStartsToPlayPostClickingonStartLearningButton() throws Exception{
+    QXClient.get().gestures().BlindWait(3000);
 
+    if(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn)){
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+        QXClient.get().gestures().BlindWait(4000);
+    }else{
+        QXClient.get().report().info("Already joined to the course");
+    }
+    QXClient.get().gestures().BlindWait(2000);
+    try {
+        if (QXClient.get().gestures().isElementPresent((trainingPageObjects.clkDontShareBtn))) ;
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+            QXClient.get().report().info("clicked on clkDontShareBtn button");
+            QXClient.get().gestures().BlindWait(2000);
+
+        }
+    } catch (Exception e3) {
+        System.out.println("handled profile share");
+    }
+
+    Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.clkJoinCourseBtn), "Join Course button is displayed");
+    QXClient.get().report().info("Join Course Button is not displayed");
+    QXClient.get().gestures().BlindWait(3000);
+
+
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
+    QXClient.get().report().info("Clicked on start learning");
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.profilenameStartLearning);
+    QXClient.get().report().info("Clicked on start learning");
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.playvideo),"play video is not displayed");
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playvideo);
+    QXClient.get().report().info("first content played after user clicks on start learning button");
+    QXClient.get().gestures().BlindWait(2000);
+
+}
+public void OpenAttributionsNamesCourseName() throws Exception{
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClkOnCourse);
+    QXClient.get().report().info("Clicked On Course");
+    QXClient.get().gestures().BlindWait(3000);
+
+}
+public void ValidateAttributionNamesShouldDisplayInAlphabeticalOrder() throws Exception{
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.Clk1stAttribute), "Alphabet 'A' Attribute is not displayed");
+    QXClient.get().report().info("Clicked On Albhabet'A'");
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.Clk2ndAttribute), "Alphabet 'C' Attribute is not displayed");
+    QXClient.get().report().info("Clicked On Albhabet'C'");
+    QXClient.get().gestures().BlindWait(3000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.Clk3rdAttribute), "Alphabet 'C' Attribute is not displayed");
+    QXClient.get().report().info("Clicked On Albhabet'T'");
+    QXClient.get().gestures().BlindWait(3000);
+}
 
 
 

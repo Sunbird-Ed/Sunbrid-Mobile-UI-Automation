@@ -3041,5 +3041,17 @@ public WebElement clkLeavetrackcoll;
     public MobileElement clkongrouporder2;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Deactivated']")
     public MobileElement clkongroupsuspended;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Start Learning')]")
+    public MobileElement profilenameStartLearning;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Apple')]")
+    public MobileElement Clk1stAttribute;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Course')]")
+    public MobileElement Clk2ndAttribute;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Test')]")
+    public MobileElement Clk3rdAttribute;
 
 }

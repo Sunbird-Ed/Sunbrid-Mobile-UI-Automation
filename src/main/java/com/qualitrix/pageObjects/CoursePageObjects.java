@@ -802,8 +802,20 @@ public MobileElement clkMedium;
 
 	
  
+	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Copy of Course')]\n")
+	public MobileElement coursetitleselectionbatch2;
 
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
+	public MobileElement clkJoinBtn;
 
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You have joined the batch')]")
+	public MobileElement assertcourseexpire;
+
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='clear search']")
+	public MobileElement clearmsg;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You may continue the course')]")
+	public MobileElement assertcoursemsg;
 
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'District: Ananthapuram\n')]")
@@ -820,9 +832,43 @@ public MobileElement clkMedium;
 	public MobileElement verifyRole;
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Block: Anantapur')]")
 	public MobileElement verifyBlock;
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='back']")
+	public MobileElement BackBtn;
 	
 	@AndroidFindBy(xpath = "//android.widget.ListView[@text='HM, CRP, selected ,Select Subrole']")
 	public MobileElement selectSubrole;
 
+	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE New Course')]")
+	public MobileElement clkOnConsentCourse;
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'I consent to share my details')]")
+	public MobileElement assertsharemessage;
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='Do not share']")
+	public MobileElement donotsharebuton;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You may continue the course, but your progress will not be updated\n')]")
+	public MobileElement assertcourseprogressresume1;
+	
+	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Copy of Course')]")
+	public MobileElement coursetitleselection;
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='RESUME']")
+	public MobileElement batchselectionresume;
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You have joined the batch of a course that is completed on 06/07/2023\n')]")
+	public MobileElement assertcourseprogressresume;
+
+	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Course Unit-3')]")
+	public MobileElement courseunit2;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='1/2 Completed']")
+	public MobileElement courseprogress;
+	@AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'pdf-special')]")
+	public MobileElement courseunit2content;
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+	public MobileElement playIcon;
+	@AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'navigation-arrows-nextIcon')]")
+	public MobileElement ClickOnNextBtn;
+	@AndroidFindBy(xpath = "//android.view.View[@text='Exit']")
+	public MobileElement exitButton;
+	@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+	public MobileElement closeRatingIcon;
 }
+
 
