@@ -1041,6 +1041,8 @@ public LibraryCourseContentPageActions() {
         QXClient.get().report().info("clicked on clkConfirmBton ");
         QXClient.get().gestures().BlindWait(2000);
 
+        
+        QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkMeantFor);
         QXClient.get().report().info("clicked on clkMeantFor ");
         QXClient.get().gestures().BlindWait(2000);

@@ -21,6 +21,8 @@ import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -491,5 +493,26 @@ System.out.println("IgnoreWait");
 
 	  }
 	  
-  }
 
+
+public void clickElementAfteritStable(WebElement element){
+	int waitTime = 60;
+    waitForElementinPage(element,waitTime);
+    element.click();
+}
+public boolean waitForElementinPage(WebElement element,int waitTime) {
+    boolean conditionFulfilled = true;
+    Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+            .withTimeout(Duration.ofSeconds(waitTime))
+            .pollingEvery(Duration.ofSeconds(1))
+            .ignoring(NoSuchElementException.class);
+
+    try {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    } catch (Exception e ){
+         conditionFulfilled = false;
+        QXClient.get().report().info("Element is not Found");
+    }
+    return conditionFulfilled;
+}
+}

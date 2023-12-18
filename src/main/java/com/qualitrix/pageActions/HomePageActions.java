@@ -9875,4 +9875,5 @@ public void verifyCourseFilters() throws Exception {
     QXClient.get().report().info("Class is displayed in the profile page");
     QXClient.get().gestures().BlindWait(3000);
 }
+
 }

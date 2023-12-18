@@ -394,6 +394,33 @@ public class ContentConsumptionP1 {
 
 		}
 	   
+	   @Test()
+	 	public void VerifyUserConsumeContentInFullScreen() throws Exception {
+
+	 		QXClient.get().driver();
+	 		getDikshaMainPageActions().performUserOnBoarding();
+	 		getHomePageActions().tapOnProfileTab();
+	 		QXClient.get().gestures().swipeUp();
+	 		QXClient.get().gestures().swipeUp();
+	 		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	 		System.out.println("@name:" +
+	 				properties.getProperty("excelpath"));
+
+	 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	 		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	 		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 45, 2);
+	 		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 46, 2);
+	 		String AutomationcontentVdforfullscreen = QXClient.get().excelUtils().getCellValue("Excel1", "ContentConsumption", 2, 2);
+	 		getLoginPageActions().loginToTheUser(Username, Password);
+	 		getHomePageActions().tapOnTrainingTab();
+	 		getHomePageActions().tapOnSearchIcon();
+	 		getHomePageActions().enterTextInSearchBar(AutomationcontentVdforfullscreen);
+	 		getHomePageActions().VerifyUserConsumeContentInFullScreen();
+
+
+	 	}
+	   
 	  
 }
 

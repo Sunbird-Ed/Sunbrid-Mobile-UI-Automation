@@ -1533,17 +1533,20 @@ public class TrainingPageActions {
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentPublisher), "Content publisher is not displayed");
         QXClient.get().report().info("Content publisher is displayed");
 
-   //     Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertBoardMediumClassSubject),"Board,Medium,Class,Subject is not displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertBoardMediumClassSubject),"Board,Medium,Class,Subject is not displayed");
         QXClient.get().report().info("Board,Medium,Class and Subject is displayed under content title");
-
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentDetails), "Content details is displayed");
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.assertContentDetails);
         QXClient.get().report().info("Clicked on content details");
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(2000);
+        
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentDetails), "Content details is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.assertContentDetails);
+        
+        
+       
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertContentRelevantFor), "Content relevant for is not displayed");
         QXClient.get().report().info("Content relevant for is displayed");

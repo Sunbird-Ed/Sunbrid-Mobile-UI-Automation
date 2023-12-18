@@ -106,31 +106,46 @@ public class DikshaMainPageActions  {
             
     }
     public void performUserOnBoarding() throws Exception {
-            //try {
-                QXClient.get().report().info("slt language");
-                QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
- 
-           //     ProfileEditPageActions pageaction=new ProfileEditPageActions();
+           
+    	QXClient.get().report().info("slt language");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.sltLang);
+        
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.clickContinue);
 
-           //   QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().report().info("Clicked on Continue Button");
 
-       //   dikshaMainObjects.clickContinue.click();
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.clickTeacher);
+        QXClient.get().report().info("Clicked on Teacher Button");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectBoard);
+        QXClient.get().report().info("Selected Board Value");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectStateBoard);
+        QXClient.get().report().info("Clicked on Select  DropDown");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.submitBtn);
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectMedium);
+        QXClient.get().report().info("Clicked on Medium DropDownn");
 
-             
-              
-             // QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickContinue);
-                QXClient.get().report().info("Clicked on Continue Button");
-                
-              //  pageaction.verifyLabelOnBoarding();
-                QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickTeacher);
-                QXClient.get().report().info("Clicked on Teacher Button");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectEnglishMedium);
+        QXClient.get().report().info("Select English Value");
 
-                              
-                sltUserStateDropdown();
-              //  checkLocationPopup();
-                clkCloseIcon();
-//                QXClient.get().gestures().closeApp();  
-//                LaunchAppHomeScreen();
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
+        QXClient.get().report().info("Clicked on Submit Button");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectClass);
+        QXClient.get().report().info("Clicked on Select DropDown");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectClassOne);
+        QXClient.get().report().info("Selected Class Value");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
+        QXClient.get().report().info("Clicked on Submit Button");
+        checkLocationPopup();
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.submitWithArrowBtn);
+
+        QXClient.get().report().info("slt clkCancelIcon");
+
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clkClosePoup);
+    	
+    	
     }
 
     public void performUserOnBoardingAndClickSwitchToNewExperience() throws Exception {

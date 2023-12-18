@@ -811,6 +811,7 @@ public MobileElement assertLastAttemptMsg;
 
     
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Automation textbookdontuse']"),
         @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutomationBookContent')]"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]"),
 })
@@ -821,7 +822,7 @@ public MobileElement assertContentTitle;
 
 
     @AndroidFindAll({
-    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='ByGuest new name']"),
     	        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Bycontent creator')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Bycontent creator')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]//following::android.view.View[1]"),
@@ -829,7 +830,7 @@ public MobileElement assertContentTitle;
     public MobileElement assertContentPublisher;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'CBSEEnglish')]")
+    @AndroidFindBy(xpath = "/android.widget.TextView[@text='State (Tamil Nadu)EnglishClass 1English']")
     public MobileElement assertBoardMediumClassSubject;
 
 
