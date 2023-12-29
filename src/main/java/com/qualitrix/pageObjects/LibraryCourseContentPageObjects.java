@@ -97,12 +97,8 @@ public MobileElement qnWithImage;
     public MobileElement rateObj;
 
     @AndroidFindAll({
-    	
-    	
-        @AndroidBy(xpath = "//android.widget.Button[contains(@text,'rate content Rate')]"),
-            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'star')]"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='star']"),
-    })
+    	   	        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Rate Content')]"),
+          })
     public MobileElement startBtn;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")
@@ -1031,7 +1027,7 @@ public MobileElement clkMeantFor;
     @AndroidFindBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-32']")
     public MobileElement clkCheckBoxFeedback;
     
-    
+
     
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.view.View[@index='3']"),
@@ -1039,6 +1035,12 @@ public MobileElement clkMeantFor;
 })
     public MobileElement ClkSyncNow;
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='navigation-arrows-nextIcon']")
+    public MobileElement clkNextIcon;
+
+    @AndroidFindBy(xpath ="//android.widget.Image[@text='arrow forward']")
+    public MobileElement clkArwBtn;
+    
 }
 
 

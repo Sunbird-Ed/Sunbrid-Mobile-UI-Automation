@@ -74,68 +74,19 @@ public class ProfileP1 {
 	        System.out.println("@name:" + properties.getProperty("excelpath"));
 	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",97, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",98, 2);
+	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",7, 2);
+	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",7, 3);
+	
 	        getLoginPageActions().loginToTheUserForLeader(Username,Password);
 
 	        getHomePageActions().tapOnProfileTab();
-
 	        getProfileEditPageActions().verifyBlockTaggedToDistrictClusterTaggedToBlockAndSchoolTaggedToCluster();
 
 	    }
 	  
-	  @Test()
-	    public void validateSubmitDetailsTextAndMyDetailsTextInProfile() throws Exception {
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-
-
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
-
-	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",130,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",131,2);
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-	        getLoginPageActions().loginToTheUser(Username,Password);
-
-	        //getHomePageActions().tapOnDownloadTab();
-
-	        getHomePageActions().tapOnProfileTab();
-
-	        getCoursePageActions().validateSubmitDetailsTextReplacesIamATeacherText();
-
-	        getHomePageActions().tapOnMenuBar();
-
-	        getHomePageActions().verifyLogoutFromUser();
-
-	        DikshaMainPageActions d=new DikshaMainPageActions();
-
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
-
-	        getHomePageActions().tapOnProfileTab();
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-
-	        String Username1 =QXClient.get().excelUtils().getCellValue("Excel1","TestData",59,2);
-	        String Password1 =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",60,2);
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-	        getLoginPageActions().loginToTheUser(Username1,Password1);
-
-	        QXClient.get().gestures().closeappandrelaunchapp();
-
-	        getHomePageActions().tapOnProfileTab();
-
-	        getCoursePageActions().validateMyDetailsTextReplacesSelfDeclaredInfoText();
-	    }
+	
+	  
+	  
 	  @Test()
 	    public void verifyValidatePopupDetailsForEmailFieldInSubmitDetailsPage() throws Exception {
 	        QXClient.get().driver();
@@ -151,8 +102,8 @@ public class ProfileP1 {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",130,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",131,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 	        getLoginPageActions().loginToTheUser(Username,Password);
@@ -184,8 +135,10 @@ public class ProfileP1 {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",130,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",131,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
+	        
+	        
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 	        getLoginPageActions().loginToTheUser(Username,Password);
@@ -218,8 +171,8 @@ public class ProfileP1 {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",130,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",131,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
 	        getLoginPageActions().loginToTheUser(Username,Password);
@@ -247,8 +200,8 @@ public class ProfileP1 {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",36,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",37,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
 
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
@@ -277,8 +230,8 @@ public class ProfileP1 {
 	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
 
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
@@ -338,8 +291,9 @@ public class ProfileP1 {
 	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",45,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",46,2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
+
 
 
 	        getLoginPageActions().loginToTheUser(Username,Password);
@@ -421,40 +375,46 @@ public class ProfileP1 {
 	    }
 
 	  @Test()
-	    public void userAbleToSubmitDetailsWithoutAddingPhoneNumberAndVerifyUpdateBtnPostSubmit() throws Exception {
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
+      public void userAbleToSubmitDetailsWithoutAddingPhoneNumberAndVerifyUpdateBtnPostSubmit() throws Exception {
+          QXClient.get().driver();
+          getDikshaMainPageActions().performUserOnBoarding();
+          getHomePageActions().tapOnProfileTab();
+          QXClient.get().gestures().swipeUp();
+          QXClient.get().gestures().swipeUp();
+          Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+                  properties.getProperty("excelpath"));
+          String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+          QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+          
+          String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+          String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
+          
 
-
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
-
-	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",141,2);
-	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",142,2);
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-	        getLoginPageActions().loginToTheUser(Username,Password);
-
-	        QXClient.get().gestures().BlindWait(4000);
-	        DikshaMainPageActions d=new DikshaMainPageActions();
-	        QXClient.get().gestures().closeApp();
-	        d.LaunchAppHomeScreen();
-	        getHomePageActions().tapOnDownloadTab();
-
-	        getHomePageActions().tapOnProfileTab();
-
-	        getCoursePageActions().VerifySubmitDetailsForm();
-
-	        getCoursePageActions().userAbleToSubmitDetailsWithoutAddingPhoneNumber();
-
-	    }
-
+          QXClient.get().gestures().swipeUp();
+          QXClient.get().gestures().swipeUp();
+          getLoginPageActions().loginToTheUser(Username,Password);
+          QXClient.get().gestures().BlindWait(4000);
+          DikshaMainPageActions d=new DikshaMainPageActions();
+          QXClient.get().gestures().closeApp();
+          d.LaunchAppHomeScreen();
+            getHomePageActions().tapOnMenuBar();
+           getCoursePageActions().tapOnAddAnotherUser();
+           String FakeName = QXClient.get().gestures().generateRandomName();
+           String storeFakeNameEntered = getCoursePageActions().enterName(FakeName);
+           System.out.println(storeFakeNameEntered);
+           getCoursePageActions().tapOnAddUserBtn();
+           QXClient.get().gestures().closeappandrelaunchapp();
+           getHomePageActions().tapOnMenuBar();
+           getCoursePageActions().tapOnMoreOption();
+           QXClient.get().gestures().generateXpathAndClickElement(storeFakeNameEntered);
+           getCoursePageActions().tapOnChangeUserWithoutProfile();
+           getCoursePageActions().tapOnTermsAndCondition();
+           getCoursePageActions().tapOnContinueForSwicthUser();
+          getHomePageActions().tapOnDownloadTab();
+          getHomePageActions().tapOnProfileTab();
+          getCoursePageActions().VerifySubmitDetailsForm();
+          getCoursePageActions().userAbleToSubmitDetailsWithoutAddingPhoneNumber();
+      }
 	  @Test()
 		public void verifyConsentFormInSubmitDetails() throws Exception {
 			QXClient.get().driver();
@@ -468,8 +428,8 @@ public class ProfileP1 {
 			String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-			String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2);
-			String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);
+			String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+			String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
 			QXClient.get().gestures().swipeUp();
 			QXClient.get().gestures().swipeUp();
 			getLoginPageActions().loginToTheUser(Username,Password);
@@ -497,8 +457,8 @@ public class ProfileP1 {
 	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
 	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+	        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+	        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
 
 	        QXClient.get().gestures().swipeUp();
 	        QXClient.get().gestures().swipeUp();
@@ -576,8 +536,8 @@ public class ProfileP1 {
         String fetchExcelPathFromConfig = properties.getProperty("excelpath");
         QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",139, 2);
-        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",140, 2);
+        String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().swipeUp();
 
@@ -612,9 +572,10 @@ public class ProfileP1 {
                              properties.getProperty("excelpath"));
              String fetchExcelPathFromConfig=properties.getProperty("excelpath");
              QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+             String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",2,2);
+             String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",2,3);
+             
 
-             String Username =QXClient.get().excelUtils().getCellValue("Excel1","Profile",40,2);
-             String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Profile",41,2);
              QXClient.get().gestures().swipeUp();
              QXClient.get().gestures().swipeUp();
              getLoginPageActions().loginToTheUser(Username,Password);
@@ -666,7 +627,6 @@ public class ProfileP1 {
 
 
 	    }
-
 	 @Test()
      public void ValidateSubmitDetailsPageinProfilePage() throws Exception {
              QXClient.get().driver();
@@ -674,29 +634,24 @@ public class ProfileP1 {
              getHomePageActions().tapOnProfileTab();
              QXClient.get().gestures().swipeUp();
              QXClient.get().gestures().swipeUp();
-
-
              Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
              System.out.println("@name:" +
                              properties.getProperty("excelpath"));
-
              String fetchExcelPathFromConfig = properties.getProperty("excelpath");
              QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-             String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Profile", 5, 2);
-             String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Profile", 6, 2);
+             
+             String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
+             String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
+    
              QXClient.get().gestures().swipeUp();
              QXClient.get().gestures().swipeUp();
              getLoginPageActions().loginToTheUser(Username, Password);
-
              QXClient.get().gestures().BlindWait(4000);
              DikshaMainPageActions d = new DikshaMainPageActions();
              QXClient.get().gestures().closeApp();
              d.LaunchAppHomeScreen();
              getHomePageActions().tapOnDownloadTab();
-
              getHomePageActions().tapOnProfileTab();
-
              getCoursePageActions().VerifySubmitDetailsForm();
      }
 

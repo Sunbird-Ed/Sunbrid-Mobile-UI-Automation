@@ -209,7 +209,7 @@ public class CoursePageActions  {
 		  QXClient.get().gestures().swipeUp();
 		
 
-  	//QXClient.get().gestures().scrollToMobileElement(coursePageObjects.coursesSection,"2");
+  	QXClient.get().gestures().scrollToMobileElement(coursePageObjects.coursesSection,"2");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(coursePageObjects.coursesSection),"coursesSection is not available");
         QXClient.get().report().info("Coursees Section is displayed in Profile Section");
 
@@ -1198,6 +1198,7 @@ public class CoursePageActions  {
     	    QXClient.get().gestures().BlindWait(5000);
     	}
 
+      
     }
 
     

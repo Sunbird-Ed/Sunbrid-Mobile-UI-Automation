@@ -165,13 +165,7 @@ public LibraryCourseContentPageActions() {
 
     }
 
-    public void giveFeedbackAndSubmit(String toast) throws Exception {
-        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.feedbackChkbx);
-        libraryCourseContentPageObjects.submitBtn.click();
-      //  libraryCourseContentPageObjects.feedbackPopUp.getText().equalsIgnoreCase(toast);
-       // QXClient.get().gestures().wait(4);
-        QXClient.get().report().info("Entering feedback and submit");
-    }
+  
 
     public void tapOnPlayIcon() throws Exception {
     	QXClient.get().gestures().BlindWait(3000);
@@ -179,7 +173,17 @@ public LibraryCourseContentPageActions() {
         QXClient.get().report().info("Content starts to play");
         Thread.sleep(1000);
     }
-
+    
+    public void tapOnPlayIcon2() throws Exception {
+        if(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.playIcon1)) {
+            QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.playIcon1);
+            QXClient.get().report().info("Content starts to play");
+            Thread.sleep(5000);
+            QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkNextIcon);
+            QXClient.get().report().info("Clicked on Next Arrow Icon");
+            QXClient.get().gestures().BlindWait(3000);
+        }
+    }
     public void tapOnPlayIcon1() throws Exception {
         if(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.playIcon1)) {
             QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.playIcon1);
@@ -463,73 +467,43 @@ public LibraryCourseContentPageActions() {
     }
 
     public void librarySearchFilter() throws Exception {
-  
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkLibrayFilter);
         QXClient.get().report().info("clicked on clkLibrayFilter ");
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().clkBackButton();
         QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkLibrayFilter);
         QXClient.get().report().info("clicked on clkLibrayFilter ");
         QXClient.get().gestures().BlindWait(3000);
-
-
-        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkLibBoard);
-        QXClient.get().report().info("clicked on clkLibBoard ");
-        QXClient.get().gestures().BlindWait(2000);
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
-        QXClient.get().report().info("clicked on sltFilter1 ");
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter2);
-        QXClient.get().report().info("clicked on sltFilter2 ");
-        QXClient.get().gestures().BlindWait(2000);
-        if(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.sltFilter3)) {
-            QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter3);
-            QXClient.get().report().info("clicked on sltFilter3 ");
-        }
-        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.clkLibClass), "Class is not Displayed");
+        QXClient.get().report().info("Class is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkArwBtn);
+        QXClient.get().report().info("Tap on Arrow button");
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
+        QXClient.get().report().info("Tap on Class sltFilter1 button");
+        // QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter2);
+        // QXClient.get().report().info("Tap on Class sltFilter2 button");
+        //  QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter3);
+        //  QXClient.get().report().info("Tap on Class sltFilter3 button");
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkConfirmBton);
-        QXClient.get().report().info("clicked on clkConfirmBton ");
-        QXClient.get().gestures().BlindWait(3000);
-
-        
-        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkLibClass);
-        QXClient.get().report().info("clicked on clkLibClass ");
-        QXClient.get().gestures().BlindWait(2000);
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
-        QXClient.get().report().info("clicked on sltFilter1 ");
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter2);
-        QXClient.get().report().info("clicked on sltFilter2 ");
-        QXClient.get().gestures().BlindWait(2000);
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter3);
-        QXClient.get().report().info("clicked on sltFilter3 ");
-        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().report().info("Tap on Class clkConfirmBton button");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.clkLibSubject), "Subject is not Displayed");
+        QXClient.get().report().info("Subject is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkArwBtn);
+        QXClient.get().report().info("Tap on Arrow button");
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
+        QXClient.get().report().info("Tap on Subject sltFilter1 button");
+        // QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter2);
+        // QXClient.get().report().info("Tap on Subject sltFilter2 button");
+        // QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter3);
+        // QXClient.get().report().info("Tap on Subject sltFilter3 button");
         QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkConfirmBton);
-        QXClient.get().report().info("clicked on clkConfirmBton ");
-        QXClient.get().gestures().BlindWait(3000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkLibSubject);
-        QXClient.get().report().info("clicked on clkLibSubject ");
-        QXClient.get().gestures().BlindWait(2000);
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter1);
-        QXClient.get().report().info("clicked on sltFilter1 ");
-        QXClient.get().gestures().BlindWait(2000);
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter2);
-        QXClient.get().report().info("clicked on sltFilter2 ");
-        QXClient.get().gestures().BlindWait(2000);
-                QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.sltFilter3);
-        QXClient.get().report().info("clicked on sltFilter3 ");
-        QXClient.get().gestures().BlindWait(2000);
-        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkConfirmBton);
-        QXClient.get().report().info("clicked on clkConfirmBton ");
-        QXClient.get().gestures().BlindWait(5000);
-
-//        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
-//        QXClient.get().report().info("clicked on clkApplyFilter ");
-//     QXClient.get().gestures().BlindWait(3000);
-//        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult), "verifyFilteredResult Option  is Not Displayed");
-     
+        QXClient.get().report().info("Tap on Subject clkConfirmBton button");
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.clkApplyFilter);
+        QXClient.get().report().info("Tap on clkApplyFilter button");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.verifyFilteredResult),"verifyFilteredResult  is not available");
    }
+
       
     public void FilterForContentPublisherMediaType() throws Exception {
     	  
@@ -1506,7 +1480,13 @@ public LibraryCourseContentPageActions() {
 
 
 
-
+    public void giveFeedbackAndSubmit(String toast) throws Exception {
+        QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.feedbackChkbx);
+        libraryCourseContentPageObjects.submitBtn.click();
+        //QXClient.get().gestures().isElementPresent(libraryCourseContentPageObjects.feedbackPopUp);
+        //QXClient.get().gestures().wait(4);
+        QXClient.get().report().info("Thank you for rating the content!");
+    }
 
 
 }

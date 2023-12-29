@@ -64,35 +64,39 @@ public class MobileSpecificTestCaseP1 {
 
 	}
 	
-	 @Test(enabled = true, groups = { "SanityTest", "FunctionalTest" }, alwaysRun = true, description = "verifyDataSync")
-	    public void verifyUserAbleToShareTelemetryFiles() throws Exception {
-		 QXClient.get().driver();
-		 DikshaMainPageActions d = new DikshaMainPageActions();
-		 getDikshaMainPageActions().performUserOnBoarding();
-		 getHomePageActions().tapOnProfileTab();
-
-
-		 Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-		 System.out.println("@name:" +
-				 properties.getProperty("excelpath"));
-
-		 String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		 QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		 String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		 String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-		 QXClient.get().gestures().swipeUp();
-		 QXClient.get().gestures().swipeUp();
-
-		 getLoginPageActions().loginToTheUser(Username, Password);
-		 d.LaunchAppHomeScreen();
-		 getHomePageActions().tapOnMenuBar();
-
-		 getLibraryPageActions().verifyDataSyncs();
-
-	    }
-
 	
+	/*
+	   Description:- Verify below options is getting displayed in settings section
+						- Data sync
+						- Permissions
+						- Share Diksha app
+						- Merge account (only for state/tennant/sso users)
+						- About us
+	 */
+	 @Test
+	 public void verifySettingsPage() throws Exception {
+	     QXClient.get().driver();
+	     DikshaMainPageActions d = new DikshaMainPageActions();
+	     getDikshaMainPageActions().performUserOnBoarding();
+	     getHomePageActions().tapOnProfileTab();
+
+	     Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	     System.out.println("@name:" +
+	           properties.getProperty("excelpath"));
+
+	     String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	     QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	     String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 3, 2);
+	     String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 3, 3);
+	     QXClient.get().gestures().swipeUp();
+	     QXClient.get().gestures().swipeUp();
+	     getLoginPageActions().loginToTheUser(Username, Password);
+	     getHomePageActions().tapOnMenuBar();
+	     getHomePageActions().tapOnSettings1();
+
+
+	 }
 	 
 
 }

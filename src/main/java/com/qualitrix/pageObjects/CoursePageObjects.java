@@ -547,6 +547,8 @@ public MobileElement assertStartLearning;
 
 	
 @AndroidFindAll({
+	
+	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Course')]"),
 			@AndroidBy(xpath = "//android.widget.TextView[@text='libru']"),
 	@AndroidBy(xpath = "//android.view.View[contains(@text,'Small Automation')]"),
 	})
@@ -560,6 +562,7 @@ public MobileElement assertBatchInMyLearning;
 
 
 @AndroidFindAll({
+	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Completed')]"),
 	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'batch')]"),
 @AndroidBy(xpath = "//android.view.View[contains(@text,'Completed')]"),
 })
@@ -567,7 +570,7 @@ public MobileElement assertCourseStatusInMyLearning;
 	
 
 @AndroidFindAll({
-	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'2022')]"),
+	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'2023')]"),
 	@AndroidBy(xpath = "//android.view.View[contains(@text,'2021')]"),
 })
 public MobileElement assertCompletionDateInMyLearning;
@@ -712,6 +715,9 @@ public MobileElement assertsubmitdetailsLabel;
 public MobileElement assertconsentpoppup;
         
         @AndroidFindAll({
+        	 @AndroidBy(xpath = "//android.widget.EditText[@text='******3853']"),
+             @AndroidBy(xpath = "//android.widget.EditText[@text='st****@yopmail.com']"),
+            @AndroidBy(xpath = "//android.widget.EditText[@text='******1076']"),
             @AndroidBy(xpath = "//android.widget.EditText[@text='******2583']"),
             @AndroidBy(xpath = "//android.widget.EditText[@text='st****@yopmail.com']")
 })
@@ -728,7 +734,7 @@ public MobileElement clkMedium;
         @AndroidFindBy(xpath = "//android.view.View[@text='Class 1']")
         public MobileElement clkClasses;
 
-        @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Learner passbook (2)')]")
+        @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Learner passbook')]")
         public MobileElement assertlearnerpassbook;
 @AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
         public MobileElement vieweyecertificate;
@@ -826,8 +832,7 @@ public MobileElement clkMedium;
 	public MobileElement verifyCluster;
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'School: SRI POTTI SREERAMULU MPL.')]")
 	public MobileElement verifySchool;
-@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Sub-role: HM, CRP')]")
-	public MobileElement verifySubrole;
+
 @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Role: HT & Officials')]")
 	public MobileElement verifyRole;
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Block: Anantapur')]")
@@ -835,8 +840,7 @@ public MobileElement clkMedium;
 	@AndroidFindBy(xpath = "//android.widget.Button[@text='back']")
 	public MobileElement BackBtn;
 	
-	@AndroidFindBy(xpath = "//android.widget.ListView[@text='HM, CRP, selected ,Select Subrole']")
-	public MobileElement selectSubrole;
+	
 
 	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE New Course')]")
 	public MobileElement clkOnConsentCourse;
@@ -869,6 +873,11 @@ public MobileElement clkMedium;
 	public MobileElement exitButton;
 	@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
 	public MobileElement closeRatingIcon;
+	
+	@AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Select Subrole')]")
+    public MobileElement selectSubrole;
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Sub-role')]")
+    public MobileElement verifySubrole;
 }
 
 

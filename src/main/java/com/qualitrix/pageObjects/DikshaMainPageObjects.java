@@ -56,7 +56,7 @@ public class DikshaMainPageObjects {
 
         
     @AndroidFindAll({
-        @AndroidBy(xpath = "//android.widget.CheckBox[@text='English']")
+        @AndroidBy(xpath = "//android.widget.CheckBox[@index='0']")
      
 })
 public MobileElement selectEnglishMedium;
@@ -77,8 +77,18 @@ public MobileElement selectEnglishMedium;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
     public MobileElement cancelBtn;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Selected Medium, Medium']")
+//    @AndroidFindBy(xpath = "//android.view.View[@text='multiple select']")
+//    public MobileElement selectMedium;
+//
 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.view.View[@text='Selected Medium, Medium']"),    	
+    	@AndroidBy(xpath = "//android.view.View[@text='multiple select']"),
+            @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Medium, Medium']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Select Medium, Medium']"),
+            @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Medium, Medium']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='multiple select']"),
+    })
     public MobileElement selectMedium;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Cancel']")

@@ -112,6 +112,57 @@ public class RemovedRegression {
         getHomePageActions().tapOnProfileTab();
         getProfileEditPageActions().editRecoveryId(recoveryID);
     }
+    @Test()
+    public void validateSubmitDetailsTextAndMyDetailsTextInProfile() throws Exception {
+        QXClient.get().driver();
+        getDikshaMainPageActions().performUserOnBoarding();
+        getHomePageActions().tapOnProfileTab();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
 
+
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+                properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+        String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",130,2);
+        String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",131,2);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        getLoginPageActions().loginToTheUser(Username,Password);
+
+        //getHomePageActions().tapOnDownloadTab();
+
+        getHomePageActions().tapOnProfileTab();
+
+        getCoursePageActions().validateSubmitDetailsTextReplacesIamATeacherText();
+
+        getHomePageActions().tapOnMenuBar();
+
+        getHomePageActions().verifyLogoutFromUser();
+
+        DikshaMainPageActions d=new DikshaMainPageActions();
+
+        QXClient.get().gestures().closeApp();
+        d.LaunchAppHomeScreen();
+
+        getHomePageActions().tapOnProfileTab();
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+
+        String Username1 =QXClient.get().excelUtils().getCellValue("Excel1","TestData",59,2);
+        String Password1 =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",60,2);
+        QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+        getLoginPageActions().loginToTheUser(Username1,Password1);
+
+        QXClient.get().gestures().closeappandrelaunchapp();
+
+        getHomePageActions().tapOnProfileTab();
+
+        getCoursePageActions().validateMyDetailsTextReplacesSelfDeclaredInfoText();
+    }
 
 }

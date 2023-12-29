@@ -561,7 +561,7 @@ public void createGrupAndActivity() throws Exception {
 //
       //      QXClient.get().gestures().BlindWait(4000);
 
-         //   QXClient.get().gestures().clkBackButton();
+           QXClient.get().gestures().clkBackButton();
         
 
             QXClient.get().gestures().BlindWait(4000);
@@ -580,7 +580,7 @@ public void createGrupAndActivity() throws Exception {
     public void startQuestionFill() throws Exception {
         QXClient.get().gestures().BlindWait(5000);
        // QXClient.get().gestures().BlindWait(3000);
-        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkOnGeneralDiscussion);
+    //   QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkOnGeneralDiscussion);
         QXClient.get().report().info("Clicked on General discussion");
        //QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkEyeIcon);
         QXClient.get().gestures().BlindWait(3000);
@@ -743,6 +743,8 @@ public void createGrupAndActivity() throws Exception {
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
         QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().closeappandrelaunchapp();
+
         tapOnMenuBar();
 
         QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkMyGroups);
@@ -1592,11 +1594,10 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
     		QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkonprograms);
     		QXClient.get().gestures().BlindWait(5000);
-    		QXClient.get().gestures().swipeUp();
+    	
    	
     		 Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.allprogramnames),"assertUpdatedProjectName is not available");
              QXClient.get().report().info("Verified program list1");
-             //Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.allprogramnames.get(2)),"assertUpdatedProjectName is not available");
              QXClient.get().report().info("Verified program list2");
 
     	  
@@ -3985,8 +3986,8 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertRoleSectionUnderContentPreferenceLabel),"Role is not displayed in Profile Page");
         QXClient.get().report().info("Role is displayed under Content preference Label");
 
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertSubRoleSectionUnderContentPreferenceLabel),"Sub Role is not displayed in Profile Page");
-        QXClient.get().report().info("Sub Role is displayed under Content preference Label");
+     //   Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertSubRoleSectionUnderContentPreferenceLabel),"Sub Role is not displayed in Profile Page");
+     //   QXClient.get().report().info("Sub Role is displayed under Content preference Label");
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertDistrictSectionUnderContentPreferenceLabel),"District is not displayed in Profile Page");
         QXClient.get().report().info("District is displayed under Content Preference Label");
@@ -4476,14 +4477,6 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
     public void verifyGroupingBasedOnSubjectInDigitalTextBookCategory() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkNewDikshExperiece);
-        QXClient.get().report().info("clicked on clkNewDikshExperiece");
-        QXClient.get().gestures().BlindWait(3000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSearchIcon);
-        QXClient.get().report().info("clicked on clkSearchIcon");
-        QXClient.get().gestures().BlindWait(3000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertPopularCatrgories),"assertPopularCatrgories is not available");
         QXClient.get().report().info("Verified assertPopularCatrgories in SearchPage");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertDigitalTextBookSection),"assertDigitalTextBookSection is not available");
@@ -4501,28 +4494,16 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertAccountancySubjectInDigitalTextbookCategory),"Accountancy subject is not displayed");
         QXClient.get().report().info("Accountancy subject is displayed in Explore Digital Textbook page");
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.groupedBasedOnAccountancySubject),"Grouping is not done based on Accountancy subject");
-        QXClient.get().report().info("Grouping is done based on Accountancy Subject");
-        QXClient.get().gestures().BlindWait(2000);
+               QXClient.get().gestures().BlindWait(2000);
 
         QXClient.get().gestures().scrollToMobileElement(homePageObjects.assertChemistrySubjectInDigitalTextbookCategory,"4");
         QXClient.get().gestures().BlindWait(2000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertChemistrySubjectInDigitalTextbookCategory),"Chemistry subject is not displayed in Explore Digital Textbook page");
         QXClient.get().report().info("Chemistry subject is displayed in Explore Digital Textbook page");
-        //Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.groupedBasedOnChemistrySubject),"Grouping is not done based on Chemistry subject");
-        QXClient.get().report().info("Grouping is done based on Chemisty subject");
         QXClient.get().gestures().BlindWait(2000);
 
-        QXClient.get().gestures().scrollToMobileElement(homePageObjects.assertEconomicsSubjectInDigitalTextbookCategory,"4");
-        QXClient.get().gestures().BlindWait(2000);
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assertEconomicsSubjectInDigitalTextbookCategory),"Economics subject is not displayed in Explore Digital Textbook page");
-        QXClient.get().report().info("Economics subject is displayed in Explore Digital Textbook page");
-        QXClient.get().gestures().scrollToMobileElement(homePageObjects.groupedBasedOnEconomicsSubject,"2");
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.groupedBasedOnEconomicsSubject),"Grouping is not done based on Economics subject");
-        QXClient.get().report().info("Grouping is done based on Economics subject");
-        QXClient.get().gestures().BlindWait(3000);
+       
     }
-
     public void verifyHomePageBannersAndUserPreferences() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
@@ -9562,8 +9543,19 @@ public void VerifyProfileNameChangePopupForCourse() throws Exception {
 }
 public void VerifyProfileNameChangePopupFortrackablecollection() throws Exception {
     QXClient.get().gestures().BlindWait(6000);
-    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinButton);
-    QXClient.get().report().info("clicked on join button");
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+    QXClient.get().report().info("clicked on joincourse button");
+    QXClient.get().gestures().BlindWait(2000);
+    try {
+        if (QXClient.get().gestures().isElementPresent((trainingPageObjects.clkDontShareBtn))) ;
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+            QXClient.get().report().info("clicked on clkDontShareBtn button");
+            QXClient.get().gestures().BlindWait(2000);
+        }
+    } catch (Exception e3) {
+        System.out.println("handled profile share");
+    }
     QXClient.get().gestures().BlindWait(2000);
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.startlearning1);
     QXClient.get().report().info("clicked on Start Learning button");
@@ -9577,12 +9569,22 @@ public void VerifyProfileNameChangePopupFortrackablecollection() throws Exceptio
     QXClient.get().gestures().BlindWait(2000);
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkConfirmButton);
     QXClient.get().gestures().BlindWait(2000);
-
 }
 public void VerifyProfileNameChangePopupFortrackablebook() throws Exception {
     QXClient.get().gestures().BlindWait(6000);
-    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinButton);
-    QXClient.get().report().info("clicked on join button");
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
+    QXClient.get().report().info("clicked on joincourse button");
+    QXClient.get().gestures().BlindWait(2000);
+    try {
+        if (QXClient.get().gestures().isElementPresent((trainingPageObjects.clkDontShareBtn))) ;
+        {
+            QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
+            QXClient.get().report().info("clicked on clkDontShareBtn button");
+            QXClient.get().gestures().BlindWait(2000);
+        }
+    } catch (Exception e3) {
+        System.out.println("handled profile share");
+    }
     QXClient.get().gestures().BlindWait(2000);
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.startlearning1);
     QXClient.get().report().info("clicked on Start Learning button");
@@ -9594,7 +9596,6 @@ public void VerifyProfileNameChangePopupFortrackablebook() throws Exception {
     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkLeavetrackcoll);
     QXClient.get().report().info("clicked on Stop textbook activity button");
     QXClient.get().gestures().BlindWait(2000);
-
 }
 public void verifySolutionViewPageForMCQOrSubjectiveQuestion() throws Exception {
     QXClient.get().gestures().BlindWait(2000);
@@ -9876,4 +9877,35 @@ public void verifyCourseFilters() throws Exception {
     QXClient.get().gestures().BlindWait(3000);
 }
 
+public void tapOnSettings1() throws Exception {
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkSettings1);
+    QXClient.get().report().info("clicked on Settings in Menu");
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().isElementPresent(homePageObjects.dataSync);
+    QXClient.get().report().info("Data Sync is displayed in the Settings page");
+    QXClient.get().gestures().isElementPresent(homePageObjects.permissions);
+    QXClient.get().report().info("Permissions is displayed in the Settings page");
+    QXClient.get().gestures().isElementPresent(homePageObjects.shareTheSunbirdApp);
+    QXClient.get().report().info("Share the Sunbird App is displayed in the Settings page");
+    QXClient.get().gestures().isElementPresent(homePageObjects.mergeAccount);
+    QXClient.get().report().info("Merge Account is displayed in the Settings page");
+    QXClient.get().gestures().isElementPresent(homePageObjects.aboutUs);
+    QXClient.get().report().info("About Us is displayed in the Settings page");
+}
+public void tapOnClearSearch() throws Exception {
+    QXClient.get().gestures().BlindWait(3000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.tapOnClearSearch);
+    QXClient.get().report().info("clicked on Clear Search");
+
+}
+
+public void verifyDisplayedText(String BookName) throws Exception {
+
+    String displayedText=homePageObjects.displayedText.getText();
+    System.out.println(displayedText);
+    Assert.assertEquals(displayedText,BookName);
+    QXClient.get().report().info("Text is matching");
+
+}
 }

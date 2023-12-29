@@ -1,0 +1,181 @@
+2023-12-19 10:45:50:475 [Appium] Welcome to Appium v1.21.0
+2023-12-19 10:45:50:477 [Appium] Non-default server args:
+2023-12-19 10:45:50:479 [Appium]   address: 127.0.0.1
+2023-12-19 10:45:50:479 [Appium]   port: 54785
+2023-12-19 10:45:50:480 [Appium]   bootstrapPort: 54783
+2023-12-19 10:45:50:480 [Appium]   logFile: C:\Mobile6.0NewApproach\reports\Report_2023-12-19 16-15-46\RZCRC00YG9R\logs\appium_log_1702982747435.txt
+2023-12-19 10:45:50:481 [Appium]   chromedriverPort: 54784
+2023-12-19 10:45:50:483 [Appium] Deprecated server args:
+2023-12-19 10:45:50:484 [Appium]   --chromedriver-port => --default-capabilities
+2023-12-19 10:45:50:485 [Appium] Default capabilities, which will be added to each request unless overridden by desired capabilities:
+2023-12-19 10:45:50:485 [Appium]   chromedriverPort: 54784
+2023-12-19 10:45:50:553 [Appium] Appium REST http interface listener started on 127.0.0.1:54785
+2023-12-19 10:45:51:122 [HTTP] --> GET /wd/hub/status
+2023-12-19 10:45:51:123 [HTTP] {}
+2023-12-19 10:45:51:126 [GENERIC] Calling AppiumDriver.getStatus() with args: []
+2023-12-19 10:45:51:128 [GENERIC] Responding to client with driver.getStatus() result: {"build":{"version":"1.21.0"}}
+2023-12-19 10:45:51:139 [HTTP] <-- GET /wd/hub/status 200 12 ms - 68
+2023-12-19 10:45:51:139 [HTTP] 
+2023-12-19 10:45:51:147 [HTTP] --> GET /wd/hub/status
+2023-12-19 10:45:51:147 [HTTP] {}
+2023-12-19 10:45:51:148 [GENERIC] Calling AppiumDriver.getStatus() with args: []
+2023-12-19 10:45:51:149 [GENERIC] Responding to client with driver.getStatus() result: {"build":{"version":"1.21.0"}}
+2023-12-19 10:45:51:151 [HTTP] <-- GET /wd/hub/status 200 3 ms - 68
+2023-12-19 10:45:51:152 [HTTP] 
+2023-12-19 10:45:52:849 [HTTP] Request idempotency key: c86dbe2c-bbc0-425c-a534-65d796414566
+2023-12-19 10:45:52:879 [HTTP] --> POST /wd/hub/session
+2023-12-19 10:45:52:880 [HTTP] {"desiredCapabilities":{"app":".\\caps\\SUNBIRD_6_0_483staging.apk","appActivity":"org.sunbird.app.MainActivity","appPackage":"org.sunbird.app.staging","newCommandTimeout":600,"platformVersion":"13.0.0","automationName":"uiautomator2","platformName":"Android","udid":"RZCRC00YG9R","deviceName":"RZCRC00YG9R","launchTimeout":90000,"systemPort":54793},"capabilities":{"firstMatch":[{"appium:app":".\\caps\\SUNBIRD_6_0_483staging.apk","appium:appActivity":"org.sunbird.app.MainActivity","appium:appPackage":"org.sunbird.app.staging","appium:automationName":"uiautomator2","appium:deviceName":"RZCRC00YG9R","appium:launchTimeout":90000,"appium:newCommandTimeout":600,"platformName":"android","appium:platformVersion":"13.0.0","appium:systemPort":54793,"appium:udid":"RZCRC00YG9R"}]}}
+2023-12-19 10:45:52:881 [W3C] Calling AppiumDriver.createSession() with args: [{"app":".\\caps\\SUNBIRD_6_0_483staging.apk","appActivity":"org.sunbird.app.MainActivity","appPackage":"org.sunbird.app.staging","newCommandTimeout":600,"platformVersion":"13.0.0","automationName":"uiautomator2","platformName":"Android","udid":"RZCRC00YG9R","deviceName":"RZCRC00YG9R","launchTimeout":90000,"systemPort":54793},null,{"firstMatch":[{"appium:app":".\\caps\\SUNBIRD_6_0_483staging.apk","appium:appActivity":"org.sunbird.app.MainActivity","appium:appPackage":"org.sunbird.app.staging","appium:automationName":"uiautomator2","appium:deviceName":"RZCRC00YG9R","appium:launchTimeout":90000,"appium:newCommandTimeout":600,"platformName":"android","appium:platformVersion":"13.0.0","appium:systemPort":54793,"appium:udid":"RZCRC00YG9R"}]}]
+2023-12-19 10:45:52:882 [BaseDriver] Event 'newSessionRequested' logged at 1702982752882 (16:15:52 GMT+0530 (India Standard Time))
+2023-12-19 10:45:52:887 [BaseDriver] The following capabilities are not standard capabilities and should have an extension prefix:
+2023-12-19 10:45:52:887 [BaseDriver]   chromedriverPort
+2023-12-19 10:45:53:384 [Appium] Appium v1.21.0 creating new AndroidUiautomator2Driver (v1.65.0) session
+2023-12-19 10:45:53:388 [BaseDriver] W3C capabilities and MJSONWP desired capabilities were provided
+2023-12-19 10:45:53:388 [BaseDriver] Creating session with W3C capabilities: {
+2023-12-19 10:45:53:389 [BaseDriver]   "alwaysMatch": {
+2023-12-19 10:45:53:389 [BaseDriver]     "platformName": "android",
+2023-12-19 10:45:53:389 [BaseDriver]     "appium:chromedriverPort": 54784,
+2023-12-19 10:45:53:389 [BaseDriver]     "appium:app": ".\\caps\\SUNBIRD_6_0_483staging.apk",
+2023-12-19 10:45:53:390 [BaseDriver]     "appium:appActivity": "org.sunbird.app.MainActivity",
+2023-12-19 10:45:53:390 [BaseDriver]     "appium:appPackage": "org.sunbird.app.staging",
+2023-12-19 10:45:53:390 [BaseDriver]     "appium:automationName": "uiautomator2",
+2023-12-19 10:45:53:390 [BaseDriver]     "appium:deviceName": "RZCRC00YG9R",
+2023-12-19 10:45:53:390 [BaseDriver]     "appium:launchTimeout": 90000,
+2023-12-19 10:45:53:391 [BaseDriver]     "appium:newCommandTimeout": 600,
+2023-12-19 10:45:53:391 [BaseDriver]     "appium:platformVersion": "13.0.0",
+2023-12-19 10:45:53:391 [BaseDriver]     "appium:systemPort": 54793,
+2023-12-19 10:45:53:392 [BaseDriver]     "appium:udid": "RZCRC00YG9R"
+2023-12-19 10:45:53:392 [BaseDriver]   },
+2023-12-19 10:45:53:393 [BaseDriver]   "firstMatch": [
+2023-12-19 10:45:53:393 [BaseDriver]     {}
+2023-12-19 10:45:53:393 [BaseDriver]   ]
+2023-12-19 10:45:53:394 [BaseDriver] }
+2023-12-19 10:45:53:407 [BaseDriver] Session created with session id: b5f1972c-8961-4a34-8f03-aaa98f59c25f
+2023-12-19 10:45:53:414 [BaseDriver] Using local app '.\caps\SUNBIRD_6_0_483staging.apk'
+2023-12-19 10:45:53:414 [BaseDriver] The current application path '.\caps\SUNBIRD_6_0_483staging.apk' is not absolute and has been rewritten to 'C:\Mobile6.0NewApproach\caps\SUNBIRD_6_0_483staging.apk'. Consider using absolute paths rather than relative
+2023-12-19 10:45:53:415 [UiAutomator2] Checking whether app is actually present
+2023-12-19 10:45:53:431 [ADB] Found 1 'build-tools' folders under 'C:\Users\user\AppData\Local\Android\Sdk' (newest first):
+2023-12-19 10:45:53:432 [ADB]     C:/Users/user/AppData/Local/Android/Sdk/build-tools/30.0.3
+2023-12-19 10:45:53:432 [ADB] Using 'adb.exe' from 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe'
+2023-12-19 10:45:53:433 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 start-server'
+2023-12-19 10:45:53:478 [AndroidDriver] Retrieving device list
+2023-12-19 10:45:53:478 [ADB] Trying to find a connected android device
+2023-12-19 10:45:53:480 [ADB] Getting connected devices
+2023-12-19 10:45:53:534 [ADB] Connected devices: [{"udid":"RZCRC00YG9R","state":"device"}]
+2023-12-19 10:45:53:535 [AndroidDriver] Using device: RZCRC00YG9R
+2023-12-19 10:45:53:538 [ADB] Using 'adb.exe' from 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe'
+2023-12-19 10:45:53:538 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 start-server'
+2023-12-19 10:45:53:586 [ADB] Setting device id to RZCRC00YG9R
+2023-12-19 10:45:53:588 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell getprop ro.build.version.sdk'
+2023-12-19 10:45:53:672 [ADB] Current device property 'ro.build.version.sdk': 33
+2023-12-19 10:45:53:672 [ADB] Getting device platform version
+2023-12-19 10:45:53:673 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell getprop ro.build.version.release'
+2023-12-19 10:45:53:761 [ADB] Current device property 'ro.build.version.release': 13
+2023-12-19 10:45:53:761 [ADB] Device API level: 33
+2023-12-19 10:45:53:761 [UiAutomator2] Relaxing hidden api policy
+2023-12-19 10:45:53:762 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
+2023-12-19 10:45:53:936 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R wait-for-device'
+2023-12-19 10:45:53:975 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell echo ping'
+2023-12-19 10:45:54:037 [AndroidDriver] Pushing settings apk to device...
+2023-12-19 10:45:54:038 [ADB] Getting install status for io.appium.settings
+2023-12-19 10:45:54:038 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell dumpsys package io.appium.settings'
+2023-12-19 10:45:54:138 [ADB] 'io.appium.settings' is installed
+2023-12-19 10:45:54:139 [ADB] Getting package info for 'io.appium.settings'
+2023-12-19 10:45:54:139 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell dumpsys package io.appium.settings'
+2023-12-19 10:45:54:259 [ADB] The version code of the installed 'io.appium.settings' is greater than the application version code (30 > 29)
+2023-12-19 10:45:54:260 [ADB] There is no need to downgrade 'io.appium.settings'
+2023-12-19 10:45:54:261 [ADB] Getting IDs of all 'io.appium.settings' processes
+2023-12-19 10:45:54:261 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell 'pgrep --help; echo $?''
+2023-12-19 10:45:54:361 [ADB] Running 'C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe -P 5037 -s RZCRC00YG9R shell pgrep -f \(\[\[:blank:\]\]\|\^\)io\.appium\.settings\(\[\[:blank:\]\]\|\$\)'
+2023-12-19 10:45:54:430 [HTTP] <-- POST /wd/hub/session - - ms - -
+2023-12-19 10:45:54:430 [HTTP] 
+2023-12-19 10:45:54:438 uncaughtException: EPIPE: broken pipe, write
+Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:61:25)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+    at _write (node:internal/streams/writable:490:10)
+    at Socket.Writable.write (node:internal/streams/writable:494:10)
+    at Console.log (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\transports\console.js:79:23)
+    at Console._write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\index.js:103:17)
+    at doWrite (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at Console.Writable.write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at DerivedLogger.ondata (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:298:12)
+    at readableAddChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:280:11)
+    at DerivedLogger.Readable.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:241:10)
+    at DerivedLogger.Transform.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_transform.js:139:32)
+    at DerivedLogger._transform (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\logger.js:305:12)
+2023-12-19 10:45:54:440 uncaughtException: EPIPE: broken pipe, write
+Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:61:25)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+    at _write (node:internal/streams/writable:490:10)
+    at Socket.Writable.write (node:internal/streams/writable:494:10)
+    at Console.log (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\transports\console.js:51:25)
+    at Console._write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\index.js:103:17)
+    at doWrite (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at Console.Writable.write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at DerivedLogger.ondata (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:298:12)
+    at readableAddChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:280:11)
+    at DerivedLogger.Readable.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:241:10)
+    at DerivedLogger.Transform.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_transform.js:139:32)
+    at DerivedLogger._transform (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\logger.js:305:12)
+2023-12-19 10:45:54:443 uncaughtException: EPIPE: broken pipe, write
+Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:61:25)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+    at _write (node:internal/streams/writable:490:10)
+    at Socket.Writable.write (node:internal/streams/writable:494:10)
+    at Console.log (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\transports\console.js:51:25)
+    at Console._write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\index.js:103:17)
+    at doWrite (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at Console.Writable.write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at DerivedLogger.ondata (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:298:12)
+    at readableAddChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:280:11)
+    at DerivedLogger.Readable.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:241:10)
+    at DerivedLogger.Transform.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_transform.js:139:32)
+    at DerivedLogger._transform (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\logger.js:305:12)
+2023-12-19 10:45:54:445 uncaughtException: EPIPE: broken pipe, write
+Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:61:25)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+    at _write (node:internal/streams/writable:490:10)
+    at Socket.Writable.write (node:internal/streams/writable:494:10)
+    at Console.log (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\transports\console.js:51:25)
+    at Console._write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\index.js:103:17)
+    at doWrite (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at Console.Writable.write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at DerivedLogger.ondata (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:298:12)
+    at readableAddChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:280:11)
+    at DerivedLogger.Readable.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:241:10)
+    at DerivedLogger.Transform.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_transform.js:139:32)
+    at DerivedLogger._transform (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\logger.js:305:12)
+2023-12-19 10:45:54:446 uncaughtException: EPIPE: broken pipe, write
+Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:61:25)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+    at _write (node:internal/streams/writable:490:10)
+    at Socket.Writable.write (node:internal/streams/writable:494:10)
+    at Console.log (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\transports\console.js:51:25)
+    at Console._write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\index.js:103:17)
+    at doWrite (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at Console.Writable.write (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at DerivedLogger.ondata (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:298:12)
+    at readableAddChunk (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:280:11)
+    at DerivedLogger.Readable.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_readable.js:241:10)
+    at DerivedLogger.Transform.push (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\readable-stream\lib\_stream_transform.js:139:32)
+    at DerivedLogger._transform (C:\Users\user\AppData\Roaming\npm\node_modules\appium\node_modules\winston\lib\winston\logger.js:305:12)

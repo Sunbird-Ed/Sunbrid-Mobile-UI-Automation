@@ -76,6 +76,8 @@ public class ContentConsumptionP1 {
 	getLibraryPageActions().tapOnPlayIcon3();
 	getLibraryPageActions().verifyZoomInZoomOut();
 	}
+	
+	
 	 @Test()
 	    public void verifyContentCardDetails() throws Exception {
 	        QXClient.get().driver();

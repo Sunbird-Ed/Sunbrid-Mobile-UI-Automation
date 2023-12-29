@@ -365,7 +365,7 @@ public class Gestures {
     	 Thread.sleep(wait);
     	 
     	 
-System.out.println("IgnoreWait");   
+//System.out.println("IgnoreWait");   
 }
     
     
@@ -514,5 +514,12 @@ public boolean waitForElementinPage(WebElement element,int waitTime) {
         QXClient.get().report().info("Element is not Found");
     }
     return conditionFulfilled;
+}
+
+public void closeappandrelaunchHomescreen() throws Exception {
+    QXClient.get().gestures().closeApp();
+    DikshaMainPageActions d = new DikshaMainPageActions();
+    d.LaunchAppHomeScreen();
+    QXClient.get().gestures().BlindWait(5000);
 }
 }

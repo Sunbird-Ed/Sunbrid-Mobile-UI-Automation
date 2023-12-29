@@ -432,25 +432,6 @@ public MobileElement clkConfirmButton;
 public MobileElement assertCourseUpdatedMessageWithDate;
 
 
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Batch ends in')]")
-public MobileElement assertTimerWithXdaysYhoursZmin;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @AndroidFindAll({ @AndroidBy(xpath = "//android.view.View[@text='Ongoing']"),
 
 })
@@ -764,11 +745,6 @@ public MobileElement courseUnderOthers;
 })
     public MobileElement assertLimitedCourse;
 
-@AndroidFindAll({
-        @AndroidBy(xpath = "//android.view.View[@text='question number 4']"),
-        @AndroidBy(xpath = "//android.view.View[@index='4']"),
-})
-    public MobileElement clkLastQuestion;
 
 @AndroidFindAll({
         @AndroidBy(xpath = "//android.view.View[@text='next slide']"),
@@ -3054,5 +3030,12 @@ public WebElement clkLeavetrackcoll;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Test')]")
     public MobileElement Clk3rdAttribute;
-
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='question number 3']"),
+})
+    public MobileElement clkLastQuestion;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Batch ends in')]")
+    public MobileElement assertTimerWithXdaysYhoursZmin;
 }

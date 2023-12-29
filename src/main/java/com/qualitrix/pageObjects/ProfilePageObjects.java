@@ -1022,6 +1022,7 @@ public MobileElement assertToDiscoverRelevantContentText;
     public MobileElement assertAnantapurDistrict;
 
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Block: AMADAGUR')]"),
     	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Block: Agali')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Block: AGALI')]"),
     })
@@ -1029,6 +1030,7 @@ public MobileElement assertToDiscoverRelevantContentText;
 
     
     @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'School: MPPS')]"),
     	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'School: MPPS HANUMANNAHALLI')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'School: MPPS HANUMANNAHALLI')]"),
     })

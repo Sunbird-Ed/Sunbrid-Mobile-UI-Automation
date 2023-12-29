@@ -110,7 +110,7 @@ public class DikshaMainPageActions  {
     	QXClient.get().report().info("slt language");
         QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.sltLang);
         
-        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.clickContinue);
+      //  QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.clickContinue);
 
         QXClient.get().report().info("Clicked on Continue Button");
 
@@ -121,7 +121,12 @@ public class DikshaMainPageActions  {
         QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectStateBoard);
         QXClient.get().report().info("Clicked on Select  DropDown");
         QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.submitBtn);
-        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectMedium);
+      Thread.sleep(6000);
+       // dikshaMainObjects.selectMedium.click();
+     // QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectMedium);
+        
+       QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectMedium);
+        
         QXClient.get().report().info("Clicked on Medium DropDownn");
 
         QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectEnglishMedium);
@@ -138,10 +143,11 @@ public class DikshaMainPageActions  {
 
         QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
         QXClient.get().report().info("Clicked on Submit Button");
-        checkLocationPopup();
-        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.submitWithArrowBtn);
+     //   checkLocationPopup();
+     //   QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.submitWithArrowBtn);
 
         QXClient.get().report().info("slt clkCancelIcon");
+        Thread.sleep(6000);
 
         QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clkClosePoup);
     	
@@ -720,5 +726,38 @@ public class DikshaMainPageActions  {
 
 
     }
-	 
+    
+    
+    public void performUserOnBoardingAfterSwitchingFromHTToTeacher() throws Exception {
+        // QXClient.get().report().info("slt language");
+        //  QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.sltLang);
+        //  dikshaMainObjects.clickContinue.click();
+        //  QXClient.get().report().info("Clicked on Continue Button");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.clickTeacher);
+        QXClient.get().report().info("Clicked on Teacher Button");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectBoard);
+        QXClient.get().report().info("Selected Board Value");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectStateBoard);
+        QXClient.get().report().info("Clicked on Select  DropDown");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.submitBtn);
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectMedium);
+        QXClient.get().report().info("Clicked on Medium DropDownn");
+        QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.selectEnglishMedium);
+        QXClient.get().report().info("Select English Value");
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
+        QXClient.get().report().info("Clicked on Submit Button");
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectClass);
+        QXClient.get().report().info("Clicked on Select DropDown");
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.selectClassOne);
+        QXClient.get().report().info("Selected Class Value");
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
+        QXClient.get().report().info("Clicked on Submit Button");
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitWithArrowBtn);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().closeappandrelaunchHomescreen();
+        checkLocationPopup();
+       // dikshaMainObjects.submitWithArrowBtn.click();
+        QXClient.get().report().info("slt clkCancelIcon");
+        QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clkClosePoup);
+    }
 }
