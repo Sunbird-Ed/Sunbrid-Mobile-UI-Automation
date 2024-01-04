@@ -61,17 +61,8 @@ public MobileElement clkEmailNext;
 })
 public MobileElement emailPasswordEnter;
 
-    @AndroidFindAll({
-        @AndroidBy(xpath = "//android.view.View[@text='Diksha R']"),
-})
-public MobileElement verifyUsrnameGmailInProfSec;
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Diksha r']"),
-            @AndroidBy(xpath = "//android.view.View[@text='Diksha R']")
-    })
-    public MobileElement verifyUsrnameGmailInMenuSec;
-
+   
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[@text='logout Log out']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Log out']"),
@@ -226,6 +217,7 @@ public MobileElement clkEditLocation;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='donotusecustodianusermobile@gmail.com']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='dikshatest13@gmail.com']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='dikshatest15@gmail.com']"),
     })
@@ -266,6 +258,7 @@ public MobileElement clkRegisterHere;
 
 
    @AndroidFindAll({
+       @AndroidBy(xpath = "//android.widget.EditText[@resource-id='mat-input-0']"),
            @AndroidBy(xpath = "//android.view.View[contains(@text,'Select year of birth')]//following-sibling::android.view.View"),
            @AndroidBy(xpath = "//android.widget.TextView[@text='Select year of birth']"),
            @AndroidBy(xpath = "//android.view.View[@text='Select year of birth']"),
@@ -1381,6 +1374,15 @@ public MobileElement clickTNcAndCheckBox;
 @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'As a parent/guardian I understand')]")
 public WebElement assertTnc;
 
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='donotusecustodianuser_mobile_qftt']"),
+})
+public MobileElement verifyUsrnameGmailInProfSec;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@index='0']"),
+})
+public  List<WebElement> verifyUsrnameGmailInMenuSec;
 
 }
 

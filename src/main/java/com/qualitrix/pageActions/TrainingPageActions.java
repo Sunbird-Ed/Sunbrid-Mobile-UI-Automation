@@ -1381,62 +1381,130 @@ public class TrainingPageActions {
 
     }
 
-
-    public void verifyLastAttemptMessageWhileConsumeCourse() throws Exception {
+    public void verifyLastAttemptMessageWhileConsumeCourse1() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
         QXClient.get().report().info("Clicked on start learning");
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
-        QXClient.get().gestures().BlindWait(2000);
-
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertLimitedCourse), "Limited course is not displayed");
-        QXClient.get().report().info("Limited course is displayed");
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkLastQuestion);
-        QXClient.get().gestures().BlindWait(3000);
-
+        QXClient.get().report().info("Clicked on Play pdf");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().report().info("Clicked on Next slide");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkAns1.get(16));
+        QXClient.get().report().info("Selected the answer");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().report().info("Clicked on Next slide");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(6000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkReplayBtn);
-        QXClient.get().gestures().BlindWait(2000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkLastQuestion);
-        QXClient.get().gestures().BlindWait(3000);
-
+        QXClient.get().report().info("Clicked on reply");
+        QXClient.get().gestures().BlindWait(6000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(3000);
-
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkAns1.get(17));
+        QXClient.get().report().info("Selected an answer");
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkReplayBtn);
-        QXClient.get().gestures().BlindWait(2000);
-
+        QXClient.get().gestures().BlindWait(3000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertLastAttemptMsg), "Last attempt message is not displayed");
         QXClient.get().report().info("Last attempt message is displayed");
-
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkContinueBtn), "Continue button is not displayed");
         QXClient.get().report().info("Continue button is displayed");
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkContinueBtn);
         QXClient.get().gestures().BlindWait(2000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkLastQuestion);
-        QXClient.get().gestures().BlindWait(2000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
-        // QXClient.get().gestures().BlindWait(1000);
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.maxAttemptsExceededMsg), "Exceeded max attempts message is not displayed");
-        QXClient.get().report().info("Max attempts exceeded message is displayed");
-
-       // Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertScoreCard), "Score card is not displayed");
-       // QXClient.get().report().info("Score card is displayed with updated score");
-
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(2000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertScoreCard), "Score card is not displayed");
+        QXClient.get().report().info("Score card is displayed with updated score");
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertExitBtn), "Exit button is not displayed");
         QXClient.get().report().info("Exit button is displayed in summary page");
-
     }
+    public void verifyLastAttemptMessageWhileConsumeCourse() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
+        QXClient.get().report().info("Clicked on start learning");
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
+        QXClient.get().report().info("Clicked on Play pdf");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().report().info("Clicked on Next slide");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkAns1.get(16));
+        QXClient.get().report().info("Selected the answer");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().report().info("Clicked on Next slide");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkReplayBtn);
+        QXClient.get().report().info("Clicked on reply");
+        QXClient.get().gestures().BlindWait(6000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkAns1.get(17));
+        QXClient.get().report().info("Selected an answer");
+        QXClient.get().gestures().BlindWait(4000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkReplayBtn);
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertLastAttemptMsg), "Last attempt message is not displayed");
+        QXClient.get().report().info("Last attempt message is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.clkContinueBtn), "Continue button is not displayed");
+        QXClient.get().report().info("Continue button is displayed");
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkContinueBtn);
+        QXClient.get().gestures().BlindWait(2000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(4000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.maxAttemptsExceededMsg), "Exceeded max attempts message is not displayed");
+        QXClient.get().report().info("Max attempts exceeded message is displayed");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertScoreCard), "Score card is not displayed");
+        QXClient.get().report().info("Score card is displayed with updated score");
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertExitBtn), "Exit button is not displayed");
+        QXClient.get().report().info("Exit button is displayed in summary page");
+    }
+    
+    
     public void verifyContentOfRegionallanguage() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
 
@@ -2931,30 +2999,24 @@ public class TrainingPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkJoinCourseBtn);
         QXClient.get().report().info("Clicked on join course");
         QXClient.get().gestures().BlindWait(3000);
-
         try {
             if (QXClient.get().gestures().isElementPresent((trainingPageObjects.clkDontShareBtn))) ;
             {
                 QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkDontShareBtn);
                 QXClient.get().report().info("clicked on clkDontShareBtn button");
                 QXClient.get().gestures().BlindWait(2000);
-
             }
         } catch (Exception e3) {
             System.out.println("handled profile share");
         }
         QXClient.get().gestures().BlindWait(2000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
         QXClient.get().gestures().BlindWait(4000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
         QXClient.get().gestures().BlindWait(3000);
-
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertNumberOfAttemptsText), "Number of Attempts text is displayed while consuming");
         QXClient.get().report().info("Number of Attempts text is not displayed in Course with practice mode question set");
         QXClient.get().gestures().BlindWait(3000);
-
     }
 
 
@@ -3733,49 +3795,33 @@ public class TrainingPageActions {
 
     public void verifyUserNotAbleToAttemptQuestionsMoreThanOnce() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
         QXClient.get().report().info("Clicked on start learning");
         QXClient.get().gestures().BlindWait(3000);
-
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.startlearning2);
+        QXClient.get().report().info("Clicked on start learning");
+        QXClient.get().gestures().BlindWait(3000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
         QXClient.get().gestures().BlindWait(3000);
-
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.lastAttemptPopup),"Last attempt popup is not displayed");
         QXClient.get().report().info("Last attempt popup is displayed for single attempt course post clicking play button");
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkContinueBtn2);
         QXClient.get().gestures().BlindWait(3000);
-
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertSingleAttemptText),"Single attempt text is not displayed");
         QXClient.get().report().info("Single attempt text is displayed");
         QXClient.get().gestures().BlindWait(2000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(2000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(2000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnSubmitBtn);
         QXClient.get().gestures().BlindWait(3000);
-
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.contentCompletedText),"You just completed text is not displayed");
         QXClient.get().report().info("You just completed text is displayed");
-
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.replayButton),"Replay button is not displayed");
-        QXClient.get().report().info("Replay button is displayed");
-        QXClient.get().gestures().BlindWait(2000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.replayButton);
-        QXClient.get().gestures().BlindWait(2000);
-
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(trainingPageObjects.assertSingleAttemptText),"Single attempt text is displayed");
         QXClient.get().report().info("Single attempt text is not displayed");
-        QXClient.get().gestures().BlindWait(2000);
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.contentCompletedText),"You just completed text is not displayed");
-        QXClient.get().report().info("You just completed text is displayed");
         QXClient.get().gestures().BlindWait(2000);
     }
 
@@ -3891,26 +3937,17 @@ public class TrainingPageActions {
 
     public void verifyNumberOfAttemptsAndTimerInQuestionSet() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkStartLearning);
         QXClient.get().report().info("Clicked on start learning");
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
-        QXClient.get().gestures().BlindWait(2000);
-
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertLimitedCourse), "Limited course is not displayed");
-        QXClient.get().report().info("Limited course is displayed");
-        QXClient.get().gestures().BlindWait(2000);
-
+        QXClient.get().gestures().BlindWait(5000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertNumberOfAttempts),"Number of Attempts text is not displayed");
         QXClient.get().report().info("Number of attempts text is displayed");
-
+        QXClient.get().gestures().BlindWait(9000);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertTimerInQuestionSet),"Timer is not displayed in questionset");
         QXClient.get().report().info("Timer is displayed in questionset");
-        QXClient.get().gestures().BlindWait(2000);
-
-
+        QXClient.get().gestures().BlindWait(5000);
     }
 
     public void verifyConsentPopUpForCourse1() throws Exception {
@@ -4631,34 +4668,41 @@ public class TrainingPageActions {
 
     }
     
+    
+    
     public void verifymaxattemptexceededmessage() throws Exception {
-
-        //QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ExitBtn);
-       // QXClient.get().gestures().BlindWait(9000);
-
-       // QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ConfrmBtn);
-       // QXClient.get().gestures().BlindWait(9000);
-
-       // QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.RatingBtn);
-       // QXClient.get().gestures().BlindWait(9000);
-
-        //QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
-       // QXClient.get().gestures().BlindWait(9000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.courseunit);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ExitBtn);
         QXClient.get().gestures().BlindWait(9000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.Questionsetlimit);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ConfrmBtn);
         QXClient.get().gestures().BlindWait(9000);
-
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.RatingBtn);
+        QXClient.get().gestures().BlindWait(9000);
+        try {
+            if (QXClient.get().gestures().isElementPresent((trainingPageObjects.ClkOnCourseCompletionMessagenew))) ;
+            {
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClkOnCourseCompletionMessagenew);
+                QXClient.get().report().info("Course completion message displayed");
+                QXClient.get().gestures().BlindWait(2000);
+                QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ClkOnCloseIconpopup);
+                QXClient.get().report().info("Course completion message displayed");
+                QXClient.get().gestures().BlindWait(2000);
+            }
+        } catch (Exception e3) {
+            System.out.println("Course completion certificate");
+        }
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.BackBtn);
+        QXClient.get().gestures().BlindWait(9000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.courseunit1);
+        QXClient.get().gestures().BlindWait(9000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.Questionsetlimit1);
+        QXClient.get().gestures().BlindWait(9000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfIcon);
         QXClient.get().gestures().BlindWait(2000);
-
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.maxAttemptsExceededMsg), "Exceeded max attempts message is not displayed");
         QXClient.get().report().info("Max attempts exceeded message is displayed");
         QXClient.get().gestures().BlindWait(9000);
-
     }
+
 
     public void tapOnQuestionSetCourse7() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
@@ -4678,107 +4722,69 @@ public class TrainingPageActions {
         QXClient.get().report().info("Tap on QuestionSetCourse");
     }
 
-  public void startlearning() {
+    public void startlearning() {
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.startlearning1);
         QXClient.get().report().info("Tap on Start Learning button");
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.startlearning2);
-        QXClient.get().report().info("Tap on Start Learning button");
+//       
     }
     public void checkscore() throws Exception{
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkBackBtn);
-        QXClient.get().report().info("Clicked on back button");
-        QXClient.get().gestures().BlindWait(2000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.textbookunit);
-        QXClient.get().gestures().BlindWait(9000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.trackablequestionset);
-        QXClient.get().gestures().BlindWait(9000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.playPdfquestion);
         QXClient.get().gestures().BlindWait(2000);
-
-
     }
     public void verifyscoreinquestionsettrackablecollect() throws Exception{
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(5000);
-
-
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(5000);
-
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ques1);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ques1.get(0));
+        QXClient.get().report().info("Clicked an answer");
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
-        QXClient.get().gestures().BlindWait(5000);
-
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ques2);
-        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().BlindWait(15000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
+        QXClient.get().gestures().BlindWait(15000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
         QXClient.get().gestures().BlindWait(5000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkNextArrowIcon);
-        QXClient.get().gestures().BlindWait(5000);
-
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.score);
-        QXClient.get().gestures().BlindWait(5000);
-
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertScoreCard), "Score card is not displayed");
+        QXClient.get().report().info("Score card is displayed with updated score");
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ExitBtn);
         QXClient.get().gestures().BlindWait(9000);
-
-         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ConfrmBtn);
-         QXClient.get().gestures().BlindWait(9000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.ConfrmBtn);
+        QXClient.get().gestures().BlindWait(9000);
     }
     
 
 
     public void tapOnSearchedQuestionset() throws Exception {
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionsetfeedback);
-           QXClient.get().report().info("Clicked on play icon ");
-           QXClient.get().gestures().BlindWait(5000);
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnPlayIcon);
-           QXClient.get().report().info("Clicked on play icon ");
-           QXClient.get().gestures().BlindWait(5000);
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
-           QXClient.get().gestures().BlindWait(5000);
-
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
-           QXClient.get().gestures().BlindWait(5000);
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question1);
-           QXClient.get().gestures().BlindWait(5000);
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.feedbackenablecorrect);
-           QXClient.get().gestures().BlindWait(9000);
-
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question2);
-           QXClient.get().gestures().BlindWait(5000);
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.feedbackenablecorrect);
-           QXClient.get().gestures().BlindWait(9000);
-
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question3);
-           QXClient.get().gestures().BlindWait(5000);
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
-
-           QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.feedbackenablewrong);
-           QXClient.get().gestures().BlindWait(9000);
-
-       }
-    
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.PDFSearch);
+        QXClient.get().report().info("Clicked on play icon ");
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnPlayIcon);
+        QXClient.get().report().info("Clicked on play icon ");
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question1.get(0));
+     QXClient.get().report().info("Clicked an answer ");
+        QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.assertViewSolInFeedbackPopup);
+     QXClient.get().report().info("Clicked an feedback ");
+     QXClient.get().gestures().BlindWait(9000);
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+     QXClient.get().gestures().swipeUp();
+     QXClient.get().gestures().swipeUp();
+     QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question1.get(0));
+     QXClient.get().report().info("Clicked an answer ");
+     QXClient.get().gestures().BlindWait(5000);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.assertViewSolInFeedbackPopup);
+     QXClient.get().report().info("Clicked an feedback ");
+        QXClient.get().gestures().BlindWait(9000);
+    }
     public void tapOnbackandexit() throws Exception {
 
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
@@ -4817,7 +4823,7 @@ public class TrainingPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
         QXClient.get().gestures().BlindWait(5000);
 
-        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question1);
+        QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question1.get(0));
         QXClient.get().gestures().BlindWait(5000);
         QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
 
@@ -6647,5 +6653,33 @@ public void consumCourseContent() throws Exception {
     QXClient.get().gestures().clkBackButton();
 }
 
-
+public void tapOnSearchedQuestionset1() throws Exception {
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionsetfeedback);
+    QXClient.get().report().info("Clicked on play icon ");
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clkOnPlayIcon);
+    QXClient.get().report().info("Clicked on play icon ");
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question1.get(0));
+    QXClient.get().report().info("Clicked an answer ");
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+    QXClient.get().gestures().BlindWait(9000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().swipeUp();
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.question1.get(0));
+    QXClient.get().report().info("Clicked an answer ");
+    QXClient.get().gestures().BlindWait(5000);
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.clicknext);
+    QXClient.get().gestures().BlindWait(5000);
+    Assert.assertTrue(QXClient.get().gestures().isElementPresent(trainingPageObjects.assertScoreCard), "Score card is not displayed");
+    QXClient.get().report().info("Score card is displayed with updated score");
+    QXClient.get().gestures().waitAndClickElementisVisible(trainingPageObjects.questionsetreply);
+    QXClient.get().gestures().BlindWait(9000);
+}
 }

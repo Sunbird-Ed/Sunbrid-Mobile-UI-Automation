@@ -249,22 +249,16 @@ public class LoginP1 {
 
 	    }
 
-    @Test()
-    public void verifyEnterMobileNumberOrEmailAddressMandatoryForMajorUserInRegisterHere() throws Exception {
-
-        QXClient.get().driver();
-
-        getDikshaMainPageActions().performUserOnBoarding();
-
-        getHomePageActions().tapOnProfileTab();
-
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-        QXClient.get().gestures().swipeUp();
-
-        getLoginPageActions().verifyEnterMobileNumberOrEmailAddressTextForMajorUser();
-
-    }
+	 @Test()
+	 public void verifyEnterMobileNumberOrEmailAddressMandatoryForMajorUserInRegisterHere() throws Exception {
+	     QXClient.get().driver();
+	     getDikshaMainPageActions().performUserOnBoarding();
+	     getHomePageActions().tapOnProfileTab();
+	     QXClient.get().gestures().swipeUp();
+	     QXClient.get().gestures().swipeUp();
+	     QXClient.get().gestures().swipeUp();
+	     getLoginPageActions().verifyEnterMobileNumberOrEmailAddressTextForMajorUser();
+	 }
 
 	
 	 @Test()
@@ -359,39 +353,7 @@ public class LoginP1 {
 	        getLoginPageActions().verifyRecoverEmailAddressToSendOTP();
 	        getLoginPageActions().validateOtpMsgForForgotPasswordAsWellForReSendOTP();
 	    }
-		@Test()
-	    public void PostMergingAccountValidateSuccessTostrMsg() throws Exception {
-
-	        QXClient.get().driver();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
-
-
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
-
-	        String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-	        String SatetUsername =QXClient.get().excelUtils().getCellValue("Excel1","TestData",38,2);
-	        String StatePassword =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",39,2);
-	        String custodianUser =QXClient.get().excelUtils().getCellValue("Excel1","Login",4,5);
-	        String custodianPWD =QXClient.get().excelUtils().getCellValue("Excel1", "Login",5,5);
-
-
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
-
-	        getLoginPageActions().loginToTheUser(SatetUsername,StatePassword);
-
-	        QXClient.get().gestures().closeappandrelaunchapp();
-	        QXClient.get().gestures().BlindWait(4000);
-	        getHomePageActions().tapOnDownloadTab();
-
-
-	        getHomePageActions().validateCustodianUserMergedSuccessfully(custodianUser,custodianPWD);
-
-	    }
+		
 		@Test()
 	    public void DeviceLocationPopupShouldNotBeShownAgainTotheUser() throws Exception {
 
@@ -416,34 +378,53 @@ public class LoginP1 {
 
 	    }
 		
+	     @Test()
+	     public void PostMergingAccountValidateSuccessTostrMsg () throws Exception {
+	
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        getHomePageActions().tapOnProfileTab();
+	
+	
+        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+            properties.getProperty("excelpath"));
+
+        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+	
+        String SatetUsername = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 6, 2);
+        String StatePassword = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 6, 3);
+	        String custodianUser = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 5, 2);
+	        String custodianPWD = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 5, 3);
+	
+
+      QXClient.get().gestures().swipeUp();
+        QXClient.get().gestures().swipeUp();
+	
+        getLoginPageActions().loginToTheUser(SatetUsername, StatePassword);
+	
+       QXClient.get().gestures().closeappandrelaunchapp();
+        QXClient.get().gestures().BlindWait(4000);
+        getHomePageActions().tapOnDownloadTab();
+
+	
+	        getHomePageActions().validateCustodianUserMergedSuccessfully(custodianUser, custodianPWD);
+
+     }
 		@Test()
-	    public void verifyStateAndDistrictMandatoryPostLoginForHeadTeacherOfficialsForNewUser() throws Exception {
-
-			
-			
-			 QXClient.get().driver();
-			  getDikshaMainPageActions().performUserOnBoardingWithLeader();
-			  
-			  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-					  properties.getProperty("excelpath"));
-					  
-					  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-					  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-					  
-					  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",36,2); 
-					  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",37,2);	  
-					  
-			  getLoginPageActions().loginToTheUserForLeader(Username,Password);
-			 
-			  
-			  getHomePageActions().verifySectionsInHomePage();
-
-			
-	       
-
-
-
-	    }
+		public void verifyStateAndDistrictMandatoryPostLoginForHeadTeacherOfficialsForNewUser() throws Exception {
+		    QXClient.get().driver();
+		    getDikshaMainPageActions().performUserOnBoardingWithLeader();
+		    Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+		          properties.getProperty("excelpath"));
+		    String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		    QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		    String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",7,2);
+		    String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",7,3);
+		    getLoginPageActions().loginToTheUserForLeader(Username,Password);
+		    getHomePageActions().verifySectionsInHomePage();
+		}
 		
 		@Test()
 	    public void PrimaryAccountProfileInformationShouldNotChangePostMerge() throws Exception {

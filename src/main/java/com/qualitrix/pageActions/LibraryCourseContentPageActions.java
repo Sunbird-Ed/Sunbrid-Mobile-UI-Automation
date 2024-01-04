@@ -8,6 +8,7 @@ import org.testng.Assert;
 
 import com.qualitrix.client.QXClient;
 import com.qualitrix.pageObjects.DikshaMainPageObjects;
+import com.qualitrix.pageObjects.DownloadPageObjects;
 import com.qualitrix.pageObjects.HomePageObjects;
 import com.qualitrix.pageObjects.LibraryCourseContentPageObjects;
 import com.qualitrix.pageObjects.TrainingPageObjects;
@@ -24,6 +25,7 @@ public class LibraryCourseContentPageActions {
     LibraryCourseContentPageObjects libraryCourseContentPageObjects = new LibraryCourseContentPageObjects();
     HomePageObjects homePageObjects = new HomePageObjects();
 TrainingPageObjects trainPageObje=new TrainingPageObjects();
+DownloadPageObjects downloadPageObjects=new DownloadPageObjects();
 
 public LibraryCourseContentPageActions() {
 //    this.driver = ContextManager.getDriver();
@@ -32,6 +34,7 @@ public LibraryCourseContentPageActions() {
     PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), libraryCourseContentPageObjects);
     PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), homePageObjects);
     PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), trainPageObje);
+    PageFactory.initElements(new AppiumFieldDecorator(QXClient.get().driver()), downloadPageObjects);
 
 	//PageFactory.initElements(driver,DikshaMainPageObjects.class);
 
@@ -1487,6 +1490,10 @@ public LibraryCourseContentPageActions() {
         //QXClient.get().gestures().wait(4);
         QXClient.get().report().info("Thank you for rating the content!");
     }
-
+    public void verifyTheDownloadedQuestionSetCourse() throws Exception {
+        QXClient.get().gestures().BlindWait(3000);
+        Assert.assertTrue(QXClient.get().gestures().isElementPresent(downloadPageObjects.assertDownloadedQuestionSetCourse),"Questionset is not downloaded");
+        QXClient.get().report().info("The Question set is downloaded successfully");
+    }
 
 }

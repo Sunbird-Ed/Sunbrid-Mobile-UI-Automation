@@ -1266,7 +1266,8 @@ public class LoginPageActions {
         QXClient.get().gestures().BlindWait(3000);
         profilePageObjects.selectYearManually.sendKeys("1998");
         QXClient.get().gestures().BlindWait(3000);
-        
+        QXClient.get().gestures().clkBackButton();
+
         QXClient.get().gestures().swipeUp();
         QXClient.get().gestures().BlindWait(3000);
 
@@ -1358,6 +1359,8 @@ public class LoginPageActions {
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYearOfBirth);
         QXClient.get().report().info("Clicked on select year of birth");
         QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().clkBackButton();
+
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.selectYear);
         QXClient.get().report().info("Clicked on select year ");
         QXClient.get().gestures().BlindWait(3000);

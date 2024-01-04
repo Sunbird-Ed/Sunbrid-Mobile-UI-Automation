@@ -412,58 +412,25 @@ public void createGrupAndActivity() throws Exception {
     QXClient.get().gestures().BlindWait(2000);
             
            }
-    public void enterGmailDetailsAndVerfiyUsrnameInProfileSec() throws Exception {
-    	
-//   	 Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-//			  properties.getProperty("excelpath"));
-//			  
-//			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-//			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-//			  
-//			  String gmailUsrname =QXClient.get().excelUtils().getCellValue("Excel1","TestData",32,2); 
-//			  String gmailPassword =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",33,2);
-//	  
-//			  System.out.println(gmailUsrname);
-//		  
-//			       QXClient.get().report().info("clicked on emailEnter");
-//					  Thread.sleep(2000);
-//					  QXClient.get().gestures().alternativeMethodForSendKeys(gmailUsrname);
-//  
-//        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkEmailNext);
-//        QXClient.get().report().info("clicked on next button");
-//		  Thread.sleep(3000);
-//		  QXClient.get().gestures().alternativeMethodForSendKeys(gmailPassword);
-//
-//        QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkEmailNext);
-//        QXClient.get().report().info("clicked on next button");
-    	QXClient.get().gestures().BlindWait(4000);
+public void enterGmailDetailsAndVerfiyUsrnameInProfileSec() throws Exception {
+    QXClient.get().gestures().BlindWait(4000);
+    QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkExistingGmailId);
+        QXClient.get().report().info("clicked on existing gmailId");
+    QXClient.get().gestures().BlindWait(9000);
+         HomePageActions homepage=new HomePageActions();
+         QXClient.get().gestures().BlindWait(5000);
+    homepage.tapOnProfileTab();
+QXClient.get().gestures().BlindWait(3000);
+        QXClient.get().gestures().waitForElementToAppear(profilePageObjects.verifyUsrnameGmailInProfSec);
+       Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.verifyUsrnameGmailInProfSec),"verifyUsrnameGmailInProfSec is not available");
+       QXClient.get().report().info("Succesfully verfied UsrnameGmailInProfSec");
+       tapOnMenuBar();
+       QXClient.get().gestures().BlindWait(3000);
+       QXClient.get().gestures().waitForElementToAppear(profilePageObjects.verifyUsrnameGmailInMenuSec.get(0));
+       Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.verifyUsrnameGmailInMenuSec.get(2)),"verifyUsrnameGmailInProfSec is not available");
+       QXClient.get().report().info("Succesfully verfied verifyUsrnameGmailInMenuSec");
+      }
 
-     QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkExistingGmailId);
-         QXClient.get().report().info("clicked on existing gmailId");
-    	QXClient.get().gestures().BlindWait(9000);
-
-     	 HomePageActions homepage=new HomePageActions();
-     	 QXClient.get().gestures().BlindWait(5000);
-  	homepage.tapOnProfileTab();
-	QXClient.get().gestures().BlindWait(3000);
-
-         QXClient.get().gestures().waitForElementToAppear(profilePageObjects.verifyUsrnameGmailInProfSec);
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.verifyUsrnameGmailInProfSec),"verifyUsrnameGmailInProfSec is not available");
-        QXClient.get().report().info("Succesfully verfied UsrnameGmailInProfSec");
-
-        tapOnMenuBar();
-        QXClient.get().gestures().BlindWait(3000);
-
-        QXClient.get().gestures().waitForElementToAppear(profilePageObjects.verifyUsrnameGmailInMenuSec);
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.verifyUsrnameGmailInMenuSec),"verifyUsrnameGmailInProfSec is not available");
-        QXClient.get().report().info("Succesfully verfied verifyUsrnameGmailInMenuSec");
-
-        QXClient.get().gestures().waitForElementToAppear(profilePageObjects.verifyLogOutForeGmailInMenuSec);
-        Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.verifyLogOutForeGmailInMenuSec),"verifyLogOutForeGmailInMenuSec is not available");
-        QXClient.get().report().info("Succesfully verfied LogOutForeGmailInMenuSec");
-
-
-       }
     
     public void shareDikshaIDProfileSec() throws Exception {
         QXClient.get().gestures().BlindWait(3000);
@@ -6868,28 +6835,24 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
 
     public void verifyGmailUserShouldNotNavigatedToRegistrationPage() throws Exception {
         QXClient.get().gestures().BlindWait(4000);
-
         QXClient.get().gestures().waitAndClickElementisVisible(profilePageObjects.clkExistingGmailId);
         QXClient.get().report().info("clicked on existing gmailId");
         QXClient.get().gestures().BlindWait(9000);
-
         HomePageActions homepage=new HomePageActions();
         QXClient.get().gestures().BlindWait(5000);
         homepage.tapOnProfileTab();
         QXClient.get().gestures().BlindWait(3000);
-
         QXClient.get().gestures().waitForElementToAppear(profilePageObjects.verifyUsrnameGmailInProfSec);
         Assert.assertTrue(QXClient.get().gestures().isElementPresent(profilePageObjects.verifyUsrnameGmailInProfSec),"verifyUsrnameGmailInProfSec is not available");
         QXClient.get().report().info("Succesfully verfied UsrnameGmailInProfSec");
         QXClient.get().gestures().BlindWait(3000);
-
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilePageObjects.assertWelcomeTextInRegistrationPage),"Welcome text is displayed to the old user");
         QXClient.get().report().info("User is not navigated to registration page post selecting the existing email id");
         Assert.assertTrue(!QXClient.get().gestures().isElementPresent(profilePageObjects.assertRegisterOnDiksha),"Register on diksha text is displayed");
         QXClient.get().report().info("User is not navigated to registration page post selecting the existing email id");
         QXClient.get().gestures().BlindWait(2000);
-
     }
+
 
     public void verifyUserNavigatedToRegistrationPageForGmailUser() throws Exception{
         QXClient.get().gestures().BlindWait(4000);
@@ -9908,4 +9871,21 @@ public void verifyDisplayedText(String BookName) throws Exception {
     QXClient.get().report().info("Text is matching");
 
 }
+
+public void tapOnDownloadBtn() throws Exception {
+    QXClient.get().gestures().BlindWait(7000);
+   QXClient.get().gestures().waitAndClickElementisVisible(libraryCourseContentPageObjects.downloadBtn);
+   QXClient.get().report().info("Tap on download button");
+}
+
+public void tapOnbackandDownloadTab() throws Exception {
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.clkBackBtn);
+    QXClient.get().gestures().BlindWait(4000);
+    QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.downloadTab);
+    QXClient.get().report().info("Tap on download tab");
+}
+
+
+
+
 }

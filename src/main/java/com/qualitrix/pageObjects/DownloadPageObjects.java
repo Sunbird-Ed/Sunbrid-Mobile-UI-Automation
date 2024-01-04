@@ -103,13 +103,6 @@ public MobileElement resourceName;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='limited course']"),
-
-    })
-    public MobileElement assertDownloadedQuestionSetCourse;
-
-
-    @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.TextView[@text='PDF_13.pdf']"),
             @AndroidBy(xpath = "//android.view.View[@text='PDF_13.pdf']"),
     })
@@ -255,7 +248,10 @@ public MobileElement clkSltLanguage;
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Content successfully moved to ')]")
     public MobileElement assertContentMovedSuccessfullyToPhoneMsg;
-
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'donotuse_CoursewithQuestionSetlimited')]"),
+})
+public MobileElement assertDownloadedQuestionSetCourse;
     
 }
 
