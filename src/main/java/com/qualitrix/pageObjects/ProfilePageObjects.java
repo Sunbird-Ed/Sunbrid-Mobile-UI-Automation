@@ -1375,11 +1375,13 @@ public MobileElement clickTNcAndCheckBox;
 public WebElement assertTnc;
 
 @AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Donotusecustodianusergmail']"),
     @AndroidBy(xpath = "//android.widget.TextView[@text='donotusecustodianuser_mobile_qftt']"),
 })
 public MobileElement verifyUsrnameGmailInProfSec;
 
 @AndroidFindAll({
+	 @AndroidBy(xpath = "//android.view.View[@text='donotusecustodianusergmail']"),
     @AndroidBy(xpath = "//android.widget.TextView[@index='0']"),
 })
 public  List<WebElement> verifyUsrnameGmailInMenuSec;

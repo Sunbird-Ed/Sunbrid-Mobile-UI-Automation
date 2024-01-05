@@ -461,10 +461,9 @@ public MobileElement clkDontShareBtn;
 
 
 @AndroidFindAll({
-        @AndroidBy(xpath = "//android.view.View[contains(@text,'completed')]"),
-        @AndroidBy(xpath = "//android.view.View[contains(@text,'Completed ')]"),
-        @AndroidBy(xpath = "//android.view.View[@text='50% completed']"),
-
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'completed')]"),
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'Completed ')]"),
+    @AndroidBy(xpath = "//android.view.View[@text='50% completed']"),
 })
 public MobileElement verify50PercentProgress;
 
@@ -1581,20 +1580,18 @@ public MobileElement assertInstructionsHeaderInInstructionPage;
 public MobileElement assertInstructionText;
 
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]")
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'donotuse_')]")
     public MobileElement assertContent;
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'CBSE')]")
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State (Tamil Nadu)')]")
     public MobileElement assertBoardInContentPlayCard;
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'English')]")
     public MobileElement assertMediumInContentPlayCard;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Class 12')]")
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Class 1')]")
     public MobileElement assertClassInContentPlayCard;
-
     @AndroidFindBy(xpath = "//android.view.View[@text='My Course']")
     public MobileElement assertMyCourseSectionInTrainingTab;
 
@@ -1603,7 +1600,7 @@ public MobileElement assertInstructionText;
     public MobileElement ongoingCourseUnderMyCourseSection;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='ManjunathAutomationCourse']")
+    @AndroidFindBy(xpath = "//assertBoardInContentPlayCardandroid.view.View[@text='ManjunathAutomationCourse']")
     public MobileElement assertCouseTitle;
 
 
@@ -1696,7 +1693,7 @@ public MobileElement assertNumberOfAttemptsText;
     public MobileElement assertCongratulationsMsg;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'You have successfully completed')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You have successfully completed')]")
     public MobileElement assertCourseCompletedMsg;
 
 
@@ -1784,9 +1781,8 @@ public MobileElement clkOnQSContent;;
     public MobileElement assertProfileSharingLabel;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'PROFILE DATA SHARING IS ON')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'PROFILE DATA SHARING IS ON')]")
     public MobileElement assertProfileDataSharingStatus;
-
 
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Edit settings')]")
     public MobileElement editSettingsSection;
@@ -1804,9 +1800,8 @@ public MobileElement clkOnQSContent;;
     public MobileElement assertSaveBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Close']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Close']")
     public MobileElement assertCloseBtn;
-
 
     
     @AndroidFindAll({
@@ -3048,4 +3043,7 @@ public WebElement clkLeavetrackcoll;
     
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Score')][2]")
     public MobileElement assertScoreCard;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='Next content']")
+    public MobileElement verifyNextcontent;
 }

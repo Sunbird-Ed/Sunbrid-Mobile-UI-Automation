@@ -1619,42 +1619,28 @@ public void validateErrorwhieMerging(String username1, String password1) throws 
         
         public void verifyMyCourseAndSubjectwiseCourses() throws Exception{
             QXClient.get().gestures().BlindWait(3000);
-
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.myCourseInTraining),"My Courses section is not visible");
+            QXClient.get().report().info("My Course section is displayed after clicking course tab");
+            QXClient.get().gestures().BlindWait(2000);
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.courseSecInTraining),"Courses section is not visible");
             QXClient.get().report().info("Course section is displayed after clicking course tab");
-
-
+            QXClient.get().gestures().BlindWait(2000);
+            Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.englishSubject),"English subject is not displayed");
+            QXClient.get().report().info("Courses under English subject is displayed");
+            QXClient.get().gestures().BlindWait(2000);
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.accountancySubject),"Accountancy subject is not displayed");
             QXClient.get().report().info("Courses under Accountancy subject is displayed");
-
+            QXClient.get().gestures().BlindWait(2000);
             QXClient.get().gestures().swipeUp();
-
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.assameseSubject),"Assamese subject is not displayed");
             QXClient.get().report().info("Courses under Assamese subject is displayed");
-
-            QXClient.get().gestures().swipeUp();
-            QXClient.get().gestures().swipeUp();
-            QXClient.get().gestures().swipeUp();
-            QXClient.get().gestures().swipeUp();
-           // QXClient.get().gestures().swipeUp();
-           // QXClient.get().gestures().swipeUp();
-            QXClient.get().gestures().scrollToMobileElement(homePageObjects.englishSubject,"3");
-            //Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.englishSubject),"English subject is not displayed");
-            QXClient.get().report().info("Courses under English subject is displayed");
-
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.viewMoreBtn),"View more button is not displayed");
             QXClient.get().report().info("View More button is displayed");
-
             QXClient.get().gestures().waitAndClickElementisVisible(homePageObjects.viewMoreBtn);
             QXClient.get().report().info("Clicked on view more button");
-
-
             QXClient.get().gestures().swipeUp();
-            QXClient.get().gestures().swipeUp();
-            QXClient.get().gestures().swipeUp();
-
         }
-               
+
         public void verifyHomePageSubjects() throws Exception{
             QXClient.get().gestures().BlindWait(3000);
             Assert.assertTrue(QXClient.get().gestures().isElementPresent(homePageObjects.observeEnglishSub),"English subject is not available in home page");
@@ -9886,6 +9872,14 @@ public void tapOnbackandDownloadTab() throws Exception {
 }
 
 
-
+public void LaunchAppHomeScreen()
+{
+       
+    Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+    String fetchAppPackage=properties.getProperty("appPackage");
+    String fetchAppActivity=properties.getProperty("appActivity");
+    QXClient.get().gestures().startActivity(fetchAppPackage,fetchAppActivity);
+    System.out.println(("Launch HomeScreen"));
+}
 
 }

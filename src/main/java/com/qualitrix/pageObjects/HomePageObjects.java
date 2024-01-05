@@ -13,13 +13,7 @@ import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-/**
- * This Class has all the Objects related to Home Page.
- *
- * @author Gurukiran H N
- * @version 1.0
- * @since 17/March/2020
- */
+
 public class HomePageObjects {
 
 	@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='Collapsed']"),
@@ -1051,12 +1045,15 @@ public class HomePageObjects {
 			@AndroidBy(xpath = "//android.widget.Button[contains(@text,'PLAY')]"), })
 	public MobileElement playIconOfVideo;
 
-	@AndroidFindBy(xpath = "//android.view.View[@text='Course']")
-	public MobileElement courseSecInTraining;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Course']")
+    public MobileElement courseSecInTraining;
 
 	@AndroidBy(xpath = "//android.widget.TextView[@text='English']")
 	public MobileElement englishSubject;
 
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='My Course']")
+	public MobileElement myCourseInTraining;
+	
 	@AndroidBy(xpath = "//android.widget.TextView[@text='Accountancy']")
 	public MobileElement accountancySubject;
 
@@ -2228,10 +2225,10 @@ public class HomePageObjects {
 	@AndroidFindBy(xpath = "//android.widget.Button[@text='Task details']")
 	public MobileElement clkTaskDetails;
 
-	@AndroidFindAll({ @AndroidBy(xpath = "//android.view.View[contains(@text,'Small AutomationCourseContent')]"),
-			@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]//following::android.view.View[contains(@text,'Small AutomationCourseContent')]") })
-	public MobileElement assertCourseInMyLearningSection;
-
+	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'donotuse')]")
+    public MobileElement assertCourseInMyLearningSection;
+	
+	
 	@AndroidFindBy(xpath = "//android.view.View[contains(@text,'ಸ್ವಾಗತ')]")
 	public MobileElement welcomeTextInKannada;
 

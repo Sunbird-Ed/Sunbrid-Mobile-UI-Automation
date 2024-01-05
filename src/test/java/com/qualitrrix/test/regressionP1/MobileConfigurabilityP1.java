@@ -65,29 +65,33 @@ public class MobileConfigurabilityP1 {
 	}
 	
 	
-	@Test()
-	public void verifyTitleImageAndByPublishingOrgDetailsUnderMyLearningSectionInHomePage() throws Exception {
-		QXClient.get().driver();
-		getDikshaMainPageActions().performUserOnBoarding();
-		getHomePageActions().tapOnProfileTab();
-		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-				properties.getProperty("excelpath"));
+	/* Script Name:- verifyTitleImageAndByPublishingOrgDetailsUnderMyLearningSectionInHomePage()
+	   Description:- Verify that when user is in "Continue learning" section of the library page, user is displayed with minimum information such as:
+						1. Image of content
+						2. Title of content
+						3. By publishing org
+	 */
+		@Test()
+		public void verifyTitleImageAndByPublishingOrgDetailsUnderMyLearningSectionInHomePage() throws Exception {
+			QXClient.get().driver();
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+					properties.getProperty("excelpath"));
 
-		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+			String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-		String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",38,2);
-		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",39,2);
+			String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",2,2);
+			String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",2,3);
 
-		QXClient.get().gestures().swipeUp();
-		QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
 
-		getLoginPageActions().loginToTheUser(Username,Password);
+			getLoginPageActions().loginToTheUser(Username,Password);
+			getHomePageActions().verifyMinimumInformationUnderMyLearningSection();
 
-		getHomePageActions().verifyMinimumInformationUnderMyLearningSection();
-
-
-	}
+		}
 	  @Test()
 	    public void validateHomePageBannersVisualCuesAndBrowseByCategorySectionAsPerBMCValue() throws Exception {
 
@@ -238,38 +242,38 @@ public class MobileConfigurabilityP1 {
 	        getHomePageActions().verifyBannersAsPerBMCvalues();
 
 	    }
-	  @Test()
-	    public void verifyBoardMediumClassValuesDisplayedProperlyInContentPlayCards() throws Exception {
+	    /* Script Name:- verifyBoardMediumClassValuesDisplayedProperlyInContentPlayCards()
+	       Description:- Verify that user is displayed with the board, medium and class values properly upto 1 word and followed by +number( if more values)and it can extend upto next line in the content placards
+	     */
+		@Test()
+		public void verifyBoardMediumClassValuesDisplayedProperlyInContentPlayCards() throws Exception {
 
-	        QXClient.get().driver();
-	        DikshaMainPageActions d = new DikshaMainPageActions();
-	        getDikshaMainPageActions().performUserOnBoarding();
-	        getHomePageActions().tapOnProfileTab();
+			QXClient.get().driver();
+			DikshaMainPageActions d = new DikshaMainPageActions();
+			getDikshaMainPageActions().performUserOnBoarding();
+			getHomePageActions().tapOnProfileTab();
 
 
-	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-	        System.out.println("@name:" +
-	                properties.getProperty("excelpath"));
+			Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+			System.out.println("@name:" +
+					properties.getProperty("excelpath"));
 
-	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+			String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+			QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-	        String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-	        String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-	        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
-	        QXClient.get().gestures().swipeUp();
-	        QXClient.get().gestures().swipeUp();
+			String Username = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 2, 2);
+			String Password = QXClient.get().excelUtils().getCellValue("Excel1", "Credentials", 2, 3);
+			String BookName =QXClient.get().excelUtils().getCellValue("Excel1","Contents",6,2);
+			QXClient.get().gestures().swipeUp();
+			QXClient.get().gestures().swipeUp();
 
-	        getLoginPageActions().loginToTheUser(Username, Password);
+			getLoginPageActions().loginToTheUser(Username, Password);
+			getHomePageActions().tapOnTrainingTab();
+			getHomePageActions().tapOnSearchIcon();
+			getHomePageActions().enterTextInSearchBar(BookName);
+			getTrainingPageActions().verifyBoardMediumClassDisplayedInContentPlayCardProperly();
 
-	        getHomePageActions().tapOnSearchIcon();
-	        getHomePageActions().enterTextInSearchBar(BookName);
-	        getTrainingPageActions().verifyBoardMediumClassDisplayedInContentPlayCardProperly();
-	        getTrainingPageActions().tapOnSearchedBook();
-	        getTrainingPageActions().verifyBoardMediumClassDisplayedInContentPlayCardProperly();
-
-	    }
-	
+		}
 	  @Test()
 		public void verifyDefaultFiltersAdvancedFiltersNavigationFilterAndGroupingBySubjectInBanners() throws Exception {
 

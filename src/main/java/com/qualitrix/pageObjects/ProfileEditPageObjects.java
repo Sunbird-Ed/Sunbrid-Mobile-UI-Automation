@@ -358,10 +358,7 @@ public MobileElement assertLearnManageActHeaderInHomePage;
     @AndroidFindBy(xpath = "//android.view.View[@text='Select District']")
     public MobileElement assertSelectDistrictText;
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'Small AutomationCourseContent')]"),
-            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]//following::android.view.View[contains(@text,'Small AutomationCourseContent')]")
-    })
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'donotuse')]")
     public MobileElement assertCourseInMyLearningSection;
 
     @AndroidFindAll({

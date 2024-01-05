@@ -168,7 +168,7 @@ public class UserOnBoardingSanity {
 			 QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
 			 String Username =QXClient.get().excelUtils().getCellValue("Excel1","Credentials",5,2);
-			 String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credential",5,3);
+			 String Password =QXClient.get().excelUtils().getCellValue("Excel1", "Credentials",5,3);
 
 			 getLoginPageActions().loginToTheUser(Username,Password);
 
