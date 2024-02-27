@@ -109,9 +109,10 @@ public class DikshaMainPageActions  {
            
     	QXClient.get().report().info("slt language");
         QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.sltLang);
-        
+        System.out.println(dikshaMainObjects.sltLang);
+        Thread.sleep(5000);
       //  QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.clickContinue);
-
+        dikshaMainObjects.clickContinue.click();
         QXClient.get().report().info("Clicked on Continue Button");
 
         QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.clickTeacher);
@@ -143,9 +144,11 @@ public class DikshaMainPageActions  {
 
         QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.submitBtn);
         QXClient.get().report().info("Clicked on Submit Button");
+        Thread.sleep(6000);
+
      //   checkLocationPopup();
      //   QXClient.get().gestures().clickElementAfteritStable(dikshaMainObjects.submitWithArrowBtn);
-
+        dikshaMainObjects.submitWithArrowBtn.click();
         QXClient.get().report().info("slt clkCancelIcon");
         Thread.sleep(6000);
 
@@ -463,7 +466,8 @@ public class DikshaMainPageActions  {
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.sltLang);
             QXClient.get().gestures().BlindWait(3000);
            dikshaMainObjects.clickContinue.click();
-      
+           QXClient.get().gestures().BlindWait(3000);
+
             QXClient.get().report().info("Clicked on Continue Button");
             QXClient.get().gestures().waitAndClickElementisVisible(dikshaMainObjects.clickLeader);
             QXClient.get().report().info("Clicked on clickLeader Button");

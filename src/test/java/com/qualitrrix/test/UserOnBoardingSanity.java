@@ -93,8 +93,7 @@ public class UserOnBoardingSanity {
 	    }
 
 		 @Author(name="Raju")
-		  
-		  @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+		  		  @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
 				  description = "Verify district, state and BMC values after adding the managed user")
 		  public void VerifyAddUser() throws Exception {
 	  	

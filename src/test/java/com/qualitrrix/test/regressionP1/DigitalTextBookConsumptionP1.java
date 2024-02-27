@@ -54,7 +54,16 @@ public class DigitalTextBookConsumptionP1 {
 
     }
     
-    
+    /*
+    * Method Name:MediaTypeFilterCheckBox
+    * Description: Verify that in filter page while searching any book content, below media type filters should display with checkboxes
+1. All
+2. Video
+3. Interactive
+4. Document
+*
+    *
+    * */
     @Author(name="Raju")
     @Test()
     public void MediaTypeFilterCheckBox() throws Exception {
@@ -66,20 +75,28 @@ public class DigitalTextBookConsumptionP1 {
         getLibraryPageActions().FilterForContentPublisherMediaType();
 
     }
-    @Test()
+	/*
+    * Method Name:
+    * Description:Verify that when a large file is added in the textbook and when user downloads the entire book then such files should not be downloaded
+ */
+	@Test()
     public void verifyUserNotAbleToDownloadLargeSizeBook() throws Exception {
         QXClient.get().driver();
         getDikshaMainPageActions().performUserOnBoarding();
         DikshaMainPageActions d = new DikshaMainPageActions();
         getHomePageActions().tapOnSearchIcon();
-        getHomePageActions().enterTextInSearchBar("largesizetextbook");
+        getHomePageActions().enterTextInSearchBar("do_213950145893761024130");
         getTrainingPageActions().tapOnSearchedLargeSizeBook();
         getLibraryPageActions().verifyNoDownloadBtnForLargeSizeBook();
         d.LaunchAppHomeScreen();
         getHomePageActions().tapOnDownloadTab();
         getDownloadPageActions().verifyNoDownloadsInDownloadSection();
     }
-    @Test()
+	/*
+	 * Method Name:verifyMalformedEcarFileWhileSharingViaSlackApp
+	 * Description: In the mobile app, ECAR files are malformed, at collection level, when shared using the "Send File" option, under "Share" option.
+	 */
+	@Test()
     public void verifyMalformedEcarFileWhileSharingViaSlackApp() throws Exception {
         QXClient.get().driver();
         getDikshaMainPageActions().performUserOnBoarding();
@@ -90,7 +107,7 @@ public class DigitalTextBookConsumptionP1 {
         String fetchExcelPathFromConfig=properties.getProperty("excelpath");
         QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2);
+        String BookName =QXClient.get().excelUtils().getCellValue("Excel1","Contents",14,2);
 
         getHomePageActions().tapOnSearchIcon();
         getHomePageActions().enterTextInSearchBar(BookName);
@@ -104,7 +121,11 @@ public class DigitalTextBookConsumptionP1 {
         QXClient.get().gestures().clkBackButton();
 
     }
-    @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
+	/*
+	 * Method Name:verifyUserAbleToDownloadTheContent
+	 * Description: Verify that if any content inside the book is downloaded, then that content is shown with green check mark and non downloaded contents without green check mark
+	 */
+	@Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "Verify UserAble to Download Book ")
     public void verifyUserAbleToDownloadTheContent() throws Exception {
 	 QXClient.get().driver();
@@ -116,7 +137,7 @@ public class DigitalTextBookConsumptionP1 {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","Contents",14,2);
 			  
 	 
       	getHomePageActions().tapOnSearchIcon();
@@ -136,7 +157,13 @@ public class DigitalTextBookConsumptionP1 {
        getHomePageActions().tapOnDownloadTab();
         getDownloadPageActions().verifyTheDownloadedBook();
     }
-    
+	/*
+	 * Method Name:verifyContentDetailsAndContentRelevantForInCourseTOC
+	 * Description:Verify that when user clicks on collection card and lands on collection toc page, User is shown with the following details
+ In Content details section,
+a) The merged list values values(targeted + org framework) should be included in a section called "This contentis relevant for".
+b) If there is no target framework associated, this section will not be shown.
+ */
     @Test()
 	public void verifyContentDetailsAndContentRelevantForInCourseTOC() throws Exception {
 		QXClient.get().driver();
@@ -149,11 +176,11 @@ public class DigitalTextBookConsumptionP1 {
 		System.out.println("@name:" + properties.getProperty("excelpath"));
 
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
-		String CourseName = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 48, 2);
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel3");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel2");
+		String Username = QXClient.get().excelUtils().getCellValue("Excel3", "Credentials", 5, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel3", "Credentials", 5, 3);
+		String CourseName = QXClient.get().excelUtils().getCellValue("Excel2", "Course", 2, 2);
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();
 
@@ -168,7 +195,10 @@ public class DigitalTextBookConsumptionP1 {
 
 	}
 
-	
+	/*
+	 * Method Name:verifyDerivedSourceInfoWhnBookCopied
+	 * Description: Verify if any book is copied and published then in license and attribution section the original content details also should be displayed
+	 */
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "verifyDerivedSourceInfoWhnBookCopied")
@@ -182,7 +212,7 @@ public class DigitalTextBookConsumptionP1 {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","Contents",14,2);
 	 
       	getHomePageActions().tapOnSearchIcon();
   	      getHomePageActions().enterTextInSearchBar(BookName);
@@ -197,7 +227,14 @@ public class DigitalTextBookConsumptionP1 {
 	 QXClient.get().gestures().swipeUp();
         getLibraryPageActions().verifyTermsAndCondLink();
     }
-    
+	/*
+	 * Method Name:verifyDerivedSourceInfoWhnBookCopied
+	 * Description: Verify that download, delete and share icons/ buttons are getting displayed in book toc page
+
+&
+
+Verify that user is able to download the book manually or by scanning qr code
+	 */
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "userAbleToViewBookTOCandUnitsInsideBook ")
     public void userAbleToViewBookTOCandUnitsInsideBook() throws Exception {
@@ -210,8 +247,8 @@ public class DigitalTextBookConsumptionP1 {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-			  String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","TestData",8,2); 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","Contents",14,2);
+			  String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","Contents",21,2);
 	 
       	getHomePageActions().tapOnSearchIcon();
   	      getHomePageActions().enterTextInSearchBar(BookName);
@@ -227,6 +264,10 @@ public class DigitalTextBookConsumptionP1 {
 	 getLibraryPageActions().tapOnStarIcon();
 	 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
     }
+	/*
+	 * Method Name:verifyBookDownload
+	 * Description: Verify when user attempts to download a content (or all contents) and already many contents are downloading in queue, it should be added in queue after the book’s spine - so that the spine is taken in first.
+	 */
 
 
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
@@ -237,11 +278,11 @@ public class DigitalTextBookConsumptionP1 {
 	    	 
 	  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
 			  properties.getProperty("excelpath"));
-			  
+
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","Contents",14,2);
 			  
 	 
       	getHomePageActions().tapOnSearchIcon();
@@ -262,7 +303,10 @@ public class DigitalTextBookConsumptionP1 {
         getDownloadPageActions().verifyTheDownloadedBook();
     }
 
-    
+	/*
+	 * Method Name:playTheContent
+	 * Description: Verify that user is able to view the content card with "play" button to the right in textbook TOC page and post tapping on play button, content should play immediately
+	 */
     @Test(enabled = true, groups = {"SanityTest", "FunctionalTest"}, alwaysRun = true,
             description = "verifyUserAbleToSearchContentOrBook ")
     public void playTheContent() throws Exception {
@@ -275,8 +319,8 @@ public class DigitalTextBookConsumptionP1 {
 			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
 			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 			  
-			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","TestData",26,2); 
-			  String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","TestData",8,2); 
+			  String BookName =QXClient.get().excelUtils().getCellValue("Excel1","Contents",14,2);
+			  String ToasterMsg =QXClient.get().excelUtils().getCellValue("Excel1","Contents",21,2);
 	 
       	getHomePageActions().tapOnSearchIcon();
   	      getHomePageActions().enterTextInSearchBar(BookName);
@@ -293,7 +337,10 @@ public class DigitalTextBookConsumptionP1 {
 	 getLibraryPageActions().tapOnStarIcon();
 	 getLibraryPageActions().giveFeedbackAndSubmit(ToasterMsg);
 	    }
-
+	/*
+	 * Method Name:verifyAdoptedTextBooksAndUserAbleToDownloadAndConsumeAdoptedTextBooks
+	 * Description: Verify that if user searches for any textbook then the result should matches my profile settings shown first and all other instances of adopted textbooks if they match the search term
+	 */
     
 	@Test()
 	public void verifyAdoptedTextBooksAndUserAbleToDownloadAndConsumeAdoptedTextBooks() throws Exception {
@@ -308,7 +355,7 @@ public class DigitalTextBookConsumptionP1 {
 
 		getHomePageActions().tapOnSearchIcon();
 
-		getHomePageActions().enterTextInSearchBar("TextBook");
+		getHomePageActions().enterTextInSearchBar("donotuse_TextbookwithAllContentTypesandAdopted");
 
 		getLibraryPageActions().verifyAdoptedTextBookAsPerBoardInProfile();
 
@@ -321,7 +368,11 @@ public class DigitalTextBookConsumptionP1 {
 		getHomePageActions().tapOnDownloadTab();
 		getDownloadPageActions().verifyTheDownloadedAdoptedTextBook();
 	}
-    @Test()
+	/*
+	 * Method Name:verifyUserAbleToSearchContentAndDiffMediaTypes
+	 * Description: Verify that in textbook toc when user clicks on any particular media type filter, then user is only shown that content which matches that filfter
+	 */
+	@Test()
   	public void verifyUserAbleToSearchContentAndDiffMediaTypes() throws Exception {
   		QXClient.get().driver();
   		getDikshaMainPageActions().performUserOnBoarding();
@@ -333,7 +384,7 @@ public class DigitalTextBookConsumptionP1 {
   		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
   		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
 
-  		String BookName = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 26, 2);
+  		String BookName = QXClient.get().excelUtils().getCellValue("Excel1", "Contents",14,2);
 
   		getHomePageActions().tapOnSearchIcon();
   		getHomePageActions().enterTextInSearchBar(BookName);
@@ -347,7 +398,15 @@ public class DigitalTextBookConsumptionP1 {
   		getHomePageActions().verfiyContentUnderVideoMediaType();
 
   	}
+	/*
+	 * Method Name:verifyCollectionTitlePublishingOrgAndOrgFrameworkValuesInCollectionTOC
+	 * Description: Verify that when user clicks on any digital textbook card and lands on collection toc page, User is shown with the following details
 
+ In the title bar
+a) collection title
+b) by <publishing org> and
+c) Org framework values (i.e. <Board><Medium><Class><Subject>)
+	 */
     
     @Test()
 	public void verifyCollectionTitlePublishingOrgAndOrgFrameworkValuesInCollectionTOC() throws Exception {
@@ -361,10 +420,10 @@ public class DigitalTextBookConsumptionP1 {
 		System.out.println("@name:" + properties.getProperty("excelpath"));
 
 		String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel3");
 
-		String Username = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 2, 2);
-		String Password = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 3, 2);
+		String Username = QXClient.get().excelUtils().getCellValue("Excel3", "Credentials", 5, 2);
+		String Password = QXClient.get().excelUtils().getCellValue("Excel3", "Credentials", 5, 3);
 
 		QXClient.get().gestures().swipeUp();
 		QXClient.get().gestures().swipeUp();

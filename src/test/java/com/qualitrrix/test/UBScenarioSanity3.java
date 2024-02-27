@@ -2937,73 +2937,33 @@ public class UBScenarioSanity3 {
 
 
 	
-//	 
-//	 @Test()
-//	    public void VerifySSOLoginTheUserProfileHasAllVauesOfStateSystem() throws Exception {
-//	        QXClient.get().driver();
-//	        getDikshaMainPageActions().performUserOnBoarding();
-//
-//	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
-//	        System.out.println("@name:" +
-//	                properties.getProperty("excelpath"));
-//
-//	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
-//	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-//
-//	        String externalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData", 92, 2);
-//
-//	        getHomePageActions().tapOnProfileTab();
-//	        QXClient.get().gestures().swipeUp();
-//	        QXClient.get().gestures().swipeUp();
-//
-//	        getLoginPageActions().verifyUserAbleToLoginUsingStateSystemUsingUsernameExternalID(externalID);
-//	        QXClient.get().gestures().closeappandrelaunchapp();
-//
-//	        getProfileEditPageActions().SSOLoginTheUserProfileHasAllVauesOfStateSystem();
-//	    }
-	
-	
-//}
+	 @Test()
+	    public void SubmitDetailsNotDisplayIfCustodianUserMovedToStateTenant() throws Exception {
+	        QXClient.get().driver();
+	        getDikshaMainPageActions().performUserOnBoarding();
+	        DikshaMainPageActions d = new DikshaMainPageActions();
+
+	        Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") + "/configs/config.properties");
+	        System.out.println("@name:" +
+	                properties.getProperty("excelpath"));
+
+	        String fetchExcelPathFromConfig = properties.getProperty("excelpath");
+	        QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+	        String SchoolexternalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",145, 2);
+	        String UserexternalID = QXClient.get().excelUtils().getCellValue("Excel1", "TestData",146, 2);
+
+	        getHomePageActions().tapOnProfileTab();
+	        QXClient.get().gestures().swipeUp();
+	        QXClient.get().gestures().swipeUp();
+
+	        getLoginPageActions().LoginUsingStateSystemUsingUsernameExternalID(UserexternalID,SchoolexternalID);
+	        QXClient.get().gestures().closeappandrelaunchapp();
+	                getHomePageActions().tapOnProfileTab();
+					  getCoursePageActions().VerifySubmitDetailsFormInProfile();
 
 
-
-	@Test()
-	public void VerifyEnableDiscussionGroup() throws Exception {
-		  
-		//	  QXClient.get().driver();
-			  DikshaMainPageActions d=new DikshaMainPageActions();
-			  getDikshaMainPageActions().performUserOnBoarding();
-			  getHomePageActions().tapOnProfileTab();
-			  
-			  
-			  Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
-			  properties.getProperty("excelpath"));
-			  
-			  String fetchExcelPathFromConfig=properties.getProperty("excelpath");
-			  QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
-			  
-			  String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",128,2); 
-			  String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",129,2);	  
-			  QXClient.get().gestures().swipeUp();
-			  QXClient.get().gestures().swipeUp();
-
-		  getLoginPageActions().loginToTheUser(Username,Password);
-		
-			QXClient.get().gestures().closeappandrelaunchapp();
-
-		  getHomePageActions().tapOnDownloadTab();
-
-		  getHomePageActions().tapOnMenuBar();
-		  getHomePageActions().createGrupAndActivity();
-		  getHomePageActions().EnableDiscussion();
-		  getHomePageActions().startQuestionFill();
-		  getHomePageActions().DisableDiscussion();
-		  getHomePageActions().deleteGroup();
-
-		  
-		  
-		  
-	}
+	    }
 }
 
 
