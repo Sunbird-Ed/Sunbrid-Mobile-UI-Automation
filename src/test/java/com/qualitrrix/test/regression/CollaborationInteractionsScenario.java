@@ -82,7 +82,9 @@ public class CollaborationInteractionsScenario {
 		getHomePageActions().createGrupAndActivity();
 		getHomePageActions().EnableDiscussion();
 		getHomePageActions().startQuestionFill();
+		d.LaunchAppHomeScreen();
 		getHomePageActions().verifyUserAbletoModifyTitleDesc();
+		d.LaunchAppHomeScreen();
 		getHomePageActions().deleteCommentsAndRepliesInDiscussion();
 		d.LaunchAppHomeScreen();
 		getHomePageActions().tapOnMenuBar();
@@ -436,7 +438,7 @@ public class CollaborationInteractionsScenario {
 		getHomePageActions().tapOnMenuBar();
 		getCoursePageActions().tapOnMoreOption();
 		getCoursePageActions().clickFirstUser();
-		getCoursePageActions().tapOnChangeUser();
+		getCoursePageActions().tapOnChangeUser1();
 		getCoursePageActions().CheckTermsCheckBoxORClickProfile();
 
 		//getHomePageActions().tapOnTrainingTab();
@@ -795,6 +797,65 @@ public class CollaborationInteractionsScenario {
 		getHomePageActions().validateUnassignedActivityNotificationsInMemberofGroup();
 
 		getHomePageActions().verifyNoNewNotificationsAfterClearingNotifications();
+
+	}
+
+
+	@Test()
+	public void validateMemberRemovedNotificationMessageInMember() throws Exception {
+
+		QXClient.get().driver();
+		DikshaMainPageActions d=new DikshaMainPageActions();
+		getDikshaMainPageActions().performUserOnBoarding();
+		getHomePageActions().tapOnProfileTab();
+
+
+		Properties properties = QXClient.get().propUtils().getProperties(System.getProperty("user.dir") +"/configs/config.properties"); System.out.println("@name:" +
+				properties.getProperty("excelpath"));
+
+		String fetchExcelPathFromConfig=properties.getProperty("excelpath");
+		QXClient.get().excelUtils().open(fetchExcelPathFromConfig, "Excel1");
+
+		String Username =QXClient.get().excelUtils().getCellValue("Excel1","TestData",69,2);
+		String Password =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",70,2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username,Password);
+
+		getHomePageActions().tapOnMenuBar();
+
+		getHomePageActions().verifyUpdatedCardsForActivities();
+
+		getHomePageActions().removeMemberFromTheGroup();
+
+		getHomePageActions().deleteGroup();
+
+		getHomePageActions().clkBackbuttontoExitFromGroups();
+
+		getHomePageActions().verifyNoNotificationReceivedByGroupCreatorPostMemberRemovedFromGroup();
+
+		getHomePageActions().tapOnMenuBar();
+
+		getHomePageActions().userLogout();
+
+		QXClient.get().gestures().closeApp();
+		d.LaunchAppHomeScreen();
+
+		getHomePageActions().tapOnProfileTab();
+
+		String Username1 =QXClient.get().excelUtils().getCellValue("Excel1","TestData",38,2);
+		String Password1 =QXClient.get().excelUtils().getCellValue("Excel1", "TestData",39,2);
+		QXClient.get().gestures().swipeUp();
+		QXClient.get().gestures().swipeUp();
+
+		getLoginPageActions().loginToTheUser(Username1,Password1);
+
+		getHomePageActions().validateMemberRemovedNotificationMsg();
+
+		getHomePageActions().validateAllNotificationsClickableAndDeleteOneByOneNotifications();
+
+		getHomePageActions().clearNotifications();
 
 	}
 

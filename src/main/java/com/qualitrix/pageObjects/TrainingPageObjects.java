@@ -2,6 +2,8 @@
 
 import java.util.List;
 
+import org.openqa.selenium.WebElement;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
@@ -17,8 +19,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class TrainingPageObjects {
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='search filter']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='ic_filter']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='search filter']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='filter ']")
     })
     public MobileElement filterBtn;
@@ -179,6 +181,7 @@ public class TrainingPageObjects {
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='Join Training']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='JOIN']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Join Training ']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Join course']"),
             @AndroidBy(xpath = "//android.widget.ToggleButton[@text='Course details']//preceding::android.widget.Button[1]"),
@@ -192,7 +195,6 @@ public class TrainingPageObjects {
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.Button[@text='Download']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='Download ']")
     })
     public MobileElement downloadPopUpBtn;
 
@@ -322,10 +324,41 @@ public MobileElement CourseSearch;
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK AutomationBookContent')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'AutomationBookContent')]"),
-        @AndroidBy(xpath = "//android.view.View[@text='AutomationBookContent']")
+        @AndroidBy(xpath = "//android.view.View[@text='AutomationBookContent']"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK Automation textbookdontuse')]"),
 })
 public MobileElement BookSearch;
 
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'CLASSROOMTEACHINGVIDEO Test-transcript')]")
+    public MobileElement transcriptContent;
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE Jan13 Large')]"),
+})
+public MobileElement largeVideoContent;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text=' PLAY']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COLLECTION QS')]"),
+})
+public MobileElement contentPlaylistQS;
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK digi book-question set')]")
+    public MobileElement digitalTextbookQS;
+
+
+
+  
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK largesizetextbook')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Large')]"),
+})
+public MobileElement largeSizeBook;
 
 
     @AndroidFindAll({
@@ -371,12 +404,19 @@ public MobileElement clkFeaturedCourse;
 public MobileElement clkLatestCourse;
 
 
-@AndroidFindBy(xpath = "//android.widget.Image[@text='menu-icon']")
+@AndroidFindAll({
+	@AndroidBy(xpath = "//android.widget.TextView[@text='Leave course']"),
+	@AndroidBy(xpath = "//android.widget.Image[@text='menu-icon']"),
+})
 public MobileElement sltCourseMenuIcon;
 
+
+
 @AndroidFindAll({
-        @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Leave')]"),
-        @AndroidBy(xpath = "//android.widget.Button[@text='Leave course']"),
+	 @AndroidBy(xpath = "//android.widget.TextView[@text='Leave course']"),
+     @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Leave')]"),
+     @AndroidBy(xpath = "//android.widget.Button[@text='Stop textbook activity']"),
+     @AndroidBy(xpath = "//android.widget.Button[@text='Leave course']"),
 })
 public MobileElement clkLeaveCourse;
 
@@ -389,25 +429,6 @@ public MobileElement clkConfirmButton;
 
 @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Course last updated on')]")
 public MobileElement assertCourseUpdatedMessageWithDate;
-
-
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Batch ends in')]")
-public MobileElement assertTimerWithXdaysYhoursZmin;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @AndroidFindAll({ @AndroidBy(xpath = "//android.view.View[@text='Ongoing']"),
@@ -439,13 +460,15 @@ public MobileElement clkDontShareBtn;
 //public MobileElement clkStartLearning;
 
 
-@AndroidFindAll({ @AndroidBy(xpath = "//android.view.View[@text='50% completed']"),
-
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'completed')]"),
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'Completed ')]"),
+    @AndroidBy(xpath = "//android.view.View[@text='50% completed']"),
 })
 public MobileElement verify50PercentProgress;
 
 
-@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='play-icon Continue Learning']"),
+@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='play Continue Learning']"),
 
 })
 public MobileElement clkContinueLearning;
@@ -482,7 +505,9 @@ public MobileElement PDFSearch;
     @AndroidBy(xpath = "//android.view.View[@text='10SecVideo']"),
     })
 public MobileElement tenSecVideoText;
-@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='play Start learning']"),
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='play Start learning']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='play ಕಲಿಯಲು ಆರಂಭಿಸಿ']"),
 })
 public MobileElement clkStartLearning;
 
@@ -506,17 +531,21 @@ public MobileElement boardFilter;
 public MobileElement cbseBoard;
 @AndroidFindBy(xpath = "//android.widget.Button[@text='APPLY FILTER']")
 public MobileElement applyFilterBtn;
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'CBSE')]")
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'CBSE')]")
 public MobileElement verifyContentForAlternativeBoard;
 
 @AndroidFindAll({
+    @AndroidBy(xpath = "(//android.view.View[contains(@text,'pdf')])[2]"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'SELFASSESS PDF_13.pdf')]"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'PDF_13.pdf')]"),
         @AndroidBy(xpath = "//android.view.View[@text='PDF_13.pdf']"),
 })
 public MobileElement clkPdfContent;
+
 @AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
 public MobileElement playPdfIcon;
+
 @AndroidFindBy(xpath = "//android.widget.Button[@text='navigation-arrows-nextIcon']")
 public MobileElement clkNextIcon;
 
@@ -546,7 +575,11 @@ public MobileElement exitButton;
 @AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
 public MobileElement closeRatingIcon;
 
-@AndroidFindBy(xpath = "//android.view.View[@text='You just completed']")
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='You just completed']"),
+})
 public MobileElement contentCompletedText;
 
 @AndroidFindBy(xpath = "//android.view.View[@text='Replay']")
@@ -585,6 +618,8 @@ public MobileElement downloadedContent;
 
 @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.Button[@text='JOIN COURSE']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='JOIN']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='ಕೋರ್ಸ್ ಗೆ ಸೇರಿ']"),
         @AndroidBy(xpath = "//android.widget.ToggleButton[@text='Course details']//preceding::android.widget.Button[1]"),
 })
 public MobileElement clkJoinCourseBtn;
@@ -600,6 +635,9 @@ public MobileElement forumIcon;
 
 
 @AndroidFindAll({
+	
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'Course details')]"),
+        @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Course details')]"),
         @AndroidBy(xpath = "//android.widget.Button[contains(@text,'CRS_TRK_FRMELEMNTS_LBL')]"),
     @AndroidBy(xpath = "//android.widget.Button[@text='Course details']"),
 })
@@ -610,8 +648,15 @@ public MobileElement clkCourseDetails;
 })
 public MobileElement viewCertificateMsg;
 
-@AndroidFindBy(xpath = "//android.view.View[@text='FILTER BY']")
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='FILTER BY']"),
+@AndroidBy(xpath = "//android.view.View[@text='FILTER BY']"),
+})
 public MobileElement assertFilterBy;
+
+
 @AndroidFindBy(xpath = "//android.widget.Button[@text='RESET filter by']")
 public MobileElement assertResetBtn;
 @AndroidFindBy(xpath = "//android.widget.TextView[@text='Media Type']")
@@ -633,7 +678,7 @@ public MobileElement assertContentAfterFiltering;
 
 @AndroidFindBy(xpath = "//android.view.View[@text='Congratulations!']")
 public MobileElement congratulationsMsg;
-@AndroidFindBy(xpath = "//android.view.View[@text='You have successfully completed this course']")
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='You have successfully completed this course']")
 public MobileElement courseCompletedMsg;
 @AndroidFindBy(xpath = "//android.view.View[@text='Note: This course does not have a certificate']")
 public MobileElement noCertificateMsg;
@@ -668,7 +713,7 @@ public MobileElement courseUnderOthers;
 
 
 
-@AndroidFindBy(xpath = "//android.view.View[@text='Want to check courses?']")
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Want to check courses?']")
     public MobileElement assertCheckCourseMsg;
 
 
@@ -690,16 +735,13 @@ public MobileElement courseUnderOthers;
     public MobileElement canNotEnrollMsg;
 
 @AndroidFindAll({
+	
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Questionset limited attempt']"),
         @AndroidBy(xpath = "//android.view.View[contains(@text,'Questionset limited attempt')]"),
         @AndroidBy(xpath = "//android.widget.ListView"),
 })
     public MobileElement assertLimitedCourse;
 
-@AndroidFindAll({
-        @AndroidBy(xpath = "//android.view.View[@text='question number 4']"),
-        @AndroidBy(xpath = "//android.view.View[@index='4']"),
-})
-    public MobileElement clkLastQuestion;
 
 @AndroidFindAll({
         @AndroidBy(xpath = "//android.view.View[@text='next slide']"),
@@ -712,24 +754,23 @@ public MobileElement courseUnderOthers;
     public MobileElement clkReplayBtn;
 
 
-@AndroidFindBy(xpath = "//android.view.View[@text='This is the last remaining attempt']")
-    public MobileElement assertLastAttemptMsg;
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='This is the last remaining attempt']"),
+    @AndroidBy(xpath = "//android.view.View[@text='This is the last remaining attempt']"),
+})
+public MobileElement assertLastAttemptMsg;
 
 
 @AndroidFindBy(xpath = "//android.widget.Button[@text='Continue']")
     public MobileElement clkContinueBtn;
 
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'attempts completed')]"),
-            @AndroidBy(xpath = "//android.widget.TextView[@text='You have exceeded the maximum number of attempts to submit the assessment']"),
-            @AndroidBy(xpath = "//android.view.View[@text='You have exceeded the maximum number of attempts to submit the assessment']"),
-    })
-    public MobileElement maxAttemptsExceededMsg;
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'attempts completed')]"),
+})
+public MobileElement maxAttemptsExceededMsg;
 
 
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Score')][2]")
-    public MobileElement assertScoreCard;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[@text='Exit']"),
@@ -737,19 +778,28 @@ public MobileElement courseUnderOthers;
     })
     public MobileElement assertExitBtn;
 
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Automation textbookdontuse']"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutomationBookContent')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]"),
+})
+public MobileElement assertContentTitle;
+  
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]")
-    public MobileElement assertContentTitle;
+ 
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='ByGuest new name']"),
+    	        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Bycontent creator')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Bycontent creator')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'AutomationBookContent')]//following::android.view.View[1]"),
     })
     public MobileElement assertContentPublisher;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'CBSEEnglish')]")
+    @AndroidFindBy(xpath = "/android.widget.TextView[@text='State (Tamil Nadu)EnglishClass 1English']")
     public MobileElement assertBoardMediumClassSubject;
 
 
@@ -757,25 +807,49 @@ public MobileElement courseUnderOthers;
     public MobileElement assertContentDetails;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='This Textbook is relevant for:']")
+
+    @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='This Textbook is relevant for:']"),
+            @AndroidBy(xpath = "//android.view.View[@text='This Textbook is relevant for:']"),
+    })
     public MobileElement assertContentRelevantFor;
+    
+    
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Class : Class')]")
+    @AndroidFindAll({
+    	
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Class')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Class : Others')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Class : Class')]"),
+    })
     public MobileElement assertClassInContentDetails;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Medium : English')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Medium :')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Medium : Urdu')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Medium : English')]"),
+    })
     public MobileElement assertMediumInContentDetails;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Board : CBSE')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board : ')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Board : State')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Board : CBSE')]"),
+    })
     public MobileElement assertBoardInContentDetails;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'User Type : Student')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'User Type : ')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'User Type : Student')]"),
+    })
     public MobileElement assertUserTypeInContentDetails;
-
+   
 
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Play')]")
@@ -822,16 +896,25 @@ public MobileElement courseUnderOthers;
     public MobileElement assertEnrollmentEndDate;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Course details']")
-    public MobileElement assertCourseDetails;
+ 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Course details']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Course details']")
+})
+public MobileElement assertCourseDetails;
+
+    
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='This course is relevant for:']"),
+        @AndroidBy(xpath = "//android.view.View[@text='This course is relevant for:']")
+})
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='This course is relevant for:']")
-    public MobileElement assertCourseRelevantFor;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[@text='AutoCourse']")
-    public MobileElement assertCourse;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutoCourse')]"),
+        @AndroidBy(xpath = "//android.view.View[@text='AutoCourse']"),
+})
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'The course's batch is available from')]")
@@ -846,39 +929,66 @@ public MobileElement courseUnderOthers;
     public MobileElement assertSyncSuccessMsg;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Consent to share details']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']"),
+    })
     public MobileElement assertConsentPopUpPostJoinCourse;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'User name')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'User name')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'User name')]"),
+    })
     public MobileElement assertUsernameInConsent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'State')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'State')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'State')]"),
+    })
     public MobileElement assertStateInConsent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'UserId')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'UserId')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'UserId')]"),
+    })
     public MobileElement assertUserIdInConsent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'District')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'District')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'District')]"),
+    })
     public MobileElement assertDistrictInConsent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'Block')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Block')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'Block')]"),
+    })
     public MobileElement assertBlockInConsent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'School ID')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'School ID')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'School ID')]"),
+    })
     public MobileElement assertSchoolIdInConsent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'School name')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'School name')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'School name')]"),
+    })
     public MobileElement assertSchoolNameInConsent;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'Mobile No')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Mobile No')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Profile Details']//following::android.view.View[contains(@text,'Mobile No')]"),
+    })
     public MobileElement assertMobileNoInConsent;
 
 
@@ -899,8 +1009,8 @@ public MobileElement courseUnderOthers;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Course']//following-sibling::android.widget.Button[1]"),
-            @AndroidBy(xpath = "//android.view.View[@text='Course']//following::android.widget.Button[1]"),
+    	 @AndroidBy(xpath = "//android.view.View[@text='courses']"),
+          
     })
     public MobileElement assertCourseInCoursesTab;
 
@@ -927,12 +1037,18 @@ public MobileElement courseUnderOthers;
     public MobileElement selSubject;
 
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SUBMIT']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Submit']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']"),
+    })
     public MobileElement clkOnSubmitBtn;
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Course')]")
-    public MobileElement assertCoursesText;
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Course']"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Course')]"),
+})
+public MobileElement assertCoursesText;
+    
 
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Training')]")
@@ -955,24 +1071,35 @@ public MobileElement courseUnderOthers;
     public MobileElement assertSearchedCourse;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='AutomationContentCourse']")
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationContentCourse')]")
     public MobileElement clkOnCourseFromMyCourseSection;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'completed')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'completed')]")
     public MobileElement assert50PercentCompletedMsg;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Earn a certificatearrow down']")
+    @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.view.View[@text=\"Certificate criteria arrow down\"]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Certificate criteriaarrow down']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Earn a certificatearrow down']"),
+    })
     public MobileElement assertEarnCertificate;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='> Completion certificate will be issued upon 100% completion']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'> Completion certificate will be issued upon 100% completion')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='> Completion certificate will be issued upon 100% completion']"),
+    })
     public MobileElement assertRuleInEarnCertificate;
 
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.view.View[@text=\"Course details\"]"),
+    	@AndroidBy(xpath = "//android.widget.Button[@text='Course details']"),
+})
+public MobileElement clkOnCourseDetails;
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Course details']")
-    public MobileElement clkOnCourseDetails;
 
 
     @AndroidFindAll({
@@ -996,10 +1123,42 @@ public MobileElement courseUnderOthers;
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Small AutomationCourseContent')]"),
+
+    })
+    public MobileElement smallautomationCourseContent;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Small AutomationCourseContent')]"),
            // @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationCourseContent')]"),
+            
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'AutomationCourseContent')]")
     })
     public MobileElement automationCourseContent1;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoManjunathCourse')]"),
+    })
+    public MobileElement automationCourseContent2;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoSmallCourseWithCertificate')]"),
+    })
+    public MobileElement smallCertCourse;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Practice Course')]"),
+
+    })
+    public MobileElement practiceCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoMultipleContentCourse')]"),
+
+    })
+    public MobileElement multipleContentCourse;
+
 
 
     @AndroidFindAll({
@@ -1011,10 +1170,24 @@ public MobileElement courseUnderOthers;
     public MobileElement CourseContent;
 
     @AndroidFindAll({
+                      
+            
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK Automation textbookdontuse')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK CollectionForAutomation')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'CollectionForAutomation')]"),
+    })
+    public MobileElement collectionContent;
+
+    @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE CourseExpireInTwoDays')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'CourseExpireInTwoDays')]"),
     })
     public MobileElement automationContentCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationContentCourse')]"),
+    })
+    public MobileElement automationContentCourse1;
 
 
     @AndroidFindAll({
@@ -1025,6 +1198,8 @@ public MobileElement courseUnderOthers;
 
 
     @AndroidFindAll({
+    	
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE upcoming batch course ')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE UpcomingCourse')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'UpcomingCourse')]"),
     })
@@ -1037,15 +1212,32 @@ public MobileElement courseUnderOthers;
     public MobileElement courseContent;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Umesh trackable collection')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'Umesh trackable collection')]"),
     })
     public MobileElement trackableCollection;
 
+
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationSSOCourse')]"),
+    })
+    public MobileElement automationSSOCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Cert Course 4.5')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'Cert Course 4.5')]"),
     })
     public MobileElement certificateCourse;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'donotuse_unlimitedrichtextfeedbackenaledQuestionSet')]"),
+})
+public MobileElement questionsetWithImages;
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE NestedCourse')]"),
+    })
+    public MobileElement multipleBatchCourse;
 
 
     @AndroidFindAll({
@@ -1061,9 +1253,16 @@ public MobileElement courseUnderOthers;
     })
     public MobileElement automationCourseForDF;
 
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE باغ نخلہ کے مسافر پر سلام Subject : Urdu')]"),
+    })
+    public MobileElement urduContent;
+
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE ExpiredCourse')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationExpiredCourse')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Copy of AutomationExpiredCourse')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'AutomationExpiredCourse')]"),
     })
     public MobileElement expiredCourse;
@@ -1077,29 +1276,79 @@ public MobileElement courseUnderOthers;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE UpdatedCourseContent')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE UpdatedMsgCourseContent')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE UpdatedCourseWithLastUpdatedMsg')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'UpdatedCourseContent')]"),
     })
     public MobileElement updatedCourseContent;
 
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE limited course')]"),
-            @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'Limited questionset course')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE donotuse_CoursewithQuestionSetlimited')]"),
     })
     public MobileElement questionSetCourse;
 
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 4.0 course with expired batch1 ')]"),
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
+    })
+    public MobileElement alreadyJoinedCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoExpiredBatchWithOngoingBatchCourse')]"),
+
+    })
+    public MobileElement expiredAndOngoingCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE AutoExpiredAndFutureBatchCourse')]"),
+
+    })
+    public MobileElement expiredAndFutureBatchCourse;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Course with ak question set')]")
+    public MobileElement QUMLContent;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Course -queset')]")
+    public MobileElement solutionUncheckedQSet;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 1 attempt Question Set Course')]"),
+    })
+    public MobileElement singleAttemptCourse;
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Coursewithpdf ' )]")
+    public MobileElement pdfCourse;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[@text='Cancel']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='CANCEL']"),
+    })
     public MobileElement clkOnCancelBtn;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='There are no batches available for this course']")
-    public MobileElement assertNoBatchesForThisCourseMsg;
+ 
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='There are no batches available for this course']"),
+        @AndroidBy(xpath = "//android.view.View[@text='There are no batches available for this course']"),
+})
+public MobileElement assertNoBatchesForThisCourseMsg;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='No batches available']")
-    public MobileElement assertExpiredCourseMsg;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='No batches available']"),
+        @AndroidBy(xpath = "//android.view.View[@text='No batches available']"),
+})
+public MobileElement assertExpiredCourseMsg;
+    
+    
+  //android.widget.TextView[@text='No batches available']
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
@@ -1107,31 +1356,53 @@ public MobileElement courseUnderOthers;
     })
     public MobileElement clkOnEpubContent;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Popular categories']")
-    public MobileElement assertPopularCategoriesInTrainingPage;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Popular categories']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Popular categories']"),
+})
+public MobileElement assertPopularCategoriesInTrainingPage;
+   
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
+
             @AndroidBy(xpath = "//android.widget.Image[@text='back']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
     })
     public MobileElement clkBackBtn;
 
 
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text='1.0']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.EditText[@text='1']"),
+            @AndroidBy(xpath = "//android.widget.EditText[@text='1.0']"),
+    })
     public MobileElement clkOnEditText1;
 
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text='2.0']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.EditText[@text='2']"),
+            @AndroidBy(xpath = "//android.widget.EditText[@text='2.0']"),
+    })
     public MobileElement clkOnEditText2;
 
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text='0.0']")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "(//android.widget.EditText)[1]"),
+            @AndroidBy(xpath = "//android.widget.EditText[@text='0.0']"),
+    })
     public MobileElement sendPageNo;
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Location 1 of')]")
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Page')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Page 1 of')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Location 1 of')]"),
+    })
     public MobileElement assertPageNo1;
 
-    @AndroidFindBy(xpath = "//android.widget.EditText[contains(@text,'5.0')]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.EditText[contains(@text,'5')]"),
+            @AndroidBy(xpath = "//android.widget.EditText[contains(@text,'5.0')]"),
+    })
     public MobileElement assertPageNo5;
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@tet,'Page Not Found')]")
@@ -1170,14 +1441,1044 @@ public MobileElement courseUnderOthers;
     public MobileElement h5pCollectionSearch;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='AutoH5PCollectionContent']")
-    public MobileElement assertH5PCollectionTitle;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='AutoH5PCollectionContent']"),
+        @AndroidBy(xpath = "//android.view.View[@text='AutoH5PCollectionContent']"),
+})
+public MobileElement assertH5PCollectionTitle;
+    
+   
 
 
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'PLAY')]")
     public MobileElement assertPLAYBtn;
 
 
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Page 1')]")
+    public MobileElement assertPageNo1InEpubContent;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Page 5')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Page 4')]"),
+    })
+    public MobileElement assertPageNoWhileReconsumingInEpubContent;
+
+    
+    
+    
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'question number 1')]")
+    public MobileElement assertQuestion1InQuestionset;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'question number 2')]")
+    public MobileElement assertQuestion2InQuestionset;
+
+    @AndroidFindBy(xpath = "//android.widget.Image[contains(@text,'modi')]")
+    public MobileElement assertModiImage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Image[contains(@text,'modi')]//following-sibling::android.view.View[1]")
+    public MobileElement assertZoomOptionInRightBottomCorner;
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='+']")
+    public MobileElement assertZoomInSymbol;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='−']")
+    public MobileElement assertZoomOutSymbol;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Credits & License info')]")
+    public MobileElement assertCreditsLicenseInfoTab;
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Automation textbookdontuse']"),
+        @AndroidBy(xpath = "//android.view.View[@text='CollectionForAutomation']")
+})
+  
+    public MobileElement assertCollectionTitle;
+
+
+    @AndroidFindAll({
+    	
+    	  @AndroidBy(xpath = "//android.widget.TextView[@text='ByGuest new name']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Bycontent1 creator']"),
+          @AndroidBy(xpath = "//android.view.View[@text='Bycontent creator']"),
+          
+          
+    })
+    public MobileElement assertPublishingOrg;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='State (Tamil Nadu)EnglishClass 1English']"),
+        @AndroidBy(xpath = "//android.view.View[@text='CBSEEnglishClass 1English']")
+})
+    public MobileElement assertOrgFrameworkValues;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'2 Batches available')]")
+    public MobileElement assert2BatchesAvailableMsg;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Batches for the course')]")
+    public MobileElement assertBatchesfortheCourseText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Ongoing Batches')]")
+    public MobileElement assertOngoingBatchesText;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
+    public List<MobileElement> assertJoinBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'باغ نخلہ کے مسافر پر سلام')]")
+    public MobileElement assertUrduContentTitle;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Instruction QuestionSet')]"),
+    })
+    public MobileElement questionSetWithoutQuestions;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Rich text images QuestionSet')]"),
+    })
+    public MobileElement richTextQuestionSet;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Neelallcheckbox QuestionSet')]"),
+            @AndroidBy(xpath = "android.widget.TextView[contains(@text,'Neelallcheckbox QuestionSet')]"),
+
+    })
+    public MobileElement questionSetForSubmitRequired;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'QuestionSet-test')]"),
+    })
+    public MobileElement questionSet3;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'test max attempts')]"),
+    })
+    public MobileElement questionSet4;
+
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Instructions']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Instructions']"),
+})
+public MobileElement assertInstructionsHeaderInInstructionPage;
+
+  
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Instruction'][1]"),
+        @AndroidBy(xpath = "//android.view.View[@text='Instruction']"),
+})
+public MobileElement assertInstructionText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'donotuse_')]")
+    public MobileElement assertContent;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State (Tamil Nadu)')]")
+    public MobileElement assertBoardInContentPlayCard;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'English')]")
+    public MobileElement assertMediumInContentPlayCard;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Class 1')]")
+    public MobileElement assertClassInContentPlayCard;
+    @AndroidFindBy(xpath = "//android.view.View[@text='My Course']")
+    public MobileElement assertMyCourseSectionInTrainingTab;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'ManjunathAutomationCourse')]")
+    public MobileElement ongoingCourseUnderMyCourseSection;
+
+
+    @AndroidFindBy(xpath = "//assertBoardInContentPlayCardandroid.view.View[@text='ManjunathAutomationCourse']")
+    public MobileElement assertCouseTitle;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'50% completed')]")
+    public MobileElement asssert50PercentCompleteStatus;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Course Unit 1')]")
+    public MobileElement assertGreenTickMarkForCompletedContent;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Automation Cert Course')]"),
+
+    })
+    public MobileElement automationCertCourse;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 3.5 Trackable Book')]"),
+
+    })
+    public MobileElement trackableBook;
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE TrackableCollection22')]"),
+
+    })
+    public MobileElement trackableCollection22;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK 4.7 Non trackable')]"),
+
+    })
+    public MobileElement nonTrackableCollection;
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Confirm profile name']")
+    public MobileElement assertConfirmProfileNameTextInPopup;
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Stag')]"), 
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Test')]"),
+
+})
+public MobileElement assertProfileNameInPopup;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Do not show this message again')]")
+    public MobileElement assertDoNotShowThisMsgText;
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='edit-name']")
+    public MobileElement editProfileIcon;
+
+
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Choose content preferences']")
+    public MobileElement assertContentPreferencesTextInProfile;
+
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "(//android.widget.EditText"),
+    	@AndroidBy(xpath = "(//android.widget.EditText)[1]"),
+
+})
+public MobileElement firstEditField;
+
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")
+    public MobileElement clkSubmitButton;
+
+
+    @AndroidFindBy(xpath = "//android.widget.CheckBox")
+    public MobileElement assertCheckBoxInPopup;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no')]"),
+})
+public MobileElement assertNumberOfAttemptsText;
+
+  
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Start')]")
+    public MobileElement startLearningBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Congratulations')]")
+    public MobileElement assertCongratulationsMsg;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You have successfully completed')]")
+    public MobileElement assertCourseCompletedMsg;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'You will be notified on your registered contact details about the course certificate within 7 days')]")
+    public MobileElement assertNotifiedMsgWithin7days;
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'question set title vertcical-text-QuestionSet')]")
+    public MobileElement assertQuestionSetTitleInContentPlaylist;
+
+
+  
+    
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.ToggleButton[@text='Question new Image Question new']"),
+    	@AndroidBy(xpath = "//android.widget.ToggleButton[contains(@text,'Question new Image')]"),
+})
+public MobileElement clkOnQSContent;;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'question set title Question new')]")
+    public MobileElement assertQuestionSetTitleInDigitalTextBook;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Confirm']")
+    public MobileElement assertConfirmPopup;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Would you like to leave this content?')]")
+    public MobileElement assertWouldYouLeaveContentTextInPopup;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE CourseWithUpcomingBatch')]")
+    public MobileElement tapOnUpcomingBatchCourse;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Up Next']")
+    public MobileElement assertUpNextText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Next content']")
+    public MobileElement assertNextContent;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Limited questionset 10 maxattempt']")
+    public MobileElement assertNextContentTitle;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Economics')]")
+    public MobileElement assertEconomicsSection;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='VIEW MORE']")
+    public MobileElement viewMoreOption;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Economics')]")
+    public MobileElement assertEconomicsSectionText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[contains(@text,'3')]")
+    public MobileElement assertPdfSlide3;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[contains(@text,'1')]")
+    public MobileElement assertPdfSlide1;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText")
+    public MobileElement pdfEditField;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-1']"),
+            @AndroidBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-0']"),
+    })
+    public MobileElement consentShareCheckbox;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Share']")
+    public MobileElement consentShareBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'profile data sharing,')]")
+    public MobileElement assertProfileSharingLabel;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'PROFILE DATA SHARING IS ON')]")
+    public MobileElement assertProfileDataSharingStatus;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Edit settings')]")
+    public MobileElement editSettingsSection;
+
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[contains(@text,'Share my profile details')]")
+    public MobileElement assertShareMyProfileDetailsRadioBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[contains(@text,'Do not share my profile details')]")
+    public MobileElement assertDoNotShareMyProfileDetailsRadioBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='SAVE']")
+    public MobileElement assertSaveBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Close']")
+    public MobileElement assertCloseBtn;
+
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Showing 10 results out of')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing 10 results out of')]"),
+})
+public MobileElement assertShowing10ResultsOutOf;
+
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Showing 10')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing 100 results')]"),
+})
+public MobileElement assertShowingOnly100Results;
+    
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE SampleAutomationCourse')]")
+    public MobileElement sampleAutomationCourse;
+
+
+
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Automation Course - ePub']"),
+
+        @AndroidBy(xpath = "//android.widget.TextView[@text='SampleAutomationCourse']"),
+        @AndroidBy(xpath = "//android.view.View[@text='SampleAutomationCourse']"),
+})
+public MobileElement assertSampleCourse;
+
+    
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'information circle Last date to join')]")
+    public MobileElement assertLastDateToJoinDate;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Course details']")
+    public MobileElement assertCourseDetailsText;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Course end date :')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Course end date :')]"),
+})
+public MobileElement assertCourseEndDateTextWithDate;
+
+   
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Enrollment end date :')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Enrollment end date :')]"),
+})
+public MobileElement assertEnrollmentEndDateTextWithDate;
+
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='VIEW MORE'][@clickable='true']")
+    public MobileElement assertViewMoreBtnIsClickable;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='VIEW MORE'][@displayed='true']")
+    public MobileElement assertViewMoreBtnIsDisplayed;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE SampleAutoEnrollmentEndedCourse')]")
+    public MobileElement enrollmentEndedCourse;
+
+
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='SampleAutoEnrollmentEndedCourse']"),
+        @AndroidBy(xpath = "//android.view.View[@text='SampleAutoEnrollmentEndedCourse']"),
+})
+public MobileElement assertEnrollmentEndedCourse;
+
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='The enrollment date has passed for this batch']"),
+        @AndroidBy(xpath = "//android.view.View[@text='The enrollment date has passed for this batch']"),
+})
+public MobileElement assertEnrollmentEndedMsg;
+ 
+  
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='next slide'][@enabled='true']")
+    public MobileElement assertHighlightedNextBtn;
+
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Attempt no 1/3']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no 1/3')]"),
+})
+public MobileElement assertFirstAttempt;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Attempt no 2/3']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no 2/3')]"),
+})
+public MobileElement assertSecondAttempt;
+    
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Attempt no 3/3']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Attempt no 3/3')]"),
+})
+public MobileElement assertThirdAttempt;
+    
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='This is the last remaining attempt']")
+    public MobileElement lastAttemptPopup;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Continue')]")
+    public MobileElement clkContinueBtn2;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Attempt no 1/1']")
+    public MobileElement assertSingleAttemptText;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='ಪಠ್ಯಾಂಶವನ್ನು ರೇಟ್ ಮಾಡಿ']")
+    public MobileElement assertಪಠ್ಯಾಂಶವನ್ನುರೇಟ್ಮಾಡಿtext;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='1out of five stars']")
+    public MobileElement sltFirstStar;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='ತುಂಬಾ ಕೆಟ್ಟದಾಗಿದೆ']")
+    public MobileElement assertತುಂಬಾೆಟ್ಟದಾಗಿದೆtext;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='ನೀವು ಈ ಬಗ್ಗೆ ಇನ್ನೂ ಹೆಚ್ಚು ಹೇಳಲು ಬಯಸುವಿರಾ?']")
+    public MobileElement assertನೀವುಈಬಗ್ಗೆಇನ್ನೂಹೆಚ್ಚುಹೇಳಲುಬಯಸುವಿರಾtext;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='ಪಠ್ಯಾಂಶವು ನಿಖರವಾಗಿಲ್ಲ']")
+    public MobileElement assertಪಠ್ಯಾಂಶವುನಿಖರವಾಗಿಲ್ಲtext;
+
+
+
+    @AndroidFindAll({
+
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Attempt no')]"),
+
+})
+public MobileElement assertNumberOfAttempts;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'119:')]"),
+})
+public MobileElement assertTimerInQuestionSet;
+
+    
+
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Batches')]")
+    public MobileElement assertBatchesList;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='10-10 metre']")
+    public MobileElement selAnswer;
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='I2']")
+
+ 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Image[@text='Correct Answer']"),
+        @AndroidBy(xpath = "//android.view.View[@resource-id='correctButton']"),
+})
+public MobileElement assertRightMarkInFeedbackPopup;
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='View Solution']"),
+        @AndroidBy(xpath = "//android.view.View[@text='View Solution']"),
+})
+public MobileElement assertViewSolInFeedbackPopup;
+
+
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='I2']")
+    public MobileElement selAnswer1;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Close']")
+    public MobileElement assertCloseBtnInViewSolutionPage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Done']")
+    public MobileElement assertDoneBtnInViewSolutionPage;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Are you ready to submit?')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Are you ready to submit?')]"),
+})
+public MobileElement assertAreYouReadytoSubmitText;
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Neelallcheckbox QuestionSet']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Neelallcheckbox QuestionSet']"),
+})
+public MobileElement assertTitleOfQuestionSetInSubmitPage;
+
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='Progress Indicators']")
+    public MobileElement assertProgressIndicatorsInSubmitPage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Review']")
+    public MobileElement assertReviewButton;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='question number 1']"),
+        @AndroidBy(xpath = "//android.view.View[@text='question number 1']"),
+})
+public MobileElement questionNumber1;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='question number 2']"),
+        @AndroidBy(xpath = "//android.view.View[@text='question number 2']"),
+})
+public MobileElement questionNumber2;
+
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='1/6']"),
+        @AndroidBy(xpath = "//android.view.View[@text='1/6']"),
+})
+public MobileElement assertQuestion1;
+
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='2:00']")
+    public MobileElement assertTimerForEntireSection;
+
+
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Section A']")
+    public MobileElement assertSectionA;
+
+    @AndroidBy(xpath = "//android.widget.TextView[@text='Section B']")
+    public MobileElement assertSectionB;
+
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton")
+    public List<MobileElement> radioBtns;
+
+
+ 
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='1/2']"),
+    	@AndroidBy(xpath = "//android.view.View[@text='1/2']"),
+})
+public MobileElement assertShowXbarY;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'apple')]")
+    public MobileElement selAns1;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='ans']")
+    public MobileElement assertAnsIcon;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='10–8 metre']")
+    public MobileElement selWrongAnswer;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Image[@text='Wrong Answer']")
+    public MobileElement assertWrongAnswerImageInFeedbackPopup;
+
+
+    @AndroidFindAll({    	 
+    	
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Try again']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Try again']"),
+         //   @AndroidBy(xpath = "//android.widget.TextView[@text='Try again']\"),"),
+
+    })
+    public MobileElement assertTryAgainTextInFeedbackPopup;
+    
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Questions Answered: 1']")
+    public MobileElement assertQuestionsAnswered;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Total Questions: 4']")
+    public MobileElement assertTotalQuestions;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Questions Skipped: 3']")
+    public MobileElement assertQuestionsSkipped;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Questions not Viewed: 0']")
+    public MobileElement assertQuestionsNotViewed;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 4.0 course with expired batch1')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing')]//following::android.view.View[contains(@text,'CourseContent')]"),
+    })
+    public MobileElement multipleBatchCourse1;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Select A Batch To Proceed')]")
+    public MobileElement assertMultipleBatchesPopup;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Expired Batches')]")
+    public MobileElement assertExpiredBatchesTextInPopup;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Open Batches')]")
+    public MobileElement assertOpenBatchesTextInPopup;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='RESUME']")
+    public MobileElement assertResumeBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
+    public MobileElement assertJoinBtnForOngoingBathc;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ToggleButton[contains(@text,'4.7 ribbon trackable')]")
+    public MobileElement trackableCourseUnderNontrackableCol;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You have joined the batch of a course that is completed on')]")
+    public MobileElement assertJoinedBatchMsg;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You may continue the course, but your progress will not be updated')]")
+    public MobileElement assertProgressWillNotUpdateMsg;
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Expired Batches']")
+    public MobileElement assertExpiredBatches;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Open Batches']")
+    public MobileElement assertOpenBatches;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'The course's batch is available from')]")
+    public MobileElement assertFutureBatchPopup;
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Showing 100 results')]//following::android.view.View[1]"),
+})
+public MobileElement clkOnEpubContent3;
+
+
+
+    @AndroidFindBy(xpath="//android.view.View[@text='Course modules']")
+    public MobileElement clkOnCourseModules;
+
+
+@AndroidFindBy(xpath="//android.view.View[@text='Course Unit 1']")
+    public MobileElement clkOnFirstContent;
+
+@AndroidFindBy (xpath = "//android.view.View[contains(@text,'QuestionSet-test')]")
+public MobileElement clickQuestionset;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='preview slide']")
+public MobileElement clickprev;
+
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE 4.7 TRACKABLE BOOK ISSUE')]")
+public MobileElement clkOnCourseDetails1;
+
+
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Sept csp')]")
+public MobileElement questionSetCourse7;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='JOIN']")
+public MobileElement jointrackable;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Do not share']")
+public MobileElement donotsharebuton;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='play Start learning']")
+public MobileElement startlearning1;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Start Learning']")
+public MobileElement startlearning2;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Textbook Unit']")
+public MobileElement textbookunit;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Trackable QuestionSet']")
+public MobileElement trackablequestionset;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public MobileElement playPdfquestion;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='3']")
+
+public MobileElement ques2;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Score: 2']")
+
+        public MobileElement score;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Exit']")
+public MobileElement ExitBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text= 'OK']")
+public MobileElement ConfrmBtn;
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Sept 22 QuestionSet')]")
+public MobileElement questionsetfeedback;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='Correct Answer']")
+
+public MobileElement feedbackenablecorrect;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='Wrong Answer']")
+
+public MobileElement feedbackenablewrong;
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text, 'COURSE Copy of csp sept Course Subject')]")
+
+public MobileElement coursetitle;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course modules']")
+
+public MobileElement coursemodule;
+
+ @AndroidFindBy(xpath = "//android.view.View[@text= 'Course Unit-1']")
+
+public MobileElement clkOncourseunit;
+
+@AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'User Assessment')]")
+
+public MobileElement assessmentscore;
+
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='next slide']")
+public MobileElement clicknext;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.RadioButton[@index='0']")
+public List<MobileElement> question1;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Rajnikanth']")
+public MobileElement question2;
+@AndroidFindBy(xpath = "//android.view.View[@text='Pakistan']")
+public MobileElement question3;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public MobileElement RatingBtn;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='back']")
+public MobileElement BackBtn;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course Unit']")
+public MobileElement courseunit;
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Questionset limited attempt']")
+public MobileElement Questionsetlimit;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Sept 22 QuestionSet']")
+
+public MobileElement questionsettitle;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@index='0']")
+
+public MobileElement questionsetdesign;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Replay']")
+
+public MobileElement questionsetreply;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course details']")
+public MobileElement clkOnTextCourseDetails;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Enrollment end date : 26/09/2023']")
+public MobileElement assertPassedEnrollmentEndDate;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course modules']")
+public MobileElement clkCourseModules;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course Unit 1']")
+public MobileElement clkCourseUnit1;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='3.6 AN Self assess BEST SCORE 8/9']")
+public MobileElement assertBestScore;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 26th April with assessment')]"),
+})
+public MobileElement Course26thAprilWithAssessment;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course Unit 2']")
+public MobileElement clkCourseUnit2;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0/1 Completed']")
+public MobileElement assertYourProgressStatus;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Assess_1']")
+public MobileElement assertBestScoreNotDisplayed;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Course with assessments')]"),
+})
+public MobileElement CourseWithAssessments;
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text, 'COURSE Qr code Course Subject')]")
+
+public MobileElement coursetitle2;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='navigation-arrows-nextIcon']")
+public MobileElement clkOnnavigationarrow;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='50% completed']")
+
+public MobileElement ProgressBtn;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text= 'Course Unit']")
+
+public MobileElement Courseunit;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Course multiple units Subject :')]")
+
+public MobileElement coursetitle3;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='You have successfully completed this course']")
+
+public MobileElement coursecomplete;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text, 'COURSE Course single page pdf only')]")
+
+public MobileElement coursetitle4;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Course single page pdf only')]")
+
+public MobileElement clkOncourse;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='menu-icon']")
+public MobileElement clkOn3dots;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Sync Progress now']")
+public MobileElement clkOnsyncprogress;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='profile']")
+public MobileElement clkOnprofile;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
+public MobileElement vieweyecertificate;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
+public MobileElement certificatepermission;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='ALLOW']")
+public MobileElement allowpermission;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Download Download']")
+public MobileElement downloadcoursecertificate;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='PDF']")
+public MobileElement certificatePDF;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'Automation course - PDF')]"),
+
+})
+public MobileElement AutomationPdfCourse;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Course Unit 01']")
+public MobileElement clkCourseUnit01;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Single page Content']")
+public MobileElement clkPDFContent3;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public MobileElement clkPlayVideoBtn;
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Exit']")
+public MobileElement clkPlayerExitBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public MobileElement clkCloseIconOnRateContent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='back']")
+public MobileElement clkOnBackIcon;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='1/3 Completed']")
+public MobileElement assertVerifyProgress;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='33% completed']")
+public MobileElement assertPdfYourProgress;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Automation Course - ePub')]"),
+
+})
+public MobileElement AutomationEpubCourse;
+
+@AndroidFindBy(xpath = " //android.widget.Button[@text='naveen_epub_famouspaintings.epub']")
+public MobileElement clkEpubContent;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Copy of Course reports Subject')]")
+public MobileElement coursetitlebatch;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
+public MobileElement assertbatchselection;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Practice Course Subject :')]")
+public MobileElement coursetitleselectionbatch;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Join']")
+public MobileElement courseselectionnewbatch;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0% completed']")
+public MobileElement courseprogress;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public MobileElement playIcon;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='next slide']")
+public MobileElement ClickOnNextBtn;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Delhi']")
+public MobileElement ClickOnoption;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='View Solution']")
+public MobileElement ClickOnSolutionbtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='play']")
+public MobileElement PlayTheVideo;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Questionsetwithvideo')]")
+public MobileElement questionSetWithVideo;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursewithcert')]")
+public MobileElement ClkOnCourseWithAssess;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Automationcoursewithcert']")
+public MobileElement CourseWithQRCode;
 
 
 
@@ -1190,5 +2491,559 @@ public MobileElement courseUnderOthers;
 
 
 
+@AndroidFindBy(xpath = "//android.widget.Button[@text='5out of five stars']")
+public MobileElement clkRateTheContent;
 
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")
+public MobileElement clkRatingSubmitBtn;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE')]")
+public MobileElement ClkOnCourse;
+
+//@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Test Course ')]")
+// public MobileElement ClkOnCourse;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='JOIN COURSE']")
+public MobileElement JoinCourseBtn;
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Do not share']")
+public MobileElement DoNOTShare;
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public MobileElement playvideo;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='navigation-arrows-nextIcon']")
+public MobileElement NextArroicon;
+
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public MobileElement CloseBtn;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.TextView[contains(@text,'You have joined the batch of a course that is completed on')]")
+}) public MobileElement assertBatchended;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.view.View[@text='Course Unit 2']")
+})
+public MobileElement clkonAssessment;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[@text='play Start again']")
+
+}) public MobileElement startAgain;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[contains(@text,'BEST SCORE 3/4')]")
+}) public MobileElement assertbestScoreassess;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[contains(@text,'Continue')]")
+}) public MobileElement clickcontinue;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[@text='OK']")
+}) public MobileElement clkok;
+
+@AndroidFindAll({
+  @AndroidBy(xpath="//android.view.View[@text='Course Unit 1']")
+})public MobileElement clkanothercontent;
+
+@AndroidFindAll({
+    @AndroidBy(xpath="//android.widget.Button[@text='mp4_4.mp4']")
+}) public MobileElement clkcontent;
+
+@AndroidFindAll({
+@AndroidBy(xpath = "//android.view.View[@text='pdf']")
+}) public MobileElement pdfcontent;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Automationpdfcontent']")
+}) public MobileElement clkcontentpdf;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Play video']")
+}) public MobileElement playpdf;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='Next content']")
+}) public MobileElement clkNextcontent;
+
+@AndroidFindAll({
+@AndroidBy(xpath="//android.widget.TextView[contains(@text,'1/3 Completed')]")
+}) public MobileElement progressUpdated;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='25% completed']")
+}) public MobileElement progressBarUpdated;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE')]")
+public MobileElement clkonthecourse;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[@text='This course is relevant for:']"),
+    @AndroidBy(xpath = "//android.view.View[@text='This course is relevant for:']")
+})
+public MobileElement assertCourseRelevantFor;
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'AutoCourse')]"),
+    @AndroidBy(xpath = "//android.view.View[@text='AutoCourse']"),
+    
+})
+public MobileElement assertCourse;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='cloud download Download']")
+public MobileElement ClkOnDownloadBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='trash Delete']")
+public MobileElement ClkOnDeleteBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='share Share']")
+public MobileElement ClkOnShareBtn;
+
+
+
+@AndroidFindBy(xpath ="//android.view.View[contains(@text,'... More')]")
+public MobileElement Morebtn;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'I consent to share my details')]")
+public MobileElement assertsharemessage;
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Certificate criteria arrow down']")
+public MobileElement clkCertificateCriteria;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='> Completion certificate will be issued upon 100% completion']")
+public MobileElement assertCertificateCriteria;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Start Learning']")
+public MobileElement clkProfileStartLearning;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='eye Certificate']")
+public MobileElement assertEyeCertificate;
+
+@AndroidFindBy(xpath = "///android.widget.Image[@text='profile']")
+public MobileElement clkFooterProfileIcon;
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE New Couse with certificate ')]"),
+})
+public MobileElement NewCourseWithCertificate;
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Automation course- HTML ')]"),
+
+})
+public MobileElement AutomationHTMLCourse;
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[@text='> Completion certificate will be issued upon 100% completion > Certificate will be issued if you score above 50% in your assessment']")
+public MobileElement assertMeritCertificateCriteria;
+
+
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE meritcourse11 ')]"),
+})
+public MobileElement NewCourseMeritCertificate;
+
+
+
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 4.8 RC merit cert course with new cert template ')]"),
+})
+public MobileElement OldCourseMeritCertificate;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Copy of Course 6.0 new Subject : ')]")
+public MobileElement coursetitleselection;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='RESUME']")
+public MobileElement batchselectionresume;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='11% completed']")
+public MobileElement assertcourseprogressresume;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE vk-2.10Course Subject : ')]")
+
+public MobileElement coursetitleoldcert;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'TEXTBOOK shallow copy reg 5.0')]")
+public MobileElement ShallowCopyTextbook;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text=' PLAY']")
+public MobileElement playTextbook;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Textbook Unit 2 arrow-down']")
+public MobileElement clkDownArrowbtn;
+
+@AndroidFindBy(xpath = "//android.widget.EditText[contains(@text,'9')]")
+public MobileElement assertPdfSlide9;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='next slide']")
+public MobileElement NextSlide;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Edit Role, Block, District, State']")
+public WebElement ClkOnEdit;
+
+@AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='name']")
+public WebElement Profilechangename;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Stagnew')]")
+public WebElement ProfileNameChanged;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Sync Progress now']")
+public WebElement ClkOnSync;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Stagold ')]")
+public WebElement ProfileNameDis;
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='edit-name']")
+public WebElement Profilepopbtn;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Stagnew']")
+public WebElement ChnPfName;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursewithprofilepopup')]")
+public WebElement TapOnCoursePopup;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Popular categories')]")
+public WebElement PopularCateg;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Browse by subject']")
+    public WebElement BrowBySub;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Accountancy And Auditing']")
+    public WebElement ClkOnAcctNAudSub;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Course']")
+    public WebElement ClkCourseType;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Course']")
+    public WebElement Coursetypegrouped;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursemp4video')]")
+public WebElement TapOnCourseMp4;
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Subject, Subject ']")
+public WebElement ClkOnSubDropDN;
+
+@AndroidFindBy(xpath = "//android.widget.CheckBox[@text='Accountancy And Auditing']")
+public WebElement ClkOnDDSub;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='ಜೈ']")
+public WebElement clkOnAddedUser1;
+
+@AndroidFindAll({ @AndroidBy(xpath = "//android.widget.Button[@text='Change User']"),
+
+})
+public MobileElement changeUser;
+
+@AndroidFindBy(className = "android.widget.CheckBox")
+public MobileElement termsCheckBox;
+
+@AndroidFindAll({
+	@AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE']"),
+
+})
+public MobileElement continueChangeUser;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='profile']")
+ public WebElement clkOnProfile;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'jail')]")
+ public WebElement DisplayedInEnglish;
+
+
+
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Play video']")
+public WebElement ClkOnPlayBtn;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Page 1 of 911%')]")
+ public WebElement PrgressbarPDF;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='OK']")
+public WebElement ClkOnOkbtn;
+
+
+@AndroidFindBy(xpath = "//android.widget.Image[@text='close']")
+public WebElement ClkOnCloseIconpopup;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'ab')]")
+public WebElement clkOnAddedUser2;
+
+
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'ab')]")
+ public WebElement SunbirdIdTwoChar;
+
+
+
+@AndroidFindBy(xpath = "//android.view.View[@resource-id='sb-generic-toast']")
+ public WebElement MessageAppearForFd;
+
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0% completed']")
+public MobileElement Prgressbar;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationwithnoprogressupdate')]")
+public WebElement TapOnCoursePDFContent;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'PREVIOUSBOARDEXAMPAPERS webm-webm')]")
+public WebElement TapOnvideocontent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Pause']")
+public WebElement ClkOnPause;
+
+@AndroidFindBy(xpath = "//android.widget.SeekBar[@text='0:01 of 2:16, Progress Bar']")
+public WebElement ClkOnPgBar;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'This content is relevant')]")
+public WebElement assertabout;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='You just completed']")
+    public MobileElement YouJustCompleted;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='33% completed']")
+public MobileElement assertMP4YourProgress;
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Course Unit1')]")
+     public WebElement ClkOnCourseUnit;
+
+ @AndroidFindBy(xpath = "//android.widget.Button[@text='mp4newcontent']")
+     public WebElement assertMp4content;
+ @AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationCourseFuturedate')]")
+ public WebElement TapOnCourseFutureDate;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Accountancy And Auditing')]")
+public WebElement GrpSubName;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE latestcourse')]")
+public WebElement OrByPubDate;
+
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE Automationcoursewithvideocontent')]")
+    public MobileElement Automationcoursewithvideocontent;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='Fullscreen']")
+public MobileElement clkMaximizeIcon;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0/3 Completed']")
+public MobileElement assertVerifyCourseUnitProgress;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='0% completed']")
+public MobileElement assertEpubPartiallyProgress;
+
+
+@AndroidFindAll({
+    @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE Automation course - H5P ')]"),
+
+})
+public MobileElement AutomationH5PCourse;
+
+@AndroidFindBy(xpath = "//android.widget.EditText[@index=0]")
+public MobileElement EnterGpName;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE AutomationwithMp4video')]")
+public WebElement TapOnCourseMP4Content;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]")
+public WebElement Mylearning;
+
+@AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'show more trainings')]")
+public MobileElement clkMoreTrainingsBtn;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Batch new')]")
+public MobileElement oldBatchNamecertificate;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Copy of Copy of Qr code Course']")
+public MobileElement CourseWithOldCertificate;
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@index='102']")
+    public MobileElement Batch1;
+
+    //android.widget.TextView[@index='106']
+    @AndroidFindBy(xpath = "//android.widget.TextView[@index='106']")
+    public MobileElement Batch2;
+    
+    @AndroidFindBy(xpath = " //android.widget.TextView[@text='2 Course assessment']")
+    public MobileElement verifycourseonprofile;
+    
+    @AndroidFindAll({
+        //  @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE NestedCourse')]"),
+       @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE 4.7 trackable collection')]"),
+})
+public MobileElement collectioncont;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='JOIN']")
+public MobileElement clkJoinBtn;
+
+@AndroidFindAll({
+       //  @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE NestedCourse')]"),
+       @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'You have successfully completed this task')]"),
+})
+public MobileElement assertcollectioncomplete;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'4.7 trackable collection')][1]")
+public MobileElement clktrackable;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Textbook Unit1']")
+public MobileElement clkTextookBtn;
+
+@AndroidFindBy(xpath = "//android.widget.Button[@text='PDF 1 page Content']")
+public MobileElement clkonpdf;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='My learning']")
+public MobileElement assertclkmylearning;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'test trackable')]")
+public MobileElement trackabletest;
+
+@AndroidFindBy(xpath = "//android.view.View[@index='0']")
+public List<MobileElement> clkoncoursenew;
+
+@AndroidFindAll({
+    //  @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE NestedCourse')]"),
+    @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'You have successfully completed this course')]"),
+})
+public MobileElement assertcoursecomplete;
+
+
+ @AndroidFindBy(xpath = "//android.view.View[@index='3']")
+    public WebElement clkNextbtn;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='Kohli']")
+    public WebElement clkOnCorrectOption;
+
+ @AndroidFindBy(xpath = "//android.widget.Image[@text='Correct Answer']")
+    public WebElement assertCorrectmark;
+
+ @AndroidFindBy(xpath = "//android.widget.TextView[@text='Are you ready to submit?']")
+    public WebElement assertSubmitConfPage;
+
+  @AndroidFindBy(xpath = "//android.widget.TextView[@text='question number 1']")
+    public WebElement assertGreenColour;
+
+  @AndroidFindBy(xpath = "//android.view.View[@text='Watson']")
+  public WebElement clkOnWrongOption;
+  
+  @AndroidFindBy(xpath = "//android.widget.Image[@text='Wrong Answer']")
+  public WebElement assertwrongmark;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='question number 1']")
+    public WebElement assertredColour;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationQSwithFeedbackTrue')]")
+public WebElement TapOnQSfeedback;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE trackble collection23')]")
+public WebElement TapOnTrackCollection;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'COURSE tracable book')]")
+public WebElement TapOnTrackbook;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'AutomationQSwithsolutiionview')]")
+public WebElement TapOnSolutionQS;
+
+@AndroidFindBy(xpath = "//android.view.View[@text='1']")
+    public WebElement ClickOnOption;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Stop textbook activity']")
+public WebElement clkLeavetrackcoll;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Question']")
+    public WebElement assertQuestionMCQ;
+
+@AndroidFindBy(xpath = "//android.widget.TextView[@text='Options']")
+    public WebElement assertOptionsMCQ;
+
+ @AndroidFindBy(xpath = "//android.widget.TextView[@text='Solution']")
+    public WebElement assertSolutionMCQ;
+
+ @AndroidFindBy(xpath = "//android.widget.TextView[@text='Show Answer']")
+    public WebElement ClkOnShowAnswerBtn;
+
+@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Question')]")
+    public WebElement assertQuestionSubj;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Answer']")
+    public WebElement assertOptionsSubj;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Solution']")
+    public WebElement assertSolutionSubj;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='My groups']")
+    public MobileElement clkongroups;
+        @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Have you explored the potential of groups yet?')]")
+        public MobileElement assertgroupmessage;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='New group aug']")
+    public MobileElement clkongroupsnae;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Activate']")
+    public MobileElement clkongroupsactivy;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='close-icon']")
+    public MobileElement groupsclose;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='New group aug']")
+    public MobileElement clkongroupname;
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Practice Course View more actions')]")
+    public MobileElement clkongroupactivity;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='New group aug']")
+    public MobileElement clkongrouporder1;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='group 1']")
+    public MobileElement clkongrouporder2;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Deactivated']")
+    public MobileElement clkongroupsuspended;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Start Learning')]")
+    public MobileElement profilenameStartLearning;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Apple')]")
+    public MobileElement Clk1stAttribute;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Course')]")
+    public MobileElement Clk2ndAttribute;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Test')]")
+    public MobileElement Clk3rdAttribute;
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@text='question number 3']"),
+})
+    public MobileElement clkLastQuestion;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Batch ends in')]")
+    public MobileElement assertTimerWithXdaysYhoursZmin;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@index='0']")
+    public  List<MobileElement> clkAns1;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='Course Unit-1']")
+    public MobileElement courseunit1;
+    
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'donotuse_3limitedattemptsQuestionSet')]")
+    public MobileElement Questionsetlimit1;
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'You have successfully completed this course')]")
+    public MobileElement ClkOnCourseCompletionMessagenew;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='You have successfully completed this course']")
+    public MobileElement ClkOnCourseCompletionMessage;
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[@index='0']")
+    public List<MobileElement> ques1;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Score')][2]")
+    public MobileElement assertScoreCard;
+    
+    @AndroidFindBy(xpath = "//android.view.View[@text='Next content']")
+    public MobileElement verifyNextcontent;
 }

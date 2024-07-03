@@ -143,6 +143,7 @@ public MobileElement clkStateDropdown;
    
    
    @AndroidFindAll({
+	   @AndroidBy(xpath = "//android.widget.RadioButton[@text='Ananthapuram']"),
            @AndroidBy(xpath = "//android.widget.TextView[@text='Chittoor']"),
 		@AndroidBy(xpath = "//android.view.View[@text='Chittoor']"),
 
@@ -236,7 +237,8 @@ public MobileElement refreshCircle;
 public MobileElement completeCourse;
 
 @AndroidFindAll({
-    @AndroidBy(xpath = "//android.widget.TextView[@text='My learning (1)']")
+    @AndroidBy(xpath = "//android.widget.TextView[@text='My learning (1)']"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]") ,
 })
 public MobileElement myLearningtext;
 
@@ -246,51 +248,81 @@ public MobileElement myLearningtext;
 
 
 
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.ListView[@text='Andhra Pradesh, selected ,Select State']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'State')]//following::android.widget.ListView[1]"),
+        @AndroidBy(xpath = "//android.widget.RadioButton[@text='Andhra Pradesh']"),        
+
+})
+public MobileElement sltStateDropdown;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State')]//following::android.widget.ListView[1]")
-    public MobileElement sltStateDropdown;
+    @AndroidFindAll({
+       @AndroidBy(xpath = "//android.widget.ListView[@text='Select District']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'District')]//following::android.widget.ListView[1]"),
+})
+public MobileElement sltDistrictDropdown;
 
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District')]//following::android.widget.ListView[1]")
-    public MobileElement sltDistrictDropdown;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Block')]//following::android.widget.ListView[1]")
-    public MobileElement sltBlockDropdown;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.ListView[@text='Select Block']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Block')]//following::android.widget.ListView[1]"),
+})
+public MobileElement sltBlockDropdown;
 
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[1]")
-    public MobileElement sltFirstTextInDropdown;
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.RadioButton[@index='0']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='SRI POTTI SREERAMULU MPL.']"),
+        @AndroidBy(xpath = "//android.widget.TextView[1]"),
+})
+public MobileElement sltFirstTextInDropdown;
 
+    
 
     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'School')]//following::android.widget.ListView[1]")
     public MobileElement sltClusterDropdown;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Select School']")
-    public MobileElement sltSchoolDropdown;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.ListView[@text='Select School']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Select School']"),
+})
+public MobileElement sltSchoolDropdown;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Role')]")
-    public MobileElement assertRoleInProfile;
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Role: Teacher']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Role')]"),
+})
+public MobileElement assertRoleInProfile;
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='School: MPPS(URDU) AMADAGUR']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'School')]"),
+})
+public MobileElement assertSchoolInProfile;
+   
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath ="//android.widget.TextView[@text='Block: AMADAGUR']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Block')]"),
+})
+public MobileElement assertBlockInProfile;
+    
+  
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='District: Ananthapuram']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'District')]"),
+})
+public MobileElement assertDistrictInProfile;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'School')]")
-    public MobileElement assertSchoolInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Block')]")
-    public MobileElement assertBlockInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'District')]")
-    public MobileElement assertDistrictInProfile;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'State')]")
-    public MobileElement assertStateInProfile;
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='State: Andhra Pradesh']"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'State')]"),
+})
+public MobileElement assertStateInProfile;
 
 
 
@@ -301,13 +333,19 @@ public MobileElement myLearningtext;
     public MobileElement clkSubpersonaInProfile;
 
 
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Welcome')]")
-    public MobileElement assertWelcomeTextOnHomePage;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Welcome')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Welcome')]"),
+})
+public MobileElement assertWelcomeTextOnHomePage;
+  
 
-
-    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Learn, Manage')]")
-    public MobileElement assertLearnManageActHeaderInHomePage;
-
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Learn, Manage and Act']"),
+    	@AndroidBy(xpath = "//android.view.View[contains(@text,'Learn, Manage')]"),
+})
+public MobileElement assertLearnManageActHeaderInHomePage;
+   
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='APSTATE']")
     public MobileElement sltStateLocForSubOrg;
@@ -320,8 +358,7 @@ public MobileElement myLearningtext;
     @AndroidFindBy(xpath = "//android.view.View[@text='Select District']")
     public MobileElement assertSelectDistrictText;
 
-
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'My learning')]//following::android.view.View[contains(@text,'Small AutomationCourseContent')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'donotuse')]")
     public MobileElement assertCourseInMyLearningSection;
 
     @AndroidFindAll({
@@ -334,13 +371,192 @@ public MobileElement myLearningtext;
     public MobileElement clkNewDikshExperiece;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Image[@text='back']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='back']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
     })
     public MobileElement clkBackBtn;
 
 
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Edit Role')]")
+    public MobileElement firstEditBtn;
+
+
+    @AndroidFindBy(xpath ="//android.widget.Button[contains(@text,'Edit Board')]")
+    public MobileElement secondEditBtn;
+
+
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'HT & Officials')]")
+    public MobileElement clkOnHTandOfficialsRole;
+
+
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Teacher']")
+    public MobileElement sltTeacherRole;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[@text='Programs']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Programs']"),
+    })
+    public MobileElement clkPrograms;
+
+
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'More')]")
+    public MobileElement moreBtnInProfile;
+
+
+  
+
+    @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Stag')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Stag67']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Test']"),
+      })
+    public MobileElement assertUserNameInProfile;
+    
+
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Sunbird')]"),
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'User ID')]"),
+     })
+   public MobileElement assertUserIDTextBelowUsername;
+
+
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Stag')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Diksha')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'ID:')]"),
+      })
+    public MobileElement assertDikshaIDBelowUsername;
+
+
+
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[contains(@text,'stag')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='stag67_1quf']"),
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'test')]"),
+      })
+    public MobileElement assertDikshaID;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Board')]"),
+      })
+    public MobileElement assertBoard;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Board')]"),
+        @AndroidBy(xpath = "//android.view.View[contains(@text,'Medium')]"),
+      })
+    public MobileElement assertMedium;
+  
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Class')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Class')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Classes')]"),
+    })
+    public MobileElement assertClass;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'Add Mobile Number')]"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Add Mobile Number']"),
+    })
+    public MobileElement addMobileNoField;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Otp To Update Contact']")
+    public MobileElement assertUpdateContactPopup;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Enter OTP to edit your contact information']")
+    public MobileElement assertEnterOTPtoEditInformationText;
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Enter OTP']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Enter OTP']")
+})
+public MobileElement assertEnterOTPText;
+    
+    
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText")
+    public MobileElement editTextField;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@text='Incorrect OTP. Number of attempts remaining : 1']")
+    public MobileElement assertIncorrectOTPMessage;
+
+
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'Failed to validate OTP')]"),
+            @AndroidBy(xpath = "//android.view.View[@text='Failed to validate OTP. Try again later']")
+    })
+    public MobileElement assertFailedToValidateOTPMsg;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='declared-phone']")
+    public MobileElement mobileNumberEditField;
+
+
+   @AndroidFindAll({
+           @AndroidBy(xpath = "//android.widget.Button[@text='validate']"),
+           @AndroidBy(xpath = "//android.widget.Button[contains(@text,'validate')]"),
+   })
+    public MobileElement validateBtn;
+
+   
+   @AndroidFindAll({
+	   @AndroidBy(xpath = "//android.widget.TextView[@text='Verify Mobile Number']"),
+	   @AndroidBy(xpath = "//android.view.View[@text='Verify Mobile Number']"),
+})
+public MobileElement assertVerifyMobileNumberText;
+
+ 
+   @AndroidFindAll({
+	   @AndroidBy(xpath = "//android.widget.TextView[@text='You will receive an SMS with the OTP for mobile number verification']"),
+	   @AndroidBy(xpath = "//android.view.View[@text='You will receive an SMS with the OTP for mobile number verification']"),
+})
+public MobileElement assertReceiveSMSText;
+
+
+
+
+   @AndroidFindBy(xpath = "//android.widget.TextView[@text='Enter OTP']")
+    public MobileElement assertEnterOTPTextInMobileNumber;
+
+
+   @AndroidFindBy(xpath = "//android.widget.Button[@text='RESEND OTP']")
+    public MobileElement assertResendOTPlink;
+
+
+   @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
+    public MobileElement assertCancelBtn;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='declared-email']")
+    public MobileElement EmailEditField;
+
+    @AndroidFindAll({
+    	 @AndroidBy(xpath = "//android.widget.TextView[@text='Verify Email Address']"),
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='Validate your email address']'"),
+    	@AndroidBy(xpath = "//android.view.View[@text='Verify Email Address']"),
+ })
+ public MobileElement assertVerifyEmailAddressText;
+
+
+    @AndroidFindAll({
+    	@AndroidBy(xpath = "//android.widget.TextView[@text='You will receive an email with the OTP for email address verification']"),
+    	@AndroidBy(xpath = "//android.view.View[@text='You will receive an email with the OTP for email address verification']"),
+ })
+ public MobileElement assertReceiveEmailWithOTPText;
 
 
 }

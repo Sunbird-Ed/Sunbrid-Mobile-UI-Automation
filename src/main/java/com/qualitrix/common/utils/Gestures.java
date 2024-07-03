@@ -21,18 +21,24 @@ import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.github.javafaker.Faker;
 import com.qualitrix.client.QXClient;
+import com.qualitrix.pageActions.DikshaMainPageActions;
+import com.qualitrix.pageActions.HomePageActions;
 
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofSeconds;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -215,9 +221,15 @@ public class Gestures {
     }
     public void waitAndClickElementisVisible(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOf(element));
+     //   wait.until(ExpectedConditions.visibilityOf(element));
+        
+        
+        wait.until(ExpectedConditions.elementToBeClickable(element));
              element.click();
     }
+    
+    
+    
     public boolean isElementPresent(WebElement locator) {
         try {
             waitForElementToAppear(locator);
@@ -347,9 +359,14 @@ public class Gestures {
     }
     public void BlindWait(int wait) throws Exception
     {
+//    	int s=wait;
+//    s=0;
+//    System.out.println(s);
     	 Thread.sleep(wait);
-       
-    }
+    	 
+    	 
+//System.out.println("IgnoreWait");   
+}
     
     
     public void scrollUpToMobileElement(MobileElement element, String scrollCount) {
@@ -391,6 +408,118 @@ public class Gestures {
       
     }
 
+    public void closeappandrelaunchapp() throws Exception {
+        QXClient.get().gestures().closeApp();
+        DikshaMainPageActions d = new DikshaMainPageActions();
+        d.LaunchAppHomeScreen();
+        QXClient.get().gestures().BlindWait(9000);
+        HomePageActions home = new HomePageActions();
+        home.tapOnProfileTab();
+        QXClient.get().gestures().BlindWait(2000);
+    }
 
+
+  public String getCurrentDataInDDMMYY()
+  {
+	  Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");
+		String strDate= formatter.format(date);
+		System.out.println(strDate);
+		return strDate;
+  }
   
+  
+  public static void customWaitAndClick(WebElement element) {
+//	  WebElement ele = null;
+
+	  for(int i=0;i<20;i++)
+	  {
+	              try{
+		  
+        element.isDisplayed();
+	
+	                            break;
+	                 }
+	  
+          	  catch(Exception e)
+	            {
+	                  try 
+	                    {
+	                       Thread.sleep(1000);
+	                      }
+	                  catch (InterruptedException e1) 
+	                          {
+	                  System.out.println("Waiting for element to appear on DOM");
+	                     }
+	            }
+
+
+	  }
+	  
+	    element.click();
+	//  return ele;
+
+	  }
+  
+  public static WebElement customWait2(String  element) {
+	  WebElement ele = null;
+
+	  for(int i=0;i<20;i++)
+	  {
+	              try{
+	            	  
+	            	 ele= QXClient.get().driver().findElement(By.xpath(element));
+		  
+	                            break;
+	                 }
+	  
+          	  catch(Exception e)
+	            {
+	                  try 
+	                    {
+	                       Thread.sleep(1000);
+	                      }
+	                  catch (InterruptedException e1) 
+	                          {
+	                  System.out.println("Waiting for element to appear on DOM");
+	                     }
+	            }
+
+
+	  }
+	  
+	//  ele.click();
+	  return ele;
+
+	  }
+	  
+
+
+public void clickElementAfteritStable(WebElement element){
+	int waitTime = 60;
+    waitForElementinPage(element,waitTime);
+    element.click();
+}
+public boolean waitForElementinPage(WebElement element,int waitTime) {
+    boolean conditionFulfilled = true;
+    Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+            .withTimeout(Duration.ofSeconds(waitTime))
+            .pollingEvery(Duration.ofSeconds(1))
+            .ignoring(NoSuchElementException.class);
+
+    try {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    } catch (Exception e ){
+         conditionFulfilled = false;
+        QXClient.get().report().info("Element is not Found");
+    }
+    return conditionFulfilled;
+}
+
+public void closeappandrelaunchHomescreen() throws Exception {
+    QXClient.get().gestures().closeApp();
+    DikshaMainPageActions d = new DikshaMainPageActions();
+    d.LaunchAppHomeScreen();
+    QXClient.get().gestures().BlindWait(5000);
+}
 }

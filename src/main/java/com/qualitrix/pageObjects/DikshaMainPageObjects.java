@@ -12,50 +12,30 @@ import org.openqa.selenium.WebElement;
 
 public class DikshaMainPageObjects {
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.TextView[@text='English']"),
-            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'English')]"),
-            @AndroidBy(xpath = "//android.view.View[@text='English']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='English']"),
-
-    })
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='English']")
     public MobileElement sltLang;
+    
+    
+	  @AndroidFindBy(xpath = "//android.widget.Button[@text='Continue']")
+	    public MobileElement clickContinue;
+    
+    
+	  @AndroidFindBy(xpath = "//android.widget.Button[@text='Teacher']")
+	    public WebElement clickTeacher;
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='Continue']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE arrow round forward']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE arrow round forward ']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE']")
-    })
-    public MobileElement clickContinue;
-
-  @AndroidFindAll({
-          @AndroidBy(xpath = "//android.widget.Button[@text='Teacher']"),
-          @AndroidBy(xpath = "//android.view.View[@text='Teacher']"),
-  })
-    public WebElement clickTeacher;
-
-  @AndroidFindAll({
-          @AndroidBy(xpath = "//android.widget.Button[@text='Student']"),
-          @AndroidBy(xpath = "//android.view.View[@text='Student']"),
-  })
-    public WebElement clickStudent;
+	  @AndroidFindBy(xpath = "//android.widget.Button[@text='Selected Board']")
+	  public MobileElement selectBoard;
 
     @AndroidFindBy(className = "android.widget.Button")
     public List<MobileElement> continuAsTeacher;
     
-    
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")
+
+    public MobileElement submitBtn;
    
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.RadioButton[@text='CBSE\u200E']"),
-            @AndroidBy(xpath = "//android.widget.RadioButton[@text='State (Assam) \u200E']"),
-            @AndroidBy(xpath = "//android.widget.RadioButton[@text='State (Assam)\u200E']")
-          //  @AndroidBy(xpath = "//android.widget.RadioButton[@text='State (Karnataka)']")
-
-    })
+    @AndroidFindBy(xpath = "//android.widget.RadioButton[@text='CBSE\u200E']")
     public MobileElement selectStateBoard;
-
 
     @AndroidFindAll({
             @AndroidBy(xpath = "//android.widget.RadioButton[@text='CBSE/NCERT\u200E']"),
@@ -64,37 +44,22 @@ public class DikshaMainPageObjects {
     public MobileElement selectStateBoard1;
 
 
-
-
-
-
-    @AndroidFindAll({
-        @AndroidBy(xpath = "//android.view.View[@text='Select Board']"),
-        @AndroidBy(xpath = "//android.widget.Button[@text='Select Board']"),
-        
-
-})
-public MobileElement selectBoard;
-
-
-
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Select Medium, Medium']"),
-            @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Medium, Medium']"),
-    })
-    public MobileElement selectMedium;
-
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.view.View[@text='Select Class, Class']"),
-            @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Class, Class']"),
-    })
+    @AndroidFindBy(xpath = "//android.view.View[@text='Selected Class, Class']")
     public MobileElement selectClass;
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE']")
+    public MobileElement submitWithArrowBtn;
+    
+    
     @AndroidFindBy(xpath = "//android.view.View[@text='Select district']")
     public MobileElement selectDistrict;
 
-    @AndroidFindBy(xpath = "//android.widget.CheckBox[@index='0']")
-    public MobileElement selectEnglishMedium;
+        
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.CheckBox[@index='0']")
+     
+})
+public MobileElement selectEnglishMedium;
 
     @AndroidFindBy(xpath = "//android.widget.RadioButton[@index='0']")
     public MobileElement selectBagalkotDst;
@@ -112,23 +77,29 @@ public MobileElement selectBoard;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
     public MobileElement cancelBtn;
 
-    @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT' and @index='1']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT ' and @index='1']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT']")
-    })
-    public MobileElement submitBtn;
+//    @AndroidFindBy(xpath = "//android.view.View[@text='multiple select']")
+//    public MobileElement selectMedium;
+//
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT arrow round forward']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='SUBMIT arrow round forward ']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE arrow round forward']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE arrow round forward ']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='CONTINUE']")
-
+    	@AndroidBy(xpath = "//android.view.View[@text='Selected Medium, Medium']"),    	
+    	@AndroidBy(xpath = "//android.view.View[@text='multiple select']"),
+            @AndroidBy(xpath = "//android.widget.Spinner[@text='Selected Medium, Medium']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Select Medium, Medium']"),
+            @AndroidBy(xpath = "//android.widget.Spinner[@text='Select Medium, Medium']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='multiple select']"),
     })
-    public MobileElement submitWithArrowBtn;
+    public MobileElement selectMedium;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Cancel']")
+    public MobileElement clkClosePoup;
     
+  
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='Student']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Student']"),
+})
+  public WebElement clickStudent;
     
     @AndroidFindAll({
         @AndroidBy(xpath = "//android.widget.Button[@text='ic_search']"),
@@ -224,8 +195,6 @@ public MobileElement downloadTab;
 })
 public MobileElement clickLeader;
 
-@AndroidFindBy(xpath = "//android.widget.Image[@text='close-icon']")
-public MobileElement clkClosePoup;
 
 @AndroidFindBy(xpath = "//android.widget.CheckBox[@index='1']")
 public MobileElement selectHindiMediumBMS;
@@ -253,11 +222,22 @@ public MobileElement switchNewExperienceBtn;
 public MobileElement assertScanQRCode;
 
 
-@AndroidFindBy(xpath = "//android.widget.Button[@text='Select Board']")
+@AndroidFindAll({
+	
+	
+    @AndroidBy(xpath = "//android.widget.Button[@text='Selected Board']"),
+
+    @AndroidBy(xpath = "//android.widget.Button[@text='Select Board']"),
+        @AndroidBy(xpath = "//android.view.View[@text='Board']"),
+})
 public MobileElement assertSelectBoard;
 
 
 @AndroidFindBy(xpath = "//android.widget.Button[@text='SWITCH TO NEW EXPERIENCE']")
     public MobileElement clkOnSwitchToNewExperience;
+
+@AndroidFindBy(xpath ="//android.widget.Button[@text='Allow']")
+public MobileElement clickAllow;
+
 
 }

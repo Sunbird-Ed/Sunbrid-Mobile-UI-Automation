@@ -9,9 +9,9 @@
   },
   "capabilities": {
     "android": {
-      "appPackage": "preprod.diksha.app",
+      "appPackage": "org.sunbird.app.staging",
       "appActivity": "org.sunbird.app.MainActivity",
-      "app": ".\\caps\\diksha-4.7.980preproduction.apk",
+      "app": ".\\caps\\SUNBIRD_6_0_544staging.apk",
       "platformName": "Android",
       "newCommandTimeout": 600,
       "launchTimeout": 90000
@@ -20,8 +20,8 @@
   },
   "devices":[
     {
-      "name":"RZ8R41EQ4YK",
-      "version":"11.0.0",
+      "name":"RZCRC00YG9R",
+      "version":"13.0.0",
       "platform":"Android"
     }
     

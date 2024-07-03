@@ -1,6 +1,6 @@
 package com.qualitrix.pageObjects;
 
-import cucumber.api.java.sk.A;
+import cucumber.api.java.cs.A;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
@@ -42,11 +42,8 @@ public MobileElement downloadBtn;
 
    
     @AndroidFindAll({
-    	
-    	
-        @AndroidBy(xpath = "//android.widget.Button[@text='share Share']"),
         @AndroidBy(xpath = "//android.widget.Button[@text='share content Share']"),
-
+    @AndroidBy(xpath = "//android.widget.Button[@text='share Share']"),
 })
 public MobileElement shareBtn;
 
@@ -96,13 +93,12 @@ public MobileElement qnWithImage;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='share Share']")
     public MobileElement shareIconInsideContent;
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='star outline Rate']")
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='5out of five stars']")
     public MobileElement rateObj;
 
     @AndroidFindAll({
-            @AndroidBy(xpath = "//android.widget.Button[contains(@text,'star')]"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='star']"),
-    })
+    	   	        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Rate Content')]"),
+          })
     public MobileElement startBtn;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Submit']")
@@ -111,8 +107,14 @@ public MobileElement qnWithImage;
     @AndroidFindBy(className = "android.widget.EditText")
     public MobileElement editText;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Content is inaccurate']")
-    public MobileElement feedbackChkbx;
+    @AndroidFindAll({
+    	
+    @AndroidBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-0']"),
+    @AndroidBy(xpath = "//android.view.View[@text='Content is inaccurate']"),
+})
+public MobileElement feedbackChkbx;
+    
+
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='OK']")
     public MobileElement okBtn;
@@ -166,6 +168,9 @@ public MobileElement qnWithImage;
     public MobileElement licenseBtn;
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='License terms:']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='CC BY 4.0']"),
+            @AndroidBy(xpath = "//android.view.View[@text='CC BY 4.0']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by/4.0/legalcode']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by-sa/4.0/legalcode']"),
             @AndroidBy(xpath = "//android.view.View[@text='https://creativecommons.org/licenses/by/4.0/legalcode']")
@@ -256,14 +261,45 @@ public MobileElement offlineplayCont;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Share']")
     public MobileElement shareBtn1;
 
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='SEND']")
+    public MobileElement sendBtn;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Share with']")
     public MobileElement shareAlertPopUp;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='WhatsApp']")
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'WhatsApp')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='WhatsApp']"),
+                })
     public MobileElement shareToWhatsApp;
+
+
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[contains(@text,'Slack ')]"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Slack']")
+})    public MobileElement shareToSlackApp;
+
+
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='ALLOW']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='Allow']"),
+})
+    public MobileElement clkAllowBtn;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.whatsapp:id/contactpicker_row_name']")
     public MobileElement whatsAppHomePage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Share in Slack']")
+    public MobileElement slackSharePage;
+
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'AutomationBookContent-v1.ecar')]")
+    public MobileElement assertMalformedEcarFile;
+
 
     @AndroidFindAll({
             @AndroidBy(className = "android.widget.GridView"),
@@ -307,6 +343,8 @@ public MobileElement clkSeeMoreBooksAndContent;
 
 
     @AndroidFindAll({
+    	
+        @AndroidBy(xpath = "//android.widget.Button[@text='Settings']"),
             @AndroidBy(xpath = "//android.widget.TextView[@text='Settings']"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'Settings')]"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Settings']"),
@@ -315,8 +353,8 @@ public MobileElement clkSeeMoreBooksAndContent;
     public MobileElement Clksettings;
 
     @AndroidFindAll({
-        // @AndroidBy(xpath = "//android.view.View[@text='Marigold']"),
-         //@AndroidBy(xpath = "//android.view.View[@text='Assam text book']"),
+       
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Data Sync']"),
          @AndroidBy(xpath = "//android.view.View[@text='Data Sync']"),
          @AndroidBy(xpath = "//android.view.View[@text='Data Sync Backup Data, Transfer Telemetry']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Data Sync Backup Data, Transfer Telemetry']"),
@@ -324,11 +362,15 @@ public MobileElement clkSeeMoreBooksAndContent;
  })
  public MobileElement ClkDataSync;
 
-    
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='SYNC NOW']")
-    public MobileElement ClkSyncNow;
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@index='3']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='SYNC NOW']")
+})
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Share the SUNBIRD app']"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Share the SUNBIRD app']"),
+            @AndroidBy(xpath = "//android.view.View[@text='Share the SUNBIRD app']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='Share the DIKSHA app']"),
             @AndroidBy(xpath = "//android.view.View[@text='Share the DIKSHA app']"),
     })
@@ -367,6 +409,8 @@ public MobileElement clkSeeMoreBooksAndContent;
   
 
     @AndroidFindAll({
+    	
+        @AndroidBy(xpath ="//android.widget.TextView[@text='About Us']"),
             @AndroidBy(xpath ="//android.view.View[@text='About Us']"),
             @AndroidBy(xpath = "//android.widget.Button[@text='About Us']"),
     })
@@ -377,6 +421,7 @@ public MobileElement clkSeeMoreBooksAndContent;
     @AndroidFindAll({
         // @AndroidBy(xpath = "//android.view.View[@text='Marigold']"),
          //@AndroidBy(xpath = "//android.view.View[@text='Assam text book']"),
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Device ID']"),
          @AndroidBy(xpath = "//android.view.View[@text='Device ID']"),
          @AndroidBy(xpath = "//android.view.View[@text='About Us']//following::android.view.View[8]")
 
@@ -388,8 +433,8 @@ public MobileElement clkSeeMoreBooksAndContent;
 
 
     @AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.Button[@text='share information']"),
             @AndroidBy(xpath ="//android.widget.Button[@text='share']"),
-            @AndroidBy(xpath = "//android.widget.Button[@text='share information']"),
     })
     public MobileElement ClkshareDeviceID;
 
@@ -469,11 +514,17 @@ public MobileElement clkSeeMoreBooksAndContent;
             @AndroidBy(xpath ="//android.view.View[@text='Subject']"),
     })
     public MobileElement clkLibSubject;
-    
-    @AndroidFindBy(xpath ="//android.widget.Button[@text='APPLY FILTER']")
+
+    @AndroidFindAll({
+            @AndroidBy(xpath ="//android.widget.Button[contains(@text,'APPLY')]"),
+            @AndroidBy(xpath ="//android.widget.Button[contains(@text,'APPLY FILTER')]"),
+            @AndroidBy(xpath ="//android.widget.Button[@text='APPLY FILTER']")
+    })
     public MobileElement clkApplyFilter;
 
     @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'COURSE')]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'results for')]//following-sibling::android.view.View[1]"),
             @AndroidBy(xpath ="//android.widget.Image[@index='0'][1]"),
             @AndroidBy(xpath = "//android.view.View[contains(@text,'results for')]//following::android.view.View[1]"),
@@ -629,8 +680,9 @@ public MobileElement assertPDFPrintPageScreen;
  })
 public MobileElement clkShareIcon;
 
-@AndroidFindAll({    
-    @AndroidBy(xpath = "//android.view.View[@text='Download']")
+@AndroidFindAll({
+        @AndroidBy(xpath = "//android.widget.TextView[@text='Download']"),
+    @AndroidBy(xpath = "//android.view.View[@text='Download']"),
  })
 public MobileElement clkDownloadIcon;
 
@@ -707,10 +759,10 @@ public MobileElement noNotificationsText;
 })
 public MobileElement firstMp4Content;
 
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'Epub')]//following::android.view.View")
+@AndroidFindBy(xpath = "(//android.view.View[contains(@text,'epub')])[2]")
 public MobileElement firstEpubContent;
 
-@AndroidFindBy(xpath = "//android.view.View[contains(@text,'assessment')]//following::android.view.View")
+@AndroidFindBy(xpath = "(//android.view.View[contains(@text,'Assess')])[2]")
 public MobileElement firstAssessmentContent;
 
 @AndroidFindAll({
@@ -731,7 +783,7 @@ public MobileElement clkMeantFor;
     public MobileElement clkInteractiveContent;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Explore Interactive Content']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore Interactive Content']")
     public MobileElement assertExploreInteractiveContentPageText;
 
 
@@ -751,7 +803,10 @@ public MobileElement clkMeantFor;
     public MobileElement assertResetFilterBtn;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Medium']//following::android.widget.Image[1]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Select Medium')]"),
+             @AndroidBy(xpath = "//android.view.View[@text='Medium']//following::android.widget.Image[1]"),
+     })
     public MobileElement clkMediumFilter;
 
 
@@ -763,11 +818,17 @@ public MobileElement clkMeantFor;
     public  MobileElement clkSubmitBtn;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Class']//following::android.widget.Image[1]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Select Class')]"),
+             @AndroidBy(xpath = "//android.view.View[@text='Class']//following::android.widget.Image[1]"),
+     })
     public MobileElement clkClassFilter;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Publisher']//following::android.widget.Image[1]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.widget.ListView[contains(@text,'Select Publisher')]"),
+             @AndroidBy(xpath = "//android.view.View[@text='Publisher']//following::android.widget.Image[1]"),
+     })
     public MobileElement clkPublisherFilter;
 
 
@@ -775,19 +836,22 @@ public MobileElement clkMeantFor;
     public MobileElement clkApplyFilterBtn;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Assamese')]")
+     @AndroidFindAll({
+             @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
+             @AndroidBy(xpath = "//android.view.View[contains(@text,'Assamese')]"),
+     })
     public MobileElement assertInteractiveContentAfterFiltering;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='AutomationBookContent']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='AutomationBookContent']")
     public MobileElement assertContentTitle;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='Bycontent creator']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Bycontent creator']")
     public MobileElement assertContentCreator;
 
 
-     @AndroidFindBy(xpath = "//android.view.View[@text='CBSEEnglishClass 12Accountancy']")
+     @AndroidFindBy(xpath = "//android.widget.TextView[@text='CBSEEnglishClass 12Accountancy']")
     public MobileElement assertOrgFrameworkAttributes;
 
 
@@ -909,7 +973,7 @@ public MobileElement clkMeantFor;
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Tv Classes']")
     public MobileElement clkOnTvClasses;
 
-    @AndroidFindBy(xpath = "//android.view.View[@text='Explore Tv Classes']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Explore Tv Classes']")
     public MobileElement assertExploreTvClassesText;
 
 
@@ -929,7 +993,12 @@ public MobileElement clkMeantFor;
     @AndroidFindBy(xpath = "//android.widget.ListView[contains(@text,'Select Media Type')]")
     public MobileElement clkOnSelectMediaType;
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='Explanation Content']//following::android.view.View[3]")
+    @AndroidFindAll({
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'RESOURCE')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'CLASSROOMTEACHINGVIDEO')]"),
+            @AndroidBy(xpath = "//android.view.View[contains(@text,'MP4')]"),
+            @AndroidBy(xpath = "//android.widget.Button[@text='Explanation Content']//following::android.view.View[3]"),
+    })
     public MobileElement assertContentForTVClasses;
 
     @AndroidFindAll({
@@ -938,6 +1007,40 @@ public MobileElement clkMeantFor;
             @AndroidBy(xpath = "//android.widget.Button[@text='back icon Back']"),
     })
     public MobileElement clkBackBtn;
+
+
+    @AndroidFindBy(xpath = "(//android.widget.CheckBox)[2]")
+    public MobileElement filterMediaType2;
+
+
+    @AndroidFindBy(xpath = "//android.widget.ToggleButton")
+    public MobileElement videoToggleBtn;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Page')]")
+    public MobileElement assertPageText;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@text,'Location')]")
+    public MobileElement assertLocationText;
+    
+    @AndroidFindBy(xpath = "//android.widget.CheckBox[@resource-id='ion-cb-32']")
+    public MobileElement clkCheckBoxFeedback;
+    
+
+    
+    @AndroidFindAll({
+        @AndroidBy(xpath = "//android.view.View[@index='3']"),
+        @AndroidBy(xpath = "//android.widget.Button[@text='SYNC NOW']")
+})
+    public MobileElement ClkSyncNow;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='navigation-arrows-nextIcon']")
+    public MobileElement clkNextIcon;
+
+    @AndroidFindBy(xpath ="//android.widget.Image[@text='arrow forward']")
+    public MobileElement clkArwBtn;
+    
 }
 
 

@@ -13,6 +13,16 @@
     </properties>
     <dependencies>
         <dependency>
+        
+        
+   <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>7.6.0</version>
+</dependency>
+
+     
+        <!-- 
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>7.3.0</version>
@@ -23,6 +33,9 @@
                 </exclusion>
             </exclusions>
         </dependency>
+ -->
+
+
         <dependency>
             <groupId>com.github.temyers</groupId>
             <artifactId>cucumber-jvm-parallel-plugin</artifactId>
