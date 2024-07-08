@@ -123,3 +123,205 @@ the variables are set correctly. Follow the steps given below to check this –
 
 ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/eb40751f-7577-42af-a5c2-11eccf1c0b53)
 
+                  **Android Studio installation and setup:**
+
+                    #### Prerequisites to installing Android SDK tools
+                    
+Before you download and install Android, make sure that you complete the below given prerequisites –
+
+- - You should have [downloaded and installed Java (JDK)](https://www.automationtestinghub.com/download-and-install-java/) and [set up](https://www.automationtestinghub.com/setup-java-environment-variables/) [Java environment variables](https://www.automationtestinghub.com/setup-java-environment-variables/)
+
+# Download Android Studio Bundle
+
+Follow the steps given below to download Android Studio –       
+
+1. Open Android Studio download link – <https://developer.android.com/studio/index.html>. You will see **Download Android Studio Electric Eel** button as shown below
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/77f86c21-b05c-4d3a-849b-3d0931587c51)
+
+1. Click on **the Download Android Studio Electric Eel** button. You will see the **Terms and Conditions** popup
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/5113e092-c7b8-4229-b12b-3bd8e3d3441d)
+
+###### Important Note: Please make sure that you always install the latest version of Android Studio and SDK tools. With the older versions, there has been a change in the way you open SDK Manager and some other tools. And this might result in some confusion in the way you use these tools
+
+1. Scroll down to the bottom, then select the checkbox and click on **Download Android Studio Electric Eel** button. The download process would now begin. Click on Save File to download the .exe file to your machine
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/5b6193b7-6198-423a-a50a-2ed7fdeb3181)
+
+1. Android Studio will be downloaded to your machine
+
+2. ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/4f2ade08-fa8e-416a-bffa-c896e3ae9b0f)
+
+
+This completes our Android Studio download process. Let us now install Android Studio and the SDK tools.
+
+# Install Android Studio and SDK tools
+
+Follow the below steps to install Android Studio and other SDK tools –
+1. Double click on the downloaded exe file. Android Studio Setup Welcome Screen would be displayed, as shown below (sometimes it might take a minute or so for the below screen to load when you try it the first time)
+
+2. ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/88082ddd-8457-4d74-84af-69d8b4dc23a5)
+
+
+3. 1. Click on the Next button. You will see the Choose Components screen. On this screen, **let both check boxes remain selected.** You would observe that Android SDK (which you need for Appium Scripts) is not displayed here. But once you install Android Studio and open it for the first time then
+
+![Android Studio Setup - Choose Components]
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/e4aeb1ce-757d-4661-96d6-fa48f1dce112)
+
+
+1. Click on the Next button. You will now be taken to the License Agreement screen
+2. ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/625e528a-8c68-457a-889f-e4a72b4b1671)
+
+1. Click on **I Agree** on the License Agreement screen. You will now see the Configuration Settings screen. Let the default installation location remain the same.
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/077c8bdc-904b-42d6-a483-a8067b3ce1bf)
+1. Click on the Next button. You will be taken to the Choose Start Menu Folder screen
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/5f777f5f-3176-414a-a362-5e39955095eb)
+1. Click on the Install button to start the installation process.
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/bb3f214f-132e-4296-a932-71062ccab2bf)
+
+
+1. Once the installation is complete, you will see the Installation Complete window as shown below
+
+![Android Studio Setup - Installation Complete]
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/0bb6adf1-cb5d-4686-82a5-92a47acfb7a4)
+
+1. Click on the Next button. You will see **Completing Android Studio Setup** screen. Uncheck Start Android Studio checkbox and then click on Finish button to close the screen.
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/96de0603-d10f-4d92-9ed1-581bc644b5f8)
+
+![Completing Android Studio Setup - Finish Installation]
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/4f4c55cf-1d4f-4af4-b10f-09cef8f42b89)
+
+  #### Select the latest Android version under SDK Manager
+
+  
+Once your Android Studio is opened, go to **Tools > SDK Manager** (in older versions of Android Studio, this option was **Tools > Android > SDK Manager**)
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/0c94a3e1-4f51-4392-8e48-44f4d54d147f)
+
+###### If you don’t see SDK Manager option in Tools menu, then please wait for a couple of minutes. Android Studio takes some time to setup all the necessary components when you open it for the first time. After 2-3 minutes you would start seeing this Android option in the Tools menu
+
+Once you select SDK Manager option, Settings screen would be opened with **Android SDK** option selected by default, as shown in the below image. Also, please note that there are 3 main tabs in this screen – **SDK Platform, SDK Tools and SDK Update Sites**. We will be checking only the first two tabs – SDK Platform and SDK Tools
+
+![Default Settings - Android SDK option selected]
+
+In **SDK Platform** tab, check that the latest version of Android is installed. Even if it shows Partially Available or Update available, then its ok for now
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/671a4531-89a6-478e-ac2b-c2f47bf96ee4)
+
+Click on OK button
+
+# Setup Android Environment Variables
+
+#### Find the folder location where you installed Android SDK
+
+In the first step we will try to find the folder path where we have installed Android SDK –
+1. The default folder location where Android SDK is installed is – **C:\\Users\\Anish\\AppData\\Local\\Android\\sdk**. Please open this folder path and see if you have Android SDK folder in there with contents as shown below
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/f1bbabb2-ae58-47e1-8801-cd9e6be5a3c6)
+
+###### Please note that if you try to open this folder location by going to each folder one by one (i.e. C > Users > YourUserName and so on…), then you might not see the App Data folder as it's a hidden folder. So, you will have to make hidden folders visible first
+
+1. Copy the SDK folder location once you find it. For us, this folder location is – C:\\Users\\Anish\\AppData\\Local\\Android\\sdk
+
+# Setup Android Environment Variables
+
+Follow the steps given below to setup ANDROID_HOME environment variable –
+1. Click on the Start menu. Then right click on Computer and select Properties option
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/229f4099-c13f-4175-8d70-11962ff09138)
+
+1. This would open the **System Properties** window as shown below. Now from the **Advanced** Tab, click on **Environment Variables** button
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/0f2e8e8a-65cb-4659-9340-2fff12967cb2)
+
+1. From the Environment Variables window, click on **New** button from
+
+**System variables** section
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/96eefaf7-16a3-4c36-b517-b16f81b7d348)
+
+1. Enter **ANDROID_HOME** in Variable Name field and SDK folder location (**C:\\Users\\Anish\\AppData\\Local\\Android\\sdk**) in Variable value field as shown in below image (Please enter the correct folder location that you have in your machine)
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/c25297b7-ba01-4fde-969f-9c2170a5a245)
+
+1. Click on the OK button. **ANDROID_HOME** variable will now be added to System variables
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/af0b7e00-8a46-4822-871d-a7b7920ac767)
+
+With this, we have successfully added ANDROID_HOME variable. Let us see how to add the Path variable.
+
+        # Folder locations to be added to Path variable
+In the Android SDK folder, there are three specific folders that you need to add to the Path variable. These folders are –
+
+- - **platforms-tools** folder which has path –
+
+##### C:\\Users\\Anish\\AppData\\Local\\Android\\sdk\\platform-tools
+
+- - **tools** folder which has path –
+
+##### C:\\Users\\Anish\\AppData\\Local\\Android\\sdk\\tools
+- - **bin folder inside tools** folder with path –
+  - ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/6f6425d4-2d44-471d-997f-7cc052b961f9)
+
+
+##### ![Folders to be added to Path variable]
+Since we have already added ANDROID_HOME in System variables and it's represented by – C:\\Users\\Anish\\AppData\\Local\\Android\\sdk, hence all these above three folder locations can be written as –
+
+##### %ANDROID_HOME%\\platform-tools
+
+- - **%ANDROID_HOME%\\tools**
+
+##### %ANDROID_HOME%\\tools\\bin
+
+Let us now add all these three folder locations in Path variable.
+
+# Setup Path Variable
+
+Follow the steps given below to setup Path variable –
+1. In the Environment variables window, check that there is a variable called Path under System variables
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/accf05c1-9298-4071-b5ff-5fdc7b790f10)
+
+1. Select the Path variable and click on Edit button. Path variable window would be opened
+2. Move over to the end in the Variable value text field. Put a semicolon (;) at the end and start adding all the 3 folder paths separated by semicolon (Semicolon acts as a delimiter between different folder locations added in the Path variable). You should have added all the 3 folder locations as this
+
+##### –;%ANDROID_HOME%\\platform-tools; %ANDROID_HOME%\\tools
+
+**%ANDROID_HOME%\\tools\\bin**
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/29e7721b-cad2-45b2-9cc9-303a6635d427)
+
+1. Click on the OK button. All the three variables would now be added to the Path variables.
+2. Close the Environment variable window by clicking on the Ok button. With this, we have now successfully setup Path variable as well
+
+
+# Verify that Android Environment Variables have been set correctly
+To verify that all the Android Environment Variables are correctly setup, open command prompt and run this command: **sdkmanager – -list (please note that there should be no space between the 2 hyphens, as shown in the below image)**. This would list down all the installed and available packages which would look a bit like something as shown below (please wait for 3-5 seconds for the list to be displayed)
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/54311721-0963-416e-8a20-eebb33fb095d)
+
+
+                            # Appium tool setup
+
+This mainly involves downloading and installing Appium Desktop, setting up an Appium project IntelliJ, adding all the Appium related dependencies and setting up your mobile device for test automation.
+
+# Download and Install – Node.js and NPM
+
+#### Steps to Download Node.js
+
+Follow the steps given below to download Node.js –
+Step 1) Open Node.js website using this link – <https://nodejs.org/en>
+Step 2) Click on the LTS button. This is the latest, most stable and supported version of Node.js
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/8958bf51-33d6-43bb-b525-f0f3fc44b5b1)
+
+Step 3) Node.js will be downloaded to your machine
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/18f03605-e38f-4f38-a9ae-1ad3046f56f2)
+
+# Steps to Install Node.js
+
