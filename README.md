@@ -623,3 +623,39 @@ Once you click on the button, you will see that the screen starts getting refres
 screenshot of app together with its Object Hierarchy Dump. The Appium window screen would like this –
 
 ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/d44d2009-7816-4418-9006-b29516c3f8e6)
+
+
+# Appium Test Script to Launch App on Real Device
+
+Steps to follow to launch App on real device:
+
+- Open IntelliJ in your system
+- Connect mobile device with your laptop via USB
+- Appium test script should be added into IntelliJ
+- Run your test script and check that it launches the app
+
+1. Open the IntelliJ
+2. Select the Test folder under src(expand it)
+
+3. ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/75e3ae8a-bd95-436a-adfe-6d3ea2b30738)
+
+4. 1. Expand the ‘test’ and then again expand the ‘com.qualitrix.com’
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/28ca19e8-ef24-4fe6-8b21-d9515b510872)
+1. Select ‘UserOnboardingSaniy’ component and double click
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/2f69c233-c8f8-4b0b-981d-9f7fa412b8c2)
+\[Note: Here you can select one test script, otherwise you can run all scripts of sanity component at once\]
+Here, we will see how to run all scripts of Sanity component:
+
+Click on ‘**Suiteinventory**’ and expand it and then click on ‘**Smoke_test.xml**’
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/8ef62ff9-22e1-4db0-aed3-d740f206d316)
+Once you open the Smoke_test.xml file, you scroll to the bottom and give this class name
+&lt;
+class name="com.qualitrrix.test.UserOnBoardingSanity"t; And then right click on the same screen and click on the Run option
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/b235f58b-688c-436e-b8ef-47115ca2af55)
+
+\[Note: You can give the same class name, where you have kept your script\]
+
+Your script would start running and you would see that app would get launched on your mobile device. This entire process might take 10-15 seconds because Appium must connect to your mobile device first.
+
