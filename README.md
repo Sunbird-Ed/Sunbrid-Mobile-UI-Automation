@@ -466,7 +466,160 @@ Use the steps given below to install Appium Server GUI on your machine
 This shows that the Appium Desktop has been installed successfully.
 1. Click on Stop Server button (3rd button with pause icon) to stop the Appium server and then **Close Log** button (one with X icon) to close the Appium server, you can close the Appium Server GUI window.
 
-![Uploading image.png…]()
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/c082f2c6-bf79-4892-aceb-cbbba0db3127)
 
             # Appium Inspector – Download and Install
              #### Download Appium Inspector
+Follow the steps given below to download the latest version of Appium Desktop Inspector –
+
+             1. Click on this link to open [Appium Inspector Github Releases page](https://github.com/appium/appium-inspector/releases)On this GitHub page, you will be able to see the latest release details
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/ff5f15e4-0235-4ecd-910d-c0f4dc9f1d9a)
+
+
+1. Under Assets section, click on windows exe file to download and save it on your machine
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/cd647d5b-5765-485c-8db9-faf8c24d2546)
+
+With this, we complete the download process for Appium Inspector. Let us now install it on our machine.
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/9da76337-67b8-4ab5-b4e9-14391a1ce822)
+
+
+                    **Install Appium Inspector**
+Follow the steps given below to install this tool on your machine –
+1. Open the folder location where you have downloaded the inspector tool and double click on the exe to start the installation process
+2. Appium will first ask you Installation Options. Leave the already selected option as it is and then click on Install button
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/e885565d-eba3-414a-a5d0-49549bf28e4e)
+1. Once the installation process starts, you will see the Appium Setup window as displayed below
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/7bb7f78a-f2d5-4d6d-afe7-aea19681d3a5)
+
+1. When the installation is completed, you will see the installation completed screen as shown below
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/60fc6788-25de-4303-a75e-692407685c42)
+
+1. Now, leave the **Run Appium Inspector** option checked and then click on the Finish button. Appium GUI window would look like this
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/c57768bb-e49a-45b4-8c51-a39915ddb5ca)
+
+# Appium Inspector Steps to get started
+
+Inspecting your mobile app and starting to identify elements is a multi- step process. You would need to do the following tasks to get rolling –
+
+- - Start Appium Server
+    - Open Appium Inspector and provide Desired Capabilities of your mobile device and app
+    - Start New Session (i.e., Start Appium Inspector)
+    - Inspect elements on your mobile app
+   
+### Start Appium Server
+Click on **the start Server** button. This would start the Appium server, and you would see **‘The server is running’** message in Appium window
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/8427a0a6-5805-43b6-aa9d-c0671315674c)
+
+### Open Appium Inspector and provide server details
+1. Go to Windows -> Start, search for **Appium Inspector** and then open it
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/aa3fee0d-4249-4b77-9f42-10954826e7fe)
+
+1. Appium Inspector start screen would be opened as shown in the below image
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/5a1dd18f-02f4-4af8-ab59-6ab9cef1855d)
+
+1. You would notice that Remote Host is already defaulted to 127.0.0.1, and Remote Port is also set to 4723 by default. Remote Path also has / as the default greyed out value.
+
+2. ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/c29a8fd7-13b9-4242-a25c-181ea74cd3ad)
+
+            # Get your Mobile Phone’s Device ID
+1. Connect your mobile device to your computer using a USB cable. (If your mobile device shows a popup to allow debugging, then accept that popup)
+2. Now open command prompt and run this command: **adb devices**
+3. Once you run this command, you will see the details of the device as shown in the below image (if you see some other response such as “daemon not running. daemon started successfully”, then run the command again)
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/db1250c0-cf2f-4f26-bdd0-73fc13bdd8eb)
+
+
+              **Ways to find appPackage and appActivity name of your App**
+### Method 1: Using ‘mCurrentFocus’ or ‘mFocusedApp’
+**in Command Prompt**
+**Step 1:** Unlock your mobile device and connect it to your computer using USB cable
+**Step 2:** Open Command Prompt and run **‘adb devices’** command. We are running this command to just make sure that your mobile is properly connected.
+**Step 3:** Once you run **‘adb devices’** command, you should see that it displays the list of attached devices as shown in the below image (the actual device name that you see would be different based on what mobile phone you use) –
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/c38bffec-80ff-4b29-b9e4-e9cad34ade2d)
+
+**Step 4:** Run **‘adb shell’** command. After running this command, the command prompt should look something like this –
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/1c321f0c-729b-4703-92ab-4bf9fc1ce903)
+
+**Step 5: Now on your mobile phone, open the app for which you want to find the appPackage and appActivity.** 
+*Step 6:** Now run this command: dumpsyswindowdisplays|grep-E ‘mCurrentFocus’
+
+**Step 7:** The above command would display the details of the app which is currently in focus. From that, you can figure out the appPackage and appActivity name as per the below image –
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/2750bb03-364f-4553-80c7-7e9dee077e97)
+appPackage starts with com. and ends before backslash (/). So, from the above image, appPackage name is – **com.android.vending**
+
+appActivity starts after the backslash (/) and goes till the end. From the above image, appActivity name is – **com.android.vending.AssetBrowserActivity**
+
+**Step 8:** There is one more similar command that provides the appPackage and appActivity name. This command adds some additional details before and after the package name & activity name, but you can still try it out just to verify that the results from the above command are the same. This command is – dumpsys window displays | grep -E ‘mFocusedApp’ and the output of this command is shown below –
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/eb5e5104-3494-432f-923f-7c69fee95474)
+
+In this example, where we used mFocusedApp, appActivity name is shown as a relative name, i.e., it doesn’t start with com. In such cases, you would need to add com…. at the beginning to get the complete activity name. So,
+
+in our case, complete activity name for **.AssetBrowserActivity** would be **com.android.vending.AssetBrowserActivity**
+
+                               ### Provide Appium Inspector Desired Capabilities
+Once you have added Appium Server details, the next step is to add the Desired Capabilities. Desired Capabilities are keys and values encoded in a JSON object and are sent by Appium Inspector to the server when you request a new automation session.
+
+Note: If someone is working on the same project then they can use these capabilities, they just need to copy and paste the capabilities under JSON representation and save it. Here, Android version and Device name, you have to give based on your testing devices.
+
+{
+
+"platformName": "android", 
+"appium:platformVersion": 12,
+"appium:deviceName": "RZ8N810NC1K",
+"appium:appPackage": "org.sunbird.app.staging",
+"appium:appActivity": "org.sunbird.app.MainActivity"
+
+}
+
+For the new project, they have to follow the below steps to add the capabilities to Appium Inspector
+You will have to add each of these capabilities to Appium Inspector. Follow the steps given below to do this –
+1. To add the first capability, type **‘udid’** in Name field and **‘ENUL630010’**
+2. in Value field. Your screen would now look like this (note that the JSON
+Representation block would automatically show the capability that you have added just now)
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/0e212587-643f-4985-a496-591eaff514e4)
+
+
+[Add new blank row by clicking on plus button]
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/e7825c8a-e1bc-4a66-b566-6671ba00d3cf)
+
+2. Add the second capability (**appium:appPackage**) in this row
+3. Keep on adding new rows till you add all the capabilities and your screen should now look like this
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/ab4cde27-39eb-4903-a5b3-a98b8a10277a)
+You have now successfully added all the Desired Capabilities. Let us now save this Capability Set and then start the Appium Desktop Inspector.
+
+
+### Save the Desired Capabilities Set
+
+It’s a good approach to save the Desired Capabilities set especially when you are using multiple devices or testing multiple apps. This is because once you save a Desired Capability set, then you can directly select it from the **Saved Capabilities Set** section and start the inspector. So, if you use multiple devices or android versions, you can save these capabilities as say ‘Samsung Galaxy S7’, ‘Nexus 6P’, ‘Calculator App’ etc.
+
+Let’s quickly see the steps that you must follow to save the Desired
+
+Capabilities –
+
+1. At the bottom of the screen, where you entered all the Desired
+
+Capabilities, click on ‘Save As…’ button
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/b55374b5-da38-46bc-bf97-b6fc049b0ab7)
+
+2. Enter any name you wish to use and click on the Save button. The capability set would get saved
+3. Click on **Saved Capabilities Sets** tab and then click on edit icon. You will see that the capability set you saved just now is displayed here
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/9c643f23-3c84-43e5-bcd7-56978c77319d)
+
+                 ### Start Appium Inspector
+
+First, make sure that your mobile device is connected to your machine. Also see that it's unlocked. To start Appium Desktop Inspector, click on **the Start Session** button.
+
+Once you click on the button, you will see that the screen starts getting refreshed. Then after a few moments, Appium window would display the
+
+screenshot of app together with its Object Hierarchy Dump. The Appium window screen would like this –
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/d44d2009-7816-4418-9006-b29516c3f8e6)
