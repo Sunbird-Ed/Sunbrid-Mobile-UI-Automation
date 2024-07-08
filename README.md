@@ -325,3 +325,148 @@ Step 3) Node.js will be downloaded to your machine
 
 # Steps to Install Node.js
 
+Step 1) Open the .msi file that you downloaded in the previous step to start the installation process
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/aafaac54-e426-411b-b619-372b628f48e7)
+
+Step 2) Click on Next button, accept the License Agreement, leave the default values Destination Folder and Custom Setup screens
+
+Step 3) Leave the checkbox unchecked in Tools for Native Modules screen and click on Next button
+Step 4) Click on Install button to start the installation
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/a43ac6d5-a419-4fa4-adbb-235aa21f45e0)
+
+Step 5) Click on Finish button to exit the setup wizard
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/5973e445-8d5f-4488-aec4-fe12294d5eb1)
+
+The npm comes preinstalled with Node.js. So, to verify that both Node.js and npm have been setup correctly, open command prompt and run these commands: **node -v** and **npm -v**
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/cb9eb221-0f64-4857-842e-4dd383b502ae)
+
+                # Eclipse IDE – Download and Install
+### Download Eclipse IDE
+Perform the steps given below to download the latest version of Eclipse IDE
+1. Open this link – <https://www.eclipse.org/downloads/packages/>
+2. This link lists the latest Eclipse IDE versions for different programming languages. We are interested in **Eclipse IDE for Enterprise Java and Web Developers**
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/0be0291b-854d-4520-a768-0a4b2baefa4f)
+4. 
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/ae3bfa86-a971-42ac-8540-2229d1bf4f17)
+
+5. Once you click on the link, you will be navigated to the download page as shown below. Click on the Download button to start the download process.
+6. ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/71fb088c-c0c6-40b6-97f9-5b72a1e60663)
+
+
+1. Eclipse IDE would start downloading.
+
+2. With this, we complete the process of downloading Eclipse IDE for Java.
+Let’s now have a look at how to set it up.
+
+
+             ### Install/Setup Eclipse IDE
+
+Unlike a lot of software tools, Eclipse doesn’t need to be installed. Once
+
+you unzip it, you can start using it directly. Let us see how this is done –
+1. Go to the folder where you had downloaded Eclipse and locate the Eclipse zip file
+1. Right click on the Zip file and unzip it.
+2. 2. After unzipping the zip file, you will get **eclipse** folder. Open this eclipse folder, it would have contents similar to what is shown in the below image
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/3ed428b9-d050-4069-9464-76fa6698c573)
+
+1. Double click on eclipse.exe file to open the IDE. Once it starts, it would ask you to select a workspace directory. **In eclipse, workspace is the directory where all your projects would be saved.**
+
+1. Leave the default folder path as it is and click on the Launch button. Eclipse would open the IDE and you would see the Welcome tab as shown below
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/f480eee8-e61a-4e68-bcc8-a7b91f133a6a)
+
+                     # Enable USB Debugging on Android Phone
+Enabling USB Debugging on your android device is a two-step process:
+1. Firstly, get the Developer options on your phone
+2. Then, use Developer options to enable USB Debugging Let's look at each of these steps in more detail.
+### Get the Developer Options on your phone
+**Step 1:** Take your Android device -> go to Menu/Home -> search for the Icon named **“Settings”**
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/e91a13d9-37f8-4def-82ae-1d9d5b303b97)
+
+**Step 2:** Click on the “Settings” Icon and scroll down and check for an option named **“Developer options”**. If you can see “Developer options” listed there, it means Developer options is already enabled on your Android device.
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/3a4d8ed4-3030-43ce-9d5c-b1911124c233)
+
+On the other hand, if you do not find the “Developer options” listed there,
+then please follow the below procedure to enable it –
+**Step 3:** Click on the **“About phone”** option, you can see the list of options as shown in the below image
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/c4a21bbe-1daf-4a1e-895b-683e1aa20933)
+
+**Step 4:** Click the **“Build Number”** option multiple times, till one of these messages appear –
+##### “You are now 1 step away from being a developer”
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/82c8b8c0-0ce4-4a9b-9a9d-53648340b0b6)
+
+
+After this, click on “Build Number” couple of more times until you finally
+see the below message –
+##### “You are a Developer now” or “Developer mode has been enabled”
+(To be precise – It is **5** clicks on some devices and **7** clicks on others)
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/47cf9310-f0b2-4c8c-acdf-1c7209d396fa)
+**Step 5:** Tap the back button on your device to verify the “Developer options” is listed under the settings
+
+So now you can see the “Developer options” enabled on your device. Let us now see how to enable the USB debugging option on your android device.
+
+**Enable USB Debugging option on your phone**
+By default, the USB debugging mode is disabled for any brand-new device to avoid unintentional modifications on it. But you would need to enable debugging option manually for your Android development/testing process.
+
+So now, let's see how to enable the USB debugging mode by following the steps given below:
+**Step 1:** Go to the “Settings” option of your phone and verify again, if you can see the “Developer options” listed under the “Settings” section as shown below
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/f93a5268-386c-498b-ba7c-60047396cf20)
+
+**Step 2:** Click the “Developer options” and check if **“USB Debugging”**
+checkbox is listed under the sub-title **“Debugging”** as shown below:
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/5116d5e4-97d1-4234-8490-bc7817cd8cc7)
+
+**Step 3:** Tick the **“USB Debugging”** checkbox and click **“OK”** in the popup message. You can see that “USB Debugging” has been enabled now as shown in the below image:
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/1260bef0-3ad2-46f1-94ca-880352406aeb)
+
+                # Appium Desktop – Download and Install
+#### Download Appium Desktop
+Follow the steps given below to download the latest version of Appium Desktop –
+1. Open Appium Desktop’s GitHub page –
+<https://github.com/appium/appium-desktop/releases>
+1. This page lists all the versions of Appium Desktop. You will have to download the latest version which is shown at the top of the page.
+**Please Note:** New beta versions are released often. Even if you see a newer version on Github, please go ahead and download that version.
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/eabfec53-3088-479a-8089-392053090ad2)
+
+1. In the Downloads section of the latest release, you will find different packages for Windows, Mac, Linux etc
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/0330a36e-b13c-4d1f-a406-8c654de88501)
+
+1. Click on the windows version to download and save it on your machine
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/dd47bbd3-2ebd-402d-90d1-9344bc78d5f3)
+With this, we complete the download process for Appium Server GUI. Let us now install it on our machine.
+
+                    ### Install Appium Desktop (Appium Server GUI)
+Use the steps given below to install Appium Server GUI on your machine
+1. Open the folder location where you have downloaded Appium Server GUI and double click on the exe to start the installation process
+2. Appium will first ask you Installation Options. Leave the already selected option as it is and then click on Install button
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/c5cd98f9-2c35-467e-8ffb-2c9c0868a13b)
+
+1. Once the installation process starts, you will see the Appium Setup window as displayed below
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/57476e2f-0c71-47fc-afcf-c08faabeb57d)
+1. Once installation is complete, you will see the below Appium Setup window
+
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/e3c296ec-e905-4672-a550-a03cd64f9c82)
+
+1. Now, leave the **Run Appium Server GUI** checkbox selected and click on
+![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/156bf8ee-c542-42b4-bb46-e79ec02800af)
+
+**Appium server requires a minimum of 2 parameters to run – Host and Port.** The default values for these parameters are “0.0.0.0” (for Host) and “4723” (for Port). So, if you don’t provide any specific values for these parameters, Appium would take the default ones to start the server.
+
+1. To verify that the installation and setup is successful, click on **the start Server** button. This would start the Appium server, and you would see **‘The server is running’** message in Appium window
+
+2. ![image](https://github.com/Sunbird-Ed/Sunbrid-Mobile-UI-Automation/assets/43565430/88ff5933-6707-47b7-9c2e-ba571047eb5b)
+
+This shows that the Appium Desktop has been installed successfully.
+1. Click on Stop Server button (3rd button with pause icon) to stop the Appium server and then **Close Log** button (one with X icon) to close the Appium server, you can close the Appium Server GUI window.
+
+![Uploading image.png…]()
+
+            # Appium Inspector – Download and Install
+             #### Download Appium Inspector
