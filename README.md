@@ -658,3 +658,80 @@ class name="com.qualitrrix.test.UserOnBoardingSanity"t; And then right click on 
 
 Your script would start running and you would see that app would get launched on your mobile device. This entire process might take 10-15 seconds because Appium must connect to your mobile device first.
 
+
+
+          ******  Key Observations ***********
+  
+ * To set mobile configuration details to the framework follow the below steps
+  
+         * Go to Caps folder, open capabilities.Json file
+         * Update the below details as per the connected device
+   
+    "devices":[
+    {
+      "name": "RZCRC00YG9R",
+   
+      "version": "13.0.0",
+   
+      "Platform": "Android"
+    }
+
+   
+
+ *  To set APK Path follow the below steps
+  
+        * Add the APK file to the caps folder
+        * Go to Caps folder, open capabilities.Json file
+        * Give the path as shown below
+   
+               app: ".\\caps\\SUNBIRD_6_0_544staging.apk",
+
+   
+ *  To set appPackage and appActivity follow the below steps
+
+      *  Go to Caps folder, open capabilities.Json file
+      *  Update the below details as per the APK file
+  
+         "Capabilities": {
+         
+             "android": {
+         
+             "appPackage": "org.sunbird.app.staging",
+             "appActivity": "org.sunbird.app.MainActivity",
+   
+ 
+ *  To change the Execution Environment follow the below steps
+   
+         * Go to the Configs folder, open the config.properties file
+         * Enable the appPackage and appActivity as per the environment apk
+    
+                   appPackage=org.sunbird.app.staging
+                   appActivity=org.sunbird.app.MainActivity
+  
+
+ * To change the TestData path as per the Environment follow the below steps
+   
+     * Go to the Configs folder, open the config.properties file
+     * Enable the excelpath variable as per the environment
+       
+           excelpath=./testdata/StagTestData.xlsx
+
+
+   * To change the suite execution follow the below steps
+    
+          * Open TestNg.XMl in suite inventory
+          * Give packagename.className
+         <class name="sanitySuite.Sanity"/>
+        <class name="regression.CourseConsumption"/>
+        
+
+ * To Trigger the TestNG.xml follow the below steps
+   
+         * Open any TestNG.xml file
+         *  Right-click and click on Run as "TestNG.xml"
+
+ * Check the Extent report after the execution in the below path
+    
+         * In the Framework root directory, Open the Report folder
+         * .Html file will be created 
+
